@@ -1,0 +1,2804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P.O. Slack Search</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.2.0/dist/chartjs-plugin-zoom.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── Custom scrollbars — wider, better contrast ── */
+::-webkit-scrollbar { width: 20px; height: 20px; }
+::-webkit-scrollbar-track { background: var(--panel-2); }
+::-webkit-scrollbar-thumb { background: #555; border-radius: 10px; border: 4px solid var(--panel-2); }
+::-webkit-scrollbar-thumb:hover { background: #6c9ff2; }
+::-webkit-scrollbar-corner { background: var(--panel-2); }
+html { scrollbar-width: auto; scrollbar-color: #555 var(--panel-2); }
+:root {
+  --bg:        #0d0d0d;
+  --panel:     #1a1a1a;
+  --panel-2:   #222;
+  --border:    #2a2a2a;
+  --border-2:  #333;
+  --input:     #222;
+  --text:      #ffffff;
+  --muted:     #6c9ff2;
+  --muted-2:   #6c9ff2;
+  --accent:    #e94560;
+  --green:     #4ecca3;
+  --orange:    #ffaa00;
+  --blue:      #6c9ff2;
+  --mark-bg:   #ffcc00;
+  --mark-tx:   #000;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg); color: var(--text); height: 100vh;
+  display: flex; flex-direction: column; overflow: hidden;
+}
+/* Header */
+.header {
+  background: var(--panel); padding: 12px 16px; border-bottom: 2px solid var(--border);
+  display: flex; align-items: center; gap: 20px; flex-shrink: 0; flex-wrap: wrap;
+}
+.title-block { display: flex; flex-direction: column; gap: 2px; flex-shrink: 0; }
+.header h1 { font-size: 26px; color: var(--accent); white-space: nowrap; line-height: 1.15; }
+.header .subtitle { font-size: 12px; color: #fff; white-space: nowrap; }
+.header .subtitle a { color: #fff; text-decoration: underline; }
+.toolbar {
+  background: var(--panel-2); padding: 8px 16px; border-bottom: 2px solid var(--border);
+  display: flex; align-items: center; gap: 14px; flex-shrink: 0; flex-wrap: nowrap;
+}
+.toolbar-controls {
+  display: flex; align-items: center; gap: 14px; flex-shrink: 0;
+}
+/* Prefer sitting to the right of Go; wrap up to 3 lines in remaining width */
+.toolbar .instructions {
+  font-size: 12px; color: var(--muted); line-height: 1.4;
+  flex: 1 1 auto; min-width: 0;
+}
+/* Too narrow for ≤3 lines beside controls → full-width row under them */
+.toolbar.toolbar-instr-below {
+  flex-wrap: wrap;
+}
+.toolbar.toolbar-instr-below .instructions {
+  flex: 1 1 100%;
+  width: 100%;
+}
+.search-bar { flex: 1; display: flex; gap: 8px; max-width: 720px; align-items: center; flex-wrap: wrap; }
+#searchInput {
+  flex: 1; min-width: 160px; padding: 8px 12px; background: var(--input); border: 1px solid var(--border-2);
+  color: #fff; border-radius: 4px; font-size: 14px; outline: none;
+}
+#searchInput:focus { border-color: var(--accent); }
+#searchBtn, #clearBtn {
+  padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;
+  font-size: 13px; font-weight: 600;
+}
+#searchBtn { background: var(--accent); color: #fff; }
+#searchBtn:hover { background: #c81e4a; }
+#clearBtn { background: var(--border-2); color: var(--text); }
+#clearBtn:hover { background: #444; }
+.case-toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; color: var(--muted); white-space: nowrap; cursor: pointer;
+  user-select: none; padding: 6px 8px; border: 1px solid var(--border-2);
+  border-radius: 4px; background: var(--panel-2);
+}
+.case-toggle:hover { border-color: var(--accent); color: var(--text); }
+.case-toggle input { accent-color: var(--accent); cursor: pointer; }
+.case-toggle strong { color: var(--text); font-weight: 600; }
+.jump-date-bar {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; color: var(--muted); white-space: nowrap;
+  padding: 4px 8px; border: 1px solid var(--border-2); border-radius: 4px;
+  background: var(--panel-2);
+}
+.jump-date-bar label { font-weight: 600; color: var(--text); font-size: 11px; }
+.jump-date-bar input[type="date"],
+.jump-date-bar input[type="text"] {
+  background: var(--input); color: #fff; border: 1px solid var(--border-2);
+  border-radius: 4px; padding: 4px 8px; font-size: 12px; color-scheme: dark;
+}
+.jump-date-bar input[type="date"] { min-width: 9.5em; }
+.jump-date-bar button {
+  background: var(--accent); color: #fff; border: none; border-radius: 4px;
+  padding: 5px 10px; font-size: 12px; font-weight: 600; cursor: pointer;
+}
+.jump-date-bar button:hover { background: #c81e4a; }
+.layout-toggle {
+  background: var(--panel-2); color: var(--text); border: 1px solid var(--border-2);
+  padding: 5px 12px; border-radius: 4px; cursor: pointer; font-weight: 600;
+  white-space: nowrap; line-height: 1.15; text-align: center;
+  display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+  min-width: 7.5em;
+}
+.layout-toggle:hover { border-color: var(--accent); }
+.layout-toggle .layout-action {
+  font-size: 10px; font-weight: 500; color: var(--muted); letter-spacing: 0.02em;
+}
+.layout-toggle .layout-target {
+  font-size: 13px; font-weight: 700; color: var(--text);
+}
+
+/* ── Charts panel: ONE dual-sided vertical timeline ─────────────────── */
+/* Left half  = all entries (bars grow left of center)                  */
+/* Right half = search hits (bars grow right of center)                 */
+/* Shared Y   = calendar day (top → bottom)                             */
+.charts-panel {
+  background: var(--panel); border-bottom: 2px solid var(--border);
+  display: flex; flex-direction: column; flex-shrink: 0; overflow: hidden;
+  transition: width 0.18s ease, min-width 0.18s ease, height 0.18s ease, max-height 0.18s ease;
+}
+.panel-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 12px; background: var(--panel-2); cursor: pointer;
+  border-bottom: 1px solid var(--border); user-select: none; flex-shrink: 0;
+  gap: 8px;
+}
+.panel-header h2 { font-size: 13px; color: var(--muted); white-space: nowrap; }
+.panel-header .collapse-btn {
+  background: none; border: none; color: var(--muted); font-size: 16px;
+  cursor: pointer; padding: 0 4px; line-height: 1; flex-shrink: 0;
+}
+.panel-header:hover { background: #2a2a2a; }
+.panel-header:hover .collapse-btn { color: var(--accent); }
+.charts-content {
+  padding: 6px 8px 8px; overflow: hidden;
+  display: flex; flex-direction: column; flex: 1; min-height: 0;
+}
+/* Hide chart body when collapsed — panel itself also shrinks (see layout rules) */
+.charts-panel.collapsed .charts-content { display: none; }
+
+.timeline-header-row {
+  display: flex; flex-direction: row; flex-shrink: 0;
+  gap: 0; margin-bottom: 4px; align-items: flex-end;
+}
+.timeline-header-row .th-side {
+  flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px;
+  line-height: 1.25;
+}
+.timeline-header-row .th-left { text-align: right; padding-right: 8px; }
+.timeline-header-row .th-right { text-align: left; padding-left: 8px; }
+.timeline-header-row .th-center {
+  flex: 0 0 1px; align-self: stretch; background: var(--border-2); margin: 0 2px;
+}
+.chart-title-main { font-size: 11px; font-weight: 600; color: var(--text); }
+.chart-block-stats { font-size: 10px; color: #fff; }
+.chart-canvas-wrap {
+  position: relative; flex: 1; min-height: 0; width: 100%;
+}
+/* Landscape dual chart: vertical center guide (zero between left/right bars) */
+body.layout-landscape .timeline-main {
+  background:
+    linear-gradient(to right,
+      transparent calc(50% - 0.5px),
+      var(--border-2) calc(50% - 0.5px),
+      var(--border-2) calc(50% + 0.5px),
+      transparent calc(50% + 0.5px));
+}
+/* Portrait: horizontal time axis — no vertical center rail */
+body.layout-portrait .timeline-main {
+  background: transparent;
+}
+body.layout-portrait .timeline-header-row .th-left { text-align: left; padding-right: 8px; }
+body.layout-portrait .timeline-header-row .th-right { text-align: right; padding-left: 8px; }
+body.layout-portrait .timeline-header-row .th-center { display: none; }
+
+/* ── Layout: Landscape (3 columns) ────────────────────────────────── */
+body.layout-landscape .content-area { flex-direction: row; }
+/* Vertical timelines: keep panel slim (~40% of prior 300px) */
+body.layout-landscape .charts-panel {
+  width: 150px; min-width: 130px; max-width: 170px;
+  border-right: 2px solid var(--border); border-bottom: none;
+  align-self: stretch;
+}
+body.layout-landscape .charts-content { flex: 1; padding: 4px 4px 6px; }
+body.layout-landscape .timeline-header-row {
+  flex-direction: column; gap: 2px; margin-bottom: 2px;
+}
+body.layout-landscape .timeline-header-row .th-left,
+body.layout-landscape .timeline-header-row .th-right {
+  text-align: center; padding: 0;
+}
+body.layout-landscape .timeline-header-row .th-center { display: none; }
+body.layout-landscape .chart-title-main { font-size: 10px; }
+body.layout-landscape .chart-block-stats { font-size: 9px; }
+/* Collapsed = thin vertical rail only (releases width to results) */
+body.layout-landscape .charts-panel.collapsed {
+  width: 36px;
+  min-width: 36px;
+  max-width: 36px;
+}
+body.layout-landscape .charts-panel.collapsed .panel-header {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 10px 4px;
+  gap: 14px;
+  border-bottom: none;
+  border-right: none;
+}
+body.layout-landscape .charts-panel.collapsed .panel-header h2 {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 0.04em;
+  font-size: 12px;
+}
+body.layout-landscape .results-panel {
+  flex: 1; border-right: 2px solid var(--border); min-width: 0;
+}
+body.layout-landscape .pdf-panel {
+  width: 42%; min-width: 380px; border-left: none; border-top: none;
+}
+body.layout-landscape .panel-resizer {
+  display: block; width: 10px; flex-shrink: 0; cursor: col-resize;
+  background: #555; position: relative;
+}
+body.layout-landscape .panel-resizer::before {
+  content: '';
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3px; height: 32px;
+  background: #6c9ff2; border-radius: 2px;
+  transition: background 0.15s;
+}
+body.layout-landscape .panel-resizer:hover,
+body.layout-landscape .panel-resizer.dragging {
+  background: var(--accent);
+}
+body.layout-landscape .panel-resizer:hover::before,
+body.layout-landscape .panel-resizer.dragging::before {
+  background: #fff;
+}
+
+/* ── Layout: Portrait (stacked) ───────────────────────────────────── */
+body.layout-portrait .content-area { flex-direction: column; }
+/* Horizontal timelines: keep panel short (~40% of prior 280px / 40vh) */
+body.layout-portrait .charts-panel {
+  border-bottom: 2px solid var(--border);
+  height: 145px; max-height: 165px; min-height: 130px;
+  flex: 0 0 auto;
+}
+body.layout-portrait .charts-content { padding: 2px 8px 4px; }
+body.layout-portrait .timeline-header-row { margin-bottom: 0; }
+body.layout-portrait .chart-block-title,
+body.layout-portrait .chart-title-main { font-size: 10px; min-height: 0; }
+body.layout-portrait .chart-block-stats { font-size: 9px; }
+/* Collapsed = header bar only (releases height to results) */
+body.layout-portrait .charts-panel.collapsed {
+  height: auto;
+  max-height: none;
+  min-height: 0;
+  flex: 0 0 auto;
+}
+body.layout-portrait .results-panel {
+  flex: 1; border-right: none; border-bottom: none; min-height: 80px;
+}
+/* Horizontal drag handle between results and PDF */
+body.layout-portrait .panel-resizer {
+  display: block; width: 100%; height: 10px; flex-shrink: 0; cursor: row-resize;
+  background: #555; position: relative;
+}
+body.layout-portrait .panel-resizer::before {
+  content: '';
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px; height: 3px;
+  background: #6c9ff2; border-radius: 2px;
+  transition: background 0.15s;
+}
+body.layout-portrait .panel-resizer:hover,
+body.layout-portrait .panel-resizer.dragging {
+  background: var(--accent);
+}
+body.layout-portrait .panel-resizer:hover::before,
+body.layout-portrait .panel-resizer.dragging::before {
+  background: #fff;
+}
+body.layout-portrait .pdf-panel {
+  width: 100%; min-width: 0; height: 45%; min-height: 140px;
+  border-left: none; border-top: none; flex: 0 0 auto;
+}
+
+/* ── Main content area ─────────────────────────────────────────────── */
+.content-area { flex: 1; display: flex; overflow: hidden; }
+
+/* ── Results panel ─────────────────────────────────────────────────── */
+.results-panel {
+  overflow-y: auto; padding: 12px;
+}
+.results-panel::-webkit-scrollbar { width: 8px; }
+.results-panel::-webkit-scrollbar-track { background: var(--panel); }
+.results-panel::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 4px; }
+
+.result-entry {
+  background: var(--panel); margin-bottom: 12px; border-radius: 8px;
+  border: 1px solid var(--border-2); overflow: hidden; transition: border-color 0.2s;
+  cursor: pointer;
+}
+.result-entry:hover { border-color: var(--accent); }
+.result-entry.active { border-color: var(--accent); box-shadow: 0 0 10px rgba(233,69,96,0.2); }
+
+.result-header {
+  padding: 8px 14px; background: var(--panel-2); display: flex;
+  justify-content: space-between; align-items: center; cursor: pointer;
+}
+.result-content mark { cursor: pointer; }
+.result-content mark:hover { outline: 1px solid var(--accent); }
+.result-date { font-size: 15px; font-weight: 700; color: var(--accent); }
+.result-raw-date { font-size: 11px; color: var(--muted); margin-left: 8px; }
+.result-hits {
+  font-size: 12px; color: var(--green); font-weight: 600;
+  background: rgba(78,204,163,0.12); padding: 2px 8px; border-radius: 12px;
+}
+.result-page-link {
+  font-size: 11px; color: var(--blue); margin-left: 8px; cursor: pointer;
+}
+.result-note {
+  font-size: 11px; color: var(--orange); margin-top: 4px; font-style: italic;
+}
+
+/* ── Hit navigation bar ────────────────────────────────────────────── */
+.hit-nav {
+  display: flex; align-items: center; gap: 8px; padding: 6px 14px;
+  background: var(--panel-2); border-bottom: 1px solid var(--border); font-size: 12px;
+}
+.hit-nav-btn {
+  background: var(--border-2); color: var(--text); border: none; padding: 3px 10px;
+  border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600;
+}
+.hit-nav-btn:hover { background: #444; }
+.hit-nav-btn:disabled { opacity: 0.4; cursor: default; }
+.hit-nav-label { color: var(--green); font-weight: 600; white-space: nowrap; }
+
+.result-content {
+  padding: 10px 14px; font-size: 13px; line-height: 1.7; color: var(--text);
+  max-height: 350px; overflow-y: auto; word-wrap: break-word; overflow-wrap: break-word;
+}
+.result-content::-webkit-scrollbar { width: 6px; }
+.result-content::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 3px; }
+.result-content p { margin-bottom: 8px; }
+
+mark {
+  background: var(--mark-bg); color: var(--mark-tx); padding: 1px 2px; border-radius: 2px;
+  font-weight: 600;
+}
+mark.hit-current {
+  background: var(--orange); color: #000; outline: 2px solid var(--accent);
+}
+
+/* ── PDF panel ─────────────────────────────────────────────────────── */
+.pdf-panel {
+  display: flex; flex-direction: column; background: var(--bg);
+}
+.pdf-toolbar {
+  padding: 8px 12px; background: var(--panel); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 8px; flex-shrink: 0; flex-wrap: wrap;
+}
+.pdf-toolbar button {
+  background: var(--panel-2); color: #fff; border: 1px solid var(--border-2); padding: 6px 12px;
+  border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: 600;
+}
+.pdf-toolbar button:hover { background: var(--border-2); }
+.pdf-toolbar button:disabled { opacity: 0.4; cursor: default; }
+.pdf-page-input {
+  width: 60px; text-align: center; background: var(--input); color: #fff;
+  border: 1px solid var(--border-2); border-radius: 4px; padding: 5px; font-size: 14px;
+}
+.pdf-page-label { font-size: 13px; color: var(--muted); }
+.pdf-zoom-label { font-size: 12px; color: var(--muted); margin-left: auto; }
+.pdf-view-mode {
+  background: var(--input); color: #fff; border: 1px solid var(--border-2);
+  border-radius: 4px; padding: 5px 8px; font-size: 12px; font-weight: 600;
+  cursor: pointer; max-width: 150px;
+}
+.pdf-view-mode:hover { border-color: var(--muted); }
+
+.pdf-viewer-container {
+  flex: 1; overflow: auto; display: flex; justify-content: center; align-items: flex-start;
+  padding: 12px; background: #1a1a1a;
+}
+.pdf-viewer-container.pdf-mode-continuous {
+  display: block; /* stack pages full-width of scroller */
+}
+.pdf-viewer-container::-webkit-scrollbar { width: 8px; height: 8px; }
+.pdf-viewer-container::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 4px; }
+.pdf-page-view {
+  display: flex; flex-direction: row; gap: 12px; align-items: flex-start; justify-content: center;
+  flex-wrap: nowrap;
+}
+.pdf-page-view canvas,
+.pdf-continuous-view canvas {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  background: #fff;
+  display: block;
+}
+.pdf-continuous-view {
+  display: none;
+  width: 100%;
+  max-width: 100%;
+}
+.pdf-page-slot {
+  display: flex; flex-direction: column; align-items: center;
+  margin: 0 auto 16px;
+  width: 100%;
+}
+.pdf-page-slot .pdf-page-num {
+  font-size: 11px; color: var(--muted); margin-bottom: 4px; font-weight: 600;
+}
+.pdf-page-slot.is-current canvas {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.pdf-loading {
+  color: var(--muted); font-size: 14px; text-align: center; padding: 40px;
+}
+.pdf-loading .spinner {
+  display: inline-block; width: 24px; height: 24px;
+  border: 3px solid var(--border-2); border-top-color: var(--accent);
+  border-radius: 50%; animation: spin 1s linear infinite;
+  margin-bottom: 8px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Placeholder ───────────────────────────────────────────────────── */
+.placeholder {
+  text-align: center; padding: 60px 20px; color: #fff;
+}
+.placeholder h2 { font-size: 18px; margin-bottom: 10px; color: #fff; }
+.placeholder p { font-size: 13px; line-height: 1.8; max-width: 400px; margin: 0 auto; }
+.placeholder .stats { margin-top: 20px; font-size: 14px; color: #fff; }
+</style>
+</head>
+<body class="layout-landscape">
+
+<div class="header">
+  <div class="title-block">
+    <h1>💬 P.O. Slack Search</h1>
+    <span class="subtitle"><a href="https://www.paul.senate.gov/readingroom/" target="_blank">Rand Paul's release of the Proximal Origin authors' Slack</a> &middot; 11,415 entries &middot; Feb 2020 &ndash; Jun 2023</span>
+  </div>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder='Phrase: "blue car" · words: happy bunny · help: ?'>
+    <button id="searchBtn" onclick="doSearch()">Search</button>
+    <button id="clearBtn" onclick="clearSearch()">Clear</button>
+    <label class="case-toggle" title="Off = match any capitalization (default). On = exact capitalization only.">
+      <input type="checkbox" id="caseSensitive" onchange="if(document.getElementById('searchInput').value.trim())doSearch()">
+      <span><strong>Aa</strong> case sensitive</span>
+    </label>
+    <button id="helpBtn" onclick="showHelp()" title="Search help" style="background:var(--panel-2);color:var(--muted);border:1px solid var(--border-2);padding:8px 12px;border-radius:4px;cursor:pointer;font-size:13px;font-weight:600">?</button>
+  </div>
+</div>
+
+<div class="toolbar" id="mainToolbar">
+  <div class="toolbar-controls">
+    <button class="layout-toggle" id="layoutToggle" type="button" onclick="switchLayout()" title="Switch layout">
+      <span class="layout-action">Switch to</span>
+      <span class="layout-target">Portrait</span>
+    </button>
+    <span class="jump-date-bar" title="Jump to an entry date (nearest previous entry if exact day has none)">
+      <label for="jumpDateInput">Jump to date</label>
+      <input type="date" id="jumpDateInput" min="2020-02-01" max="2023-06-28">
+      <button type="button" id="jumpDateBtn" onclick="goToJumpDate()">Go</button>
+    </span>
+  </div>
+  <span class="instructions" id="toolbarInstructions">Search &rarr; click a result / hit bar for matches. Entry bars open that day&rsquo;s entry + PDF (and clear any search). Jump-to-date opens the nearest entry. Scroll wheel zooms; double-click resets.</span>
+</div>
+
+<div class="content-area">
+
+  <!-- ── Dual vertical timeline: entries LEFT | hits RIGHT, shared Y = time ── -->
+  <div class="charts-panel" id="chartsPanel">
+    <div class="panel-header" onclick="toggleCharts()">
+      <h2>📊 Dual timeline</h2>
+      <div style="display:flex;align-items:center;gap:4px">
+        <button onclick="event.stopPropagation();resetTimelineZoom()" title="Reset zoom (or double-click chart)" style="background:none;border:none;color:var(--muted);font-size:15px;cursor:pointer;padding:0 4px;flex-shrink:0">&#10226;</button>
+        <button class="collapse-btn" id="chartsCollapseBtn" title="Collapse timeline">◀</button>
+      </div>
+    </div>
+    <div class="charts-content">
+      <div class="timeline-header-row">
+        <div class="th-side th-left">
+          <span class="chart-title-main">← All entries</span>
+          <span class="chart-block-stats" id="timelineStats"></span>
+        </div>
+        <div class="th-center"></div>
+        <div class="th-side th-right">
+          <span class="chart-title-main">Search hits →</span>
+          <span class="chart-block-stats" id="chartStats">search to filter</span>
+        </div>
+      </div>
+      <!-- Single canvas: negative values = entries (left), positive = hits (right) -->
+      <div class="chart-canvas-wrap timeline-main">
+        <canvas id="timelineChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Results panel ────────────────────────────────────────────── -->
+  <div class="results-panel" id="resultsPanel">
+    <div class="placeholder">
+      <h2>Search P.O. Slack</h2>
+      <p>Enter a search term above to find mentions across all Slack messages
+      (Feb 2020 &ndash; Jun 2023, two Congressional releases).
+      Results will show the matching text with all hits highlighted, the
+      corresponding PDF page, and charts of entries/hits over time.</p>
+      <div class="stats" id="entryStats"></div>
+    </div>
+  </div>
+
+  <!-- ── Drag handle to resize the PDF panel ─────────────────────────── -->
+  <div class="panel-resizer" id="pdfResizer" title="Drag to resize PDF panel"></div>
+
+  <!-- ── PDF panel ────────────────────────────────────────────────── -->
+  <div class="pdf-panel" id="pdfPanel">
+    <div class="pdf-toolbar">
+      <span id="pdfSourceLabel" title="Which Congressional release PDF is displayed" style="font-size:11px;color:var(--muted);font-weight:600;margin-right:6px;padding:3px 8px;background:var(--panel-2);border-radius:4px;border:1px solid var(--border-2);white-space:nowrap">Part 1</span>
+      <button id="pdfPrev" onclick="pdfPrevPage()">◀ Prev</button>
+      <input type="number" class="pdf-page-input" id="pdfPageInput" value="1" min="1" max="140" onchange="pdfGoToPage(this.value)">
+      <span class="pdf-page-label">/ <span id="pdfTotalPages">140</span></span>
+      <button id="pdfNext" onclick="pdfNextPage()">Next ▶</button>
+      <span class="pdf-zoom-label" id="pdfZoomLabel">100%</span>
+      <button onclick="pdfZoom(-0.2)" style="font-size:12px;padding:4px 8px">−</button>
+      <button onclick="pdfZoom(0.2)" style="font-size:12px;padding:4px 8px">+</button>
+      <button onclick="pdfFit('width')" title="Fit width" style="font-size:12px;padding:4px 8px">↔ Width</button>
+      <button onclick="pdfFit('height')" title="Fit height" style="font-size:12px;padding:4px 8px">↕ Height</button>
+      <select id="pdfViewMode" class="pdf-view-mode" onchange="setPdfViewMode(this.value)" title="PDF layout">
+        <option value="single">Single page</option>
+        <option value="double">Double page</option>
+        <option value="continuous">Continuous scroll</option>
+      </select>
+    </div>
+    <div class="pdf-viewer-container" id="pdfViewerContainer">
+      <div class="pdf-loading" id="pdfLoading">
+        <div class="spinner"></div>
+        <div>Loading PDF...</div>
+      </div>
+      <div class="pdf-page-view" id="pdfPageView" style="display:none">
+        <canvas id="pdfCanvas"></canvas>
+        <canvas id="pdfCanvas2" style="display:none"></canvas>
+      </div>
+      <div class="pdf-continuous-view" id="pdfContinuousView" style="display:none"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ============================================================
+// Config & State
+// ============================================================
+const SOURCES = {
+  part1: {
+    json: 'part1.json',
+    pageMap: 'part1_page_map.json',
+    pdf: 'slack-part1.pdf',
+    label: 'Part 1: Feb–Apr 2020',
+  },
+  part2: {
+    json: 'part2.json',
+    pageMap: 'part2_page_map.json',
+    pdf: 'slack-part2.pdf',
+    label: 'Part 2: Apr 2020–Jun 2023',
+  },
+};
+const DEFAULT_PDF_SOURCE = 'part1';   // which PDF shows on page load
+
+let diaryData = null;                 // merged { total_entries, date_range, entries[] }
+let pageMaps = { part1: {}, part2: {} };
+let pdfDocs = { part1: null, part2: null };
+let currentPdfSource = DEFAULT_PDF_SOURCE;
+let pdfDoc = null;                    // always the currently active PDF doc
+let currentPage = 1;
+let pdfScale = 1.2;
+let pdfViewMode = 'single'; // 'single' | 'double' | 'continuous'
+let isRendering = false;
+let pendingPage = null;
+let pdfRenderTask = null;
+let pdfRenderTask2 = null;
+let pdfContinuousIo = null;
+let pdfContinuousKey = '';
+let pdfContinuousScrollTimer = null;
+let pdfPageAspect = 1.3; // height/width, updated from first rendered page
+let timelineChart = null;
+// hitsChart removed: hits are the right half of timelineChart
+let activeResultIdx = -1;
+let currentLayout = 'landscape';
+let lastSearchResults = null;
+let lastSearchQuery = '';
+let currentHitPositions = {};  // { resultIdx: [pos1, pos2, ...] }
+let currentHitIdx = {};        // { resultIdx: 0 }
+
+// ============================================================
+// PDF.js setup
+// ============================================================
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
+
+// ============================================================
+// Load data
+// ============================================================
+function loadErrorHelp(err) {
+  const msg = (err && err.message) ? err.message : String(err);
+  const isFile = location.protocol === 'file:';
+  // page_based = static bundle (no serve.py). server_based = local helper script.
+  const looksServerBased = /server_based/i.test(location.pathname);
+  let help;
+  if (isFile) {
+    help =
+      'Browsers block loading JSON/PDF from <code>file://</code> URLs.<br>' +
+      'Serve this folder over HTTP, then open the http URL:<br>' +
+      '<code style="display:block;margin-top:6px;padding:6px 8px;background:#111;border-radius:4px">' +
+      'cd page_based && python3 -m http.server 8080</code>' +
+      '→ <code>http://localhost:8080</code><br>' +
+      'Or use the local app: <code>cd server_based && bash start_search.sh</code>';
+  } else if (looksServerBased) {
+    help =
+      'Could not load data. From <code>server_based/</code> run ' +
+      '<code>bash start_search.sh</code> (or <code>python3 serve.py</code>) and open ' +
+      '<code>http://localhost:8765</code>.';
+  } else {
+    help =
+      'Could not load the diary data, page maps, or PDFs from this folder.<br>' +
+      'For the static <b>page_based</b> build, any HTTP server is enough ' +
+      '(GitHub Pages, or <code>python3 -m http.server</code>). ' +
+      '<code>serve.py</code> is only for the <b>server_based</b> variant.';
+  }
+  return '<div style="color:var(--accent);max-width:420px;margin:0 auto;line-height:1.5">' +
+    '<b>Error loading:</b> ' + escapeHtml(msg) + '<br><br>' + help + '</div>';
+}
+
+async function loadData() {
+  try {
+    // ── Fetch both datasets in parallel ──
+    const [p1Resp, p2Resp] = await Promise.all([
+      fetch(SOURCES.part1.json),
+      fetch(SOURCES.part2.json),
+    ]);
+    if (!p1Resp.ok) throw new Error('HTTP ' + p1Resp.status + ' for ' + SOURCES.part1.json);
+    if (!p2Resp.ok) throw new Error('HTTP ' + p2Resp.status + ' for ' + SOURCES.part2.json);
+
+    const p1Data = await p1Resp.json();
+    const p2Data = await p2Resp.json();
+
+    // Tag every entry with its source, then merge into one timeline
+    p1Data.entries.forEach(function(e) { e.source = 'part1'; });
+    p2Data.entries.forEach(function(e) { e.source = 'part2'; });
+    const allEntries = p1Data.entries.concat(p2Data.entries);
+
+    diaryData = {
+      title: 'P.O. Slack',
+      released_by: 'Chairman Rand Paul',
+      total_entries: allEntries.length,
+      date_range: {
+        start: p1Data.date_range.start,   // 2020-02-01
+        end: p2Data.date_range.end,       // 2023-06-28
+      },
+      entries: allEntries,
+    };
+
+    document.getElementById('entryStats').textContent =
+      diaryData.total_entries + ' entries \u00b7 ' + diaryData.date_range.start + ' to ' + diaryData.date_range.end;
+
+    syncJumpDateInputBounds();
+    drawTimeline();
+
+    // ── Fetch both page maps in parallel ──
+    const [pm1Resp, pm2Resp] = await Promise.all([
+      fetch(SOURCES.part1.pageMap),
+      fetch(SOURCES.part2.pageMap),
+    ]);
+    if (!pm1Resp.ok) throw new Error('HTTP ' + pm1Resp.status + ' for ' + SOURCES.part1.pageMap);
+    if (!pm2Resp.ok) throw new Error('HTTP ' + pm2Resp.status + ' for ' + SOURCES.part2.pageMap);
+
+    pageMaps.part1 = await pm1Resp.json();
+    pageMaps.part2 = await pm2Resp.json();
+
+    // ── Load the default PDF first for immediate display ──
+    pdfDocs[DEFAULT_PDF_SOURCE] = await pdfjsLib.getDocument(SOURCES[DEFAULT_PDF_SOURCE].pdf).promise;
+    pdfDoc = pdfDocs[DEFAULT_PDF_SOURCE];
+    currentPdfSource = DEFAULT_PDF_SOURCE;
+    updatePdfSourceUI();
+
+    document.getElementById('pdfLoading').style.display = 'none';
+    applyPdfViewModeDom();
+    renderPdfPage(pendingPage || 1);
+
+    // ── Load the other PDF in the background ──
+    var otherSource = (DEFAULT_PDF_SOURCE === 'part1') ? 'part2' : 'part1';
+    pdfjsLib.getDocument(SOURCES[otherSource].pdf).promise.then(function(doc) {
+      pdfDocs[otherSource] = doc;
+      // If user already switched to this source, render the pending page
+      if (currentPdfSource === otherSource) {
+        pdfDoc = doc;
+        updatePdfSourceUI();
+        if (pendingPage) renderPdfPage(pendingPage);
+      }
+    }).catch(function(err) {
+      console.error('Background load of ' + otherSource + ' PDF failed:', err);
+    });
+
+  } catch (err) {
+    console.error('Load error:', err);
+    const html = loadErrorHelp(err);
+    document.getElementById('pdfLoading').innerHTML = html;
+    const panel = document.getElementById('resultsPanel');
+    if (panel && !diaryData) {
+      panel.innerHTML = '<div class="placeholder">' + html + '</div>';
+    }
+  }
+}
+
+// ── Switch the PDF viewer to a different source's PDF ──
+function switchPdfSource(source) {
+  if (!source || !SOURCES[source]) return;
+  if (currentPdfSource === source && pdfDoc) return;  // already showing
+  currentPdfSource = source;
+  pdfDoc = pdfDocs[source];
+  pdfContinuousKey = ''; // force continuous slots to rebuild for new PDF
+  updatePdfSourceUI();
+}
+
+function updatePdfSourceUI() {
+  if (!pdfDoc) return;
+  document.getElementById('pdfTotalPages').textContent = pdfDoc.numPages;
+  var inp = document.getElementById('pdfPageInput');
+  if (inp) inp.max = pdfDoc.numPages;
+  var labelEl = document.getElementById('pdfSourceLabel');
+  if (labelEl) labelEl.textContent = SOURCES[currentPdfSource].label;
+}
+
+// ============================================================
+// PDF rendering — single / double / continuous modes
+// ============================================================
+function applyPdfViewModeDom() {
+  var container = document.getElementById('pdfViewerContainer');
+  var pageView = document.getElementById('pdfPageView');
+  var contView = document.getElementById('pdfContinuousView');
+  var canvas2 = document.getElementById('pdfCanvas2');
+  if (!container || !pageView || !contView) return;
+  container.classList.toggle('pdf-mode-continuous', pdfViewMode === 'continuous');
+  if (pdfViewMode === 'continuous') {
+    pageView.style.display = 'none';
+    contView.style.display = 'block';
+  } else {
+    contView.style.display = 'none';
+    pageView.style.display = 'flex';
+    if (canvas2) canvas2.style.display = pdfViewMode === 'double' ? 'block' : 'none';
+  }
+  var sel = document.getElementById('pdfViewMode');
+  if (sel && sel.value !== pdfViewMode) sel.value = pdfViewMode;
+}
+
+function setPdfViewMode(mode) {
+  if (mode !== 'single' && mode !== 'double' && mode !== 'continuous') mode = 'single';
+  if (pdfViewMode === mode) return;
+  pdfViewMode = mode;
+  // Continuous structure is scale/source sensitive — force rebuild on enter.
+  if (mode === 'continuous') pdfContinuousKey = '';
+  applyPdfViewModeDom();
+  if (pdfDoc) renderPdfPage(currentPage || 1);
+}
+
+async function paintPdfPageToCanvas(pageNum, canvas, taskSlot) {
+  const page = await pdfDoc.getPage(pageNum);
+  const viewport = page.getViewport({ scale: pdfScale });
+  if (viewport.width > 0) pdfPageAspect = viewport.height / viewport.width;
+  const ctx = canvas.getContext('2d');
+  canvas.width = viewport.width;
+  canvas.height = viewport.height;
+  canvas.style.width = viewport.width + 'px';
+  canvas.style.height = viewport.height + 'px';
+  var task = page.render({ canvasContext: ctx, viewport: viewport });
+  if (taskSlot === 2) pdfRenderTask2 = task; else pdfRenderTask = task;
+  try {
+    await task.promise;
+  } finally {
+    if (taskSlot === 2) pdfRenderTask2 = null; else pdfRenderTask = null;
+  }
+}
+
+function cancelPdfTasks() {
+  if (pdfRenderTask) {
+    try { pdfRenderTask.cancel(); } catch (e) { /* ignore */ }
+    pdfRenderTask = null;
+  }
+  if (pdfRenderTask2) {
+    try { pdfRenderTask2.cancel(); } catch (e) { /* ignore */ }
+    pdfRenderTask2 = null;
+  }
+}
+
+async function renderPdfPage(pageNum) {
+  pageNum = parseInt(pageNum, 10);
+  if (!pageNum || pageNum < 1) return;
+
+  pendingPage = pageNum;
+  if (!pdfDoc) return;
+  if (isRendering) return;
+
+  isRendering = true;
+  while (pendingPage !== null && pdfDoc) {
+    let target = pendingPage;
+    pendingPage = null;
+    if (target < 1) target = 1;
+    if (target > pdfDoc.numPages) target = pdfDoc.numPages;
+    currentPage = target;
+    document.getElementById('pdfPageInput').value = target;
+
+    try {
+      cancelPdfTasks();
+      applyPdfViewModeDom();
+
+      if (pdfViewMode === 'continuous') {
+        await ensureContinuousStructure();
+        if (pendingPage !== null) continue;
+        scrollContinuousToPage(target, true);
+        markContinuousCurrent(target);
+        // Visible slots render via IntersectionObserver; force near pages.
+        renderContinuousNeighborhood(target);
+      } else if (pdfViewMode === 'double') {
+        const c1 = document.getElementById('pdfCanvas');
+        const c2 = document.getElementById('pdfCanvas2');
+        c2.style.display = (target < pdfDoc.numPages) ? 'block' : 'none';
+        await paintPdfPageToCanvas(target, c1, 1);
+        if (pendingPage !== null) continue;
+        if (target < pdfDoc.numPages) {
+          await paintPdfPageToCanvas(target + 1, c2, 2);
+        }
+      } else {
+        // single
+        document.getElementById('pdfCanvas2').style.display = 'none';
+        await paintPdfPageToCanvas(target, document.getElementById('pdfCanvas'), 1);
+      }
+    } catch (err) {
+      if (err && (err.name === 'RenderingCancelledException' || err.message === 'Rendering cancelled')) {
+        // superseded
+      } else {
+        console.error('Render error page ' + target + ':', err);
+      }
+      cancelPdfTasks();
+    }
+  }
+  isRendering = false;
+}
+
+async function ensureContinuousStructure() {
+  if (!pdfDoc) return;
+  var cont = document.getElementById('pdfContinuousView');
+  var key = currentPdfSource + ':' + pdfDoc.numPages + ':' + pdfScale.toFixed(3);
+  if (pdfContinuousKey === key && cont.childElementCount === pdfDoc.numPages) return;
+
+  if (pdfContinuousIo) {
+    pdfContinuousIo.disconnect();
+    pdfContinuousIo = null;
+  }
+  cont.innerHTML = '';
+  pdfContinuousKey = key;
+
+  // Prefer real page-1 metrics when cheap; else use last known aspect.
+  try {
+    var p1 = await pdfDoc.getPage(1);
+    var vp = p1.getViewport({ scale: pdfScale });
+    if (vp.width > 0) pdfPageAspect = vp.height / vp.width;
+  } catch (e) { /* keep prior aspect */ }
+
+  var container = document.getElementById('pdfViewerContainer');
+  var availW = Math.max(120, container.clientWidth - 24);
+  var cssW = Math.min(availW, Math.round(availW)); // full width fit for continuous slots
+  // Continuous mode uses pdfScale for render; slot min-height matches scaled page.
+  var estW = Math.round(612 * pdfScale); // letter-ish fallback
+  try {
+    var page = await pdfDoc.getPage(1);
+    estW = Math.round(page.getViewport({ scale: pdfScale }).width);
+  } catch (e2) { /* fallback */ }
+  var estH = Math.round(estW * pdfPageAspect);
+
+  for (var i = 1; i <= pdfDoc.numPages; i++) {
+    var slot = document.createElement('div');
+    slot.className = 'pdf-page-slot';
+    slot.dataset.page = String(i);
+    slot.style.minHeight = (estH + 20) + 'px';
+    var label = document.createElement('div');
+    label.className = 'pdf-page-num';
+    label.textContent = 'Page ' + i;
+    var canvas = document.createElement('canvas');
+    canvas.dataset.page = String(i);
+    canvas.dataset.renderedScale = '';
+    slot.appendChild(label);
+    slot.appendChild(canvas);
+    cont.appendChild(slot);
+  }
+
+  var root = document.getElementById('pdfViewerContainer');
+  pdfContinuousIo = new IntersectionObserver(function(entries) {
+    for (var e = 0; e < entries.length; e++) {
+      if (!entries[e].isIntersecting) continue;
+      var pg = parseInt(entries[e].target.dataset.page, 10);
+      if (pg) renderContinuousPage(pg);
+    }
+  }, { root: root, rootMargin: '400px 0px', threshold: 0.01 });
+
+  for (var j = 0; j < cont.children.length; j++) {
+    pdfContinuousIo.observe(cont.children[j]);
+  }
+
+  if (!root._pdfScrollBound) {
+    root._pdfScrollBound = true;
+    root.addEventListener('scroll', onPdfContinuousScroll, { passive: true });
+  }
+}
+
+async function renderContinuousPage(pageNum) {
+  if (!pdfDoc || pdfViewMode !== 'continuous') return;
+  var cont = document.getElementById('pdfContinuousView');
+  var slot = cont && cont.querySelector('.pdf-page-slot[data-page="' + pageNum + '"]');
+  if (!slot) return;
+  var canvas = slot.querySelector('canvas');
+  if (!canvas) return;
+  var scaleKey = pdfScale.toFixed(3) + ':' + currentPdfSource;
+  if (canvas.dataset.renderedScale === scaleKey && canvas.width > 0) return;
+  if (canvas.dataset.rendering === '1') return;
+  canvas.dataset.rendering = '1';
+  try {
+    var page = await pdfDoc.getPage(pageNum);
+    if (pdfViewMode !== 'continuous') return;
+    var viewport = page.getViewport({ scale: pdfScale });
+    if (viewport.width > 0) pdfPageAspect = viewport.height / viewport.width;
+    var ctx = canvas.getContext('2d');
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    canvas.style.width = viewport.width + 'px';
+    canvas.style.height = viewport.height + 'px';
+    slot.style.minHeight = '';
+    await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+    canvas.dataset.renderedScale = scaleKey;
+  } catch (err) {
+    if (!(err && (err.name === 'RenderingCancelledException' || err.message === 'Rendering cancelled'))) {
+      console.error('Continuous render page ' + pageNum + ':', err);
+    }
+  } finally {
+    canvas.dataset.rendering = '0';
+  }
+}
+
+function renderContinuousNeighborhood(center) {
+  if (!pdfDoc) return;
+  var from = Math.max(1, center - 2);
+  var to = Math.min(pdfDoc.numPages, center + 3);
+  for (var p = from; p <= to; p++) renderContinuousPage(p);
+}
+
+function scrollContinuousToPage(pageNum, instant) {
+  var cont = document.getElementById('pdfContinuousView');
+  var slot = cont && cont.querySelector('.pdf-page-slot[data-page="' + pageNum + '"]');
+  var root = document.getElementById('pdfViewerContainer');
+  if (!slot || !root) return;
+  var elRect = slot.getBoundingClientRect();
+  var rootRect = root.getBoundingClientRect();
+  root.scrollTop += elRect.top - rootRect.top - 8;
+}
+
+function markContinuousCurrent(pageNum) {
+  var cont = document.getElementById('pdfContinuousView');
+  if (!cont) return;
+  var slots = cont.querySelectorAll('.pdf-page-slot');
+  for (var i = 0; i < slots.length; i++) {
+    slots[i].classList.toggle('is-current', parseInt(slots[i].dataset.page, 10) === pageNum);
+  }
+}
+
+function onPdfContinuousScroll() {
+  if (pdfViewMode !== 'continuous') return;
+  clearTimeout(pdfContinuousScrollTimer);
+  pdfContinuousScrollTimer = setTimeout(function() {
+    var root = document.getElementById('pdfViewerContainer');
+    var cont = document.getElementById('pdfContinuousView');
+    if (!root || !cont) return;
+    var rootRect = root.getBoundingClientRect();
+    var best = null, bestDist = Infinity;
+    var slots = cont.querySelectorAll('.pdf-page-slot');
+    for (var i = 0; i < slots.length; i++) {
+      var r = slots[i].getBoundingClientRect();
+      // Prefer the page whose top is nearest just below the container top.
+      var dist = Math.abs(r.top - rootRect.top - 8);
+      if (r.bottom > rootRect.top + 20 && r.top < rootRect.bottom && dist < bestDist) {
+        bestDist = dist;
+        best = parseInt(slots[i].dataset.page, 10);
+      }
+    }
+    if (best && best !== currentPage) {
+      currentPage = best;
+      document.getElementById('pdfPageInput').value = best;
+      markContinuousCurrent(best);
+    }
+  }, 80);
+}
+
+function pdfPrevPage() {
+  if (currentPage > 1) renderPdfPage(currentPage - 1);
+}
+function pdfNextPage() {
+  if (pdfDoc && currentPage < pdfDoc.numPages) renderPdfPage(currentPage + 1);
+}
+function pdfGoToPage(pageStr) {
+  const p = parseInt(pageStr, 10);
+  if (p >= 1 && pdfDoc && p <= pdfDoc.numPages) renderPdfPage(p);
+}
+async function pdfFit(mode) {
+  if (!pdfDoc) return;
+  const page = await pdfDoc.getPage(currentPage);
+  const viewport = page.getViewport({ scale: 1 });
+  const container = document.getElementById('pdfViewerContainer');
+  const padding = 24;
+  const gap = 12;
+  var availW = container.clientWidth - padding;
+  var availH = container.clientHeight - padding;
+  if (pdfViewMode === 'double') {
+    // Two pages side by side with gap
+    availW = (availW - gap) / 2;
+  }
+  const scale = mode === 'width' ? availW / viewport.width : availH / viewport.height;
+  pdfScale = Math.max(0.4, Math.min(3.0, scale));
+  document.getElementById('pdfZoomLabel').textContent = Math.round(pdfScale * 100) + '%';
+  if (pdfViewMode === 'continuous') pdfContinuousKey = '';
+  renderPdfPage(currentPage);
+}
+function pdfZoom(delta) {
+  pdfScale = Math.max(0.4, Math.min(3.0, pdfScale + delta));
+  document.getElementById('pdfZoomLabel').textContent = Math.round(pdfScale * 100) + '%';
+  if (pdfViewMode === 'continuous') pdfContinuousKey = '';
+  renderPdfPage(currentPage);
+}
+
+// ============================================================
+// Layout switching
+// ============================================================
+function updateLayoutToggleLabel() {
+  // Action label = what you switch TO (not current mode)
+  const btn = document.getElementById('layoutToggle');
+  if (!btn) return;
+  const target = currentLayout === 'landscape' ? 'Portrait' : 'Landscape';
+  btn.innerHTML =
+    '<span class="layout-action">Switch to</span>' +
+    '<span class="layout-target">' + target + '</span>';
+  btn.title = 'Switch to ' + target + ' layout';
+}
+
+/**
+ * Prefer instructions to the right of Go (wrapped, ≤3 lines).
+ * If they would need more than 3 lines in the remaining width, place them
+ * on a full-width row under the Switch-to / Jump-to-date controls.
+ */
+function layoutToolbarInstructions() {
+  var toolbar = document.getElementById('mainToolbar');
+  var controls = toolbar && toolbar.querySelector('.toolbar-controls');
+  var instr = document.getElementById('toolbarInstructions');
+  if (!toolbar || !controls || !instr) return;
+
+  // Measure as if beside controls
+  toolbar.classList.remove('toolbar-instr-below');
+  var style = getComputedStyle(instr);
+  var lh = parseFloat(style.lineHeight);
+  if (!isFinite(lh) || lh <= 0) {
+    var fs = parseFloat(style.fontSize) || 12;
+    lh = fs * 1.4;
+  }
+  var toolbarStyle = getComputedStyle(toolbar);
+  var padL = parseFloat(toolbarStyle.paddingLeft) || 0;
+  var padR = parseFloat(toolbarStyle.paddingRight) || 0;
+  var gap = parseFloat(toolbarStyle.gap) || 14;
+  var avail = toolbar.clientWidth - padL - padR - controls.offsetWidth - gap;
+  if (avail < 100) {
+    toolbar.classList.add('toolbar-instr-below');
+    return;
+  }
+
+  // Off-DOM measure at available width
+  var probe = instr.cloneNode(true);
+  probe.id = '';
+  probe.style.cssText =
+    'position:absolute;left:-9999px;top:0;visibility:hidden;display:block;' +
+    'width:' + avail + 'px;font-size:' + style.fontSize + ';' +
+    'line-height:' + style.lineHeight + ';font-family:' + style.fontFamily + ';' +
+    'font-weight:' + style.fontWeight + ';letter-spacing:' + style.letterSpacing + ';' +
+    'white-space:normal;';
+  document.body.appendChild(probe);
+  var lines = probe.scrollHeight / lh;
+  document.body.removeChild(probe);
+
+  if (lines > 3.05) {
+    toolbar.classList.add('toolbar-instr-below');
+  }
+}
+
+function switchLayout() {
+  currentLayout = currentLayout === 'landscape' ? 'portrait' : 'landscape';
+  document.body.className = 'layout-' + currentLayout;
+  updateLayoutToggleLabel();
+  // Clear the size axis that does not apply in the new layout.
+  var pdfPanelEl = document.getElementById('pdfPanel');
+  if (currentLayout === 'portrait') {
+    pdfPanelEl.style.width = '';
+  } else {
+    pdfPanelEl.style.height = '';
+  }
+
+  // Keep collapse control consistent with layout
+  const panel = document.getElementById('chartsPanel');
+  const cbtn = document.getElementById('chartsCollapseBtn');
+  const collapsed = panel.classList.contains('collapsed');
+  if (currentLayout === 'landscape') {
+    cbtn.textContent = collapsed ? '▶' : '◀';
+  } else {
+    cbtn.textContent = collapsed ? '▶' : '▼';
+  }
+
+  // Time axis swaps X↔Y between layouts — never carry zoom across.
+  if (!collapsed) redrawTimelines({ preserveZoom: false });
+  layoutToolbarInstructions();
+}
+
+function toggleCharts() {
+  const panel = document.getElementById('chartsPanel');
+  const collapsing = !panel.classList.contains('collapsed');
+  panel.classList.toggle('collapsed', collapsing);
+  const btn = document.getElementById('chartsCollapseBtn');
+  // Landscape rail uses ▶ / ◀; portrait uses ▼ / ▲
+  if (currentLayout === 'landscape') {
+    btn.textContent = collapsing ? '▶' : '◀';
+    btn.title = collapsing ? 'Expand timeline' : 'Collapse timeline';
+  } else {
+    btn.textContent = collapsing ? '▶' : '▼';
+    btn.title = collapsing ? 'Expand timeline' : 'Collapse timeline';
+  }
+  // After expand, wait for CSS width/height transition then redraw chart
+  if (!collapsing && diaryData) {
+    setTimeout(function() { redrawTimelines(); }, 200);
+  }
+}
+
+// ============================================================
+// Page map helpers
+// Supports: int | [start,end] | {start,end,breaks:[[offset,page],...]}
+// ============================================================
+function getPageNum(val) {
+  if (val === null || val === undefined) return null;
+  if (typeof val === 'number') return val;
+  if (Array.isArray(val)) return val[0];
+  if (typeof val === 'object') {
+    if (typeof val.start === 'number') return val.start;
+    if (typeof val.page === 'number') return val.page;
+  }
+  return null;
+}
+
+function getPageEnd(val) {
+  if (val === null || val === undefined) return null;
+  if (typeof val === 'number') return val;
+  if (Array.isArray(val)) return val[val.length - 1];
+  if (typeof val === 'object' && typeof val.end === 'number') return val.end;
+  return getPageNum(val);
+}
+
+/** PDF page for a character offset within the entry's cleaned content. */
+function pageForContentOffset(mapVal, charOffset) {
+  if (mapVal === null || mapVal === undefined) return 1;
+  if (typeof mapVal === 'number') return mapVal;
+  if (Array.isArray(mapVal) && mapVal.length && typeof mapVal[0] === 'number'
+      && (mapVal.length < 2 || typeof mapVal[1] === 'number')
+      && !(Array.isArray(mapVal[0]))) {
+    // legacy [start, end] — no per-hit offsets
+    return mapVal[0];
+  }
+  if (typeof mapVal === 'object' && Array.isArray(mapVal.breaks) && mapVal.breaks.length) {
+    let page = mapVal.breaks[0][1];
+    const off = (charOffset === null || charOffset === undefined) ? 0 : charOffset;
+    for (let i = 0; i < mapVal.breaks.length; i++) {
+      const bOff = mapVal.breaks[i][0];
+      const bPage = mapVal.breaks[i][1];
+      if (off >= bOff) page = bPage;
+      else break;
+    }
+    return page;
+  }
+  return getPageNum(mapVal) || 1;
+}
+
+function pageMapValueForResult(r) {
+  if (!r || !r.entry) return null;
+  const pm = pageMaps[r.entry.source] || {};
+  return pm[String(r.entry.idx)];
+}
+
+function pdfPageForHit(resultIdx, hitIdx) {
+  const r = window._searchResults && window._searchResults[resultIdx];
+  if (!r) return 1;
+  const mapVal = pageMapValueForResult(r);
+  const positions = r.hitPositions || currentHitPositions[resultIdx] || [];
+  if (hitIdx === null || hitIdx === undefined || !positions.length) {
+    return pageForContentOffset(mapVal, 0);
+  }
+  const clamped = Math.max(0, Math.min(hitIdx, positions.length - 1));
+  return pageForContentOffset(mapVal, positions[clamped]);
+}
+
+// ============================================================
+// Search — boolean expressions with AND / OR / | / () / phrases
+// ============================================================
+// Examples:
+//   "conspiracy theory"              exact phrase
+//   conspiracy theory                AND (both words, any order)
+//   blue|green                       OR
+//   ((blue OR green) AND (car|train)) OR 'white plane'
+// Case: checkbox “Aa case sensitive” (default off = ignore case)
+// ============================================================
+function isCaseSensitive() {
+  const el = document.getElementById('caseSensitive');
+  return !!(el && el.checked);
+}
+
+function escapeRegex(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function findAllPositions(text, term, caseSensitive) {
+  const positions = [];
+  if (!term) return positions;
+  // Wildcard * in a term → .*
+  let pattern;
+  if (term.indexOf('*') >= 0) {
+    pattern = term.split('*').map(escapeRegex).join('.*');
+  } else {
+    pattern = escapeRegex(term);
+  }
+  const flags = caseSensitive ? 'g' : 'gi';
+  let re;
+  try {
+    re = new RegExp(pattern, flags);
+  } catch (e) {
+    return positions;
+  }
+  let m;
+  while ((m = re.exec(text)) !== null) {
+    positions.push(m.index);
+    if (m[0].length === 0) {
+      re.lastIndex++;
+      if (re.lastIndex > text.length) break;
+    }
+  }
+  return positions;
+}
+
+/**
+ * Tokenize a boolean query.
+ * Tokens: PHRASE, WORD, AND, OR, LP, RP
+ */
+function tokenizeQuery(raw) {
+  const tokens = [];
+  let i = 0;
+  const n = raw.length;
+  while (i < n) {
+    const ch = raw[i];
+    if (/\s/.test(ch)) { i++; continue; }
+    if (ch === '(') { tokens.push({ type: 'LP' }); i++; continue; }
+    if (ch === ')') { tokens.push({ type: 'RP' }); i++; continue; }
+    if (ch === '|') { tokens.push({ type: 'OR' }); i++; continue; }
+    if (ch === '"' || ch === "'") {
+      const q = ch;
+      i++;
+      let s = '';
+      while (i < n && raw[i] !== q) { s += raw[i]; i++; }
+      if (i < n && raw[i] === q) i++; // closing quote
+      tokens.push({ type: 'TERM', value: s });
+      continue;
+    }
+    // Word / operator
+    let w = '';
+    while (i < n && !/\s/.test(raw[i]) && raw[i] !== '(' && raw[i] !== ')' && raw[i] !== '|' && raw[i] !== '"' && raw[i] !== "'") {
+      w += raw[i];
+      i++;
+    }
+    if (!w) { i++; continue; }
+    const up = w.toUpperCase();
+    if (up === 'AND' || up === '&&') tokens.push({ type: 'AND' });
+    else if (up === 'OR' || up === '||') tokens.push({ type: 'OR' });
+    else tokens.push({ type: 'TERM', value: w });
+  }
+  return tokens;
+}
+
+/**
+ * Parse tokens into AST.
+ *   orExpr  := andExpr (OR andExpr)*
+ *   andExpr := unary (AND unary | unary)*   // juxtaposition = AND
+ *   unary   := TERM | PHRASE | ( orExpr )
+ */
+function parseQuery(tokens) {
+  let pos = 0;
+  function peek() { return tokens[pos]; }
+  function take() { return tokens[pos++]; }
+
+  function parseOr() {
+    let left = parseAnd();
+    while (peek() && peek().type === 'OR') {
+      take();
+      const right = parseAnd();
+      left = { op: 'OR', left: left, right: right };
+    }
+    return left;
+  }
+
+  function parseAnd() {
+    let left = parseUnary();
+    if (!left) return null;
+    while (peek()) {
+      const t = peek();
+      if (t.type === 'OR' || t.type === 'RP') break;
+      if (t.type === 'AND') {
+        take();
+        const right = parseUnary();
+        if (!right) break;
+        left = { op: 'AND', left: left, right: right };
+        continue;
+      }
+      // Implicit AND: next term or group
+      if (t.type === 'TERM' || t.type === 'LP') {
+        const right = parseUnary();
+        if (!right) break;
+        left = { op: 'AND', left: left, right: right };
+        continue;
+      }
+      break;
+    }
+    return left;
+  }
+
+  function parseUnary() {
+    const t = peek();
+    if (!t) return null;
+    if (t.type === 'LP') {
+      take();
+      const inner = parseOr();
+      if (peek() && peek().type === 'RP') take();
+      return inner;
+    }
+    if (t.type === 'TERM') {
+      take();
+      return { op: 'TERM', value: t.value };
+    }
+    // Skip stray AND/OR
+    if (t.type === 'AND' || t.type === 'OR') {
+      take();
+      return parseUnary();
+    }
+    return null;
+  }
+
+  const ast = parseOr();
+  return ast;
+}
+
+/** Evaluate AST against entry text → { matched, positions, terms } */
+function evalQuery(ast, text, caseSensitive) {
+  if (!ast) return { matched: false, positions: [], terms: [] };
+
+  if (ast.op === 'TERM') {
+    const positions = findAllPositions(text, ast.value, caseSensitive);
+    return {
+      matched: positions.length > 0,
+      positions: positions,
+      terms: [ast.value]
+    };
+  }
+
+  if (ast.op === 'OR') {
+    const a = evalQuery(ast.left, text, caseSensitive);
+    const b = evalQuery(ast.right, text, caseSensitive);
+    const matched = a.matched || b.matched;
+    const positions = matched
+      ? Array.from(new Set(a.positions.concat(b.positions))).sort(function(x, y) { return x - y; })
+      : [];
+    // Only keep terms from sides that matched (cleaner highlights)
+    const terms = [];
+    if (a.matched) terms.push.apply(terms, a.terms);
+    if (b.matched) terms.push.apply(terms, b.terms);
+    return { matched: matched, positions: positions, terms: terms };
+  }
+
+  if (ast.op === 'AND') {
+    const a = evalQuery(ast.left, text, caseSensitive);
+    const b = evalQuery(ast.right, text, caseSensitive);
+    const matched = a.matched && b.matched;
+    const positions = matched
+      ? Array.from(new Set(a.positions.concat(b.positions))).sort(function(x, y) { return x - y; })
+      : [];
+    const terms = matched ? a.terms.concat(b.terms) : [];
+    return { matched: matched, positions: positions, terms: terms };
+  }
+
+  return { matched: false, positions: [], terms: [] };
+}
+
+/** Collect leaf terms from AST for highlighting (all leaves). */
+function collectTerms(ast, out) {
+  if (!ast) return out;
+  if (ast.op === 'TERM') { out.push(ast.value); return out; }
+  collectTerms(ast.left, out);
+  collectTerms(ast.right, out);
+  return out;
+}
+
+function doSearch() {
+  const raw = document.getElementById('searchInput').value.trim();
+  if (!raw || !diaryData) return;
+
+  browseMode = false; // leaving chronological browse for search hits
+
+  const caseSensitive = isCaseSensitive();
+  let ast = null;
+  try {
+    ast = parseQuery(tokenizeQuery(raw));
+  } catch (e) {
+    console.error('Query parse error:', e);
+    ast = null;
+  }
+  if (!ast) return;
+
+  const results = [];
+  for (let i = 0; i < diaryData.entries.length; i++) {
+    const entry = diaryData.entries[i];
+    const text = entry.content || '';
+    const ev = evalQuery(ast, text, caseSensitive);
+    if (ev.matched && ev.positions.length > 0) {
+      results.push({
+        idx: i,
+        entry: entry,
+        hits: ev.positions.length,
+        hitPositions: ev.positions,
+        matchTerms: ev.terms
+      });
+    } else if (ev.matched) {
+      results.push({
+        idx: i,
+        entry: entry,
+        hits: 1,
+        hitPositions: [0],
+        matchTerms: ev.terms
+      });
+    }
+  }
+
+  results.sort(function(a, b) {
+    var da = a.entry.date, db = b.entry.date;
+    if (da === 'prologue') return -1;
+    if (db === 'prologue') return 1;
+    return da < db ? -1 : da > db ? 1 : 0;
+  });
+
+  lastSearchResults = results;
+  lastSearchQuery = raw;
+  window._lastSearchAst = ast;
+  currentHitPositions = {};
+  currentHitIdx = {};
+
+  displayResults(results, raw);
+  redrawTimelines();
+}
+
+function clearSearch() {
+  document.getElementById('searchInput').value = '';
+  document.getElementById('resultsPanel').innerHTML =
+    '<div class="placeholder"><h2>Search P.O. Slack</h2>' +
+    '<p>Enter a search term above to find mentions across all ' +
+    (diaryData ? diaryData.total_entries : 11415) + ' Slack entries.</p></div>';
+  lastSearchResults = null;
+  lastSearchQuery = '';
+  window._searchResults = null;
+  currentHitPositions = {};
+  currentHitIdx = {};
+  activeResultIdx = -1;
+  browseMode = false;
+  document.getElementById('chartStats').textContent = 'search to filter';
+  redrawTimelines();
+}
+
+// ============================================================
+// Dual-sided vertical timeline (ONE chart, shared Y = calendar day)
+//   LEFT  (negative X): all diary entries
+//   RIGHT (positive X): search hits on the same dates
+// ============================================================
+function formatLocalISO(d) {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return y + '-' + m + '-' + day;
+}
+function parseLocalISO(iso) {
+  const p = iso.split('-').map(Number);
+  return new Date(p[0], p[1] - 1, p[2]);
+}
+
+let timelineSeries = null; // { labels, entryCounts, entryColors, entryDays, totalDays }
+
+function buildTimelineSeries() {
+  const dateCounts = {};
+  for (const e of diaryData.entries) {
+    dateCounts[e.date] = (dateCounts[e.date] || 0) + 1;
+  }
+
+  const yearColors = {
+    '2001': '#ff5e5e',   '2002': '#5eff5e',   '2003': '#ffe14d',
+    '2004': '#5eb5ff',   '2005': '#ff9b3d',   '2006': '#c45eff',
+    '2007': '#5effd9',   '2008': '#ff5ec4',   '2009': '#a8ff5e',
+    '2010': '#5e8fff',   '2011': '#ffd45e',   '2012': '#5effa8',
+    '2013': '#ff7e5e',   '2014': '#9d5eff',   '2015': '#5effe4',
+    '2016': '#ffb35e',   '2017': '#7e5eff',   '2018': '#d4ff5e',
+    '2019': 'rgba(160, 170, 240, 1)',
+    '2020': 'rgba(255, 90, 120, 1)',
+    '2021': 'rgba(110, 235, 195, 1)',
+    '2022': 'rgba(255, 195, 60, 1)',
+    '2023': 'rgba(120, 200, 255, 1)',
+  };
+  function colorForYear(yearStr) {
+    return yearColors[yearStr] || 'rgba(100,100,100,0.8)';
+  }
+  const gapColor = 'rgba(80, 80, 80, 0.4)';
+
+  const labels = [];
+  const entryCounts = [];
+  const entryColors = [];
+  let d = parseLocalISO(diaryData.date_range.start);
+  const end = parseLocalISO(diaryData.date_range.end);
+  let entryDays = 0;
+
+  while (d <= end) {
+    const iso = formatLocalISO(d);
+    const count = dateCounts[iso] || 0;
+    labels.push(iso);
+    entryCounts.push(count);
+    entryColors.push(count > 0 ? colorForYear(iso.slice(0, 4)) : gapColor);
+    if (count > 0) entryDays++;
+    d.setDate(d.getDate() + 1);
+  }
+
+  timelineSeries = {
+    labels: labels,
+    entryCounts: entryCounts,
+    entryColors: entryColors,
+    entryDays: entryDays,
+    totalDays: labels.length,
+  };
+  return timelineSeries;
+}
+
+function getTimelineSeries() {
+  return timelineSeries || buildTimelineSeries();
+}
+
+function hitCountsForSeries(results) {
+  const series = getTimelineSeries();
+  const byDate = {};
+  if (results) {
+    for (const r of results) {
+      byDate[r.entry.date] = (byDate[r.entry.date] || 0) + r.hits;
+    }
+  }
+  return series.labels.map(function(iso) { return byDate[iso] || 0; });
+}
+
+// Scroll a result card so it sits at the top of the results reading area.
+function scrollResultToPanelTop(resultIdx) {
+  var panel = document.getElementById('resultsPanel');
+  var el = document.getElementById('result-' + resultIdx);
+  if (!panel || !el) return;
+  var elRect = el.getBoundingClientRect();
+  var panelRect = panel.getBoundingClientRect();
+  panel.scrollTop += elRect.top - panelRect.top;
+}
+
+/**
+ * Closest diary entry date to targetIso (YYYY-MM-DD).
+ * Exact match if present; else nearest previous entry day; else next.
+ */
+function findClosestEntryDate(targetIso) {
+  if (!targetIso || !diaryData) return null;
+  var series = getTimelineSeries();
+  var bestPrev = null;
+  var bestNext = null;
+  for (var i = 0; i < series.labels.length; i++) {
+    if ((series.entryCounts[i] || 0) <= 0) continue;
+    var d = series.labels[i];
+    if (d === targetIso) return d;
+    if (d < targetIso) bestPrev = d;
+    else if (d > targetIso && bestNext === null) bestNext = d;
+  }
+  return bestPrev || bestNext || null;
+}
+
+function normalizeJumpDateValue(raw) {
+  raw = String(raw || '').trim();
+  if (!raw) return null;
+  // HTML date input: YYYY-MM-DD
+  var m = raw.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+  if (!m) return null;
+  var y = m[1];
+  var mo = ('0' + m[2]).slice(-2);
+  var day = ('0' + m[3]).slice(-2);
+  var iso = y + '-' + mo + '-' + day;
+  // Validate calendar day
+  var dt = parseLocalISO(iso);
+  if (isNaN(dt.getTime())) return null;
+  if (formatLocalISO(dt) !== iso) return null;
+  return iso;
+}
+
+function goToJumpDate() {
+  var input = document.getElementById('jumpDateInput');
+  if (!input || !diaryData) return;
+  var iso = normalizeJumpDateValue(input.value);
+  if (!iso) return;
+  var closest = findClosestEntryDate(iso);
+  if (!closest) return;
+  input.value = closest;
+  // Same browse window as raw entry-bar clicks (surrounding entries + scroll).
+  openEntryFromRawBar(closest);
+}
+
+function syncJumpDateInputBounds() {
+  var input = document.getElementById('jumpDateInput');
+  if (!input || !diaryData || !diaryData.date_range) return;
+  input.min = diaryData.date_range.start;
+  input.max = diaryData.date_range.end;
+  if (!input.value) input.value = diaryData.date_range.start;
+}
+
+/**
+ * Pan/zoom the timeline so `date` is in view (centered when possible).
+ * Does not change search results or select an entry — visual focus only.
+ */
+function focusTimelineOnDate(date) {
+  if (!timelineChart || !date) return false;
+  var series = getTimelineSeries();
+  var idx = series.labels.indexOf(date);
+  if (idx < 0) return false;
+
+  var axisId = timelineTimeAxisId(timelineChart);
+  var scale = timelineChart.scales[axisId];
+  var fullMax = Math.max(1, series.labels.length - 1);
+
+  // Keep current zoom span if already zoomed in; otherwise open ~4 months.
+  var span = Math.min(120, fullMax);
+  if (scale && scale.min != null && scale.max != null &&
+      isFinite(scale.min) && isFinite(scale.max)) {
+    var cur = Math.abs(Number(scale.max) - Number(scale.min));
+    if (cur >= 14 && cur < fullMax - 1) span = cur;
+  }
+  span = Math.max(14, Math.min(span, fullMax));
+
+  var min = Math.max(0, Math.min(idx - span / 2, fullMax - span));
+  var max = Math.min(fullMax, min + span);
+  min = Math.max(0, max - span);
+  if (!(max > min)) {
+    min = Math.max(0, idx - 7);
+    max = Math.min(fullMax, idx + 7);
+  }
+
+  // Set scale limits both via plugin API and options (plugin alone can no-op
+  // on a fresh category scale before any wheel-zoom has run).
+  var optScale = timelineChart.options.scales && timelineChart.options.scales[axisId];
+  if (optScale) {
+    optScale.min = min;
+    optScale.max = max;
+  }
+  try {
+    if (typeof timelineChart.zoomScale === 'function') {
+      timelineChart.zoomScale(axisId, { min: min, max: max }, 'none');
+    } else {
+      timelineChart.update('none');
+    }
+  } catch (err) {
+    console.warn('focusTimelineOnDate zoom failed:', err);
+    timelineChart.update('none');
+  }
+
+  var jumpInput = document.getElementById('jumpDateInput');
+  if (jumpInput) jumpInput.value = date;
+  return true;
+}
+
+function jumpToDate(date) {
+  if (!diaryData) return;
+  // Find the first entry matching this date
+  var foundEntry = null, foundIdx = -1;
+  for (var i = 0; i < diaryData.entries.length; i++) {
+    if (diaryData.entries[i].date === date) {
+      foundEntry = diaryData.entries[i];
+      foundIdx = i;
+      break;
+    }
+  }
+  if (!foundEntry) return;
+
+  // Search active + this date is a hit: keep full hit list, scroll to card, open PDF.
+  // lastSearchResults (not window._searchResults) survives panel rebuilds.
+  if (lastSearchResults) {
+    var matchIdx = -1;
+    for (var j = 0; j < lastSearchResults.length; j++) {
+      if (lastSearchResults[j].entry.date === date) {
+        matchIdx = j;
+        break;
+      }
+    }
+    if (matchIdx >= 0) {
+      var needRebuild = window._searchResults !== lastSearchResults;
+      if (needRebuild) {
+        displayResults(lastSearchResults, lastSearchQuery || '', { autoSelect: false });
+      }
+      function focusMatch() {
+        var r = lastSearchResults[matchIdx];
+        currentHitIdx[matchIdx] = 0;
+        updateHitHighlight(matchIdx, 0);
+        selectResult(matchIdx, pdfPageForHit(matchIdx, 0), r.idx);
+        scrollResultToPanelTop(matchIdx);
+      }
+      if (needRebuild) {
+        requestAnimationFrame(function() {
+          requestAnimationFrame(focusMatch);
+        });
+      } else {
+        focusMatch();
+      }
+      return;
+    }
+    // Search active but this day is not a hit — still open the entry (entry-bar
+    // / jump-to-date browse). lastSearchResults stays so hit bars keep working.
+  }
+
+  // Show this entry alone (autoSelect opens PDF).
+  displayResults([{
+    idx: foundIdx,
+    entry: foundEntry,
+    hits: 0,
+    hitPositions: [],
+    matchTerms: []
+  }], '');
+}
+
+function redrawTimelines(opts) {
+  if (!diaryData) return;
+  opts = opts || {};
+  const series = getTimelineSeries();
+  document.getElementById('timelineStats').textContent =
+    series.entryDays + ' entry-days · ' + series.totalDays + ' days';
+
+  const hitData = hitCountsForSeries(lastSearchResults);
+  const peakHits = hitData.reduce(function(m, v) { return v > m ? v : m; }, 0);
+  // Real max entries/day (do not force 2 — that produced a useless ±2 value axis).
+  const maxEntries = Math.max(1, series.entryCounts.reduce(function(m, v) {
+    return v > m ? v : m;
+  }, 0));
+
+  if (lastSearchResults && lastSearchResults.length) {
+    const totalHits = hitData.reduce(function(a, b) { return a + b; }, 0);
+    const hitDays = hitData.filter(function(v) { return v > 0; }).length;
+    document.getElementById('chartStats').textContent =
+      hitDays + ' days · ' + totalHits + ' hits · peak ' + peakHits;
+  } else if (!lastSearchResults) {
+    document.getElementById('chartStats').textContent = 'search to filter';
+  } else {
+    document.getElementById('chartStats').textContent = 'no hits';
+  }
+
+  const isLandscape = currentLayout === 'landscape';
+  // Hits are fixed-length markers (colour = intensity); never stretch to entry max.
+  const hitBarMax = 1;
+
+  // Fixed-height hit bars; color encodes intensity (yellow→red gradient)
+  const hitBarData = hitData.map(function(v) { return v > 0 ? hitBarMax : 0; });
+  const hitColors = hitData.map(function(v) {
+    if (v <= 0) return 'rgba(60, 60, 60, 0.15)';
+    if (peakHits <= 1) return 'hsl(60, 100%, 50%)';
+    var ratio = (v - 1) / (peakHits - 1);
+    var hue = 60 * (1 - ratio);
+    return 'hsl(' + hue + ', 100%, 50%)';
+  });
+
+  // Header labels depend on orientation
+  const titleLeft = document.querySelector('.timeline-header-row .th-left .chart-title-main');
+  const titleRight = document.querySelector('.timeline-header-row .th-right .chart-title-main');
+  if (titleLeft) titleLeft.textContent = isLandscape ? '← All entries' : 'All entries at bottom';
+  if (titleRight) titleRight.textContent = isLandscape ? 'Search hits →' : 'Search hits at top';
+
+  // Preserve zoom across search/resize only — never when layout flips (axes swap).
+  var savedZoom = (opts.preserveZoom === false) ? null : captureTimelineZoom();
+
+  if (timelineChart) timelineChart.destroy();
+
+  const ctx = document.getElementById('timelineChart').getContext('2d');
+  // autoSkip picks evenly spaced day indices — almost never the 1st of a month.
+  // Always label those samples (full date when zoomed in, YYYY-MM / year when out).
+  const timeTickCb = function(val) {
+    const label = this.getLabelForValue(val);
+    if (!label || label.length < 7) return label || '';
+    var lo = this.min, hi = this.max;
+    var visible = (lo != null && hi != null) ? Math.abs(hi - lo) : series.labels.length;
+    if (visible <= 90) return label;                 // full YYYY-MM-DD
+    if (visible <= 750) return label.slice(0, 7);    // YYYY-MM
+    if (label.slice(5, 10) === '01-01') return label.slice(0, 4); // year on Jan 1
+    return label.slice(0, 7);                        // YYYY-MM for other samples
+  };
+
+  if (isLandscape) {
+    // ── Landscape: vertical TIME axis; entries LEFT of 0, hits RIGHT ──
+    // stacked:true so both series share the full category band (diverging
+    // from x=0). Grouped (stacked:false) halves bar thickness and makes
+    // hit bars nearly unclickable on a dense day axis.
+    const entryNeg = series.entryCounts.map(function(c) { return -c; });
+    timelineChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: series.labels,
+        datasets: [
+          {
+            label: 'Entries',
+            data: entryNeg,
+            backgroundColor: series.entryColors,
+            borderWidth: 0,
+            barPercentage: 1.0,
+            categoryPercentage: 1.0,
+            order: 2,
+          },
+          {
+            label: 'Hits',
+            data: hitBarData,
+            backgroundColor: hitColors,
+            borderWidth: 0,
+            barPercentage: 1.0,
+            categoryPercentage: 1.0,
+            order: 1,
+          }
+        ]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: false,
+        layout: { padding: { top: 0, right: 4, bottom: 0, left: 0 } },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            filter: function(item) {
+              return item.parsed.x !== 0 && item.parsed.x !== null;
+            },
+            callbacks: {
+              title: function(items) { return items[0].label; },
+              label: function(item) {
+                const v = Math.abs(item.parsed.x);
+                if (item.dataset.label === 'Entries') {
+                  return v + (v === 1 ? ' entry' : ' entries');
+                }
+                var hv = hitData[item.dataIndex] || 0;
+                return hv + (hv === 1 ? ' hit' : ' hits');
+              }
+            },
+            backgroundColor: '#1a1a1a', titleColor: '#e94560',
+            bodyColor: '#fff', borderColor: '#333', borderWidth: 1,
+          },
+          zoom: {
+            // Higher threshold so a normal click is not treated as a pan.
+            pan: { enabled: true, mode: 'y', threshold: 12 },
+            zoom: { wheel: { enabled: true, speed: 0.1 }, pinch: { enabled: true }, mode: 'y' },
+            onDblClick: function(chart) { chart.resetZoom(); }
+          }
+        },
+        scales: {
+          // Value axis: entries left (negative), fixed-length hit markers right.
+          // No numeric ticks — they only clutter (±1/±2) without adding info.
+          x: {
+            stacked: true,
+            min: -maxEntries,
+            max: hitBarMax,
+            grace: 0,
+            ticks: { display: false },
+            grid: {
+              color: function(c) {
+                return c.tick.value === 0
+                  ? 'rgba(233,69,96,0.45)'
+                  : 'rgba(50,50,50,0.25)';
+              },
+              lineWidth: function(c) {
+                return c.tick.value === 0 ? 1.5 : 1;
+              }
+            },
+            border: { display: false },
+          },
+          y: {
+            reverse: false,
+            offset: false,
+            ticks: {
+              color: '#fff',
+              autoSkip: true,
+              autoSkipPadding: 4,
+              maxTicksLimit: 40,
+              font: { size: 8 },
+              callback: timeTickCb
+            },
+            grid: {
+              display: true,
+              color: 'rgba(45,45,45,0.3)',
+              drawTicks: false,
+            },
+            border: { display: false },
+          }
+        }
+      }
+    });
+  } else {
+    // ── Portrait: horizontal TIME axis (left→right); vertical bars ──
+    // Entries BELOW the zero line, hits ABOVE it (mirrors landscape's
+    // left/right split around x=0) so a day with both an entry and a hit
+    // doesn't render one bar directly on top of the other.
+    const entryNeg = series.entryCounts.map(function(c) { return -c; });
+    timelineChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: series.labels,
+        datasets: [
+          {
+            label: 'Entries',
+            data: entryNeg,
+            backgroundColor: series.entryColors,
+            borderWidth: 0,
+            barPercentage: 1.0,
+            categoryPercentage: 1.0,
+            order: 2,
+          },
+          {
+            label: 'Hits',
+            data: hitBarData,
+            backgroundColor: hitColors,
+            borderWidth: 0,
+            barPercentage: 1.0,
+            categoryPercentage: 1.0,
+            order: 1,
+          }
+        ]
+      },
+      options: {
+        indexAxis: 'x',
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: false,
+        layout: { padding: { top: 4, right: 8, bottom: 0, left: 4 } },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            filter: function(item) {
+              return item.parsed.y !== 0 && item.parsed.y !== null;
+            },
+            callbacks: {
+              title: function(items) { return items[0].label; },
+              label: function(item) {
+                const v = Math.abs(item.parsed.y);
+                if (item.dataset.label === 'Entries') {
+                  return v + (v === 1 ? ' entry' : ' entries');
+                }
+                var hv = hitData[item.dataIndex] || 0;
+                return hv + (hv === 1 ? ' hit' : ' hits');
+              }
+            },
+            backgroundColor: '#1a1a1a', titleColor: '#e94560',
+            bodyColor: '#fff', borderColor: '#333', borderWidth: 1,
+          },
+          zoom: {
+            pan: { enabled: true, mode: 'x', threshold: 12 },
+            zoom: { wheel: { enabled: true, speed: 0.1 }, pinch: { enabled: true }, mode: 'x' },
+            onDblClick: function(chart) { chart.resetZoom(); }
+          }
+        },
+        scales: {
+          // TIME left → right
+          x: {
+            offset: false,
+            ticks: {
+              color: '#fff',
+              maxRotation: 45,
+              autoSkip: true,
+              autoSkipPadding: 6,
+              maxTicksLimit: 30,
+              font: { size: 9 },
+              callback: timeTickCb
+            },
+            grid: {
+              display: true,
+              color: 'rgba(45,45,45,0.3)',
+              drawTicks: false,
+            },
+            border: { display: false },
+          },
+          // Entries down, hits up — no numeric ticks (colour encodes hit intensity)
+          y: {
+            stacked: true,
+            min: -maxEntries,
+            max: hitBarMax,
+            grace: 0,
+            ticks: { display: false },
+            grid: {
+              color: function(c) {
+                return c.tick.value === 0
+                  ? 'rgba(233,69,96,0.45)'
+                  : 'rgba(50,50,50,0.25)';
+              },
+              lineWidth: function(c) {
+                return c.tick.value === 0 ? 1.5 : 1;
+              }
+            },
+            border: { display: false },
+          }
+        }
+      }
+    });
+  }
+
+  // Re-apply prior zoom after recreate (same layout only).
+  applyTimelineZoom(savedZoom);
+}
+
+// Time axis = Chart indexAxis (category/day scale), NOT currentLayout.
+// currentLayout is flipped before redraw on layout switch while the old
+// chart still exists — using currentLayout here used to read the value
+// axis (≈ -2..2) and re-apply it as a day zoom, collapsing the timeline.
+function timelineTimeAxisId(chart) {
+  if (!chart || !chart.options) return 'x';
+  return chart.options.indexAxis === 'y' ? 'y' : 'x';
+}
+
+function captureTimelineZoom() {
+  if (!timelineChart) return null;
+  var axisId = timelineTimeAxisId(timelineChart);
+  var scale = timelineChart.scales[axisId];
+  if (!scale || scale.min == null || scale.max == null) return null;
+  var fullMax = (getTimelineSeries().labels.length || 1) - 1;
+  // Only treat as zoom if range is a real day-index window.
+  if (scale.min < -0.5 || scale.max < 1) return null;
+  if (scale.min <= 0.5 && scale.max >= fullMax - 0.5) return null;
+  return { indexAxis: axisId, min: scale.min, max: scale.max };
+}
+
+function applyTimelineZoom(saved) {
+  if (!timelineChart || !saved) return;
+  var axisId = timelineTimeAxisId(timelineChart);
+  // Refuse restore when orientation changed (or capture was from value axis).
+  if (saved.indexAxis !== axisId) return;
+  var n = getTimelineSeries().labels.length;
+  if (n < 2) return;
+  var min = Math.max(0, Math.min(Number(saved.min), n - 1));
+  var max = Math.max(0, Math.min(Number(saved.max), n - 1));
+  if (!(max > min)) return;
+  if (typeof timelineChart.zoomScale === 'function') {
+    timelineChart.zoomScale(axisId, { min: min, max: max }, 'none');
+  } else {
+    timelineChart.options.scales[axisId].min = min;
+    timelineChart.options.scales[axisId].max = max;
+    timelineChart.update('none');
+  }
+}
+
+function drawTimeline() { redrawTimelines(); }
+function drawHitsChart() { redrawTimelines(); }
+
+function resetTimelineZoom() {
+  if (timelineChart) timelineChart.resetZoom();
+}
+
+// Track pointer movement so a pan/drag is not treated as a bar click.
+var _tlPtrDown = null;
+// Defer click action so dblclick (zoom reset) can cancel jumpToDate.
+var _tlClickTimer = null;
+var _tlClickDelayMs = 220;
+
+document.getElementById('timelineChart').addEventListener('pointerdown', function(e) {
+  _tlPtrDown = { x: e.clientX, y: e.clientY };
+});
+
+// Resolve calendar-day index (+ value-axis sign) from a click.
+// Uses the chart's real indexAxis (not currentLayout) and CSS→canvas pixels.
+// Returns { idx, value } where value > 0 is the hit side, < 0 the entry side.
+function timelineIndexFromEvent(evt) {
+  if (!timelineChart) return { idx: -1, value: 0 };
+  var rect = timelineChart.canvas.getBoundingClientRect();
+  if (!rect.width || !rect.height) return { idx: -1, value: 0 };
+  var x = (evt.clientX - rect.left) * (timelineChart.width / rect.width);
+  var y = (evt.clientY - rect.top) * (timelineChart.height / rect.height);
+  var ca = timelineChart.chartArea;
+  if (x < ca.left || x > ca.right || y < ca.top || y > ca.bottom) {
+    return { idx: -1, value: 0 };
+  }
+  var timeAxis = timelineTimeAxisId(timelineChart);
+  var valueAxis = timeAxis === 'y' ? 'x' : 'y';
+  var timeScale = timelineChart.scales[timeAxis];
+  var valueScale = timelineChart.scales[valueAxis];
+  if (!timeScale) return { idx: -1, value: 0 };
+  var tPixel = timeAxis === 'y' ? y : x;
+  var vPixel = timeAxis === 'y' ? x : y;
+  var raw = timeScale.getValueForPixel(tPixel);
+  if (raw == null || isNaN(raw)) return { idx: -1, value: 0 };
+  var n = getTimelineSeries().labels.length;
+  var idx = Math.round(raw);
+  idx = Math.max(0, Math.min(idx, n - 1));
+  var value = 0;
+  if (valueScale) {
+    var vv = valueScale.getValueForPixel(vPixel);
+    if (vv != null && !isNaN(vv)) value = vv;
+  }
+  return { idx: idx, value: value };
+}
+
+// Dense time axis: click can land off a visible bar. Search outward for a
+// day with count > 0 (full series if maxRadius omitted).
+function snapToNearestCountedDay(idx, counts, maxRadius) {
+  if (!counts || idx < 0 || idx >= counts.length) return -1;
+  if ((counts[idx] || 0) > 0) return idx;
+  var limit = (maxRadius == null || maxRadius < 0) ? counts.length : maxRadius;
+  for (var r = 1; r <= limit; r++) {
+    if (idx - r >= 0 && (counts[idx - r] || 0) > 0) return idx - r;
+    if (idx + r < counts.length && (counts[idx + r] || 0) > 0) return idx + r;
+  }
+  return -1;
+}
+
+// Browse mode: sliding window of diary entries (not search hits).
+// Window is 2*BROWSE_RADIUS+1 ≈ 101 cards; reloads when scrolling near ends.
+var BROWSE_RADIUS = 50;
+var browseMode = false;
+var _browseReloading = false;
+var _browseScrollTimer = null;
+
+/** Clear search state without wiping the results panel (caller will fill it). */
+function clearSearchStateForBrowse() {
+  var input = document.getElementById('searchInput');
+  if (input) input.value = '';
+  lastSearchResults = null;
+  lastSearchQuery = '';
+  window._searchResults = null;
+  window._lastSearchAst = null;
+  currentHitPositions = {};
+  currentHitIdx = {};
+  activeResultIdx = -1;
+  var stats = document.getElementById('chartStats');
+  if (stats) stats.textContent = 'search to filter';
+}
+
+/** Build chronological window around a diaryData.entries index. */
+function buildBrowseResultsAroundIndex(centerIdx, radius) {
+  if (!diaryData || centerIdx == null || centerIdx < 0) return null;
+  radius = radius == null ? BROWSE_RADIUS : radius;
+  var entries = diaryData.entries;
+  if (centerIdx >= entries.length) return null;
+
+  var from = Math.max(0, centerIdx - radius);
+  var to = Math.min(entries.length - 1, centerIdx + radius);
+  // Don't split same-day groups at the window edges
+  while (from > 0 && entries[from].date === entries[from - 1].date) from--;
+  while (to < entries.length - 1 && entries[to].date === entries[to + 1].date) to++;
+
+  var results = [];
+  var focusLocal = 0;
+  for (var j = from; j <= to; j++) {
+    if (j === centerIdx) focusLocal = results.length;
+    results.push({
+      idx: j,
+      entry: entries[j],
+      hits: 0,
+      hitPositions: [],
+      matchTerms: []
+    });
+  }
+  return { results: results, focusLocal: focusLocal, from: from, to: to, center: centerIdx };
+}
+
+function buildBrowseResultsAroundDate(date, radius) {
+  if (!diaryData || !date) return null;
+  var entries = diaryData.entries;
+  var center = -1;
+  for (var i = 0; i < entries.length; i++) {
+    if (entries[i].date === date) { center = i; break; }
+  }
+  if (center < 0) return null;
+  return buildBrowseResultsAroundIndex(center, radius);
+}
+
+/** Topmost result card still intersecting the results panel viewport. */
+function getTopVisibleBrowseAnchor(panel) {
+  var results = window._searchResults;
+  if (!panel || !results || !results.length) return null;
+  var panelRect = panel.getBoundingClientRect();
+  for (var i = 0; i < results.length; i++) {
+    var el = document.getElementById('result-' + i);
+    if (!el) continue;
+    var rect = el.getBoundingClientRect();
+    if (rect.bottom > panelRect.top + 8) {
+      return {
+        diaryIdx: results[i].idx,
+        offsetFromTop: rect.top - panelRect.top,
+        localIdx: i
+      };
+    }
+  }
+  return {
+    diaryIdx: results[0].idx,
+    offsetFromTop: 0,
+    localIdx: 0
+  };
+}
+
+/**
+ * Rebuild the browse window around centerDiaryIdx, preserving scroll so the
+ * previously visible entry stays put (no jump).
+ */
+function reloadBrowseWindow(centerDiaryIdx, anchor) {
+  if (_browseReloading || !diaryData) return;
+  var pack = buildBrowseResultsAroundIndex(centerDiaryIdx, BROWSE_RADIUS);
+  if (!pack || !pack.results.length) return;
+
+  // Skip no-op if range unchanged
+  var cur = window._searchResults;
+  if (cur && cur.length && pack.results.length === cur.length &&
+      pack.results[0].idx === cur[0].idx &&
+      pack.results[pack.results.length - 1].idx === cur[cur.length - 1].idx) {
+    return;
+  }
+
+  _browseReloading = true;
+  var activeDiaryIdx = -1;
+  if (activeResultIdx >= 0 && cur && cur[activeResultIdx]) {
+    activeDiaryIdx = cur[activeResultIdx].idx;
+  } else if (anchor) {
+    activeDiaryIdx = anchor.diaryIdx;
+  }
+
+  displayResults(pack.results, '', { autoSelect: false });
+  browseMode = true;
+
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      var panel = document.getElementById('resultsPanel');
+      // Restore scroll relative to anchor entry
+      if (anchor && panel) {
+        var local = -1;
+        for (var i = 0; i < pack.results.length; i++) {
+          if (pack.results[i].idx === anchor.diaryIdx) { local = i; break; }
+        }
+        if (local >= 0) {
+          var el = document.getElementById('result-' + local);
+          if (el) {
+            var panelRect = panel.getBoundingClientRect();
+            var elRect = el.getBoundingClientRect();
+            panel.scrollTop += (elRect.top - panelRect.top) - (anchor.offsetFromTop || 0);
+          }
+        }
+      }
+      // Keep active highlight on the same diary entry if still in window
+      if (activeDiaryIdx >= 0) {
+        for (var j = 0; j < pack.results.length; j++) {
+          if (pack.results[j].idx === activeDiaryIdx) {
+            document.querySelectorAll('.result-entry').forEach(function(node) {
+              node.classList.remove('active');
+            });
+            var activeEl = document.getElementById('result-' + j);
+            if (activeEl) activeEl.classList.add('active');
+            activeResultIdx = j;
+            break;
+          }
+        }
+      }
+      _browseReloading = false;
+    });
+  });
+}
+
+/** When scrolling near either end of the browse list, slide the 101-entry window. */
+function maybeSlideBrowseWindow() {
+  if (!browseMode || lastSearchResults || _browseReloading || !diaryData) return;
+  var panel = document.getElementById('resultsPanel');
+  var results = window._searchResults;
+  if (!panel || !results || results.length < 2) return;
+
+  var threshold = Math.max(120, Math.min(320, panel.clientHeight * 0.4));
+  var nearTop = panel.scrollTop < threshold;
+  var nearBottom = panel.scrollTop + panel.clientHeight > panel.scrollHeight - threshold;
+  if (!nearTop && !nearBottom) return;
+
+  var firstIdx = results[0].idx;
+  var lastIdx = results[results.length - 1].idx;
+  var n = diaryData.entries.length;
+  if (nearTop && firstIdx <= 0) nearTop = false;
+  if (nearBottom && lastIdx >= n - 1) nearBottom = false;
+  if (!nearTop && !nearBottom) return;
+
+  var anchor = getTopVisibleBrowseAnchor(panel);
+  if (!anchor) return;
+
+  // Shift window so more content loads in the scroll direction
+  var newCenter = nearTop ? firstIdx : lastIdx;
+  reloadBrowseWindow(newCenter, anchor);
+}
+
+function onBrowseResultsScroll() {
+  if (!browseMode || lastSearchResults) return;
+  clearTimeout(_browseScrollTimer);
+  _browseScrollTimer = setTimeout(maybeSlideBrowseWindow, 80);
+}
+
+/**
+ * Open a diary day from a raw entry bar (or jump-to-date browse):
+ * clear any search, show a sliding window of surrounding entries,
+ * scroll to the target entry, and open its PDF.
+ */
+function openEntryFromRawBar(date) {
+  if (!date || !diaryData) return;
+  var hadSearch = !!(lastSearchResults && lastSearchResults.length);
+  if (hadSearch || (document.getElementById('searchInput') || {}).value) {
+    clearSearchStateForBrowse();
+    redrawTimelines({ preserveZoom: true });
+  }
+
+  var pack = buildBrowseResultsAroundDate(date, BROWSE_RADIUS);
+  if (!pack || !pack.results.length) return;
+
+  browseMode = true;
+  displayResults(pack.results, '', { autoSelect: false });
+
+  var k = pack.focusLocal;
+  if (k < 0 || k >= pack.results.length) k = 0;
+  var r = pack.results[k];
+  var pg = pdfPageForResult(r) || 1;
+
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      selectResult(k, pg, r.idx);
+      scrollResultToPanelTop(k);
+    });
+  });
+
+  focusTimelineOnDate(date);
+  var jumpInput = document.getElementById('jumpDateInput');
+  if (jumpInput) jumpInput.value = date;
+}
+
+function handleTimelineClick(evt) {
+  if (!timelineChart) return;
+  var series = getTimelineSeries();
+  var mapped = timelineIndexFromEvent(evt);
+  var idx = mapped.idx;
+  if (idx < 0 || idx >= series.labels.length) return;
+
+  var hd = hitCountsForSeries(lastSearchResults);
+  var hasSearch = !!(lastSearchResults && lastSearchResults.length);
+
+  // Hit side (portrait: above 0; landscape: right of 0) during a search:
+  // snap to a nearby hit day and open that search result (select + PDF).
+  if (hasSearch && mapped.value > 0.05) {
+    var hitIdx = snapToNearestCountedDay(idx, hd, 40);
+    if (hitIdx >= 0 && (hd[hitIdx] || 0) > 0) {
+      jumpToDate(series.labels[hitIdx]);
+      return;
+    }
+  }
+
+  // Entry bars (raw / unfiltered series): clear any search, show a window of
+  // surrounding entries, scroll to the clicked day, open its PDF.
+  var entryIdx = snapToNearestCountedDay(idx, series.entryCounts, -1);
+  if (entryIdx >= 0) {
+    openEntryFromRawBar(series.labels[entryIdx]);
+  }
+}
+
+// Double-click resets zoom and cancels any pending single-click navigation.
+document.getElementById('timelineChart').addEventListener('dblclick', function() {
+  if (_tlClickTimer) {
+    clearTimeout(_tlClickTimer);
+    _tlClickTimer = null;
+  }
+  if (timelineChart) timelineChart.resetZoom();
+});
+
+document.getElementById('timelineChart').addEventListener('click', function(evt) {
+  if (!timelineChart) return;
+  if (_tlPtrDown) {
+    var dx = evt.clientX - _tlPtrDown.x;
+    var dy = evt.clientY - _tlPtrDown.y;
+    _tlPtrDown = null;
+    // Ignore click if the pointer moved enough that this was a pan/drag.
+    if (dx * dx + dy * dy > 36) return;
+  }
+  // Snapshot coords: the deferred handler runs after the native event is gone.
+  var snap = {
+    clientX: evt.clientX,
+    clientY: evt.clientY,
+    // Chart.js getRelativePosition also reads these when present
+    offsetX: evt.offsetX,
+    offsetY: evt.offsetY,
+    nativeEvent: evt
+  };
+  if (_tlClickTimer) clearTimeout(_tlClickTimer);
+  _tlClickTimer = setTimeout(function() {
+    _tlClickTimer = null;
+    handleTimelineClick(snap);
+  }, _tlClickDelayMs);
+});
+
+let _timelineResizeTimer = null;
+window.addEventListener('resize', function() {
+  clearTimeout(_timelineResizeTimer);
+  _timelineResizeTimer = setTimeout(function() {
+    if (diaryData) redrawTimelines();
+    layoutToolbarInstructions();
+  }, 150);
+});
+
+// ============================================================
+// PDF page navigation via arrow keys (ignored while typing)
+// ============================================================
+document.addEventListener('keydown', function(e) {
+  const tag = (e.target.tagName || '').toLowerCase();
+  if (tag === 'input' || tag === 'textarea' || e.target.isContentEditable) return;
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+    e.preventDefault();
+    pdfPrevPage();
+  } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+    e.preventDefault();
+    pdfNextPage();
+  }
+});
+
+// ============================================================
+// Drag the PDF panel edge to resize it
+//   Landscape: left edge → width
+//   Portrait:  top edge  → height
+// ============================================================
+(function() {
+  const resizer = document.getElementById('pdfResizer');
+  const pdfPanel = document.getElementById('pdfPanel');
+  let dragging = false;
+
+  resizer.addEventListener('mousedown', function(e) {
+    dragging = true;
+    resizer.classList.add('dragging');
+    document.body.style.userSelect = 'none';
+    e.preventDefault();
+  });
+  document.addEventListener('mousemove', function(e) {
+    if (!dragging) return;
+    const contentRect = document.querySelector('.content-area').getBoundingClientRect();
+    if (currentLayout === 'landscape') {
+      let newWidth = contentRect.right - e.clientX;
+      newWidth = Math.max(320, Math.min(contentRect.width - 260, newWidth));
+      pdfPanel.style.width = newWidth + 'px';
+      pdfPanel.style.height = '';
+    } else {
+      // Portrait: stack is charts | results | resizer | PDF — drag height of PDF.
+      let newHeight = contentRect.bottom - e.clientY;
+      newHeight = Math.max(140, Math.min(contentRect.height - 220, newHeight));
+      pdfPanel.style.height = newHeight + 'px';
+      pdfPanel.style.width = '';
+    }
+  });
+  document.addEventListener('mouseup', function() {
+    if (!dragging) return;
+    dragging = false;
+    resizer.classList.remove('dragging');
+    document.body.style.userSelect = '';
+  });
+})();
+
+// ============================================================
+// Highlight helper — wraps each hit in a <mark> with an ID
+// ============================================================
+function highlightWithHits(text, query, resultIdx) {
+  if (!query) return escapeHtml(text);
+
+  const caseSensitive = isCaseSensitive();
+  // Prefer terms that actually matched this result (from boolean eval)
+  let terms = [];
+  const r = window._searchResults && window._searchResults[resultIdx];
+  if (r && r.matchTerms && r.matchTerms.length) {
+    terms = r.matchTerms.slice();
+  } else if (window._lastSearchAst) {
+    terms = collectTerms(window._lastSearchAst, []);
+  } else {
+    terms = [query];
+  }
+  // Unique, longest first so phrases win over sub-words
+  terms = Array.from(new Set(terms)).filter(function(t) { return t && t.length; })
+    .sort(function(a, b) { return b.length - a.length; });
+  if (!terms.length) return escapeHtml(text);
+
+  const parts = terms.map(function(t) {
+    if (t.indexOf('*') >= 0) return t.split('*').map(escapeRegex).join('.*');
+    return escapeRegex(t);
+  });
+  let regex;
+  try {
+    regex = new RegExp('(' + parts.join('|') + ')', caseSensitive ? 'g' : 'gi');
+  } catch (e) {
+    return escapeHtml(text);
+  }
+  let hitCount = 0;
+  return escapeHtml(text).replace(regex, function(match) {
+    const id = 'hit-' + resultIdx + '-' + hitCount;
+    hitCount++;
+    return '<mark id="' + id + '">' + match + '</mark>';
+  });
+}
+
+function escapeHtml(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+// ============================================================
+// Display results (full content + multi-hit navigation)
+// ============================================================
+function pdfPageForResult(r) {
+  return pageForContentOffset(pageMapValueForResult(r), 0) || 1;
+}
+
+function pdfPageLabel(r) {
+  const mapVal = pageMapValueForResult(r);
+  const start = getPageNum(mapVal);
+  const end = getPageEnd(mapVal);
+  if (!start) return '';
+  if (end && end !== start) return 'p.' + start + '–' + end;
+  return 'p.' + start;
+}
+
+function displayResults(results, query, opts) {
+  opts = opts || {};
+  // autoSelect (default true): open first result / jump PDF. Set false when
+  // the caller will select a specific result itself (avoids a PDF flash).
+  var autoSelect = opts.autoSelect !== false;
+  const panel = document.getElementById('resultsPanel');
+  if (results.length === 0) {
+    window._searchResults = results;
+    panel.innerHTML = '<div class="placeholder"><h2>No results</h2>' +
+      '<p>No entries found for "' + escapeHtml(query) + '".</p></div>';
+    return;
+  }
+
+  const totalHits = results.reduce((s, r) => s + r.hits, 0);
+  let html = '<div style="margin-bottom:12px;font-size:14px;color:var(--muted)">' +
+    '<b style="color:var(--accent)">' + results.length + '</b> entries · ' +
+    '<b style="color:var(--green)">' + totalHits + '</b> total hits</div>';
+
+  for (let i = 0; i < results.length; i++) {
+    const r = results[i];
+    const e = r.entry;
+    const pdfPage = pdfPageForResult(r);
+    const pageLabel = pdfPageLabel(r);
+    const content = e.content || '';
+
+    // Store hit positions for navigation
+    currentHitPositions[i] = r.hitPositions;
+    currentHitIdx[i] = 0;
+
+    // data-pdf-page = start page; actual hit page resolved on click / HIT nav
+    html += '<div class="result-entry" id="result-' + i + '" data-result-idx="' + i + '" data-pdf-page="' + pdfPage + '" data-entry-idx="' + r.idx + '">';
+    html += '<div class="result-header">';
+    html += '<span><span class="result-date">' + e.date + '</span>' +
+      '<span class="result-raw-date">' + escapeHtml(e.raw_date) + '</span>' +
+      (e.sender ? '<span style="font-size:11px;color:var(--green);font-weight:600;margin-left:8px">' + escapeHtml(e.sender) + '</span>' : '') +
+      (e.time ? '<span style="font-size:10px;color:var(--muted);margin-left:4px">' + escapeHtml(e.time) + '</span>' : '') +
+      (e.source ? '<span style="font-size:10px;color:var(--muted);background:var(--panel-2);padding:2px 6px;border-radius:3px;border:1px solid var(--border-2);margin-left:6px;white-space:nowrap" title="From the ' + (e.source === 'part2' ? 'Part 2 (Apr 2020-Jun 2023)' : 'Part 1 (Feb-Apr 2020)') + ' release">' + (e.source === 'part2' ? 'Part 2' : 'Part 1') + '</span>' : '');
+    if (pageLabel) {
+      html += '<span class="result-page-link" title="Open PDF at this entry">📄 ' + pageLabel + '</span>';
+    }
+    if (e.date_note) {
+      html += '<div class="result-note">⚠ ' + escapeHtml(e.date_note) + '</div>';
+    }
+    html += '</span>';
+    html += '<span class="result-hits">' + r.hits + ' hit' + (r.hits > 1 ? 's' : '') + '</span>';
+    html += '</div>';
+
+    // Hit navigation bar
+    if (r.hits > 1) {
+      html += '<div class="hit-nav">';
+      html += '<button type="button" class="hit-nav-btn" data-hit-nav="-1" id="hitprev-' + i + '">◀ Prev</button>';
+      html += '<span class="hit-nav-label">>>> HIT #<span id="hitcur-' + i + '">1</span>/' + r.hits + ' <<<</span>';
+      html += '<button type="button" class="hit-nav-btn" data-hit-nav="1" id="hitnext-' + i + '">Next ▶</button>';
+      html += '</div>';
+    } else {
+      html += '<div class="hit-nav"><span class="hit-nav-label">>>> HIT #1/1 <<<</span></div>';
+    }
+
+    // Full content with highlights (paragraphs from cleaned JSON)
+    const highlighted = highlightWithHits(content, query, i);
+    // Split into paragraphs and wrap in <p>
+    const paragraphs = highlighted.split(/\n\n/);
+    html += '<div class="result-content" id="content-' + i + '">';
+    for (const p of paragraphs) {
+      html += '<p>' + p + '</p>';
+    }
+    html += '</div>';
+    html += '</div>';
+  }
+
+  window._searchResults = results;
+  panel.innerHTML = html;
+
+  // Event delegation: any click in a result card jumps the PDF (to the hit's page)
+  panel.onclick = function(ev) {
+    const entry = ev.target.closest('.result-entry');
+    if (!entry || !panel.contains(entry)) return;
+
+    const resultIdx = parseInt(entry.getAttribute('data-result-idx'), 10);
+    const entryIdx = parseInt(entry.getAttribute('data-entry-idx'), 10);
+
+    // Hit Prev/Next: step highlight + PDF page for THAT hit
+    const navBtn = ev.target.closest('[data-hit-nav]');
+    if (navBtn) {
+      ev.preventDefault();
+      ev.stopPropagation();
+      const dir = parseInt(navBtn.getAttribute('data-hit-nav'), 10) || 0;
+      navigateHit(resultIdx, dir);
+      return;
+    }
+
+    // Clicked a specific <mark> hit → that hit's PDF page
+    let hitIdx = currentHitIdx[resultIdx] || 0;
+    const mark = ev.target.closest('mark[id^="hit-"]');
+    if (mark) {
+      const parts = mark.id.split('-'); // hit, resultIdx, hitIdx
+      const parsed = parseInt(parts[2], 10);
+      if (!isNaN(parsed)) hitIdx = parsed;
+    }
+    currentHitIdx[resultIdx] = hitIdx;
+    updateHitHighlight(resultIdx, hitIdx);
+    selectResult(resultIdx, pdfPageForHit(resultIdx, hitIdx), entryIdx);
+  };
+
+  // Auto-open first result at first hit's page (unless caller will select).
+  if (autoSelect && results.length > 0) {
+    currentHitIdx[0] = 0;
+    if (results[0].hits > 0) updateHitHighlight(0, 0);
+    selectResult(0, pdfPageForHit(0, 0), results[0].idx);
+  }
+}
+
+// ============================================================
+// Select result + jump to PDF page
+// ============================================================
+function selectResult(resultIdx, pdfPage, entryIdx) {
+  document.querySelectorAll('.result-entry').forEach(el => el.classList.remove('active'));
+  const el = document.getElementById('result-' + resultIdx);
+  if (el) el.classList.add('active');
+  activeResultIdx = resultIdx;
+
+  // Switch to the correct PDF for this entry's source
+  const r = window._searchResults && window._searchResults[resultIdx];
+  if (r && r.entry && r.entry.source) switchPdfSource(r.entry.source);
+
+  // Prefer explicit page; else current hit's page; else entry start
+  let page = parseInt(pdfPage, 10);
+  if (!page) {
+    const hitIdx = currentHitIdx[resultIdx] || 0;
+    page = pdfPageForHit(resultIdx, hitIdx);
+  }
+  if (page) renderPdfPage(page);
+}
+
+// ============================================================
+// Navigate between hits within an entry (text highlight + PDF page)
+// ============================================================
+function navigateHit(resultIdx, direction) {
+  const positions = currentHitPositions[resultIdx];
+  if (!positions || positions.length === 0) return;
+
+  let idx = (currentHitIdx[resultIdx] || 0) + direction;
+  if (idx < 0) idx = positions.length - 1;
+  if (idx >= positions.length) idx = 0;
+  currentHitIdx[resultIdx] = idx;
+
+  updateHitHighlight(resultIdx, idx);
+
+  // Jump PDF to the page that contains THIS hit (may be later than entry start)
+  const r = window._searchResults && window._searchResults[resultIdx];
+  const entryIdx = r ? r.idx : 0;
+  selectResult(resultIdx, pdfPageForHit(resultIdx, idx), entryIdx);
+}
+
+function updateHitHighlight(resultIdx, hitIdx) {
+  // Remove previous highlight
+  document.querySelectorAll('mark.hit-current').forEach(m => m.classList.remove('hit-current'));
+
+  const mark = document.getElementById('hit-' + resultIdx + '-' + hitIdx);
+  if (!mark) return;
+  mark.classList.add('hit-current');
+
+  // Scroll to the hit within the content box
+  const container = document.getElementById('content-' + resultIdx);
+  if (container) {
+    const top = mark.offsetTop - container.offsetTop - 40;
+    container.scrollTop = Math.max(0, top);
+  }
+
+  // Update the counter display
+  const counter = document.getElementById('hitcur-' + resultIdx);
+  if (counter) counter.textContent = (hitIdx + 1);
+
+  // Show which PDF page this hit is on (range · current when multi-page)
+  const pageEl = document.getElementById('result-' + resultIdx);
+  if (pageEl) {
+    const link = pageEl.querySelector('.result-page-link');
+    if (link) {
+      const page = pdfPageForHit(resultIdx, hitIdx);
+      const r = window._searchResults && window._searchResults[resultIdx];
+      const mapVal = pageMapValueForResult(r);
+      const start = getPageNum(mapVal);
+      const end = getPageEnd(mapVal);
+      if (start && end && end !== start) {
+        link.textContent = '📄 p.' + start + '–' + end + ' · hit p.' + page;
+      } else {
+        link.textContent = '📄 p.' + page;
+      }
+    }
+  }
+}
+
+// ============================================================
+// Help + Init
+// ============================================================
+function showHelp() {
+  document.getElementById('helpOverlay').style.display = 'flex';
+}
+function hideHelp() {
+  document.getElementById('helpOverlay').style.display = 'none';
+}
+
+// Enter key in search box triggers search (replaces inline onkeydown)
+document.getElementById('searchInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') { e.preventDefault(); doSearch(); }
+});
+document.getElementById('jumpDateInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') { e.preventDefault(); goToJumpDate(); }
+});
+document.getElementById('resultsPanel').addEventListener('scroll', onBrowseResultsScroll, { passive: true });
+layoutToolbarInstructions();
+window.addEventListener('load', layoutToolbarInstructions);
+loadData();
+</script>
+
+<div id="helpOverlay" onclick="hideHelp()" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:1000;justify-content:center;align-items:center;">
+  <div onclick="event.stopPropagation()" style="background:var(--panel);border:2px solid var(--border-2);border-radius:12px;padding:24px 32px;max-width:560px;width:90%;max-height:80vh;overflow-y:auto;color:var(--text);">
+    <h2 style="color:var(--accent);margin-bottom:16px;font-size:18px;">🔍 Search Help</h2>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;">
+      <tr><td style="padding:6px 8px;background:var(--panel-2);border-radius:4px 0 0 4px;white-space:nowrap;font-family:monospace">"blue car"</td><td style="padding:6px 12px;background:var(--panel-2);border-radius:0 4px 4px 0"><b>Exact phrase</b> — double or single quotes; words together in order</td></tr>
+      <tr><td style="padding:6px 8px;white-space:nowrap;font-family:monospace">blue green</td><td style="padding:6px 12px"><b>AND</b> — both words (any order). Same as <code>blue AND green</code></td></tr>
+      <tr><td style="padding:6px 8px;background:var(--panel-2);border-radius:4px 0 0 4px;white-space:nowrap;font-family:monospace">blue OR green</td><td style="padding:6px 12px;background:var(--panel-2);border-radius:0 4px 4px 0"><b>OR</b> — either word. <code>|</code> is the same: <code>blue|green</code></td></tr>
+      <tr><td style="padding:6px 8px;white-space:nowrap;font-family:monospace">(a OR b) AND c</td><td style="padding:6px 12px"><b>Parentheses</b> — group boolean expressions</td></tr>
+      <tr><td style="padding:6px 8px;background:var(--panel-2);border-radius:4px 0 0 4px;white-space:nowrap;font-family:monospace">bun*</td><td style="padding:6px 12px;background:var(--panel-2);border-radius:0 4px 4px 0">Wildcard inside a term</td></tr>
+    </table>
+    <p style="margin-top:12px;font-size:12px;line-height:1.55;font-family:monospace;background:var(--panel-2);padding:10px 12px;border-radius:6px;color:var(--text)">
+      ((blue OR green) AND (car | train)) OR 'white plane'
+    </p>
+    <p style="margin-top:8px;font-size:12px;color:var(--muted);line-height:1.5">
+      Means: (blue or green) together with (car or train), <b>or</b> the exact phrase “white plane”.
+      <code>OR</code>/<code>AND</code> may be written in any case; <code>|</code> = OR; spaces between terms = AND.
+    </p>
+    <p style="margin-top:14px;font-size:13px;line-height:1.5">
+      <b>Case sensitivity</b> — default is <b>off</b> (ignore case). Check <b>Aa case sensitive</b> for exact capitalization.
+      To search for the words AND/OR themselves, put them in quotes: <code>"and"</code>.
+    </p>
+    <p style="margin-top:10px;font-size:12px;color:var(--muted);">Results sorted by hit count. Click a hit to open its PDF page; use HIT Prev/Next to step through matches.</p>
+    <button onclick="hideHelp()" style="margin-top:12px;background:var(--accent);color:#fff;border:none;padding:8px 24px;border-radius:4px;cursor:pointer;font-size:13px;font-weight:600">Got it</button>
+  </div>
+</div>
+
+</body>
+</html>
