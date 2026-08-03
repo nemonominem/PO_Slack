@@ -3,14 +3,20 @@
 Message-level parser for slack-part1.pdf (OCR'd Slack screenshots,
 Feb 1 - Apr 30, 2020).
 
+Reads slack-part1_ocr.txt, produced by reocr_part1.py (Tesseract, --oem 1
+--psm 6, over 300dpi page renders). This re-OCR is dramatically cleaner than
+the OCR text layer baked into the PDF by the original "PDF24 Tools - OCR"
+pass — spot checks against the actual page images showed the source
+screenshots are sharp; the PDF's own OCR pass was simply low quality.
+
 Unlike slack-part2 (a clean text-layer Slack export with one bracketed
-message per block), slack-part1 is OCR'd from stitched screenshots: reading
-order is columnar and sender/time headers are frequently garbled. This
-parser anchors on the five known channel participants to find each message
-header ("<Sender> <HH:MM>", with an OCR-garbage icon glyph often prefixing
-the name and the time frequently missing a colon, a digit, or entirely),
-then accumulates the lines that follow as that message's content up to the
-next header or day-divider.
+message per block), slack-part1 is still OCR'd from stitched screenshots:
+reading order is columnar and sender/time headers are occasionally garbled.
+This parser anchors on the five known channel participants to find each
+message header ("<Sender> <HH:MM>", with an OCR-garbage icon glyph
+occasionally prefixing the name and the time occasionally missing a colon or
+a digit), then accumulates the lines that follow as that message's content
+up to the next header or day-divider.
 
 Two things this cannot fully recover, given the source:
   - Slack visually groups consecutive messages from the same sender without
@@ -30,12 +36,11 @@ conflated with that person's authored chat messages.
 import json
 import os
 import re
-import subprocess
 
 from slack_notice import apply_notice_normalization
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-PDF_PATH = os.path.join(HERE, "slack-part1.pdf")
+OCR_TEXT_PATH = os.path.join(HERE, "slack-part1_ocr.txt")
 OUT_JSON = os.path.join(HERE, "part1.json")
 OUT_PAGE_MAP = os.path.join(HERE, "part1_page_map.json")
 SOURCE_PDF = "slack-part1.pdf"
@@ -68,6 +73,21 @@ ATTACHMENT_FILENAME_RE = re.compile(
 
 HEADER_TIME_RE = re.compile(r"^\+?(\d{1,2})[:.](\d{2})$")
 HEADER_TIME_DIGITS_RE = re.compile(r"^(\d{3,4})$")
+
+SEQUENCE_LINE_RE = re.compile(r">\w|EPI_ISL|gbkey=|\bgene=|[ACGTNacgtn]{15,}")
+# OCR reliably misreads a capital "I" as a pipe when it stands alone as a
+# word (preceded/followed by whitespace or sentence punctuation) — verified
+# safe by checking every occurrence in this corpus. Left untouched: lines
+# that look like pasted genomic/accession data (real "|" field separators,
+# e.g. FASTA headers, GISAID EPI_ISL ids) and pipes fused directly onto an
+# adjacent letter with no space (too ambiguous to fix confidently).
+STANDALONE_PIPE_RE = re.compile(r"(?<![^\s])\|(?![^\s.,!?;:'\")\]])")
+
+
+def clean_ocr_noise(line):
+    if SEQUENCE_LINE_RE.search(line):
+        return line
+    return STANDALONE_PIPE_RE.sub("I", line)
 
 
 def fix_year_ocr_typo(year):
@@ -168,7 +188,7 @@ def finalize_message(sender, time_tokens, content_lines, page, date_key):
         if ATTACHMENT_FILENAME_RE.match(s):
             attachments.append(s)
             continue
-        kept_lines.append(s)
+        kept_lines.append(clean_ocr_noise(s))
     content = "\n".join(kept_lines).strip()
     redacted = not content and not attachments
     if redacted:
@@ -197,10 +217,8 @@ def finalize_message(sender, time_tokens, content_lines, page, date_key):
 
 
 def parse():
-    text = subprocess.run(
-        ["pdftotext", "-layout", PDF_PATH, "-"],
-        check=True, capture_output=True, text=True,
-    ).stdout
+    with open(OCR_TEXT_PATH, encoding="utf-8") as f:
+        text = f.read()
     text = WRAPPED_DATE_RE.sub(lambda m: m.group(1) + " " + m.group(2), text)
     pages = text.split("\x0c")
 

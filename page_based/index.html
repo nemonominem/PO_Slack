@@ -2593,9 +2593,9 @@ function displayResults(results, query, opts) {
     html += '<div class="result-header">';
     const isNotice = e.sender === 'Slack Notice';
     html += '<span><span class="result-date">' + e.date + '</span>' +
-      '<span class="result-raw-date">' + escapeHtml(e.raw_date) + '</span>' +
-      (e.sender ? '<span style="font-size:11px;color:' + (isNotice ? 'var(--muted)' : 'var(--green)') + ';font-weight:600;font-style:' + (isNotice ? 'italic' : 'normal') + ';margin-left:8px">' + escapeHtml(e.sender) + '</span>' : '') +
+      (e.sender ? '<span style="font-size:12px;color:' + (isNotice ? 'var(--muted)' : 'var(--green)') + ';font-weight:600;font-style:' + (isNotice ? 'italic' : 'normal') + ';margin-left:8px">' + escapeHtml(e.sender) + '</span>' : '') +
       (e.time ? '<span style="font-size:10px;color:var(--muted);margin-left:4px">' + escapeHtml(e.time) + '</span>' : '') +
+      '<span class="result-raw-date">' + escapeHtml(e.raw_date) + '</span>' +
       (e.source ? '<span style="font-size:10px;color:var(--muted);background:var(--panel-2);padding:2px 6px;border-radius:3px;border:1px solid var(--border-2);margin-left:6px;white-space:nowrap" title="From the ' + (e.source === 'part2' ? 'Part 2 (Apr 2020-Jun 2023)' : 'Part 1 (Feb-Apr 2020)') + ' release">' + (e.source === 'part2' ? 'Part 2' : 'Part 1') + '</span>' : '') +
       (e.redacted ? '<span style="font-size:10px;color:var(--orange);margin-left:6px" title="No OCR text recovered for this message — likely an image or a redacted block">▪ redacted</span>' : '');
     if (pageLabel) {

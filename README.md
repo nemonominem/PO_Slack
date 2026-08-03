@@ -8,7 +8,7 @@ released by Chairman Rand Paul's Senate committee.
 
 | Part | Period | Entries | PDF pages | Format |
 |---|---|---|---|---|
-| **Part 1** — `paper-2020-nature_medicine-proximal_origin` (screenshots) | Feb 1 &ndash; Apr 30, 2020 | 1,260 (message-level) | 140 | OCR'd Slack screenshots |
+| **Part 1** — `paper-2020-nature_medicine-proximal_origin` (screenshots) | Feb 1 &ndash; Apr 30, 2020 | 1,256 (message-level) | 140 | OCR'd Slack screenshots |
 | **Part 2** — Slack export continuation | Apr 30, 2020 &ndash; Jun 28, 2023 | 11,357 (message-level) | 1,123 | Clean text-layer export |
 | **Combined** | Feb 2020 &ndash; Jun 2023 | 12,617 | 1,263 | |
 
@@ -26,11 +26,15 @@ text, e.g. "Kristian Andersen joined paper-2020-nature_medicine-proximal_origin.
 
 ## Both parts are message-level, with one caveat for Part 1
 
-Part 1 was released as stitched Slack-UI screenshots; OCR quality is too
-rough to guarantee every message boundary, so `parse_part1.py` anchors on
-the five known channel participants' name+timestamp headers (tolerating
-missing colons, dropped digits, and OCR-mangled same-line day-dividers) to
-split messages, and tracks the day-divider lines Slack inserts before the
+Part 1 was released as stitched Slack-UI screenshots. The PDF's own baked-in
+OCR text layer (from "PDF24 Tools - OCR") was low quality, but the source
+screenshots themselves are sharp — so `reocr_part1.py` re-OCRs all 140 pages
+from scratch (300dpi renders via `pdftoppm`, then `tesseract --oem 1 --psm
+6`), which gets full clean sentences and accurate sender/time headers
+instead of mangled fragments. `parse_part1.py` then anchors on the five
+known channel participants' name+timestamp headers (tolerating missing
+colons, dropped digits, and occasional OCR-mangled same-line day-dividers)
+to split messages, and tracks the day-divider lines Slack inserts before the
 first message of each day to date them. Two known limitations, inherent to
 the source rather than the parser:
 
@@ -57,7 +61,9 @@ granularity, with accurate timestamps, senders, thread IDs, and attachments.
 | `page_based/slack-part1.pdf`, `slack-part2.pdf` | Source PDFs |
 | `page_based/part1.json`, `part2.json` | Parsed entries |
 | `page_based/part1_page_map.json`, `part2_page_map.json` | Entry &rarr; PDF page lookup for the viewer's jump-to-page feature |
-| `page_based/parse_part1.py` | Message-level parser for the OCR'd Part 1 PDF |
+| `page_based/reocr_part1.py` | Re-OCRs Part 1's 140 pages with Tesseract (run once; writes `slack-part1_ocr.txt`) |
+| `page_based/slack-part1_ocr.txt` | Re-OCR'd text, consumed by `parse_part1.py` |
+| `page_based/parse_part1.py` | Message-level parser for the re-OCR'd Part 1 text |
 | `page_based/build_part2.py` | Reshapes the existing high-quality Part 2 message parse into the app's entry schema |
 | `page_based/slack_notice.py` | Shared Slack-system-notice detection used by both builders |
 

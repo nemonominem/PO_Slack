@@ -42,6 +42,27 @@ Drive / DataWharehouse paths; all PDFs, JSON, and scripts live inside
   the closing "archived the private channel").
 - Added a "▪ redacted" tag and a distinct (italic/grey) style for "Slack
   Notice" entries in the result cards.
+- Author name moved to right after the date in result cards ("2020-04-09
+  Andrew Rambaut ..."), per request.
+- **Re-OCR'd Part 1 from scratch with Tesseract** (`reocr_part1.py`: renders
+  all 140 pages at 300dpi via `pdftoppm`, OCRs each with `tesseract --oem 1
+  --psm 6`), replacing the low-quality OCR text layer baked into the PDF by
+  the original "PDF24 Tools - OCR" pass. Spot checks against the actual page
+  images confirmed the source screenshots are sharp — the garbled text was
+  purely a bad-OCR-pass problem, not a source-quality ceiling. Quality
+  improvement is dramatic: full clean sentences and accurate sender/time
+  headers ("Andrew Rambaut 19:19") vs. previously mangled fragments
+  ("Mi Andrew Rambaut +219"). `parse_part1.py` now reads
+  `slack-part1_ocr.txt` (checked in, ~380KB) instead of calling `pdftotext`
+  directly. 1,256 entries (was 1,260 — comparable count, much cleaner text).
+- **Cleaned the "I" → "|" OCR misread** (`clean_ocr_noise` in
+  `parse_part1.py`): a standalone `|` bounded by whitespace/punctuation is
+  almost always a garbled capital "I" ("| agree" → "I agree"), fixed across
+  ~780 occurrences. Skipped on lines that look like pasted genomic/accession
+  data (FASTA headers, GISAID `EPI_ISL` ids), where `|` is a real field
+  separator — verified none of those lines were affected. Left alone: `|`
+  fused directly onto an adjacent letter with no space (too ambiguous to
+  fix confidently, e.g. "loop region come in|it's").
 
 ## Known limitations
 - Part 1 message boundaries are best-effort, not exact: Slack visually groups
