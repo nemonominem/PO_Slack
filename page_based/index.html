@@ -461,7 +461,7 @@ mark.hit-current {
 <div class="header">
   <div class="title-block">
     <h1>💬 P.O. Slack Search</h1>
-    <span class="subtitle"><a href="https://www.paul.senate.gov/readingroom/" target="_blank">Rand Paul's release of the Proximal Origin authors' Slack</a> &middot; 11,415 entries &middot; Feb 2020 &ndash; Jun 2023</span>
+    <span class="subtitle"><a href="https://www.paul.senate.gov/readingroom/" target="_blank">Rand Paul's release of the Proximal Origin authors' Slack</a> &middot; 12,617 entries &middot; Feb 2020 &ndash; Jun 2023</span>
   </div>
   <div class="search-bar">
     <input type="text" id="searchInput" placeholder='Phrase: "blue car" · words: happy bunny · help: ?'>
@@ -1495,7 +1495,7 @@ function clearSearch() {
   document.getElementById('resultsPanel').innerHTML =
     '<div class="placeholder"><h2>Search P.O. Slack</h2>' +
     '<p>Enter a search term above to find mentions across all ' +
-    (diaryData ? diaryData.total_entries : 11415) + ' Slack entries.</p></div>';
+    (diaryData ? diaryData.total_entries : 12617) + ' Slack entries.</p></div>';
   lastSearchResults = null;
   lastSearchQuery = '';
   window._searchResults = null;
@@ -2591,11 +2591,13 @@ function displayResults(results, query, opts) {
     // data-pdf-page = start page; actual hit page resolved on click / HIT nav
     html += '<div class="result-entry" id="result-' + i + '" data-result-idx="' + i + '" data-pdf-page="' + pdfPage + '" data-entry-idx="' + r.idx + '">';
     html += '<div class="result-header">';
+    const isNotice = e.sender === 'Slack Notice';
     html += '<span><span class="result-date">' + e.date + '</span>' +
       '<span class="result-raw-date">' + escapeHtml(e.raw_date) + '</span>' +
-      (e.sender ? '<span style="font-size:11px;color:var(--green);font-weight:600;margin-left:8px">' + escapeHtml(e.sender) + '</span>' : '') +
+      (e.sender ? '<span style="font-size:11px;color:' + (isNotice ? 'var(--muted)' : 'var(--green)') + ';font-weight:600;font-style:' + (isNotice ? 'italic' : 'normal') + ';margin-left:8px">' + escapeHtml(e.sender) + '</span>' : '') +
       (e.time ? '<span style="font-size:10px;color:var(--muted);margin-left:4px">' + escapeHtml(e.time) + '</span>' : '') +
-      (e.source ? '<span style="font-size:10px;color:var(--muted);background:var(--panel-2);padding:2px 6px;border-radius:3px;border:1px solid var(--border-2);margin-left:6px;white-space:nowrap" title="From the ' + (e.source === 'part2' ? 'Part 2 (Apr 2020-Jun 2023)' : 'Part 1 (Feb-Apr 2020)') + ' release">' + (e.source === 'part2' ? 'Part 2' : 'Part 1') + '</span>' : '');
+      (e.source ? '<span style="font-size:10px;color:var(--muted);background:var(--panel-2);padding:2px 6px;border-radius:3px;border:1px solid var(--border-2);margin-left:6px;white-space:nowrap" title="From the ' + (e.source === 'part2' ? 'Part 2 (Apr 2020-Jun 2023)' : 'Part 1 (Feb-Apr 2020)') + ' release">' + (e.source === 'part2' ? 'Part 2' : 'Part 1') + '</span>' : '') +
+      (e.redacted ? '<span style="font-size:10px;color:var(--orange);margin-left:6px" title="No OCR text recovered for this message — likely an image or a redacted block">▪ redacted</span>' : '');
     if (pageLabel) {
       html += '<span class="result-page-link" title="Open PDF at this entry">📄 ' + pageLabel + '</span>';
     }

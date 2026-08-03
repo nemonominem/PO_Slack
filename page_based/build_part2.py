@@ -14,6 +14,8 @@ for display.
 import json
 import os
 
+from slack_notice import apply_notice_normalization
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 SOURCE_JSON = (
     "/Users/gillesdemaneuf/Work/DataWharehouse/DRASTIC/external_processed/"
@@ -55,16 +57,19 @@ def main():
         else:
             date_part, raw, time_part = "2020-04-30", "April 30, 2020", None
 
+        sender, content = apply_notice_normalization(msg.get("sender"), msg.get("content", ""))
+
         idx = len(entries)
         entry = {
             "idx": idx,
             "date": date_part,
             "raw_date": raw,
-            "sender": msg.get("sender"),
+            "sender": sender,
             "time": time_part,
             "thread_id": msg.get("thread_id"),
             "attachments": msg.get("attachments") or [],
-            "content": msg.get("content", ""),
+            "content": content,
+            "redacted": False,
             "page": msg.get("page"),
         }
         entries.append(entry)

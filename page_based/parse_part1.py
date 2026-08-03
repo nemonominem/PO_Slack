@@ -1,24 +1,41 @@
 #!/usr/bin/env python3
 """
-Parser for slack-part1.pdf (OCR'd Slack screenshots, Feb 1 - Apr 30, 2020).
+Message-level parser for slack-part1.pdf (OCR'd Slack screenshots,
+Feb 1 - Apr 30, 2020).
 
 Unlike slack-part2 (a clean text-layer Slack export with one bracketed
 message per block), slack-part1 is OCR'd from stitched screenshots: reading
-order is unreliable, sender/time lines are garbled, and message boundaries
-are not machine-parseable with confidence. Day-divider lines ("February
-1st, 2020", "April 30th, 2020 ~") do come through cleanly, though, so this
-parser chunks content by day the same way Fauci_Diary's reparse_diary.py
-chunks diary entries by date header: accumulate lines until the day
-advances, flush one entry per day, and track the PDF page each day's chunk
-starts on for the viewer's jump-to-page feature.
+order is columnar and sender/time headers are frequently garbled. This
+parser anchors on the five known channel participants to find each message
+header ("<Sender> <HH:MM>", with an OCR-garbage icon glyph often prefixing
+the name and the time frequently missing a colon, a digit, or entirely),
+then accumulates the lines that follow as that message's content up to the
+next header or day-divider.
+
+Two things this cannot fully recover, given the source:
+  - Slack visually groups consecutive messages from the same sender without
+    repeating the header, so a run of un-headered short paragraphs following
+    one header may really be 2-3 separate messages rather than one. They are
+    kept as a single entry (correctly attributed, just coarser-grained than
+    part2's true one-row-per-message).
+  - Black-box redactions in the source produce no OCR text at all, so they
+    leave no trace to flag; they are invisible rather than mis-attributed.
+
+Slack's own system notices (channel-created banner, "X joined the channel",
+channel renames, ...) are re-attributed to a synthetic 'Slack Notice' sender
+(the real actor's name is kept in the content text) instead of being
+conflated with that person's authored chat messages.
 """
 
 import json
 import os
 import re
+import subprocess
+
+from slack_notice import apply_notice_normalization
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-RAW_TXT = os.path.join(HERE, "slack-part1_raw.txt")
+PDF_PATH = os.path.join(HERE, "slack-part1.pdf")
 OUT_JSON = os.path.join(HERE, "part1.json")
 OUT_PAGE_MAP = os.path.join(HERE, "part1_page_map.json")
 SOURCE_PDF = "slack-part1.pdf"
@@ -30,10 +47,27 @@ MONTHS = [
 MONTH_INDEX = {m: i + 1 for i, m in enumerate(MONTHS)}
 
 DATE_RE = re.compile(
-    r"\b(" + "|".join(MONTHS) + r")\s+(\d{1,2})(?:st|nd|rd|th)?\s*,?\s*(\d{4})\b"
+    r"\b(" + "|".join(MONTHS) + r")\s+(\d{1,2}|[iIl](?=st\b))(?:st|nd|rd|th)?\s*,?\s*(\d{4})\b"
+)
+# Day-divider text sometimes wraps across two OCR lines ("February\n3rd, 2020").
+WRAPPED_DATE_RE = re.compile(
+    r"\b(" + "|".join(MONTHS) + r")\s*\n\s*(\d{1,2}(?:st|nd|rd|th)?\s*,?\s*\d{4})",
+    re.IGNORECASE,
 )
 
+KNOWN_SENDERS = ["Andrew Rambaut", "Eddie Holmes", "Kristian Andersen", "Robert Garry", "USLACKBOT"]
+
 NOISE_LINE_RE = re.compile(r"^\s*REV\d+\s*$")
+NOISE_SUBSTRINGS = ("Add description", "Add people", "Send emails to channel", "Pinned by you", "Pinned to this channel")
+NOISE_STANDALONE = {"zip", "plain text", "post", "sce"}
+
+ATTACHMENT_FILENAME_RE = re.compile(
+    r"^[\w\-. ]{1,80}\.(pdf|png|jpe?g|zip|docx?|xlsx?|csv|gif|geneious|pptx?|txt)$",
+    re.IGNORECASE,
+)
+
+HEADER_TIME_RE = re.compile(r"^\+?(\d{1,2})[:.](\d{2})$")
+HEADER_TIME_DIGITS_RE = re.compile(r"^(\d{3,4})$")
 
 
 def fix_year_ocr_typo(year):
@@ -43,74 +77,176 @@ def fix_year_ocr_typo(year):
     return year
 
 
+def fix_day_ocr_typo(day):
+    # "1st" sometimes OCR's with the digit read as a letter ("ist", "lst").
+    if not day.isdigit():
+        return "1"
+    return day
+
+
 def iso_date(month_name, day, year):
     year = fix_year_ocr_typo(year)
+    day = fix_day_ocr_typo(day)
     return "%04d-%02d-%02d" % (int(year), MONTH_INDEX[month_name], min(int(day), 31))
 
 
 def raw_date(month_name, day, year):
     year = fix_year_ocr_typo(year)
+    day = fix_day_ocr_typo(day)
     return "%s %s, %s" % (month_name, day, year)
 
 
+def normalize_time(raw_token):
+    if not raw_token:
+        return None
+    token = raw_token.strip().lstrip("+")
+    m = HEADER_TIME_RE.match(token)
+    if m:
+        h, mm = int(m.group(1)), int(m.group(2))
+    else:
+        m2 = HEADER_TIME_DIGITS_RE.match(token)
+        if not m2:
+            return None
+        digits = m2.group(1)
+        if len(digits) == 3:
+            h, mm = int(digits[0]), int(digits[1:])
+        else:
+            h, mm = int(digits[:2]), int(digits[2:])
+    if 0 <= h < 24 and 0 <= mm < 60:
+        return "%02d:%02d" % (h, mm)
+    return None
+
+
+def find_header(line):
+    """Return (sender, raw_time_token_or_None) if `line` is a message header, else None.
+
+    A header line's tail after the name is either empty, a time token (with
+    anything after the time - typically a garbled same-line day-divider our
+    date regex failed to recognize - discarded), or short non-time garbage
+    (an OCR-mangled divider/icon). A *long* tail is treated as ordinary prose
+    that happens to mention a participant's name near its start, not a header.
+    """
+    squeezed = re.sub(r"\s+", " ", line.strip())
+    if not squeezed:
+        return None
+    for name in KNOWN_SENDERS:
+        idx = squeezed.find(name)
+        if 0 <= idx <= 8:
+            rest = squeezed[idx + len(name):].strip()
+            if rest == "":
+                return name, None
+            m = re.match(r"^\+?(\d{1,2}[:.]?\d{2,4})\b", rest)
+            if m:
+                return name, m.group(1)
+            if len(rest) <= 40:
+                return name, None
+    return None
+
+
+def extract_trailing_divider(line):
+    """If `line` ends in a day-divider (possibly after real content), return
+    (prefix, iso, raw) with the divider stripped; else (line, None, None)."""
+    m = DATE_RE.search(line)
+    if not m:
+        return line, None, None
+    tail = re.sub(r"\s+", "", line[m.end():])
+    if len(tail) > 3:  # divider must be at (near) the end of the line
+        return line, None, None
+    month_name, day, year = m.group(1), m.group(2), m.group(3)
+    return line[:m.start()], iso_date(month_name, day, year), raw_date(month_name, day, year)
+
+
+def finalize_message(sender, time_tokens, content_lines, page, date_key):
+    attachments = []
+    kept_lines = []
+    for ln in content_lines:
+        s = ln.strip()
+        if not s:
+            continue
+        if s.lower() in NOISE_STANDALONE:
+            continue
+        if ATTACHMENT_FILENAME_RE.match(s):
+            attachments.append(s)
+            continue
+        kept_lines.append(s)
+    content = "\n".join(kept_lines).strip()
+    redacted = not content and not attachments
+    if redacted:
+        content = "[no OCR text recovered — likely an image or redacted block]"
+
+    time_val = None
+    for tok in time_tokens:
+        norm = normalize_time(tok)
+        if norm:
+            time_val = norm
+            break
+
+    final_sender, content = apply_notice_normalization(sender, content)
+
+    return {
+        "date": date_key[0],
+        "raw_date": date_key[1],
+        "sender": final_sender,
+        "time": time_val,
+        "thread_id": None,
+        "attachments": attachments,
+        "content": content,
+        "redacted": redacted,
+        "page": page,
+    }
+
+
 def parse():
-    text = open(RAW_TXT, encoding="utf-8").read()
+    text = subprocess.run(
+        ["pdftotext", "-layout", PDF_PATH, "-"],
+        check=True, capture_output=True, text=True,
+    ).stdout
+    text = WRAPPED_DATE_RE.sub(lambda m: m.group(1) + " " + m.group(2), text)
     pages = text.split("\x0c")
 
     entries = []
-    cur_key = None       # (iso, raw)
+    cur_date_key = (iso_date("February", "1", "2020"), raw_date("February", "1", "2020"))
+    cur_sender = None
+    cur_time_tokens = []
     cur_lines = []
-    cur_start_page = None
-    cur_last_page = None
+    cur_page = None
 
     def flush():
-        if cur_key is None:
+        if cur_sender is None:
             return
-        content = "\n".join(cur_lines).strip()
-        content = re.sub(r"\n{3,}", "\n\n", content)
-        if not content:
-            return
-        entries.append({
-            "date": cur_key[0],
-            "raw_date": cur_key[1],
-            "content": content,
-            "page": cur_start_page,
-            "page_end": cur_last_page,
-        })
+        entries.append(finalize_message(cur_sender, cur_time_tokens, cur_lines, cur_page, cur_date_key))
 
     for page_num, page_text in enumerate(pages, start=1):
         if not page_text.strip():
             continue
-        for line in page_text.split("\n"):
-            stripped = line.strip()
-            if not stripped or NOISE_LINE_RE.match(stripped):
+        for raw_line in page_text.split("\n"):
+            if NOISE_LINE_RE.match(raw_line.strip()):
+                continue
+            if any(s in raw_line for s in NOISE_SUBSTRINGS):
                 continue
 
-            squeezed = re.sub(r"\s+", " ", stripped)
-            m = DATE_RE.search(squeezed)
-            # A day-divider line is short (just the date, plus maybe a
-            # trailing "~" or "-"); a date appearing mid-sentence in pasted
-            # article text is not a divider, so require the match to cover
-            # most of the (whitespace-squeezed) line.
-            is_divider = bool(m) and len(squeezed) - (m.end() - m.start()) <= 6
+            prefix, div_iso, div_raw = extract_trailing_divider(raw_line)
+            if div_iso:
+                cur_date_key = (div_iso, div_raw)
+            line = prefix
 
-            if is_divider:
-                month_name, day, year = m.group(1), m.group(2), m.group(3)
-                key = (iso_date(month_name, day, year), raw_date(month_name, day, year))
-                if key != cur_key:
-                    flush()
-                    cur_key = key
-                    cur_lines = []
-                    cur_start_page = page_num
-                cur_last_page = page_num
+            if not line.strip():
                 continue
 
-            if cur_key is None:
-                # Content before the very first day-divider (channel-creation
-                # banner on page 1) — attach to a synthetic pre-Feb-1 bucket.
-                cur_key = (iso_date("February", "1", "2020"), raw_date("February", "1", "2020"))
-                cur_start_page = page_num
-            cur_last_page = page_num
+            header = find_header(line)
+            if header:
+                flush()
+                cur_sender, time_tok = header
+                cur_time_tokens = [time_tok] if time_tok else []
+                cur_lines = []
+                cur_page = page_num
+                continue
+
+            if cur_sender is None:
+                # Pre-header content: the page-1 channel-creation banner.
+                cur_sender = "Slack Notice"
+                cur_time_tokens = []
+                cur_page = page_num
             cur_lines.append(line)
 
     flush()
@@ -120,9 +256,8 @@ def parse():
 def build_page_map(entries):
     page_map = {}
     for idx, e in enumerate(entries):
-        start = e.pop("page")
-        end = e.pop("page_end") or start
-        page_map[str(idx)] = {"start": start, "end": end, "breaks": [[0, start]]}
+        page = e.pop("page")
+        page_map[str(idx)] = {"start": page, "end": page, "breaks": [[0, page]]}
     return page_map
 
 
@@ -152,11 +287,13 @@ def main():
 
     print("Entries: %d" % len(entries))
     print("Date range: %s" % date_range)
-    for e in entries[:5]:
-        print(" ", e["date"], e["raw_date"], "->", len(e["content"]), "chars")
-    print("...")
-    for e in entries[-5:]:
-        print(" ", e["date"], e["raw_date"], "->", len(e["content"]), "chars")
+    print("Without time: %d" % sum(1 for e in entries if not e["time"]))
+    print("Redacted/empty: %d" % sum(1 for e in entries if e["redacted"]))
+    senders = {}
+    for e in entries:
+        senders[e["sender"]] = senders.get(e["sender"], 0) + 1
+    for s, c in sorted(senders.items(), key=lambda x: -x[1]):
+        print("  %-20s %d" % (s, c))
 
 
 if __name__ == "__main__":

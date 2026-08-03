@@ -8,9 +8,9 @@ released by Chairman Rand Paul's Senate committee.
 
 | Part | Period | Entries | PDF pages | Format |
 |---|---|---|---|---|
-| **Part 1** — `paper-2020-nature_medicine-proximal_origin` (screenshots) | Feb 1 &ndash; Apr 30, 2020 | 58 (day-level) | 140 | OCR'd Slack screenshots |
+| **Part 1** — `paper-2020-nature_medicine-proximal_origin` (screenshots) | Feb 1 &ndash; Apr 30, 2020 | 1,260 (message-level) | 140 | OCR'd Slack screenshots |
 | **Part 2** — Slack export continuation | Apr 30, 2020 &ndash; Jun 28, 2023 | 11,357 (message-level) | 1,123 | Clean text-layer export |
-| **Combined** | Feb 2020 &ndash; Jun 2023 | 11,415 | 1,263 | |
+| **Combined** | Feb 2020 &ndash; Jun 2023 | 12,617 | 1,263 | |
 
 Part 2 begins with the exact same message that closes Part 1 ("Yes, both are
 in the wrong...", Eddie Holmes, Apr 30 2020) &mdash; the two releases are a
@@ -18,16 +18,35 @@ continuous conversation, not overlapping ranges. Both are merged into a single
 searchable timeline in the app; the PDF viewer automatically switches to the
 correct source PDF when you click a result.
 
-## Why two different granularities
+Slack's own system notices (channel created, joined/left, renamed, archived)
+are attributed to a synthetic **Slack Notice** sender in both parts (shown
+italicized/greyed in the UI), rather than being conflated with the mentioned
+person's authored chat messages. The real actor's name is kept in the notice
+text, e.g. "Kristian Andersen joined paper-2020-nature_medicine-proximal_origin."
 
-Part 1 was released as stitched Slack-UI screenshots; OCR text quality is
-poor enough that reliable per-message boundaries can't be extracted with
-confidence, so entries are chunked **per day** (mirroring how
-[Fauci_Diary](../Fauci_Diary) chunks per diary date) using the day-divider
-lines Slack inserts between messages, which do survive OCR cleanly.
+## Both parts are message-level, with one caveat for Part 1
+
+Part 1 was released as stitched Slack-UI screenshots; OCR quality is too
+rough to guarantee every message boundary, so `parse_part1.py` anchors on
+the five known channel participants' name+timestamp headers (tolerating
+missing colons, dropped digits, and OCR-mangled same-line day-dividers) to
+split messages, and tracks the day-divider lines Slack inserts before the
+first message of each day to date them. Two known limitations, inherent to
+the source rather than the parser:
+
+- Slack visually groups consecutive messages from the same sender without
+  repeating the header; a run of un-headered short paragraphs following one
+  header may really be 2-3 separate messages rather than one. They're kept as
+  a single entry — correctly attributed, just coarser than a true
+  one-row-per-message split.
+- Black-box redactions in the source produce no OCR text at all. Where a
+  header is found with no content at all before the next header, the entry
+  is flagged `redacted: true` (shown as an orange "▪ redacted" tag) with a
+  placeholder note; but a redaction that falls *inside* an otherwise
+  non-empty message leaves no distinguishing trace and can't be flagged.
 
 Part 2 was released as a genuine text-layer Slack export (message ⟶
-timestamp ⟶ sender bracketed blocks), so it parses cleanly at **per-message**
+timestamp ⟶ sender bracketed blocks), so it parses exactly at per-message
 granularity, with accurate timestamps, senders, thread IDs, and attachments.
 
 ## Structure
@@ -38,8 +57,9 @@ granularity, with accurate timestamps, senders, thread IDs, and attachments.
 | `page_based/slack-part1.pdf`, `slack-part2.pdf` | Source PDFs |
 | `page_based/part1.json`, `part2.json` | Parsed entries |
 | `page_based/part1_page_map.json`, `part2_page_map.json` | Entry &rarr; PDF page lookup for the viewer's jump-to-page feature |
-| `page_based/parse_part1.py` | Day-chunk parser for the OCR'd Part 1 PDF |
+| `page_based/parse_part1.py` | Message-level parser for the OCR'd Part 1 PDF |
 | `page_based/build_part2.py` | Reshapes the existing high-quality Part 2 message parse into the app's entry schema |
+| `page_based/slack_notice.py` | Shared Slack-system-notice detection used by both builders |
 
 ## How to use
 
