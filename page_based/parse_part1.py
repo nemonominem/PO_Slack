@@ -31,9 +31,10 @@ OCR cleanup applied while assembling each entry:
   - Leading avatar/icon garbage ("@B Nice channel title" → "Nice channel
     title", "@ Morning" → "Morning"); real @mentions are kept.
   - Slack's document-card chevron (▾), OCR'd as ¥, is dropped.
-  - Attachment cards (Post / Word / G Suite / files / images) are wrapped
-    with an "== ATTACHMENT ==" marker so authored chat stays distinct from
-    the card title/body that Slack renders under the message.
+  - File/image cards are wrapped with "== ATTACHMENT ==" (or
+    "== ATTACHMENT(N) =="). Slack Posts / Word / G Suite / shared posts
+    are "== EMBEDDED DOC ==" — the Slack "Post ¥" chrome becomes the
+    stub "embedded", then the title and body, one line per paragraph.
 
 Slack's own system notices (channel-created banner, "X joined the channel",
 channel renames, ...) are re-attributed to a synthetic 'Slack Notice' sender
@@ -74,10 +75,19 @@ NOISE_LINE_RE = re.compile(r"^\s*REV\d+\s*$")
 NOISE_SUBSTRINGS = ("Add description", "Add people", "Send emails to channel", "Pinned by you", "Pinned to this channel")
 NOISE_STANDALONE = {"sce"}
 
+FILE_EXT = r"pdf|png|jpe?g|zip|docx?|xlsx?|csv|gif|geneious|pptx?|txt|fasta|gz|ong|prg|xisx"
 ATTACHMENT_FILENAME_RE = re.compile(
-    r"^[\w.\-+ ]{1,80}\.(pdf|png|jpe?g|zip|docx?|xlsx?|csv|gif|geneious|pptx?|txt)$",
+    r"^[\w.\-+ ]{1,80}\.(?:" + FILE_EXT + r")$",
     re.IGNORECASE,
 )
+# One filename token. Spaces are allowed only in Slack "Screen Shot …" names;
+# two names on one line ("a.geneious b.geneious") are separate files.
+FILENAME_TOKEN_RE = re.compile(
+    r"(?:Screen\s+Shot\s+\d{4}-\d{2}-\d{2}\s+at\s+[\d.:]+\s*(?:AM|PM)?\.[\w]+"
+    r"|[\w.\-+]+\.(?:" + FILE_EXT + r"))",
+    re.I,
+)
+N_FILES_RE = re.compile(r"(?i)^(\d+)\s+files$")
 
 # Slack's ▾ / document-card chevron is consistently OCR'd as yen (¥).
 # Real mentions are @Name with no space; "@B Nice..." / "@ Morning" are
@@ -189,15 +199,14 @@ def classify_line(line):
 
 
 def extract_filenames(line):
-    """Pull any obvious filename tokens out of an attachment line."""
-    found = []
-    if ATTACHMENT_FILENAME_RE.match(line):
-        found.append(line)
+    """Pull filename tokens out of an attachment line (one name per file)."""
+    found = [m.group(0).strip("¥*+~»©|,") for m in FILENAME_TOKEN_RE.finditer(line)]
+    found = [n for n in found if n]
+    if len(found) >= 2:
         return found
-    for tok in re.split(r"\s+", line):
-        tok = tok.strip("¥*+~»©|,")
-        if ATTACHMENT_FILENAME_RE.match(tok):
-            found.append(tok)
+    stripped = line.strip()
+    if ATTACHMENT_FILENAME_RE.match(stripped):
+        return [stripped]
     return found
 
 
@@ -217,17 +226,15 @@ def prepare_content_line(raw):
 
 
 def segment_content(lines):
-    """Split prepared lines into ordered ('chat'|'attach', [lines]) segments.
+    """Split prepared lines into ordered ('chat'|'file'|'doc', [lines]) segments.
 
-    File/image cards consume the filename plus immediately following junk
-    (pixel-OCR crumbs, type chips). Document cards (Post, Word, G Suite,
-    private-post share, email) keep the preview body until the next card
-    or the end of the message — the usual Slack layout.
+    File/image cards consume the filename plus immediately following junk.
+    Embedded documents (Slack Post, Word, G Suite, shared post, email)
+    keep the title + body until the next card or end of the message.
     """
     segments = []
     current = []
     mode = "chat"
-    file_card = False
     filenames = []
 
     def flush():
@@ -238,30 +245,28 @@ def segment_content(lines):
     for line in lines:
         kind = classify_line(line)
         if kind in ("file", "doc"):
-            if mode == "chat":
+            if mode == "chat" or (mode != kind and mode != "chat"):
                 flush()
-                mode = "attach"
-                file_card = kind == "file"
+                mode = kind
+            if kind == "file":
                 filenames.extend(extract_filenames(line))
-                current.append(line)
-            elif kind == "file":
-                # another file chip/name in the same card (e.g. "2 files" + names)
-                file_card = True
-                filenames.extend(extract_filenames(line))
-                current.append(line)
-            # else: repeated type label inside a document card ("Post" after the title)
+            current.append(line)
             continue
-        if mode == "attach":
+        if mode == "file":
             if kind == "chip":
                 continue
             if kind == "junk":
                 current.append(line)
                 continue
-            if file_card and kind == "chat":
+            if kind == "chat":
                 flush()
                 mode = "chat"
-                file_card = False
                 current.append(line)
+                continue
+            current.append(line)
+            continue
+        if mode == "doc":
+            if kind == "chip":
                 continue
             current.append(line)
             continue
@@ -273,15 +278,77 @@ def segment_content(lines):
     return segments, filenames
 
 
+def format_attach_block(seglines):
+    """One file per line; == ATTACHMENT(N) == when N > 1."""
+    names = []
+    other = []
+    for line in seglines:
+        cleaned = clean_ocr_noise(line)
+        if not cleaned:
+            continue
+        if N_FILES_RE.match(cleaned):
+            continue
+        extracted = extract_filenames(cleaned)
+        if extracted:
+            names.extend(extracted)
+            continue
+        other.append(cleaned)
+    if names:
+        label = "== ATTACHMENT(%d) ==" % len(names) if len(names) > 1 else "== ATTACHMENT =="
+        return label + "\n" + "\n".join(names)
+    if not other:
+        return ""
+    return "== ATTACHMENT ==\n" + "\n".join(other)
+
+
+def format_embed_block(seglines):
+    """Slack Post / Word / G Suite card → == EMBEDDED DOC == + title + body.
+
+    Slack prints the type twice on a Post (once above the card, once on it).
+    That second 'Post' is not another document.
+    """
+    n_docs = 0
+    since_start = 0
+    body = []
+    for line in seglines:
+        cleaned = clean_ocr_noise(line)
+        if not cleaned:
+            continue
+        if DOC_ATTACH_RE.match(cleaned):
+            if n_docs == 0 or since_start >= 2:
+                n_docs += 1
+            since_start = 0
+            continue
+        if TYPE_CHIP_RE.match(cleaned):
+            continue
+        body.append(cleaned)
+        since_start += 1
+    if not body:
+        return "", n_docs
+    label = "== EMBEDDED DOC(%d) ==" % n_docs if n_docs > 1 else "== EMBEDDED DOC =="
+    return label + "\n" + "\n".join(body), max(n_docs, 1)
+
+
 def format_segments(segments):
     pieces = []
     for kind, seglines in segments:
-        cleaned = [clean_ocr_noise(x) for x in seglines if x]
-        if not cleaned:
+        if kind == "file":
+            block = format_attach_block(seglines)
+            if block:
+                pieces.append(block)
             continue
-        if kind == "attach":
-            pieces.append("== ATTACHMENT ==\n" + "\n".join(cleaned))
-        else:
+        if kind == "doc":
+            block, _n = format_embed_block(seglines)
+            if not block:
+                continue
+            # A Slack Post with no authored chat is just the embed chrome
+            # ("Post ¥"). Surface that as the stub "embedded".
+            if not pieces:
+                pieces.append("embedded")
+            pieces.append(block)
+            continue
+        cleaned = [clean_ocr_noise(x) for x in seglines if x]
+        if cleaned:
             pieces.append("\n".join(cleaned))
     return "\n\n".join(pieces).strip()
 

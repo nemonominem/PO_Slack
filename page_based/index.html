@@ -1589,6 +1589,51 @@ function getTimelineSeries() {
   return timelineSeries || buildTimelineSeries();
 }
 
+// Full-span view has ~1200 day-categories, so a 1-entry day is a sub-pixel
+// sliver — and offset:false clips the first/last bar in half. Isolated days
+// at the end (the Jun 2023 archive notices) vanish. Redraw those bars with a
+// minimum pixel size so they stay visible without changing the counts.
+var MIN_ENTRY_MARK_PX = 3;
+var entryMarkPlugin = {
+  id: 'entryMarkPlugin',
+  afterDatasetsDraw: function(chart) {
+    var series = getTimelineSeries();
+    if (!series) return;
+    var meta = chart.getDatasetMeta(0);
+    if (!meta || !meta.data) return;
+    var ctx = chart.ctx;
+    var ca = chart.chartArea;
+    var timeAxis = timelineTimeAxisId(chart);
+    for (var i = 0; i < meta.data.length; i++) {
+      if ((series.entryCounts[i] || 0) <= 0) continue;
+      var el = meta.data[i];
+      if (!el || !el.getProps) continue;
+      var p = el.getProps(['x', 'y', 'base', 'width', 'height'], true);
+      if (!isFinite(p.x) || !isFinite(p.y) || !isFinite(p.base)) continue;
+      ctx.save();
+      ctx.fillStyle = series.entryColors[i];
+      if (timeAxis === 'y') {
+        var h = Math.max(Math.abs(p.height) || 0, MIN_ENTRY_MARK_PX);
+        var y = p.y - h / 2;
+        if (y < ca.top) y = ca.top;
+        if (y + h > ca.bottom) y = ca.bottom - h;
+        var x0 = Math.min(p.x, p.base);
+        var w = Math.max(Math.abs(p.x - p.base), MIN_ENTRY_MARK_PX);
+        ctx.fillRect(x0, y, w, h);
+      } else {
+        var w2 = Math.max(Math.abs(p.width) || 0, MIN_ENTRY_MARK_PX);
+        var x = p.x - w2 / 2;
+        if (x < ca.left) x = ca.left;
+        if (x + w2 > ca.right) x = ca.right - w2;
+        var y0 = Math.min(p.y, p.base);
+        var h2 = Math.max(Math.abs(p.y - p.base), MIN_ENTRY_MARK_PX);
+        ctx.fillRect(x, y0, w2, h2);
+      }
+      ctx.restore();
+    }
+  }
+};
+
 function hitCountsForSeries(results) {
   const series = getTimelineSeries();
   const byDate = {};
@@ -1860,6 +1905,7 @@ function redrawTimelines(opts) {
             borderWidth: 0,
             barPercentage: 1.0,
             categoryPercentage: 1.0,
+            minBarLength: 4,
             order: 2,
           },
           {
@@ -1873,6 +1919,7 @@ function redrawTimelines(opts) {
           }
         ]
       },
+      plugins: [entryMarkPlugin],
       options: {
         indexAxis: 'y',
         responsive: true,
@@ -1929,7 +1976,7 @@ function redrawTimelines(opts) {
           },
           y: {
             reverse: false,
-            offset: false,
+            offset: true,
             ticks: {
               color: '#fff',
               autoSkip: true,
@@ -1966,6 +2013,7 @@ function redrawTimelines(opts) {
             borderWidth: 0,
             barPercentage: 1.0,
             categoryPercentage: 1.0,
+            minBarLength: 4,
             order: 2,
           },
           {
@@ -1979,6 +2027,7 @@ function redrawTimelines(opts) {
           }
         ]
       },
+      plugins: [entryMarkPlugin],
       options: {
         indexAxis: 'x',
         responsive: true,
@@ -2014,7 +2063,7 @@ function redrawTimelines(opts) {
         scales: {
           // TIME left → right
           x: {
-            offset: false,
+            offset: true,
             ticks: {
               color: '#fff',
               maxRotation: 45,
@@ -2552,6 +2601,27 @@ function escapeHtml(s) {
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
+function splitAttachmentNames(raw) {
+  raw = String(raw || '').trim();
+  if (!raw) return [];
+  var re = /Screen\s+Shot\s+\d{4}-\d{2}-\d{2}\s+at\s+[\d.:]+\s*(?:AM|PM)?\.[\w]+|[\w.\-+]+\.(?:pdf|png|jpe?g|gif|zip|docx?|xlsx?|csv|geneious|pptx?|txt|fasta|gz|ong|prg|xisx)/gi;
+  var names = raw.match(re) || [];
+  if (names.length >= 2) return names;
+  return [raw];
+}
+
+function formatAttachmentBlock(list) {
+  var names = [];
+  (list || []).forEach(function(a) {
+    splitAttachmentNames(a).forEach(function(n) {
+      if (n && names.indexOf(n) === -1) names.push(n);
+    });
+  });
+  if (!names.length) return '';
+  var label = names.length > 1 ? '== ATTACHMENT(' + names.length + ') ==' : '== ATTACHMENT ==';
+  return label + '\n' + names.join('\n');
+}
+
 // ============================================================
 // Display results (full content + multi-hit navigation)
 // ============================================================
@@ -2592,8 +2662,8 @@ function displayResults(results, query, opts) {
     const pdfPage = pdfPageForResult(r);
     const pageLabel = pdfPageLabel(r);
     let content = e.content || '';
-    if (e.attachments && e.attachments.length && content.indexOf('== ATTACHMENT ==') === -1) {
-      content += '\n\n== ATTACHMENT ==\n' + e.attachments.join('\n');
+    if (e.attachments && e.attachments.length && content.indexOf('== ATTACHMENT') === -1) {
+      content += '\n\n' + formatAttachmentBlock(e.attachments);
     }
 
     // Store hit positions for navigation
@@ -2646,7 +2716,7 @@ function displayResults(results, query, opts) {
     html += '<div class="result-content" id="content-' + i + '">';
     for (const p of paragraphs) {
       const plain = p.replace(/<[^>]+>/g, '').trim();
-      if (/^== ATTACHMENT ==/.test(plain)) {
+      if (/^== (?:ATTACHMENT|EMBEDDED DOC)/.test(plain)) {
         html += '<p class="attach-block">' + p + '</p>';
       } else {
         html += '<p>' + p + '</p>';

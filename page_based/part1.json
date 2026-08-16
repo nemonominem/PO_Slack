@@ -48,9 +48,10 @@
       "time": null,
       "thread_id": null,
       "attachments": [
-        "Bat_Wuhan.geneious Bat_Wuhan_SARS.geneious"
+        "Bat_Wuhan.geneious",
+        "Bat_Wuhan_SARS.geneious"
       ],
-      "content": "Super secret too\n\n== ATTACHMENT ==\n2 files\nBat_Wuhan.geneious Bat_Wuhan_SARS.geneious",
+      "content": "Super secret too\n\n== ATTACHMENT(2) ==\nBat_Wuhan.geneious\nBat_Wuhan_SARS.geneious",
       "redacted": false,
       "idx": 3
     },
@@ -61,7 +62,7 @@
       "time": null,
       "thread_id": null,
       "attachments": [],
-      "content": "== ATTACHMENT ==\nPost\nIdeas for analyses\nStructural analysis comparing nCoV/SARS/bat binding to bat/human ACE2\nSRA search furin site + neighbor\nLikelihood of gaining furin site\nLikelihood of gaining restriction site\nConservation in bat viruses around restriction site\nGeneral conservation across RBD\nIs RBD hyper mutated or is this what we would expect?\nExamples of mechanisms by which viruses pick up furin sites",
+      "content": "embedded\n\n== EMBEDDED DOC ==\nIdeas for analyses\nStructural analysis comparing nCoV/SARS/bat binding to bat/human ACE2\nSRA search furin site + neighbor\nLikelihood of gaining furin site\nLikelihood of gaining restriction site\nConservation in bat viruses around restriction site\nGeneral conservation across RBD\nIs RBD hyper mutated or is this what we would expect?\nExamples of mechanisms by which viruses pick up furin sites",
       "redacted": false,
       "idx": 4
     },
@@ -83,7 +84,7 @@
       "time": "01:28",
       "thread_id": null,
       "attachments": [],
-      "content": "22553 - 23140 in Hu-1\n(might be a slight jitter in 3’ - need to doublecheck)\n\n== ATTACHMENT ==\nPrivate post, shared in 1 place 2\nStructural analysis comparing nCoV/SARS/bat binding to bat/human ACE2\nSRA search furin site + neighbor\nLikelihood of gaining furin site\nLikelihood of gaining restriction site\nConservation in bat viruses around restriction site\nGeneral conservation across RBD\nIs RBD hyper mutated or is this what we would expect?\nExamples of mechanisms by which viruses pick up furin sites\nStructural modeling human ACE2 vs bat ACE2\nTs/Tv / k-mer usage unusua in any way?",
+      "content": "22553 - 23140 in Hu-1\n(might be a slight jitter in 3’ - need to doublecheck)\n\n== EMBEDDED DOC ==\nStructural analysis comparing nCoV/SARS/bat binding to bat/human ACE2\nSRA search furin site + neighbor\nLikelihood of gaining furin site\nLikelihood of gaining restriction site\nConservation in bat viruses around restriction site\nGeneral conservation across RBD\nIs RBD hyper mutated or is this what we would expect?\nExamples of mechanisms by which viruses pick up furin sites\nStructural modeling human ACE2 vs bat ACE2\nTs/Tv / k-mer usage unusua in any way?",
       "redacted": false,
       "idx": 6
     },
@@ -107,7 +108,7 @@
       "attachments": [
         "Screen Shot 2020-02-01 at 10.16.33.png"
       ],
-      "content": "The RBD is definitely heavily mutated, but I'm not sure that's unexpected - Ineed to compare across the bat viruses.\n\n== ATTACHMENT ==\nScreen Shot 2020-02-01 at 10.16.33.png\nooo\nee ——e\na ey\n\n(this is protein)",
+      "content": "The RBD is definitely heavily mutated, but I'm not sure that's unexpected - Ineed to compare across the bat viruses.\n\n== ATTACHMENT ==\nScreen Shot 2020-02-01 at 10.16.33.png\n\n(this is protein)",
       "redacted": false,
       "idx": 8
     },
@@ -208,7 +209,7 @@
       "attachments": [
         "image.png"
       ],
-      "content": "aie SARS:\n\n== ATTACHMENT ==\nimageong\n\nnCov;\n\n== ATTACHMENT ==\nimage.png\nj -\n\nSo not particularly heavily mutated.",
+      "content": "aie SARS:\n\n== ATTACHMENT ==\nimageong\n\nnCov;\n\n== ATTACHMENT ==\nimage.png\n\nSo not particularly heavily mutated.",
       "redacted": false,
       "idx": 17
     },
@@ -639,7 +640,7 @@
       "time": "22:42",
       "thread_id": null,
       "attachments": [],
-      "content": "@Eddie Holmes and @Andrew Rambaut - here's a document I have been working on trying to summarize the discussions, A little tricky to balance how much to include versus not, so please feel\nfree to edit away as you see fit. Maybe send this over to Jeremy and Tony Sunday? https://docs.google.com/document/d/1HOVHVaahY¥ 2wMwAijj_Mb-rLTV3QomBai-DwRDcn5060E/edit?\nusp»sharing\n\n== ATTACHMENT ==\nG Suite Document\nSummary",
+      "content": "@Eddie Holmes and @Andrew Rambaut - here's a document I have been working on trying to summarize the discussions, A little tricky to balance how much to include versus not, so please feel\nfree to edit away as you see fit. Maybe send this over to Jeremy and Tony Sunday? https://docs.google.com/document/d/1HOVHVaahY¥ 2wMwAijj_Mb-rLTV3QomBai-DwRDcn5060E/edit?\nusp»sharing\n\n== EMBEDDED DOC ==\nSummary",
       "redacted": false,
       "idx": 56
     },
@@ -650,9 +651,12 @@
       "time": "01:00",
       "thread_id": null,
       "attachments": [
+        "bat_wuhan_snps.xisx",
+        "sars_sars-like_snps.xisx",
+        "sars_sars-like2_snps.xisx",
         "snps.txt"
       ],
-      "content": "Dumping this here as I need to think on this - it’s kinda weird. Looking at the Ts/Tv spectrum.\n\n== ATTACHMENT ==\n4 files\nbat_wuhan_snps.xisx sars_sars-like_snps.xisx sars_sars-like2_snps.xisx\nsnps.txt",
+      "content": "Dumping this here as I need to think on this - it’s kinda weird. Looking at the Ts/Tv spectrum.\n\n== ATTACHMENT(4) ==\nbat_wuhan_snps.xisx\nsars_sars-like_snps.xisx\nsars_sars-like2_snps.xisx\nsnps.txt",
       "redacted": false,
       "idx": 57
     },
@@ -819,7 +823,7 @@
       "attachments": [
         "H9 and furin site.pdf"
       ],
-      "content": "ane In the bioRxiv pdf they say; “When compared with the other 2019-nCeVs, EPI_ISL_403928 has four variations in $ protein (T572I,G799V, F800C and N801K) and two variations in N protein\n{A414C and D415)).\" I can totally buy that thats’s still an artfact.\nHere is the alignment of BatG13 vs nCoV.\n\n== ATTACHMENT ==\nPOF\n\nA} LALIGN results Bat RatG13 vs nCoV .pdf\neZ POF\nLALIGN\n‘Vemes! Contac)\nend vere 2b AOC My 2 Ry Sein RMA 20\nalign cartg! foe WURS 9s. BATRTID\nPEM Beet Server) Deer ae fee 11 FF 4 OO\nbin! Lacgan 8.8 of <td wy =D S486.3.nay S6Beg = BY\npayer\nThese are very similar Spike proteins except for the RBD that looks like it was human adapted and the insertion of the PRRA, that concerts the site to an optimal furin-like cleavage site and\npotentially creates O-linked glycan sites.\nTo convert an low pathogericity avian flu v to a high pathogenicity virus what happens is the insertion of two arginines - Duan 2007.\n\n== ATTACHMENT ==\n2 files\n\nA} Alexander and Brown.pdf A 0Uan2007 LPAI vs HPAI.pdf\na Por * Ba\nAleander and Brown teach that: \"All the current evidence\nindicates that HPAI viruses arise by mutation after\nLPAI viruses of the HS or H7 subtype have been\nintroduced into poultry. Several mechanisms may be\nresponsible for this mutation, For most HPAI viruses, there\nappears to have been spontaneous duplication of purine\ntriplets, which results in the insertion of basic amino acids\nat the HAO cleavage site, and this seems to occur due toa\ntranscription error by the polymerase complex (76).\nThis is what Andrew stated last night -it can happen in poultry. But its and insertion of two aminoacids not four at once.\nH9 flu viruses optimize a minimal furin cleavage site to an optimal one.\n\n== ATTACHMENT ==\nH9 and furin site.pdf\n\nap Pur\nA Novel Activation Mechanism of Avian Influenza Virus H9N2 by\nFerin\ney ee ih yt\nNESS SE SSET OS\nStnas seoston soe oo onrea deowadgourtersher statnortoee tat tdeatonam od steed\nESS ieee\nSoa meen dea peunene daa were Gakowinnodcnor eatin entocoeen pa\n1243 H7 viruses appear to make new polybasic furin like cleavage sites by recombining in longish stretchs of nucleotides.\n\n== ATTACHMENT ==\nPOF\n\nI 2 I H7 recombination.pdf\n\n== ATTACHMENT ==\nPOF\n\nRecombination Hey in\nVirulence Shift in Avian Influenza\nOutbreak, Chile\nGewtd ( tamer,” Corem A Sereet 56 Garkag en 1 Brown. § Stew C tameas Chang Wor Len\n\"Gumanas Retaoebge temaonnens bis tpomaac? atone Aeeones”\nAvery good review by Drosten.\n\n== ATTACHMENT ==\nPDF\n\nI 2 I DRosten - source of CoVs.pdf\n\n== ATTACHMENT ==\nPOF\n\nSpores\nHosts and Sources of Endemic\nHuman Coronaviruses\nVictor M. Corman’, Doreen Muth\" ', Daniela Nemeyer\",\n(Civistian Orosten”\"*",
+      "content": "ane In the bioRxiv pdf they say; “When compared with the other 2019-nCeVs, EPI_ISL_403928 has four variations in $ protein (T572I,G799V, F800C and N801K) and two variations in N protein\n{A414C and D415)).\" I can totally buy that thats’s still an artfact.\nHere is the alignment of BatG13 vs nCoV.\n\n== ATTACHMENT ==\nPOF\n\nA} LALIGN results Bat RatG13 vs nCoV .pdf\neZ POF\nLALIGN\n‘Vemes! Contac)\nend vere 2b AOC My 2 Ry Sein RMA 20\nalign cartg! foe WURS 9s. BATRTID\nPEM Beet Server) Deer ae fee 11 FF 4 OO\nbin! Lacgan 8.8 of <td wy =D S486.3.nay S6Beg = BY\npayer\nThese are very similar Spike proteins except for the RBD that looks like it was human adapted and the insertion of the PRRA, that concerts the site to an optimal furin-like cleavage site and\npotentially creates O-linked glycan sites.\nTo convert an low pathogericity avian flu v to a high pathogenicity virus what happens is the insertion of two arginines - Duan 2007.\n\nA} Alexander and Brown.pdf A 0Uan2007 LPAI vs HPAI.pdf\na Por * Ba\nAleander and Brown teach that: \"All the current evidence\nindicates that HPAI viruses arise by mutation after\nLPAI viruses of the HS or H7 subtype have been\nintroduced into poultry. Several mechanisms may be\nresponsible for this mutation, For most HPAI viruses, there\nappears to have been spontaneous duplication of purine\ntriplets, which results in the insertion of basic amino acids\nat the HAO cleavage site, and this seems to occur due toa\ntranscription error by the polymerase complex (76).\nThis is what Andrew stated last night -it can happen in poultry. But its and insertion of two aminoacids not four at once.\nH9 flu viruses optimize a minimal furin cleavage site to an optimal one.\n\n== ATTACHMENT ==\nH9 and furin site.pdf\n\nap Pur\nA Novel Activation Mechanism of Avian Influenza Virus H9N2 by\nFerin\ney ee ih yt\nNESS SE SSET OS\nStnas seoston soe oo onrea deowadgourtersher statnortoee tat tdeatonam od steed\nESS ieee\nSoa meen dea peunene daa were Gakowinnodcnor eatin entocoeen pa\n1243 H7 viruses appear to make new polybasic furin like cleavage sites by recombining in longish stretchs of nucleotides.\n\n== ATTACHMENT ==\nPOF\n\nI 2 I H7 recombination.pdf\n\n== ATTACHMENT ==\nPOF\n\nRecombination Hey in\nVirulence Shift in Avian Influenza\nOutbreak, Chile\nGewtd ( tamer,” Corem A Sereet 56 Garkag en 1 Brown. § Stew C tameas Chang Wor Len\n\"Gumanas Retaoebge temaonnens bis tpomaac? atone Aeeones”\nAvery good review by Drosten.\n\n== ATTACHMENT ==\nPDF\n\nI 2 I DRosten - source of CoVs.pdf\n\n== ATTACHMENT ==\nPOF\n\nSpores\nHosts and Sources of Endemic\nHuman Coronaviruses\nVictor M. Corman’, Doreen Muth\" ', Daniela Nemeyer\",\n(Civistian Orosten”\"*",
       "redacted": false,
       "idx": 72
     },
@@ -832,7 +836,7 @@
       "attachments": [
         "WR HKU-1 Spike.docx"
       ],
-      "content": "ae New analysis: Some strains of murine hepatitis viruses have a super-optimal furan-like cleavage site (with predicted O-liked glycans), some just have an optimal site and some have no site at all.\nJust based on the spike phylogeny this seems to have evolved with the spike protein more or less but this is out of my wheefouse. Not sure if spike evolution in MHV follows evolution,tMCRA etc\nof other prateins but all are relevant questions given the current issues being discussed IMO\n\n== ATTACHMENT ==\nWord Document\nFeb 2nd, 2020\nAnd a first bok at the HKU-1 spike -is a close relative of MHV.\nAnd a first look at the HKU-1 spike -is a close relative of MHV. February 2nd. 2020\nWR HKU-1 Spike.docx",
+      "content": "ae New analysis: Some strains of murine hepatitis viruses have a super-optimal furan-like cleavage site (with predicted O-liked glycans), some just have an optimal site and some have no site at all.\nJust based on the spike phylogeny this seems to have evolved with the spike protein more or less but this is out of my wheefouse. Not sure if spike evolution in MHV follows evolution,tMCRA etc\nof other prateins but all are relevant questions given the current issues being discussed IMO\n\n== EMBEDDED DOC ==\nFeb 2nd, 2020\nAnd a first bok at the HKU-1 spike -is a close relative of MHV.\nAnd a first look at the HKU-1 spike -is a close relative of MHV. February 2nd. 2020\n\n== ATTACHMENT ==\nWR HKU-1 Spike.docx",
       "redacted": false,
       "idx": 73
     },
@@ -909,7 +913,7 @@
       "time": "15:20",
       "thread_id": null,
       "attachments": [],
-      "content": "= KHU-L A\nsequence (6).txt +\n1 >1c1]0Q437619.1_prot_A8D96198.1_1 [gene=S] [protein=spike glycoprotein) [protein_id=A8096198.1} [location=1..4871] [gokey=CDS}\n2 MLLTIFILPTTLAVIGDFNCTNFAINDKNTTVPRISEYVVDVSYGLGTYYILDRVYLNTTILFTGYFPKS\n3 GANFRDLSLKGTTYLSTLWYQKPFLSOFNNGIFSRVKNTKLYVNKTLYSEFSTIVIGSVF INNSYTIVVQ\n4 PHNGVLETTACQYTMCEYPHT ICKSKGSSRNESWHFOKSEPLCLFKKNETYNVSTOWLYFHFYQERGTFY\nMHV\nsequence just s.txt +\n2 >)el|MF618252.1_prot_ATN37888.1_3 [proteinsspike glycoprotein] [protein_ids=ATN37888.1) [location=2272@..26694] [gbkey=CDS]\n3. MLFVFILFLPSCLGYIGDFRCIQLVNSNGANVSAPSISTETVEVSQGLGTYYVLORVYLNATLLLTGYYP\n4 VDGSKFRNLALTGTNSVSLSWFOPPYLSOFNOGIFAKVOQNLKTSTPSGATAYFPTIVIGSLFGYNSYTVV\nHere are the clustal alignments for the entire spike proteins.\n\n== ATTACHMENT ==\n2 files\n\nMHV clustalo-E20200202-150710... MH HKU-1 clustalo-E20200202-1705...\nPlain Text BD Plain Text ]",
+      "content": "= KHU-L A\nsequence (6).txt +\n1 >1c1]0Q437619.1_prot_A8D96198.1_1 [gene=S] [protein=spike glycoprotein) [protein_id=A8096198.1} [location=1..4871] [gokey=CDS}\n2 MLLTIFILPTTLAVIGDFNCTNFAINDKNTTVPRISEYVVDVSYGLGTYYILDRVYLNTTILFTGYFPKS\n3 GANFRDLSLKGTTYLSTLWYQKPFLSOFNNGIFSRVKNTKLYVNKTLYSEFSTIVIGSVF INNSYTIVVQ\n4 PHNGVLETTACQYTMCEYPHT ICKSKGSSRNESWHFOKSEPLCLFKKNETYNVSTOWLYFHFYQERGTFY\nMHV\nsequence just s.txt +\n2 >)el|MF618252.1_prot_ATN37888.1_3 [proteinsspike glycoprotein] [protein_ids=ATN37888.1) [location=2272@..26694] [gbkey=CDS]\n3. MLFVFILFLPSCLGYIGDFRCIQLVNSNGANVSAPSISTETVEVSQGLGTYYVLORVYLNATLLLTGYYP\n4 VDGSKFRNLALTGTNSVSLSWFOPPYLSOFNOGIFAKVOQNLKTSTPSGATAYFPTIVIGSLFGYNSYTVV\nHere are the clustal alignments for the entire spike proteins.\n\nMHV clustalo-E20200202-150710... MH HKU-1 clustalo-E20200202-1705...\nPlain Text BD Plain Text ]",
       "redacted": false,
       "idx": 80
     },
@@ -933,7 +937,7 @@
       "attachments": [
         "fo 2 documents from H5N1 cleavage sites.geneious"
       ],
-      "content": "as If you want to look here is a bunch of cleavage sites in high-path avian influenza H5 and H7.\nZip *\n\n== ATTACHMENT ==\nfo 2 documents from H5N1 cleavage sites.geneious\nQe",
+      "content": "as If you want to look here is a bunch of cleavage sites in high-path avian influenza H5 and H7.\nZip *\n\n== ATTACHMENT ==\nfo 2 documents from H5N1 cleavage sites.geneious",
       "redacted": false,
       "idx": 82
     },
@@ -1065,9 +1069,10 @@
       "time": null,
       "thread_id": null,
       "attachments": [
-        "spike_alignment.fasta spike_alignment.geneious"
+        "spike_alignment.fasta",
+        "spike_alignment.geneious"
       ],
-      "content": "@Andrew Rambaut and @Robert Garry take a look at this alignment while reading these three papers:\nhttps://jvi.asm.org/content/early/2020/01/23/JVI.00127-20\nhttps://www-.nature.com/articles/s41579-018-0118-9 (section on “SARS-CoV mutations that affect human and civet receptor binding’).\nhttps://jvi.asm.org/content/82/5/2274\nThis is very interesting - nCoV is loaded for binding human ACE2 receptor. Compared to the bats, 5/6 of the most critical contact residues are mutated in nCoV. Very interesting.\n(key residues are marked “mutated” in Geneious for lack of a better category...) (edited)\n\n== ATTACHMENT ==\n2 files\nspike_alignment.fasta spike_alignment.geneious",
+      "content": "@Andrew Rambaut and @Robert Garry take a look at this alignment while reading these three papers:\nhttps://jvi.asm.org/content/early/2020/01/23/JVI.00127-20\nhttps://www-.nature.com/articles/s41579-018-0118-9 (section on “SARS-CoV mutations that affect human and civet receptor binding’).\nhttps://jvi.asm.org/content/82/5/2274\nThis is very interesting - nCoV is loaded for binding human ACE2 receptor. Compared to the bats, 5/6 of the most critical contact residues are mutated in nCoV. Very interesting.\n(key residues are marked “mutated” in Geneious for lack of a better category...) (edited)\n\n== ATTACHMENT(2) ==\nspike_alignment.fasta\nspike_alignment.geneious",
       "redacted": false,
       "idx": 94
     },
@@ -1089,7 +1094,7 @@
       "time": "22:25",
       "thread_id": null,
       "attachments": [],
-      "content": "Two homology models to accompany the structural stuff if you want to have a look. i\nModel 1 is based on 6acd.1.A and Model 2 6acg.1.A (edited) ak ooa0 =\n\n== ATTACHMENT ==\n2 files\n\nmodel1.pdb model2.pdb\nBD Plain Text Plain Text",
+      "content": "Two homology models to accompany the structural stuff if you want to have a look. i\nModel 1 is based on 6acd.1.A and Model 2 6acg.1.A (edited) ak ooa0 =\n\nmodel1.pdb model2.pdb\nBD Plain Text Plain Text",
       "redacted": false,
       "idx": 96
     },
@@ -1254,7 +1259,7 @@
       "time": "05:55",
       "thread_id": null,
       "attachments": [],
-      "content": "'B Confidentially, just got this from Weifeng. Ones in red. Also Yunnan, Haven't got seqs but can assume they have bat motifs.\n\n== ATTACHMENT ==\n2 files\n\nMH Simplot-0203.pdf MM RAxML_bipartitions.aln_SD01_BGI...\n~~ Beg a Por",
+      "content": "'B Confidentially, just got this from Weifeng. Ones in red. Also Yunnan, Haven't got seqs but can assume they have bat motifs.\n\nMH Simplot-0203.pdf MM RAxML_bipartitions.aln_SD01_BGI...\n~~ Beg a Por",
       "redacted": false,
       "idx": 111
     },
@@ -1605,8 +1610,10 @@
       "sender": "Kristian Andersen",
       "time": "17:46",
       "thread_id": null,
-      "attachments": [],
-      "content": "Baric has this interesting table with the contact residues for the various species. I need to look at compatibility of nCoV\n\n== ATTACHMENT ==\nScreen Shot 2020-02-05 at 14.45.1lpng * j\n\nA 8 omeice\n—eyavae yale\ntime NE OSH (ato\nme KE ONM\nmeee] on eee Ae\nfee Ke ets: > a w J )\nomy KR OO i\nCet SE Ca ara Pm\nc comma\nad vy : A\nAYU (Xp\nnen HBA ABO get",
+      "attachments": [
+        "Screen Shot 2020-02-05 at 14.45.1lpng"
+      ],
+      "content": "Baric has this interesting table with the contact residues for the various species. I need to look at compatibility of nCoV\n\n== ATTACHMENT ==\nScreen Shot 2020-02-05 at 14.45.1lpng\n\nA 8 omeice\n—eyavae yale\ntime NE OSH (ato\nme KE ONM\nmeee] on eee Ae\nfee Ke ets: > a w J )\nomy KR OO i\nCet SE Ca ara Pm\nc comma\nad vy : A\nAYU (Xp\nnen HBA ABO get",
       "redacted": false,
       "idx": 143
     },
@@ -1829,8 +1836,12 @@
       "sender": "Kristian Andersen",
       "time": "12:15",
       "thread_id": null,
-      "attachments": [],
-      "content": "Hii@ehannel= hada look at the Pangolins and got excited about it) but doesn't really seem to change much in my analysisIt's truc that one of the key residues (505) are shared between nCoV and\npango (and not bats), but the others are not. There are several other not-so-key residues that changed in SARS that are also marked in the alignment if you want to take a look (the key ones are\nlabeled “Mutation” and the other not-so-key-but-changing ones are labeled “Site\"). The not so key ones are interesting because they changed during the SARS epidemic and were involved in\nvarious things, including immune selection - in nCoV these are very distinctly bat (and pango) but not human. Screenshots and alignments attached - SARS Ubani is selected as the reference so\nyou'll see changes relative to that.\nEddie (and definitely Bob...) I know you guys are Old Skool, but Geneious really is quite nice for viewing and annotation (and creating!) alignments. Try it e.\n\n== ATTACHMENT ==\n6 files\n\nI Alignment.png == Key.png S proteins AA.geneious ]\niets? PNG == PNG Zip\nS proteins NT.geneious Rp S proteins AA fasta.gz S proteins NT.fasta.gz\nZip @ Gzip Gzip",
+      "attachments": [
+        "NT.geneious",
+        "fasta.gz",
+        "NT.fasta.gz"
+      ],
+      "content": "Hii@ehannel= hada look at the Pangolins and got excited about it) but doesn't really seem to change much in my analysisIt's truc that one of the key residues (505) are shared between nCoV and\npango (and not bats), but the others are not. There are several other not-so-key residues that changed in SARS that are also marked in the alignment if you want to take a look (the key ones are\nlabeled “Mutation” and the other not-so-key-but-changing ones are labeled “Site\"). The not so key ones are interesting because they changed during the SARS epidemic and were involved in\nvarious things, including immune selection - in nCoV these are very distinctly bat (and pango) but not human. Screenshots and alignments attached - SARS Ubani is selected as the reference so\nyou'll see changes relative to that.\nEddie (and definitely Bob...) I know you guys are Old Skool, but Geneious really is quite nice for viewing and annotation (and creating!) alignments. Try it e.\n\nI Alignment.png == Key.png S proteins AA.geneious ]\niets? PNG == PNG Zip\n\n== ATTACHMENT(3) ==\nNT.geneious\nfasta.gz\nNT.fasta.gz\n\nZip @ Gzip Gzip",
       "redacted": false,
       "idx": 163
     },
@@ -2083,9 +2094,10 @@
       "time": "13:08",
       "thread_id": null,
       "attachments": [
-        "alignment_spike_nt.fasta.gz alignment_spike_nt.geneious"
+        "alignment_spike_nt.fasta.gz",
+        "alignment_spike_nt.geneious"
       ],
-      "content": "I can’t for the life of me get a good alignment with those additional pengos included... They seem very low quality. I'll continue... For now, here are spike protein alignments containing the bat,\npengo, and some select human viruses. Changed the annotations to be more logical too.\n\n== ATTACHMENT ==\n2 files\nalignment_spike_nt.fasta.gz alignment_spike_nt.geneious\n\nGzip Zip\nCaen:",
+      "content": "I can’t for the life of me get a good alignment with those additional pengos included... They seem very low quality. I'll continue... For now, here are spike protein alignments containing the bat,\npengo, and some select human viruses. Changed the annotations to be more logical too.\n\n== ATTACHMENT(2) ==\nalignment_spike_nt.fasta.gz\nalignment_spike_nt.geneious\n\nGzip Zip\nCaen:",
       "redacted": false,
       "idx": 186
     },
@@ -2120,7 +2132,7 @@
       "attachments": [
         "Alignment.png"
       ],
-      "content": "Here we go - I cleaned it up. Seems like we might have ourselves a pangolin recombinant...\n\n== ATTACHMENT ==\n2 files\n\nfa alignment_spike_aa.geneious 3 I alignment_spike_aa.fasta.gz\nZip Grip\n\n== ATTACHMENT ==\nAlignment.png\n\nBie SF a i zat\nfeed & ee s\nHE=SSStS ws : i ace\nHeSrSr ui ei gee pe\nHea : i it\nHESS 4 i :\nHSS: gay ; 3\niS fea CERT pee: ie\nHESS. Seb P29: oMETELTE",
+      "content": "Here we go - I cleaned it up. Seems like we might have ourselves a pangolin recombinant...\n\nfa alignment_spike_aa.geneious 3 I alignment_spike_aa.fasta.gz\nZip Grip\n\n== ATTACHMENT ==\nAlignment.png\n\nBie SF a i zat\nfeed & ee s\nHE=SSStS ws : i ace\nHeSrSr ui ei gee pe\nHea : i it\nHESS 4 i :\nHSS: gay ; 3\niS fea CERT pee: ie\nHESS. Seb P29: oMETELTE",
       "redacted": false,
       "idx": 189
     },
@@ -2659,9 +2671,10 @@
       "time": null,
       "thread_id": null,
       "attachments": [
-        "ACE2 Receptors.geneious tee ACE2.png"
+        "Receptors.geneious",
+        "ACE2.png"
       ],
-      "content": "Logically SARS-CoV-2 is good, but I do have to wonder what the Chinese will think about that name given all the stigma around \"SARS\". I'm not sure they want another one of those, so definitely\nimportant they're consultant (I'd be okay with not getting all 1.5 billion of them on board though...)\nSome potential fun for the weekend - alignment of relevant ACE2 receptors. I was trying to get a sense of how similar pangolin ACE2s were to human and whether replication in that host could\nlead to a receptor that's quite finely tuned to the human receptor. Not very clear that that’s the case, but I'll play around with this a bit. Manis javinica = pango\n\n== ATTACHMENT ==\n2 files\nACE2 Receptors.geneious tee ACE2.png\n\nZip Fu PNG",
+      "content": "Logically SARS-CoV-2 is good, but I do have to wonder what the Chinese will think about that name given all the stigma around \"SARS\". I'm not sure they want another one of those, so definitely\nimportant they're consultant (I'd be okay with not getting all 1.5 billion of them on board though...)\nSome potential fun for the weekend - alignment of relevant ACE2 receptors. I was trying to get a sense of how similar pangolin ACE2s were to human and whether replication in that host could\nlead to a receptor that's quite finely tuned to the human receptor. Not very clear that that’s the case, but I'll play around with this a bit. Manis javinica = pango\n\n== ATTACHMENT(2) ==\nReceptors.geneious\nACE2.png\n\nZip Fu PNG",
       "redacted": false,
       "idx": 238
     },
@@ -2806,7 +2819,7 @@
       "attachments": [
         "image.png"
       ],
-      "content": "2. @ Estimates of the date of common ancestor of nCoV and BalG13 assuming a rate of 1e-3 (left) and O.Se-3 (right)\n\n== ATTACHMENT ==\nimage.png\nA$\n\n95% credible intervals:\nrate 1e-3: 1982.9271, 1997.564\nrate 05e-3: 1947.6461, 1978,0808\nSo basically not more recently than 1997",
+      "content": "2. @ Estimates of the date of common ancestor of nCoV and BalG13 assuming a rate of 1e-3 (left) and O.Se-3 (right)\n\n== ATTACHMENT ==\nimage.png\n\n95% credible intervals:\nrate 1e-3: 1982.9271, 1997.564\nrate 05e-3: 1947.6461, 1978,0808\nSo basically not more recently than 1997",
       "redacted": false,
       "idx": 251
     },
@@ -3273,7 +3286,7 @@
         "image.png",
         "image.png"
       ],
-      "content": "BB Something that Richard Neher noticed - a mutation in ORF8 where the cluster sticking out with many of the recent cases matches RaTG13 (amino acid S) where as the so-called Wuhan outbreak\nsequences have a L:\nimargeene *\nend ree a\noem\nCapdindenpameteti 4\nI Leena eee 7\npppennanscomm =\ntiaeoeneyerirmnnns =\n{aieweeocmrnnene ‘3\npppoanacceimenen mn >\ntarvrtnoreemenm as :\ns+ eases orate E3\nSea eenemenen ee =\n2 temaeenwene a 2\nI gate cements cs\nGrecremscereaeert z\npay eemrememnnaen =\nee aracennecinane :\n+ {seamninaenerenpetone 4\nLip emncmnernaenen £\nSarena tre =\npe ee me mee see 2\n{ar emeenmeneannne Fr\n+ -tsarecomacencanatan =\nThere is also a synonymous SNP in ORF 1ab that shows the same pattern: poo\nmmagepng *\nLe poneaaenteaannen .\nThis suggests a different rooting of the tree: Frey 7200»\n\n== ATTACHMENT ==\nimage.png\n\n— (ee Se ee\n‘i ‘= 8 :\n~ wee cme]  agan4\nI omeeme *\n\n== ATTACHMENT ==\nimage.png\n—— wom mer saws .\n= a\n— _— te. _ =\n— i om\n— ws “4\n\n= SEP,",
+      "content": "BB Something that Richard Neher noticed - a mutation in ORF8 where the cluster sticking out with many of the recent cases matches RaTG13 (amino acid S) where as the so-called Wuhan outbreak\nsequences have a L:\nimargeene *\nend ree a\noem\nCapdindenpameteti 4\nI Leena eee 7\npppennanscomm =\ntiaeoeneyerirmnnns =\n{aieweeocmrnnene ‘3\npppoanacceimenen mn >\ntarvrtnoreemenm as :\ns+ eases orate E3\nSea eenemenen ee =\n2 temaeenwene a 2\nI gate cements cs\nGrecremscereaeert z\npay eemrememnnaen =\nee aracennecinane :\n+ {seamninaenerenpetone 4\nLip emncmnernaenen £\nSarena tre =\npe ee me mee see 2\n{ar emeenmeneannne Fr\n+ -tsarecomacencanatan =\nThere is also a synonymous SNP in ORF 1ab that shows the same pattern: poo\nmmagepng *\nLe poneaaenteaannen .\nThis suggests a different rooting of the tree: Frey 7200»\n\n== ATTACHMENT ==\nimage.png\n\n— (ee Se ee\n‘i ‘= 8 :\n~ wee cme]  agan4\nI omeeme *\n\n== ATTACHMENT ==\nimage.png\n\n= SEP,",
       "redacted": false,
       "idx": 293
     },
@@ -3429,7 +3442,7 @@
       "attachments": [
         "image.png"
       ],
-      "content": "== ATTACHMENT ==\nimage.png\n= om r\n\n‘ ee -, i\ned » ’ x } >\neaaececrcemente eepreespenrnsnysedepectariy eres\nteseheiy som im)\nFebruary 1Uth, 2UzU\nhttp: wwwe.chinadaily.com.cn/a/202002/07/WSSe3didaca310128217275d93.htnn\n0 chinadaily.com.cn\nPangolin could be coronavirus intermediate host: Study - Chinadaily.com.cn\nThe pangotin might be a potential intermediate host of the novel coronavirus, as\ngenome sequences of the disease strain separated from the animals were 99 percent\n\n== ATTACHMENT ==\nidentical to those found in infected people, a study has discovered. (102 kB)\n4\n\nane e 1\n2 © re ty\nFrom another article:\nGUANGZHOU, Feb. 7 (Xinhua) -- The genome sequence of the novel coronavirus strain separated from pangolins was 99 percent identical to that from infected people, indicating pangolins may be\nan intermediate host of the virus, a study has found.\nThe study was led by the South China Agricultural University. According to Liu Yahong, president of the university, the research team analyzed more than 1,000 metagenome samples of wild\nanimals and found pangolins as the most likely intermediate host.\nMolecular biological detection revealed that the positive rate of Betacoronavirus in pangolins was 70 percent. Researchers further isolated the virus and observed its structure with an electron\nmicroscope. They found that the genome sequence of the coronavirus strain was 99 percent identical to those in infected people.\nAssuming this an accurate account the researchers did metagenomic studies of 1000 wild animal samples. Then they assembled genomes,and analyzed them.\nHere's what keep me up last night:\nTHEN the “Researchers further isolated the virus and observed its structure with an electron microscope”\nSo - they grew it in cell culture, Those picture looks to me like growth in cultured cells - probably Vero. You can't get EM pictures out of animal tissues like this. Furthermore the virus is growing\npretty damn well in those cells.",
+      "content": "== ATTACHMENT ==\nimage.png\n\n‘ ee -, i\ned » ’ x } >\neaaececrcemente eepreespenrnsnysedepectariy eres\nteseheiy som im)\nFebruary 1Uth, 2UzU\nhttp: wwwe.chinadaily.com.cn/a/202002/07/WSSe3didaca310128217275d93.htnn\n0 chinadaily.com.cn\nPangolin could be coronavirus intermediate host: Study - Chinadaily.com.cn\nThe pangotin might be a potential intermediate host of the novel coronavirus, as\ngenome sequences of the disease strain separated from the animals were 99 percent\n\n== ATTACHMENT ==\nidentical to those found in infected people, a study has discovered. (102 kB)\n4\n\nane e 1\n2 © re ty\nFrom another article:\nGUANGZHOU, Feb. 7 (Xinhua) -- The genome sequence of the novel coronavirus strain separated from pangolins was 99 percent identical to that from infected people, indicating pangolins may be\nan intermediate host of the virus, a study has found.\nThe study was led by the South China Agricultural University. According to Liu Yahong, president of the university, the research team analyzed more than 1,000 metagenome samples of wild\nanimals and found pangolins as the most likely intermediate host.\nMolecular biological detection revealed that the positive rate of Betacoronavirus in pangolins was 70 percent. Researchers further isolated the virus and observed its structure with an electron\nmicroscope. They found that the genome sequence of the coronavirus strain was 99 percent identical to those in infected people.\nAssuming this an accurate account the researchers did metagenomic studies of 1000 wild animal samples. Then they assembled genomes,and analyzed them.\nHere's what keep me up last night:\nTHEN the “Researchers further isolated the virus and observed its structure with an electron microscope”\nSo - they grew it in cell culture, Those picture looks to me like growth in cultured cells - probably Vero. You can't get EM pictures out of animal tissues like this. Furthermore the virus is growing\npretty damn well in those cells.",
       "redacted": false,
       "idx": 307
     },
@@ -3641,7 +3654,7 @@
         "Figure 4.pdf",
         "Figure 5.pdf"
       ],
-      "content": "®@ Abit more on the pangolins. A don't for a second think that this virus out of a lab in Guangdong. I believe the authors in their explanation as it fits with my own work on pangolins. There is now a\nlot of interest in pangolins because of trafficking. Indeed, independently I have a different paper on pangolin viruses that has identifred a novel pestivirus and coltivirus:\n\n== ATTACHMENT ==\nFigure 4.pdf\n+ on\n\nPolyprotein Oo ree me |rmvnn\nPOF * tl\n\n== ATTACHMENT ==\nFigure 5.pdf\n\n+ pss\nAt worse, I think they have got over-excited with their results and claimed too much. The implication is that their pangolin virus is closer to NCP than the one we have from Guangdong but we need\nto see the data. Unfortunately, they may not publish this any time soon because they have faced huge criticism in China, I think mainly from admitting that pangolins are illegally trafficked into\nChina which apparently you are not meant to say. Very Chernobyl. About to edit the doc.",
+      "content": "®@ Abit more on the pangolins. A don't for a second think that this virus out of a lab in Guangdong. I believe the authors in their explanation as it fits with my own work on pangolins. There is now a\nlot of interest in pangolins because of trafficking. Indeed, independently I have a different paper on pangolin viruses that has identifred a novel pestivirus and coltivirus:\n\n== ATTACHMENT ==\nFigure 4.pdf\n\nPolyprotein Oo ree me |rmvnn\nPOF * tl\n\n== ATTACHMENT ==\nFigure 5.pdf\n\n+ pss\nAt worse, I think they have got over-excited with their results and claimed too much. The implication is that their pangolin virus is closer to NCP than the one we have from Guangdong but we need\nto see the data. Unfortunately, they may not publish this any time soon because they have faced huge criticism in China, I think mainly from admitting that pangolins are illegally trafficked into\nChina which apparently you are not meant to say. Very Chernobyl. About to edit the doc.",
       "redacted": false,
       "idx": 326
     },
@@ -4135,8 +4148,10 @@
       "sender": "Kristian Andersen",
       "time": "19:45",
       "thread_id": null,
-      "attachments": [],
-      "content": "Yeah, don't get the MERS stuff - doesn't make sense. 22th 2020-7\nFor SARS/nCoV I'm specifically Icoking at the spike protein (for now) - comparing SARS early in the outbreak to in the middle of it. For SARS this has been done by others as well\nhttps:i/wwew.ncbi.nim.nih.gov/pubmed/14752165\nB® ncbi.nlm.nih.gov\nMolecular evolution of the SARS coronavirus during the course of the SARS epidemic\nin China. - PubMed - NCBI\n\n== ATTACHMENT ==\nScience. 2004 Mar 12;303(5664):1666-9, Epub 2004 Jan 29. (13 kB)\n\n® Sorry, need to catch up. Had to teach a class! One a year. Yes, MERS isa camel virus. ¢ coco wre wi aan people Say it is a bat virus. Anyway, I have trouble with the human pre-adaptation idea: (i)\ndon't see why the market is analogous to AlV screening unless Andrew knows something I don't. I think the best surveillance takes place in the hospitals; (ii) the main reason why Ive been to\nWuhan a few times is to take part in this big tung wash study (BAL) study we have going on. We have meta-transcriptomic data of ~600 people reporting to Wuhan Central Hospital with\nrespiratory disease. We have their full meta-transcriptomes but itis taking an age to analyse because the data set is so big. I'm going to attach the raw virus data here (keep to yourself). I think\nthese are from 2018 but I have to check. There are CoVs but nothing new. I need to double-check with my Mang but he is about best in world about this. The cells in yellow are confirmed, the\nothers per lane reflect index-hopping. Obviously, not conclusive, but a representative sample that the virus was not there then. I suppose we need to get this published ASAP?\nx 20191008_virus_summary.xisx\nOver ExperivenLtewy Lane Rial readin tturnan Nendamas\nrNugen — SCOAIZHK ONSMIE —LYERO ‘\nTeugen — $0089) OS7HIITE §— LESH66D 2\nIga SORT Obesess2 27 9m244\nATNugen  SOLZTKS O4sasenye = 33386271 r\nMegen  Se12Me oats 12700095 ”\nSue Seazenk Osisense 13005 a\nMugen seriat Oo Meese 2061648 ”\ni Ragen BRODIT Larvee DWI? ”\nbhuger SOOSIDEM 1 45520748 41567527 “\nsnugen S808 IHiM L4u2v774 —_sei6808 2\nBNugen — SCONOKE LMSe372@ © 324117 ro\nHewgen  Seu0mmes Laosears  zazmiaa 2\nLike sel0ke 1 49740322 MSOs",
+      "attachments": [
+        "x 20191008_virus_summary.xisx"
+      ],
+      "content": "Yeah, don't get the MERS stuff - doesn't make sense. 22th 2020-7\nFor SARS/nCoV I'm specifically Icoking at the spike protein (for now) - comparing SARS early in the outbreak to in the middle of it. For SARS this has been done by others as well\nhttps:i/wwew.ncbi.nim.nih.gov/pubmed/14752165\nB® ncbi.nlm.nih.gov\nMolecular evolution of the SARS coronavirus during the course of the SARS epidemic\nin China. - PubMed - NCBI\n\n== ATTACHMENT ==\nScience. 2004 Mar 12;303(5664):1666-9, Epub 2004 Jan 29. (13 kB)\n\n® Sorry, need to catch up. Had to teach a class! One a year. Yes, MERS isa camel virus. ¢ coco wre wi aan people Say it is a bat virus. Anyway, I have trouble with the human pre-adaptation idea: (i)\ndon't see why the market is analogous to AlV screening unless Andrew knows something I don't. I think the best surveillance takes place in the hospitals; (ii) the main reason why Ive been to\nWuhan a few times is to take part in this big tung wash study (BAL) study we have going on. We have meta-transcriptomic data of ~600 people reporting to Wuhan Central Hospital with\nrespiratory disease. We have their full meta-transcriptomes but itis taking an age to analyse because the data set is so big. I'm going to attach the raw virus data here (keep to yourself). I think\nthese are from 2018 but I have to check. There are CoVs but nothing new. I need to double-check with my Mang but he is about best in world about this. The cells in yellow are confirmed, the\nothers per lane reflect index-hopping. Obviously, not conclusive, but a representative sample that the virus was not there then. I suppose we need to get this published ASAP?\n\n== ATTACHMENT ==\nx 20191008_virus_summary.xisx\n\nOver ExperivenLtewy Lane Rial readin tturnan Nendamas\nrNugen — SCOAIZHK ONSMIE —LYERO ‘\nTeugen — $0089) OS7HIITE §— LESH66D 2\nIga SORT Obesess2 27 9m244\nATNugen  SOLZTKS O4sasenye = 33386271 r\nMegen  Se12Me oats 12700095 ”\nSue Seazenk Osisense 13005 a\nMugen seriat Oo Meese 2061648 ”\ni Ragen BRODIT Larvee DWI? ”\nbhuger SOOSIDEM 1 45520748 41567527 “\nsnugen S808 IHiM L4u2v774 —_sei6808 2\nBNugen — SCONOKE LMSe372@ © 324117 ro\nHewgen  Seu0mmes Laosears  zazmiaa 2\nLike sel0ke 1 49740322 MSOs",
       "redacted": false,
       "idx": 371
     },
@@ -5254,7 +5269,9 @@
       "sender": "Andrew Rambaut",
       "time": "11:09",
       "thread_id": null,
-      "attachments": [],
+      "attachments": [
+        "image.ong"
+      ],
       "content": "People are pickirg up on the fact that we don't rule out animal pessaging.\n(which we don't because it is still plausible)\n\n== ATTACHMENT ==\nimage.ong\n\na were\ncovets cmemetneaeay\n‘Aine, I bekeve the theors that the\n(hus Was ToUNO IN Ine wid anc The\n‘solated in the lib - not engined in\nrelat - then an engine was\nwndected and rebaved ¢10 he\npopulation You artcke does not\nfefute Mes scenano.\ncea teccmmenvenr aman",
       "redacted": false,
       "idx": 472
@@ -5774,7 +5791,7 @@
       "attachments": [
         "image.png"
       ],
-      "content": "4. Pango?? (if that is what it is) doesn’t have the furin site.\n\n== ATTACHMENT ==\nimage.png\n———————\n\n- prea\n= me emtewee\n— Sere ae ee Ce Oe\nSree\n= Sere nae ee ener so\nWhen they say ‘up to 9996\" they mean an average og 90%\n\n== ATTACHMENT ==\nimage-png\n\nBetaCeV/pang.. = MN908947.3 ‘MN996532\nHetaCov)) Cu _ 90.0724784% I 90.0213554%\nhe And 1856\nHmmm\nWhat's the RBD like?\nAlso. this was picked up in Guangdong in January of this year? The more pango sequences I see the less likely I find that they are intermediate - I think they're just one of many animals with SARS-\nlike CoVs",
+      "content": "4. Pango?? (if that is what it is) doesn’t have the furin site.\n\n== ATTACHMENT ==\nimage.png\n\n- prea\n= me emtewee\n— Sere ae ee Ce Oe\nSree\n= Sere nae ee ener so\nWhen they say ‘up to 9996\" they mean an average og 90%\n\n== ATTACHMENT ==\nimage-png\n\nBetaCeV/pang.. = MN908947.3 ‘MN996532\nHetaCov)) Cu _ 90.0724784% I 90.0213554%\nhe And 1856\nHmmm\nWhat's the RBD like?\nAlso. this was picked up in Guangdong in January of this year? The more pango sequences I see the less likely I find that they are intermediate - I think they're just one of many animals with SARS-\nlike CoVs",
       "redacted": false,
       "idx": 519
     },
@@ -5994,7 +6011,7 @@
       "time": "21:27",
       "thread_id": null,
       "attachments": [],
-      "content": "“No significant similarity found”... Hmmm\n\n== ATTACHMENT ==\n2 files\n= = = =\n—_—_—\n\nRaTG13 vs nCoV and pango vs nCoV. Big dip in similarity between pango and nCoV in the 5’ end of the spike. Interesting. Could be recombination breakpoint,",
+      "content": "“No significant similarity found”... Hmmm\n\n== ATTACHMENT ==\n= = = =\n—_—_—\n\nRaTG13 vs nCoV and pango vs nCoV. Big dip in similarity between pango and nCoV in the 5’ end of the spike. Interesting. Could be recombination breakpoint,",
       "redacted": false,
       "idx": 539
     },
@@ -6062,7 +6079,7 @@
       "attachments": [
         "AQ fullg_wSCAU.pdf"
       ],
-      "content": "The new pango virus is almost identical to ours. They totally over-hyped in that press release. Mind you, Universities always over-hype these things.\n\n== ATTACHMENT ==\nPDF\nAQ fullg_wSCAU.pdf\n*~ Ba\n\nnaenien tearennse stare\nGeareis tonto boone\n‘eur 0\" eae occeremannen ses\nSee en aati one\nI —ienneticiainiiasit",
+      "content": "The new pango virus is almost identical to ours. They totally over-hyped in that press release. Mind you, Universities always over-hype these things.\n\n== ATTACHMENT ==\nAQ fullg_wSCAU.pdf\n\nnaenien tearennse stare\nGeareis tonto boone\n‘eur 0\" eae occeremannen ses\nSee en aati one\nI —ienneticiainiiasit",
       "redacted": false,
       "idx": 545
     },
@@ -6097,7 +6114,7 @@
       "attachments": [
         "image.png"
       ],
-      "content": "2. Look at the alignment I posted above.\n\n== ATTACHMENT ==\nimage.png\n=o = *\n\nMi lo eS 2 ee\n0 rosary at many ‘",
+      "content": "2. Look at the alignment I posted above.\n\n== ATTACHMENT ==\nimage.png\n\nMi lo eS 2 ee\n0 rosary at many ‘",
       "redacted": false,
       "idx": 548
     },
@@ -6198,7 +6215,7 @@
       "attachments": [
         "A Figure3_2020-02-18-6am.pdf"
       ],
-      "content": "== ATTACHMENT ==\nPOF\nA Figure3_2020-02-18-6am.pdf\nPOF\n\nFigure 3 (2eobmnns, b83mm)\n,, we ry a ‘ = a ae Sey",
+      "content": "== ATTACHMENT ==\nA Figure3_2020-02-18-6am.pdf\n\nFigure 3 (2eobmnns, b83mm)\n,, we ry a ‘ = a ae Sey",
       "redacted": false,
       "idx": 557
     },
@@ -6233,7 +6250,7 @@
       "attachments": [
         "MM selected_RBD_whole_wSCAU_aa_phyml.pdf"
       ],
-      "content": "Here's a rough amino acid tree of the RBD. Pretty striking.\n\n== ATTACHMENT ==\nPDF\nMM selected_RBD_whole_wSCAU_aa_phyml.pdf\n\nap Por\n2019 APMEs beac Ne ew TV TTY\nI Oxe P\nFor the RBD I can't quite choose between recombination or convergence, or both?\nIn unrelated news I hear that our proximal origins paper has been very big news in China...",
+      "content": "Here's a rough amino acid tree of the RBD. Pretty striking.\n\n== ATTACHMENT ==\nMM selected_RBD_whole_wSCAU_aa_phyml.pdf\n\nap Por\n2019 APMEs beac Ne ew TV TTY\nI Oxe P\nFor the RBD I can't quite choose between recombination or convergence, or both?\nIn unrelated news I hear that our proximal origins paper has been very big news in China...",
       "redacted": false,
       "idx": 560
     },
@@ -6865,7 +6882,9 @@
       "sender": "Kristian Andersen",
       "time": null,
       "thread_id": null,
-      "attachments": [],
+      "attachments": [
+        "Screen Shot 2020-02-20 at 10.31.17 AM.prg"
+      ],
       "content": "replied to a thread: But more importantly this reviewer feels, and we agree, that the Perspective would quickly become outdated when more scientific data are published (for example on poten...\nYes, this is key and I addressed this in my reply back to Clare (also to see if they'd recorsider)\n\n== ATTACHMENT ==\nScreen Shot 2020-02-20 at 10.31.17 AM.prg\n\nOF eee a eetneeeee\nThe only potential door still open with Nature would be for Eddie and Jeremy to get a hold of Magda. Reviewer 2 in general doesn't understand what's going on (he/she doesn't understand that's\neven a theory in the first place) and no, sadly, the pangos don't solve this. I get a sense that Nature might bea little gun shy though - hence, we'd need to go all the way to the top.\nFebruary 2Uth, 2UZU",
       "redacted": false,
       "idx": 617
@@ -6932,7 +6951,7 @@
       "time": null,
       "thread_id": null,
       "attachments": [],
-      "content": "Shared a Google Doc with yall; https:/'docs googie.com/document/d/ivSFoAlqLiz1 oSfOpO2VWIXKIQ3armcoWrdefing4VhQ/edit#\n\n== ATTACHMENT ==\nG Suite Document\nNature rebuttal\nI need to head out foran hour or so. i",
+      "content": "Shared a Google Doc with yall; https:/'docs googie.com/document/d/ivSFoAlqLiz1 oSfOpO2VWIXKIQ3armcoWrdefing4VhQ/edit#\n\n== EMBEDDED DOC ==\nNature rebuttal\nI need to head out foran hour or so. i",
       "redacted": false,
       "idx": 623
     },
@@ -7361,9 +7380,10 @@
       "time": "21:05",
       "thread_id": null,
       "attachments": [
-        "Screen Shot 2020-02-21 at 6.04.0... BIORXIV-2020-959817v1-Thiel.pdf"
+        "Screen Shot 2020-02-21 at 6.04.0",
+        "BIORXIV-2020-959817v1-Thiel.pdf"
       ],
-      "content": "Just in case people think it's difficult to make a CoV reverse genetics clone from scratch - these guys did it in a week... (just approved this paper for the bioRxiv, so please keep confidential for now).\n\n== ATTACHMENT ==\nScreen Shot 2020-02-21 at 6.04.0... BIORXIV-2020-959817v1-Thiel.pdf\n\nPNG PDF",
+      "content": "Just in case people think it's difficult to make a CoV reverse genetics clone from scratch - these guys did it in a week... (just approved this paper for the bioRxiv, so please keep confidential for now).\n\n== ATTACHMENT(2) ==\nScreen Shot 2020-02-21 at 6.04.0\nBIORXIV-2020-959817v1-Thiel.pdf\n\nPNG PDF",
       "redacted": false,
       "idx": 662
     },
@@ -7418,7 +7438,7 @@
       "time": "15:09",
       "thread_id": null,
       "attachments": [],
-      "content": "Just created a document, but no text yet. Also shared the whole Google folder with y'all so it's easier to access these individual documents.\nhttps://docs.google.com/document/d/1TQoMX8u_QiumfeLLwi06TLI-VKPBefsv34tjO8fLE6o/edit\nWaiting to hear from Eddie what's up in China before next steps.\n\n== ATTACHMENT ==\nG Suite Document\nNature rebuttal letter\nas We need to give Clare several reasons to reconsider.\nhttps: //www.bbe.com/news/world-asia-51596665\nBBC News\nCoronavirus cases double in one day in South Korea\nThe PM describes the situation as grave as the total number of confirmed infections\nrises to 433. (114 kB)\nYe) 1\n/ ¢ ?\n\nOG NEWs 4 t ¢\nOne reason to reconsider is that this epidemic is looking more and more like a pandemic.",
+      "content": "Just created a document, but no text yet. Also shared the whole Google folder with y'all so it's easier to access these individual documents.\nhttps://docs.google.com/document/d/1TQoMX8u_QiumfeLLwi06TLI-VKPBefsv34tjO8fLE6o/edit\nWaiting to hear from Eddie what's up in China before next steps.\n\n== EMBEDDED DOC ==\nNature rebuttal letter\nas We need to give Clare several reasons to reconsider.\nhttps: //www.bbe.com/news/world-asia-51596665\nBBC News\nCoronavirus cases double in one day in South Korea\nThe PM describes the situation as grave as the total number of confirmed infections\n\n== ATTACHMENT ==\nrises to 433. (114 kB)\nYe) 1\n/ ¢ ?\n\nOG NEWs 4 t ¢\nOne reason to reconsider is that this epidemic is looking more and more like a pandemic.",
       "redacted": false,
       "idx": 667
     },
@@ -8049,7 +8069,7 @@
       "time": null,
       "thread_id": null,
       "attachments": [],
-      "content": "Yeah, no worries Eddie\n[nothing on bioRkiv - just checked]\nSpeaking of all of this - here's a press release draft (in expectation of a future pubication....). If folks have time to take alook and provide edits and preferably some quotes, then that'd be awesome.\n\n== ATTACHMENT ==\nWord Document\nI w I Andersen Coronavirus Nature 2020 Press Release...\nWord Decument\nAntumen Cormavirus Mature Mees Rasave Oreft 2:24.29\n‘The COVIO-19 coronavirus epidemic has 2 natural origin,\nsclontints cay 2\nThe “nwa! SAMS Cov 2 coroners Dit ereerged nn the oty of Bihan. China.\n(ost year ond tas since Covsed 9 large xcale COVID-19 epdermic nd spread\nSt eee\nThe sumyes of public genome vequerce dats from SAAS OW? and rotated\nWiss und © CviGr Ke ut ihe rhs was muse no ROrstoy oF\ncatherine enqneced\nhy commanng he aveiohhe geneme sapueree tate far enmaen cormmars aon",
+      "content": "Yeah, no worries Eddie\n[nothing on bioRkiv - just checked]\nSpeaking of all of this - here's a press release draft (in expectation of a future pubication....). If folks have time to take alook and provide edits and preferably some quotes, then that'd be awesome.\n\n== EMBEDDED DOC ==\nI w I Andersen Coronavirus Nature 2020 Press Release...\nWord Decument\nAntumen Cormavirus Mature Mees Rasave Oreft 2:24.29\n‘The COVIO-19 coronavirus epidemic has 2 natural origin,\nsclontints cay 2\nThe “nwa! SAMS Cov 2 coroners Dit ereerged nn the oty of Bihan. China.\n(ost year ond tas since Covsed 9 large xcale COVID-19 epdermic nd spread\nSt eee\nThe sumyes of public genome vequerce dats from SAAS OW? and rotated\nWiss und © CviGr Ke ut ihe rhs was muse no ROrstoy oF\ncatherine enqneced\nhy commanng he aveiohhe geneme sapueree tate far enmaen cormmars aon",
       "redacted": false,
       "idx": 724
     },
@@ -8224,8 +8244,10 @@
       "sender": "Eddie Holmes",
       "time": null,
       "thread_id": null,
-      "attachments": [],
-      "content": "The virus is actually the closest to SARS-CoV-2 in some parts of the genome, although not hugely close. Very complex series of recombination events. Obviously, the key thing is the insertion but!\nthink that is huge in the current context, Clearly shows this is in Nature. Here are the nucleotides. When did you do your alignment Andrew?\nCleavage site 20200220171523.ong\nSe SS Ls, ==... ee\nFeiamwenapes =\nNucleotide pic attached\nIn ‘nature’ small case. Not sure about publication strategy yet...soon I hope. As usual, much politics",
+      "attachments": [
+        "Cleavage site 20200220171523.ong"
+      ],
+      "content": "The virus is actually the closest to SARS-CoV-2 in some parts of the genome, although not hugely close. Very complex series of recombination events. Obviously, the key thing is the insertion but!\nthink that is huge in the current context, Clearly shows this is in Nature. Here are the nucleotides. When did you do your alignment Andrew?\n\n== ATTACHMENT ==\nCleavage site 20200220171523.ong\n\nSe SS Ls, ==... ee\nFeiamwenapes =\nNucleotide pic attached\nIn ‘nature’ small case. Not sure about publication strategy yet...soon I hope. As usual, much politics",
       "redacted": false,
       "idx": 740
     },
@@ -8359,7 +8381,7 @@
       "attachments": [
         "recombination spike.png"
       ],
-      "content": "2. @ Here is my spike recombination diagram. Clearly shows how RaTG13 jumps out in the RBD variable loop region.\n\n== ATTACHMENT ==\nrecombination spike.png\n_— = ee:\n\n(Se eee",
+      "content": "2. @ Here is my spike recombination diagram. Clearly shows how RaTG13 jumps out in the RBD variable loop region.\n\n== ATTACHMENT ==\nrecombination spike.png\n\n(Se eee",
       "redacted": false,
       "idx": 752
     },
@@ -10780,8 +10802,11 @@
       "sender": "Kristian Andersen",
       "time": "02:42",
       "thread_id": null,
-      "attachments": [],
-      "content": "Okay,\n\n== ATTACHMENT ==\nScreen Shot 2020-03-17 at 11.41.44 °M.png\n\n© © 1000 mers © Zoe © ihm\npages\n© eres ommers\nThs articie is in the 99” percentite[rariend 17\") of the 146,188 tracked articks of 2\n\\endiar age in afl journals and the 9E™ percentile (ranked ¥\") of the 73tracked\nWtictes oo somite age in Nature Medine\nView mor on Anrenc",
+      "attachments": [
+        "Screen Shot 2020-03-17 at 11.41.44",
+        "M.png"
+      ],
+      "content": "Okay,\n\n== ATTACHMENT(2) ==\nScreen Shot 2020-03-17 at 11.41.44\nM.png\n\n© © 1000 mers © Zoe © ihm\npages\n© eres ommers\nThs articie is in the 99” percentite[rariend 17\") of the 146,188 tracked articks of 2\n\\endiar age in afl journals and the 9E™ percentile (ranked ¥\") of the 73tracked\nWtictes oo somite age in Nature Medine\nView mor on Anrenc",
       "redacted": false,
       "idx": 972
     },
@@ -11854,7 +11879,7 @@
       "attachments": [
         "Anderson JBC 2017 complete.pdf"
       ],
-      "content": "This one is actually pretty interesting!\n\n== ATTACHMENT ==\nEmail from Slack for Gmail»\n(No Subject) Aor 2nd, 2020\nFrom Wharton, Kristi (No content)\nHere's the paper she mentions\nPOF\nAnderson JBC 2017 complete.pdf\n\nmae Por\nsens hago he ngage BAO ph svn is\n‘Scoymmm tonne ad aoeyan peteonee\neart X Amor ite A, Wharton\nfe te Dagurmees Yasar tog. Co Rey, nt Daatoonary. Reams Uninet)\npetione 159\neeey seb Rigi BAP ty mtr cheney\nTo whom ommepmfene set Datta Koes A Mater (01984 I, Kral, Wa?\nKeyser seelagnet panei I8EP Deno cf aig. pun rcreng, O CANA at\nrumetrmang pres tree Bee HT fe, Gam tet ewe GPE prtomnem Pegeeen comvertine t",
+      "content": "This one is actually pretty interesting!\n\n== EMBEDDED DOC ==\n(No Subject) Aor 2nd, 2020\nFrom Wharton, Kristi (No content)\nHere's the paper she mentions\n\n== ATTACHMENT ==\nAnderson JBC 2017 complete.pdf\n\nmae Por\nsens hago he ngage BAO ph svn is\n‘Scoymmm tonne ad aoeyan peteonee\neart X Amor ite A, Wharton\nfe te Dagurmees Yasar tog. Co Rey, nt Daatoonary. Reams Uninet)\npetione 159\neeey seb Rigi BAP ty mtr cheney\nTo whom ommepmfene set Datta Koes A Mater (01984 I, Kral, Wa?\nKeyser seelagnet panei I8EP Deno cf aig. pun rcreng, O CANA at\nrumetrmang pres tree Bee HT fe, Gam tet ewe GPE prtomnem Pegeeen comvertine t",
       "redacted": false,
       "idx": 1069
     },
@@ -11876,9 +11901,9 @@
       "time": "16:52",
       "thread_id": null,
       "attachments": [
-        "15.50.53.png"
+        "Screen Shot 2020-04-02 at 15.50.53.png"
       ],
-      "content": "Haha, this is completely nonsensical - but thank you for your work.\nAre these types of emails sent by actual peaple? I get lots that don't make any sense atall - e.g.,\n\n== ATTACHMENT ==\nScreen Shot 2020-04-02 at 15.50.53.png »\n\nEnquiry 03042010 Covid-19 17 Narch 2020\n~ Siam oneen oom orn ei orb isinah ana\nto hae\n{do read the one from Kristi above though - that one is really cool and could help explain that mysterious ‘P’ insertion, whichis just such a cool evolutionary trick given that those O-linked residues\nalready existed, but weren't O-lirked until the insertion of P].",
+      "content": "Haha, this is completely nonsensical - but thank you for your work.\nAre these types of emails sent by actual peaple? I get lots that don't make any sense atall - e.g.,\n\n== ATTACHMENT ==\nScreen Shot 2020-04-02 at 15.50.53.png\n\nEnquiry 03042010 Covid-19 17 Narch 2020\n~ Siam oneen oom orn ei orb isinah ana\nto hae\n{do read the one from Kristi above though - that one is really cool and could help explain that mysterious ‘P’ insertion, whichis just such a cool evolutionary trick given that those O-linked residues\nalready existed, but weren't O-lirked until the insertion of P].",
       "redacted": false,
       "idx": 1071
     },
@@ -12982,7 +13007,7 @@
       "attachments": [
         "Screen Shot 2020-04-17 at 16.02.10.png"
       ],
-      "content": "== ATTACHMENT ==\nScreen Shot 2020-04-17 at 16.02.10.png\neo: ‘\n\nTerror see seen arene arenes 0 ore Sater mers\nkeg eee eae\n(Sapenyee noneart hs eee sat eae genre emer tw Senn",
+      "content": "== ATTACHMENT ==\nScreen Shot 2020-04-17 at 16.02.10.png\n\nTerror see seen arene arenes 0 ore Sater mers\nkeg eee eae\n(Sapenyee noneart hs eee sat eae genre emer tw Senn",
       "redacted": false,
       "idx": 1171
     },
@@ -13446,7 +13471,7 @@
       "time": "03:02",
       "thread_id": null,
       "attachments": [],
-      "content": "1s Someone uploaded this document and then deleted it again (Github tracking everything of course).\n\n== ATTACHMENT ==\nWord Document\nResponse to Proximal Origins paper edits April 8 ...\nRewpomse te the “Prouimal Orighn” of SARS Ca¥.\nce)\n‘Tits anache tp & renpeane to “The Protea! Origin of SARS-CoV 2.” pubtioted Mart 17, 2029\nNeary Mndier wach hes 3 Lamund vine ot Uw hy of Screams athe\ntte dual we spent tation mesh proc of pring vow eaher enagh hres avi af\nfears ug cet cedmeen Tos peter al pangs ces sane expan fr bc\nSARS-CoV7s atari she pour gino! enue pty tate coma SP\nithe ABD ona, we na a coh seme ser rage\nCeromrrnows Ses te iat ne wt perad eran of hem pepe, ene omy Peo\npeice seven pores 2.7) agp vig saa 4 Adee em a cove cece ay\n‘vraceof neces an ee Sow the by ed Wien shed my po egemer",
+      "content": "1s Someone uploaded this document and then deleted it again (Github tracking everything of course).\n\n== EMBEDDED DOC ==\nResponse to Proximal Origins paper edits April 8 ...\nRewpomse te the “Prouimal Orighn” of SARS Ca¥.\nce)\n‘Tits anache tp & renpeane to “The Protea! Origin of SARS-CoV 2.” pubtioted Mart 17, 2029\nNeary Mndier wach hes 3 Lamund vine ot Uw hy of Screams athe\ntte dual we spent tation mesh proc of pring vow eaher enagh hres avi af\nfears ug cet cedmeen Tos peter al pangs ces sane expan fr bc\nSARS-CoV7s atari she pour gino! enue pty tate coma SP\nithe ABD ona, we na a coh seme ser rage\nCeromrrnows Ses te iat ne wt perad eran of hem pepe, ene omy Peo\npeice seven pores 2.7) agp vig saa 4 Adee em a cove cece ay\n‘vraceof neces an ee Sow the by ed Wien shed my po egemer",
       "redacted": false,
       "idx": 1213
     },
@@ -13523,7 +13548,7 @@
       "time": null,
       "thread_id": null,
       "attachments": [],
-      "content": "It's an eel! Eel!!!\nDoh,\n\n== ATTACHMENT ==\nEmail from Slack for Gmail\nSARS-CoV-2 - Horizontal transfer from Asian eel Apr 21st, 2020\nFrom Bradley Porter (No content)",
+      "content": "It's an eel! Eel!!!\nDoh,\n\n== EMBEDDED DOC ==\nSARS-CoV-2 - Horizontal transfer from Asian eel Apr 21st, 2020\nFrom Bradley Porter (No content)",
       "redacted": false,
       "idx": 1220
     },
@@ -13712,7 +13737,7 @@
       "attachments": [
         "Tele 28 April 2020.pdf"
       ],
-      "content": "== ATTACHMENT ==\nTele 28 April 2020.pdf\nh\n\nApra zytn, 2U2U\nCoronavirus Australia: Chinese scientists\nlinked to virus probe studied live bats in\nAustralia\nfas part of their probe into the origins of the global coronavirus contagion\nstudied bive bats in Asntralia ba rescarel julntly funded by the Australian\nand Chinese governments\nSorry, the cover is the best bit\nDail We retary 0\nelegraph\n\" excusive\nChinese\nscientists\nlinked to\nvirus\nprobe\n* worked in\nAustralia\nee ee mee\nORS Sc Geos FF\nacoicts rou S|\nBe oes\nSuch shit. This guy did a bit of his PhD in Australia then went back to WIV. ?",
+      "content": "== ATTACHMENT ==\nTele 28 April 2020.pdf\n\nApra zytn, 2U2U\nCoronavirus Australia: Chinese scientists\nlinked to virus probe studied live bats in\nAustralia\nfas part of their probe into the origins of the global coronavirus contagion\nstudied bive bats in Asntralia ba rescarel julntly funded by the Australian\nand Chinese governments\nSorry, the cover is the best bit\nDail We retary 0\nelegraph\n\" excusive\nChinese\nscientists\nlinked to\nvirus\nprobe\n* worked in\nAustralia\nee ee mee\nORS Sc Geos FF\nacoicts rou S|\nBe oes\nSuch shit. This guy did a bit of his PhD in Australia then went back to WIV. ?",
       "redacted": false,
       "idx": 1237
     },

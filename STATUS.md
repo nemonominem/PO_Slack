@@ -80,6 +80,19 @@ Drive / DataWharehouse paths; all PDFs, JSON, and scripts live inside
   entries (48 of them from 6 image-only pages in `part2_ocr_pages.json`).
   Part 2 result-card headers show time before the name (`2022-06-02
   13:15:20 Eddie Holmes`); Part 1 stays date → name → time.
+- **Isolated end-of-range days are visible on the timeline.** A 1-entry
+  day at the far end of ~1,200 day-categories was a clipped sub-pixel
+  sliver (the Jun 2023 archive notices). Time-axis offset is on, and
+  entry days get a 3px minimum mark so those last two cards show as a
+  2023 tick.
+- **Multi-file attachment blocks list each name.** `== ATTACHMENT(2) ==`
+  then one filename per line (e.g. the two `.geneious` files). Slack's
+  "2 files / Zip Zip" chrome is dropped. Single files stay
+  `== ATTACHMENT ==`.
+- **Slack Posts are embedded documents, not files.** The "Post ¥"
+  chrome becomes the stub `embedded`, then `== EMBEDDED DOC ==`, the
+  title (`Ideas for analyses`), and the body one line per bullet.
+  Word / G Suite / shared-post cards use the same marker.
 
 ## Known limitations
 - Part 1 message boundaries are best-effort, not exact: Slack visually groups
