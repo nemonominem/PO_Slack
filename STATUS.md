@@ -93,6 +93,11 @@ Drive / DataWharehouse paths; all PDFs, JSON, and scripts live inside
   chrome becomes the stub `embedded`, then `== EMBEDDED DOC ==`, the
   title (`Ideas for analyses`), and the body one line per bullet.
   Word / G Suite / shared-post cards use the same marker.
+- **Feb 15-style OCR crumbs:** strip `4B`/`6` avatar prefixes, `g0`→`go`,
+  leaked `February 15th, 2U20` day-dividers, and image-OCR soup after
+  `png.*` (now `== ATTACHMENT ==` / `image.png`). HIT nav shows the
+  message time when the OCR recovered one; many Slack-grouped headers
+  on this page have no time in the text layer.
 
 ## Known limitations
 - Part 1 message boundaries are best-effort, not exact: Slack visually groups

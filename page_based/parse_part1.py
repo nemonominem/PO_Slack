@@ -60,12 +60,13 @@ MONTHS = [
 ]
 MONTH_INDEX = {m: i + 1 for i, m in enumerate(MONTHS)}
 
+# Year may be OCR'd with O/U/Z for 0/0/2 ("2U20", "2O20").
 DATE_RE = re.compile(
-    r"\b(" + "|".join(MONTHS) + r")\s+(\d{1,2}|[iIl](?=st\b))(?:st|nd|rd|th)?\s*,?\s*(\d{4})\b"
+    r"\b(" + "|".join(MONTHS) + r")\s+(\d{1,2}|[iIl](?=st\b))(?:st|nd|rd|th)?\s*,?\s*(2[\dOUZouz]{3})\b"
 )
 # Day-divider text sometimes wraps across two OCR lines ("February\n3rd, 2020").
 WRAPPED_DATE_RE = re.compile(
-    r"\b(" + "|".join(MONTHS) + r")\s*\n\s*(\d{1,2}(?:st|nd|rd|th)?\s*,?\s*\d{4})",
+    r"\b(" + "|".join(MONTHS) + r")\s*\n\s*(\d{1,2}(?:st|nd|rd|th)?\s*,?\s*2[\dOUZouz]{3})",
     re.IGNORECASE,
 )
 
@@ -122,6 +123,7 @@ FILE_ATTACH_RE = re.compile(
     r"(?ix)^(?:\d+\s+files|"
     r"pdf|pof|"
     r"(?:[a-z]\.?\s+)?(?:image|mage)[.\w\-]*|"
+    r"(?:figure\.)?png(?:\.\*|\*|[\s¥*+~»©.]*)|"
     r"screen\s*shot\b.+|"
     r"(?:[\w.\-+]+\.(?:pdf|png|jpe?g|gif|zip|docx?|xlsx?|csv|geneious|pptx?|"
     r"txt|fasta|ong|prg|xisx)(?:\s+[¥*+~»©]*)?\s*)+|"
@@ -145,17 +147,24 @@ STANDALONE_PIPE_RE = re.compile(r"(?<![^\s])\|(?![^\s.,!?;:'\")\]])")
 def clean_ocr_noise(line):
     if SEQUENCE_LINE_RE.search(line):
         return line
-    return STANDALONE_PIPE_RE.sub("I", line)
+    line = STANDALONE_PIPE_RE.sub("I", line)
+    line = re.sub(r"\bg0\b", "go", line)
+    # "Agree- much" is "Agree - much" (hyphen used as a dash).
+    line = re.sub(r"([A-Za-z])- ([A-Za-z])", r"\1 - \2", line)
+    return line
 
 
 def strip_leading_at_garbage(line):
-    """Drop OCR'd Slack avatar/icon prefixes ('@B ', '@ ', '@@e ').
+    """Drop OCR'd Slack avatar/icon prefixes ('@B ', '4B ', '6 Agree').
 
-    Keep real @mentions (@Andrew, @channel, ...).
+    Keep real @mentions and numeric starts that are content ('661 ecdipi…').
     """
     if KNOWN_MENTION_RE.match(line):
         return line
-    return LEADING_AT_GARBAGE_RE.sub("", line)
+    line = LEADING_AT_GARBAGE_RE.sub("", line)
+    line = re.sub(r"^[0-9][A-Za-z]\s+", "", line)
+    line = re.sub(r"^[0-9]\s+(?=[A-Z\"“‘'])", "", line)
+    return line
 
 
 def strip_trailing_ui_crumbs(line):
@@ -200,20 +209,33 @@ def classify_line(line):
 
 def extract_filenames(line):
     """Pull filename tokens out of an attachment line (one name per file)."""
+    stripped = line.strip()
+    if re.match(r"(?i)^(?:figure\.)?png(?:\.\*|\*|[\s¥*+~»©.]*)$", stripped):
+        return ["figure.png"] if stripped.lower().startswith("figure") else ["image.png"]
     found = [m.group(0).strip("¥*+~»©|,") for m in FILENAME_TOKEN_RE.finditer(line)]
     found = [n for n in found if n]
     if len(found) >= 2:
         return found
-    stripped = line.strip()
     if ATTACHMENT_FILENAME_RE.match(stripped):
         return [stripped]
     return found
+
+
+def looks_like_prose(line):
+    """True if a line looks like authored chat, not image-OCR soup."""
+    words = re.findall(r"[A-Za-z']{4,}", line)
+    if len(words) >= 2:
+        return True
+    if len(words) == 1 and len(words[0]) >= 7:
+        return True
+    return False
 
 
 def prepare_content_line(raw):
     s = raw.strip()
     if not s:
         return ""
+    s = clean_ocr_noise(s)
     s = strip_leading_at_garbage(s)
     s = re.sub(r"^[A-Z]\s+(?=Private post\b)", "", s)
     s = re.sub(r"^[a-zA-Z]\.?\s+(?=(?:image|mage))", "", s, flags=re.I)
@@ -255,7 +277,7 @@ def segment_content(lines):
         if mode == "file":
             if kind == "chip":
                 continue
-            if kind == "junk":
+            if kind == "junk" or (kind == "chat" and not looks_like_prose(line)):
                 current.append(line)
                 continue
             if kind == "chat":
@@ -354,10 +376,13 @@ def format_segments(segments):
 
 
 def fix_year_ocr_typo(year):
-    # Recurring OCR artifact in this scan: "2020" misread as "2920" (9/0 mixup).
-    if year == "2920":
+    # Recurring OCR artifacts: "2020" as "2920", "2U20", "2O20".
+    y = str(year).upper().replace("O", "0").replace("U", "0").replace("Z", "2")
+    if not y.isdigit():
+        y = re.sub(r"\D", "0", y)
+    if y == "2920" or (len(y) == 4 and y[0] == "2" and y.endswith("20")):
         return "2020"
-    return year
+    return y
 
 
 def fix_day_ocr_typo(day):

@@ -2699,14 +2699,15 @@ function displayResults(results, query, opts) {
     html += '</div>';
 
     // Hit navigation bar
+    const hitTime = e.time ? ' · ' + escapeHtml(e.time) : '';
     if (r.hits > 1) {
       html += '<div class="hit-nav">';
       html += '<button type="button" class="hit-nav-btn" data-hit-nav="-1" id="hitprev-' + i + '">◀ Prev</button>';
-      html += '<span class="hit-nav-label">>>> HIT #<span id="hitcur-' + i + '">1</span>/' + r.hits + ' <<<</span>';
+      html += '<span class="hit-nav-label">>>> HIT #<span id="hitcur-' + i + '">1</span>/' + r.hits + hitTime + ' <<<</span>';
       html += '<button type="button" class="hit-nav-btn" data-hit-nav="1" id="hitnext-' + i + '">Next ▶</button>';
       html += '</div>';
     } else {
-      html += '<div class="hit-nav"><span class="hit-nav-label">>>> HIT #1/1 <<<</span></div>';
+      html += '<div class="hit-nav"><span class="hit-nav-label">>>> HIT #1/1' + hitTime + ' <<<</span></div>';
     }
 
     // Full content with highlights (paragraphs from cleaned JSON)
