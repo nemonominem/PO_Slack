@@ -63,6 +63,14 @@ Drive / DataWharehouse paths; all PDFs, JSON, and scripts live inside
   separator — verified none of those lines were affected. Left alone: `|`
   fused directly onto an adjacent letter with no space (too ambiguous to
   fix confidently, e.g. "loop region come in|it's").
+- **Separated authored chat from attachment cards in Part 1** (and showed
+  Part 2 filenames the same way). `parse_part1.py` now: strips leading
+  avatar/icon garbage (`@B Nice channel title` → `Nice channel title`,
+  `@ Morning` → `Morning`, keeping real `@Andrew` / `@channel` mentions);
+  drops Slack's ▾ chevron OCR'd as `¥`; and wraps Post / Word / G Suite /
+  file / image cards plus their preview body with `== ATTACHMENT ==`.
+  Result cards render that block as a distinct inset. 102 Part 1 entries
+  carry the marker (entry count unchanged at 1,256).
 
 ## Known limitations
 - Part 1 message boundaries are best-effort, not exact: Slack visually groups
@@ -78,6 +86,10 @@ Drive / DataWharehouse paths; all PDFs, JSON, and scripts live inside
 - Two entries in Part 1 (around 2020-02-18/20 and 2020-03-23/24) are out of
   strict chronological order due to an OCR-garbled day-divider; content is
   intact, just filed under the wrong day for a short stretch.
+- Part 1 attachment markers are best-effort: image/file cards are the
+  filename plus following OCR crumbs, while a Slack Post / Google Doc
+  preview is marked from the card to the next card (or end of the message).
+  Commentary typed after a document card can still land inside the block.
 - `git-lfs` is not installed on this machine; `.gitattributes` marks the two
   PDFs for LFS tracking so it activates automatically once installed, but for
   now they're committed as regular (large) blobs. Install `git-lfs` and run

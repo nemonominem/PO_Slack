@@ -24,6 +24,14 @@ italicized/greyed in the UI), rather than being conflated with the mentioned
 person's authored chat messages. The real actor's name is kept in the notice
 text, e.g. "Kristian Andersen joined paper-2020-nature_medicine-proximal_origin."
 
+Part 1 OCR cleanup also strips leftover avatar glyphs (`@B Nice channel title`
+→ `Nice channel title`, `@ Morning` → `Morning`) and Slack's document-card
+chevron (▾, OCR'd as `¥`). Attachment cards — Slack Posts, Word/Google docs,
+files, images, and the preview body Slack renders under the message — are
+wrapped with an `== ATTACHMENT ==` marker so authored chat stays distinct
+from the attached content. The result cards style that block separately.
+Part 2 filenames (already a clean `attachments` list) are shown the same way.
+
 ## Both parts are message-level, with one caveat for Part 1
 
 Part 1 was released as stitched Slack-UI screenshots. The PDF's own baked-in
@@ -48,6 +56,10 @@ the source rather than the parser:
   is flagged `redacted: true` (shown as an orange "▪ redacted" tag) with a
   placeholder note; but a redaction that falls *inside* an otherwise
   non-empty message leaves no distinguishing trace and can't be flagged.
+- Attachment vs. chat splitting in Part 1 is best-effort: a Slack Post /
+  Google Doc preview is marked from the card onward, and image/file cards
+  take the filename plus immediately following OCR crumbs. Commentary typed
+  *after* a document card can still land inside the attachment block.
 
 Part 2 was released as a genuine text-layer Slack export (message ⟶
 timestamp ⟶ sender bracketed blocks), so it parses exactly at per-message
@@ -63,7 +75,7 @@ granularity, with accurate timestamps, senders, thread IDs, and attachments.
 | `page_based/part1_page_map.json`, `part2_page_map.json` | Entry &rarr; PDF page lookup for the viewer's jump-to-page feature |
 | `page_based/reocr_part1.py` | Re-OCRs Part 1's 140 pages with Tesseract (run once; writes `slack-part1_ocr.txt`) |
 | `page_based/slack-part1_ocr.txt` | Re-OCR'd text, consumed by `parse_part1.py` |
-| `page_based/parse_part1.py` | Message-level parser for the re-OCR'd Part 1 text |
+| `page_based/parse_part1.py` | Message-level parser for the re-OCR'd Part 1 text (OCR cleanup + attachment markers) |
 | `page_based/build_part2.py` | Reshapes the existing high-quality Part 2 message parse into the app's entry schema |
 | `page_based/slack_notice.py` | Shared Slack-system-notice detection used by both builders |
 

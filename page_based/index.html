@@ -364,6 +364,14 @@ body.layout-portrait .pdf-panel {
 .result-content::-webkit-scrollbar { width: 6px; }
 .result-content::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 3px; }
 .result-content p { margin-bottom: 8px; }
+.result-content p.attach-block {
+  white-space: pre-line; color: #c8c8c8; font-size: 12.5px;
+  margin: 10px 0 8px; padding: 6px 8px; background: var(--panel-2);
+  border-left: 3px solid var(--green); border-radius: 3px;
+}
+.result-content p.attach-block::first-line {
+  font-weight: 700; letter-spacing: 0.05em; color: var(--muted);
+}
 
 mark {
   background: var(--mark-bg); color: var(--mark-tx); padding: 1px 2px; border-radius: 2px;
@@ -2582,7 +2590,10 @@ function displayResults(results, query, opts) {
     const e = r.entry;
     const pdfPage = pdfPageForResult(r);
     const pageLabel = pdfPageLabel(r);
-    const content = e.content || '';
+    let content = e.content || '';
+    if (e.attachments && e.attachments.length && content.indexOf('== ATTACHMENT ==') === -1) {
+      content += '\n\n== ATTACHMENT ==\n' + e.attachments.join('\n');
+    }
 
     // Store hit positions for navigation
     currentHitPositions[i] = r.hitPositions;
@@ -2625,7 +2636,12 @@ function displayResults(results, query, opts) {
     const paragraphs = highlighted.split(/\n\n/);
     html += '<div class="result-content" id="content-' + i + '">';
     for (const p of paragraphs) {
-      html += '<p>' + p + '</p>';
+      const plain = p.replace(/<[^>]+>/g, '').trim();
+      if (/^== ATTACHMENT ==/.test(plain)) {
+        html += '<p class="attach-block">' + p + '</p>';
+      } else {
+        html += '<p>' + p + '</p>';
+      }
     }
     html += '</div>';
     html += '</div>';

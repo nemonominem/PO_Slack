@@ -27,6 +27,14 @@ Two things this cannot fully recover, given the source:
   - Black-box redactions in the source produce no OCR text at all, so they
     leave no trace to flag; they are invisible rather than mis-attributed.
 
+OCR cleanup applied while assembling each entry:
+  - Leading avatar/icon garbage ("@B Nice channel title" → "Nice channel
+    title", "@ Morning" → "Morning"); real @mentions are kept.
+  - Slack's document-card chevron (▾), OCR'd as ¥, is dropped.
+  - Attachment cards (Post / Word / G Suite / files / images) are wrapped
+    with an "== ATTACHMENT ==" marker so authored chat stays distinct from
+    the card title/body that Slack renders under the message.
+
 Slack's own system notices (channel-created banner, "X joined the channel",
 channel renames, ...) are re-attributed to a synthetic 'Slack Notice' sender
 (the real actor's name is kept in the content text) instead of being
@@ -64,11 +72,51 @@ KNOWN_SENDERS = ["Andrew Rambaut", "Eddie Holmes", "Kristian Andersen", "Robert 
 
 NOISE_LINE_RE = re.compile(r"^\s*REV\d+\s*$")
 NOISE_SUBSTRINGS = ("Add description", "Add people", "Send emails to channel", "Pinned by you", "Pinned to this channel")
-NOISE_STANDALONE = {"zip", "plain text", "post", "sce"}
+NOISE_STANDALONE = {"sce"}
 
 ATTACHMENT_FILENAME_RE = re.compile(
-    r"^[\w\-. ]{1,80}\.(pdf|png|jpe?g|zip|docx?|xlsx?|csv|gif|geneious|pptx?|txt)$",
+    r"^[\w.\-+ ]{1,80}\.(pdf|png|jpe?g|zip|docx?|xlsx?|csv|gif|geneious|pptx?|txt)$",
     re.IGNORECASE,
+)
+
+# Slack's ▾ / document-card chevron is consistently OCR'd as yen (¥).
+# Real mentions are @Name with no space; "@B Nice..." / "@ Morning" are
+# leftover avatar/icon glyphs and should be stripped.
+KNOWN_MENTION_RE = re.compile(
+    r"^@+(?:Andrew|Eddie|Robert|Kristian|USLACKBOT|channel)\b",
+    re.I,
+)
+LEADING_AT_GARBAGE_RE = re.compile(r"^@+(?:B|[A-Za-z]{1,3})?\s+")
+
+# Slack file/doc type chips that are UI chrome, not authored text.
+TYPE_CHIP_RE = re.compile(
+    r"(?ix)^(?:(?:a[d.]?\s+)?word\s+doc(?:ument|x)?|google\s+do[cx]|"
+    r"g\s*suite\s+document|excel\s+spreadsheet|exce!\s+spreadsheet|"
+    r"plain\s+text|zip|pdf|pof|post)"
+    r"(?:\s+(?:a[d.]?\s+)?(?:word\s+doc(?:ument|x)?|google\s+do[cx]|"
+    r"excel\s+spreadsheet|exce!\s+spreadsheet|plain\s+text|zip|pdf|pof|post|wd))*$"
+)
+
+# Cards whose following lines are the attachment preview (title + body).
+DOC_ATTACH_RE = re.compile(
+    r"(?ix)^(?:post|"
+    r"(?:a[d.]?\s+)?word\s+doc(?:ument|x)?|"
+    r"g\s*suite\s+document|"
+    r"e-?mail\s+from\s+slack\s+for\s+gmail|"
+    r"private\s+post[, ]+shared\s+in\s+\d+\s+places?)"
+    r"[\s¥*+~»©|.0-9]*$"
+)
+
+# Filenames / "N files" / image stubs / PDF chips. Chat often resumes after.
+FILE_ATTACH_RE = re.compile(
+    r"(?ix)^(?:\d+\s+files|"
+    r"pdf|pof|"
+    r"(?:[a-z]\.?\s+)?(?:image|mage)[.\w\-]*|"
+    r"screen\s*shot\b.+|"
+    r"(?:[\w.\-+]+\.(?:pdf|png|jpe?g|gif|zip|docx?|xlsx?|csv|geneious|pptx?|"
+    r"txt|fasta|ong|prg|xisx)(?:\s+[¥*+~»©]*)?\s*)+|"
+    r".+\(\d+\s*kB\))"
+    r"[\s¥*+~»©|.]*$"
 )
 
 HEADER_TIME_RE = re.compile(r"^\+?(\d{1,2})[:.](\d{2})$")
@@ -88,6 +136,154 @@ def clean_ocr_noise(line):
     if SEQUENCE_LINE_RE.search(line):
         return line
     return STANDALONE_PIPE_RE.sub("I", line)
+
+
+def strip_leading_at_garbage(line):
+    """Drop OCR'd Slack avatar/icon prefixes ('@B ', '@ ', '@@e ').
+
+    Keep real @mentions (@Andrew, @channel, ...).
+    """
+    if KNOWN_MENTION_RE.match(line):
+        return line
+    return LEADING_AT_GARBAGE_RE.sub("", line)
+
+
+def strip_trailing_ui_crumbs(line):
+    """Drop Slack chevrons (¥) and leftover | ~ » chrome at end of a line."""
+    line = re.sub(r"\s+¥+\s+", " ", line)
+    line = re.sub(r"\s*¥+\s*$", "", line)
+    line = re.sub(r"\s+[|~»©]+\s*$", "", line)
+    return line.strip()
+
+
+def is_junk_line(line):
+    """True for symbol-soup / tiny OCR crumbs that are not authored text."""
+    if not line:
+        return True
+    if re.match(r"^[=_\-—–‐―]{2,}", line):
+        return True
+    if len(re.findall(r"[-_=—–‐―]", line)) >= 4 and not re.search(r"[A-Za-z]{4,}", line):
+        return True
+    if re.fullmatch(r"[¥\s\d.,'‘’]+", line):
+        return True
+    if re.fullmatch(r"[eEoO0\-\s]{2,}", line):
+        return True
+    if re.fullmatch(r"[\W_eEoO0\-\s]+", line) and not re.search(r"[A-Za-z]{3,}", line):
+        return True
+    if not re.search(r"[A-Za-z]{3,}", line) and len(line) <= 8:
+        return True
+    return False
+
+
+def classify_line(line):
+    """'file' | 'doc' | 'chip' | 'junk' | 'chat'."""
+    if FILE_ATTACH_RE.match(line) or ATTACHMENT_FILENAME_RE.match(line):
+        return "file"
+    if DOC_ATTACH_RE.match(line):
+        return "doc"
+    if TYPE_CHIP_RE.match(line):
+        return "chip"
+    if is_junk_line(line):
+        return "junk"
+    return "chat"
+
+
+def extract_filenames(line):
+    """Pull any obvious filename tokens out of an attachment line."""
+    found = []
+    if ATTACHMENT_FILENAME_RE.match(line):
+        found.append(line)
+        return found
+    for tok in re.split(r"\s+", line):
+        tok = tok.strip("¥*+~»©|,")
+        if ATTACHMENT_FILENAME_RE.match(tok):
+            found.append(tok)
+    return found
+
+
+def prepare_content_line(raw):
+    s = raw.strip()
+    if not s:
+        return ""
+    s = strip_leading_at_garbage(s)
+    s = re.sub(r"^[A-Z]\s+(?=Private post\b)", "", s)
+    s = re.sub(r"^[a-zA-Z]\.?\s+(?=(?:image|mage))", "", s, flags=re.I)
+    s = strip_trailing_ui_crumbs(s)
+    if FILE_ATTACH_RE.match(s) or DOC_ATTACH_RE.match(s) or ATTACHMENT_FILENAME_RE.match(s):
+        s = re.sub(r"\s+[*+]+\s*$", "", s).strip()
+    if s.lower() in NOISE_STANDALONE:
+        return ""
+    return s
+
+
+def segment_content(lines):
+    """Split prepared lines into ordered ('chat'|'attach', [lines]) segments.
+
+    File/image cards consume the filename plus immediately following junk
+    (pixel-OCR crumbs, type chips). Document cards (Post, Word, G Suite,
+    private-post share, email) keep the preview body until the next card
+    or the end of the message — the usual Slack layout.
+    """
+    segments = []
+    current = []
+    mode = "chat"
+    file_card = False
+    filenames = []
+
+    def flush():
+        if current:
+            segments.append((mode, current[:]))
+            current.clear()
+
+    for line in lines:
+        kind = classify_line(line)
+        if kind in ("file", "doc"):
+            if mode == "chat":
+                flush()
+                mode = "attach"
+                file_card = kind == "file"
+                filenames.extend(extract_filenames(line))
+                current.append(line)
+            elif kind == "file":
+                # another file chip/name in the same card (e.g. "2 files" + names)
+                file_card = True
+                filenames.extend(extract_filenames(line))
+                current.append(line)
+            # else: repeated type label inside a document card ("Post" after the title)
+            continue
+        if mode == "attach":
+            if kind == "chip":
+                continue
+            if kind == "junk":
+                current.append(line)
+                continue
+            if file_card and kind == "chat":
+                flush()
+                mode = "chat"
+                file_card = False
+                current.append(line)
+                continue
+            current.append(line)
+            continue
+        if kind in ("chip", "junk"):
+            continue
+        current.append(line)
+
+    flush()
+    return segments, filenames
+
+
+def format_segments(segments):
+    pieces = []
+    for kind, seglines in segments:
+        cleaned = [clean_ocr_noise(x) for x in seglines if x]
+        if not cleaned:
+            continue
+        if kind == "attach":
+            pieces.append("== ATTACHMENT ==\n" + "\n".join(cleaned))
+        else:
+            pieces.append("\n".join(cleaned))
+    return "\n\n".join(pieces).strip()
 
 
 def fix_year_ocr_typo(year):
@@ -177,19 +373,13 @@ def extract_trailing_divider(line):
 
 
 def finalize_message(sender, time_tokens, content_lines, page, date_key):
-    attachments = []
-    kept_lines = []
+    prepared = []
     for ln in content_lines:
-        s = ln.strip()
-        if not s:
-            continue
-        if s.lower() in NOISE_STANDALONE:
-            continue
-        if ATTACHMENT_FILENAME_RE.match(s):
-            attachments.append(s)
-            continue
-        kept_lines.append(clean_ocr_noise(s))
-    content = "\n".join(kept_lines).strip()
+        s = prepare_content_line(ln)
+        if s:
+            prepared.append(s)
+    segments, attachments = segment_content(prepared)
+    content = format_segments(segments)
     redacted = not content and not attachments
     if redacted:
         content = "[no OCR text recovered — likely an image or redacted block]"
@@ -307,6 +497,8 @@ def main():
     print("Date range: %s" % date_range)
     print("Without time: %d" % sum(1 for e in entries if not e["time"]))
     print("Redacted/empty: %d" % sum(1 for e in entries if e["redacted"]))
+    print("With attachment marker: %d" % sum(1 for e in entries if "== ATTACHMENT ==" in e["content"]))
+    print("With attachments list: %d" % sum(1 for e in entries if e["attachments"]))
     senders = {}
     for e in entries:
         senders[e["sender"]] = senders.get(e["sender"], 0) + 1
