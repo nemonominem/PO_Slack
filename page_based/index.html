@@ -332,6 +332,7 @@ body.layout-portrait .pdf-panel {
 .result-content mark { cursor: pointer; }
 .result-content mark:hover { outline: 1px solid var(--accent); }
 .result-date { font-size: 15px; font-weight: 700; color: var(--accent); }
+.result-time { font-size: 12px; color: var(--muted); font-weight: 600; margin-left: 8px; }
 .result-raw-date { font-size: 11px; color: var(--muted); margin-left: 8px; }
 .result-hits {
   font-size: 12px; color: var(--green); font-weight: 600;
@@ -2603,9 +2604,17 @@ function displayResults(results, query, opts) {
     html += '<div class="result-entry" id="result-' + i + '" data-result-idx="' + i + '" data-pdf-page="' + pdfPage + '" data-entry-idx="' + r.idx + '">';
     html += '<div class="result-header">';
     const isNotice = e.sender === 'Slack Notice';
+    const isPart2 = e.source === 'part2';
+    const senderHtml = e.sender
+      ? '<span style="font-size:12px;color:' + (isNotice ? 'var(--muted)' : 'var(--green)') + ';font-weight:600;font-style:' + (isNotice ? 'italic' : 'normal') + ';margin-left:8px">' + escapeHtml(e.sender) + '</span>'
+      : '';
+    const timeHtml = e.time
+      ? '<span class="result-time">' + escapeHtml(e.time) + '</span>'
+      : '';
+    // Part 2 export is [timestamp] [sender] content. Part 1 screenshots
+    // show the Slack header as name then time — leave that order alone.
     html += '<span><span class="result-date">' + e.date + '</span>' +
-      (e.sender ? '<span style="font-size:12px;color:' + (isNotice ? 'var(--muted)' : 'var(--green)') + ';font-weight:600;font-style:' + (isNotice ? 'italic' : 'normal') + ';margin-left:8px">' + escapeHtml(e.sender) + '</span>' : '') +
-      (e.time ? '<span style="font-size:10px;color:var(--muted);margin-left:4px">' + escapeHtml(e.time) + '</span>' : '') +
+      (isPart2 ? (timeHtml + senderHtml) : (senderHtml + timeHtml)) +
       '<span class="result-raw-date">' + escapeHtml(e.raw_date) + '</span>' +
       (e.source ? '<span style="font-size:10px;color:var(--muted);background:var(--panel-2);padding:2px 6px;border-radius:3px;border:1px solid var(--border-2);margin-left:6px;white-space:nowrap" title="From the ' + (e.source === 'part2' ? 'Part 2 (Apr 2020-Jun 2023)' : 'Part 1 (Feb-Apr 2020)') + ' release">' + (e.source === 'part2' ? 'Part 2' : 'Part 1') + '</span>' : '') +
       (e.redacted ? '<span style="font-size:10px;color:var(--orange);margin-left:6px" title="No OCR text recovered for this message — likely an image or a redacted block">▪ redacted</span>' : '');

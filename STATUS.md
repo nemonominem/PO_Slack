@@ -71,6 +71,15 @@ Drive / DataWharehouse paths; all PDFs, JSON, and scripts live inside
   file / image cards plus their preview body with `== ATTACHMENT ==`.
   Result cards render that block as a distinct inset. 102 Part 1 entries
   carry the marker (entry count unchanged at 1,256).
+- **Fixed Part 2 timestamp/sender off-by-one.** The export is
+  `[timestamp]` then `[sender]` then body; the old parser treated the
+  stamp as a *trailing* closer on the previous message, so every time
+  (and therefore the date) belonged to the wrong entry — e.g. Eddie's
+  last chat inherited the 2023-06-27 unarchive time. `parse_part2.py`
+  now reads `slack-part2.pdf` locally (no DataWharehouse JSON). 11,351
+  entries (48 of them from 6 image-only pages in `part2_ocr_pages.json`).
+  Part 2 result-card headers show time before the name (`2022-06-02
+  13:15:20 Eddie Holmes`); Part 1 stays date → name → time.
 
 ## Known limitations
 - Part 1 message boundaries are best-effort, not exact: Slack visually groups

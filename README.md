@@ -9,8 +9,8 @@ released by Chairman Rand Paul's Senate committee.
 | Part | Period | Entries | PDF pages | Format |
 |---|---|---|---|---|
 | **Part 1** — `paper-2020-nature_medicine-proximal_origin` (screenshots) | Feb 1 &ndash; Apr 30, 2020 | 1,256 (message-level) | 140 | OCR'd Slack screenshots |
-| **Part 2** — Slack export continuation | Apr 30, 2020 &ndash; Jun 28, 2023 | 11,357 (message-level) | 1,123 | Clean text-layer export |
-| **Combined** | Feb 2020 &ndash; Jun 2023 | 12,617 | 1,263 | |
+| **Part 2** — Slack export continuation | Apr 30, 2020 &ndash; Jun 28, 2023 | 11,351 (message-level) | 1,123 | Clean text-layer export |
+| **Combined** | Feb 2020 &ndash; Jun 2023 | 12,607 | 1,263 | |
 
 Part 2 begins with the exact same message that closes Part 1 ("Yes, both are
 in the wrong...", Eddie Holmes, Apr 30 2020) &mdash; the two releases are a
@@ -61,9 +61,11 @@ the source rather than the parser:
   take the filename plus immediately following OCR crumbs. Commentary typed
   *after* a document card can still land inside the attachment block.
 
-Part 2 was released as a genuine text-layer Slack export (message ⟶
-timestamp ⟶ sender bracketed blocks), so it parses exactly at per-message
-granularity, with accurate timestamps, senders, thread IDs, and attachments.
+Part 2 was released as a genuine text-layer Slack export. Each block is
+`[timestamp]` then `[sender]` then the message body (optional
+`[thread - ID: …]` in between). `parse_part2.py` reads `slack-part2.pdf`
+directly. Six image-only pages have no text layer; those 48 messages are
+kept from `part2_ocr_pages.json`.
 
 ## Structure
 
@@ -76,7 +78,9 @@ granularity, with accurate timestamps, senders, thread IDs, and attachments.
 | `page_based/reocr_part1.py` | Re-OCRs Part 1's 140 pages with Tesseract (run once; writes `slack-part1_ocr.txt`) |
 | `page_based/slack-part1_ocr.txt` | Re-OCR'd text, consumed by `parse_part1.py` |
 | `page_based/parse_part1.py` | Message-level parser for the re-OCR'd Part 1 text (OCR cleanup + attachment markers) |
-| `page_based/build_part2.py` | Reshapes the existing high-quality Part 2 message parse into the app's entry schema |
+| `page_based/parse_part2.py` | Message-level parser for Part 2 (`[timestamp]` then `[sender]` then body) |
+| `page_based/part2_ocr_pages.json` | 48 messages from 6 image-only Part 2 pages (no text layer) |
+| `page_based/build_part2.py` | Thin wrapper that runs `parse_part2.py` |
 | `page_based/slack_notice.py` | Shared Slack-system-notice detection used by both builders |
 
 ## How to use
