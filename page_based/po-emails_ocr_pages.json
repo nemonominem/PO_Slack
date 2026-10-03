@@ -1,0 +1,817 @@
+[
+ {
+  "page": 1,
+  "file": "page-001.png",
+  "chars": 1902
+ },
+ {
+  "page": 2,
+  "file": "page-002.png",
+  "chars": 1165
+ },
+ {
+  "page": 3,
+  "file": "page-003.png",
+  "chars": 1426
+ },
+ {
+  "page": 4,
+  "file": "page-004.png",
+  "chars": 1871
+ },
+ {
+  "page": 5,
+  "file": "page-005.png",
+  "chars": 3183
+ },
+ {
+  "page": 6,
+  "file": "page-006.png",
+  "chars": 1480
+ },
+ {
+  "page": 7,
+  "file": "page-007.png",
+  "chars": 2594
+ },
+ {
+  "page": 8,
+  "file": "page-008.png",
+  "chars": 3738
+ },
+ {
+  "page": 9,
+  "file": "page-009.png",
+  "chars": 1779
+ },
+ {
+  "page": 10,
+  "file": "page-010.png",
+  "chars": 296
+ },
+ {
+  "page": 11,
+  "file": "page-011.png",
+  "chars": 1614
+ },
+ {
+  "page": 12,
+  "file": "page-012.png",
+  "chars": 69
+ },
+ {
+  "page": 13,
+  "file": "page-013.png",
+  "chars": 1077
+ },
+ {
+  "page": 14,
+  "file": "page-014.png",
+  "chars": 186
+ },
+ {
+  "page": 15,
+  "file": "page-015.png",
+  "chars": 1542
+ },
+ {
+  "page": 16,
+  "file": "page-016.png",
+  "chars": 2957
+ },
+ {
+  "page": 17,
+  "file": "page-017.png",
+  "chars": 1079
+ },
+ {
+  "page": 18,
+  "file": "page-018.png",
+  "chars": 861
+ },
+ {
+  "page": 19,
+  "file": "page-019.png",
+  "chars": 1498
+ },
+ {
+  "page": 20,
+  "file": "page-020.png",
+  "chars": 0
+ },
+ {
+  "page": 21,
+  "file": "page-021.png",
+  "chars": 25
+ },
+ {
+  "page": 22,
+  "file": "page-022.png",
+  "chars": 1887
+ },
+ {
+  "page": 23,
+  "file": "page-023.png",
+  "chars": 2825
+ },
+ {
+  "page": 24,
+  "file": "page-024.png",
+  "chars": 1979
+ },
+ {
+  "page": 25,
+  "file": "page-025.png",
+  "chars": 1949
+ },
+ {
+  "page": 26,
+  "file": "page-026.png",
+  "chars": 1753
+ },
+ {
+  "page": 27,
+  "file": "page-027.png",
+  "chars": 737
+ },
+ {
+  "page": 28,
+  "file": "page-028.png",
+  "chars": 1251
+ },
+ {
+  "page": 29,
+  "file": "page-029.png",
+  "chars": 1999
+ },
+ {
+  "page": 30,
+  "file": "page-030.png",
+  "chars": 2986
+ },
+ {
+  "page": 31,
+  "file": "page-031.png",
+  "chars": 1786
+ },
+ {
+  "page": 32,
+  "file": "page-032.png",
+  "chars": 1900
+ },
+ {
+  "page": 33,
+  "file": "page-033.png",
+  "chars": 1812
+ },
+ {
+  "page": 34,
+  "file": "page-034.png",
+  "chars": 634
+ },
+ {
+  "page": 35,
+  "file": "page-035.png",
+  "chars": 1311
+ },
+ {
+  "page": 36,
+  "file": "page-036.png",
+  "chars": 1411
+ },
+ {
+  "page": 37,
+  "file": "page-037.png",
+  "chars": 1125
+ },
+ {
+  "page": 38,
+  "file": "page-038.png",
+  "chars": 1083
+ },
+ {
+  "page": 39,
+  "file": "page-039.png",
+  "chars": 1271
+ },
+ {
+  "page": 40,
+  "file": "page-040.png",
+  "chars": 1051
+ },
+ {
+  "page": 41,
+  "file": "page-041.png",
+  "chars": 1146
+ },
+ {
+  "page": 42,
+  "file": "page-042.png",
+  "chars": 1786
+ },
+ {
+  "page": 43,
+  "file": "page-043.png",
+  "chars": 1346
+ },
+ {
+  "page": 44,
+  "file": "page-044.png",
+  "chars": 572
+ },
+ {
+  "page": 45,
+  "file": "page-045.png",
+  "chars": 1278
+ },
+ {
+  "page": 46,
+  "file": "page-046.png",
+  "chars": 1518
+ },
+ {
+  "page": 47,
+  "file": "page-047.png",
+  "chars": 1277
+ },
+ {
+  "page": 48,
+  "file": "page-048.png",
+  "chars": 1380
+ },
+ {
+  "page": 49,
+  "file": "page-049.png",
+  "chars": 1001
+ },
+ {
+  "page": 50,
+  "file": "page-050.png",
+  "chars": 511
+ },
+ {
+  "page": 51,
+  "file": "page-051.png",
+  "chars": 2167
+ },
+ {
+  "page": 52,
+  "file": "page-052.png",
+  "chars": 2348
+ },
+ {
+  "page": 53,
+  "file": "page-053.png",
+  "chars": 1316
+ },
+ {
+  "page": 54,
+  "file": "page-054.png",
+  "chars": 825
+ },
+ {
+  "page": 55,
+  "file": "page-055.png",
+  "chars": 2164
+ },
+ {
+  "page": 56,
+  "file": "page-056.png",
+  "chars": 324
+ },
+ {
+  "page": 57,
+  "file": "page-057.png",
+  "chars": 1542
+ },
+ {
+  "page": 58,
+  "file": "page-058.png",
+  "chars": 368
+ },
+ {
+  "page": 59,
+  "file": "page-059.png",
+  "chars": 6934
+ },
+ {
+  "page": 60,
+  "file": "page-060.png",
+  "chars": 6664
+ },
+ {
+  "page": 61,
+  "file": "page-061.png",
+  "chars": 4501
+ },
+ {
+  "page": 62,
+  "file": "page-062.png",
+  "chars": 160
+ },
+ {
+  "page": 63,
+  "file": "page-063.png",
+  "chars": 2539
+ },
+ {
+  "page": 64,
+  "file": "page-064.png",
+  "chars": 216
+ },
+ {
+  "page": 65,
+  "file": "page-065.png",
+  "chars": 1956
+ },
+ {
+  "page": 66,
+  "file": "page-066.png",
+  "chars": 1130
+ },
+ {
+  "page": 67,
+  "file": "page-067.png",
+  "chars": 1954
+ },
+ {
+  "page": 68,
+  "file": "page-068.png",
+  "chars": 883
+ },
+ {
+  "page": 69,
+  "file": "page-069.png",
+  "chars": 2328
+ },
+ {
+  "page": 70,
+  "file": "page-070.png",
+  "chars": 2629
+ },
+ {
+  "page": 71,
+  "file": "page-071.png",
+  "chars": 1569
+ },
+ {
+  "page": 72,
+  "file": "page-072.png",
+  "chars": 1880
+ },
+ {
+  "page": 73,
+  "file": "page-073.png",
+  "chars": 811
+ },
+ {
+  "page": 74,
+  "file": "page-074.png",
+  "chars": 199
+ },
+ {
+  "page": 75,
+  "file": "page-075.png",
+  "chars": 1378
+ },
+ {
+  "page": 76,
+  "file": "page-076.png",
+  "chars": 1530
+ },
+ {
+  "page": 77,
+  "file": "page-077.png",
+  "chars": 1010
+ },
+ {
+  "page": 78,
+  "file": "page-078.png",
+  "chars": 1741
+ },
+ {
+  "page": 79,
+  "file": "page-079.png",
+  "chars": 833
+ },
+ {
+  "page": 80,
+  "file": "page-080.png",
+  "chars": 1291
+ },
+ {
+  "page": 81,
+  "file": "page-081.png",
+  "chars": 1065
+ },
+ {
+  "page": 82,
+  "file": "page-082.png",
+  "chars": 833
+ },
+ {
+  "page": 83,
+  "file": "page-083.png",
+  "chars": 1383
+ },
+ {
+  "page": 84,
+  "file": "page-084.png",
+  "chars": 1157
+ },
+ {
+  "page": 85,
+  "file": "page-085.png",
+  "chars": 1419
+ },
+ {
+  "page": 86,
+  "file": "page-086.png",
+  "chars": 1692
+ },
+ {
+  "page": 87,
+  "file": "page-087.png",
+  "chars": 1084
+ },
+ {
+  "page": 88,
+  "file": "page-088.png",
+  "chars": 1200
+ },
+ {
+  "page": 89,
+  "file": "page-089.png",
+  "chars": 1227
+ },
+ {
+  "page": 90,
+  "file": "page-090.png",
+  "chars": 1042
+ },
+ {
+  "page": 91,
+  "file": "page-091.png",
+  "chars": 1250
+ },
+ {
+  "page": 92,
+  "file": "page-092.png",
+  "chars": 1317
+ },
+ {
+  "page": 93,
+  "file": "page-093.png",
+  "chars": 487
+ },
+ {
+  "page": 94,
+  "file": "page-094.png",
+  "chars": 1480
+ },
+ {
+  "page": 95,
+  "file": "page-095.png",
+  "chars": 1332
+ },
+ {
+  "page": 96,
+  "file": "page-096.png",
+  "chars": 1186
+ },
+ {
+  "page": 97,
+  "file": "page-097.png",
+  "chars": 1234
+ },
+ {
+  "page": 98,
+  "file": "page-098.png",
+  "chars": 1302
+ },
+ {
+  "page": 99,
+  "file": "page-099.png",
+  "chars": 1384
+ },
+ {
+  "page": 100,
+  "file": "page-100.png",
+  "chars": 1219
+ },
+ {
+  "page": 101,
+  "file": "page-101.png",
+  "chars": 375
+ },
+ {
+  "page": 102,
+  "file": "page-102.png",
+  "chars": 1085
+ },
+ {
+  "page": 103,
+  "file": "page-103.png",
+  "chars": 1676
+ },
+ {
+  "page": 104,
+  "file": "page-104.png",
+  "chars": 1863
+ },
+ {
+  "page": 105,
+  "file": "page-105.png",
+  "chars": 1515
+ },
+ {
+  "page": 106,
+  "file": "page-106.png",
+  "chars": 1190
+ },
+ {
+  "page": 107,
+  "file": "page-107.png",
+  "chars": 965
+ },
+ {
+  "page": 108,
+  "file": "page-108.png",
+  "chars": 1601
+ },
+ {
+  "page": 109,
+  "file": "page-109.png",
+  "chars": 1155
+ },
+ {
+  "page": 110,
+  "file": "page-110.png",
+  "chars": 1085
+ },
+ {
+  "page": 111,
+  "file": "page-111.png",
+  "chars": 1261
+ },
+ {
+  "page": 112,
+  "file": "page-112.png",
+  "chars": 1856
+ },
+ {
+  "page": 113,
+  "file": "page-113.png",
+  "chars": 1535
+ },
+ {
+  "page": 114,
+  "file": "page-114.png",
+  "chars": 1339
+ },
+ {
+  "page": 115,
+  "file": "page-115.png",
+  "chars": 1444
+ },
+ {
+  "page": 116,
+  "file": "page-116.png",
+  "chars": 350
+ },
+ {
+  "page": 117,
+  "file": "page-117.png",
+  "chars": 1850
+ },
+ {
+  "page": 118,
+  "file": "page-118.png",
+  "chars": 2301
+ },
+ {
+  "page": 119,
+  "file": "page-119.png",
+  "chars": 2942
+ },
+ {
+  "page": 120,
+  "file": "page-120.png",
+  "chars": 3368
+ },
+ {
+  "page": 121,
+  "file": "page-121.png",
+  "chars": 2698
+ },
+ {
+  "page": 122,
+  "file": "page-122.png",
+  "chars": 2648
+ },
+ {
+  "page": 123,
+  "file": "page-123.png",
+  "chars": 3989
+ },
+ {
+  "page": 124,
+  "file": "page-124.png",
+  "chars": 954
+ },
+ {
+  "page": 125,
+  "file": "page-125.png",
+  "chars": 1207
+ },
+ {
+  "page": 126,
+  "file": "page-126.png",
+  "chars": 898
+ },
+ {
+  "page": 127,
+  "file": "page-127.png",
+  "chars": 1142
+ },
+ {
+  "page": 128,
+  "file": "page-128.png",
+  "chars": 2010
+ },
+ {
+  "page": 129,
+  "file": "page-129.png",
+  "chars": 2652
+ },
+ {
+  "page": 130,
+  "file": "page-130.png",
+  "chars": 3083
+ },
+ {
+  "page": 131,
+  "file": "page-131.png",
+  "chars": 2499
+ },
+ {
+  "page": 132,
+  "file": "page-132.png",
+  "chars": 908
+ },
+ {
+  "page": 133,
+  "file": "page-133.png",
+  "chars": 1275
+ },
+ {
+  "page": 134,
+  "file": "page-134.png",
+  "chars": 1387
+ },
+ {
+  "page": 135,
+  "file": "page-135.png",
+  "chars": 2198
+ },
+ {
+  "page": 136,
+  "file": "page-136.png",
+  "chars": 640
+ },
+ {
+  "page": 137,
+  "file": "page-137.png",
+  "chars": 1179
+ },
+ {
+  "page": 138,
+  "file": "page-138.png",
+  "chars": 1483
+ },
+ {
+  "page": 139,
+  "file": "page-139.png",
+  "chars": 443
+ },
+ {
+  "page": 140,
+  "file": "page-140.png",
+  "chars": 1653
+ },
+ {
+  "page": 141,
+  "file": "page-141.png",
+  "chars": 1009
+ },
+ {
+  "page": 142,
+  "file": "page-142.png",
+  "chars": 1819
+ },
+ {
+  "page": 143,
+  "file": "page-143.png",
+  "chars": 1486
+ },
+ {
+  "page": 144,
+  "file": "page-144.png",
+  "chars": 2965
+ },
+ {
+  "page": 145,
+  "file": "page-145.png",
+  "chars": 1139
+ },
+ {
+  "page": 146,
+  "file": "page-146.png",
+  "chars": 1824
+ },
+ {
+  "page": 147,
+  "file": "page-147.png",
+  "chars": 1050
+ },
+ {
+  "page": 148,
+  "file": "page-148.png",
+  "chars": 823
+ },
+ {
+  "page": 149,
+  "file": "page-149.png",
+  "chars": 2098
+ },
+ {
+  "page": 150,
+  "file": "page-150.png",
+  "chars": 4027
+ },
+ {
+  "page": 151,
+  "file": "page-151.png",
+  "chars": 2084
+ },
+ {
+  "page": 152,
+  "file": "page-152.png",
+  "chars": 1643
+ },
+ {
+  "page": 153,
+  "file": "page-153.png",
+  "chars": 4103
+ },
+ {
+  "page": 154,
+  "file": "page-154.png",
+  "chars": 3639
+ },
+ {
+  "page": 155,
+  "file": "page-155.png",
+  "chars": 1155
+ },
+ {
+  "page": 156,
+  "file": "page-156.png",
+  "chars": 372
+ },
+ {
+  "page": 157,
+  "file": "page-157.png",
+  "chars": 2327
+ },
+ {
+  "page": 158,
+  "file": "page-158.png",
+  "chars": 3750
+ },
+ {
+  "page": 159,
+  "file": "page-159.png",
+  "chars": 2717
+ },
+ {
+  "page": 160,
+  "file": "page-160.png",
+  "chars": 2111
+ },
+ {
+  "page": 161,
+  "file": "page-161.png",
+  "chars": 3888
+ },
+ {
+  "page": 162,
+  "file": "page-162.png",
+  "chars": 3123
+ },
+ {
+  "page": 163,
+  "file": "page-163.png",
+  "chars": 30
+ }
+]

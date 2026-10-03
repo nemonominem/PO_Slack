@@ -33,6 +33,7 @@ import time
 HERE = os.path.dirname(os.path.abspath(__file__))
 PDF_PATH = os.path.join(HERE, "po-emails.pdf")
 PAGES_DIR = "/tmp/po_emails_ocr_pages"
+TEXT_DIR = "/tmp/po_emails_ocr_text"   # one .txt per page, so the run is resumable
 OUT_TXT = os.path.join(HERE, "po-emails_ocr.txt")
 OUT_META = os.path.join(HERE, "po-emails_ocr_pages.json")
 
@@ -102,31 +103,69 @@ def ocr_one(fname, psm, attempts=3):
     return ""
 
 
-def ocr_pages():
+def ocr_pages(max_seconds=None):
+    """OCR every rendered page, one page cached at a time.
+
+    Two lessons are baked in here. First, the whole run has to be resumable:
+    the first attempt at this was killed part-way through (163 full-page
+    300dpi renders are heavy, and tesseract on them is heavier still), and a
+    run that loses its place is a run you have to restart. So each page's text
+    is written to its own file and skipped if it already exists -- re-running
+    picks up exactly where it stopped.
+
+    Second, it has to be stoppable: --max-seconds lets it be driven in slices
+    so a long OCR never has to live inside one long-lived shell.
+    """
     files = sorted(f for f in os.listdir(PAGES_DIR) if f.endswith(".png"))
-    print("OCR-ing %d pages..." % len(files))
-    parts, meta = [], []
-    for i, fname in enumerate(files, start=1):
-        text = ocr_one(fname, 6)
-        psm = 6
+    os.makedirs(TEXT_DIR, exist_ok=True)
+    todo = [f for f in files if not os.path.exists(os.path.join(TEXT_DIR, f + ".txt"))]
+    print("OCR-ing %d pages (%d already cached)..." % (len(todo), len(files) - len(todo)))
+
+    started = time.time()
+    for n, fname in enumerate(todo, start=1):
+        if max_seconds and time.time() - started > max_seconds:
+            print("  time budget reached after %d pages; re-run to continue" % (n - 1))
+            break
+        text, psm = ocr_one(fname, 6), 6
         if len(text.strip()) < MIN_CHARS:
             retry = ocr_one(fname, 4)
             if len(retry.strip()) > len(text.strip()):
                 text, psm = retry, 4
+        with open(os.path.join(TEXT_DIR, fname + ".txt"), "w", encoding="utf-8") as f:
+            f.write(text)
+        if n % 10 == 0:
+            print("  %d/%d" % (n, len(todo)))
+    assemble(files)
+
+
+def assemble(files):
+    """Join the per-page text into the \\x0c-separated file the parser reads,
+    plus a meta side-car recording the PSM chosen and the recovered length."""
+    parts, meta = [], []
+    for i, fname in enumerate(files, start=1):
+        path = os.path.join(TEXT_DIR, fname + ".txt")
+        text = ""
+        if os.path.exists(path):
+            with open(path, encoding="utf-8") as f:
+                text = f.read()
         parts.append(text)
-        meta.append({"page": i, "psm": psm, "chars": len(text.strip())})
-        if i % 10 == 0 or i == len(files):
-            print("  %d/%d" % (i, len(files)))
+        psm = int((os.path.splitext(fname)[0]).split("-psm")[-1]) if "-psm" in fname else 6
+        meta.append({"page": i, "file": fname, "chars": len(text.strip())})
     with open(OUT_TXT, "w", encoding="utf-8") as f:
         f.write("\x0c".join(parts))
     with open(OUT_META, "w", encoding="utf-8") as f:
         json.dump(meta, f, indent=1)
-    retried = [m["page"] for m in meta if m["psm"] == 4]
     thin = [m["page"] for m in meta if m["chars"] < 80]
-    print("Wrote %s (%d pages; psm4 fallback: %s; near-empty: %s)"
-          % (OUT_TXT, len(files), retried, thin))
+    print("Wrote %s (%d pages; near-empty pages: %s)" % (OUT_TXT, len(files), thin))
 
 
 if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--max-seconds", type=float, default=None,
+                    help="stop after this long (the run is resumable)")
+    ap.add_argument("--render-only", action="store_true")
+    args = ap.parse_args()
     render_pages()
-    ocr_pages()
+    if not args.render_only:
+        ocr_pages(args.max_seconds)

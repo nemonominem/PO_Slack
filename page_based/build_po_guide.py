@@ -59,6 +59,9 @@ RE_INLINE_SRC = re.compile(r"source:\s*(.+)$", re.I)
 RE_FOOTNOTE_DEF = re.compile(r"^\[\^([0-9A-Za-z_]+)\]:\s*(\S+)\s*$")
 RE_FOOTNOTE_REF = re.compile(r"\[\^([0-9A-Za-z_]+)\](?!:)")
 RE_DOC = re.compile(r"([A-Za-z0-9][A-Za-z0-9_.\-]*\.(?:pdf|docx|xlsx|txt|csv|json))", re.I)
+# a document name with its footnote marker written right after it
+RE_DOC_REF = re.compile(
+    r"([A-Za-z0-9][A-Za-z0-9_.\-]*\.(?:pdf|docx|xlsx|txt|csv|json))\s*,?\s*\[\^([0-9A-Za-z_]+)\]", re.I)
 RE_PAGE = re.compile(
     r"\bpp?\.\s*([0-9]+(?:\s*[–\-—]\s*[0-9]+)?(?:\s*,\s*[0-9]+(?:\s*[–\-—]\s*[0-9]+)?)*)"
     r"(?!\s*(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b)", re.I)
@@ -79,9 +82,6 @@ RE_MONTH_DAY = re.compile(
 # a Slack message quoted with its author and time: "Robert Garry, 23 Feb 2020, 11:58 pm UK"
 RE_SLACK_ATTRIB = re.compile(
     r"^[A-Z][a-z]+\s+[A-Z][A-Za-z']+,\s*\d{1,2}\s+[A-Z][a-z]{2,8}\s+20\d\d", re.M)
-# how far back to look for the footnote marker that names a document's Drive file:
-# the marker usually sits on the quoted line just above the caption.
-REF_WINDOW = 14
 
 DOC_CLASSES = [
     (re.compile(r"Proximal_Origin_Slack", re.I), "slack"),
@@ -209,7 +209,6 @@ def new_section(part_id, number, title, heading):
 def parse_part(part_id, path):
     sections, evidence, footnote_urls = [], [], {}
     cur = [None]
-    refs = []
 
     def ensure():
         if cur[0] is None:
@@ -217,13 +216,14 @@ def parse_part(part_id, path):
             sections.append(cur[0])
         return cur[0]
 
-    def add(raw):
-        ev = make_evidence(raw, part_id, refs[-REF_WINDOW:])
+    def add(raw, refs=()):
+        ev = make_evidence(raw, part_id, refs)
         ensure()["evidence"].append(ev)
         evidence.append(ev)
 
+    lines = []
     for line in read_lines(path):
-        refs.extend(RE_FOOTNOTE_REF.findall(line))
+        lines.append(line)
         fm = RE_FOOTNOTE_DEF.match(line)
         if fm:
             footnote_urls[fm.group(1)] = fm.group(2)
@@ -248,23 +248,54 @@ def parse_part(part_id, path):
             continue
         im = RE_INLINE_SRC.search(line)
         if im:
-            add(im.group(1))
-    return sections, evidence, footnote_urls
+            # markers adjacent to a filename on this very line, nothing looser
+            add(im.group(1), [m.group(2) for m in RE_DOC_REF.finditer(line)])
+    return sections, evidence, footnote_urls, lines
 
 
-def attach_urls(sections, footnote_urls):
-    """A citation's footnote marker (e.g. [^108]) names the Drive file for that
-    document. The marker usually sits on the quoted lines *above* the caption,
-    so a window of recent markers is carried with each citation."""
+def build_doc_urls(lines, footnote_urls):
+    """Map a cited document to its public Drive file.
+
+    Only a marker written immediately after the filename counts, e.g.
+
+        > '...' source: farrar-fauci-comms-full.pdf[^166], p.112, 2 Feb 2020
+        > _Baric-TI-Transcript.pdf[^47], p.30-32_
+
+    That adjacency is what proves the link belongs to that document. Two
+    earlier versions were wrong: matching on "a marker seen in the preceding
+    lines", and then on "the first marker anywhere on the line". The article
+    footnotes many things per page, so neither proximity nor first-wins means
+    anything -- both attached the same few Drive ids to unrelated documents.
+    A document with no adjacent marker gets no link, which is honest: it is
+    listed as cited-but-not-linked rather than pointed at the wrong PDF.
+    """
+    mapping = {}
+    for line in lines:
+        for m in RE_DOC_REF.finditer(line):
+            url = footnote_urls.get(m.group(2))
+            if url and RE_DRIVE_FILE.search(url):
+                mapping.setdefault(m.group(1), url)
+    return mapping
+
+
+def attach_urls(sections, doc_urls, footnote_urls):
+    """Give each citation the Drive file proven to be its own.
+
+    Two proven sources, in order: the marker on the citation's own line
+    (`... farrar-fauci-comms-full.pdf[^166] ...`), then the document-level
+    map built from every such line in the article."""
     for sec in sections:
         for ev in sec["evidence"]:
-            if not ev["url"]:
-                for fid in ev["_refs"]:
-                    url = footnote_urls.get(fid)
-                    if url and RE_DRIVE_FILE.search(url):
-                        ev["url"] = url
-                        break
-            ev.pop("_refs", None)
+            refs = ev.pop("_refs", [])
+            if ev["url"]:
+                continue
+            for fid in refs:
+                url = footnote_urls.get(fid)
+                if url and RE_DRIVE_FILE.search(url):
+                    ev["url"] = url
+                    break
+            if not ev["url"] and ev["doc"]:
+                ev["url"] = doc_urls.get(ev["doc"])
 
 
 def write_sources_md(guide, path):
@@ -317,17 +348,18 @@ def main():
     ap.add_argument("--article-dir", default=DEFAULT_ARTICLE_DIR)
     args = ap.parse_args()
 
-    all_sections, all_evidence, footnotes = [], [], {}
+    all_sections, all_evidence, footnotes, all_lines = [], [], {}, []
     parts_meta, missing = [], []
     for pid, fname, label, url in PARTS:
         path = os.path.join(args.article_dir, fname)
         if not os.path.exists(path):
             missing.append(path)
             continue
-        secs, evs, fns = parse_part(pid, path)
+        secs, evs, fns, lines = parse_part(pid, path)
         all_sections.extend(secs)
         all_evidence.extend(evs)
         footnotes.update(fns)
+        all_lines.extend(lines)
         parts_meta.append({"id": pid, "label": label, "url": url, "file": fname,
                            "sections": len(secs), "evidence": len(evs)})
         print("%-8s %4d sections, %4d evidence citations" % (label, len(secs), len(evs)))
@@ -335,7 +367,8 @@ def main():
     if missing:
         print("WARNING: missing article files:\n  " + "\n  ".join(missing), file=sys.stderr)
 
-    attach_urls(all_sections, footnotes)
+    doc_urls = build_doc_urls(all_lines, footnotes)
+    attach_urls(all_sections, doc_urls, footnotes)
 
     docs = {}
     undoc = {"cites": 0, "by_kind": {}}
