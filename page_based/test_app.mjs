@@ -176,6 +176,21 @@ ok('timeline counts only listed kinds', withEmail < withAll && withEmail > 0,
 app.kindFilter = null;
 app.buildTimelineSeries();
 
+sec('Manuscript drafts');
+input.value = 'RBD';
+app.doSearch();
+const hd = document.getElementById('resultsPanel').innerHTML;
+ok('draft versions are searchable', /k-draft/.test(hd));
+const drafts = app.diaryData.entries.filter(e => e.source === 'sscp');
+ok('draft versions are dated and unique', drafts.length > 0 &&
+   new Set(drafts.map(d => d.thread_key)).size === drafts.length &&
+   drafts.every(d => /^\d{4}-\d{2}-\d{2}$/.test(d.date)),
+   drafts.length + ' versions');
+ok('draft versions run Feb 1 – Mar 5 2020',
+   drafts[0].date >= '2020-02-01' && drafts[drafts.length-1].date <= '2020-03-06',
+   drafts[0].date + ' .. ' + drafts[drafts.length-1].date);
+ok('every draft has a page', drafts.every(d => d.pages && d.pages.length));
+
 sec('Guide');
 const guideResp = await (await fetch('po_guide.json')).json();
 ok('guide loads', !!guideResp && guideResp.sections.length > 200);

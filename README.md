@@ -1,16 +1,57 @@
 # P.O. Slack Search
 
-Searchable web app for the Slack messages between the "Proximal Origin" paper
-authors (Kristian Andersen, Andrew Rambaut, Eddie Holmes, Robert Garry),
-released by Chairman Rand Paul's Senate committee.
+Searchable web app for the documentary record behind the "Proximal Origin"
+correspondence: the Slack channel between Kristian Andersen, Andrew Rambaut,
+Eddie Holmes and Robert Garry, the FOI'd emails around it, and the manuscript
+as it was revised — all released by Chairman Rand Paul's Senate committee,
+and read alongside Gilles Demaneuf's investigation of how the paper was written.
 
 ## Coverage
 
-| Part | Period | Entries | PDF pages | Format |
-|---|---|---|---|---|
-| **Part 1** — `paper-2020-nature_medicine-proximal_origin` (screenshots) | Feb 1 &ndash; Apr 30, 2020 | 1,256 (message-level) | 140 | OCR'd Slack screenshots |
-| **Part 2** — Slack export continuation | Apr 30, 2020 &ndash; Jun 28, 2023 | 11,351 (message-level) | 1,123 | Clean text-layer export |
-| **Combined** | Feb 2020 &ndash; Jun 2023 | 12,607 | 1,263 | |
+Four releases are merged into one searchable timeline.
+
+| Release | Cited as | Period | Entries | PDF pages | Format |
+|---|---|---|---|---|---|
+| **Slack Part 1** — `paper-2020-nature_medicine-proximal_origin` (screenshots) | `Proximal_Origin_Slack.pdf` | Feb 1 &ndash; Apr 30, 2020 | 1,256 | 140 | OCR'd Slack screenshots |
+| **Slack Part 2** — export continuation | `Proximal_Origin_Slack.pdf` | Apr 30, 2020 &ndash; Jun 28, 2023 | 11,351 | 1,123 | Clean text-layer export |
+| **P.O. emails** — the FOI'd email release | `Proximal_Origin_Emails.pdf` | Jan 31 &ndash; Jul 27, 2020 | 87 | 163 | Scanned images, re-OCR'd, split per message |
+| **Manuscript drafts** | `SSCP-Drafts-of-Proximal-Origin.pdf` | Feb 1 &ndash; Mar 5, 2020 | 20 | 216 | One dated version per entry |
+| **Combined** | | Jan 2020 &ndash; Jun 2023 | **12,714** | 1,642 | |
+
+The Slack channel is the tip of the story; the emails and the drafts are the
+body of evidence behind it, which is why they sit on the same timeline.
+
+## The P.O. guide
+
+A rail on the left lists the dated sections of Gilles Demaneuf's
+[*Proximal Origin — A Tragicomedy of our Times*](https://gillesdemaneuf.medium.com/summary-proximal-origin-a-tragicomedy-of-our-times-1ed5b4dae506)
+and, for each, the released documents it cites — name, page, date — with a link
+to the public copy where the article gives one. Selecting a section shows that
+day's messages, so a Slack message can be read against the evidence for the
+claim it supports, and the reverse.
+
+Built by `build_po_guide.py` from the three parts of the article:
+**214 sections, 446 evidence citations, 51 distinct documents, 21 verified
+public Drive links**. `SOURCES.md` is the same inventory as a provenance table.
+
+A Drive link is attached only when the article writes the footnote marker
+immediately after the filename; matching on proximity, or on the first marker
+on the line, points dozens of documents at the wrong PDF.
+
+## Mixed sources
+
+Entries carry a **kind** — `slack`, `email`, `draft`, `attachment`, `note`,
+`document`. Cards show a kind badge; the toolbar's **Box types** button ticks
+which kinds are listed, and the choice applies to the search results, the browse
+window, the timeline day-counts and the counts line. Thread links run both ways:
+a card links to the message it answers and to the ones that answered it.
+
+Email timestamps are normalised to ET, with the local stamp and the zone
+assumption shown on the card.
+
+**→ [`page_based/SPEC.md`](page_based/SPEC.md)** is the specification — kinds,
+message splitting, the time-zone table, threading, entry shape, page-map key
+discipline, and the recipe for adding a release or a source with no PDF.
 
 Part 2 begins with the exact same message that closes Part 1 ("Yes, both are
 in the wrong...", Eddie Holmes, Apr 30 2020) &mdash; the two releases are a
@@ -94,6 +135,19 @@ python3 -m http.server 8080
 Any static HTTP server works (this is a GitHub-Pages-shaped static bundle).
 Opening `index.html` directly via `file://` will not work — browsers block
 `fetch()` of local JSON/PDF from `file://` URLs.
+
+## Tests
+
+```bash
+cd page_based
+node test_app.mjs      # 32 checks: runs index.html's own script on the real data
+python3 audit_app.py   # 19 checks: ids, handlers, CSS classes, tag balance, paths
+```
+
+`test_app.mjs` shims just enough DOM for the app's real code to run unmodified,
+because this machine has no headless browser (see STATUS.md). It covers logic
+and generated markup; `audit_app.py` covers the markup wiring. Layout and CSS
+have not been seen rendered — worth a manual pass in a browser.
 
 ## Search tips
 

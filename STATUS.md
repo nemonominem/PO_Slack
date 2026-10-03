@@ -99,6 +99,74 @@ Drive / DataWharehouse paths; all PDFs, JSON, and scripts live inside
   message time when the OCR recovered one; many Slack-grouped headers
   on this page have no time in the text layer.
 
+## Done (mixed sources — branch `po-sources-and-boxes`)
+- **Branch `po-sources-and-boxes`** carries this work; `main` is untouched until
+  it is reviewed.
+- **Scroll / large-box fixes ported** from `Fauci_Diary`: every result card's
+  text box scrolls on its own with an always-visible draggable scrollbar
+  (native bar hidden, because macOS overlay bars are invisible at rest and the
+  Up/Down keys belong to the match list), a `Full text` expander that lifts the
+  height cap, a `scroll inside this box` hint, and one keydown handler that
+  gives PageUp/PageDown to the box under the pointer, Up/Down to the match list
+  and Left/Right to the PDF.
+- **Box types**: every entry carries a `kind` (slack / email / attachment /
+  note / draft / document). Cards show a kind badge and a source badge; the
+  toolbar's **Box types** button ticks which kinds are listed, applied to
+  search, the browse window, the timeline day-counts and the stats line, stored
+  in `localStorage`. A new source needs no UI change.
+- **`SOURCES` now drives loading** (json, page map, PDF, badge, badgeTitle):
+  adding a release is a config entry. Sources without a PDF are skipped rather
+  than failing the load.
+- **Third and fourth sources ingested**
+  - `po-emails.pdf` — the FOI'd P.O. email release, cited 71x in the article.
+    Re-OCR'd (image-only scans) and parsed into **87 messages**, 31 Jan –
+    27 Jul 2020, 34 thread links. One entry per message, ET-normalised with the
+    zone assumption recorded per entry.
+  - `sscp-drafts.pdf` — the manuscript as revised, parsed into **20 dated
+    versions**, 1 Feb – 5 Mar 2020, matching the public `PO#1…#19` clean copies.
+- **Thread links run both ways**: a card links to the message it answers and to
+  the ones that answered it (`rebuildThreadDownLinks` re-inverts across releases).
+- **The P.O. guide**: a left rail lists the article's own dated sections with
+  the released documents each cites (name, page, date) and a link to the public
+  copy where the article gives one. Built by `build_po_guide.py` from the three
+  parts of the article (214 sections, 446 citations, 51 documents, 21 verified
+  Drive links) into `po_guide.json` + `SOURCES.md`.
+- **Data fixes found while testing**: 7 messages split across a page boundary
+  are rejoined (Outlook repeats the header on the continuation page); entry keys
+  are now unique, so two messages in the same minute no longer collide; the
+  `SOURCES` key was `poemails` while the data says `po-emails`.
+- **Tests**: `node test_app.mjs` (32 checks) runs `index.html`'s own script
+  against the real data under a DOM shim; `python3 audit_app.py` (19 checks)
+  covers duplicate ids, `getElementById` targets, inline handlers, CSS classes,
+  tag balance, fetched files and every `SOURCES` path.
+- **Standards written down** in `page_based/SPEC.md` (kinds, message splitting,
+  the time-zone table, threading, entry shape, page maps, and the recipe for
+  adding a release or a source with no PDF).
+
+## TODO — also ingest the other dated sources the piece leans on
+Agreed to add these in a later pass; each is catalogued in `page_based/SOURCES.md`
+with its citation count, pages cited and Drive link where the article gives one.
+Prioritised by how much of the argument they carry:
+
+- [ ] `farrar-fauci-comms.pdf` — **already copied into the repo, not yet
+      parsed** (174 pp, cited 30x). Its baked-in OCR text layer has lost all
+      inter-word spaces (`sent: Fri,24Jul202010:37:4640000To: JeremyFarrar`),
+      so it needs a dictionary-based de-gluer rather than a plain parse.
+- [ ] `Baric-Emails-2.17.21.pdf` (8x) and the EHA/WIV correspondence
+- [ ] `UTMB-LeDuc-batch-1.pdf` (7x) — LeDuc's pointed questions, 9–10 Feb
+- [ ] `01981-F-Dec-2022-Production-OPAQUE.pdf` (8x) and the other USRTK
+      productions (`USRTK_UCDavis_PROD_*`, 11x)
+- [ ] `Biohazard_FOIA_Maryland_Emails_11.6.20.pdf` (6x) and
+      `HHS_Garrett-Grigsby_12.30.21_production.pdf` (5x)
+- [ ] `OSU-records-Shan-Liu-Aug-4.pdf`, `nih-foia-request-60081and-59096` (2x)
+- [ ] Hearing transcripts: `2023.06.16-Andersen-Transcript.pdf` (12x),
+      `Baric-TI-Transcript.pdf` (11x), `Tabak-TI`, `2023.04.06-Lipkin`,
+      `Lane-Transcript`
+- [ ] `1265-pages.pdf` (9x) and the other unnamed productions
+- **Not ingestible as documents** (tweets, press, video): ~30 citations. They
+  are already catalogued in the guide as `social` / `press` / `link` evidence
+  and shown as such; they need no app entries.
+
 ## Known limitations
 - Part 1 message boundaries are best-effort, not exact: Slack visually groups
   consecutive same-sender messages without repeating the header, so a run of
@@ -125,3 +193,17 @@ Drive / DataWharehouse paths; all PDFs, JSON, and scripts live inside
 
 ## Optional later
 - No `server_based/` variant exists yet (only `page_based/` was requested).
+- **Browser testing was done without a browser.** This machine has no headless
+  browser available (Chrome and Playwright are not installed and there is no
+  network to fetch them; Brave's headless mode aborts under the sandbox, and
+  `screencapture` cannot reach a display). The app's real script is therefore run
+  under a DOM shim (`test_app.mjs`), which tests its logic and the markup it
+  generates, and the markup is checked statically (`audit_app.py`) — but the
+  layout and CSS have not been seen rendered. **Worth a manual pass in a real
+  browser before this is published**: scroll a long email, drag a box
+  scrollbar, expand a card, walk the box-type filter, pick a guide section.
+- The Google Drive clean copies (`PO#1…#19`, `Rebuttal#1…#5`) are **linked,
+  not downloaded**: the sandbox has no DNS, so the binaries cannot be fetched
+  here. Download them into `page_based/` if you want them served alongside the
+  app.
+- `git-lfs` is not installed, so the PDFs are committed as large blobs.
