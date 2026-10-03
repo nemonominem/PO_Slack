@@ -26,3 +26,28 @@ def apply_notice_normalization(sender, content):
         if pat.match(probe):
             return "Slack Notice", (sender + " " + probe).strip()
     return sender, content
+
+
+# ── document kinds ──────────────────────────────────────────────────────────
+# Every entry carries a `kind`, so the app can list, filter and count box
+# types across every release it merges (Slack, FOI'd email, document, ...).
+# The taxonomy and the recipe for adding a source are in SPEC.md.
+
+KIND_SLACK = "slack"          # an authored chat message
+KIND_ATTACHMENT = "attachment"  # a file/document carried by a message
+KIND_NOTE = "note"            # publisher/system material, not a document
+
+
+def entry_kind(sender, attachments):
+    """Classify a Slack entry.
+
+    Slack's own system events are publisher-side furniture about the release
+    (channel created, joined, renamed, archived), not one of its documents --
+    the same reasoning that gives the Fauci diary's release note its own
+    `kind: "note"` box -- so they are a `note`, not chat.
+    """
+    if sender == "Slack Notice" or sender == "USLACKBOT":
+        return KIND_NOTE
+    if attachments:
+        return KIND_ATTACHMENT
+    return KIND_SLACK

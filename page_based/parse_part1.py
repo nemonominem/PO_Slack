@@ -46,7 +46,7 @@ import json
 import os
 import re
 
-from slack_notice import apply_notice_normalization
+from slack_notice import apply_notice_normalization, entry_kind
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OCR_TEXT_PATH = os.path.join(HERE, "slack-part1_ocr.txt")
@@ -490,6 +490,7 @@ def finalize_message(sender, time_tokens, content_lines, page, date_key):
         "raw_date": date_key[1],
         "sender": final_sender,
         "time": time_val,
+        "kind": entry_kind(final_sender, attachments),
         "thread_id": None,
         "attachments": attachments,
         "content": content,

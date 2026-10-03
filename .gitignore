@@ -1,2 +1,6 @@
+
+# OCR intermediates are checked in deliberately (they are the parsed text of
+# the image-only releases); page renders are not.
 __pycache__/
 *.pyc
+.DS_Store

@@ -26,7 +26,7 @@ import re
 import subprocess
 from collections import defaultdict
 
-from slack_notice import apply_notice_normalization
+from slack_notice import apply_notice_normalization, entry_kind
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PDF_PATH = os.path.join(HERE, "slack-part2.pdf")
@@ -212,6 +212,7 @@ def to_entry(idx, msg, unresolved_date):
         "raw_date": raw,
         "sender": sender,
         "time": time_part,
+        "kind": entry_kind(sender, msg.get("attachments") or []),
         "thread_id": msg.get("thread_id"),
         "attachments": msg.get("attachments") or [],
         "content": content,
