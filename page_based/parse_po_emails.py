@@ -431,6 +431,46 @@ def header_block(fields, body):
     return "\n\n".join(head) + "\n\n----------\n\n" + body
 
 
+# ── page-break repair ───────────────────────────────────────────────────────
+# A long message is printed across two pages and Outlook repeats its header at
+# the top of the continuation, so the stream looks like two messages with the
+# same sender, stamp and subject but different bodies. Left alone that both
+# mis-counts the release and collides their entry keys (the key is built from
+# the date and minute). Consecutive entries with the same identity are one
+# message, so their bodies are joined.
+def merge_page_splits(entries):
+    """Join messages the printer split across a page boundary.
+
+    A long message printed over two pages shows its header again at the top of
+    the continuation, so it arrives as two entries with the same sender, stamp
+    and subject but different bodies -- and, because the entry key is built from
+    the date and minute, colliding keys. The halves are not adjacent in the
+    stream (other messages print between them), so they are grouped by
+    identity and rejoined in page order.
+    """
+    groups, order = {}, []
+    for e in entries:
+        ident = (e.get("sender"), e.get("subject"), e.get("stamp"),
+                 e.get("stamp_status"), e.get("kind"))
+        if ident not in groups:
+            groups[ident] = []
+            order.append(ident)
+        groups[ident].append(e)
+
+    out = []
+    for ident in order:
+        parts = groups[ident]
+        head = parts[0]
+        for extra in parts[1:]:
+            h, sep, body = extra["content"].partition("----------")
+            head["content"] = (head["content"].rstrip() + "\n" +
+                               (body if sep else extra["content"]).strip())
+            head["pages"] = sorted(set(head.get("pages", []) + extra.get("pages", [])))
+            head["merged_pages"] = head.get("merged_pages", 0) + 1
+        out.append(head)
+    return out
+
+
 # ── threading ───────────────────────────────────────────────────────────────
 # The release prints a conversation grouped by thread, NOT in time order: the
 # "Summary - Invitation to edit" thread runs 01:23, 19:08, 17:56, 17:08, 14:39.
@@ -495,19 +535,29 @@ def build_page_map(entries, n_pages):
 
 
 def entry_key(e, i):
-    return "%s|%s" % (SOURCE_ID, e["raw_date"] if e.get("date") is None
-                      else "%s %s" % (e["date"], e["time"] or ""))
+    # The same key the entry carries, so the app can look a page up from an
+    # entry without knowing which release it came from.
+    return e.get("thread_key") or "%s|%s" % (SOURCE_ID, e.get("idx", i))
 
 
 def main():
     pages = load_pages()
     messages = segment(pages)
-    entries = build_entries(messages)
+    entries = merge_page_splits(build_entries(messages))
     # thread keys, then chronological order: the release is not in time order
+    seen_keys = {}
     for e in entries:
         e["source"] = SOURCE_ID
-        e["thread_key"] = "%s|%s|%s" % (SOURCE_ID, e.get("date") or "undated",
-                                        e.get("time") or e["raw_date"][:40])
+        base = "%s|%s|%s" % (SOURCE_ID, e.get("date") or "undated",
+                             e.get("time") or e["raw_date"][:40])
+        n = seen_keys.get(base, 0)
+        seen_keys[base] = n + 1
+        e["thread_key"] = base if n == 0 else "%s|%d" % (base, n)
+        if n:
+            # two genuinely distinct messages share a minute; say so rather
+            # than letting one silently overwrite the other
+            e["date_note"] = (e.get("date_note", "") +
+                              ("same minute as another message" if n == 1 else "")).strip()
         e["thread_label"] = "%s %s · %s" % (e.get("date") or "undated",
                                             (e.get("time") or "")[:2] + ":" +
                                             (e.get("time") or "")[2:4] if e.get("time") else "",

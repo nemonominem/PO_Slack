@@ -2,7 +2,7 @@
   "source_file": "po-emails.pdf",
   "source_id": "po-emails",
   "title": "P.O. emails (FOI release)",
-  "total_entries": 95,
+  "total_entries": 87,
   "date_range": {
     "start": "2020-01-31",
     "end": "2020-07-27"
@@ -26,7 +26,7 @@
       "thread_label": "2020-01-31 07:00 · Jeremy Farrar",
       "replied_by": [
         {
-          "key": "po-emails|2020-01-31|0700",
+          "key": "po-emails|2020-01-31|0700|1",
           "label": "2020-01-31 07:00 · Jeremy Farrar"
         }
       ],
@@ -46,7 +46,8 @@
       "zone_assumed": "Wellcome Trust (the release's convener)",
       "stamp_line": "12:00 London -> 07:00 ET (time not recovered)",
       "source": "po-emails",
-      "thread_key": "po-emails|2020-01-31|0700",
+      "thread_key": "po-emails|2020-01-31|0700|1",
+      "date_note": "same minute as another message",
       "thread_label": "2020-01-31 07:00 · Jeremy Farrar",
       "replied_by": [
         {
@@ -106,7 +107,7 @@
         }
       ],
       "idx": 3,
-      "reply_to": "po-emails|2020-01-31|0700",
+      "reply_to": "po-emails|2020-01-31|0700|1",
       "reply_to_label": "2020-01-31 07:00 · Jeremy Farrar",
       "link_kind": "inferred (same conversation)"
     },
@@ -267,7 +268,7 @@
       "thread_label": "2020-02-03 22:10 · Edward Holmes",
       "replied_by": [
         {
-          "key": "po-emails|2020-02-04|0036",
+          "key": "po-emails|2020-02-04|0036|1",
           "label": "2020-02-04 00:36 · Kristian G. Andersen"
         }
       ],
@@ -306,7 +307,8 @@
       "zone_assumed": "Scripps Research",
       "stamp_line": "21:36 Los Angeles -> 00:36 ET",
       "source": "po-emails",
-      "thread_key": "po-emails|2020-02-04|0036",
+      "thread_key": "po-emails|2020-02-04|0036|1",
+      "date_note": "same minute as another message",
       "thread_label": "2020-02-04 00:36 · Kristian G. Andersen",
       "replied_by": [
         {
@@ -342,7 +344,7 @@
         }
       ],
       "idx": 14,
-      "reply_to": "po-emails|2020-02-04|0036",
+      "reply_to": "po-emails|2020-02-04|0036|1",
       "reply_to_label": "2020-02-04 00:36 · Kristian G. Andersen",
       "link_kind": "inferred (same conversation)"
     },
@@ -406,7 +408,8 @@
       "zone_assumed": "Scripps Research",
       "stamp_line": "14:39 Los Angeles -> 17:39 ET",
       "source": "po-emails",
-      "thread_key": "po-emails|2020-02-04|1739",
+      "thread_key": "po-emails|2020-02-04|1739|1",
+      "date_note": "same minute as another message",
       "thread_label": "2020-02-04 17:39 · Kristian G. Andersen",
       "replied_by": [],
       "idx": 17
@@ -452,7 +455,8 @@
       "zone_assumed": "Tulane University",
       "stamp_line": "17:56 Chicago -> 18:56 ET",
       "source": "po-emails",
-      "thread_key": "po-emails|2020-02-04|1856",
+      "thread_key": "po-emails|2020-02-04|1856|1",
+      "date_note": "same minute as another message",
       "thread_label": "2020-02-04 18:56 · Robert Garry",
       "replied_by": [],
       "idx": 19
@@ -465,18 +469,19 @@
       "sender": "Kristian G. Andersen",
       "sender_raw": "Kristian Andersen Po",
       "subject": "Re: Summary - Invitation to edit",
-      "content": "From: Kristian Andersen Po\n\nTo: Edward Holmes|\n\nCc: Robert Garry (a, “rambaut¢\n\nSubject: Re: Summary - Invitation to edit\n\nDate: Tuesday, February 4, 2020 at 5:08 PM\n\n----------\n\nml External Sender. Be aware of links, attachments and requests,\nOutside my expertise, but | don't necessarily think that passage in animals would add the glycans. It's more that the\nglycans could suggest some sort of immune system as the glycans often work to 'shield' epitopes. So if the acquisition\nof glycans is adaptive, that would be suggestive of an immune system.\nWe didn't write this in the report, but the residues on which the glycans (S, T, and S) are all conserved in the bat virus -\nit's the addition of the P that makes it a specific glycan site though (not conserved in the bat, hence not predicted to be\nO-glycans). It's entirely possible that the 'P' works as a flexible residue for the furin cleavage site and by proxy creates\nthe (predicted) O-linked glycans.\nI'll let Bob weigh in as well - definitely not my area of expertise.\nK\nOn Tue, Feb 4, 2020 at 2:59 PM Edward Holmes PS\nAgreed. Timing is perfect.\nBob - a question from Jeremy:\n\"Quick question though - why could passage in animals in lab work add the glycans?”\nAny thoughts?",
+      "content": "From: Kristian Andersen Po\n\nTo: Edward Holmes|\n\nCc: Robert Garry (a, “rambaut¢\n\nSubject: Re: Summary - Invitation to edit\n\nDate: Tuesday, February 4, 2020 at 5:08 PM\n\n----------\n\nml External Sender. Be aware of links, attachments and requests,\nOutside my expertise, but | don't necessarily think that passage in animals would add the glycans. It's more that the\nglycans could suggest some sort of immune system as the glycans often work to 'shield' epitopes. So if the acquisition\nof glycans is adaptive, that would be suggestive of an immune system.\nWe didn't write this in the report, but the residues on which the glycans (S, T, and S) are all conserved in the bat virus -\nit's the addition of the P that makes it a specific glycan site though (not conserved in the bat, hence not predicted to be\nO-glycans). It's entirely possible that the 'P' works as a flexible residue for the furin cleavage site and by proxy creates\nthe (predicted) O-linked glycans.\nI'll let Bob weigh in as well - definitely not my area of expertise.\nK\nOn Tue, Feb 4, 2020 at 2:59 PM Edward Holmes PS\nAgreed. Timing is perfect.\nBob - a question from Jeremy:\n\"Quick question though - why could passage in animals in lab work add the glycans?”\nAny thoughts?\nim External Sender. Be aware of links, attachments and requests.\nOutside my expertise, but | don't necessarily think that passage in animals would add the glycans. It's more that the\nglycans could suggest some sort of immune system as the glycans often work to 'shield' epitopes. So if the acquisition\nof glycans is adaptive, that would be suggestive of an immune system.\nGARRY0000100\nWe didn't write this in the report, but the residues on which the glycans (S, T, and S) are all conserved in the bat virus -\nit's the addition of the P that makes it a specific glycan site though (not conserved in the bat, hence not predicted to be\nO-glycans). It's entirely possible that the 'P’ works as a flexible residue for the furin cleavage site and by proxy creates\nthe (predicted) O-linked glycans.\nI'll let Bob weigh in as well - definitely not my area of expertise.\nK\nOn Tue, Feb 4, 2020 at 2:59 PM Edward Holmes aot:\nAgreed. Timing is perfect.\nBob - a question from Jeremy:\n\"Quick question though - why could passage in animals in lab work add the glycans?”\nAny thoughts?",
       "stamp": "Tuesday, February 4, 2020 at 5:08 PM",
       "stamp_status": "long",
       "zone_assumed": "Scripps Research",
       "stamp_line": "17:08 Los Angeles -> 20:08 ET",
       "source": "po-emails",
+      "merged_pages": 1,
       "thread_key": "po-emails|2020-02-04|2008",
       "thread_label": "2020-02-04 20:08 · Kristian G. Andersen",
       "replied_by": [
         {
-          "key": "po-emails|2020-02-04|2008",
-          "label": "2020-02-04 20:08 · Kristian G. Andersen"
+          "key": "po-emails|2020-02-04|2208",
+          "label": "2020-02-04 22:08 · Kristian G. Andersen"
         }
       ],
       "idx": 20,
@@ -486,72 +491,19 @@
     },
     {
       "date": "2020-02-04",
-      "time": "2008",
-      "kind": "email",
-      "raw_date": "20:08 ET · Re: Summary - Invitation to edit",
-      "sender": "Kristian G. Andersen",
-      "sender_raw": "Kristian Andersen Po",
-      "subject": "Re: Summary - Invitation to edit",
-      "content": "From: Kristian Andersen Po\n\nTo: Edward Holmes |\n\nCc: Robert Garry \"ramba ute\n\nSubject: Re: Summary - Invitation to edit\n\nDate: Tuesday, February 4, 2020 at 5:08 PM\n\n----------\n\nim External Sender. Be aware of links, attachments and requests.\nOutside my expertise, but | don't necessarily think that passage in animals would add the glycans. It's more that the\nglycans could suggest some sort of immune system as the glycans often work to 'shield' epitopes. So if the acquisition\nof glycans is adaptive, that would be suggestive of an immune system.\nGARRY0000100\nWe didn't write this in the report, but the residues on which the glycans (S, T, and S) are all conserved in the bat virus -\nit's the addition of the P that makes it a specific glycan site though (not conserved in the bat, hence not predicted to be\nO-glycans). It's entirely possible that the 'P’ works as a flexible residue for the furin cleavage site and by proxy creates\nthe (predicted) O-linked glycans.\nI'll let Bob weigh in as well - definitely not my area of expertise.\nK\nOn Tue, Feb 4, 2020 at 2:59 PM Edward Holmes aot:\nAgreed. Timing is perfect.\nBob - a question from Jeremy:\n\"Quick question though - why could passage in animals in lab work add the glycans?”\nAny thoughts?",
-      "stamp": "Tuesday, February 4, 2020 at 5:08 PM",
-      "stamp_status": "long",
-      "zone_assumed": "Scripps Research",
-      "stamp_line": "17:08 Los Angeles -> 20:08 ET",
-      "source": "po-emails",
-      "thread_key": "po-emails|2020-02-04|2008",
-      "thread_label": "2020-02-04 20:08 · Kristian G. Andersen",
-      "replied_by": [
-        {
-          "key": "po-emails|2020-02-04|2208",
-          "label": "2020-02-04 22:08 · Kristian G. Andersen"
-        }
-      ],
-      "idx": 21,
-      "reply_to": "po-emails|2020-02-04|2008",
-      "reply_to_label": "2020-02-04 20:08 · Kristian G. Andersen",
-      "link_kind": "inferred (same conversation)"
-    },
-    {
-      "date": "2020-02-04",
       "time": "2208",
       "kind": "email",
       "raw_date": "22:08 ET · Re: Summary - Invitation to edit",
       "sender": "Kristian G. Andersen",
       "sender_raw": "Kristian Andersen Po",
       "subject": "Re: Summary - Invitation to edit",
-      "content": "From: Kristian Andersen Po\n\nTo: Robert Garry Jin\n\nSubject: Re: Summary - Invitation to edit\n\nDate: Tuesday, February 4, 2020 at 7:08 PM\n\n----------\n\n| External Sender. Be aware of links, attachments and requests.\nThat's pretty interesting... All of which of course happens in humans. | do wonder if there's a scenario in which this thing\ncould have been circulating in humans and animals for a while until that perfect little bugger came about and took off.\nSeems a little strange, but definitely not impossible - although, of course, if the O-glycans are somehow involved in the\ninfectivity of human cells (as opposed to immunity), then we're swinging back to cell culture.\nOn Tue, Feb 4, 2020 at 4:34 PM Garry, Robert F ie:\nAnother thing about the evolution of the glycans.\nThis has happened naturally in other CoV.\nNot all MHV have an optimal furin site. Those that do have the furin site inevitably also add a 2-3 predicted O-linked\nglycans in or about the cleavage site..\nVariation on the theme in HKU1, a virus that probably does have intense transmission infecting millions of people each\nyear. Here the insert is three Serine residues, which pushes this site to a mucin-like patch (there are already a couple of\nprolines and the SSS is a turn as well)\nFunny thing — not on the attachments, but those strains of MHV and HKU-1 that have o-linked glycans and the furin site\nALSO have a larger patch - sometimes very large patch - of predicted o-linked glycans at the top of the prefusion form.\nWhen you see the pattern repeat itself in different viruses you start to believe it.",
+      "content": "From: Kristian Andersen Po\n\nTo: Robert Garry Jin\n\nSubject: Re: Summary - Invitation to edit\n\nDate: Tuesday, February 4, 2020 at 7:08 PM\n\n----------\n\n| External Sender. Be aware of links, attachments and requests.\nThat's pretty interesting... All of which of course happens in humans. | do wonder if there's a scenario in which this thing\ncould have been circulating in humans and animals for a while until that perfect little bugger came about and took off.\nSeems a little strange, but definitely not impossible - although, of course, if the O-glycans are somehow involved in the\ninfectivity of human cells (as opposed to immunity), then we're swinging back to cell culture.\nOn Tue, Feb 4, 2020 at 4:34 PM Garry, Robert F ie:\nAnother thing about the evolution of the glycans.\nThis has happened naturally in other CoV.\nNot all MHV have an optimal furin site. Those that do have the furin site inevitably also add a 2-3 predicted O-linked\nglycans in or about the cleavage site..\nVariation on the theme in HKU1, a virus that probably does have intense transmission infecting millions of people each\nyear. Here the insert is three Serine residues, which pushes this site to a mucin-like patch (there are already a couple of\nprolines and the SSS is a turn as well)\nFunny thing — not on the attachments, but those strains of MHV and HKU-1 that have o-linked glycans and the furin site\nALSO have a larger patch - sometimes very large patch - of predicted o-linked glycans at the top of the prefusion form.\nWhen you see the pattern repeat itself in different viruses you start to believe it.\na External Sender. Be aware of links, attachments and requests.\nThat's pretty interesting... All of which of course happens in humans. | do wonder if there's a scenario in which this thing\ncould have been circulating in humans and animals for a while until that perfect little bugger came about and took off.\nSeems a little strange, but definitely not impossible - although, of course, if the O-glycans are somehow involved in the\ninfectivity of human cells (as opposed to immunity), then we're swinging back to cell culture.\nOn Tue, Feb 4, 2020 at 4:34 PM Garry, Robert F Pe:\nAnother thing about the evolution of the glycans.\nThis has happened naturally in other CoV.\nNot all MHV have an optimal furin site. Those that do have the furin site inevitably also add a 2-3 predicted O-linked\nglycans in or about the cleavage site..\nGARRY0000099\nVariation on the theme in HKU1, a virus that probably does have intense transmission infecting millions of people each\nyear. Here the insert is three Serine residues, which pushes this site to a mucin-like patch (there are already a couple of\nprolines and the SSS is a turn as well)\nFunny thing — not on the attachments, but those strains of MHV and HKU-1 that have o-linked glycans and the furin site\nALSO have a larger patch - sometimes very large patch - of predicted o-linked glycans at the top of the prefusion form.\nWhen you see the pattern repeat itself in different viruses you start to believe it.",
       "stamp": "Tuesday, February 4, 2020 at 7:08 PM",
       "stamp_status": "long",
       "zone_assumed": "Scripps Research",
       "stamp_line": "19:08 Los Angeles -> 22:08 ET",
       "source": "po-emails",
-      "thread_key": "po-emails|2020-02-04|2208",
-      "thread_label": "2020-02-04 22:08 · Kristian G. Andersen",
-      "replied_by": [
-        {
-          "key": "po-emails|2020-02-04|2208",
-          "label": "2020-02-04 22:08 · Kristian G. Andersen"
-        }
-      ],
-      "idx": 22,
-      "reply_to": "po-emails|2020-02-04|2008",
-      "reply_to_label": "2020-02-04 20:08 · Kristian G. Andersen",
-      "link_kind": "inferred (same conversation)"
-    },
-    {
-      "date": "2020-02-04",
-      "time": "2208",
-      "kind": "email",
-      "raw_date": "22:08 ET · Re: Summary - Invitation to edit",
-      "sender": "Kristian G. Andersen",
-      "sender_raw": "Kristian Andersen Po",
-      "subject": "Re: Summary - Invitation to edit",
-      "content": "From: Kristian Andersen Po\n\nTo: Robert Garry\n\nSubject: Re: Summary - Invitation to edit\n\nDate: Tuesday, February 4, 2020 at 7:08 PM\n\n----------\n\na External Sender. Be aware of links, attachments and requests.\nThat's pretty interesting... All of which of course happens in humans. | do wonder if there's a scenario in which this thing\ncould have been circulating in humans and animals for a while until that perfect little bugger came about and took off.\nSeems a little strange, but definitely not impossible - although, of course, if the O-glycans are somehow involved in the\ninfectivity of human cells (as opposed to immunity), then we're swinging back to cell culture.\nOn Tue, Feb 4, 2020 at 4:34 PM Garry, Robert F Pe:\nAnother thing about the evolution of the glycans.\nThis has happened naturally in other CoV.\nNot all MHV have an optimal furin site. Those that do have the furin site inevitably also add a 2-3 predicted O-linked\nglycans in or about the cleavage site..\nGARRY0000099\nVariation on the theme in HKU1, a virus that probably does have intense transmission infecting millions of people each\nyear. Here the insert is three Serine residues, which pushes this site to a mucin-like patch (there are already a couple of\nprolines and the SSS is a turn as well)\nFunny thing — not on the attachments, but those strains of MHV and HKU-1 that have o-linked glycans and the furin site\nALSO have a larger patch - sometimes very large patch - of predicted o-linked glycans at the top of the prefusion form.\nWhen you see the pattern repeat itself in different viruses you start to believe it.",
-      "stamp": "Tuesday, February 4, 2020 at 7:08 PM",
-      "stamp_status": "long",
-      "zone_assumed": "Scripps Research",
-      "stamp_line": "19:08 Los Angeles -> 22:08 ET",
-      "source": "po-emails",
+      "merged_pages": 1,
       "thread_key": "po-emails|2020-02-04|2208",
       "thread_label": "2020-02-04 22:08 · Kristian G. Andersen",
       "replied_by": [
@@ -560,9 +512,9 @@
           "label": "2020-02-05 10:36 · Edward Holmes"
         }
       ],
-      "idx": 23,
-      "reply_to": "po-emails|2020-02-04|2208",
-      "reply_to_label": "2020-02-04 22:08 · Kristian G. Andersen",
+      "idx": 21,
+      "reply_to": "po-emails|2020-02-04|2008",
+      "reply_to_label": "2020-02-04 20:08 · Kristian G. Andersen",
       "link_kind": "inferred (same conversation)"
     },
     {
@@ -582,7 +534,7 @@
       "thread_key": "po-emails|2020-02-04|2313",
       "thread_label": "2020-02-04 23:13 · Edward Holmes",
       "replied_by": [],
-      "idx": 24
+      "idx": 22
     },
     {
       "date": "2020-02-04",
@@ -601,7 +553,7 @@
       "thread_key": "po-emails|2020-02-04|2343",
       "thread_label": "2020-02-04 23:43 · Edward Holmes",
       "replied_by": [],
-      "idx": 25
+      "idx": 23
     },
     {
       "date": "2020-02-05",
@@ -620,7 +572,7 @@
       "thread_key": "po-emails|2020-02-05|0012",
       "thread_label": "2020-02-05 00:12 · Edward Holmes",
       "replied_by": [],
-      "idx": 26
+      "idx": 24
     },
     {
       "date": "2020-02-05",
@@ -639,7 +591,7 @@
       "thread_key": "po-emails|2020-02-05|0146",
       "thread_label": "2020-02-05 01:46 · Edward Holmes",
       "replied_by": [],
-      "idx": 27
+      "idx": 25
     },
     {
       "date": "2020-02-05",
@@ -663,7 +615,7 @@
           "label": "2020-02-05 19:01 · Kristian G. Andersen"
         }
       ],
-      "idx": 28,
+      "idx": 26,
       "reply_to": "po-emails|2020-02-04|2208",
       "reply_to_label": "2020-02-04 22:08 · Kristian G. Andersen",
       "link_kind": "inferred (same conversation)"
@@ -685,7 +637,7 @@
       "thread_key": "po-emails|2020-02-05|1227",
       "thread_label": "2020-02-05 12:27 · Kristian G. Andersen",
       "replied_by": [],
-      "idx": 29
+      "idx": 27
     },
     {
       "date": "2020-02-05",
@@ -704,7 +656,7 @@
       "thread_key": "po-emails|2020-02-05|1707",
       "thread_label": "2020-02-05 17:07 · Robert Garry",
       "replied_by": [],
-      "idx": 30
+      "idx": 28
     },
     {
       "date": "2020-02-05",
@@ -723,7 +675,7 @@
       "thread_key": "po-emails|2020-02-05|1858",
       "thread_label": "2020-02-05 18:58 · Kristian G. Andersen",
       "replied_by": [],
-      "idx": 31
+      "idx": 29
     },
     {
       "date": "2020-02-05",
@@ -742,7 +694,7 @@
       "thread_key": "po-emails|2020-02-05|1901",
       "thread_label": "2020-02-05 19:01 · Kristian G. Andersen",
       "replied_by": [],
-      "idx": 32,
+      "idx": 30,
       "reply_to": "po-emails|2020-02-05|1036",
       "reply_to_label": "2020-02-05 10:36 · Edward Holmes",
       "link_kind": "inferred (same conversation)"
@@ -769,7 +721,7 @@
           "label": "2020-02-07 08:10 · Andrew Rambaut"
         }
       ],
-      "idx": 33
+      "idx": 31
     },
     {
       "date": "2020-02-06",
@@ -788,7 +740,7 @@
       "thread_key": "po-emails|2020-02-06|2218",
       "thread_label": "2020-02-06 22:18 · Edward Holmes",
       "replied_by": [],
-      "idx": 34
+      "idx": 32
     },
     {
       "date": "2020-02-07",
@@ -812,7 +764,7 @@
           "label": "2020-02-17 00:45 · Kristian G. Andersen"
         }
       ],
-      "idx": 35
+      "idx": 33
     },
     {
       "date": "2020-02-07",
@@ -831,7 +783,7 @@
       "thread_key": "po-emails|2020-02-07|0810",
       "thread_label": "2020-02-07 08:10 · Andrew Rambaut",
       "replied_by": [],
-      "idx": 36,
+      "idx": 34,
       "reply_to": "po-emails|2020-02-06|1429",
       "reply_to_label": "2020-02-06 14:29 · Edward Holmes",
       "link_kind": "inferred (same conversation)"
@@ -853,7 +805,7 @@
       "thread_key": "po-emails|2020-02-07|1229",
       "thread_label": "2020-02-07 12:29 · Kristian G. Andersen",
       "replied_by": [],
-      "idx": 37
+      "idx": 35
     },
     {
       "date": "2020-02-08",
@@ -863,54 +815,17 @@
       "sender": "Edward Holmes",
       "sender_raw": "Edward Holmes iii",
       "subject": "",
-      "content": "From: Edward Holmes iii\n\nTo: Christian Drosten\n\nCc: Jeremy Farrar , 'kgai978'\n\nDate: Saturday, 8 February 2020 at 20:11\n\n----------\n\n\"a.rambaut , “rfgarry!\n\"r,fouchier| , 'P.Vallancet\n| tC“ ted Francis Collins < \"afaucil , Josie\nGolding , Marion Koopmans fF Mike Ferguson\nSubject: Re: [ext] 2019 N-CoV\nHi Christian,\n| don’t know where this story came from, but it has nothing whatsoever to do the HIV nonsense. Please don’t associate\nthis with that. This is a broader story.\nEver since this outbreak started there have suggestions that the virus escaped from the Wuhan lab, if only because of\nthe coincidence of where the outbreak occurred and the location of the lab. | do a lot of work in China and | can you that\na lot of people there believe this and believe they are being lied to. Things were made worse when Wuhan lab published\nthe bat virus sequence - a bat sampled in a different province for which they have a large collection of samples.\n| believe the aim/question here is whether we, as scientists, should try to write something balanced on the science\nbehind this? There are arguments for and against doing this.\nPersonally, with the pangolin virus possessing 6/6 key sites in the receptor binding domain, | am in favour of the natural\nevolution theory.",
+      "content": "From: Edward Holmes iii\n\nTo: Christian Drosten\n\nCc: Jeremy Farrar , 'kgai978'\n\nDate: Saturday, 8 February 2020 at 20:11\n\n----------\n\n\"a.rambaut , “rfgarry!\n\"r,fouchier| , 'P.Vallancet\n| tC“ ted Francis Collins < \"afaucil , Josie\nGolding , Marion Koopmans fF Mike Ferguson\nSubject: Re: [ext] 2019 N-CoV\nHi Christian,\n| don’t know where this story came from, but it has nothing whatsoever to do the HIV nonsense. Please don’t associate\nthis with that. This is a broader story.\nEver since this outbreak started there have suggestions that the virus escaped from the Wuhan lab, if only because of\nthe coincidence of where the outbreak occurred and the location of the lab. | do a lot of work in China and | can you that\na lot of people there believe this and believe they are being lied to. Things were made worse when Wuhan lab published\nthe bat virus sequence - a bat sampled in a different province for which they have a large collection of samples.\n| believe the aim/question here is whether we, as scientists, should try to write something balanced on the science\nbehind this? There are arguments for and against doing this.\nPersonally, with the pangolin virus possessing 6/6 key sites in the receptor binding domain, | am in favour of the natural\nevolution theory.\nCe: Jeremy Farrar . \"kga1978 (nn\n\"r,fouchier| \"P.Vallance1|\nerm \"afauci(\nJosie Golding , Marion Koopmans\nSubject: Re: [ext] 2019 N-CoV\nHi Christian,\n| don’t know where this story came from, but it has nothing whatsoever to do the HIV nonsense. Please don’t associate\nthis with that. This is a broader story.\nEver since this outbreak started there have suggestions that the virus escaped from the Wuhan lab, if only because of\nthe coincidence of where the outbreak occurred and the location of the lab. | do a lot of work in China and | can you\nthat a lot of people there believe this and believe they are being lied to. Things were made worse when Wuhan lab\npublished the bat virus sequence - a bat sampled in a different province for which they have a large collection of\nsamples.\n| believe the aim/question here is whether we, as scientists, should try to write something balanced on the science\nbehind this? There are arguments for and against doing this.\nPersonally, with the pangolin virus possessing 6/6 key sites in the receptor binding domain, | am in favour of the natural\nevolution theory.\n\"a.rambaut \"rfgarry\n\"r fouchier \"P Vallance1\nES, Francis Colin; i \"afauci’\nEee Josic Golding i Viarion Koopmans\na Vike Ferguson\nSubject: Re: [ext] 2019 N-CoV\nHi Christian,\n| don’t know where this story came from, but it has nothing whatsoever to do the HIV nonsense. Please don’t associate\nthis with that. This is a broader story.\nEver since this outbreak started there have suggestions that the virus escaped from the Wuhan lab, if only because of\nthe coincidence of where the outbreak occurred and the location of the lab. | do a lot of work in China and | can you\nthat a lot of people there believe this and believe they are being lied to. Things were made worse when Wuhan lab\npublished the bat virus sequence - a bat sampled in a different province for which they have a large collection of\nsamples.\n| believe the aim/question here is whether we, as scientists, should try to write something balanced on the science\nbehind this? There are arguments for and against doing this.\nPersonally, with the pangolin virus possessing 6/6 key sites in the receptor binding domain, | am in favour of the natural\nevolution theory.",
       "stamp": "Saturday, 8 February 2020 at 20:11",
       "stamp_status": "day-month-year",
       "zone_assumed": "University of Sydney",
       "stamp_line": "20:11 Sydney -> 04:11 ET",
       "source": "po-emails",
+      "merged_pages": 2,
       "thread_key": "po-emails|2020-02-08|0411",
       "thread_label": "2020-02-08 04:11 · Edward Holmes",
       "replied_by": [],
-      "idx": 38
-    },
-    {
-      "date": "2020-02-08",
-      "time": "0411",
-      "kind": "email",
-      "raw_date": "04:11 ET · (no subject)",
-      "sender": "Edward Holmes",
-      "sender_raw": "Edward Holmes Pe",
-      "subject": "",
-      "content": "From: Edward Holmes Pe\n\nTo: Christian Drosten SI RIT 2 77\n\nDate: Saturday, 8 February 2020 at 20:11\n\n----------\n\nCe: Jeremy Farrar . \"kga1978 (nn\n\"r,fouchier| \"P.Vallance1|\nerm \"afauci(\nJosie Golding , Marion Koopmans\nSubject: Re: [ext] 2019 N-CoV\nHi Christian,\n| don’t know where this story came from, but it has nothing whatsoever to do the HIV nonsense. Please don’t associate\nthis with that. This is a broader story.\nEver since this outbreak started there have suggestions that the virus escaped from the Wuhan lab, if only because of\nthe coincidence of where the outbreak occurred and the location of the lab. | do a lot of work in China and | can you\nthat a lot of people there believe this and believe they are being lied to. Things were made worse when Wuhan lab\npublished the bat virus sequence - a bat sampled in a different province for which they have a large collection of\nsamples.\n| believe the aim/question here is whether we, as scientists, should try to write something balanced on the science\nbehind this? There are arguments for and against doing this.\nPersonally, with the pangolin virus possessing 6/6 key sites in the receptor binding domain, | am in favour of the natural\nevolution theory.",
-      "stamp": "Saturday, 8 February 2020 at 20:11",
-      "stamp_status": "day-month-year",
-      "zone_assumed": "University of Sydney",
-      "stamp_line": "20:11 Sydney -> 04:11 ET",
-      "source": "po-emails",
-      "thread_key": "po-emails|2020-02-08|0411",
-      "thread_label": "2020-02-08 04:11 · Edward Holmes",
-      "replied_by": [],
-      "idx": 39
-    },
-    {
-      "date": "2020-02-08",
-      "time": "0411",
-      "kind": "email",
-      "raw_date": "04:11 ET · (no subject)",
-      "sender": "Edward Holmes",
-      "sender_raw": "Edward Holmes",
-      "subject": "",
-      "content": "From: Edward Holmes\n\nTo: Christian Droster [a\n\nCc: Jeremy Farrar SS, \"221978\n\nDate: Saturday, 8 February 2020 at 20:11\n\n----------\n\n\"a.rambaut \"rfgarry\n\"r fouchier \"P Vallance1\nES, Francis Colin; i \"afauci’\nEee Josic Golding i Viarion Koopmans\na Vike Ferguson\nSubject: Re: [ext] 2019 N-CoV\nHi Christian,\n| don’t know where this story came from, but it has nothing whatsoever to do the HIV nonsense. Please don’t associate\nthis with that. This is a broader story.\nEver since this outbreak started there have suggestions that the virus escaped from the Wuhan lab, if only because of\nthe coincidence of where the outbreak occurred and the location of the lab. | do a lot of work in China and | can you\nthat a lot of people there believe this and believe they are being lied to. Things were made worse when Wuhan lab\npublished the bat virus sequence - a bat sampled in a different province for which they have a large collection of\nsamples.\n| believe the aim/question here is whether we, as scientists, should try to write something balanced on the science\nbehind this? There are arguments for and against doing this.\nPersonally, with the pangolin virus possessing 6/6 key sites in the receptor binding domain, | am in favour of the natural\nevolution theory.",
-      "stamp": "Saturday, 8 February 2020 at 20:11",
-      "stamp_status": "day-month-year",
-      "zone_assumed": "University of Sydney",
-      "stamp_line": "20:11 Sydney -> 04:11 ET",
-      "source": "po-emails",
-      "thread_key": "po-emails|2020-02-08|0411",
-      "thread_label": "2020-02-08 04:11 · Edward Holmes",
-      "replied_by": [],
-      "idx": 40
+      "idx": 36
     },
     {
       "date": "2020-02-08",
@@ -929,7 +844,7 @@
       "thread_key": "po-emails|2020-02-08|0445",
       "thread_label": "2020-02-08 04:45 · Jeremy Farrar",
       "replied_by": [],
-      "idx": 41
+      "idx": 37
     },
     {
       "date": "2020-02-08",
@@ -948,7 +863,7 @@
       "thread_key": "po-emails|2020-02-08|0536",
       "thread_label": "2020-02-08 05:36 · R.A.M. Fouchier",
       "replied_by": [],
-      "idx": 42
+      "idx": 38
     },
     {
       "date": "2020-02-08",
@@ -967,7 +882,7 @@
       "thread_key": "po-emails|2020-02-08|0827",
       "thread_label": "2020-02-08 08:27 · Jeremy Farrar",
       "replied_by": [],
-      "idx": 43
+      "idx": 39
     },
     {
       "date": "2020-02-08",
@@ -986,7 +901,7 @@
       "thread_key": "po-emails|2020-02-08|0850",
       "thread_label": "2020-02-08 08:50 · R.A.M. Fouchier",
       "replied_by": [],
-      "idx": 44
+      "idx": 40
     },
     {
       "date": "2020-02-08",
@@ -1005,7 +920,7 @@
       "thread_key": "po-emails|2020-02-08|1116",
       "thread_label": "2020-02-08 11:16 · Andrew Rambaut",
       "replied_by": [],
-      "idx": 45
+      "idx": 41
     },
     {
       "date": "2020-02-09",
@@ -1024,7 +939,7 @@
       "thread_key": "po-emails|2020-02-09|0016",
       "thread_label": "2020-02-09 00:16 · Kristian G. Andersen",
       "replied_by": [],
-      "idx": 46
+      "idx": 42
     },
     {
       "date": "2020-02-09",
@@ -1043,7 +958,7 @@
       "thread_key": "po-emails|2020-02-09|2026",
       "thread_label": "2020-02-09 20:26 · Jeremy Farrar",
       "replied_by": [],
-      "idx": 47
+      "idx": 43
     },
     {
       "date": "2020-02-10",
@@ -1062,7 +977,7 @@
       "thread_key": "po-emails|2020-02-10|0106",
       "thread_label": "2020-02-10 01:06 · Edward Holmes",
       "replied_by": [],
-      "idx": 48
+      "idx": 44
     },
     {
       "date": "2020-02-10",
@@ -1086,7 +1001,7 @@
           "label": "2020-02-10 16:51 · Robert Garry"
         }
       ],
-      "idx": 49
+      "idx": 45
     },
     {
       "date": "2020-02-10",
@@ -1105,7 +1020,7 @@
       "thread_key": "po-emails|2020-02-10|1651",
       "thread_label": "2020-02-10 16:51 · Robert Garry",
       "replied_by": [],
-      "idx": 50,
+      "idx": 46,
       "reply_to": "po-emails|2020-02-10|0700",
       "reply_to_label": "2020-02-10 07:00 · Kristian",
       "link_kind": "inferred (same conversation)"
@@ -1127,7 +1042,7 @@
       "thread_key": "po-emails|2020-02-11|0915",
       "thread_label": "2020-02-11 09:15 · Edward Holmes",
       "replied_by": [],
-      "idx": 51
+      "idx": 47
     },
     {
       "date": "2020-02-11",
@@ -1146,7 +1061,7 @@
       "thread_key": "po-emails|2020-02-11|1057",
       "thread_label": "2020-02-11 10:57 · Edward Holmes",
       "replied_by": [],
-      "idx": 52
+      "idx": 48
     },
     {
       "date": "2020-02-11",
@@ -1170,7 +1085,7 @@
           "label": "2020-02-12 02:40 · Robert Garry"
         }
       ],
-      "idx": 53
+      "idx": 49
     },
     {
       "date": "2020-02-12",
@@ -1194,7 +1109,7 @@
           "label": "2020-02-12 05:24 · Kristian G. Andersen"
         }
       ],
-      "idx": 54,
+      "idx": 50,
       "reply_to": "po-emails|2020-02-11|2216",
       "reply_to_label": "2020-02-11 22:16 · Robert Garry",
       "link_kind": "inferred (same conversation)"
@@ -1216,7 +1131,7 @@
       "thread_key": "po-emails|2020-02-12|0524",
       "thread_label": "2020-02-12 05:24 · Kristian G. Andersen",
       "replied_by": [],
-      "idx": 55,
+      "idx": 51,
       "reply_to": "po-emails|2020-02-12|0240",
       "reply_to_label": "2020-02-12 02:40 · Robert Garry",
       "link_kind": "inferred (same conversation)"
@@ -1243,7 +1158,7 @@
           "label": "2020-02-13 02:09 · Kristian G. Andersen"
         }
       ],
-      "idx": 56
+      "idx": 52
     },
     {
       "date": "2020-02-13",
@@ -1267,7 +1182,7 @@
           "label": "2020-02-13 19:33 · Kristian G. Andersen"
         }
       ],
-      "idx": 57,
+      "idx": 53,
       "reply_to": "po-emails|2020-02-12|2134",
       "reply_to_label": "2020-02-12 21:34 · Clare Thomas",
       "link_kind": "inferred (same conversation)"
@@ -1289,7 +1204,7 @@
       "thread_key": "po-emails|2020-02-13|1933",
       "thread_label": "2020-02-13 19:33 · Kristian G. Andersen",
       "replied_by": [],
-      "idx": 58,
+      "idx": 54,
       "reply_to": "po-emails|2020-02-13|0209",
       "reply_to_label": "2020-02-13 02:09 · Kristian G. Andersen",
       "link_kind": "inferred (same conversation)"
@@ -1311,7 +1226,7 @@
       "thread_key": "po-emails|2020-02-15|1038",
       "thread_label": "2020-02-15 10:38 · Edward Holmes",
       "replied_by": [],
-      "idx": 59
+      "idx": 55
     },
     {
       "date": "2020-02-15",
@@ -1335,7 +1250,7 @@
           "label": "2020-02-16 00:14 · Edward Holmes"
         }
       ],
-      "idx": 60
+      "idx": 56
     },
     {
       "date": "2020-02-16",
@@ -1345,35 +1260,17 @@
       "sender": "Edward Holmes",
       "sender_raw": "Edward Ho",
       "subject": "",
-      "content": "From: Edward Ho\n\nTo: Robert Garry\n\nDate: Sunday, February 16, 2020 at 4:04 PM\n\n----------\n\nCe: lan Lipkin Kristian Andersen FP Andrew Rambaut\nSubject: Re: Paper\n[4 External Sender. Be aware of links, attachments and requests.\nAll, | assume this needs to go on bioRxiv right? That’s the Nature policy for all COVID-19 papers. We also meant to send\nto WHO.\nProfessor Edward C. Holmes FAA FRS\nThe University of Sydney\nOn 17 Feb 2020, at 7:57 am, Garry, Robert F ae =:\nThanks Eddie!\nYes the NAID pics are nice.\nThe fusing SARS-CoV-2 pic is maybe not the prettiest one, but for me a clear indication that the polybasic site is\nfunctional.\nYou can observe this with flu v if you concentrate and treat with trypsin or some proper peptides. The virions fuse with\neach other.\nLooks to me like SARS-CoV-2 gets at least partly activated coming out of the cells.\nb",
+      "content": "From: Edward Ho\n\nTo: Robert Garry\n\nDate: Sunday, February 16, 2020 at 4:04 PM\n\n----------\n\nCe: lan Lipkin Kristian Andersen FP Andrew Rambaut\nSubject: Re: Paper\n[4 External Sender. Be aware of links, attachments and requests.\nAll, | assume this needs to go on bioRxiv right? That’s the Nature policy for all COVID-19 papers. We also meant to send\nto WHO.\nProfessor Edward C. Holmes FAA FRS\nThe University of Sydney\nOn 17 Feb 2020, at 7:57 am, Garry, Robert F ae =:\nThanks Eddie!\nYes the NAID pics are nice.\nThe fusing SARS-CoV-2 pic is maybe not the prettiest one, but for me a clear indication that the polybasic site is\nfunctional.\nYou can observe this with flu v if you concentrate and treat with trypsin or some proper peptides. The virions fuse with\neach other.\nLooks to me like SARS-CoV-2 gets at least partly activated coming out of the cells.\nb\nCe: lan Lipkin J Kristian Andersen [MEL andrew Rambaut\n<a.rambaut@ed.ac.uk>\nSubject: Re: Paper\n[7 External Sender. Be aware of links, attachments and requests.\nAll, | assume this needs to go on bioRxiv right? That’s the Nature policy for all COVID-19 papers. We also meant to\nsend to WHO.\nProfessor Edward C. Holmes FAA FRS\nThe University of Sydney\nOn 17 Feb 2020, at 7:57 am, Garry, Robert F FP wrote;\nThanks Eddie!\nYes the NAID pics are nice.\nThe fusing SARS-CoV-2 pic is maybe not the prettiest one, but for me a clear indication that the polybasic site is\nfunctional.\nYou can observe this with flu v if you concentrate and treat with trypsin or some proper peptides. The virions fuse\nwith each other.\nLooks to me like SARS-CoV-2 gets at least partly activated coming out of the cells.\nb\nDate: Sunday, February 16, 2020 at 2:50 PM\nTo: Robert Garry\nCe: lan Lipkin Kristian Andersen Po Andrew Rambaut\nPe\nSubject: Re: Paper\n|) External Sender. Be aware of links, attachments and requests.\nGreat pics. Let’s see what Nature say. | will get the paper out the door today.\nCheers,",
       "stamp": "Sunday, February 16, 2020 at 4:04 PM",
       "stamp_status": "long",
       "zone_assumed": "University of Sydney",
       "stamp_line": "16:04 Sydney -> 00:04 ET",
       "source": "po-emails",
+      "merged_pages": 1,
       "thread_key": "po-emails|2020-02-16|0004",
       "thread_label": "2020-02-16 00:04 · Edward Holmes",
       "replied_by": [],
-      "idx": 61
-    },
-    {
-      "date": "2020-02-16",
-      "time": "0004",
-      "kind": "email",
-      "raw_date": "00:04 ET · (no subject)",
-      "sender": "Edward Holmes",
-      "sender_raw": "Edward Holmes",
-      "subject": "",
-      "content": "From: Edward Holmes\n\nTo: Robert Garry\n\nDate: Sunday, February 16, 2020 at 4:04 PM\n\n----------\n\nCe: lan Lipkin J Kristian Andersen [MEL andrew Rambaut\n<a.rambaut@ed.ac.uk>\nSubject: Re: Paper\n[7 External Sender. Be aware of links, attachments and requests.\nAll, | assume this needs to go on bioRxiv right? That’s the Nature policy for all COVID-19 papers. We also meant to\nsend to WHO.\nProfessor Edward C. Holmes FAA FRS\nThe University of Sydney\nOn 17 Feb 2020, at 7:57 am, Garry, Robert F FP wrote;\nThanks Eddie!\nYes the NAID pics are nice.\nThe fusing SARS-CoV-2 pic is maybe not the prettiest one, but for me a clear indication that the polybasic site is\nfunctional.\nYou can observe this with flu v if you concentrate and treat with trypsin or some proper peptides. The virions fuse\nwith each other.\nLooks to me like SARS-CoV-2 gets at least partly activated coming out of the cells.\nb\nDate: Sunday, February 16, 2020 at 2:50 PM\nTo: Robert Garry\nCe: lan Lipkin Kristian Andersen Po Andrew Rambaut\nPe\nSubject: Re: Paper\n|) External Sender. Be aware of links, attachments and requests.\nGreat pics. Let’s see what Nature say. | will get the paper out the door today.\nCheers,",
-      "stamp": "Sunday, February 16, 2020 at 4:04 PM",
-      "stamp_status": "long",
-      "zone_assumed": "University of Sydney",
-      "stamp_line": "16:04 Sydney -> 00:04 ET",
-      "source": "po-emails",
-      "thread_key": "po-emails|2020-02-16|0004",
-      "thread_label": "2020-02-16 00:04 · Edward Holmes",
-      "replied_by": [],
-      "idx": 62
+      "idx": 57
     },
     {
       "date": "2020-02-16",
@@ -1397,7 +1294,7 @@
           "label": "2020-02-16 01:06 · Edward Holmes"
         }
       ],
-      "idx": 63,
+      "idx": 58,
       "reply_to": "po-emails|2020-02-15|2250",
       "reply_to_label": "2020-02-15 22:50 · Edward Holmes",
       "link_kind": "inferred (same conversation)"
@@ -1424,7 +1321,7 @@
           "label": "2020-02-16 02:59 · Edward Holmes"
         }
       ],
-      "idx": 64,
+      "idx": 59,
       "reply_to": "po-emails|2020-02-16|0014",
       "reply_to_label": "2020-02-16 00:14 · Edward Holmes",
       "link_kind": "inferred (same conversation)"
@@ -1446,7 +1343,7 @@
       "thread_key": "po-emails|2020-02-16|0259",
       "thread_label": "2020-02-16 02:59 · Edward Holmes",
       "replied_by": [],
-      "idx": 65,
+      "idx": 60,
       "reply_to": "po-emails|2020-02-16|0106",
       "reply_to_label": "2020-02-16 01:06 · Edward Holmes",
       "link_kind": "inferred (same conversation)"
@@ -1473,7 +1370,7 @@
           "label": "2020-02-17 05:42 · Jeremy Farrar"
         }
       ],
-      "idx": 66
+      "idx": 61
     },
     {
       "date": "2020-02-17",
@@ -1497,7 +1394,7 @@
           "label": "2020-03-31 23:59 · Kristian G. Andersen"
         }
       ],
-      "idx": 67,
+      "idx": 62,
       "reply_to": "po-emails|2020-02-07|0207",
       "reply_to_label": "2020-02-07 02:07 · Michael Farzan",
       "link_kind": "inferred (same conversation)"
@@ -1510,35 +1407,17 @@
       "sender": "Andrew Rambaut",
       "sender_raw": "Andrew Rambaut",
       "subject": "",
-      "content": "From: Andrew Rambaut\n\nTo: Garry, Robert F\n\nCc: Eddie Holmes ; Kristian G. Andersen\n\nSent: Monday, February 17, 2020 10:23 AM\n\n----------\n\n; lan Lipkin ; Jeremy Farrar\nSubject: Re: Connections COVID-19\n| External Sender. Be aware of links, attachments and requests.\nOK. I will add that. I am editing the document now.\nAndrew\nOn 17 Feb 2020, at 10:20, Garry, Robert hii wrote:\nWhile these analyses suggest that SARS-CoV-2 may be capable of\nbinding the human ACE2 receptor with high affinity, the interaction\nis not predicted to be optimal!. Additionally, several of the key\nresidues in the RBD of SARS-CoV-2 are different to those\npreviously described as optimal for human ACE2 receptor binding’®.\nIn contrast to these computational assessments recent binding studies\nindict that SARS-CoV-2 binds with high affinity to human ACE2\n(insert ref). SARS-COV-2 spike does not appear to have an artificial\nsequence designed in the laboratory would have been designed for\noptimal binding and used interactions predicted to be optimal.\nInstead it appears to be the result of selection on human or human-\nlike ACE2 permit another optimal binding solutions to arise. This is\nstrong evidence that SARS-CoV-2 is not the product of genetic\nengineering.",
+      "content": "From: Andrew Rambaut\n\nTo: Garry, Robert F\n\nCc: Eddie Holmes ; Kristian G. Andersen\n\nSent: Monday, February 17, 2020 10:23 AM\n\n----------\n\n; lan Lipkin ; Jeremy Farrar\nSubject: Re: Connections COVID-19\n| External Sender. Be aware of links, attachments and requests.\nOK. I will add that. I am editing the document now.\nAndrew\nOn 17 Feb 2020, at 10:20, Garry, Robert hii wrote:\nWhile these analyses suggest that SARS-CoV-2 may be capable of\nbinding the human ACE2 receptor with high affinity, the interaction\nis not predicted to be optimal!. Additionally, several of the key\nresidues in the RBD of SARS-CoV-2 are different to those\npreviously described as optimal for human ACE2 receptor binding’®.\nIn contrast to these computational assessments recent binding studies\nindict that SARS-CoV-2 binds with high affinity to human ACE2\n(insert ref). SARS-COV-2 spike does not appear to have an artificial\nsequence designed in the laboratory would have been designed for\noptimal binding and used interactions predicted to be optimal.\nInstead it appears to be the result of selection on human or human-\nlike ACE2 permit another optimal binding solutions to arise. This is\nstrong evidence that SARS-CoV-2 is not the product of genetic\nengineering.\nAndersen ; lan Lipkin ; Jeremy\nFarrar\nSubject: Re: Connections COVID-19\n| External Sender. Be aware of links, attachments and requests.\nOK. I will add that. I am editing the document now.\nAndrew\nOn 17 Feb 2020, at 10:20, Garry, Robert hii wrote:\nWhile these analyses suggest that SARS-CoV-2 may be capable\nof binding the human ACE2 receptor with high affinity, the\ninteraction is not predicted to be optimal!. Additionally, several\nof the key residues in the RBD of SARS-CoV-2 are different to\nthose previously described as optimal for human ACE2 receptor\nREQUESTED - NOT FOR\nCIRCULATION / COMMITTEE\nMEMBERS AND STAFF ONLY LIP-000648\nbinding®. In contrast to these computational assessments recent\nbinding studies indict that SARS-CoV-2 binds with high affinity\nto human ACE2 (insert ref). SARS-COV-2 spike does not appear\nto have an artificial sequence designed in the laboratory would\nhave been designed for optimal binding and used interactions\npredicted to be optimal. Instead it appears to be the result of\nselection on human or human-like ACE2 permit another optimal\nbinding solutions to arise. This is strong evidence that SARS-\nCoV-2 is not the product of genetic engineering.",
       "stamp": "Monday, February 17, 2020 10:23 AM",
       "stamp_status": "long",
       "zone_assumed": "Wellcome Trust / UK",
       "stamp_line": "10:23 London -> 05:23 ET",
       "source": "po-emails",
+      "merged_pages": 1,
       "thread_key": "po-emails|2020-02-17|0523",
       "thread_label": "2020-02-17 05:23 · Andrew Rambaut",
       "replied_by": [],
-      "idx": 68
-    },
-    {
-      "date": "2020-02-17",
-      "time": "0523",
-      "kind": "email",
-      "raw_date": "05:23 ET · (no subject)",
-      "sender": "Andrew Rambaut",
-      "sender_raw": "Andrew Rambaut",
-      "subject": "",
-      "content": "From: Andrew Rambaut\n\nTo: Garry, Robert F\n\nCc: Eddie Holmes ; Kristian G.\n\nSent: Monday, February 17, 2020 10:23 AM\n\n----------\n\nAndersen ; lan Lipkin ; Jeremy\nFarrar\nSubject: Re: Connections COVID-19\n| External Sender. Be aware of links, attachments and requests.\nOK. I will add that. I am editing the document now.\nAndrew\nOn 17 Feb 2020, at 10:20, Garry, Robert hii wrote:\nWhile these analyses suggest that SARS-CoV-2 may be capable\nof binding the human ACE2 receptor with high affinity, the\ninteraction is not predicted to be optimal!. Additionally, several\nof the key residues in the RBD of SARS-CoV-2 are different to\nthose previously described as optimal for human ACE2 receptor\nREQUESTED - NOT FOR\nCIRCULATION / COMMITTEE\nMEMBERS AND STAFF ONLY LIP-000648\nbinding®. In contrast to these computational assessments recent\nbinding studies indict that SARS-CoV-2 binds with high affinity\nto human ACE2 (insert ref). SARS-COV-2 spike does not appear\nto have an artificial sequence designed in the laboratory would\nhave been designed for optimal binding and used interactions\npredicted to be optimal. Instead it appears to be the result of\nselection on human or human-like ACE2 permit another optimal\nbinding solutions to arise. This is strong evidence that SARS-\nCoV-2 is not the product of genetic engineering.",
-      "stamp": "Monday, February 17, 2020 10:23 AM",
-      "stamp_status": "long",
-      "zone_assumed": "Wellcome Trust / UK",
-      "stamp_line": "10:23 London -> 05:23 ET",
-      "source": "po-emails",
-      "thread_key": "po-emails|2020-02-17|0523",
-      "thread_label": "2020-02-17 05:23 · Andrew Rambaut",
-      "replied_by": [],
-      "idx": 69
+      "idx": 63
     },
     {
       "date": "2020-02-17",
@@ -1562,7 +1441,7 @@
           "label": "2020-02-17 11:02 · Robert Garry"
         }
       ],
-      "idx": 70,
+      "idx": 64,
       "reply_to": "po-emails|2020-02-16|1749",
       "reply_to_label": "2020-02-16 17:49 · Edward Holmes",
       "link_kind": "inferred (same conversation)"
@@ -1575,39 +1454,13 @@
       "sender": "Robert Garry",
       "sender_raw": "Garry, Robert a, 00tt~<‘CisSCSSY",
       "subject": "Re: Connections COVID-19",
-      "content": "From: Garry, Robert a, 00tt~<‘CisSCSSY\n\nTo: Edward Holmes\n\nCc: Kristian G. Andersen ; Andrew Rambaut\n\nSubject: Re: Connections COVID-19\n\nSent: Monday, February 17, 2020 10:02 AM\n\n----------\n\nput the \"While these\" back",
+      "content": "From: Garry, Robert a, 00tt~<‘CisSCSSY\n\nTo: Edward Holmes\n\nCc: Kristian G. Andersen ; Andrew Rambaut\n\nSubject: Re: Connections COVID-19\n\nSent: Monday, February 17, 2020 10:02 AM\n\n----------\n\nput the \"While these\" back\nput the \"While these\" back\nSent: Monday, February 17, 2020 9:49 AM\nTo: Garry, Robert F\nCc: Kristian G. Andersen ; Andrew Rambaut\nSubject: Re: Connections COVID-19\n| External Sender. Be aware of links, attachments and requests.\nOk. Pass a draft to me and Ill give it a quick read through.\nNo way I can stay up to your levels...\nPROFESSOR EDWARD C. HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia\nT\n‘i\nOn 17 Feb 2020, at 8:47 pm, Garry, Robert hii wrote:\nagreed - i'm up - who needs to sleep\nREQUESTED - NOT FOR\nCIRCULATION / COMMITTEE\nMEMBERS AND STAFF ONLY LIP-000649\nwill take very quick swing at it now - yes a sentence or two will\nlikely do\n15 minutes i'll be back\nSent: Monday, February 17, 2020 9:45 AM\nTo: Garry, Robert F\nCc: Kristian G. Andersen ; Andrew Rambaut\nSubject: Re: Connections COVID-19\n| External Sender. Be aware of links, attachments and requests.\nBob, if you or someone else wants to add a sentence now that’s ok (refs.\nwill need to change as well), but we must get it out today. Things are\nmoving/changing so rapidly that we are always going to be out of date. We\nneed to draw a line somewhere.\nPROFESSOR EDWARD C. HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia\nT\n7\nOn 17 Feb 2020, at 8:39 pm, Garry, Robert 7 0 —tt~—“‘:isi*@Y wrote:\nNew preprint not affect any of the other three scenarios for selection on a\nhuman or human like ACE2, but a stronger still argument against\nbioengineering imo.\nSent from my iPhone\nOn Feb 17, 2020, at 2:50 AM, Edward Holmes\n| External Sender. Be aware of links, attachments and requests.\nAll,\nWe have the green light to preprint.\nREQUESTED - NOT FOR\nCIRCULATION / COMMITTEE\nMEMBERS AND STAFF ONLY LIP-000650\nKristian - even though bioRxiv deals with primary research papers I still\nfeel we should send it there.\nAndrew - I think you can put this in Virological and do some precision\ntweeting.\nVery interesting to see the new ACE2 paper.",
       "stamp": "Monday, February 17, 2020 10:02 AM",
       "stamp_status": "long",
       "zone_assumed": "Tulane University",
       "stamp_line": "10:02 Chicago -> 11:02 ET",
       "source": "po-emails",
-      "thread_key": "po-emails|2020-02-17|1102",
-      "thread_label": "2020-02-17 11:02 · Robert Garry",
-      "replied_by": [
-        {
-          "key": "po-emails|2020-02-17|1102",
-          "label": "2020-02-17 11:02 · Robert Garry"
-        }
-      ],
-      "idx": 71,
-      "reply_to": "po-emails|2020-02-17|0542",
-      "reply_to_label": "2020-02-17 05:42 · Jeremy Farrar",
-      "link_kind": "inferred (same conversation)"
-    },
-    {
-      "date": "2020-02-17",
-      "time": "1102",
-      "kind": "email",
-      "raw_date": "11:02 ET · Re: Connections COVID-19",
-      "sender": "Robert Garry",
-      "sender_raw": "Garry, Robert a, 0Utt~—<CSsSCSY",
-      "subject": "Re: Connections COVID-19",
-      "content": "From: Garry, Robert a, 0Utt~—<CSsSCSY\n\nTo: Edward Holmes\n\nCc: Kristian G. Andersen ; Andrew Rambaut\n\nSubject: Re: Connections COVID-19\n\nSent: Monday, February 17, 2020 10:02 AM\n\n----------\n\nput the \"While these\" back\nSent: Monday, February 17, 2020 9:49 AM\nTo: Garry, Robert F\nCc: Kristian G. Andersen ; Andrew Rambaut\nSubject: Re: Connections COVID-19\n| External Sender. Be aware of links, attachments and requests.\nOk. Pass a draft to me and Ill give it a quick read through.\nNo way I can stay up to your levels...\nPROFESSOR EDWARD C. HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia\nT\n‘i\nOn 17 Feb 2020, at 8:47 pm, Garry, Robert hii wrote:\nagreed - i'm up - who needs to sleep\nREQUESTED - NOT FOR\nCIRCULATION / COMMITTEE\nMEMBERS AND STAFF ONLY LIP-000649\nwill take very quick swing at it now - yes a sentence or two will\nlikely do\n15 minutes i'll be back\nSent: Monday, February 17, 2020 9:45 AM\nTo: Garry, Robert F\nCc: Kristian G. Andersen ; Andrew Rambaut\nSubject: Re: Connections COVID-19\n| External Sender. Be aware of links, attachments and requests.\nBob, if you or someone else wants to add a sentence now that’s ok (refs.\nwill need to change as well), but we must get it out today. Things are\nmoving/changing so rapidly that we are always going to be out of date. We\nneed to draw a line somewhere.\nPROFESSOR EDWARD C. HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia\nT\n7\nOn 17 Feb 2020, at 8:39 pm, Garry, Robert 7 0 —tt~—“‘:isi*@Y wrote:\nNew preprint not affect any of the other three scenarios for selection on a\nhuman or human like ACE2, but a stronger still argument against\nbioengineering imo.\nSent from my iPhone\nOn Feb 17, 2020, at 2:50 AM, Edward Holmes\n| External Sender. Be aware of links, attachments and requests.\nAll,\nWe have the green light to preprint.\nREQUESTED - NOT FOR\nCIRCULATION / COMMITTEE\nMEMBERS AND STAFF ONLY LIP-000650\nKristian - even though bioRxiv deals with primary research papers I still\nfeel we should send it there.\nAndrew - I think you can put this in Virological and do some precision\ntweeting.\nVery interesting to see the new ACE2 paper.",
-      "stamp": "Monday, February 17, 2020 10:02 AM",
-      "stamp_status": "long",
-      "zone_assumed": "Tulane University",
-      "stamp_line": "10:02 Chicago -> 11:02 ET",
-      "source": "po-emails",
+      "merged_pages": 1,
       "thread_key": "po-emails|2020-02-17|1102",
       "thread_label": "2020-02-17 11:02 · Robert Garry",
       "replied_by": [
@@ -1616,9 +1469,9 @@
           "label": "2020-02-17 13:37 · Robert Garry"
         }
       ],
-      "idx": 72,
-      "reply_to": "po-emails|2020-02-17|1102",
-      "reply_to_label": "2020-02-17 11:02 · Robert Garry",
+      "idx": 65,
+      "reply_to": "po-emails|2020-02-17|0542",
+      "reply_to_label": "2020-02-17 05:42 · Jeremy Farrar",
       "link_kind": "inferred (same conversation)"
     },
     {
@@ -1638,7 +1491,7 @@
       "thread_key": "po-emails|2020-02-17|1337",
       "thread_label": "2020-02-17 13:37 · Robert Garry",
       "replied_by": [],
-      "idx": 73,
+      "idx": 66,
       "reply_to": "po-emails|2020-02-17|1102",
       "reply_to_label": "2020-02-17 11:02 · Robert Garry",
       "link_kind": "inferred (same conversation)"
@@ -1660,7 +1513,7 @@
       "thread_key": "po-emails|2020-02-17|2111",
       "thread_label": "2020-02-17 21:11 · Kristian G. Andersen",
       "replied_by": [],
-      "idx": 74
+      "idx": 67
     },
     {
       "date": "2020-02-17",
@@ -1679,7 +1532,7 @@
       "thread_key": "po-emails|2020-02-17|2130",
       "thread_label": "2020-02-17 21:30 · Kristian G. Andersen",
       "replied_by": [],
-      "idx": 75
+      "idx": 68
     },
     {
       "date": "2020-02-19",
@@ -1698,7 +1551,7 @@
       "thread_key": "po-emails|2020-02-19|0821",
       "thread_label": "2020-02-19 08:21 · Coleman",
       "replied_by": [],
-      "idx": 76
+      "idx": 69
     },
     {
       "date": "2020-02-19",
@@ -1717,7 +1570,7 @@
       "thread_key": "po-emails|2020-02-19|1530",
       "thread_label": "2020-02-19 15:30 · Shabman, Reed",
       "replied_by": [],
-      "idx": 77
+      "idx": 70
     },
     {
       "date": "2020-02-20",
@@ -1741,7 +1594,7 @@
           "label": "2020-03-04 18:44 · Clare Thomas"
         }
       ],
-      "idx": 78
+      "idx": 71
     },
     {
       "date": "2020-02-29",
@@ -1765,7 +1618,7 @@
           "label": "2020-03-04 20:56 · Kristian G. Andersen"
         }
       ],
-      "idx": 79
+      "idx": 72
     },
     {
       "date": "2020-03-04",
@@ -1789,7 +1642,7 @@
           "label": "2020-03-05 01:24 · Edward Holmes"
         }
       ],
-      "idx": 80,
+      "idx": 73,
       "reply_to": "po-emails|2020-02-20|2048",
       "reply_to_label": "2020-02-20 20:48 · Kristian G. Andersen",
       "link_kind": "inferred (same conversation)"
@@ -1816,7 +1669,7 @@
           "label": "2020-03-05 05:17 · Joao"
         }
       ],
-      "idx": 81,
+      "idx": 74,
       "reply_to": "po-emails|2020-02-29|1422",
       "reply_to_label": "2020-02-29 14:22 · Kristian",
       "link_kind": "inferred (same conversation)"
@@ -1843,7 +1696,7 @@
           "label": "2020-03-05 02:45 · Clare Thomas"
         }
       ],
-      "idx": 82,
+      "idx": 75,
       "reply_to": "po-emails|2020-03-04|1844",
       "reply_to_label": "2020-03-04 18:44 · Clare Thomas",
       "link_kind": "inferred (same conversation)"
@@ -1870,7 +1723,7 @@
           "label": "2020-03-05 05:06 · Kristian G. Andersen"
         }
       ],
-      "idx": 83,
+      "idx": 76,
       "reply_to": "po-emails|2020-03-05|0124",
       "reply_to_label": "2020-03-05 01:24 · Edward Holmes",
       "link_kind": "inferred (same conversation)"
@@ -1883,45 +1736,19 @@
       "sender": "Kristian G. Andersen",
       "sender_raw": "Kristian G. Andersen Po",
       "subject": "Re: Decision on Nature submission 2020-02-02583",
-      "content": "From: Kristian G. Andersen Po\n\nTo: Clare Thomas\n\nCc: Edward Holmes\n\nSubject: Re: Decision on Nature submission 2020-02-02583\n\nSent: 05 March 2020 02:06\n\n----------\n\nDear Clare,\nWe're just about to send our manuscript over to Nature Medicine, which has been much improved due to some\nrecent data. I just wanted to share the new material with you so you're in the loop.\nSince the original manuscript was submitted under Eddie's account, would it be possible for you to please\ntransfer everything over to my account so I can start the process of getting this to Nature Medicine? Eddie is in\ntransit at the moment, so I think it'll be difficult for him to get this transferred in time. If you're not able to\ntransfer to my account, don't worry - we'll figure it out.\nThanks again for giving us the opportunity - we thought this would have been a very good piece for Nature\ngiven the massive interest, but Nature Medicine (if accepted) will be a good audience too.\nI hope you're not drowning in COVID-19 papers!",
+      "content": "From: Kristian G. Andersen Po\n\nTo: Clare Thomas\n\nCc: Edward Holmes\n\nSubject: Re: Decision on Nature submission 2020-02-02583\n\nSent: 05 March 2020 02:06\n\n----------\n\nDear Clare,\nWe're just about to send our manuscript over to Nature Medicine, which has been much improved due to some\nrecent data. I just wanted to share the new material with you so you're in the loop.\nSince the original manuscript was submitted under Eddie's account, would it be possible for you to please\ntransfer everything over to my account so I can start the process of getting this to Nature Medicine? Eddie is in\ntransit at the moment, so I think it'll be difficult for him to get this transferred in time. If you're not able to\ntransfer to my account, don't worry - we'll figure it out.\nThanks again for giving us the opportunity - we thought this would have been a very good piece for Nature\ngiven the massive interest, but Nature Medicine (if accepted) will be a good audience too.\nI hope you're not drowning in COVID-19 papers!\nDear Clare,\nWe're just about to send our manuscript over to Nature Medicine, which has been much\nimproved due to some recent data. I just wanted to share the new material with you so you're in\nthe loop.\nSince the original manuscript was submitted under Eddie's account, would it be possible for you\nto please transfer everything over to my account so I can start the process of getting this to\nNature Medicine? Eddie is in transit at the moment, so I think it'll be difficult for him to get this\ntransferred in time. If you're not able to transfer to my account, don't worry - we'll figure it out.\nThanks again for giving us the opportunity - we thought this would have been a very good piece\nfor Nature given the massive interest, but Nature Medicine (if accepted) will be a good audience\ntoo.\nI hope you're not drowning in COVID-19 papers!",
       "stamp": "05 March 2020 02:06",
       "stamp_status": "day-month-year",
       "zone_assumed": "Scripps Research",
       "stamp_line": "02:06 Los Angeles -> 05:06 ET",
       "source": "po-emails",
-      "thread_key": "po-emails|2020-03-05|0506",
-      "thread_label": "2020-03-05 05:06 · Kristian G. Andersen",
-      "replied_by": [
-        {
-          "key": "po-emails|2020-03-05|0506",
-          "label": "2020-03-05 05:06 · Kristian G. Andersen"
-        }
-      ],
-      "idx": 84,
-      "reply_to": "po-emails|2020-03-05|0245",
-      "reply_to_label": "2020-03-05 02:45 · Clare Thomas",
-      "link_kind": "inferred (same conversation)"
-    },
-    {
-      "date": "2020-03-05",
-      "time": "0506",
-      "kind": "email",
-      "raw_date": "05:06 ET · Re: Decision on Nature submission 2020-02-02583",
-      "sender": "Kristian G. Andersen",
-      "sender_raw": "Kristian G. Andersen Po",
-      "subject": "Re: Decision on Nature submission 2020-02-02583",
-      "content": "From: Kristian G. Andersen Po\n\nTo: Clare Thomas\n\nCc: Edward Holmes\n\nSubject: Re: Decision on Nature submission 2020-02-02583\n\nSent: 05 March 2020 02:06\n\n----------\n\nDear Clare,\nWe're just about to send our manuscript over to Nature Medicine, which has been much\nimproved due to some recent data. I just wanted to share the new material with you so you're in\nthe loop.\nSince the original manuscript was submitted under Eddie's account, would it be possible for you\nto please transfer everything over to my account so I can start the process of getting this to\nNature Medicine? Eddie is in transit at the moment, so I think it'll be difficult for him to get this\ntransferred in time. If you're not able to transfer to my account, don't worry - we'll figure it out.\nThanks again for giving us the opportunity - we thought this would have been a very good piece\nfor Nature given the massive interest, but Nature Medicine (if accepted) will be a good audience\ntoo.\nI hope you're not drowning in COVID-19 papers!",
-      "stamp": "05 March 2020 02:06",
-      "stamp_status": "day-month-year",
-      "zone_assumed": "Scripps Research",
-      "stamp_line": "02:06 Los Angeles -> 05:06 ET",
-      "source": "po-emails",
+      "merged_pages": 1,
       "thread_key": "po-emails|2020-03-05|0506",
       "thread_label": "2020-03-05 05:06 · Kristian G. Andersen",
       "replied_by": [],
-      "idx": 85,
-      "reply_to": "po-emails|2020-03-05|0506",
-      "reply_to_label": "2020-03-05 05:06 · Kristian G. Andersen",
+      "idx": 77,
+      "reply_to": "po-emails|2020-03-05|0245",
+      "reply_to_label": "2020-03-05 02:45 · Clare Thomas",
       "link_kind": "inferred (same conversation)"
     },
     {
@@ -1946,7 +1773,7 @@
           "label": "2020-03-05 15:29 · Kristian G. Andersen"
         }
       ],
-      "idx": 86,
+      "idx": 78,
       "reply_to": "po-emails|2020-03-04|2056",
       "reply_to_label": "2020-03-04 20:56 · Kristian G. Andersen",
       "link_kind": "inferred (same conversation)"
@@ -1968,7 +1795,7 @@
       "thread_key": "po-emails|2020-03-05|0803",
       "thread_label": "2020-03-05 08:03 · medicine@us.nature.com",
       "replied_by": [],
-      "idx": 87
+      "idx": 79
     },
     {
       "date": "2020-03-05",
@@ -1987,7 +1814,7 @@
       "thread_key": "po-emails|2020-03-05|1529",
       "thread_label": "2020-03-05 15:29 · Kristian G. Andersen",
       "replied_by": [],
-      "idx": 88,
+      "idx": 80,
       "reply_to": "po-emails|2020-03-05|0517",
       "reply_to_label": "2020-03-05 05:17 · Joao",
       "link_kind": "inferred (same conversation)"
@@ -2014,7 +1841,7 @@
           "label": "2020-03-17 15:01 · Shabman, Reed"
         }
       ],
-      "idx": 89
+      "idx": 81
     },
     {
       "date": "2020-03-17",
@@ -2033,7 +1860,7 @@
       "thread_key": "po-emails|2020-03-17|1315",
       "thread_label": "2020-03-17 13:15 · \"Coleman, Amanda (NIH/NIAID) [C",
       "replied_by": [],
-      "idx": 90
+      "idx": 82
     },
     {
       "date": "2020-03-17",
@@ -2052,7 +1879,7 @@
       "thread_key": "po-emails|2020-03-17|1501",
       "thread_label": "2020-03-17 15:01 · Shabman, Reed",
       "replied_by": [],
-      "idx": 91,
+      "idx": 83,
       "reply_to": "po-emails|2020-03-17|0921",
       "reply_to_label": "2020-03-17 09:21 · Chris",
       "link_kind": "inferred (same conversation)"
@@ -2074,7 +1901,7 @@
       "thread_key": "po-emails|2020-03-31|2359",
       "thread_label": "2020-03-31 23:59 · Kristian G. Andersen",
       "replied_by": [],
-      "idx": 92,
+      "idx": 84,
       "reply_to": "po-emails|2020-02-17|0045",
       "reply_to_label": "2020-02-17 00:45 · Kristian G. Andersen",
       "link_kind": "inferred (same conversation)"
@@ -2096,7 +1923,7 @@
       "thread_key": "po-emails|2020-07-27|1936",
       "thread_label": "2020-07-27 19:36 · Jeremy Farrar",
       "replied_by": [],
-      "idx": 93
+      "idx": 85
     },
     {
       "date": null,
@@ -2113,7 +1940,7 @@
       "thread_key": "po-emails|undated|(undated message)",
       "thread_label": "undated  · Pope, Andrew",
       "replied_by": [],
-      "idx": 94
+      "idx": 86
     }
   ]
 }

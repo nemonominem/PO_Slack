@@ -308,6 +308,9 @@ body.layout-portrait .pdf-panel {
 
 /* ── Main content area ─────────────────────────────────────────────── */
 .content-area { flex: 1; display: flex; overflow: hidden; }
+/* The guide rail sits to the left of the panels; .workspace is the row they
+   share, so the rail can be shown or hidden without touching their layout. */
+.workspace { flex: 1; display: flex; overflow: hidden; min-height: 0; }
 
 /* ── Results panel ─────────────────────────────────────────────────── */
 .results-panel {
@@ -358,12 +361,161 @@ body.layout-portrait .pdf-panel {
 .hit-nav-btn:disabled { opacity: 0.4; cursor: default; }
 .hit-nav-label { color: var(--green); font-weight: 600; white-space: nowrap; }
 
+.result-content-wrap { position: relative; }
 .result-content {
-  padding: 10px 14px; font-size: 13px; line-height: 1.7; color: var(--text);
-  max-height: 350px; overflow-y: auto; word-wrap: break-word; overflow-wrap: break-word;
+  padding: 10px 20px 10px 14px; font-size: 13px; line-height: 1.7; color: var(--text);
+  max-height: min(380px, 42vh); overflow-y: auto; word-wrap: break-word; overflow-wrap: break-word;
+  /* The native scrollbar is hidden: macOS overlay bars only appear while you
+     scroll, and the Up/Down keys are reserved for moving between entries.
+     A custom always-visible, draggable bar (.box-scrollbar) is used instead. */
+  scrollbar-width: none; -ms-overflow-style: none;
+  overscroll-behavior: contain;
 }
-.result-content::-webkit-scrollbar { width: 6px; }
-.result-content::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 3px; }
+.result-content::-webkit-scrollbar { width: 0; height: 0; display: none; }
+/* Expanded: full text, no inner scrolling */
+.result-entry.expanded .result-content { max-height: none; overflow-y: visible; }
+.result-entry.expanded .box-scrollbar { display: none; }
+/* Custom scrollbar for the entry box: drag the thumb, click the track to page */
+.box-scrollbar {
+  position: absolute; top: 3px; right: 3px; bottom: 3px; width: 11px;
+  background: rgba(255,255,255,0.05); border-radius: 6px; cursor: pointer;
+}
+.box-scrollbar.no-scroll { display: none; }
+.box-thumb {
+  position: absolute; left: 2px; right: 2px; top: 0; min-height: 26px;
+  background: var(--border-2); border-radius: 4px; cursor: grab;
+}
+.box-scrollbar:hover .box-thumb,
+.box-scrollbar.dragging .box-thumb { background: var(--accent); }
+.box-scrollbar.dragging .box-thumb { cursor: grabbing; }
+/* "there is more below" hint + the expander that lifts the height cap */
+.result-hits-group { display: inline-flex; align-items: center; }
+.expand-btn {
+  background: var(--panel); color: var(--text); border: 1px solid var(--border-2);
+  padding: 2px 8px; border-radius: 4px; cursor: pointer; font-size: 11px; margin-left: 8px;
+  white-space: nowrap;
+}
+.expand-btn:hover { border-color: var(--accent); color: var(--accent); }
+.scroll-hint {
+  padding: 3px 14px; font-size: 11px; color: var(--muted); font-style: italic;
+  border-top: 1px solid var(--border-2); background: var(--panel-2);
+}
+/* Box-type badges: one per document kind, so a mixed-source timeline reads at
+   a glance (Slack chat, FOI'd email, a carried document, publisher notes). */
+.entry-kind {
+  font-size: 11px; font-weight: 700; border-radius: 4px; padding: 1px 6px;
+  margin-left: 8px; white-space: nowrap; border: 1px solid transparent;
+}
+.entry-kind.k-slack      { color: var(--blue);  background: rgba(88,166,255,0.12);  border-color: rgba(88,166,255,0.35); }
+.entry-kind.k-email      { color: var(--green); background: rgba(78,204,163,0.12);  border-color: rgba(78,204,163,0.35); }
+.entry-kind.k-attachment { color: #d2a8ff;       background: rgba(210,168,255,0.12); border-color: rgba(210,168,255,0.35); }
+.entry-kind.k-draft      { color: #ffd479;       background: rgba(255,212,121,0.12); border-color: rgba(255,212,121,0.35); }
+.entry-kind.k-document   { color: #ffd479;       background: rgba(255,212,121,0.12); border-color: rgba(255,212,121,0.35); }
+.entry-kind.k-note       { color: var(--muted); background: rgba(255,255,255,0.06); border-color: var(--border-2); }
+.result-entry.is-attachment .result-content { border-left: 3px solid #d2a8ff; }
+.result-entry.is-note .result-content { font-style: italic; color: #c0c0c0; }
+/* The email/report header block, split from its body by the rule the parser
+   writes ("----------"), so From/To/Subject read as addressing, not prose. */
+.result-content .mail-head {
+  white-space: pre-line; font-size: 12px; color: var(--muted);
+  border-bottom: 1px solid var(--border-2); padding-bottom: 6px; margin-bottom: 8px;
+}
+.mail-head-subject { color: var(--text); font-weight: 600; }
+/* Chips: thread links, attachment pointers, citations, external documents */
+.chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 14px 8px; }
+.chip {
+  font-size: 11px; border-radius: 10px; padding: 2px 8px; cursor: pointer;
+  border: 1px solid var(--border-2); background: var(--panel-2); color: var(--text);
+  white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis;
+}
+.chip:hover { border-color: var(--accent); color: var(--accent); }
+.chip.chip-dim { color: var(--muted); cursor: default; opacity: 0.75; }
+.chip.chip-dim:hover { border-color: var(--border-2); color: var(--muted); }
+.chip.chip-cite { color: #ffd479; border-color: rgba(255,212,121,0.4); }
+.chip.chip-thread { color: var(--green); border-color: rgba(78,204,163,0.4); }
+/* Box-type filter: a compact button that opens the list of box types */
+.kind-filter-bar { position: relative; display: inline-flex; align-items: center; gap: 6px; }
+.kind-filter-bar label { font-size: 12px; color: var(--muted); font-weight: 600; }
+.kind-filter-bar > button {
+  background: var(--panel-2); color: var(--text); border: 1px solid var(--border-2);
+  padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600;
+  max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.kind-filter-bar > button:hover { border-color: var(--accent); }
+.kind-filter-panel {
+  position: absolute; top: calc(100% + 6px); left: 0; z-index: 60; min-width: 230px;
+  background: var(--panel); border: 1px solid var(--border-2); border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5); padding: 8px;
+}
+.kind-filter-panel .kf-row {
+  display: flex; align-items: center; gap: 8px; padding: 5px 6px; border-radius: 4px;
+  font-size: 13px; cursor: pointer;
+}
+.kind-filter-panel .kf-row:hover { background: var(--panel-2); }
+.kind-filter-panel .kf-row input { cursor: pointer; }
+.kind-filter-panel .kf-count { margin-left: auto; font-size: 11px; color: var(--muted); }
+.kind-filter-panel .kf-actions {
+  display: flex; gap: 6px; border-top: 1px solid var(--border-2); margin-top: 6px; padding-top: 6px;
+}
+.kind-filter-panel .kf-actions button {
+  flex: 1; background: var(--panel-2); color: var(--text); border: 1px solid var(--border-2);
+  border-radius: 4px; padding: 4px 6px; font-size: 11px; cursor: pointer;
+}
+.kind-filter-panel .kf-actions button:hover { border-color: var(--accent); }
+/* ── The P.O. guide rail ───────────────────────────────────────────────────
+   The story index: the article's own dated sections, each listing the released
+   documents it rests on, so a Slack message can be read against the evidence
+   behind the claim it supports (and vice versa). */
+.guide-rail {
+  width: 320px; flex-shrink: 0; background: var(--panel); border-right: 1px solid var(--border-2);
+  display: flex; flex-direction: column; overflow: hidden;
+}
+.guide-rail.hidden { display: none; }
+.guide-head {
+  padding: 8px 12px; border-bottom: 1px solid var(--border-2); background: var(--panel-2);
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.guide-head h3 { margin: 0; font-size: 13px; color: var(--text); flex: 1; }
+.guide-head .guide-sub { font-size: 11px; color: var(--muted); width: 100%; }
+.guide-head button {
+  background: var(--panel); color: var(--text); border: 1px solid var(--border-2);
+  border-radius: 4px; padding: 3px 8px; font-size: 11px; cursor: pointer;
+}
+.guide-head button:hover { border-color: var(--accent); color: var(--accent); }
+.guide-list { flex: 1; overflow-y: auto; padding: 6px; }
+.guide-list::-webkit-scrollbar { width: 8px; }
+.guide-list::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 4px; }
+.guide-part {
+  font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+  padding: 8px 6px 4px; font-weight: 700;
+}
+.guide-sec {
+  padding: 5px 8px; border-radius: 5px; cursor: pointer; margin-bottom: 2px;
+  border-left: 3px solid transparent;
+}
+.guide-sec:hover { background: var(--panel-2); }
+.guide-sec.active { background: var(--panel-2); border-left-color: var(--accent); }
+.guide-sec .gs-num { font-size: 11px; color: var(--accent); font-weight: 700; margin-right: 5px; }
+.guide-sec .gs-title { font-size: 12px; color: var(--text); line-height: 1.35; }
+.guide-sec .gs-meta { font-size: 10px; color: var(--muted); margin-top: 2px; }
+.guide-sec .gs-kinds { margin-top: 3px; display: flex; gap: 3px; flex-wrap: wrap; }
+.guide-dot {
+  font-size: 9px; border-radius: 3px; padding: 0 4px; border: 1px solid var(--border-2);
+  color: var(--muted); white-space: nowrap;
+}
+.guide-dot.d-slack { color: var(--blue); border-color: rgba(88,166,255,0.4); }
+.guide-dot.d-email { color: var(--green); border-color: rgba(78,204,163,0.4); }
+.guide-dot.d-draft, .guide-dot.d-document { color: #ffd479; border-color: rgba(255,212,121,0.4); }
+.guide-dot.d-transcript { color: #d2a8ff; border-color: rgba(210,168,255,0.4); }
+.guide-detail { border-top: 1px solid var(--border-2); padding: 8px 10px; background: var(--panel-2); }
+.guide-detail h4 { margin: 0 0 6px; font-size: 12px; color: var(--text); }
+.guide-detail .gd-ev {
+  font-size: 11px; color: var(--muted); padding: 4px 0; border-bottom: 1px solid var(--border);
+  line-height: 1.4;
+}
+.guide-detail .gd-ev:last-child { border-bottom: none; }
+.guide-detail .gd-doc { color: var(--text); font-weight: 600; }
+.guide-detail a { color: var(--blue); }
 .result-content p { margin-bottom: 8px; }
 .result-content p.attach-block {
   white-space: pre-line; color: #c8c8c8; font-size: 12.5px;
@@ -495,8 +647,25 @@ mark.hit-current {
       <input type="date" id="jumpDateInput" min="2020-02-01" max="2023-06-28">
       <button type="button" id="jumpDateBtn" onclick="goToJumpDate()">Go</button>
     </span>
+    <span class="kind-filter-bar" id="kindFilterBar" hidden>
+      <label for="kindFilterBtn">Box types</label>
+      <button type="button" id="kindFilterBtn" onclick="toggleKindFilterPanel(event)">All box types</button>
+    </span>
   </div>
   <span class="instructions" id="toolbarInstructions">Search &rarr; click a result / hit bar for matches. Entry bars open that day&rsquo;s entry + PDF (and clear any search). Jump-to-date opens the nearest entry. Scroll wheel zooms; double-click resets.</span>
+</div>
+
+<div class="workspace" id="workspace">
+
+<!-- ── The P.O. guide: the article's own sections, and what each rests on ─── -->
+<div class="guide-rail hidden" id="guideRail">
+  <div class="guide-head">
+    <h3>P.O. &mdash; A Tragicomedy of our Times</h3>
+    <button type="button" id="guideToggleBtn" onclick="toggleGuideRail()">Hide</button>
+    <div class="guide-sub" id="guideSub">Loading the guide&hellip;</div>
+  </div>
+  <div class="guide-list" id="guideList"></div>
+  <div class="guide-detail hidden" id="guideDetail"></div>
 </div>
 
 <div class="content-area">
@@ -576,7 +745,8 @@ mark.hit-current {
     </div>
   </div>
 
-</div>
+</div><!-- /content-area -->
+</div><!-- /workspace -->
 
 <script>
 // ============================================================
@@ -587,21 +757,53 @@ const SOURCES = {
     json: 'part1.json',
     pageMap: 'part1_page_map.json',
     pdf: 'slack-part1.pdf',
-    label: 'Part 1: Feb–Apr 2020',
+    label: 'Slack Part 1: Feb–Apr 2020',
+    badge: '💬 Slack P1',
+    badgeTitle: 'Slack messages, Part 1 (Feb 1 – Apr 30 2020), released by Chairman Rand Paul',
   },
   part2: {
     json: 'part2.json',
     pageMap: 'part2_page_map.json',
     pdf: 'slack-part2.pdf',
-    label: 'Part 2: Apr 2020–Jun 2023',
+    label: 'Slack Part 2: Apr 2020–Jun 2023',
+    badge: '💬 Slack P2',
+    badgeTitle: 'Slack messages, Part 2 (Apr 30 2020 – Jun 28 2023), released by Chairman Rand Paul',
+  },
+  'po-emails': {
+    json: 'po-emails.json',
+    pageMap: 'po-emails_page_map.json',
+    pdf: 'po-emails.pdf',
+    label: 'P.O. emails (FOI): Jan–Jul 2020',
+    badge: '✉ emails',
+    badgeTitle: 'The FOI\'d P.O. email release, cited throughout the P.O. piece as Proximal_Origin_Emails.pdf',
   },
 };
 const DEFAULT_PDF_SOURCE = 'part1';   // which PDF shows on page load
 
+// ── Document kinds ───────────────────────────────────────────────────────────
+// One taxonomy across every release, so the box-type filter, the badges and
+// the counts work the same whatever a document is. Adding a source means
+// tagging its entries `kind:` — the chip, the filter row and the count appear
+// by themselves. Documented in SPEC.md.
+const KIND_DEFS = {
+  slack:      { label: 'Slack message',    icon: '💬', title: 'An authored message in the Slack channel' },
+  email:      { label: 'Email',            icon: '✉',  title: 'One FOI\'d email message, one author, one timestamp' },
+  attachment: { label: 'Attachment',       icon: '📎', title: 'A file or document carried by a message' },
+  draft:      { label: 'Manuscript draft', icon: '📝', title: 'A dated version of the Proximal Origin manuscript' },
+  document:   { label: 'Document',         icon: '📄', title: 'A released document with no single authoring instant' },
+  note:       { label: 'Release note',     icon: 'ℹ',  title: 'Publisher material about a release, not a document in it' },
+};
+const KIND_ALIASES = { message: 'slack', chat: 'slack', mail: 'email', report: 'attachment' };
+function entryKind(e) {
+  const k = (e && e.kind) || 'slack';
+  return KIND_ALIASES[k] || k;
+}
+function kindDef(kind) { return KIND_DEFS[kind] || { label: kind, icon: '•', title: kind }; }
+
 let diaryData = null;                 // merged { total_entries, date_range, entries[] }
 let pendingSearch = false;            // a search was requested while data was still loading
-let pageMaps = { part1: {}, part2: {} };
-let pdfDocs = { part1: null, part2: null };
+let pageMaps = {};
+let pdfDocs = {};
 let currentPdfSource = DEFAULT_PDF_SOURCE;
 let pdfDoc = null;                    // always the currently active PDF doc
 let currentPage = 1;
@@ -664,38 +866,55 @@ function loadErrorHelp(err) {
 
 async function loadData() {
   try {
-    // ── Fetch both datasets in parallel ──
-    const [p1Resp, p2Resp] = await Promise.all([
-      fetch(SOURCES.part1.json),
-      fetch(SOURCES.part2.json),
-    ]);
-    if (!p1Resp.ok) throw new Error('HTTP ' + p1Resp.status + ' for ' + SOURCES.part1.json);
-    if (!p2Resp.ok) throw new Error('HTTP ' + p2Resp.status + ' for ' + SOURCES.part2.json);
+    // ── Fetch every source's data in parallel ──
+    // Driven off SOURCES rather than listing the two Slack parts, so adding a
+    // release is a SOURCES entry and a JSON file, not a code change.
+    const sourceIds = Object.keys(SOURCES);
+    const payloads = await Promise.all(sourceIds.map(async function(id) {
+      const resp = await fetch(SOURCES[id].json);
+      if (!resp.ok) throw new Error('HTTP ' + resp.status + ' for ' + SOURCES[id].json);
+      const data = await resp.json();
+      data.entries.forEach(function(e) {
+        e.source = id;
+        e.kind = entryKind(e);
+      });
+      return data;
+    }));
 
-    const p1Data = await p1Resp.json();
-    const p2Data = await p2Resp.json();
-
-    // Tag every entry with its source, then merge into one timeline
-    p1Data.entries.forEach(function(e) { e.source = 'part1'; });
-    p2Data.entries.forEach(function(e) { e.source = 'part2'; });
-    const allEntries = p1Data.entries.concat(p2Data.entries);
+    const allEntries = [];
+    payloads.forEach(function(d) { allEntries.push.apply(allEntries, d.entries); });
+    // The email release prints a conversation grouped by thread, not in time
+    // order, so the merged timeline is re-sorted here rather than trusting the
+    // order the files happen to be in.
+    allEntries.sort(function(a, b) {
+      const ka = (a.date || '9999') + ' ' + (a.time || '9999');
+      const kb = (b.date || '9999') + ' ' + (b.time || '9999');
+      return ka < kb ? -1 : ka > kb ? 1 : 0;
+    });
 
     diaryData = {
-      title: 'P.O. Slack',
+      title: 'P.O. Slack + emails',
       released_by: 'Chairman Rand Paul',
       total_entries: allEntries.length,
       date_range: {
-        start: p1Data.date_range.start,   // 2020-02-01
-        end: p2Data.date_range.end,       // 2023-06-28
+        start: payloads[0].date_range.start,
+        end: payloads.reduce(function(a, d) {
+          return (d.date_range.end > a) ? d.date_range.end : a;
+        }, payloads[0].date_range.start),
       },
       entries: allEntries,
     };
+    rebuildThreadDownLinks();
 
     // entryStats lives inside #resultsPanel, which clearSearch()/doSearch()
     // may have rewritten before the data finished loading — don't crash then.
-    const statsEl = document.getElementById('entryStats');
-    if (statsEl) statsEl.textContent =
-      diaryData.total_entries + ' entries \u00b7 ' + diaryData.date_range.start + ' to ' + diaryData.date_range.end;
+    // The line reports the box types actually on screen, not just the total.
+    updateEntryStatsLine();
+
+    // The box-type button only exists once there is more than one kind to
+    // choose between, and it restores whatever was ticked last time.
+    loadKindFilter();
+    buildKindFilterPanel();
 
     syncJumpDateInputBounds();
     drawTimeline();
@@ -706,16 +925,13 @@ async function loadData() {
       doSearch();
     }
 
-    // ── Fetch both page maps in parallel ──
-    const [pm1Resp, pm2Resp] = await Promise.all([
-      fetch(SOURCES.part1.pageMap),
-      fetch(SOURCES.part2.pageMap),
-    ]);
-    if (!pm1Resp.ok) throw new Error('HTTP ' + pm1Resp.status + ' for ' + SOURCES.part1.pageMap);
-    if (!pm2Resp.ok) throw new Error('HTTP ' + pm2Resp.status + ' for ' + SOURCES.part2.pageMap);
-
-    pageMaps.part1 = await pm1Resp.json();
-    pageMaps.part2 = await pm2Resp.json();
+    // ── Fetch every page map in parallel ──
+    await Promise.all(sourceIds.map(async function(id) {
+      const resp = await fetch(SOURCES[id].pageMap);
+      if (!resp.ok) throw new Error('HTTP ' + resp.status + ' for ' + SOURCES[id].pageMap);
+      pageMaps[id] = await resp.json();
+      pdfDocs[id] = null;
+    }));
 
     // ── Load the default PDF first for immediate display ──
     pdfDocs[DEFAULT_PDF_SOURCE] = await pdfjsLib.getDocument(SOURCES[DEFAULT_PDF_SOURCE].pdf).promise;
@@ -727,18 +943,21 @@ async function loadData() {
     applyPdfViewModeDom();
     renderPdfPage(pendingPage || 1);
 
-    // ── Load the other PDF in the background ──
-    var otherSource = (DEFAULT_PDF_SOURCE === 'part1') ? 'part2' : 'part1';
-    pdfjsLib.getDocument(SOURCES[otherSource].pdf).promise.then(function(doc) {
-      pdfDocs[otherSource] = doc;
-      // If user already switched to this source, render the pending page
-      if (currentPdfSource === otherSource) {
-        pdfDoc = doc;
-        updatePdfSourceUI();
-        if (pendingPage) renderPdfPage(pendingPage);
-      }
-    }).catch(function(err) {
-      console.error('Background load of ' + otherSource + ' PDF failed:', err);
+    // ── Load the other PDFs in the background ──
+    // A source with no PDF (metadata-only, like the guide) is skipped rather
+    // than failing the whole load.
+    sourceIds.forEach(function(id) {
+      if (id === DEFAULT_PDF_SOURCE || !SOURCES[id].pdf) return;
+      pdfjsLib.getDocument(SOURCES[id].pdf).promise.then(function(doc) {
+        pdfDocs[id] = doc;
+        if (currentPdfSource === id) {
+          pdfDoc = doc;
+          updatePdfSourceUI();
+          if (pendingPage) renderPdfPage(pendingPage);
+        }
+      }).catch(function(err) {
+        console.error('Background load of ' + id + ' PDF failed:', err);
+      });
     });
 
   } catch (err) {
@@ -1228,12 +1447,205 @@ function pageForContentOffset(mapVal, charOffset) {
   return getPageNum(mapVal) || 1;
 }
 
+function entryMapKey(e) {
+  // The Slack parts are keyed by their per-part index; the email release is
+  // keyed by its own thread key. Both live in per-source maps, so the two key
+  // schemes never collide.
+  if (e && e.thread_key) return e.thread_key;
+  return String(e.idx);
+}
+
+// A parser links each message to the one it answers. Re-invert that across
+// every merged release at load, so an email can be replied to from another
+// release too, and the down-links are arrays (an email may be answered
+// several times over).
+function rebuildThreadDownLinks() {
+  if (!diaryData) return;
+  const byKey = {};
+  diaryData.entries.forEach(function(e) { byKey[e.thread_key || String(e.idx)] = e; });
+  diaryData.entries.forEach(function(e) {
+    if (Array.isArray(e.replied_by)) e.replied_by = [];
+    if (Array.isArray(e.forwarded_by)) e.forwarded_by = [];
+    if (Array.isArray(e.attached_by)) e.attached_by = [];
+  });
+  diaryData.entries.forEach(function(e) {
+    if (!e.reply_to) return;
+    const parent = byKey[e.reply_to];
+    if (!parent) { e.reply_to = null; return; }
+    parent.replied_by.push({ key: e.thread_key, label: e.raw_date, sender: e.sender });
+  });
+}
+
+// ============================================================
+// Per-entry scrollable boxes
+//
+// Each result card's text box scrolls on its own, so a long email or a long
+// Slack message is fully readable without pushing the other matches out of the
+// list. The native scrollbar is hidden (macOS overlay bars only appear while
+// you scroll, and the Up/Down keys are reserved for moving between entries),
+// so every box carries its own always-visible bar: drag the thumb, or click the
+// track to page. Wheeling inside a box scrolls that box only; PageUp/PageDown
+// page it; the "Full text" button lifts the height cap entirely.
+function syncBoxScrollbar(box) {
+  if (!box) return;
+  const wrap = box.closest('.result-content-wrap');
+  if (!wrap) return;
+  const bar = wrap.querySelector('.box-scrollbar');
+  if (!bar) return;
+  const thumb = bar.querySelector('.box-thumb');
+  const card = box.closest('.result-entry');
+  const expanded = card && card.classList.contains('expanded');
+  const overflows = box.scrollHeight > box.clientHeight + 4;
+  bar.classList.toggle('no-scroll', !overflows || !!expanded);
+
+  const trackH = bar.clientHeight;
+  const ratio = box.clientHeight / Math.max(1, box.scrollHeight);
+  const thumbH = Math.max(26, Math.round(trackH * ratio));
+  if (thumb) {
+    thumb.style.height = thumbH + 'px';
+    const maxTop = Math.max(0, trackH - thumbH);
+    const span = Math.max(0, box.scrollHeight - box.clientHeight);
+    const frac = (maxTop && span) ? box.scrollTop / span : 0;
+    thumb.style.top = Math.round(frac * maxTop) + 'px';
+  }
+  if (!card) return;
+  const atEnd = box.scrollTop + box.clientHeight >= box.scrollHeight - 4;
+  const hint = card.querySelector('[data-scroll-hint]');
+  if (hint) hint.hidden = !overflows || atEnd || !!expanded;
+  const btn = card.querySelector('[data-expand-toggle]');
+  if (btn) btn.hidden = !overflows;
+}
+function attachBoxScrollbar(box) {
+  const wrap = box.closest('.result-content-wrap');
+  if (!wrap) return;
+  const bar = wrap.querySelector('.box-scrollbar');
+  if (!bar) return;
+  const thumb = bar.querySelector('.box-thumb');
+  let dragging = false, startY = 0, startTop = 0;
+
+  if (thumb) {
+    thumb.addEventListener('pointerdown', function(ev) {
+      ev.preventDefault(); ev.stopPropagation();
+      dragging = true;
+      startY = ev.clientY; startTop = box.scrollTop;
+      bar.classList.add('dragging');
+      try { thumb.setPointerCapture(ev.pointerId); } catch (e) {}
+    });
+    thumb.addEventListener('pointermove', function(ev) {
+      if (!dragging) return;
+      ev.preventDefault(); ev.stopPropagation();
+      const maxTop = Math.max(1, bar.clientHeight - thumb.offsetHeight);
+      const span = Math.max(0, box.scrollHeight - box.clientHeight);
+      box.scrollTop = startTop + ((ev.clientY - startY) / maxTop) * span;
+    });
+    var stopDrag = function(ev) {
+      if (!dragging) return;
+      dragging = false; bar.classList.remove('dragging');
+      try { thumb.releasePointerCapture(ev.pointerId); } catch (e) {}
+    };
+    thumb.addEventListener('pointerup', stopDrag);
+    thumb.addEventListener('pointercancel', stopDrag);
+  }
+  // Click the track above/below the thumb to page through the box
+  bar.addEventListener('pointerdown', function(ev) {
+    ev.preventDefault(); ev.stopPropagation();
+    const rect = bar.getBoundingClientRect();
+    const pos = ev.clientY - rect.top;
+    if (thumb && pos < thumb.offsetTop) box.scrollTop -= box.clientHeight * 0.85;
+    else box.scrollTop += box.clientHeight * 0.85;
+  });
+  // Wheel inside a box scrolls that box, never the results list
+  box.addEventListener('wheel', function(ev) { ev.stopPropagation(); }, { passive: true });
+  box.addEventListener('scroll', function() { syncBoxScrollbar(box); });
+  syncBoxScrollbar(box);
+}
+function setupResultBoxes(panel) {
+  if (!panel) return;
+  panel.querySelectorAll('.result-content').forEach(attachBoxScrollbar);
+  // layout can settle a tick later (fonts, panel resize): re-measure
+  requestAnimationFrame(function() {
+    panel.querySelectorAll('.result-content').forEach(syncBoxScrollbar);
+  });
+  setTimeout(function() {
+    panel.querySelectorAll('.result-content').forEach(syncBoxScrollbar);
+  }, 150);
+  window.addEventListener('resize', function() {
+    panel.querySelectorAll('.result-content').forEach(syncBoxScrollbar);
+  });
+}
+// The entry box the reader is working in: the one under the pointer, else the
+// active entry's box. PageUp/PageDown use it; Up/Down stay on prev/next entry.
+function entryBoxForKey(e) {
+  let el = (e.target && e.target.closest) ? e.target.closest('.result-content') : null;
+  if (!el && typeof e.clientX === 'number' && e.clientX) {
+    const under = document.elementFromPoint(e.clientX, e.clientY);
+    const box = under && under.closest ? under.closest('.result-content') : null;
+    if (box) el = box;
+  }
+  if (!el) el = document.querySelector('.result-entry.active .result-content');
+  return el;
+}
+function eventInScrollablePanel(e) {
+  var el = e.target && e.target.closest ? e.target.closest(
+    '#resultsPanel, #chartsPanel, #helpOverlay, .result-content, .pdf-continuous-view'
+  ) : null;
+  return !!el;
+}
+document.addEventListener('keydown', function(e) {
+  const tag = (e.target.tagName || '').toLowerCase();
+  if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+  if (e.key === 'PageDown' || e.key === 'PageUp') {
+    const box = entryBoxForKey(e);
+    if (box) {
+      e.preventDefault();
+      box.scrollTop += (e.key === 'PageDown' ? 1 : -1) * box.clientHeight * 0.85;
+      syncBoxScrollbar(box);
+      return;
+    }
+  }
+  if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+    if (window._searchResults && window._searchResults.length) {
+      e.preventDefault();
+      stepActiveResult(e.key === 'ArrowDown' ? 1 : -1);
+      return;
+    }
+    if (eventInScrollablePanel(e)) return;  // let the panel scroll natively
+    e.preventDefault();
+    if (e.key === 'ArrowUp') pdfPrevPage(); else pdfNextPage();
+  } else if (e.key === 'ArrowLeft') {
+    e.preventDefault();
+    pdfPrevPage();
+  } else if (e.key === 'ArrowRight') {
+    e.preventDefault();
+    pdfNextPage();
+  }
+});
+
 function pageMapValueForResult(r) {
   if (!r || !r.entry) return null;
   const pm = pageMaps[r.entry.source] || {};
-  return pm[String(r.entry.idx)];
+  return pm[entryMapKey(r.entry)];
 }
 
+// Move the active card through the match list with Up/Down, the way a reader
+// walks results: it advances the highlighted box and scrolls it to the top of
+// the panel, rather than paging the PDF behind it.
+function stepActiveResult(delta) {
+  const results = window._searchResults || [];
+  if (!results.length) return false;
+  let next = activeResultIdx;
+  if (next < 0) {
+    next = delta > 0 ? 0 : results.length - 1;
+  } else {
+    next = Math.max(0, Math.min(results.length - 1, next + delta));
+  }
+  if (next === activeResultIdx && delta !== 0) next = activeResultIdx;
+  activeResultIdx = next;
+  const r = results[next];
+  selectResult(next, pdfPageForHit(next, currentHitIdx[next] || 0), r.idx);
+  scrollResultToPanelTop(next);
+  return true;
+}
 function pdfPageForHit(resultIdx, hitIdx) {
   const r = window._searchResults && window._searchResults[resultIdx];
   if (!r) return 1;
@@ -1482,6 +1894,9 @@ function doSearch() {
   const results = [];
   for (let i = 0; i < diaryData.entries.length; i++) {
     const entry = diaryData.entries[i];
+    // Box types filter: an unticked kind is not searched, not hidden after the
+    // fact, so the counts and the timeline agree with what is on screen.
+    if (!kindListed(entryKind(entry))) continue;
     const text = entry.content || '';
     const ev = evalQuery(ast, text, caseSensitive);
     if (ev.matched && ev.positions.length > 0) {
@@ -1558,6 +1973,10 @@ let timelineSeries = null; // { labels, entryCounts, entryColors, entryDays, tot
 function buildTimelineSeries() {
   const dateCounts = {};
   for (const e of diaryData.entries) {
+    // The timeline counts the box types that are actually listed, so an
+    // unticked kind does not leave a day marked as having entries when none
+    // of them are on screen.
+    if (!kindListed(entryKind(e))) continue;
     dateCounts[e.date] = (dateCounts[e.date] || 0) + 1;
   }
 
@@ -2270,6 +2689,9 @@ function buildBrowseResultsAroundIndex(centerIdx, radius) {
   var results = [];
   var focusLocal = 0;
   for (var j = from; j <= to; j++) {
+    // Skip unticked box types without shifting the focus off the entry the
+    // reader asked for.
+    if (!kindListed(entryKind(entries[j]))) continue;
     if (j === centerIdx) focusLocal = results.length;
     results.push({
       idx: j,
@@ -2523,19 +2945,9 @@ window.addEventListener('resize', function() {
 });
 
 // ============================================================
-// PDF page navigation via arrow keys (ignored while typing)
-// ============================================================
-document.addEventListener('keydown', function(e) {
-  const tag = (e.target.tagName || '').toLowerCase();
-  if (tag === 'input' || tag === 'textarea' || e.target.isContentEditable) return;
-  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-    e.preventDefault();
-    pdfPrevPage();
-  } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-    e.preventDefault();
-    pdfNextPage();
-  }
-});
+// PDF page navigation via arrow keys is handled in the single keydown
+// handler above, which first gives PageUp/PageDown to the entry box under
+// the pointer and Up/Down to the match list. Left/Right still page the PDF.
 
 // ============================================================
 // Drag the PDF panel edge to resize it
@@ -2659,6 +3071,366 @@ function pdfPageLabel(r) {
   return 'p.' + start;
 }
 
+// Open another entry of the merged corpus by its key: used by the thread chips
+// and by the guide, which link to entries by key rather than by search.
+function openEntryRef(key) {
+  if (!diaryData || !key) return;
+  var entries = diaryData.entries;
+  var idxInMerged = -1;
+  for (var i = 0; i < entries.length; i++) {
+    const x = entries[i];
+    if (x.thread_key === key || (x.source === key) || String(x.idx) === String(key)) {
+      idxInMerged = i; break;
+    }
+  }
+  if (idxInMerged < 0) return;
+  var e = entries[idxInMerged];
+
+  if (lastSearchResults && lastSearchResults.length) {
+    clearSearchStateForBrowse();
+    redrawTimelines({ preserveZoom: true });
+  }
+  var pack = buildBrowseResultsAroundIndex(idxInMerged, BROWSE_RADIUS);
+  if (!pack || !pack.results.length) return;
+  browseMode = true;
+  displayResults(pack.results, '', { autoSelect: false });
+
+  var k = pack.focusLocal;
+  if (k < 0 || k >= pack.results.length) k = 0;
+  var r = pack.results[k];
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      selectResult(k, pdfPageForResult(r) || 1, r.idx);
+      scrollResultToPanelTop(k);
+    });
+  });
+}
+
+// ── Box types ───────────────────────────────────────────────────────────────
+// Which kinds of box are listed. Stored in localStorage and applied to search
+// results, the browse window, the timeline and the counts, so the mixed
+// timeline can be read one source at a time.
+const KIND_FILTER_KEY = 'poSlackKindFilter';
+let kindFilter = null;   // null = every kind listed
+
+function availableKinds() {
+  const counts = {};
+  (diaryData ? diaryData.entries : []).forEach(function(e) {
+    const k = entryKind(e);
+    counts[k] = (counts[k] || 0) + 1;
+  });
+  return counts;
+}
+function kindListed(kind) {
+  if (!kindFilter) return true;
+  return kindFilter.indexOf(kind) !== -1;
+}
+function loadKindFilter() {
+  try {
+    const raw = localStorage.getItem(KIND_FILTER_KEY);
+    kindFilter = raw ? JSON.parse(raw) : null;
+  } catch (e) { kindFilter = null; }
+  if (!Array.isArray(kindFilter)) kindFilter = null;
+}
+function saveKindFilter() {
+  try {
+    if (kindFilter) localStorage.setItem(KIND_FILTER_KEY, JSON.stringify(kindFilter));
+    else localStorage.removeItem(KIND_FILTER_KEY);
+  } catch (e) {}
+}
+function filterEntries(entries) {
+  if (!kindFilter) return entries;
+  return entries.filter(function(e) { return kindListed(entryKind(e)); });
+}
+
+// ── Box types UI ────────────────────────────────────────────────────────────
+function kindFilterLabel() {
+  if (!kindFilter) return 'All box types';
+  const counts = availableKinds();
+  const names = kindFilter.filter(function(k) { return counts[k]; })
+    .map(function(k) { return kindDef(k).label; });
+  if (!names.length) return 'No box types';
+  if (kindFilter.length === Object.keys(counts).length) return 'All box types';
+  return names.length === 1 ? names[0] : names.length + ' box types';
+}
+
+function buildKindFilterPanel() {
+  const bar = document.getElementById('kindFilterBar');
+  if (!bar) return;
+  const counts = availableKinds();
+  const kinds = Object.keys(counts).sort(function(a, b) { return counts[b] - counts[a]; });
+  if (!kinds.length) return;
+  bar.hidden = false;
+  const btn = document.getElementById('kindFilterBtn');
+  if (btn) btn.textContent = kindFilterLabel();
+
+  let panel = document.getElementById('kindFilterPanel');
+  if (panel) panel.remove();
+  panel = document.createElement('div');
+  panel.className = 'kind-filter-panel';
+  panel.id = 'kindFilterPanel';
+  let rows = '';
+  kinds.forEach(function(k) {
+    const kd = kindDef(k);
+    const on = kindListed(k);
+    rows += '<label class="kf-row"><input type="checkbox" data-kind="' + k + '"' +
+      (on ? ' checked' : '') + '><span>' + kd.icon + ' ' + escapeHtml(kd.label) +
+      '</span><span class="kf-count">' + counts[k] + '</span></label>';
+  });
+  panel.innerHTML = rows +
+    '<div class="kf-actions">' +
+    '<button type="button" data-kf="all">All</button>' +
+    '<button type="button" data-kf="none">None</button>' +
+    '<button type="button" data-kf="done">Done</button></div>';
+  bar.appendChild(panel);
+
+  panel.addEventListener('click', function(ev) {
+    const act = ev.target.closest('[data-kf]');
+    if (!act) return;
+    ev.stopPropagation();
+    const what = act.getAttribute('data-kf');
+    if (what === 'all') kindFilter = null;
+    else if (what === 'none') kindFilter = [];
+    applyKindFilter();
+    panel.remove();
+  });
+  panel.addEventListener('change', function(ev) {
+    const cb = ev.target.closest('input[data-kind]');
+    if (!cb) return;
+    const kinds = Object.keys(availableKinds());
+    const next = kinds.filter(function(k) {
+      const box = panel.querySelector('input[data-kind="' + k + '"]');
+      return box && box.checked;
+    });
+    kindFilter = (next.length === kinds.length) ? null : next;
+    saveKindFilter();
+    // Re-render in place: the counts and timeline must follow immediately.
+    applyKindFilter();
+    const btn2 = document.getElementById('kindFilterBtn');
+    if (btn2) btn2.textContent = kindFilterLabel();
+  });
+}
+
+function toggleKindFilterPanel(ev) {
+  if (ev) ev.stopPropagation();
+  const existing = document.getElementById('kindFilterPanel');
+  if (existing) { existing.remove(); return; }
+  buildKindFilterPanel();
+}
+document.addEventListener('click', function(ev) {
+  const panel = document.getElementById('kindFilterPanel');
+  if (!panel) return;
+  if (!ev.target.closest('#kindFilterBar')) panel.remove();
+});
+
+/** Re-apply the box-type selection everywhere it is visible. */
+function applyKindFilter() {
+  saveKindFilter();
+  timelineSeries = null;          // the day counts depend on the filter
+  buildKindFilterPanel();
+  const raw = (document.getElementById('searchInput') || {}).value;
+  if (raw && raw.trim() && lastSearchResults && lastSearchResults.length) {
+    doSearch();
+  } else if (browseMode) {
+    // Re-open the browse window around the entry the reader is looking at, so
+    // ticking a box type does not leave an empty panel behind.
+    const active = document.querySelector('.result-entry.active');
+    const idx = active ? parseInt(active.getAttribute('data-entry-idx'), 10) : null;
+    const entries = diaryData ? diaryData.entries : [];
+    let center = -1;
+    if (idx != null && !isNaN(idx)) {
+      for (let i = 0; i < entries.length; i++) {
+        if (entries[i].idx === idx && entries[i].source === active.getAttribute('data-entry-source')) { center = i; break; }
+      }
+      if (center < 0) {
+        for (let i = 0; i < entries.length; i++) { if (entries[i].idx === idx) { center = i; break; } }
+      }
+    }
+    if (center >= 0) {
+      const pack = buildBrowseResultsAroundIndex(center, BROWSE_RADIUS);
+      if (pack && pack.results.length) {
+        displayResults(pack.results, '', { autoSelect: false });
+        const k = Math.max(0, Math.min(pack.focusLocal, pack.results.length - 1));
+        selectResult(k, pdfPageForResult(pack.results[k]) || 1, pack.results[k].idx);
+        return;
+      }
+    }
+    clearSearchStateForBrowse();
+    redrawTimelines({ preserveZoom: true });
+    const first = filterEntries(entries);
+    if (first.length) {
+      const pack = buildBrowseResultsAroundIndex(entries.indexOf(first[0]), BROWSE_RADIUS);
+      if (pack && pack.results.length) displayResults(pack.results, '', { autoSelect: false });
+    }
+    return;
+  }
+  redrawTimelines({ preserveZoom: true });
+  updateEntryStatsLine();
+}
+// An email knows the message it answers and the messages that answered it; a
+// Slack message may carry files. Chips make those relations navigable, and an
+// announced-but-unreleased document is shown dimmed rather than as a dead link.
+function entryChipsHtml(e) {
+  const out = [];
+  if (e.reply_to && e.reply_to_label) {
+    out.push('<span class="chip chip-thread" data-open-entry="' + escapeHtml(e.reply_to) +
+      '" title="The message this one answers">↩ in reply to ' + escapeHtml(e.reply_to_label) + '</span>');
+  }
+  (e.replied_by || []).forEach(function(r) {
+    out.push('<span class="chip chip-thread" data-open-entry="' + escapeHtml(r.key) +
+      '" title="A later message in this conversation">↪ answered by ' + escapeHtml(r.label) + '</span>');
+  });
+  (e.attachments || []).forEach(function(a) {
+    const name = typeof a === 'string' ? a : (a.label || '');
+    if (!name) return;
+    out.push('<span class="chip chip-dim" title="Carried by this message (released as a filename only)">📎 ' +
+      escapeHtml(name) + '</span>');
+  });
+  if (e.stamp_line) {
+    out.push('<span class="chip chip-dim" title="Timestamp as printed, and the zone assumed to read it in">🕑 ' +
+      escapeHtml(e.stamp_line) + (e.zone_assumed ? ' · ' + escapeHtml(e.zone_assumed) : '') + '</span>');
+  }
+  return out.join('');
+}
+
+// ── The P.O. guide ──────────────────────────────────────────────────────────
+// The article's own dated sections, each with the released documents it cites.
+// Clicking a section shows the messages of that day; its evidence lines name
+// the document and page, and link to the public copy where the article gives
+// one. The guide is metadata, not a source: it has no entries and no PDF.
+let guideData = null;
+let activeGuideId = null;
+
+async function loadGuide() {
+  const sub = document.getElementById('guideSub');
+  try {
+    const resp = await fetch('po_guide.json');
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    guideData = await resp.json();
+  } catch (err) {
+    if (sub) sub.textContent = 'The guide could not be loaded (' + err.message + ').';
+    return;
+  }
+  renderGuideList();
+}
+
+function renderGuideList() {
+  const list = document.getElementById('guideList');
+  const sub = document.getElementById('guideSub');
+  if (!list || !guideData) return;
+  const t = guideData.totals || {};
+  if (sub) {
+    sub.innerHTML = 'by Gilles Demaneuf &middot; <a href="' + escapeHtml(guideData.article_url) +
+      '" target="_blank" rel="noopener" style="color:var(--blue)">read the piece</a><br>' +
+      t.sections + ' sections &middot; ' + t.citations + ' citations &middot; ' +
+      t.documents + ' documents &middot; ' + t.drive_links + ' public links';
+  }
+  let html = '';
+  const partLabels = {};
+  (guideData.parts || []).forEach(function(p) { partLabels[p.id] = p.label; });
+  let currentPart = null;
+  (guideData.sections || []).forEach(function(s) {
+    if (!s.number) return;                 // skip the preamble
+    if (s.part !== currentPart) {
+      currentPart = s.part;
+      html += '<div class="guide-part">' + escapeHtml(partLabels[s.part] || s.part) + '</div>';
+    }
+    const kinds = {};
+    (s.evidence || []).forEach(function(ev) { kinds[ev.kind] = (kinds[ev.kind] || 0) + 1; });
+    const dots = Object.keys(kinds).map(function(k) {
+      return '<span class="guide-dot d-' + k + '">' + k + ' ' + kinds[k] + '</span>';
+    }).join('');
+    html += '<div class="guide-sec" data-guide-sec="' + escapeHtml(s.id) + '">' +
+      '<div><span class="gs-num">' + escapeHtml(s.number) + '</span>' +
+      '<span class="gs-title">' + escapeHtml(s.title) + '</span></div>' +
+      '<div class="gs-meta">' + ((s.evidence || []).length) + ' citations' +
+      (s.date_raw ? ' &middot; ' + escapeHtml(s.date_raw) : '') + '</div>' +
+      '<div class="gs-kinds">' + dots + '</div></div>';
+  });
+  list.innerHTML = html;
+  list.onclick = function(ev) {
+    const sec = ev.target.closest('[data-guide-sec]');
+    if (sec) selectGuideSection(sec.getAttribute('data-guide-sec'));
+  };
+}
+
+function selectGuideSection(id) {
+  activeGuideId = id;
+  document.querySelectorAll('.guide-sec').forEach(function(el) {
+    el.classList.toggle('active', el.getAttribute('data-guide-sec') === id);
+  });
+  const s = (guideData.sections || []).find(function(x) { return x.id === id; });
+  const detail = document.getElementById('guideDetail');
+  if (!s || !detail) return;
+  let html = '<h4>' + escapeHtml(s.number || '') + ' ' + escapeHtml(s.title) + '</h4>';
+  if (s.date_raw) html += '<div class="gd-ev">Section date: ' + escapeHtml(s.date_raw) + '</div>';
+  (s.evidence || []).forEach(function(ev) {
+    const pages = (ev.pages || []).length ? ' p.' + ev.pages.join(', p.') : '';
+    const link = ev.url
+      ? ' <a href="' + escapeHtml(ev.url) + '" target="_blank" rel="noopener">open &#8599;</a>'
+      : '';
+    const jump = (ev.kind === 'email' || ev.kind === 'slack') && ev.date
+      ? ' <span class="chip" data-guide-date="' + escapeHtml(ev.date) + '">show that day</span>'
+      : '';
+    html += '<div class="gd-ev"><span class="gd-doc">' +
+      escapeHtml(ev.doc || ev.kind) + '</span> &middot; ' + escapeHtml(ev.kind) + pages +
+      (ev.date ? ' · ' + escapeHtml(ev.date) : '') + link + jump + '</div>';
+  });
+  if (s.number) {
+    html += '<div class="gd-ev" style="margin-top:6px"><a href="' +
+      escapeHtml(sectionUrl(s)) + '" target="_blank" rel="noopener">read this section in the piece &#8599;</a></div>';
+  }
+  detail.innerHTML = html;
+  detail.classList.remove('hidden');
+  detail.onclick = function(ev) {
+    const chip = ev.target.closest('[data-guide-date]');
+    if (chip) { ev.stopPropagation(); openEntryFromRawBar(chip.getAttribute('data-guide-date')); }
+  };
+  if (s.date) openEntryFromRawBar(s.date);
+}
+
+function sectionUrl(s) {
+  const p = (guideData.parts || []).find(function(x) { return x.id === s.part; });
+  const base = (p && p.url) || guideData.article_url;
+  return base + '#' + s.id.replace(/^[a-z0-9]+-/, '');
+}
+
+function toggleGuideRail() {
+  const rail = document.getElementById('guideRail');
+  const btn = document.getElementById('guideToggleBtn');
+  if (!rail) return;
+  const hidden = rail.classList.toggle('hidden');
+  if (btn) btn.textContent = hidden ? 'Show guide' : 'Hide';
+  try { localStorage.setItem('poSlackGuideOpen', hidden ? '0' : '1'); } catch (e) {}
+  if (!hidden && !rail.querySelector('.guide-sec') && guideData) renderGuideList();
+}
+
+function initGuide() {
+  const rail = document.getElementById('guideRail');
+  if (!rail) return;
+  let open = true;
+  try { open = localStorage.getItem('poSlackGuideOpen') !== '0'; } catch (e) {}
+  rail.classList.toggle('hidden', !open);
+  const btn = document.getElementById('guideToggleBtn');
+  if (btn) btn.textContent = open ? 'Hide' : 'Show guide';
+  loadGuide();
+}
+
+/** The counts line must follow the box types on screen. */
+function updateEntryStatsLine() {
+  const statsEl = document.getElementById('entryStats');
+  if (!statsEl || !diaryData) return;
+  const counts = availableKinds();
+  const shown = filterEntries(diaryData.entries).length;
+  const total = diaryData.entries.length;
+  const byKind = Object.keys(counts)
+    .sort(function(a, b) { return counts[b] - counts[a]; })
+    .map(function(k) { return kindDef(k).label + ' ' + counts[k]; }).join(', ');
+  statsEl.textContent = shown + (shown !== total ? ' of ' + total : '') +
+    ' entries \u00b7 ' + diaryData.date_range.start + ' to ' + diaryData.date_range.end +
+    ' \u00b7 ' + byKind;
+}
+
 function displayResults(results, query, opts) {
   opts = opts || {};
   // autoSelect (default true): open first result / jump PDF. Set false when
@@ -2692,7 +3464,15 @@ function displayResults(results, query, opts) {
     currentHitIdx[i] = 0;
 
     // data-pdf-page = start page; actual hit page resolved on click / HIT nav
-    html += '<div class="result-entry" id="result-' + i + '" data-result-idx="' + i + '" data-pdf-page="' + pdfPage + '" data-entry-idx="' + r.idx + '">';
+    const kind = entryKind(e);
+    const kd = kindDef(kind);
+    const src = SOURCES[e.source] || {};
+    const srcBadge = src.badge
+      ? '<span style="font-size:10px;color:var(--muted);background:var(--panel-2);padding:2px 6px;border-radius:3px;border:1px solid var(--border-2);margin-left:6px;white-space:nowrap" title="' + escapeHtml(src.badgeTitle || src.label || '') + '">' + escapeHtml(src.badge) + '</span>'
+      : '';
+    const kindBadge = '<span class="entry-kind k-' + kind + '" title="' + escapeHtml(kd.title) + '">' +
+      kd.icon + ' ' + escapeHtml(kd.label) + '</span>';
+    html += '<div class="result-entry is-' + kind + '" id="result-' + i + '" data-result-idx="' + i + '" data-pdf-page="' + pdfPage + '" data-entry-idx="' + r.idx + '" data-entry-source="' + escapeHtml(e.source || '') + '">';
     html += '<div class="result-header">';
     const isNotice = e.sender === 'Slack Notice';
     const isPart2 = e.source === 'part2';
@@ -2707,7 +3487,7 @@ function displayResults(results, query, opts) {
     html += '<span><span class="result-date">' + e.date + '</span>' +
       (isPart2 ? (timeHtml + senderHtml) : (senderHtml + timeHtml)) +
       '<span class="result-raw-date">' + escapeHtml(e.raw_date) + '</span>' +
-      (e.source ? '<span style="font-size:10px;color:var(--muted);background:var(--panel-2);padding:2px 6px;border-radius:3px;border:1px solid var(--border-2);margin-left:6px;white-space:nowrap" title="From the ' + (e.source === 'part2' ? 'Part 2 (Apr 2020-Jun 2023)' : 'Part 1 (Feb-Apr 2020)') + ' release">' + (e.source === 'part2' ? 'Part 2' : 'Part 1') + '</span>' : '') +
+      srcBadge + kindBadge +
       (e.redacted ? '<span style="font-size:10px;color:var(--orange);margin-left:6px" title="No OCR text recovered for this message — likely an image or a redacted block">▪ redacted</span>' : '');
     if (pageLabel) {
       html += '<span class="result-page-link" title="Open PDF at this entry">📄 ' + pageLabel + '</span>';
@@ -2716,8 +3496,17 @@ function displayResults(results, query, opts) {
       html += '<div class="result-note">⚠ ' + escapeHtml(e.date_note) + '</div>';
     }
     html += '</span>';
+    html += '<span class="result-hits-group">';
     html += '<span class="result-hits">' + r.hits + ' hit' + (r.hits > 1 ? 's' : '') + '</span>';
+    html += '<button type="button" class="expand-btn" data-expand-toggle="' + i + '" hidden title="Remove the height cap and show the whole entry">⤢ Full text</button>';
+    html += '</span>';
     html += '</div>';
+
+    // Chips: the conversation this message belongs to, and the documents it
+    // carries. Active chips navigate; an announced-but-unreleased document is
+    // dimmed rather than a dead link.
+    const chips = entryChipsHtml(e);
+    if (chips) html += '<div class="chip-row">' + chips + '</div>';
 
     // Hit navigation bar
     const hitTime = e.time ? ' · ' + escapeHtml(e.time) : '';
@@ -2733,10 +3522,22 @@ function displayResults(results, query, opts) {
 
     // Full content with highlights (paragraphs from cleaned JSON)
     const highlighted = highlightWithHits(content, query, i);
+    // The email/report parsers put the addressing block before a "----------"
+    // rule; render it as a header so From/To/Subject read as addressing.
+    const sep = highlighted.indexOf('----------');
+    const hasMailHead = sep > 0 && sep < 1200;
+    const headHtml = hasMailHead ? highlighted.slice(0, sep) : '';
+    const bodyHtml = hasMailHead ? highlighted.slice(sep).replace(/^-{10}\s*/, '') : highlighted;
     // Split into paragraphs and wrap in <p>
-    const paragraphs = highlighted.split(/\n\n/);
+    html += '<div class="result-content-wrap">';
     html += '<div class="result-content" id="content-' + i + '">';
-    for (const p of paragraphs) {
+    if (hasMailHead) {
+      const headParas = headHtml.split(/\n\n+/).filter(Boolean).map(function(h) {
+        return '<div class="' + (/^Subject:/i.test(h) ? 'mail-head-subject' : '') + '">' + h + '</div>';
+      }).join('');
+      html += '<div class="mail-head">' + headParas + '</div>';
+    }
+    for (const p of bodyHtml.split(/\n\n/)) {
       const plain = p.replace(/<[^>]+>/g, '').trim();
       if (/^== (?:ATTACHMENT|EMBEDDED DOC)/.test(plain)) {
         html += '<p class="attach-block">' + p + '</p>';
@@ -2745,11 +3546,17 @@ function displayResults(results, query, opts) {
       }
     }
     html += '</div>';
+    // Always-visible scrollbar for this box: the native one is hidden, and the
+    // Up/Down keys belong to the match list.
+    html += '<div class="box-scrollbar no-scroll"><div class="box-thumb"></div></div>';
+    html += '</div>';
+    html += '<div class="scroll-hint" data-scroll-hint="' + i + '" hidden>↕ scroll inside this box for more text</div>';
     html += '</div>';
   }
 
   window._searchResults = results;
   panel.innerHTML = html;
+  setupResultBoxes(panel);
 
   // Event delegation: any click in a result card jumps the PDF (to the hit's page)
   panel.onclick = function(ev) {
@@ -2758,6 +3565,35 @@ function displayResults(results, query, opts) {
 
     const resultIdx = parseInt(entry.getAttribute('data-result-idx'), 10);
     const entryIdx = parseInt(entry.getAttribute('data-entry-idx'), 10);
+
+    // "Full text": lift the height cap on this card, or put it back.
+    const expBtn = ev.target.closest('[data-expand-toggle]');
+    if (expBtn) {
+      ev.preventDefault();
+      ev.stopPropagation();
+      const card = expBtn.closest('.result-entry');
+      const box = card.querySelector('.result-content');
+      const expanded = card.classList.toggle('expanded');
+      expBtn.textContent = expanded ? '⤡ Collapse' : '⤢ Full text';
+      if (box) box.scrollTop = 0;
+      syncBoxScrollbar(box);
+      return;
+    }
+
+    // Dragging or clicking this box's own scrollbar must never jump the PDF.
+    if (ev.target.closest('.box-scrollbar')) {
+      ev.stopPropagation();
+      return;
+    }
+
+    // A chip linking to another entry in a thread.
+    const openChip = ev.target.closest('[data-open-entry]');
+    if (openChip) {
+      ev.preventDefault();
+      ev.stopPropagation();
+      openEntryRef(openChip.getAttribute('data-open-entry'));
+      return;
+    }
 
     // Hit Prev/Next: step highlight + PDF page for THAT hit
     const navBtn = ev.target.closest('[data-hit-nav]');
@@ -2893,6 +3729,7 @@ document.getElementById('jumpDateInput').addEventListener('keydown', function(e)
 document.getElementById('resultsPanel').addEventListener('scroll', onBrowseResultsScroll, { passive: true });
 layoutToolbarInstructions();
 window.addEventListener('load', layoutToolbarInstructions);
+initGuide();
 loadData();
 </script>
 
