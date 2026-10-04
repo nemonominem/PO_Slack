@@ -560,6 +560,9 @@ body.layout-portrait .pdf-panel {
 }
 .guide-detail .gd-ev:last-child { border-bottom: none; }
 .guide-detail .gd-doc { color: var(--text); font-weight: 600; }
+/* A cited document we hold as an in-app PDF: looks clickable and opens it. */
+.guide-detail .gd-doc.gd-doc-link { cursor: pointer; text-decoration: underline dotted; }
+.guide-detail .gd-doc.gd-doc-link:hover { text-decoration: underline solid; }
 .guide-detail a { color: var(--blue); }
 .result-content p { margin-bottom: 8px; }
 .result-content p.attach-block {
@@ -862,6 +865,39 @@ function entryKind(e) {
   return KIND_ALIASES[k] || k;
 }
 function kindDef(kind) { return KIND_DEFS[kind] || { label: kind, icon: '•', title: kind }; }
+
+// One hue per media kind, shared by the timeline stack, the legend, and the
+// guide's citation list, so a document's colour means the same thing everywhere.
+const KIND_HUE = {
+  slack: 210, email: 150, draft: 45, attachment: 275, note: 0,
+  transcript: 275, document: 45, social: 25, press: 300, link: 190, other: 0,
+};
+function kindColor(kind, alpha) {
+  const grey = (kind === 'note' || kind === 'other');
+  const hue = (KIND_HUE[kind] != null && !grey) ? KIND_HUE[kind] : null;
+  // Same hue + saturation as the timeline stack (which varies only lightness to
+  // shade a medium's releases); 52% is the base/mid shade. `alpha` gives a
+  // translucent variant for borders/badges.
+  if (hue == null) {
+    return alpha != null ? 'hsla(0, 0%, 62%, ' + alpha + ')' : 'hsl(0, 0%, 62%)';
+  }
+  return alpha != null
+    ? 'hsla(' + hue + ', 60%, 52%, ' + alpha + ')'
+    : 'hsl(' + hue + ', 60%, 52%)';
+}
+
+// The article cites documents by their release filename; map those back to the
+// app's source keys so a citation can open the right PDF in the reading area.
+// Only sources we actually hold as in-app PDFs resolve; everything else stays
+// a coloured label with a Drive link (or is queued for later ingestion).
+function guideDocToSource(doc) {
+  if (!doc) return null;
+  const d = doc.toLowerCase();
+  if (d.indexOf('proximal_origin_emails') !== -1) return 'po-emails';
+  if (d.indexOf('sscp-drafts-of-proximal-origin') !== -1 ||
+      d.indexOf('drafts-of-proximal-origin') !== -1) return 'sscp';
+  return null;
+}
 
 let diaryData = null;                 // merged { total_entries, date_range, entries[] }
 let pendingSearch = false;            // a search was requested while data was still loading
@@ -2089,7 +2125,6 @@ function buildTimelineSeries() {
   // A stack segment is one (source, kind) pair, so colour = media and shade =
   // release: Slack P1 and Slack P2 are two blues, each FOIA production its own
   // shade of the email hue, and so on.
-  const KIND_HUE = { slack: 210, email: 150, draft: 45, attachment: 275, note: 0 };
   const kindSources = {};       // kind -> [source, ...] in first-seen order
   const segByKey = {};          // 'source|kind' -> segment
   const segOrder = [];
@@ -3534,7 +3569,8 @@ function renderGuideList() {
     const kinds = {};
     (s.evidence || []).forEach(function(ev) { kinds[ev.kind] = (kinds[ev.kind] || 0) + 1; });
     const dots = Object.keys(kinds).map(function(k) {
-      return '<span class="guide-dot d-' + k + '">' + k + ' ' + kinds[k] + '</span>';
+      return '<span class="guide-dot d-' + k + '" style="color:' + kindColor(k) +
+        ';border-color:' + kindColor(k, 0.45) + '">' + k + ' ' + kinds[k] + '</span>';
     }).join('');
     html += '<div class="guide-sec" data-guide-sec="' + escapeHtml(s.id) + '">' +
       '<div><span class="gs-num">' + escapeHtml(s.number) + '</span>' +
@@ -3562,15 +3598,27 @@ function selectGuideSection(id) {
   if (s.date_raw) html += '<div class="gd-ev">Section date: ' + escapeHtml(s.date_raw) + '</div>';
   (s.evidence || []).forEach(function(ev) {
     const pages = (ev.pages || []).length ? ' p.' + ev.pages.join(', p.') : '';
+    const page = (ev.pages && ev.pages.length) ? parseInt(ev.pages[0].split('-')[0], 10) : 1;
+    const src = guideDocToSource(ev.doc);
+    const colour = kindColor(ev.kind);
+    // The document name is coloured by its media and, where we hold the PDF, is
+    // a link that opens it at the cited page in the reading area.
+    const docHtml = src
+      ? '<span class="gd-doc gd-doc-link" data-guide-pdf="' + escapeHtml(src) +
+        '" data-guide-page="' + page + '" style="color:' + colour +
+        '" title="Open this document at the cited page in the reading area">' +
+        escapeHtml(ev.doc || ev.kind) + '</span>'
+      : '<span class="gd-doc" style="color:' + colour + '">' + escapeHtml(ev.doc || ev.kind) + '</span>';
     const link = ev.url
-      ? ' <a href="' + escapeHtml(ev.url) + '" target="_blank" rel="noopener">open &#8599;</a>'
+      ? ' <a href="' + escapeHtml(ev.url) + '" target="_blank" rel="noopener" title="Open the public copy on Google Drive">Drive &#8599;</a>'
       : '';
     const jump = (ev.kind === 'email' || ev.kind === 'slack') && ev.date
       ? ' <span class="chip" data-guide-date="' + escapeHtml(ev.date) + '">show that day</span>'
       : '';
-    html += '<div class="gd-ev"><span class="gd-doc">' +
-      escapeHtml(ev.doc || ev.kind) + '</span> &middot; ' + escapeHtml(ev.kind) + pages +
-      (ev.date ? ' · ' + escapeHtml(ev.date) : '') + link + jump + '</div>';
+    html += '<div class="gd-ev">' + docHtml +
+      ' <span style="color:var(--muted)">' + escapeHtml(ev.kind) + '</span>' + pages +
+      (ev.date ? ' <span style="color:var(--muted)">· ' + escapeHtml(ev.date) + '</span>' : '') +
+      link + jump + '</div>';
   });
   if (s.number) {
     html += '<div class="gd-ev" style="margin-top:6px"><a href="' +
@@ -3580,7 +3628,14 @@ function selectGuideSection(id) {
   detail.classList.remove('hidden');
   detail.onclick = function(ev) {
     const chip = ev.target.closest('[data-guide-date]');
-    if (chip) { ev.stopPropagation(); openEntryFromRawBar(chip.getAttribute('data-guide-date')); }
+    if (chip) { ev.stopPropagation(); openEntryFromRawBar(chip.getAttribute('data-guide-date')); return; }
+    const doc = ev.target.closest('[data-guide-pdf]');
+    if (doc) {
+      ev.stopPropagation();
+      const src = doc.getAttribute('data-guide-pdf');
+      const page = parseInt(doc.getAttribute('data-guide-page'), 10) || 1;
+      renderEntryPdf(src, page);
+    }
   };
   if (s.date) openEntryFromRawBar(s.date);
 }

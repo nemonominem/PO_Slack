@@ -72,7 +72,8 @@ const tail = `
 globalThis.__app = { SOURCES, KIND_DEFS, KIND_ALIASES, entryKind, kindDef,
   availableKinds, kindListed, loadKindFilter, saveKindFilter, loadData, doSearch,
   displayResults, entryChipsHtml, buildTimelineSeries, entryMapKey, highlightWithHits,
-  openEntryRef, rebuildThreadDownLinks, get diaryData(){ return diaryData; },
+  openEntryRef, rebuildThreadDownLinks, KIND_HUE, kindColor, guideDocToSource,
+  get diaryData(){ return diaryData; },
   set kindFilter(v){ kindFilter = v; }, get kindFilter(){ return kindFilter; },
   get timelineSeries(){ return timelineSeries; } };
 `;
@@ -231,6 +232,23 @@ ok('stack totals equal the per-day entry counts', stackTotal === entryTotal,
 sec('Legend');
 const legendEl = document.getElementById('timelineLegend');
 ok('legend element exists in the markup', !!legendEl);
+
+sec('Guide citation colours + PDF links (shared coding)');
+ok('kindColor matches timeline hue for slack', /hsl\(210/.test(app.kindColor('slack')),
+   app.kindColor('slack'));
+ok('kindColor matches timeline hue for email', /hsl\(150/.test(app.kindColor('email')),
+   app.kindColor('email'));
+ok('kindColor gives grey for unclassified other', /hsl\(0, 0%/.test(app.kindColor('other')),
+   app.kindColor('other'));
+ok('guideDocToSource resolves the FOIA email PDF',
+   app.guideDocToSource('Proximal_Origin_Emails.pdf') === 'po-emails',
+   String(app.guideDocToSource('Proximal_Origin_Emails.pdf')));
+ok('guideDocToSource resolves the SSCP drafts PDF',
+   app.guideDocToSource('SSCP-Drafts-of-Proximal-Origin.pdf') === 'sscp',
+   String(app.guideDocToSource('SSCP-Drafts-of-Proximal-Origin.pdf')));
+ok('guideDocToSource leaves un-ingested docs non-clickable',
+   app.guideDocToSource('farrar-fauci-comms-full.pdf') === null,
+   String(app.guideDocToSource('farrar-fauci-comms-full.pdf')));
 
 console.log('\n' + pass + ' passed, ' + fail + ' failed');
 process.exit(fail ? 1 : 0);
