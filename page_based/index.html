@@ -546,7 +546,13 @@ body.layout-portrait .pdf-panel {
 .guide-dot.d-email { color: var(--green); border-color: rgba(78,204,163,0.4); }
 .guide-dot.d-draft, .guide-dot.d-document { color: #ffd479; border-color: rgba(255,212,121,0.4); }
 .guide-dot.d-transcript { color: #d2a8ff; border-color: rgba(210,168,255,0.4); }
-.guide-detail { border-top: 1px solid var(--border-2); padding: 8px 10px; background: var(--panel-2); }
+/* The detail box below the section list: shown when a section is selected, so it
+   gets a darker grey (vs. the rail's #1a1a1a and header #222) plus an accent
+   left edge, so it reads as the result of the selection. */
+.guide-detail {
+  border-top: 1px solid var(--border-2); border-left: 3px solid var(--accent);
+  padding: 8px 10px; background: #262626;
+}
 .guide-detail h4 { margin: 0 0 6px; font-size: 12px; color: var(--text); }
 .guide-detail .gd-ev {
   font-size: 11px; color: var(--muted); padding: 4px 0; border-bottom: 1px solid var(--border);
