@@ -199,6 +199,21 @@ Prioritised by how much of the argument they carry:
   min-size mark plugin now draws neutral grey (it used the removed per-year
   colours).
 
+## Done (review round 2 — labels, timeline handles, resize)
+- **App is no longer "P.O. Slack Search".** The title, heading, subtitle and
+  placeholders now say "P.O. Record Search" / "Search the P.O. record", and the
+  subtitle lists Slack + FOI'd emails + drafts, with the corrected 12,714-entry
+  count (Jan 2020 - Jun 2023).
+- **Both timelines open by default, handles consistent.** The guide no longer
+  persists a collapsed state, so it opens open every load like the Dual
+  timeline. When collapsed, its expand chevron now sits at the top (the title
+  had `flex: 1`, which pushed it to the bottom while the Dual timeline's stayed
+  at the top).
+- **The Dual timeline block is resizable.** A drag handle sits between the
+  timeline and the results panel: drag it to change the timeline's width in
+  landscape, or its height in portrait, with the same handle styling as the PDF
+  panel. The width/height easing is disabled while dragging.
+
 ## Known limitations
 - Part 1 message boundaries are best-effort, not exact: Slack visually groups
   consecutive same-sender messages without repeating the header, so a run of
