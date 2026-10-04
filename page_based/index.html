@@ -172,6 +172,20 @@ body {
 .chart-canvas-wrap {
   position: relative; flex: 1; min-height: 0; width: 100%;
 }
+/* Media-by-release legend under the timeline: swatch + label + total, click to toggle */
+.timeline-legend {
+  display: flex; flex-wrap: wrap; gap: 3px 10px; padding: 4px 6px 5px;
+  font-size: 10px; color: var(--muted); border-top: 1px solid var(--border);
+  flex-shrink: 0; max-height: 64px; overflow-y: auto;
+}
+.timeline-legend .lg-item {
+  display: inline-flex; align-items: center; gap: 4px; cursor: pointer;
+  padding: 1px 5px; border-radius: 8px; white-space: nowrap;
+}
+.timeline-legend .lg-item:hover { background: var(--panel-2); }
+.timeline-legend .lg-item.off { opacity: 0.4; text-decoration: line-through; }
+.timeline-legend .lg-swatch { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+.timeline-legend .lg-hint { color: var(--muted); opacity: 0.7; font-style: italic; }
 /* Landscape dual chart: vertical center guide (zero between left/right bars) */
 body.layout-landscape .timeline-main {
   background:
@@ -462,6 +476,8 @@ body.layout-portrait .pdf-panel {
   border-radius: 4px; padding: 4px 6px; font-size: 11px; cursor: pointer;
 }
 .kind-filter-panel .kf-actions button:hover { border-color: var(--accent); }
+/* Global utility: class="hidden" hides an element (used by the guide detail). */
+.hidden { display: none; }
 /* ── The P.O. guide rail ───────────────────────────────────────────────────
    The story index: the article's own dated sections, each listing the released
    documents it rests on, so a Slack message can be read against the evidence
@@ -469,19 +485,33 @@ body.layout-portrait .pdf-panel {
 .guide-rail {
   width: 320px; flex-shrink: 0; background: var(--panel); border-right: 1px solid var(--border-2);
   display: flex; flex-direction: column; overflow: hidden;
+  transition: width 0.18s ease, min-width 0.18s ease, max-width 0.18s ease;
 }
-.guide-rail.hidden { display: none; }
+/* Collapsed = thin vertical rail only (same mechanism as the Dual timeline) */
+.guide-rail.collapsed { width: 36px; min-width: 36px; max-width: 36px; }
 .guide-head {
   padding: 8px 12px; border-bottom: 1px solid var(--border-2); background: var(--panel-2);
   display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  cursor: pointer; user-select: none; flex-shrink: 0;
 }
-.guide-head h3 { margin: 0; font-size: 13px; color: var(--text); flex: 1; }
+.guide-head:hover { background: #2a2a2a; }
+.guide-head:hover .collapse-btn { color: var(--accent); }
+.guide-head h3 { margin: 0; font-size: 13px; color: var(--text); flex: 1; white-space: nowrap; }
 .guide-head .guide-sub { font-size: 11px; color: var(--muted); width: 100%; }
-.guide-head button {
-  background: var(--panel); color: var(--text); border: 1px solid var(--border-2);
-  border-radius: 4px; padding: 3px 8px; font-size: 11px; cursor: pointer;
+.guide-head .collapse-btn {
+  background: none; border: none; color: var(--muted); font-size: 16px;
+  cursor: pointer; padding: 0 4px; line-height: 1; flex-shrink: 0;
 }
-.guide-head button:hover { border-color: var(--accent); color: var(--accent); }
+.guide-body { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.guide-rail.collapsed .guide-body { display: none; }
+.guide-rail.collapsed .guide-head {
+  flex-direction: column; align-items: center; justify-content: flex-start;
+  height: 100%; padding: 10px 4px; gap: 14px; border-bottom: none; border-right: none;
+}
+.guide-rail.collapsed .guide-head h3 {
+  writing-mode: vertical-rl; transform: rotate(180deg); letter-spacing: 0.04em; font-size: 12px;
+}
+.guide-rail.collapsed .guide-sub { display: none; }
 .guide-list { flex: 1; overflow-y: auto; padding: 6px; }
 .guide-list::-webkit-scrollbar { width: 8px; }
 .guide-list::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 4px; }
@@ -658,14 +688,16 @@ mark.hit-current {
 <div class="workspace" id="workspace">
 
 <!-- ── The P.O. guide: the article's own sections, and what each rests on ─── -->
-<div class="guide-rail hidden" id="guideRail">
-  <div class="guide-head">
-    <h3>P.O. &mdash; A Tragicomedy of our Times</h3>
-    <button type="button" id="guideToggleBtn" onclick="toggleGuideRail()">Hide</button>
+<div class="guide-rail" id="guideRail">
+  <div class="guide-head" onclick="toggleGuideRail()" title="Collapse / expand the P.O. guide">
+    <h3>📖 P.O. &mdash; A Tragicomedy</h3>
+    <button type="button" class="collapse-btn" id="guideToggleBtn" title="Collapse guide">◀</button>
     <div class="guide-sub" id="guideSub">Loading the guide&hellip;</div>
   </div>
-  <div class="guide-list" id="guideList"></div>
-  <div class="guide-detail hidden" id="guideDetail"></div>
+  <div class="guide-body">
+    <div class="guide-list" id="guideList" title="The sections of 'Proximal Origin — A Tragicomedy of our Times', in order. Click a section to see that day's messages; its citations name the document, page and date that back each claim."></div>
+    <div class="guide-detail hidden" id="guideDetail"></div>
+  </div>
 </div>
 
 <div class="content-area">
@@ -691,10 +723,11 @@ mark.hit-current {
           <span class="chart-block-stats" id="chartStats">search to filter</span>
         </div>
       </div>
-      <!-- Single canvas: negative values = entries (left), positive = hits (right) -->
-      <div class="chart-canvas-wrap timeline-main">
+      <!-- Single canvas: entries stacked on the left/bottom, hits on the right/top -->
+      <div class="chart-canvas-wrap timeline-main" title="Each bar is a day. Left/bottom: entries stacked by media (colour) and release (shade of the colour). Right/top: search hits, colour = intensity. Scroll to zoom, double-click to reset. Legend below.">
         <canvas id="timelineChart"></canvas>
       </div>
+      <div class="timeline-legend" id="timelineLegend" title="Colour = media, shade = release. Click a swatch to show or hide that medium."></div>
     </div>
   </div>
 
@@ -759,6 +792,7 @@ const SOURCES = {
     pdf: 'slack-part1.pdf',
     label: 'Slack Part 1: Feb–Apr 2020',
     badge: '💬 Slack P1',
+    release: 'Rand Paul · Slack P1',
     badgeTitle: 'Slack messages, Part 1 (Feb 1 – Apr 30 2020), released by Chairman Rand Paul',
   },
   part2: {
@@ -767,6 +801,7 @@ const SOURCES = {
     pdf: 'slack-part2.pdf',
     label: 'Slack Part 2: Apr 2020–Jun 2023',
     badge: '💬 Slack P2',
+    release: 'Rand Paul · Slack P2',
     badgeTitle: 'Slack messages, Part 2 (Apr 30 2020 – Jun 28 2023), released by Chairman Rand Paul',
   },
   sscp: {
@@ -775,6 +810,7 @@ const SOURCES = {
     pdf: 'sscp-drafts.pdf',
     label: 'P.O. manuscript drafts: Feb–Mar 2020',
     badge: '📝 drafts',
+    release: 'FOIA · Manuscript drafts',
     badgeTitle: 'The manuscript as it was revised, one dated version at a time (SSCP-Drafts-of-Proximal-Origin.pdf)',
   },
   'po-emails': {
@@ -783,6 +819,7 @@ const SOURCES = {
     pdf: 'po-emails.pdf',
     label: 'P.O. emails (FOI): Jan–Jul 2020',
     badge: '✉ emails',
+    release: 'FOIA · P.O. emails',
     badgeTitle: 'The FOI\'d P.O. email release, cited throughout the P.O. piece as Proximal_Origin_Emails.pdf',
   },
 };
@@ -812,6 +849,7 @@ let diaryData = null;                 // merged { total_entries, date_range, ent
 let pendingSearch = false;            // a search was requested while data was still loading
 let pageMaps = {};
 let pdfDocs = {};
+let pdfPending = {};   // in-flight getDocument() promises, so a click never double-fetches
 let currentPdfSource = DEFAULT_PDF_SOURCE;
 let pdfDoc = null;                    // always the currently active PDF doc
 let currentPage = 1;
@@ -953,17 +991,21 @@ async function loadData() {
 
     // ── Load the other PDFs in the background ──
     // A source with no PDF (metadata-only, like the guide) is skipped rather
-    // than failing the whole load.
+    // than failing the whole load. The promise is kept so a click on a result
+    // from that source reuses the same load instead of fetching twice.
     sourceIds.forEach(function(id) {
       if (id === DEFAULT_PDF_SOURCE || !SOURCES[id].pdf) return;
-      pdfjsLib.getDocument(SOURCES[id].pdf).promise.then(function(doc) {
+      pdfPending[id] = pdfjsLib.getDocument(SOURCES[id].pdf).promise;
+      pdfPending[id].then(function(doc) {
         pdfDocs[id] = doc;
+        pdfPending[id] = null;
         if (currentPdfSource === id) {
           pdfDoc = doc;
           updatePdfSourceUI();
           if (pendingPage) renderPdfPage(pendingPage);
         }
       }).catch(function(err) {
+        pdfPending[id] = null;
         console.error('Background load of ' + id + ' PDF failed:', err);
       });
     });
@@ -990,12 +1032,47 @@ function switchPdfSource(source) {
 }
 
 function updatePdfSourceUI() {
+  var labelEl = document.getElementById('pdfSourceLabel');
+  if (labelEl) labelEl.textContent = SOURCES[currentPdfSource]
+    ? SOURCES[currentPdfSource].label : '';
   if (!pdfDoc) return;
   document.getElementById('pdfTotalPages').textContent = pdfDoc.numPages;
   var inp = document.getElementById('pdfPageInput');
   if (inp) inp.max = pdfDoc.numPages;
-  var labelEl = document.getElementById('pdfSourceLabel');
-  if (labelEl) labelEl.textContent = SOURCES[currentPdfSource].label;
+}
+
+/** Switch the PDF panel to `source` and render `page`, loading the PDF first if
+ *  it is not ready yet. This is what a result click must do: the previous code
+ *  set pdfDoc to a source whose PDF was still loading in the background, so
+ *  nothing rendered and the panel kept showing the wrong release. */
+async function renderEntryPdf(source, page) {
+  if (!source || !SOURCES[source]) { if (page) renderPdfPage(page); return; }
+  if (!SOURCES[source].pdf) return;      // metadata-only source: no PDF to show
+
+  currentPdfSource = source;
+  updatePdfSourceUI();
+
+  if (pdfDocs[source]) {
+    pdfDoc = pdfDocs[source];
+    updatePdfSourceUI();
+    if (page) renderPdfPage(page);
+    return;
+  }
+  if (!pdfPending[source]) {
+    pdfPending[source] = pdfjsLib.getDocument(SOURCES[source].pdf).promise;
+  }
+  try {
+    const doc = await pdfPending[source];
+    pdfDocs[source] = doc;
+    pdfPending[source] = null;
+    if (currentPdfSource !== source) return;   // the reader moved on meanwhile
+    pdfDoc = doc;
+    updatePdfSourceUI();
+    if (page) renderPdfPage(page);
+  } catch (err) {
+    pdfPending[source] = null;
+    console.error('Load of ' + source + ' PDF failed:', err);
+  }
 }
 
 // ============================================================
@@ -1976,57 +2053,72 @@ function parseLocalISO(iso) {
   return new Date(p[0], p[1] - 1, p[2]);
 }
 
-let timelineSeries = null; // { labels, entryCounts, entryColors, entryDays, totalDays }
+let timelineSeries = null; // { labels, entryCounts, stacks[], entryDays, totalDays }
 
 function buildTimelineSeries() {
-  const dateCounts = {};
-  for (const e of diaryData.entries) {
-    // The timeline counts the box types that are actually listed, so an
-    // unticked kind does not leave a day marked as having entries when none
-    // of them are on screen.
-    if (!kindListed(entryKind(e))) continue;
-    dateCounts[e.date] = (dateCounts[e.date] || 0) + 1;
-  }
+  const entries = diaryData.entries.filter(function(e) {
+    return kindListed(entryKind(e)) && e.date;
+  });
 
-  const yearColors = {
-    '2001': '#ff5e5e',   '2002': '#5eff5e',   '2003': '#ffe14d',
-    '2004': '#5eb5ff',   '2005': '#ff9b3d',   '2006': '#c45eff',
-    '2007': '#5effd9',   '2008': '#ff5ec4',   '2009': '#a8ff5e',
-    '2010': '#5e8fff',   '2011': '#ffd45e',   '2012': '#5effa8',
-    '2013': '#ff7e5e',   '2014': '#9d5eff',   '2015': '#5effe4',
-    '2016': '#ffb35e',   '2017': '#7e5eff',   '2018': '#d4ff5e',
-    '2019': 'rgba(160, 170, 240, 1)',
-    '2020': 'rgba(255, 90, 120, 1)',
-    '2021': 'rgba(110, 235, 195, 1)',
-    '2022': 'rgba(255, 195, 60, 1)',
-    '2023': 'rgba(120, 200, 255, 1)',
-  };
-  function colorForYear(yearStr) {
-    return yearColors[yearStr] || 'rgba(100,100,100,0.8)';
-  }
-  const gapColor = 'rgba(80, 80, 80, 0.4)';
-
+  // Day axis across the whole merged range.
   const labels = [];
-  const entryCounts = [];
-  const entryColors = [];
   let d = parseLocalISO(diaryData.date_range.start);
   const end = parseLocalISO(diaryData.date_range.end);
-  let entryDays = 0;
+  while (d <= end) { labels.push(formatLocalISO(d)); d.setDate(d.getDate() + 1); }
+  const dayIndex = {};
+  labels.forEach(function(iso, i) { dayIndex[iso] = i; });
 
-  while (d <= end) {
-    const iso = formatLocalISO(d);
-    const count = dateCounts[iso] || 0;
-    labels.push(iso);
-    entryCounts.push(count);
-    entryColors.push(count > 0 ? colorForYear(iso.slice(0, 4)) : gapColor);
-    if (count > 0) entryDays++;
-    d.setDate(d.getDate() + 1);
-  }
+  // A stack segment is one (source, kind) pair, so colour = media and shade =
+  // release: Slack P1 and Slack P2 are two blues, each FOIA production its own
+  // shade of the email hue, and so on.
+  const KIND_HUE = { slack: 210, email: 150, draft: 45, attachment: 275, note: 0 };
+  const kindSources = {};       // kind -> [source, ...] in first-seen order
+  const segByKey = {};          // 'source|kind' -> segment
+  const segOrder = [];
+  entries.forEach(function(e) {
+    const k = entryKind(e);
+    const key = e.source + '|' + k;
+    kindSources[k] = kindSources[k] || [];
+    if (kindSources[k].indexOf(e.source) < 0) kindSources[k].push(e.source);
+    if (!segByKey[key]) {
+      segByKey[key] = { key: key, source: e.source, kind: k, counts: new Array(labels.length).fill(0) };
+      segOrder.push(key);
+    }
+  });
+
+  const stacks = segOrder.map(function(key) {
+    const seg = segByKey[key];
+    const sources = kindSources[seg.kind];
+    const shadeIdx = sources.indexOf(seg.source);
+    const shadeCount = sources.length;
+    const hue = (KIND_HUE[seg.kind] != null) ? KIND_HUE[seg.kind] : 0;
+    // One source in this medium: a single mid shade; several: spread lightness.
+    const light = shadeCount <= 1 ? 52 : 38 + Math.round(26 * shadeIdx / (shadeCount - 1));
+    const src = SOURCES[seg.source] || {};
+    seg.color = seg.kind === 'note'
+      ? 'hsl(0, 0%, ' + light + '%)'
+      : 'hsl(' + hue + ', 60%, ' + light + '%)';
+    seg.label = kindDef(seg.kind).label + ' \u2014 ' + (src.release || src.label);
+    seg.total = 0;
+    return seg;
+  });
+
+  entries.forEach(function(e) {
+    const seg = segByKey[e.source + '|' + entryKind(e)];
+    const i = dayIndex[e.date];
+    if (seg && i != null) { seg.counts[i]++; seg.total++; }
+  });
+
+  const entryCounts = new Array(labels.length).fill(0);
+  stacks.forEach(function(seg) {
+    for (let i = 0; i < labels.length; i++) entryCounts[i] += seg.counts[i];
+  });
+  const entryDays = entryCounts.reduce(function(a, c) { return a + (c > 0 ? 1 : 0); }, 0);
 
   timelineSeries = {
     labels: labels,
     entryCounts: entryCounts,
-    entryColors: entryColors,
+    stacks: stacks,
     entryDays: entryDays,
     totalDays: labels.length,
   };
@@ -2059,7 +2151,7 @@ var entryMarkPlugin = {
       var p = el.getProps(['x', 'y', 'base', 'width', 'height'], true);
       if (!isFinite(p.x) || !isFinite(p.y) || !isFinite(p.base)) continue;
       ctx.save();
-      ctx.fillStyle = series.entryColors[i];
+      ctx.fillStyle = 'rgba(150,150,150,0.55)';
       if (timeAxis === 'y') {
         var h = Math.max(Math.abs(p.height) || 0, MIN_ENTRY_MARK_PX);
         var y = p.y - h / 2;
@@ -2271,6 +2363,52 @@ function jumpToDate(date) {
   }], '');
 }
 
+function entryStackDatasets(series) {
+  // One Chart.js dataset per (source, kind) segment; all negative (entries) so
+  // they stack on the left/bottom of the zero line. Colour = media, shade = release.
+  return (series.stacks || []).map(function(seg) {
+    return {
+      label: seg.label,
+      data: seg.counts.map(function(c) { return -c; }),
+      backgroundColor: seg.color,
+      borderWidth: 0,
+      barPercentage: 1.0,
+      categoryPercentage: 1.0,
+      minBarLength: 4,
+      order: 2,
+      stack: 'entries',
+    };
+  });
+}
+
+function renderTimelineLegend() {
+  var el = document.getElementById('timelineLegend');
+  var series = timelineSeries;
+  if (!el || !series || !series.stacks) return;
+  el.innerHTML = '';
+  series.stacks.forEach(function(seg, idx) {
+    var item = document.createElement('span');
+    item.className = 'lg-item';
+    item.title = seg.label + ' \u2014 ' + seg.total + (seg.total === 1 ? ' entry' : ' entries') +
+      '. Click to show / hide this medium.';
+    item.innerHTML = '<span class="lg-swatch" style="background:' + seg.color + '"></span>' +
+      escapeHtml(seg.label) + ' <b>' + seg.total + '</b>';
+    item.addEventListener('click', function() {
+      if (!timelineChart) return;
+      var meta = timelineChart.getDatasetMeta(idx);
+      var hiding = !meta.hidden;
+      timelineChart.setDatasetVisibility(idx, !hiding);
+      timelineChart.update();
+      item.classList.toggle('off', hiding);
+    });
+    el.appendChild(item);
+  });
+  var hint = document.createElement('span');
+  hint.className = 'lg-hint';
+  hint.textContent = 'colour = media \u00b7 shade = release \u00b7 click to toggle';
+  el.appendChild(hint);
+}
+
 function redrawTimelines(opts) {
   if (!diaryData) return;
   opts = opts || {};
@@ -2340,22 +2478,13 @@ function redrawTimelines(opts) {
     // stacked:true so both series share the full category band (diverging
     // from x=0). Grouped (stacked:false) halves bar thickness and makes
     // hit bars nearly unclickable on a dense day axis.
-    const entryNeg = series.entryCounts.map(function(c) { return -c; });
+    const entryDatasets = entryStackDatasets(series);
     timelineChart = new Chart(ctx, {
       type: 'bar',
       data: {
         labels: series.labels,
         datasets: [
-          {
-            label: 'Entries',
-            data: entryNeg,
-            backgroundColor: series.entryColors,
-            borderWidth: 0,
-            barPercentage: 1.0,
-            categoryPercentage: 1.0,
-            minBarLength: 4,
-            order: 2,
-          },
+          ...entryDatasets,
           {
             label: 'Hits',
             data: hitBarData,
@@ -2364,6 +2493,7 @@ function redrawTimelines(opts) {
             barPercentage: 1.0,
             categoryPercentage: 1.0,
             order: 1,
+            stack: 'hits',
           }
         ]
       },
@@ -2384,11 +2514,11 @@ function redrawTimelines(opts) {
               title: function(items) { return items[0].label; },
               label: function(item) {
                 const v = Math.abs(item.parsed.x);
-                if (item.dataset.label === 'Entries') {
-                  return v + (v === 1 ? ' entry' : ' entries');
+                if (item.dataset.stack === 'hits') {
+                  var hv = hitData[item.dataIndex] || 0;
+                  return hv + (hv === 1 ? ' hit' : ' hits');
                 }
-                var hv = hitData[item.dataIndex] || 0;
-                return hv + (hv === 1 ? ' hit' : ' hits');
+                return (item.dataset.label || 'entry') + ': ' + v;
               }
             },
             backgroundColor: '#1a1a1a', titleColor: '#e94560',
@@ -2448,22 +2578,13 @@ function redrawTimelines(opts) {
     // Entries BELOW the zero line, hits ABOVE it (mirrors landscape's
     // left/right split around x=0) so a day with both an entry and a hit
     // doesn't render one bar directly on top of the other.
-    const entryNeg = series.entryCounts.map(function(c) { return -c; });
+    const entryDatasets = entryStackDatasets(series);
     timelineChart = new Chart(ctx, {
       type: 'bar',
       data: {
         labels: series.labels,
         datasets: [
-          {
-            label: 'Entries',
-            data: entryNeg,
-            backgroundColor: series.entryColors,
-            borderWidth: 0,
-            barPercentage: 1.0,
-            categoryPercentage: 1.0,
-            minBarLength: 4,
-            order: 2,
-          },
+          ...entryDatasets,
           {
             label: 'Hits',
             data: hitBarData,
@@ -2472,6 +2593,7 @@ function redrawTimelines(opts) {
             barPercentage: 1.0,
             categoryPercentage: 1.0,
             order: 1,
+            stack: 'hits',
           }
         ]
       },
@@ -2492,11 +2614,11 @@ function redrawTimelines(opts) {
               title: function(items) { return items[0].label; },
               label: function(item) {
                 const v = Math.abs(item.parsed.y);
-                if (item.dataset.label === 'Entries') {
-                  return v + (v === 1 ? ' entry' : ' entries');
+                if (item.dataset.stack === 'hits') {
+                  var hv = hitData[item.dataIndex] || 0;
+                  return hv + (hv === 1 ? ' hit' : ' hits');
                 }
-                var hv = hitData[item.dataIndex] || 0;
-                return hv + (hv === 1 ? ' hit' : ' hits');
+                return (item.dataset.label || 'entry') + ': ' + v;
               }
             },
             backgroundColor: '#1a1a1a', titleColor: '#e94560',
@@ -2551,6 +2673,8 @@ function redrawTimelines(opts) {
       }
     });
   }
+
+  renderTimelineLegend();
 
   // Re-apply prior zoom after recreate (same layout only).
   applyTimelineZoom(savedZoom);
@@ -3407,10 +3531,15 @@ function toggleGuideRail() {
   const rail = document.getElementById('guideRail');
   const btn = document.getElementById('guideToggleBtn');
   if (!rail) return;
-  const hidden = rail.classList.toggle('hidden');
-  if (btn) btn.textContent = hidden ? 'Show guide' : 'Hide';
-  try { localStorage.setItem('poSlackGuideOpen', hidden ? '0' : '1'); } catch (e) {}
-  if (!hidden && !rail.querySelector('.guide-sec') && guideData) renderGuideList();
+  const collapsing = !rail.classList.contains('collapsed');
+  rail.classList.toggle('collapsed', collapsing);
+  if (btn) {
+    btn.textContent = collapsing ? '▶' : '◀';
+    btn.title = collapsing ? 'Expand guide' : 'Collapse guide';
+  }
+  try { localStorage.setItem('poSlackGuideOpen', collapsing ? '0' : '1'); } catch (e) {}
+  // Re-render if the body was never built while collapsed.
+  if (!collapsing && !rail.querySelector('.guide-sec') && guideData) renderGuideList();
 }
 
 function initGuide() {
@@ -3418,9 +3547,12 @@ function initGuide() {
   if (!rail) return;
   let open = true;
   try { open = localStorage.getItem('poSlackGuideOpen') !== '0'; } catch (e) {}
-  rail.classList.toggle('hidden', !open);
+  rail.classList.toggle('collapsed', !open);
   const btn = document.getElementById('guideToggleBtn');
-  if (btn) btn.textContent = open ? 'Hide' : 'Show guide';
+  if (btn) {
+    btn.textContent = open ? '◀' : '▶';
+    btn.title = open ? 'Collapse guide' : 'Expand guide';
+  }
   loadGuide();
 }
 
@@ -3643,9 +3775,9 @@ function selectResult(resultIdx, pdfPage, entryIdx) {
   if (el) el.classList.add('active');
   activeResultIdx = resultIdx;
 
-  // Switch to the correct PDF for this entry's source
+  // Show the correct PDF for this entry's source, loading it if necessary.
   const r = window._searchResults && window._searchResults[resultIdx];
-  if (r && r.entry && r.entry.source) switchPdfSource(r.entry.source);
+  const source = (r && r.entry && r.entry.source) || null;
 
   // Prefer explicit page; else current hit's page; else entry start
   let page = parseInt(pdfPage, 10);
@@ -3653,7 +3785,7 @@ function selectResult(resultIdx, pdfPage, entryIdx) {
     const hitIdx = currentHitIdx[resultIdx] || 0;
     page = pdfPageForHit(resultIdx, hitIdx);
   }
-  if (page) renderPdfPage(page);
+  renderEntryPdf(source, page);
 }
 
 // ============================================================

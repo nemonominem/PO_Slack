@@ -200,5 +200,38 @@ ok('every guide citation is classified', evNoKind.length === 0);
 const docs = guideResp.documents ? Object.values(guideResp.documents) : [];
 ok('every cited document is catalogued', docs.length === 51, String(docs.length));
 
+
+sec('Stacked timeline (media x release)');
+app.buildTimelineSeries();
+const ts = app.timelineSeries;
+ok('timeline has stacked segments', !!ts && Array.isArray(ts.stacks) && ts.stacks.length >= 4,
+   ts ? ts.stacks.length + ' segments' : 'none');
+const stackByKind = {};
+(ts.stacks || []).forEach(function(seg) {
+  (stackByKind[seg.kind] = stackByKind[seg.kind] || []).push(seg);
+});
+ok('slack is two blues (two shades of the same hue)',
+   (stackByKind.slack || []).length === 2,
+   'slack segments: ' + (stackByKind.slack || []).length);
+if ((stackByKind.slack || []).length === 2) {
+  const h1 = stackByKind.slack[0].color.match(/hsl\((\d+)/);
+  const h2 = stackByKind.slack[1].color.match(/hsl\((\d+)/);
+  ok('both slack segments share the blue hue', h1 && h2 && h1[1] === h2[1],
+     stackByKind.slack[0].color + ' vs ' + stackByKind.slack[1].color);
+  ok('but differ in shade (lightness)',
+     stackByKind.slack[0].color !== stackByKind.slack[1].color);
+}
+ok('email and draft each have their own media colour',
+   !!(stackByKind.email || []).length && !!(stackByKind.draft || []).length);
+const stackTotal = (ts.stacks || []).reduce(function(a, seg) { return a + seg.total; }, 0);
+const entryTotal = (ts.entryCounts || []).reduce(function(a, c) { return a + c; }, 0);
+ok('stack totals equal the per-day entry counts', stackTotal === entryTotal,
+   stackTotal + ' vs ' + entryTotal);
+
+sec('Legend');
+const legendEl = document.getElementById('timelineLegend');
+ok('legend element exists in the markup', !!legendEl);
+
 console.log('\n' + pass + ' passed, ' + fail + ' failed');
 process.exit(fail ? 1 : 0);
+

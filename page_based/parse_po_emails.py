@@ -77,6 +77,11 @@ ZONE_OVERRIDES = {}
 NOISE_TAIL = re.compile(r"\s*[|Il\[\]{}<>«»“”„’‘—–\-–—_=+*#§¶©®™✓✔✗✘»«»…]+"
                         r"\s*(?:[a-zA-Z]{1,4})?\s*$")
 HEADER_JUNK = re.compile(r"^[^A-Za-z0-9]+|[^A-Za-z0-9)\]]+$")
+# Avatar glyphs the scans leave on header values: "(€]", "[E] ees", "(E]".
+# The bracket holds at most two characters (a glyph, or a single letter tag),
+# which is what distinguishes it from a real "(NIH/NIAID)" or "(UTC-05:00)".
+RE_AVATAR_BRACKET = re.compile(r"[\[(][^)\]]{0,2}[)\]]")
+RE_AVATAR_GLYPH = re.compile(r"[€¢§¶©®™]")
 
 FURNITURE = re.compile(
     r"^(REV\d+|CONFIDENTIAL|NIAID|EXCERPT FROM|"
@@ -332,7 +337,52 @@ def segment(pages):
     return messages
 
 
-# ── entries ─────────────────────────────────────────────────────────────────
+def strip_glyph_soup(lines):
+    """Drop the OCR noise the scans inject when an email quotes an image.
+
+    A screenshot quoted in a message (a Science article, a chart) OCRs as a
+    scatter of glyphs and stray letters:
+
+        iY Ae ms F 4
+        , 'y '
+        ~ ne a
+        a = a J re =
+
+    A line that carries no real word -- nothing three letters or longer -- and
+    no URL is that kind of noise. Real prose, names and even a bare "Tony"
+    survive; the image scatter does not.
+    """
+    out = []
+    for ln in lines:
+        s = ln.strip()
+        if not s:
+            continue
+        if (re.search(r"[A-Za-z]{3,}", s)
+                or re.search(r"https?://|www\.|@", s)
+                or re.search(r"\b\d{4,}\b", s)):
+            out.append(ln)
+    return out
+
+
+def clean_field_value(name, value, sender):
+    """A header value as it should read on the card.
+
+    From is the roster-canonical sender; the other fields get their avatar
+    brackets and glyphs stripped. The raw value survives in `sender_raw`, so
+    nothing is silently rewritten.
+    """
+    v = (value or "").strip()
+    if name == "From":
+        return sender
+    v = RE_AVATAR_BRACKET.sub("", v)
+    v = RE_AVATAR_GLYPH.sub("", v)
+    # A short letter-run glued after a closing bracket is the avatar's tail
+    # ("... (NIH/NIAID) ees" -> "... (NIH/NIAID)"), not part of the address.
+    v = re.sub(r"([)\]])\s+[A-Za-z]{1,3}\s*$", r"\1", v)
+    v = re.sub(r"\s+", " ", v).strip()
+    return v
+
+
 
 def strip_quoted(body):
     """Drop the signature block: everything from the sign-off onwards."""
@@ -367,6 +417,7 @@ def build_entries(messages):
                 if v and not fields.get(k):
                     fields[k] = v
             body = body[1:]
+        body = strip_glyph_soup(body)
         content_body = "\n".join(body).strip()
 
         dt, off, how = parse_stamp(stamp)
@@ -376,7 +427,7 @@ def build_entries(messages):
                 "date": None, "time": None, "kind": "email",
                 "raw_date": subject or "(undated message)",
                 "sender": sender, "sender_raw": sender_raw, "subject": subject,
-                "content": header_block(fields, content_body),
+                "content": header_block(fields, content_body, sender),
                 "date_note": "no usable timestamp in the release; not plotted",
                 "pages": sorted(set(msg["pages"])), "source": SOURCE_ID,
                 "stamp_status": how,
@@ -410,7 +461,7 @@ def build_entries(messages):
             "raw_date": "%s ET · %s" % (et.strftime("%H:%M"), subject or "(no subject)"),
             "sender": sender, "sender_raw": sender_raw,
             "subject": subject,
-            "content": header_block(fields, content_body),
+            "content": header_block(fields, content_body, sender),
             "stamp": stamp.strip(),
             "stamp_status": how,
             "zone_assumed": zone_why,
@@ -421,13 +472,17 @@ def build_entries(messages):
     return entries
 
 
-def header_block(fields, body):
+def header_block(fields, body, sender):
     """From/To/Cc/Subject/Sent stay inside `content` so they remain searchable
-    and highlightable; the UI splits on the rule to style them apart."""
+    and highlightable; the UI splits on the rule to style them apart.
+
+    Header values are shown cleaned: From is the roster-canonical sender, and
+    the other fields have their avatar glyphs stripped (the raw text survives
+    in `sender_raw`)."""
     head = []
     for k in ("From", "To", "Cc", "Bcc", "Subject", "Sent", "Date", "Importance"):
         if fields.get(k):
-            head.append("%s: %s" % (k, fields[k].strip()))
+            head.append("%s: %s" % (k, clean_field_value(k, fields[k], sender)))
     return "\n\n".join(head) + "\n\n----------\n\n" + body
 
 

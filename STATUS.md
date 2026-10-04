@@ -173,6 +173,32 @@ Prioritised by how much of the argument they carry:
   are already catalogued in the guide as `social` / `press` / `link` evidence
   and shown as such; they need no app entries.
 
+## Done (review round — guide, emails, timeline)
+- **Guide is collapsible like the Dual timeline.** The Hide/Show button is gone
+  (it left the rail unrecoverable). The guide header now carries a `◀/▶` chevron
+  and collapses to a 36px vertical rail; the list+detail sit in a `.guide-body`
+  that hides on collapse. State persists in `localStorage`, and there is always
+  a visible rail to click back open.
+- **Email parsing cleaned.** The scans are Outlook screenshots, so header fields
+  carried avatar glyphs (`(€]`, `[E] ees`) and quoted-image OCR leaked "glyph
+  soup" into the body. `parse_po_emails.py` now strips avatar brackets/glyphs
+  from To/Cc/Bcc/Subject, applies the sender roster to the From line, and drops
+  body lines with no real word (unless a URL/number). 0 noisy header lines
+  remain.
+- **Right PDF now shows.** Clicking an email/draft result previously set `pdfDoc`
+  to a source whose PDF was still loading, so nothing rendered. New
+  `renderEntryPdf(source, page)` loads the source PDF on demand (reusing the
+  in-flight promise) and renders the requested page once ready; `selectResult`
+  uses it, so a click always lands on the correct release + page.
+- **Timeline stacked by media × release.** The entries side is now a stack of
+  one dataset per (source, kind): colour = media (Slack blue, Email green,
+  Draft amber, Attachment violet, Note grey), shade = release (Slack P1 and
+  Slack P2 are two blues; each FOIA production its own shade). A legend under
+  the chart lists each segment (swatch + label + total), click-to-toggle, and a
+  hover title explains the chart; the guide rail also gained a hover title. The
+  min-size mark plugin now draws neutral grey (it used the removed per-year
+  colours).
+
 ## Known limitations
 - Part 1 message boundaries are best-effort, not exact: Slack visually groups
   consecutive same-sender messages without repeating the header, so a run of
