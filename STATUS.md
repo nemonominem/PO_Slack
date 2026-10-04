@@ -148,10 +148,16 @@ Agreed to add these in a later pass; each is catalogued in `page_based/SOURCES.m
 with its citation count, pages cited and Drive link where the article gives one.
 Prioritised by how much of the argument they carry:
 
-- [ ] `farrar-fauci-comms.pdf` — **already copied into the repo, not yet
-      parsed** (174 pp, cited 30x). Its baked-in OCR text layer has lost all
-      inter-word spaces (`sent: Fri,24Jul202010:37:4640000To: JeremyFarrar`),
-      so it needs a dictionary-based de-gluer rather than a plain parse.
+- [ ] `farrar-fauci-comms.pdf` — 174 pp, cited 30x. Its baked-in OCR text layer
+      has lost all inter-word spaces (`sent: Fri,24Jul202010:37:4640000To:
+      JeremyFarrar`), so it needs a dictionary-based de-gluer rather than a
+      plain parse.
+      **Where it is:** on disk at `page_based/farrar-fauci-comms.pdf`, but
+      **deliberately untracked** (`.gitignore`). At 99.6 MiB it sits 0.4 MiB
+      under GitHub's 100 MiB per-file limit, and nothing reads it yet, so
+      tracking it would have risked the whole push for a file the app does not
+      use. Add it back — preferably after `git-lfs migrate import` — at the same
+      time as the de-gluer work that makes it usable.
 - [ ] `Baric-Emails-2.17.21.pdf` (8x) and the EHA/WIV correspondence
 - [ ] `UTMB-LeDuc-batch-1.pdf` (7x) — LeDuc's pointed questions, 9–10 Feb
 - [ ] `01981-F-Dec-2022-Production-OPAQUE.pdf` (8x) and the other USRTK
@@ -207,3 +213,5 @@ Prioritised by how much of the argument they carry:
   here. Download them into `page_based/` if you want them served alongside the
   app.
 - `git-lfs` is not installed, so the PDFs are committed as large blobs.
+  `page_based/farrar-fauci-comms.pdf` is the one exception: it is on disk but
+  untracked (see the TODO above).

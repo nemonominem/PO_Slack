@@ -3,5 +3,4 @@
 page_based/slack-part1.pdf filter=lfs diff=lfs merge=lfs -text
 page_based/slack-part2.pdf filter=lfs diff=lfs merge=lfs -text
 page_based/po-emails.pdf filter=lfs diff=lfs merge=lfs -text
-page_based/farrar-fauci-comms.pdf filter=lfs diff=lfs merge=lfs -text
 page_based/sscp-drafts.pdf filter=lfs diff=lfs merge=lfs -text

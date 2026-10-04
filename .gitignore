@@ -4,3 +4,10 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# 99.6 MiB, and nothing reads it yet (its OCR text layer lost every inter-word
+# space, so it needs a dictionary-based de-gluer first -- see STATUS.md). Keeping
+# it out of git keeps the branch pushable and well under GitHub's 100 MiB
+# per-file limit. The file stays on disk in page_based/ for that work; add it
+# back via git-lfs when it is actually parsed.
+page_based/farrar-fauci-comms.pdf
