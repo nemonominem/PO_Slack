@@ -98,7 +98,10 @@ body {
   padding: 4px 8px; border: 1px solid var(--border-2); border-radius: 4px;
   background: var(--panel-2);
 }
-.jump-date-bar label { font-weight: 600; color: var(--text); font-size: 11px; }
+/* Visual idiom: labels are blue, editable fields are dark (var(--input)), and
+   action buttons are accent-filled. Same rule for the "Sources" and "Jump to
+   date" labels below. */
+.jump-date-bar label { font-weight: 600; color: var(--blue); font-size: 11px; }
 .jump-date-bar input[type="date"],
 .jump-date-bar input[type="text"] {
   background: var(--input); color: #fff; border: 1px solid var(--border-2);
@@ -188,6 +191,9 @@ body {
 .timeline-legend .lg-item.off { opacity: 0.4; text-decoration: line-through; }
 .timeline-legend .lg-swatch { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
 .timeline-legend .lg-hint { color: var(--muted); opacity: 0.7; font-style: italic; }
+/* Landscape: the timeline panel is a narrow column, so let the legend use full
+   height instead of capping it at 64px and forcing a scroll to see the sources. */
+body.layout-landscape .timeline-legend { max-height: none; overflow-y: visible; }
 /* Landscape dual chart: vertical center guide (zero between left/right bars) */
 body.layout-landscape .timeline-main {
   background:
@@ -451,7 +457,7 @@ body.layout-portrait .pdf-panel {
 .chip.chip-thread { color: var(--green); border-color: rgba(78,204,163,0.4); }
 /* Box-type filter: a compact button that opens the list of box types */
 .kind-filter-bar { position: relative; display: inline-flex; align-items: center; gap: 6px; }
-.kind-filter-bar label { font-size: 12px; color: var(--muted); font-weight: 600; }
+.kind-filter-bar label { font-size: 12px; color: var(--blue); font-weight: 600; }
 .kind-filter-bar > button {
   background: var(--panel-2); color: var(--text); border: 1px solid var(--border-2);
   padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600;
@@ -676,13 +682,13 @@ mark.hit-current {
       <span class="layout-target">Portrait</span>
     </button>
     <span class="jump-date-bar" title="Jump to an entry date (nearest previous entry if exact day has none)">
-      <label for="jumpDateInput">Jump to date</label>
+      <label for="jumpDateInput">Jump to date:</label>
       <input type="date" id="jumpDateInput" min="2020-02-01" max="2023-06-28">
       <button type="button" id="jumpDateBtn" onclick="goToJumpDate()">Go</button>
     </span>
     <span class="kind-filter-bar" id="kindFilterBar" hidden>
-      <label for="kindFilterBtn">Box types</label>
-      <button type="button" id="kindFilterBtn" onclick="toggleKindFilterPanel(event)">All box types</button>
+      <label for="kindFilterBtn">Sources</label>
+      <button type="button" id="kindFilterBtn" onclick="toggleKindFilterPanel(event)">All types</button>
     </span>
   </div>
   <span class="instructions" id="toolbarInstructions">Search &rarr; click a result / hit bar for matches. Entry bars open that day&rsquo;s entry + PDF (and clear any search). Jump-to-date opens the nearest entry. Scroll wheel zooms; double-click resets.</span>
@@ -3329,13 +3335,13 @@ function filterEntries(entries) {
 
 // ── Box types UI ────────────────────────────────────────────────────────────
 function kindFilterLabel() {
-  if (!kindFilter) return 'All box types';
+  if (!kindFilter) return 'All types';
   const counts = availableKinds();
   const names = kindFilter.filter(function(k) { return counts[k]; })
     .map(function(k) { return kindDef(k).label; });
-  if (!names.length) return 'No box types';
-  if (kindFilter.length === Object.keys(counts).length) return 'All box types';
-  return names.length === 1 ? names[0] : names.length + ' box types';
+  if (!names.length) return 'No types';
+  if (kindFilter.length === Object.keys(counts).length) return 'All types';
+  return names.length === 1 ? names[0] : names.length + ' types';
 }
 
 function buildKindFilterPanel() {

@@ -49,7 +49,7 @@
       "raw_date": "February 1, 2020",
       "sender": "Kristian Andersen",
       "time": null,
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "Bat_Wuhan.geneious",
@@ -112,7 +112,7 @@
       "raw_date": "February 1, 2020",
       "sender": "Kristian Andersen",
       "time": "19:17",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "Screen Shot 2020-02-01 at 10.16.33.png"
@@ -222,7 +222,7 @@
       "raw_date": "February 1, 2020",
       "sender": "Andrew Rambaut",
       "time": "15:59",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "image.png"
@@ -488,7 +488,7 @@
       "raw_date": "February 1, 2020",
       "sender": "Eddie Holmes",
       "time": null,
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "1+32.0-50042682206000700-main.pdf"
@@ -706,7 +706,7 @@
       "raw_date": "February 2, 2020",
       "sender": "Kristian Andersen",
       "time": "01:00",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "snps.txt"
@@ -888,7 +888,7 @@
       "raw_date": "February 2, 2020",
       "sender": "Robert Garry",
       "time": "19:30",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "H9 and furin site.pdf",
@@ -904,7 +904,7 @@
       "raw_date": "February 2, 2020",
       "sender": "Robert Garry",
       "time": "19:51",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "WR HKU-1 Spike.docx"
@@ -1014,7 +1014,7 @@
       "raw_date": "February 2, 2020",
       "sender": "Andrew Rambaut",
       "time": "16:21",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "fo 2 documents from H5N1 cleavage sites.geneious"
@@ -1160,7 +1160,7 @@
       "raw_date": "February 2, 2020",
       "sender": "Kristian Andersen",
       "time": null,
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "spike_alignment.fasta",
@@ -1751,7 +1751,7 @@
       "raw_date": "February 3, 2020",
       "sender": "Kristian Andersen",
       "time": "17:46",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "Screen Shot 2020-02-05 at 14.45.1lpng"
@@ -1765,7 +1765,7 @@
       "raw_date": "February 3, 2020",
       "sender": "Robert Garry",
       "time": "16:11",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "image.png"
@@ -1875,7 +1875,7 @@
       "raw_date": "February 4, 2020",
       "sender": "Andrew Rambaut",
       "time": "04:15",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "Sequencing Dates.png"
@@ -1997,7 +1997,7 @@
       "raw_date": "February 5, 2020",
       "sender": "Kristian Andersen",
       "time": "12:15",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "NT.geneious",
@@ -2277,7 +2277,7 @@
       "raw_date": "February 6, 2020",
       "sender": "Kristian Andersen",
       "time": "13:08",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "alignment_spike_nt.fasta.gz",
@@ -2316,7 +2316,7 @@
       "raw_date": "February 6, 2020",
       "sender": "Kristian Andersen",
       "time": null,
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "alignment_spike_aa.geneious",
@@ -2908,7 +2908,7 @@
       "raw_date": "February 7, 2020",
       "sender": "Kristian Andersen",
       "time": null,
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "Receptors.geneious",
@@ -3067,7 +3067,7 @@
       "raw_date": "February 8, 2020",
       "sender": "Andrew Rambaut",
       "time": null,
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "image.png"
@@ -3117,7 +3117,7 @@
       "raw_date": "February 8, 2020",
       "sender": "Andrew Rambaut",
       "time": "12:55",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "TMRCA_figure.png"
@@ -3575,7 +3575,7 @@
       "raw_date": "February 9, 2020",
       "sender": "Andrew Rambaut",
       "time": null,
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "image.png",
@@ -3746,7 +3746,7 @@
       "raw_date": "February 10, 2020",
       "sender": "Robert Garry",
       "time": "09:17",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "image.png"
@@ -3976,7 +3976,7 @@
       "raw_date": "February 10, 2020",
       "sender": "Eddie Holmes",
       "time": null,
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "Figure 4.pdf",
@@ -4519,7 +4519,7 @@
       "raw_date": "February 12, 2020",
       "sender": "Kristian Andersen",
       "time": "19:45",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "x 20191008_virus_summary.xisx"
@@ -4725,7 +4725,7 @@
       "raw_date": "February 12, 2020",
       "sender": "Robert Garry",
       "time": "09:28",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "image.png"
@@ -4847,7 +4847,7 @@
       "raw_date": "February 12, 2020",
       "sender": "Robert Garry",
       "time": "16:20",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "image.png"
@@ -5041,7 +5041,7 @@
       "raw_date": "February 13, 2020",
       "sender": "Robert Garry",
       "time": "12:29",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "image.png"
@@ -5139,7 +5139,7 @@
       "raw_date": "February 14, 2020",
       "sender": "Robert Garry",
       "time": "15:44",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "image.png"
@@ -5225,7 +5225,7 @@
       "raw_date": "February 15, 2020",
       "sender": "Andrew Rambaut",
       "time": null,
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "image.png"
@@ -5743,7 +5743,7 @@
       "raw_date": "February 17, 2020",
       "sender": "Andrew Rambaut",
       "time": "11:09",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "image.ong"
@@ -6309,7 +6309,7 @@
       "raw_date": "February 18, 2020",
       "sender": "Andrew Rambaut",
       "time": "16:55",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "image.png"
@@ -6623,7 +6623,7 @@
       "raw_date": "February 19, 2020",
       "sender": "Eddie Holmes",
       "time": null,
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "AQ fullg_wSCAU.pdf"
@@ -6661,7 +6661,7 @@
       "raw_date": "February 19, 2020",
       "sender": "Andrew Rambaut",
       "time": "02:00",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "image.png"
@@ -6771,7 +6771,7 @@
       "raw_date": "February 19, 2020",
       "sender": "Eddie Holmes",
       "time": "04:00",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "A Figure3_2020-02-18-6am.pdf"
@@ -6809,7 +6809,7 @@
       "raw_date": "February 19, 2020",
       "sender": "Eddie Holmes",
       "time": "04:12",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "MM selected_RBD_whole_wSCAU_aa_phyml.pdf"
@@ -7159,7 +7159,7 @@
       "raw_date": "February 19, 2020",
       "sender": "Andrew Rambaut",
       "time": "05:59",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "mage.png"
@@ -7197,7 +7197,7 @@
       "raw_date": "February 19, 2020",
       "sender": "Andrew Rambaut",
       "time": "06:45",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "image.png"
@@ -7211,7 +7211,7 @@
       "raw_date": "February 20, 2020",
       "sender": "Andrew Rambaut",
       "time": "06:57",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "image.png"
@@ -7501,7 +7501,7 @@
       "raw_date": "February 20, 2020",
       "sender": "Kristian Andersen",
       "time": null,
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "Screen Shot 2020-02-20 at 10.31.17 AM.prg"
@@ -8043,7 +8043,7 @@
       "raw_date": "February 22, 2020",
       "sender": "Kristian Andersen",
       "time": "21:05",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "Screen Shot 2020-02-21 at 6.04.0",
@@ -8178,7 +8178,7 @@
       "raw_date": "February 22, 2020",
       "sender": "Andrew Rambaut",
       "time": "20:16",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "recombination.png"
@@ -8204,7 +8204,7 @@
       "raw_date": "February 22, 2020",
       "sender": "Andrew Rambaut",
       "time": "20:57",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "image.png"
@@ -8986,7 +8986,7 @@
       "raw_date": "February 24, 2020",
       "sender": "Eddie Holmes",
       "time": null,
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "Cleavage site 20200220171523.ong"
@@ -9132,7 +9132,7 @@
       "raw_date": "February 25, 2020",
       "sender": "Andrew Rambaut",
       "time": "09:45",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "recombination spike.png"
@@ -10550,7 +10550,7 @@
       "raw_date": "February 29, 2020",
       "sender": "Kristian Andersen",
       "time": null,
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "The Proximal Origin of HCoV-19.pdf"
@@ -11776,7 +11776,7 @@
       "raw_date": "March 18, 2020",
       "sender": "Kristian Andersen",
       "time": "02:42",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "Screen Shot 2020-03-17 at 11.41.44",
@@ -11875,7 +11875,7 @@
       "raw_date": "March 19, 2020",
       "sender": "Kristian Andersen",
       "time": null,
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "Screen Shot 2020-03-18 at 9.04.11 PM.png"
@@ -12201,7 +12201,7 @@
       "raw_date": "March 19, 2020",
       "sender": "Kristian Andersen",
       "time": "10:49",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "Screen Shot 2020-03-19 at 3.48.52 PM.png"
@@ -12947,7 +12947,7 @@
       "raw_date": "April 2, 2020",
       "sender": "Kristian Andersen",
       "time": "13:09",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "Anderson JBC 2017 complete.pdf"
@@ -12973,7 +12973,7 @@
       "raw_date": "April 2, 2020",
       "sender": "Kristian Andersen",
       "time": "16:52",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "Screen Shot 2020-04-02 at 15.50.53.png"
@@ -13647,7 +13647,7 @@
       "raw_date": "April 10, 2020",
       "sender": "Kristian Andersen",
       "time": "01:50",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "Screen Shot 2020-04-10 at 12.40.00.png"
@@ -14177,7 +14177,7 @@
       "raw_date": "April 17, 2020",
       "sender": "Kristian Andersen",
       "time": "19:02",
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "Screen Shot 2020-04-17 at 16.02.10.png"
@@ -14479,7 +14479,7 @@
       "raw_date": "April 20, 2020",
       "sender": "Robert Garry",
       "time": null,
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "image.png"
@@ -14973,7 +14973,7 @@
       "raw_date": "April 29, 2020",
       "sender": "Eddie Holmes",
       "time": null,
-      "kind": "attachment",
+      "kind": "slack",
       "thread_id": null,
       "attachments": [
         "Tele 28 April 2020.pdf"

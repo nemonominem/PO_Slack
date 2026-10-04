@@ -34,20 +34,25 @@ def apply_notice_normalization(sender, content):
 # The taxonomy and the recipe for adding a source are in SPEC.md.
 
 KIND_SLACK = "slack"          # an authored chat message
-KIND_ATTACHMENT = "attachment"  # a file/document carried by a message
+KIND_ATTACHMENT = "attachment"  # a released document that exists as its own entry
 KIND_NOTE = "note"            # publisher/system material, not a document
 
 
-def entry_kind(sender, attachments):
+def entry_kind(sender, attachments=None):
     """Classify a Slack entry.
 
-    Slack's own system events are publisher-side furniture about the release
-    (channel created, joined, renamed, archived), not one of its documents --
-    the same reasoning that gives the Fauci diary's release note its own
-    `kind: "note"` box -- so they are a `note`, not chat.
+    A Slack message is a Slack message whether or not it carries a file: the
+    files it carries are shown as chips on the card, not as a whole-message
+    reclassifier. Bucketing file-carrying messages as `attachment` meant the
+    "Slack" count silently dropped the ~1000 messages that happened to attach
+    something -- which is what made the numbers look suspiciously round.
+
+    Only Slack's own system events (channel created, joined, renamed, archived)
+    are a different kind (`note`), the same reasoning that gives the Fauci
+    diary's release note its own box. `attachment` stays reserved for a released
+    document that is its own entry (like the Fauci diary's report) and is unused
+    here.
     """
     if sender == "Slack Notice" or sender == "USLACKBOT":
         return KIND_NOTE
-    if attachments:
-        return KIND_ATTACHMENT
     return KIND_SLACK

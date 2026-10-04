@@ -214,6 +214,24 @@ Prioritised by how much of the argument they carry:
   landscape, or its height in portrait, with the same handle styling as the PDF
   panel. The width/height easing is disabled while dragging.
 
+## Done (review round 3 — counts, legend, labels)
+- **Counts made trustworthy.** File-carrying Slack messages were being
+  reclassified as `attachment`, so the "Slack" count silently dropped ~1000
+  messages and the numbers looked suspiciously round (11,600 + 1,000). A Slack
+  message is now `slack` whether or not it carries a file (files stay as chips).
+  Counts are now Slack 12,600 + 7 notices, Email 87, Draft 20 = 12,714, and they
+  reconcile with the per-day totals (asserted in the test). Only the `kind` field
+  changed — content, dates and senders are byte-identical to before.
+- **Legend taller in landscape.** The media legend no longer caps at 64px with a
+  scroll; in landscape it takes its natural height so all sources are visible
+  without scrolling.
+- **"Box types | All box types" → "Sources | All types".** The redundant pairing
+  is gone, including the button's dynamic labels (All types / N types / No types).
+- **"Jump to date" → "Jump to date:" and labels are blue.** Established the visual
+  idiom: labels are blue (`var(--blue)`), editable fields are dark (`var(--input)`),
+  action buttons are accent-filled. Applied to both the "Sources" and "Jump to
+  date:" labels.
+
 ## Known limitations
 - Part 1 message boundaries are best-effort, not exact: Slack visually groups
   consecutive same-sender messages without repeating the header, so a run of

@@ -19,7 +19,7 @@ whole thread into one entry.
 | `slack` | an authored message in the channel | yes | 💬 Slack message |
 | `email` | one email: one author, one timestamp | yes | ✉ Email |
 | `draft` | one dated version of the manuscript | yes | 📝 Manuscript draft |
-| `attachment` | a file or document carried by a message | yes | 📎 Attachment |
+| `attachment` | a released document that is its own entry (unused here — Slack files stay as 📎 chips) | yes | 📎 Attachment |
 | `document` | a released document with no single authoring instant | yes | 📄 Document |
 | `note` | **publisher material about a release, not a document in it** | yes | ℹ Release note |
 
