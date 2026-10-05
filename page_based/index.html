@@ -49,6 +49,13 @@ body {
 .header h1 { font-size: 26px; color: var(--accent); white-space: nowrap; line-height: 1.15; }
 .header .subtitle { font-size: 12px; color: #fff; white-space: nowrap; }
 .header .subtitle a { color: #fff; text-decoration: underline; }
+/* DRASTIC mark, pushed to the far right of the header row. The image carries
+   its own background, so it needs no border -- just breathing room and a
+   pointer cursor to say it is a link. */
+.header-brand { margin-left: auto; display: flex; align-items: center; }
+.header-brand a { display: block; line-height: 0; border-radius: 4px; opacity: 0.92; }
+.header-brand a:hover { opacity: 1; }
+.header-brand img { display: block; height: 40px; width: auto; }
 .toolbar {
   background: var(--panel-2); padding: 8px 16px; border-bottom: 2px solid var(--border);
   display: flex; align-items: center; gap: 14px; flex-shrink: 0; flex-wrap: nowrap;
@@ -327,6 +334,120 @@ body.layout-portrait .pdf-panel {
   width: 100%; min-width: 0; height: 45%; min-height: 140px;
   border-left: none; border-top: none; flex: 0 0 auto;
 }
+
+/* ── Bookmarks rail ────────────────────────────────────────────────────────
+   A third collapsible sidebar, beside the P.O. guide. It sits as the first
+   child of .content-area because that container's flex-direction already flips
+   between the two layouts: row in landscape (so the rail is vertical, down the
+   left edge) and column in portrait (so the same markup becomes a horizontal
+   strip across the top). No layout-specific markup is needed.
+   The list scrolls with explicit ▲▼ buttons as well as the wheel, because the
+   rail is often too short for the wheel to be obvious. */
+.bm-rail {
+  width: 260px; flex-shrink: 0; background: var(--panel);
+  border-right: 1px solid var(--border-2);
+  display: flex; flex-direction: column; overflow: hidden;
+  transition: width 0.18s ease, min-width 0.18s ease, max-width 0.18s ease;
+}
+.bm-rail.collapsed { width: 36px; min-width: 36px; max-width: 36px; }
+.bm-head {
+  padding: 8px 12px; border-bottom: 1px solid var(--border-2); background: var(--panel-2);
+  display: flex; align-items: center; gap: 8px;
+  cursor: pointer; user-select: none; flex-shrink: 0;
+}
+.bm-head:hover { background: #2a2a2a; }
+.bm-head:hover .collapse-btn { color: var(--accent); }
+.bm-head h3 { margin: 0; font-size: 13px; color: var(--text); white-space: nowrap; }
+.bm-head .collapse-btn {
+  background: none; border: none; color: var(--muted); font-size: 16px;
+  cursor: pointer; padding: 0 4px; line-height: 1; flex-shrink: 0; margin-left: auto;
+}
+.bm-body { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.bm-rail.collapsed .bm-body { display: none; }
+.bm-rail.collapsed .bm-head {
+  flex-direction: column; align-items: center; justify-content: flex-start;
+  height: 100%; padding: 10px 4px; gap: 14px; border-bottom: none; border-right: none;
+}
+.bm-rail.collapsed .bm-head h3 {
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  letter-spacing: 0.04em; font-size: 12px; flex: 0 0 auto;
+}
+/* ▲▼ scroll buttons + the scrolling list between them */
+.bm-scroll-btns {
+  display: flex; flex-direction: column; flex-shrink: 0;
+  border-bottom: 1px solid var(--border-2); background: var(--panel-2);
+}
+.bm-scroll-btns button {
+  background: none; border: none; color: var(--muted); cursor: pointer;
+  font-size: 11px; line-height: 1; padding: 5px 0; width: 100%;
+}
+.bm-scroll-btns button:hover:not(:disabled) { color: var(--accent); background: #2a2a2a; }
+.bm-scroll-btns button:disabled { opacity: 0.3; cursor: default; }
+.bm-list { flex: 1; overflow-y: auto; padding: 6px; min-height: 0; }
+.bm-list::-webkit-scrollbar { width: 8px; }
+.bm-list::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 4px; }
+.bm-item {
+  padding: 6px 8px; border: 1px solid var(--border-2); border-radius: 4px;
+  margin-bottom: 6px; background: var(--panel-2); cursor: pointer;
+}
+.bm-item:hover { border-color: var(--accent); }
+.bm-item .bm-t { font-size: 12px; color: var(--text); line-height: 1.35; }
+.bm-item .bm-m { font-size: 10px; color: var(--muted); margin-top: 3px; }
+.bm-item .bm-x {
+  float: right; color: var(--muted); font-size: 12px; padding: 0 3px; line-height: 1;
+}
+.bm-item .bm-x:hover { color: var(--accent); }
+.bm-empty { font-size: 12px; color: var(--muted); padding: 10px 8px; line-height: 1.5; }
+/* Save / load the bookmark file */
+.bm-file-bar {
+  display: flex; gap: 6px; padding: 6px; border-top: 1px solid var(--border-2);
+  background: var(--panel-2); flex-shrink: 0;
+}
+.bm-file-bar button {
+  flex: 1; background: var(--input); color: var(--text); border: 1px solid var(--border-2);
+  border-radius: 4px; padding: 5px 4px; font-size: 11px; cursor: pointer;
+}
+.bm-file-bar button:hover { border-color: var(--accent); color: var(--accent); }
+/* The bookmark toggle that sits on every result box */
+.bm-toggle {
+  background: none; border: none; cursor: pointer; font-size: 13px;
+  color: var(--muted); padding: 0 3px; line-height: 1;
+}
+.bm-toggle:hover { color: var(--accent); }
+.bm-toggle.on { color: var(--accent); }
+
+/* Portrait: the same rail becomes a horizontal strip across the top, so the
+   bookmarks scroll left-to-right instead of down. */
+body.layout-portrait .bm-rail {
+  width: 100%; border-right: none; border-bottom: 2px solid var(--border);
+  max-height: 132px;
+}
+body.layout-portrait .bm-rail.collapsed {
+  width: 100%; min-width: 0; max-width: none; max-height: none;
+}
+body.layout-portrait .bm-head { padding: 4px 10px; }
+body.layout-portrait .bm-rail.collapsed .bm-head {
+  flex-direction: row; align-items: center; justify-content: flex-start;
+  height: auto; padding: 4px 10px; gap: 8px; border-bottom: none;
+}
+body.layout-portrait .bm-rail.collapsed .bm-head h3 {
+  writing-mode: horizontal-tb; transform: none; font-size: 13px;
+}
+body.layout-portrait .bm-body { flex-direction: row; align-items: stretch; }
+/* ▲▼ become ◀▶ when the list runs horizontally */
+body.layout-portrait .bm-scroll-btns {
+  flex-direction: row; border-bottom: none; border-right: 1px solid var(--border-2);
+}
+body.layout-portrait .bm-scroll-btns button { width: auto; padding: 0 10px; }
+body.layout-portrait .bm-list {
+  overflow-y: hidden; overflow-x: auto; padding: 6px; display: flex;
+  align-items: flex-start; gap: 6px;
+}
+body.layout-portrait .bm-list::-webkit-scrollbar { height: 8px; width: auto; }
+body.layout-portrait .bm-item {
+  margin-bottom: 0; min-width: 168px; max-width: 200px; flex-shrink: 0;
+}
+body.layout-portrait .bm-file-bar { border-top: none; border-left: 1px solid var(--border-2); }
 
 /* ── Main content area ─────────────────────────────────────────────── */
 .content-area { flex: 1; display: flex; overflow: hidden; }
@@ -670,7 +791,7 @@ mark.hit-current {
 <div class="header">
   <div class="title-block">
     <h1>💬 P.O. Record Search</h1>
-    <span class="subtitle"><a href="https://www.paul.senate.gov/readingroom/" target="_blank">Slack (Rand Paul) + FOI'd emails &amp; manuscript drafts</a> &middot; 12,714 entries &middot; Jan 2020 &ndash; Jun 2023</span>
+    <span class="subtitle"><a href="https://www.paul.senate.gov/readingroom/" target="_blank">Slack (Rand Paul) + FOI'd emails &amp; manuscript drafts</a> &middot; 12,713 entries &middot; Jan 2020 &ndash; Jun 2023</span>
   </div>
   <form class="search-bar" id="searchForm" onsubmit="doSearch(); return false;">
     <input type="text" id="searchInput" enterkeyhint="search" autocomplete="off" placeholder='Phrase: "blue car" · words: happy bunny · help: ?'>
@@ -682,6 +803,13 @@ mark.hit-current {
     </label>
     <button type="button" id="helpBtn" onclick="showHelp()" title="Search help" style="background:var(--panel-2);color:var(--muted);border:1px solid var(--border-2);padding:8px 12px;border-radius:4px;cursor:pointer;font-size:13px;font-weight:600">?</button>
   </form>
+  <!-- DRASTIC mark, top right. Links to the manual/release notes page, which
+       opens in a new tab so the search state here is never lost. -->
+  <div class="header-brand">
+    <a href="help.html" target="_blank" rel="noopener" title="Open the DRASTIC manual &amp; release notes in a new tab">
+      <img src="drastic-logo.png" alt="DRASTIC Research" width="155" height="40">
+    </a>
+  </div>
 </div>
 
 <div class="toolbar" id="mainToolbar">
@@ -719,6 +847,28 @@ mark.hit-current {
 </div>
 
 <div class="content-area">
+
+  <!-- ── Bookmarks rail: your own saved pointers into the record ────────────
+       Vertical in landscape, horizontal in portrait (the .content-area
+       flex-direction does the flip). Open on load, like the other two rails. -->
+  <div class="bm-rail" id="bmRail">
+    <div class="bm-head" onclick="toggleBmRail()" title="Collapse / expand the bookmarks">
+      <h3>🔖 Bookmarks</h3>
+      <button type="button" class="collapse-btn" id="bmToggleBtn" title="Collapse bookmarks">◀</button>
+    </div>
+    <div class="bm-body">
+      <div class="bm-scroll-btns">
+        <button type="button" id="bmUp" onclick="bmScrollBy(-1)" title="Scroll the bookmarks up">▲</button>
+        <button type="button" id="bmDown" onclick="bmScrollBy(1)" title="Scroll the bookmarks down">▼</button>
+      </div>
+      <div class="bm-list" id="bmList" title="Your saved bookmarks. Click one to jump back to that box in the record; the ✕ removes it. Save writes a bookmarks JSON file you can keep or move to another app."></div>
+      <div class="bm-file-bar">
+        <button type="button" onclick="saveBookmarks()" title="Download the bookmarks as a JSON file">💾 Save</button>
+        <button type="button" onclick="document.getElementById('bmFile').click()" title="Load a bookmarks file (replaces the current list)">📂 Load</button>
+        <input type="file" id="bmFile" accept=".json,application/json" style="display:none" onchange="loadBookmarksFile(this)">
+      </div>
+    </div>
+  </div>
 
   <!-- ── Dual vertical timeline: entries LEFT | hits RIGHT, shared Y = time ── -->
   <div class="charts-panel" id="chartsPanel">
@@ -977,6 +1127,12 @@ async function loadData() {
       data.entries.forEach(function(e) {
         e.source = id;
         e.kind = entryKind(e);
+        // A bookmark key that is unique across every release. The Slack parts
+        // have no thread_key and both number from idx 0, so "idx" alone would
+        // make a bookmark in Part 1 jump to Part 2. Qualifying with the source
+        // id keeps them apart; the email and draft releases already carry a
+        // globally unique thread_key, which is used as-is.
+        e.bm_key = e.thread_key ? (id + '/' + e.thread_key) : (id + '/' + e.idx);
       });
       return data;
     }));
@@ -1517,6 +1673,14 @@ function switchLayout() {
 
   // Time axis swaps X↔Y between layouts — never carry zoom across.
   if (!collapsed) redrawTimelines({ preserveZoom: false });
+  // The bookmarks rail flips orientation with the layout, so its chevron and
+  // scroll arrows have to be re-pointed too.
+  syncBmScrollBtns();
+  const bmBtn = document.getElementById('bmToggleBtn');
+  const bmRail = document.getElementById('bmRail');
+  if (bmBtn && bmRail && bmRail.classList.contains('collapsed')) {
+    bmBtn.textContent = currentLayout === 'landscape' ? '▶' : '▲';
+  }
   layoutToolbarInstructions();
 }
 
@@ -2079,7 +2243,7 @@ function clearSearch() {
   document.getElementById('resultsPanel').innerHTML =
     '<div class="placeholder"><h2>Search the P.O. record</h2>' +
     '<p>Enter a search term above to find mentions across all ' +
-    (diaryData ? diaryData.total_entries : 12714) + ' entries (Slack, emails, drafts).</p></div>';
+    (diaryData ? diaryData.total_entries : 12713) + ' entries (Slack, emails, drafts).</p></div>';
   lastSearchResults = null;
   lastSearchQuery = '';
   window._searchResults = null;
@@ -3596,7 +3760,14 @@ function selectGuideSection(id) {
   if (!s || !detail) return;
   let html = '<h4>' + escapeHtml(s.number || '') + ' ' + escapeHtml(s.title) + '</h4>';
   if (s.date_raw) html += '<div class="gd-ev">Section date: ' + escapeHtml(s.date_raw) + '</div>';
-  (s.evidence || []).forEach(function(ev) {
+  // Alphabetical by document name (case-insensitive, punctuation ignored) so
+  // the same document always sits in the same place in every section's list.
+  const evidence = (s.evidence || []).slice().sort(function(a, b) {
+    const na = (a.doc || a.kind || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ');
+    const nb = (b.doc || b.kind || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ');
+    return na < nb ? -1 : (na > nb ? 1 : 0);
+  });
+  evidence.forEach(function(ev) {
     const pages = (ev.pages || []).length ? ' p.' + ev.pages.join(', p.') : '';
     const page = (ev.pages && ev.pages.length) ? parseInt(ev.pages[0].split('-')[0], 10) : 1;
     const src = guideDocToSource(ev.doc);
@@ -3638,6 +3809,330 @@ function selectGuideSection(id) {
     }
   };
   if (s.date) openEntryFromRawBar(s.date);
+}
+
+// ============================================================
+// Bookmarks
+// ------------------------------------------------------------
+// A bookmark is a pointer to one box in the record: which release it came from,
+// its stable key, the page to open it at, and enough text to be recognisable in
+// the list without opening it.
+//
+// Persistence, in this order:
+//   1. localStorage, so the rail survives a reload with no file involved
+//   2. a named JSON file (Save / Load in the rail), so a set of bookmarks can
+//      be kept, versioned and moved between the DRASTIC apps
+//
+// Cross-app compatibility: the file format is deliberately generic -- it
+// records `app` and a `url` alongside the P.O.-specific fields -- so a
+// bookmarks file can hold pointers into the Fauci Diary or the Daszak calendar
+// as well as into this app. A record this app does not recognise still lists
+// and still opens (it navigates to its url); only the in-app jump is limited to
+// entries this app actually holds. The format is versioned, so a later app can
+// add fields without breaking an older file.
+const BOOKMARK_STORE_KEY = 'drastic.bookmarks.po-slack';
+const BOOKMARK_FILE_VERSION = 1;
+// The other DRASTIC apps, so a bookmark can name where it belongs even when
+// the file travels. Keys are matched against a path/hostname substring.
+const DRASTIC_APPS = [
+  { id: 'po-slack', label: 'P.O. Record', match: /po[_-]?slack|proximal[_-]?origin/i },
+  { id: 'fauci-diary', label: 'Fauci Diary', match: /fauci|diary/i },
+  { id: 'daszak-calendar', label: 'Daszak Calendar', match: /daszak|calendar/i },
+];
+
+let bookmarks = [];
+
+// The page's own address, for a bookmark to fall back on when it travels to
+// another app. Defensive because location.href is absent in some embeddings.
+function bmPageUrl() {
+  try {
+    return (typeof location !== 'undefined' && location.href)
+      ? location.href.split('#')[0] : '';
+  } catch (err) {
+    return '';
+  }
+}
+
+function bmAppFor(url) {
+  const u = url || '';
+  for (let i = 0; i < DRASTIC_APPS.length; i++) {
+    if (DRASTIC_APPS[i].match.test(u)) return DRASTIC_APPS[i].id;
+  }
+  return 'po-slack';
+}
+
+function bmLoad() {
+  try {
+    const raw = localStorage.getItem(BOOKMARK_STORE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : (parsed.bookmarks || []);
+  } catch (err) {
+    return [];
+  }
+}
+
+function bmPersist() {
+  try {
+    localStorage.setItem(BOOKMARK_STORE_KEY, JSON.stringify(bookmarks));
+  } catch (err) {
+    /* private mode / quota: the rail still works for this session */
+  }
+}
+
+// A bookmark's identity is its key, so bookmarking the same box twice is a
+// no-op rather than a duplicate row.
+function bmFind(bmKey) {
+  for (let i = 0; i < bookmarks.length; i++) {
+    if (bookmarks[i].key === bmKey) return bookmarks[i];
+  }
+  return null;
+}
+
+// Add the box if it is not bookmarked, remove it if it is. One control, both
+// actions, so a mis-click is undone by clicking again.
+function toggleBookmark(bmKey, meta) {
+  const existing = bmFind(bmKey);
+  if (existing) {
+    bookmarks = bookmarks.filter(function(b) { return b.key !== bmKey; });
+  } else {
+    bookmarks.unshift({
+      key: bmKey,
+      app: 'po-slack',
+      label: (meta && meta.label) || bmKey,
+      sub: (meta && meta.sub) || '',
+      date: (meta && meta.date) || null,
+      kind: (meta && meta.kind) || null,
+      source: (meta && meta.source) || null,
+      page: (meta && meta.page) || null,
+      url: (meta && meta.url) || bmPageUrl(),
+      saved: new Date().toISOString().slice(0, 10),
+    });
+  }
+  bmPersist();
+  renderBookmarks();
+  return !existing;
+}
+
+function isBookmarked(bmKey) {
+  return !!bmFind(bmKey);
+}
+
+function removeBookmark(bmKey) {
+  bookmarks = bookmarks.filter(function(b) { return b.key !== bmKey; });
+  bmPersist();
+  renderBookmarks();
+}
+
+function toggleBmRail() {
+  const rail = document.getElementById('bmRail');
+  const btn = document.getElementById('bmToggleBtn');
+  if (!rail) return;
+  const collapsing = !rail.classList.contains('collapsed');
+  rail.classList.toggle('collapsed', collapsing);
+  if (btn) {
+    // Landscape rail runs down the left edge, so it folds away to the left and
+    // the chevron points back into it; the portrait strip runs along the top
+    // and folds upward.
+    const portrait = document.body.classList.contains('layout-portrait');
+    btn.textContent = collapsing ? (portrait ? '▲' : '▶') : (portrait ? '▼' : '◀');
+    btn.title = collapsing ? 'Expand bookmarks' : 'Collapse bookmarks';
+  }
+  // Keep the arrows pointing the way the list actually scrolls.
+  if (!collapsing) requestAnimationFrame(syncBmScrollBtns);
+}
+
+// ▲▼ (or ◀▶ in portrait) step the list one screen at a time.
+function bmScrollBy(dir) {
+  const list = document.getElementById('bmList');
+  if (!list) return;
+  const portrait = document.body.classList.contains('layout-portrait');
+  list.scrollBy({ top: dir * list.clientHeight * 0.8,
+                  left: dir * list.clientWidth * 0.8, behavior: 'smooth' });
+  setTimeout(syncBmScrollBtns, 350);
+}
+
+// Disable an arrow at the end of the list, so the ends are visible.
+function syncBmScrollBtns() {
+  const list = document.getElementById('bmList');
+  if (!list) return;
+  const portrait = document.body.classList.contains('layout-portrait');
+  const up = document.getElementById('bmUp'), down = document.getElementById('bmDown');
+  const start = portrait ? list.scrollLeft : list.scrollTop;
+  const size = portrait ? list.clientWidth : list.clientHeight;
+  const end = start + size;
+  const max = portrait ? list.scrollWidth : list.scrollHeight;
+  if (up) up.disabled = start <= 1;
+  if (down) down.disabled = end >= max - 1;
+  // The glyphs follow the layout, matching the collapse chevron's idiom.
+  if (up) up.textContent = portrait ? '◀' : '▲';
+  if (down) down.textContent = portrait ? '▶' : '▼';
+}
+
+function renderBookmarks() {
+  const list = document.getElementById('bmList');
+  if (!list) return;
+  if (!bookmarks.length) {
+    list.innerHTML = '<div class="bm-empty">No bookmarks yet. Click the 🔖 on any box ' +
+      'in the results to keep a pointer to it here. &ldquo;Save&rdquo; writes the list to a ' +
+      'JSON file you can keep or load into another DRASTIC app.</div>';
+    syncBmScrollBtns();
+    return;
+  }
+  const appLabel = {};
+  DRASTIC_APPS.forEach(function(a) { appLabel[a.id] = a.label; });
+  list.innerHTML = bookmarks.map(function(b, i) {
+    const app = appLabel[b.app] || b.app || 'this app';
+    return '<div class="bm-item" data-bm="' + i + '" ' +
+      'title="Jump to this box in ' + escapeHtml(app) + '">' +
+      '<span class="bm-x" data-bm-del="' + i + '" title="Remove this bookmark">✕</span>' +
+      '<div class="bm-t">' + escapeHtml(b.label || b.key) + '</div>' +
+      '<div class="bm-m">' + escapeHtml([b.date, b.sub, app].filter(Boolean).join(' · ')) + '</div>' +
+      '</div>';
+  }).join('');
+  syncBmScrollBtns();
+  refreshBookmarkToggles();
+}
+
+// Keep the 🔖 on every rendered box in step with the store, including after a
+// search redraws the results.
+function refreshBookmarkToggles() {
+  document.querySelectorAll('[data-bm-toggle]').forEach(function(btn) {
+    const on = isBookmarked(btn.getAttribute('data-bm-toggle'));
+    btn.classList.toggle('on', on);
+    btn.title = on ? 'Remove this bookmark' : 'Bookmark this box';
+  });
+}
+
+// Open a bookmark: in-app entries are jumped to directly, anything else (a
+// pointer into a sibling DRASTIC app, say) follows its url.
+function openBookmark(bmKey) {
+  const b = bmFind(bmKey);
+  if (!b) return;
+  if (b.app === 'po-slack' && openEntryByBmKey(b.key, b.page)) return;
+  if (b.url) window.open(b.url, '_blank', 'noopener');
+}
+
+// Resolve a bookmark key back to an entry, then reuse the normal open path so a
+// bookmark lands exactly where a click on the box would.
+function openEntryByBmKey(bmKey, page) {
+  if (!diaryData || !bmKey) return false;
+  const entries = diaryData.entries;
+  let target = -1;
+  for (let i = 0; i < entries.length; i++) {
+    if (entries[i].bm_key === bmKey) { target = i; break; }
+  }
+  if (target < 0) return false;
+  if (lastSearchResults && lastSearchResults.length) {
+    clearSearchStateForBrowse();
+    redrawTimelines({ preserveZoom: true });
+  }
+  const pack = buildBrowseResultsAroundIndex(target, BROWSE_RADIUS);
+  if (!pack || !pack.results.length) return false;
+  browseMode = true;
+  displayResults(pack.results, '', { autoSelect: false });
+  const k = pack.focusLocal;
+  requestAnimationFrame(function() {
+    if (k >= 0 && k < pack.results.length) selectResult(k, page || undefined);
+    const card = document.querySelector('.result-entry.active');
+    if (card) card.scrollIntoView({ block: 'center' });
+  });
+  return true;
+}
+
+// ── the bookmark file ────────────────────────────────────────────────────────
+function bookmarksPayload() {
+  return {
+    format: 'drastic-bookmarks',
+    version: BOOKMARK_FILE_VERSION,
+    app: 'po-slack',
+    saved: new Date().toISOString().slice(0, 19).replace('T', ' '),
+    count: bookmarks.length,
+    bookmarks: bookmarks,
+  };
+}
+
+function saveBookmarks() {
+  const payload = bookmarksPayload();
+  const blob = new Blob([JSON.stringify(payload, null, 2)],
+                        { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'po-slack-bookmarks-' + payload.saved.slice(0, 10) + '.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
+}
+
+// Load REPLACES the current list (that is what "load bookmarks" means here), and
+// asks first rather than doing it silently.
+function loadBookmarksFile(input) {
+  const file = input.files && input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function() {
+    let data;
+    try {
+      data = JSON.parse(String(reader.result));
+    } catch (err) {
+      alert('That file is not valid JSON, so the bookmarks were left unchanged.');
+      input.value = '';
+      return;
+    }
+    const incoming = Array.isArray(data) ? data : data.bookmarks;
+    if (!Array.isArray(incoming)) {
+      alert('No bookmarks found in that file. The current list was left unchanged.');
+      input.value = '';
+      return;
+    }
+    if (bookmarks.length &&
+        !confirm('Replace the ' + bookmarks.length + ' bookmark(s) currently saved with the ' +
+                 incoming.length + ' in "' + file.name + '"?')) {
+      input.value = '';
+      return;
+    }
+    // Normalise on the way in, so a hand-edited file or an older one still
+    // loads: the fields the rail reads are filled in, unknown ones are kept.
+    bookmarks = incoming.map(function(b, i) {
+      const key = b.key || b.bm_key || ('imported/' + i);
+      return Object.assign({}, b, {
+        key: key,
+        app: b.app || bmAppFor(b.url),
+        label: b.label || b.title || key,
+        sub: b.sub || b.subtitle || '',
+      });
+    });
+    bmPersist();
+    renderBookmarks();
+    input.value = '';
+  };
+  reader.readAsText(file);
+}
+
+function initBookmarks() {
+  bookmarks = bmLoad();
+  const list = document.getElementById('bmList');
+  if (list) {
+    list.addEventListener('scroll', syncBmScrollBtns, { passive: true });
+    list.addEventListener('click', function(ev) {
+      const del = ev.target.closest('[data-bm-del]');
+      if (del) {
+        ev.stopPropagation();
+        const d = bookmarks[parseInt(del.getAttribute('data-bm-del'), 10)];
+        if (d) removeBookmark(d.key);
+        return;
+      }
+      const item = ev.target.closest('[data-bm]');
+      if (item) {
+        const b = bookmarks[parseInt(item.getAttribute('data-bm'), 10)];
+        if (b) openBookmark(b.key);
+      }
+    });
+  }
+  window.addEventListener('resize', syncBmScrollBtns);
+  renderBookmarks();
 }
 
 function sectionUrl(s) {
@@ -3752,6 +4247,9 @@ function displayResults(results, query, opts) {
     html += '</span>';
     html += '<span class="result-hits-group">';
     html += '<span class="result-hits">' + r.hits + ' hit' + (r.hits > 1 ? 's' : '') + '</span>';
+    // 🔖 keeps a pointer to this box in the bookmarks rail; click again to drop it.
+    html += '<button type="button" class="bm-toggle" data-bm-toggle="' +
+      escapeHtml(e.bm_key || '') + '" title="Bookmark this box">🔖</button>';
     html += '<button type="button" class="expand-btn" data-expand-toggle="' + i + '" hidden title="Remove the height cap and show the whole entry">⤢ Full text</button>';
     html += '</span>';
     html += '</div>';
@@ -3811,6 +4309,8 @@ function displayResults(results, query, opts) {
   window._searchResults = results;
   panel.innerHTML = html;
   setupResultBoxes(panel);
+  // A redraw rebuilds every card, so the 🔖 state has to be re-applied.
+  refreshBookmarkToggles();
 
   // Event delegation: any click in a result card jumps the PDF (to the hit's page)
   panel.onclick = function(ev) {
@@ -3819,6 +4319,28 @@ function displayResults(results, query, opts) {
 
     const resultIdx = parseInt(entry.getAttribute('data-result-idx'), 10);
     const entryIdx = parseInt(entry.getAttribute('data-entry-idx'), 10);
+
+    // 🔖 toggle: bookmark this box, or drop it if it is already bookmarked.
+    const bmBtn = ev.target.closest('[data-bm-toggle]');
+    if (bmBtn) {
+      ev.preventDefault();
+      ev.stopPropagation();
+      const bmKey = bmBtn.getAttribute('data-bm-toggle');
+      const r = window._searchResults && window._searchResults[resultIdx];
+      const entry = r && r.entry;
+      const added = toggleBookmark(bmKey, {
+        label: entry ? ((entry.sender || 'entry') +
+                        (entry.subject ? ' — ' + entry.subject : '')) : bmKey,
+        sub: entry ? kindDef(entry.kind).label : '',
+        date: entry ? entry.date : null,
+        kind: entry ? entry.kind : null,
+        source: entry ? entry.source : null,
+        page: pdfPageForResult(r),
+      });
+      bmBtn.classList.toggle('on', added);
+      bmBtn.title = added ? 'Remove this bookmark' : 'Bookmark this box';
+      return;
+    }
 
     // "Full text": lift the height cap on this card, or put it back.
     const expBtn = ev.target.closest('[data-expand-toggle]');
@@ -3984,6 +4506,7 @@ document.getElementById('resultsPanel').addEventListener('scroll', onBrowseResul
 layoutToolbarInstructions();
 window.addEventListener('load', layoutToolbarInstructions);
 initGuide();
+initBookmarks();
 loadData();
 </script>
 

@@ -21,6 +21,8 @@ HTML = os.path.join(HERE, "index.html")
 with open(HTML, encoding="utf-8") as f:
     src = f.read()
 
+# `src` is the whole file; `body` is only the inline script. Markup checks read
+# `src`, script checks read `body`.
 body = src.split("<script>")[-1]
 body = body.split("</script>")[0]
 
@@ -132,6 +134,50 @@ if src_block:
         if m:
             check(os.path.exists(os.path.join(HERE, m.group(1))),
                   "SOURCES.%s.pdf -> %s exists" % (sid.strip("'"), m.group(1)))
+
+# ── bookmarks rail ──────────────────────────────────────────────────────────
+check('id="bmRail"' in src, "bookmarks rail is in the markup")
+check('id="bmList"' in src, "bookmarks list is in the markup")
+check('id="bmUp"' in src and 'id="bmDown"' in src,
+      "bookmarks list has both scroll arrows")
+check('id="bmFile"' in src, "bookmarks file input is in the markup")
+check("data-bm-toggle" in body, "every result box gets a bookmark toggle")
+# The rail must be a child of .content-area, whose flex-direction flips between
+# the layouts -- that is what makes it vertical in landscape, horizontal in
+# portrait, with no layout-specific markup.
+check(re.search(r'<div class="content-area">\s*<!--[^>]*-->\s*<div class="bm-rail"', src)
+      or re.search(r'<div class="content-area">\s*<div class="bm-rail"', src),
+      "bookmarks rail sits inside .content-area (so it follows the layout flip)")
+for fn in ("toggleBookmark", "isBookmarked", "removeBookmark", "openBookmark",
+           "renderBookmarks", "bookmarksPayload", "loadBookmarksFile",
+           "initBookmarks", "toggleBmRail", "bmScrollBy", "syncBmScrollBtns"):
+    check("function %s(" % fn in body, "%s() is defined" % fn)
+check("bm_key" in body, "entries carry a bookmark key")
+check("localStorage" in body, "bookmarks persist in localStorage")
+check("format: 'drastic-bookmarks'" in body, "the bookmark file names its format")
+
+# ── the DRASTIC mark and the manual ─────────────────────────────────────────
+check('class="header-brand"' in src, "the DRASTIC mark has a home in the header")
+check("drastic-logo.png" in src, "the DRASTIC logo is referenced")
+check(os.path.exists(os.path.join(HERE, "drastic-logo.png")), "the DRASTIC logo file exists")
+check('href="help.html"' in src, "the logo links to the manual")
+check(re.search(r'href="help\.html"[^>]*target="_blank"', src)
+      or re.search(r'target="_blank"[^>]*href="help\.html"', src),
+      "the manual opens in a new tab")
+check(os.path.exists(os.path.join(HERE, "help.html")), "help.html exists")
+
+# ── the manual page itself ──────────────────────────────────────────────────
+HELP = os.path.join(HERE, "help.html")
+if os.path.exists(HELP):
+    hp = open(HELP, encoding="utf-8").read()
+    check(hp.count("<html") == 1 and "</html>" in hp, "help.html is a whole document")
+    for term, why in (("search", "searching"), ("Bookmarks", "bookmarks"),
+                      ("Dual timeline", "the timeline"), ("P.O. guide", "the guide"),
+                      ("Keyboard", "the keyboard"), ("Release notes", "release notes"),
+                      ("Known limits", "the limits")):
+        check(term in hp, "the manual covers %s" % why)
+    check("drastic-logo.png" in hp, "the manual carries the DRASTIC mark")
+    check('href="index.html"' in hp, "the manual links back to the app")
 
 print("\n".join(notes))
 if problems:

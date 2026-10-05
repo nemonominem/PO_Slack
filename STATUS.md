@@ -274,3 +274,48 @@ Prioritised by how much of the argument they carry:
 - `git-lfs` is not installed, so the PDFs are committed as large blobs.
   `page_based/farrar-fauci-comms.pdf` is the one exception: it is on disk but
   untracked (see the TODO above).
+
+## Done (review round 4 — bookmarks, manual, DRASTIC mark, email headers)
+
+- **DRASTIC mark** in the header's top right, copied from `import/` to
+  `page_based/drastic-logo.png`; it links to the manual in a new tab.
+- **Bookmarks**: a third collapsible rail (vertical in landscape, horizontal in
+  portrait, arrows turning ▲▼ → ◀▶), a 🔖 toggle on every box, Save/Load to a
+  named JSON file. Entries carry a `bm_key` that is unique across releases —
+  the two Slack parts both number from `idx 0`, so a bare index would have made
+  a Part 1 bookmark jump into Part 2. The file format is versioned and records
+  `app` + `url`, so one bookmarks file can hold pointers into the Fauci Diary
+  and the Daszak calendar; this app jumps to entries it holds and opens the url
+  for the rest.
+- **`help.html`**: a full manual (12 sections) + release notes, with the DRASTIC
+  mark, opened in a new tab from the header.
+- **Guide**: citations now sort alphabetically by document.
+- **Email headers repaired.** The OCR read `Cc:` as `Ce:` and `To:` as `Pe:`;
+  more seriously, a glyph fragment between fields ("Pe") or a torn-off scrap of
+  a wrapped two-column recipient list was closing the header block early, so
+  `Subject:` lines were left stranded in the message body. Fixed at four levels:
+  field aliases, junk-line skipping, recipient-run continuation
+  (`continues_recipient_run`, used only inside a run, never to open one), and a
+  bounded header block (`MAX_HEADER_LINES`, since Outlook never prints 18 header
+  lines — what follows a long list here is quoted letterhead).
+  **Subjects recovered on 76 of 86 messages, up from 0.** Zero messages now have
+  their own subject stranded in their body. The 10 still empty are ones whose
+  subject the scans lost outright; they are left empty rather than guessed.
+- **Signatures separated.** A title block is no longer read as message prose: it
+  is cut off the text into its own `signature` field and shown after a rule, with
+  its own line returns preserved. Holmes's block had been flattened into the body.
+- **Line returns repaired.** Breaks that were an artefact of the scan column
+  width are rejoined (`unwrap_lines`); returns the author made are kept.
+- Counts: Slack 12,600 + 7 notices, Email 86, Draft 20 = **12,713**.
+  (86 rather than 87: two messages that had been counted separately are now
+  recognised as one message printed across a page break — they only merge once
+  the subject is recovered, because that is what gives the two halves identity.)
+- **Testing.** A real browser suite now exists: `page_based/test_browser.mjs`
+  drives Chrome for Testing (from the Playwright cache — the MCP browser server
+  looks for a Google Chrome install that is not present on this machine) and
+  checks what the other two suites cannot: that the bookmarks rail really is a
+  vertical column in landscape and a horizontal strip in portrait, that its
+  arrows really do turn sideways, that a clipped box really does show its
+  scrollbar, that the DRASTIC logo really loads, and that a bookmark really
+  survives a reload. **34 browser + 63 functional + 55 static checks pass.**
+  Run it with the app served: `python3 -m http.server 8099 && node test_browser.mjs`.

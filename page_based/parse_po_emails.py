@@ -95,9 +95,27 @@ FURNITURE = re.compile(
 # ── header grammar ──────────────────────────────────────────────────────────
 HEADER_FIELDS = ("From", "To", "Cc", "Bcc", "Subject", "Sent", "Date", "Importance")
 RE_FROM = re.compile(r"^From:\s*(.+)$", re.I)
-# a field header, possibly OCR-glued to the next one ("Cc: Jeremy FarrarSubject: x")
-RE_FIELD = re.compile(r"\b(%s)\s*:" % "|".join(HEADER_FIELDS), re.I)
+# A field header, possibly OCR-glued to the next one ("Cc: Jeremy FarrarSubject:
+# x"). The OCR routinely reads the two capitals in "Cc:" as "Ce:" (and "To:" as
+# "Pe:"/"Fe:"), so the alternation lists those readings too and split_fields()
+# folds them back onto the real field name -- otherwise a Cc list stays glued to
+# a Subject line and "Subject: Fwd: ..." leaks into the message body.
+FIELD_ALIASES = {
+    "ce": "Cc", "cc": "Cc", "bce": "Bcc", "bcc": "Bcc", "gc": "Cc",
+    "fe": "To", "pe": "To", "to": "To", "fo": "From",
+    "subiect": "Subject", "subjec": "Subject", "subject": "Subject",
+    "senf": "Sent", "sent": "Sent", "dafe": "Date", "date": "Date",
+}
+FIELD_ALIAS_RE = re.compile(
+    r"\b(%s)\s*:" % "|".join(sorted(set(HEADER_FIELDS) | set(FIELD_ALIASES),
+                                       key=len, reverse=True)), re.I)
+RE_FIELD = FIELD_ALIAS_RE
 # quoted reply marker: "On 8 Feb 2020, at 22:15, Kristian G. Andersen wrote:"
+# The most header lines Outlook ever prints in this release: From, Sent, To,
+# Cc, Subject, and a recipient list that wrapped over a few lines. Anything
+# beyond this is quoted material, not header.
+MAX_HEADER_LINES = 12
+
 RE_INLINE_QUOTE = re.compile(
     r"^On\s+(.{3,40}?),\s*(?:at\s*)?(\d{1,2}:\d{2}\s*(?:am|pm)?|[ap]\.?m\.?),?\s+"
     r"(.+?)\s*(?:<[^>]*>)?\s*(?:wrote|writes):", re.I)
@@ -135,7 +153,31 @@ SENDER_ROSTER = [
     (re.compile(r"folkers", re.I), "Folkers, Greg"),
     (re.compile(r"burke", re.I), "Burke, Martina"),
     (re.compile(r"nature\.com", re.I), "medicine@us.nature.com"),
+    # Correspondents who appear only in recipient lists. Listing them makes a
+    # wrapped list recognisable; clean_sender still prefers a sender-specific
+    # pattern above, and the roster order is what decides between them.
+    (re.compile(r"\bbaric\b", re.I), "Baric, Ralph"),
+    (re.compile(r"\bdaszak\b", re.I), "Daszak, Peter"),
+    (re.compile(r"\btrevor\b|bedford", re.I), "Trevor, Bedford"),
+    (re.compile(r"zhai", re.I), "Zhai, Yi"),
+    (re.compile(r"chakravarti", re.I), "Chakravarti, Aravinda"),
+    (re.compile(r"\bhassell\b", re.I), "Hassell, David"),
+    (re.compile(r"\bmich\b", re.I), "Mich, Robert"),
+    (re.compile(r"\bshea\b", re.I), "Shea, John"),
 ]
+
+# First names seen in this release's recipient lists. They are used ONLY to
+# recognise a roll of recipients as such (see is_wrapped_recipient), which is
+# what lets the Subject line following a wrapped list be recovered instead of
+# being left in the message body. They never name a sender: clean_sender reads
+# SENDER_ROSTER alone, so a sender line is never rewritten from a first name.
+FIRST_NAMES = {
+    "ralph", "peter", "andrew", "robert", "edward", "jeremy", "kristian",
+    "christian", "marion", "stefan", "michael", "claire", "patricia", "reed",
+    "greg", "martina", "francis", "martin", "rory", "josie", "amanda", "tony",
+    "eddie", "trevor", "bedford", "aravinda", "david", "john", "richard",
+    "yvonne", "sylvia", "susan", "karen", "nicole", "maria", "thomas",
+}
 
 
 def clean_sender(raw):
@@ -287,7 +329,10 @@ def split_fields(block):
             if current in ("From", "To", "Cc", "Bcc"):
                 fields[current] += " " + parts[0].strip()
         for i in range(1, len(parts) - 1, 2):
-            name = parts[i].strip().title()
+            # "Ce:" -> "Cc", "Pe:" -> "To": fold the OCR's misreading back onto
+            # the real Outlook field name (see FIELD_ALIASES).
+            name = FIELD_ALIASES.get(parts[i].strip().lower()) \
+                or parts[i].strip().title()
             if name not in HEADER_FIELDS:
                 name = name.title()
             value = parts[i + 1].strip() if parts[i + 1].strip() else ""
@@ -311,7 +356,8 @@ def segment(pages):
     cur = None
     for pageno, lines in pages:
         body_mode = False
-        for line in lines:
+        for li, line in enumerate(lines):
+            nxt = lines[li + 1] if li + 1 < len(lines) else None
             if RE_FROM.match(line):
                 cur = {"header_lines": [line], "body": [], "pages": [pageno]}
                 messages.append(cur)
@@ -321,14 +367,45 @@ def segment(pages):
                 continue
             cur["pages"].append(pageno)
             if not body_mode:
+                # The header block ends at the first line that is not a field --
+                # but the scans drop glyph fragments between the fields ("Pe",
+                # "E|", "T {"). Those lines carry no word and no digit, so they
+                # are skipped rather than treated as the start of the body;
+                # otherwise the Subject line after one lands in the body and the
+                # subject is lost from the header.
+                if len(cur["header_lines"]) > 1 and is_junk_line(line):
+                    continue
                 # still inside the header block until a blank-looking break:
                 # a line with no field keyword after at least one field
                 has_field = bool(RE_FIELD.search(line))
                 if cur["header_lines"] and not has_field and len(cur["header_lines"]) > 1:
+                    # A long To:/Cc: list wraps over several visual lines before
+                    # the Subject arrives. Those belong to the header: treating
+                    # the first of them as the body stranded every following
+                    # field ("Subject: ...") in the message text.
+                    #
+                    # The block is also bounded. Outlook never prints eighteen
+                    # header lines: what follows a long recipient list here is
+                    # quoted letterhead ("The National Academies of / SCIENCES
+                    # ... / Cheers, / Peter") that the scan ran on from. Past the
+                    # bound the block is closed, whatever the line looks like, so
+                    # quoted material cannot be absorbed into the header and
+                    # push the real Subject out of reach.
+                    if (cur.get("in_addr") and len(cur["header_lines"]) <= MAX_HEADER_LINES
+                            and (is_address_continuation(line)
+                                 or is_wrapped_recipient(line, nxt))):
+                        cur["header_lines"].append(line)
+                        continue
                     body_mode = True
                     cur["body"].append(line)
                 elif has_field or len(cur["header_lines"]) == 1:
                     cur["header_lines"].append(line)
+                    # Track which field we are in, so only the recipient fields
+                    # are allowed to wrap.
+                    names = [n.strip().lower() for n in RE_FIELD.findall(line)]
+                    if names:
+                        cur["in_addr"] = names[-1] in (
+                            "to", "cc", "bcc", "fe", "pe", "ce")
                 else:
                     body_mode = True
                     cur["body"].append(line)
@@ -337,31 +414,32 @@ def segment(pages):
     return messages
 
 
-def strip_glyph_soup(lines):
-    """Drop the OCR noise the scans inject when an email quotes an image.
-
-    A screenshot quoted in a message (a Science article, a chart) OCRs as a
-    scatter of glyphs and stray letters:
+def is_junk_line(line):
+    """True for the OCR scatter a quoted image leaves behind.
 
         iY Ae ms F 4
         , 'y '
         ~ ne a
-        a = a J re =
+        Pe
 
-    A line that carries no real word -- nothing three letters or longer -- and
-    no URL is that kind of noise. Real prose, names and even a bare "Tony"
-    survive; the image scatter does not.
+    A line that carries no real word -- nothing three letters or longer -- no
+    URL and no long number is that kind of noise. Real prose, names and even a
+    bare "Tony" survive; the image scatter and the stray glyph fragments do not.
     """
-    out = []
-    for ln in lines:
-        s = ln.strip()
-        if not s:
-            continue
-        if (re.search(r"[A-Za-z]{3,}", s)
+    s = (line or "").strip()
+    if not s:
+        return True
+    return not (re.search(r"[A-Za-z]{3,}", s)
                 or re.search(r"https?://|www\.|@", s)
-                or re.search(r"\b\d{4,}\b", s)):
-            out.append(ln)
-    return out
+                or re.search(r"\b\d{4,}\b", s))
+
+
+def strip_glyph_soup(lines):
+    """Drop the OCR noise the scans inject when an email quotes an image.
+
+    See is_junk_line(): a line with no real word and no URL is image scatter.
+    """
+    return [ln for ln in lines if not is_junk_line(ln)]
 
 
 def clean_field_value(name, value, sender):
@@ -384,6 +462,238 @@ def clean_field_value(name, value, sender):
 
 
 
+# ── signature blocks ─────────────────────────────────────────────────────────
+# Edward Holmes signs off with a title block and no salutation, so the block is
+# recognised by shape. These are the lines that open one: a name carrying
+# post-nominals, an all-caps title, or an affiliation.
+RE_SIG_NAME = re.compile(
+    r"^(?:PROFESSOR|Professor|DR|Dr|MR|Mr|MS|Ms|SIR|Sir|DAME|Dame)\b"
+    r"|^(?:[A-Z][A-Z.'-]+\s+){1,4}[A-Z][A-Z.'-]*"
+    r"\s+(?:FAA|FRS|FBA|FRCS|FACP|PhD|Ph\.D|MD|M\.D|MP|MSc|BSc|MBBS)\b")
+RE_SIG_AFFIL = re.compile(
+    r"^(?:ARC |THE |UNIVERSITY|University|Institut|CENTRE|Centre|School|"
+    r"Department|Dept\.|Faculty|College|Hospital|Institute|Trust|Laborator|"
+    r"Director|Regents|Dean|Regent|Professor Emeritus|"
+    r"Marie Bashir|Wellcome|MRC|NIH|NIAID|Atlanta|Bethesda|London|Sydney)\b")
+RE_SIG_CONT = re.compile(
+    r"^(?:The University of|University of|Sydney|NSW|Australia|Victoria)\b")
+
+
+def is_signature_line(s):
+    """True if this line opens (or continues) a title/sign-off block."""
+    s = (s or "").strip()
+    if not s:
+        return False
+    if RE_SIG_NAME.match(s) or RE_SIG_AFFIL.match(s):
+        return True
+    # A continuation line, but only once a block has started -- handled by the
+    # caller, which stops cutting at the first line that is neither.
+    return False
+
+
+# ── page-width line wrapping ─────────────────────────────────────────────────
+# The scans are screenshots, so a paragraph is broken wherever the Outlook pane
+# ended it -- an artefact of the column width, not a return the author typed.
+# A line that neither ends a sentence nor starts a new one is joined to the
+# next; a line ending in '.', '!', '?', ':' or a comma-separated clause keeps
+# its return, because that one is the author's.
+RE_SENTENCE_END = re.compile(r"[.!?:;…]['\")\]]?\s*$")
+RE_SOFT_START = re.compile(r"^\s*[,;:.)\]]")
+
+
+# A line that continues a recipient list rather than starting the body. The
+# scans wrap long To:/Cc: lists over several visual lines, each carrying the
+# avatar glyphs ("\"rambaut , "rfgarry!"), so a continuation has separators and
+# glyphs but no sentence-ending punctuation. Prose has the opposite shape.
+RE_ADDR_CONT = re.compile(r"[,;|/\\]|(?:^|[\s(])[\"']?[A-Za-z]{1,3}[\"']?(?:[\s,|]|$)")
+
+
+def is_address_continuation(line):
+    s = (line or "").strip()
+    if not s or RE_SENTENCE_END.search(s):
+        return False
+    if len(s) > 160:
+        return False
+    return bool(RE_ADDR_CONT.search(s))
+
+
+def is_name_debris(line):
+    """A scrap of a wrapped recipient list: names and glyphs, not prose.
+
+    Prose always carries a real word -- a lower-case run of five letters or more
+    ("Information and discussion", "ist February"). A recipient scrap is
+    surnames, initials and OCR glyphs ("<rfzarry RR Mich! Fcc", ""spoehlmann
+    "a rambau"). That difference is what tells the two apart when the scan has
+    torn the list across lines.
+    """
+    s = (line or "").strip()
+    if not s or RE_SENTENCE_END.search(s) or len(s) > 200:
+        return False
+    return not re.search(r"[a-z]{5,}", s)
+
+
+def is_wrapped_recipient(line, nxt=None):
+    """True for a line inside a To:/Cc: list that the scan wrapped.
+
+    Two ways to qualify. The cheap one is is_name_debris(): no sentence
+    punctuation and no real word. When a line does carry a real word but is
+    neither sentence-terminated nor anything but capitalised names
+    ("spoehlmann "a rambau "Kristian G."), it still counts if the NEXT line
+    continues the same list -- which is the signal the scan itself gives us.
+    Looking ahead is safe because the caller has already established we are
+    inside a recipient field, and prose is never followed by two address lines.
+    """
+    if is_name_debris(line):
+        return True
+    s = (line or "").strip()
+    if not s or RE_SENTENCE_END.search(s) or len(s) > 120:
+        return False
+    # No sentence punctuation, and shaped like a name list rather than prose.
+    names = re.findall(r"[A-Z][a-zA-Z.'-]{2,}", s)
+    words = re.findall(r"[A-Za-z']{2,}", s)
+    if not names:
+        return False
+    # Either mostly names, or a comma-separated roll of them: recipient lists
+    # run to a dozen surnames per line ("Brown, Lisa Downey, Autumn Wollek,
+    # Scott ; Kanarek, Morgan Dzau"), which reads as prose by word count alone.
+    # A bare roll of personal names with nothing else on the line ("Ralph
+    # Baric trevor Peter Daszak") is the same thing without the commas.
+    comma_list = s.count(",") >= 2 and len(names) >= 2
+    bare_names = s.count(",") == 0 and len(names) >= 3
+    # No need to look ahead once the line is unambiguously a list of names.
+    if comma_list or bare_names:
+        return True
+    tokens = re.findall(r"[A-Za-z']{2,}", s)
+    all_known = bool(tokens) and all(
+        (t.lower() in FIRST_NAMES
+         or any(rx.search(t) for rx, _ in SENDER_ROSTER))
+        for t in tokens)
+    if not all_known and len(names) * 2 < len(words):
+        return False
+    return nxt is not None and (is_name_debris(nxt) or RE_FIELD.match(nxt.strip()))
+
+
+# ── recipient-run continuation ───────────────────────────────────────────────
+# Once the header block is known to be inside a To:/Cc: list, the run continues
+# until something that cannot be a recipient appears. Individual lines are hard
+# to judge alone -- "ee SheltonDavenport, Marilee a ee" is neither prose nor a
+# clean name list -- but in context they are simply more of the same list. So
+# this weaker test is used only inside a run, never to open one.
+def continues_recipient_run(line, nxt=None):
+    s = (line or "").strip()
+    if not s or RE_SENTENCE_END.search(s) or len(s) > 200:
+        return False
+    # Prose: far more ordinary words than capitalised names. Compared as a ratio,
+    # not a multiple -- "Morgan Dzau, VictorJ. Beachy" reads as one word to the
+    # name regex and two to the word regex, and a strict multiple rejected it.
+    words = re.findall(r"[a-z]{3,}", s)
+    names = re.findall(r"[A-Z][a-zA-Z.'-]{2,}", s)
+    if len(words) > 4 and len(names) * 2 < len(words):
+        return False
+    # A comma-separated roll of names cannot be prose, whatever it contains: the
+    # separators decide it. ("Morgan Dzau, VictorJ. Beachy, Sarah ; Logan" has
+    # a full stop in it, but no sentence test can tell that from a surname.)
+    if s.count(",") >= 2 and len(names) >= 2:
+        return True
+    # Two sentences: not a list. A middle initial ("VictorJ. Beachy") is not a
+    # sentence end, so the capital after the period must start a real word.
+    if re.search(r"[.!?]\s+[A-Z][a-z]{2,}", s):
+        return False
+    return True
+
+
+def unwrap_lines(lines):
+    """Rejoin paragraphs that the scan width broke, keeping real returns.
+
+    Two signals are used together, so neither alone can invent or destroy a
+    return:
+
+      * the previous line must not end a sentence (no . ! ? : ;), and
+      * the next line must start like a continuation -- lower-case, or a
+        conjunction/particle, or a bracket.
+
+    A line ending in a full stop keeps its return even if the next line starts
+    lower-case, because that is a new sentence and only its capital was lost to
+    the scan. Signature blocks and quoted history are left alone: their returns
+    are the author's.
+    """
+    out = []
+    for line in lines:
+        s = line.strip()
+        if not s:
+            out.append(line)
+            continue
+        if out and out[-1].strip() and not RE_SENTENCE_END.search(out[-1]):
+            prev = out[-1].rstrip()
+            # mid-sentence break + next line reads as a continuation -> one line
+            cont = (prev.endswith("-")                 # hyphenated word split
+                    or RE_SOFT_START.match(s)          # starts on a bracket
+                    or (s[:1].islower() and prev[-1:].isalpha()))
+            if cont and not re.match(r"^(?:[-*•>]|\d+[.)])\s", s):
+                out[-1] = (prev[:-1] if prev.endswith("-") else prev) + " " + s
+                continue
+        out.append(line)
+    return out
+
+
+def is_header_fragment(line):
+    """A stray scrap of a header that the two-column scan tore off.
+
+    A quoted message printed beside its parent has its header lines split
+    across the column boundary, so a name lands on its own line between fields
+    ("... ; Jeremy" / "Farrar" / "Subject: ..."). Such a scrap is short, has no
+    sentence-ending punctuation, and does not read as prose: it is one or two
+    capitalised words and nothing else.
+    """
+    s = (line or "").strip()
+    if not s or len(s) > 40 or RE_SENTENCE_END.search(s):
+        return False
+    if not re.match(r"^[A-Z][A-Za-z'.-]*(?:[ /][A-Za-z][A-Za-z'.-]*){0,3}$", s):
+        return False
+    # A single ordinary capitalised word is prose far more often than a torn
+    # header, so require it to look like a name from the roster.
+    return bool(re.search(r"(?:andersen|rambaut|farrar|holmes|garry|fauci|drosten|"
+                           r"koopmans|pohlmann|farzan|andersen|fouchier|schreier|"
+                           r"ferguson|golding|lipkin|vallance|collins|auchincloss|"
+                           r"conrad|shabman|folkers|burke|pope|thomas|"
+                           r"edward|andrew|jeremy|kristian|robert|anthony|christian|"
+                           r"marion|stefan|michael|claire|patricia|reed|martina|"
+                           r"greg|andrew|josie|amanda|francis|jeremy|martin|rory|"
+                           r"eddie|tony|toney|farrar|beach|comin|perdue)", s, re.I))
+
+
+def split_signature(body):
+    """-> (body_lines, signature_lines): cut the sign-off block off the message.
+
+    strip_quoted used to key on a salutation ("Best regards", "Jeremy Farrar"),
+    which catches the senders who sign off but not Edward Holmes: his messages
+    run straight from the text into his title block
+
+        PROFESSOR EDWARD C. HOLMES FAA FRS
+        ARC Australian Laureate Fellow
+        THE UNIVERSITY OF SYDNEY
+        Marie Bashir Institute for Infectious Diseases & Biosecurity, ...
+
+    with no salutation to key on, so the block was read as message text and its
+    line returns lost. It is recognised by shape instead -- a credentialed
+    name line, or an affiliation line -- and is returned separately so it can be
+    shown as a signature (with its returns) rather than as prose.
+
+    The cut is only taken once some prose has been read, so a message that opens
+    on an affiliation line keeps it.
+    """
+    out, sig, cut = [], [], None
+    for i, line in enumerate(body):
+        s = line.strip()
+        if cut is None and out and is_signature_line(s):
+            cut = i
+        if cut is None:
+            out.append(line)
+        else:
+            sig.append(line)
+    return out, sig
+
+
 def strip_quoted(body):
     """Drop the signature block: everything from the sign-off onwards."""
     out, cut = [], None
@@ -404,20 +714,136 @@ def build_entries(messages):
     for msg in messages:
         fields = split_fields(msg["header_lines"])
         sender, sender_raw = clean_sender(fields.get("From") or "")
-        subject = (fields.get("Subject") or "").strip()
         stamp = fields.get("Sent") or fields.get("Date") or ""
         body = strip_quoted(msg["body"])
         # The screenshot layout puts Cc/Subject on their own visual lines, and
         # the OCR sometimes yields them after the block has already been read
         # as body. Anything that is plainly a header field at the very top of
-        # the body belongs to the header, not to the message text.
-        while body and RE_FIELD.match(body[0].strip()):
-            extra = split_fields(body[:1])
-            for k, v in extra.items():
-                if v and not fields.get(k):
-                    fields[k] = v
-            body = body[1:]
+        # the body belongs to the header, not to the message text. Skipping the
+        # junk lines first matters: "Pe" between the To: and Subject: lines used
+        # to stop this loop before it reached the Subject, which then stayed in
+        # the message body ("Subject: Fwd: ..." printed as prose).
+        while body:
+            head = body[0].strip()
+            if RE_FIELD.match(head):
+                extra = split_fields(body[:1])
+                for k, v in extra.items():
+                    if v and not fields.get(k):
+                        fields[k] = v
+                body = body[1:]
+                continue
+            if is_junk_line(head) or is_header_fragment(head):
+                body = body[1:]
+                continue
+            break
+        # The screenshot layout puts Cc/Subject on their own visual lines, and
+        # the OCR sometimes yields them after the block has already been read as
+        # body -- the header block having been closed early by a glyph fragment
+        # ("Pe") or by a torn-off scrap of a two-column recipient list. Chasing
+        # those one at a time is fragile, so the top of the body is swept once
+        # instead: a field within a short window is promoted back into the header
+        # where it belongs, and the debris before it is dropped.
+        #
+        # The window is deliberately small. A Subject line appearing further down
+        # is quoted history inside the message, not this message's own header,
+        # and promoting it would put the wrong subject on the card.
+        #
+        # A trailing Subject is also handled here: when a wrapped recipient list
+        # swallowed the line after the Subject ("Cc: ... Message" + the subject on
+        # the next line), the Subject is still recovered from the text just
+        # below, which is what it was.
+        window = min(len(body), 8)
+        found = -1
+        for i in range(window):
+            if RE_FIELD.match(body[i].strip()):
+                found = i
+                break
+        if found >= 0:
+            # Keep going while the recipient fields continue, and take the LAST
+            # field of the run -- that is the one whose line must be consumed
+            # from the body. Stopping at the first would leave the Subject that
+            # follows the run stranded in the message text.
+            j = found + 1
+            while j < min(len(body), 60):
+                if RE_FIELD.match(body[j].strip()):
+                    names = [n.strip().lower() for n in RE_FIELD.findall(body[j])]
+                    if any(n in ("to", "cc", "bcc", "ce", "fe", "pe", "gc")
+                           for n in names):
+                        found = j
+                        j += 1
+                        continue
+                    # A non-recipient field (Subject/Sent/Date) ends the run and
+                    # is itself part of the header, so it is consumed too:
+                    # the loop below splits fields up to `found` and drops the
+                    # body from `found + 1` onward.
+                    found = j
+                    break
+                if not continues_recipient_run(body[j]):
+                    break
+                j += 1
+            else:
+                found = j - 1
+        if found < 0:
+            # A group message can carry a forty-line recipient list, pushing the
+            # real Subject well past the short window. Widen the search only
+            # while every line skipped is recipient debris -- a name list, never
+            # prose -- so a Subject inside quoted history is still not promoted.
+            # The loop starts one line early because a recipient field ("Cc:",
+            # OCR'd as "GC:") may itself sit past the window.
+            i = max(0, window - 1)
+            while i < min(len(body), 60):
+                if RE_FIELD.match(body[i].strip()):
+                    found = i
+                    break
+                if not (is_name_debris(body[i]) or is_header_fragment(body[i])
+                        or is_wrapped_recipient(body[i], body[i + 1] if i + 1 < len(body) else None)
+                        or is_junk_line(body[i])):
+                    break
+                i += 1
+            if found >= 0:
+                # Follow the recipient run to its end, so the Subject behind it
+                # is reached rather than the Cc line in front of it.
+                j = found + 1
+                while j < min(len(body), 60):
+                    if RE_FIELD.match(body[j].strip()):
+                        names = [n.strip().lower() for n in RE_FIELD.findall(body[j])]
+                        if not any(n in ("to", "cc", "bcc", "ce", "fe", "pe", "gc")
+                                   for n in names):
+                            break
+                        found = j
+                        j += 1
+                        continue
+                    if not continues_recipient_run(body[j]):
+                        break
+                    j += 1
+        # No field at all. A Subject can still be sitting immediately
+        # below a torn-off fragment of the recipient list, because the list ran
+        # past the column and the Subject's own line was swallowed with it
+        # ("... Edward Holmes" + "Subject: Teleconterence"). It is only taken
+        # when it is a genuine Subject line -- an earlier version inferred one
+        # from whatever prose came next, which invented subjects such as
+        # "Ralph Baric trevor Peter Daszak".
+        if found < 0 and not fields.get("Subject") and body:
+            m = re.match(r"^\s*Subjec\w*:?\s*(.+)$", body[0], re.I)
+            if m and len(m.group(1).strip()) > 3:
+                fields["Subject"] = m.group(1).strip()
+                body = body[1:]
+                found = 0
+        if found >= 0:
+            for j in range(found):
+                extra = split_fields(body[j:j + 1])
+                for k, v in extra.items():
+                    if v and not fields.get(k):
+                        fields[k] = v
+            body = body[found + 1:]
+        subject = (fields.get("Subject") or "").strip()
+        # Order matters: junk is dropped first (so it cannot open a block), then
+        # the signature is cut off the message text, and only then are the
+        # scan-width breaks rejoined -- over the message text only, so the
+        # signature's own returns survive.
         body = strip_glyph_soup(body)
+        body, signature = split_signature(body)
+        body = unwrap_lines(body)
         content_body = "\n".join(body).strip()
 
         dt, off, how = parse_stamp(stamp)
@@ -427,7 +853,7 @@ def build_entries(messages):
                 "date": None, "time": None, "kind": "email",
                 "raw_date": subject or "(undated message)",
                 "sender": sender, "sender_raw": sender_raw, "subject": subject,
-                "content": header_block(fields, content_body, sender),
+                "content": header_block(fields, content_body, sender, signature),
                 "date_note": "no usable timestamp in the release; not plotted",
                 "pages": sorted(set(msg["pages"])), "source": SOURCE_ID,
                 "stamp_status": how,
@@ -461,7 +887,8 @@ def build_entries(messages):
             "raw_date": "%s ET · %s" % (et.strftime("%H:%M"), subject or "(no subject)"),
             "sender": sender, "sender_raw": sender_raw,
             "subject": subject,
-            "content": header_block(fields, content_body, sender),
+            "content": header_block(fields, content_body, sender, signature),
+            "signature": "\n".join(signature).strip() if signature else None,
             "stamp": stamp.strip(),
             "stamp_status": how,
             "zone_assumed": zone_why,
@@ -472,18 +899,25 @@ def build_entries(messages):
     return entries
 
 
-def header_block(fields, body, sender):
+def header_block(fields, body, sender, signature=None):
     """From/To/Cc/Subject/Sent stay inside `content` so they remain searchable
     and highlightable; the UI splits on the rule to style them apart.
 
     Header values are shown cleaned: From is the roster-canonical sender, and
     the other fields have their avatar glyphs stripped (the raw text survives
-    in `sender_raw`)."""
+    in `sender_raw`).
+
+    The signature block is appended after its own rule, one line per return, so
+    it reads as a signature rather than as more of the message. Its returns are
+    the sender's own, so they are kept exactly as scanned."""
     head = []
     for k in ("From", "To", "Cc", "Bcc", "Subject", "Sent", "Date", "Importance"):
         if fields.get(k):
             head.append("%s: %s" % (k, clean_field_value(k, fields[k], sender)))
-    return "\n\n".join(head) + "\n\n----------\n\n" + body
+    out = "\n\n".join(head) + "\n\n----------\n\n" + body
+    if signature:
+        out += "\n\n----------\n\n" + "\n".join(signature).strip()
+    return out
 
 
 # ── page-break repair ───────────────────────────────────────────────────────

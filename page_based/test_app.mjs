@@ -73,6 +73,10 @@ globalThis.__app = { SOURCES, KIND_DEFS, KIND_ALIASES, entryKind, kindDef,
   availableKinds, kindListed, loadKindFilter, saveKindFilter, loadData, doSearch,
   displayResults, entryChipsHtml, buildTimelineSeries, entryMapKey, highlightWithHits,
   openEntryRef, rebuildThreadDownLinks, KIND_HUE, kindColor, guideDocToSource,
+  toggleBookmark, isBookmarked, removeBookmark, openBookmark, renderBookmarks,
+  bookmarksPayload, bmAppFor, refreshBookmarkToggles, openEntryByBmKey,
+  get bookmarks(){ return bookmarks; },
+  set bookmarks(v){ bookmarks = v; },
   get diaryData(){ return diaryData; },
   set kindFilter(v){ kindFilter = v; }, get kindFilter(){ return kindFilter; },
   get timelineSeries(){ return timelineSeries; } };
@@ -249,6 +253,80 @@ ok('guideDocToSource resolves the SSCP drafts PDF',
 ok('guideDocToSource leaves un-ingested docs non-clickable',
    app.guideDocToSource('farrar-fauci-comms-full.pdf') === null,
    String(app.guideDocToSource('farrar-fauci-comms-full.pdf')));
+
+sec('Bookmarks');
+app.bookmarks = [];
+const target = app.diaryData.entries.find(e => e.source === 'po-emails');
+ok('every entry has a bookmark key', app.diaryData.entries.every(e => !!e.bm_key));
+const keys = app.diaryData.entries.map(e => e.bm_key);
+ok('bookmark keys are unique across releases', new Set(keys).size === keys.length,
+   (keys.length - new Set(keys).size) + ' duplicates');
+const p1 = app.diaryData.entries.find(e => e.source === 'part1');
+const p2 = app.diaryData.entries.find(e => e.source === 'part2');
+ok('part1 and part2 keys do not collide (idx is per-part)',
+   p1 && p2 && p1.bm_key !== p2.bm_key && /part1/.test(p1.bm_key) && /part2/.test(p2.bm_key),
+   p1 && p1.bm_key + ' vs ' + p2 && p2.bm_key);
+ok('adding a bookmark returns true and records it',
+   app.toggleBookmark(target.bm_key, { label: 'T', date: target.date }) === true &&
+   app.isBookmarked(target.bm_key) && app.bookmarks.length === 1);
+ok('clicking again removes it',
+   app.toggleBookmark(target.bm_key, {}) === false &&
+   !app.isBookmarked(target.bm_key) && app.bookmarks.length === 0);
+app.toggleBookmark(target.bm_key, { label: 'Holmes', sub: 'Email', date: '2020-02-11' });
+const payload = app.bookmarksPayload();
+ok('the saved file names its format and version',
+   payload.format === 'drastic-bookmarks' && payload.version === 1 && payload.count === 1,
+   JSON.stringify({ f: payload.format, v: payload.version, c: payload.count }));
+ok('the saved record carries key, app and url (portable across DRASTIC apps)',
+   payload.bookmarks[0].key === target.bm_key && payload.bookmarks[0].app === 'po-slack' &&
+   typeof payload.bookmarks[0].url === 'string');
+ok('a bookmark resolves back to its entry',
+   app.openEntryByBmKey(target.bm_key, 1) === true);
+ok('an unknown key is refused rather than opening the wrong box',
+   app.openEntryByBmKey('part1/does-not-exist') === false);
+ok('bmAppFor recognises the sibling apps from a url',
+   app.bmAppFor('../Fauci_Diary/page_based/index.html') === 'fauci-diary' &&
+   app.bmAppFor('../DaszakCalendar/index.html') === 'daszak-calendar',
+   app.bmAppFor('../Fauci_Diary/page_based/index.html') + ' / ' +
+   app.bmAppFor('../DaszakCalendar/index.html'));
+app.bookmarks = [];
+
+sec('Email header + signature parsing');
+const emailsAll = app.diaryData.entries.filter(e => e.source === 'po-emails');
+const holmes = emailsAll.filter(e => /Holmes/.test(e.sender || ''));
+ok('most subjects are recovered', emailsAll.filter(e => e.subject).length >= 70,
+   emailsAll.filter(e => e.subject).length + ' of ' + emailsAll.length);
+// A Subject line may still appear in a body, but only as quoted history: the
+// message it quotes always carries its own header rule before it. What must
+// never happen is this message's OWN subject being stranded in its own body --
+// i.e. a Subject line above the first quoted To:/From: header.
+const bodySubjectOnly = emailsAll.filter(function(e) {
+  const parts = e.content.split('----------');
+  if (parts.length < 3) return false;            // no quoted history at all
+  const b = parts[1];
+  const s = b.search(/(^|\n)Subject: /);
+  if (s < 0) return false;
+  const q = b.search(/(^|\n)(To|From|Cc): /);
+  return q < 0 || s < q;                          // Subject before any quote header
+});
+ok('no message\'s own subject is stranded in its body', bodySubjectOnly.length === 0,
+   bodySubjectOnly.map(e => e.date + ' ' + e.time + ' ' + e.subject).join(', '));
+ok('Cc is parsed as Cc, not the OCR\'s "Ce:"',
+   emailsAll.some(e => /^Cc: /m.test(e.content)));
+ok('no "Ce:" survives as a header line',
+   !emailsAll.some(e => /(^|\n)Ce: /.test(e.content.split('----------')[0] || '')));
+const sig = emailsAll.filter(e => e.signature);
+ok('signature blocks are separated from the message text', sig.length > 0,
+   sig.length + ' messages carry a signature');
+ok('a signature keeps its own line returns',
+   sig.some(e => e.signature.split('\n').length >= 3),
+   'max lines: ' + Math.max(0, ...sig.map(e => e.signature.split('\n').length)));
+ok('the signature is not also left in the message body',
+   sig.every(e => !e.content.split('----------')[1].includes('FAA FRS')));
+ok('scan-width wraps are rejoined (no artificial returns mid-sentence)',
+   !app.diaryData.entries.some(e => e.source === 'po-emails' &&
+     /gravitas\.\.\.plus\n/.test(e.content)),
+   'found "gravitas...plus" still split across a return');
 
 console.log('\n' + pass + ' passed, ' + fail + ' failed');
 process.exit(fail ? 1 : 0);
