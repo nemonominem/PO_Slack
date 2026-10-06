@@ -301,15 +301,26 @@ Prioritised by how much of the argument they carry:
   **Subjects recovered on 76 of 86 messages, up from 0.** Zero messages now have
   their own subject stranded in their body. The 10 still empty are ones whose
   subject the scans lost outright; they are left empty rather than guessed.
+  (Now 95 of 100 — see the counts note below.)
 - **Signatures separated.** A title block is no longer read as message prose: it
   is cut off the text into its own `signature` field and shown after a rule, with
   its own line returns preserved. Holmes's block had been flattened into the body.
 - **Line returns repaired.** Breaks that were an artefact of the scan column
   width are rejoined (`unwrap_lines`); returns the author made are kept.
-- Counts: Slack 12,600 + 7 notices, Email 86, Draft 20 = **12,713**.
-  (86 rather than 87: two messages that had been counted separately are now
-  recognised as one message printed across a page break — they only merge once
-  the subject is recovered, because that is what gives the two halves identity.)
+- Counts: Slack 12,600 + 7 notices, Email 100, Draft 20 = **12,727**.
+  (Was 86: fourteen messages whose `From:` line the scan swallowed had been
+  fused into their neighbours, most visibly entry 22 with its doubled Subject
+  and stamp. `segment()` now also opens on a `Date:`/`Sent:` line when the
+  current message is already in its body and the `From:` above is more than a
+  full header block away; quoted history can't trigger it. Five of the new
+  messages recover their sender from the signature block via the same roster
+  (recorded as `sender_how`); the rest stay honestly senderless. Two further
+  fixes fell out along the way: the body-sweep parsed the recipient run up to
+  but *excluding* the Subject line itself (`range(found)` → `range(found+1)`),
+  which recovered 7 more subjects (now 95 of 100), and the page map no longer
+  pairs entries to messages by position after the chronological sort — pages
+  ride on the entries, giving 103/103 coverage. The release's duplicate prints
+  (REV batch + LIP/GARRY batch) merge without doubling their bodies.)
 - **Testing.** A real browser suite now exists: `page_based/test_browser.mjs`
   drives Chrome for Testing (from the Playwright cache — the MCP browser server
   looks for a Google Chrome install that is not present on this machine) and
@@ -317,5 +328,5 @@ Prioritised by how much of the argument they carry:
   vertical column in landscape and a horizontal strip in portrait, that its
   arrows really do turn sideways, that a clipped box really does show its
   scrollbar, that the DRASTIC logo really loads, and that a bookmark really
-  survives a reload. **34 browser + 63 functional + 55 static checks pass.**
+  survives a reload. **34 browser + 66 functional + 55 static checks pass.**
   Run it with the app served: `python3 -m http.server 8099 && node test_browser.mjs`.

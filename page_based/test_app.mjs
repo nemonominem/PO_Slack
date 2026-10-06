@@ -311,6 +311,19 @@ const bodySubjectOnly = emailsAll.filter(function(e) {
 });
 ok('no message\'s own subject is stranded in its body', bodySubjectOnly.length === 0,
    bodySubjectOnly.map(e => e.date + ' ' + e.time + ' ' + e.subject).join(', '));
+// A message whose scan lost its From: line (opens on Date:/Sent:) must not be
+// fused into its neighbour: no entry may carry two Subjects or two stamps.
+ok('no entry carries a doubled Subject (stitched messages)',
+   emailsAll.every(e => (e.subject.match(/Invitation to edit/g) || []).length <= 1),
+   emailsAll.filter(e => (e.subject.match(/Invitation to edit/g) || []).length > 1).length + ' doubled');
+ok('no entry carries a doubled stamp (stitched messages)',
+   emailsAll.every(e => ((e.stamp || '').match(/2020/g) || []).length <= 1),
+   emailsAll.filter(e => ((e.stamp || '').match(/2020/g) || []).length > 1).length + ' doubled');
+// Senders eaten with the From: line are recovered from the signature block,
+// and the attribution is recorded; anything else stays honestly empty.
+ok('signature-recovered senders are recorded',
+   emailsAll.filter(e => e.sender_how && e.sender_how.indexOf('signature') >= 0).length >= 1,
+   emailsAll.filter(e => e.sender_how && e.sender_how.indexOf('signature') >= 0).length + ' recovered');
 ok('Cc is parsed as Cc, not the OCR\'s "Ce:"',
    emailsAll.some(e => /^Cc: /m.test(e.content)));
 ok('no "Ce:" survives as a header line',

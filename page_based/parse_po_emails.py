@@ -95,6 +95,25 @@ FURNITURE = re.compile(
 # ── header grammar ──────────────────────────────────────────────────────────
 HEADER_FIELDS = ("From", "To", "Cc", "Bcc", "Subject", "Sent", "Date", "Importance")
 RE_FROM = re.compile(r"^From:\s*(.+)$", re.I)
+# Note: the re.I already covers a lowercase "from:" -- case-insensitivity here
+# is load-bearing, not cosmetic. The amputated "\x0crom:" (line 4711) is NOT
+# covered: it is matched by the "rom" FIELD_ALIASES entry and normalised when
+# split_fields() runs, so by the time the sender is read it is a From: line.
+# What the alias cannot do is OPEN the message in segment(), which keys on
+# RE_FROM -- hence RE_MSG_OPEN below.
+RE_MSG_OPEN = re.compile(r"^(?:From|rom):\s*(.+)$", re.I)
+RE_HDR_DATE = re.compile(r"^(?:Sent|Date)\s*:\s*(.+)$", re.I)
+# A Date:/Sent: line can BE a message boundary. Some prints in this release lost
+# their From: line (the scan swallowed it with the page furniture), so the
+# release shows a Date:/Sent: line with no From: above it, followed by the
+# usual To:/Subject: run. Splitting only on From: fused two such messages into
+# one entry with a doubled Subject and stamp ("Re: Summary ... Re: Summary
+# ..."). The rule is strict so quoted history never triggers it: the line must
+# open with Date:/Sent:, the current message must already be IN its body (a
+# bare Date: line with no current message is leading furniture, not a start),
+# and the From: above must be too far back to own it (more than a full header
+# block away -- past MAX_HEADER_LINES + slack; a Date: eight lines below its
+# From: is that message's own stamp, not a new one).
 # A field header, possibly OCR-glued to the next one ("Cc: Jeremy FarrarSubject:
 # x"). The OCR routinely reads the two capitals in "Cc:" as "Ce:" (and "To:" as
 # "Pe:"/"Fe:"), so the alternation lists those readings too and split_fields()
@@ -103,6 +122,11 @@ RE_FROM = re.compile(r"^From:\s*(.+)$", re.I)
 FIELD_ALIASES = {
     "ce": "Cc", "cc": "Cc", "bce": "Bcc", "bcc": "Bcc", "gc": "Cc",
     "fe": "To", "pe": "To", "to": "To", "fo": "From",
+    # "rom:" (line 4711) is a From: whose capital F the scan amputated with the
+    # page furniture ("\x0crom: Edward Holmes"). Single occurrence in the
+    # release; kept as an alias rather than a special case so the normal
+    # header path handles it.
+    "rom": "From",
     "subiect": "Subject", "subjec": "Subject", "subject": "Subject",
     "senf": "Sent", "sent": "Sent", "dafe": "Date", "date": "Date",
 }
@@ -354,15 +378,36 @@ def segment(pages):
     """
     messages = []
     cur = None
+    cur_from_at = -1      # stream position of the From: that opened cur
+    pos = 0               # count of non-empty lines seen (From-to-Date distance)
+    in_body = False       # like body_mode, but carried across page breaks: a
+                          # Date: line at the top of a page is still body
     for pageno, lines in pages:
-        body_mode = False
+        body_mode = in_body
         for li, line in enumerate(lines):
             nxt = lines[li + 1] if li + 1 < len(lines) else None
-            if RE_FROM.match(line):
+            if RE_MSG_OPEN.match(line):
                 cur = {"header_lines": [line], "body": [], "pages": [pageno]}
                 messages.append(cur)
+                cur_from_at = pos
                 body_mode = False
+                in_body = False
+                pos += 1
                 continue
+            if RE_HDR_DATE.match(line) and cur is not None and body_mode \
+                    and pos - cur_from_at > MAX_HEADER_LINES + 4:
+                # A new message whose From: the scan ate: the Date:/Sent: line
+                # opens its header, the following To:/Subject: lines join it in
+                # the normal way. Without a current message, or while still in
+                # the header block, this is just the message's own stamp.
+                cur = {"header_lines": [line], "body": [], "pages": [pageno]}
+                messages.append(cur)
+                cur_from_at = pos
+                body_mode = False
+                in_body = False
+                pos += 1
+                continue
+            pos += 1
             if cur is None:
                 continue
             cur["pages"].append(pageno)
@@ -397,6 +442,7 @@ def segment(pages):
                         cur["header_lines"].append(line)
                         continue
                     body_mode = True
+                    in_body = True
                     cur["body"].append(line)
                 elif has_field or len(cur["header_lines"]) == 1:
                     cur["header_lines"].append(line)
@@ -408,9 +454,12 @@ def segment(pages):
                             "to", "cc", "bcc", "fe", "pe", "ce")
                 else:
                     body_mode = True
+                    in_body = True
                     cur["body"].append(line)
             else:
                 cur["body"].append(line)
+                in_body = True
+        in_body = body_mode
     return messages
 
 
@@ -714,6 +763,7 @@ def build_entries(messages):
     for msg in messages:
         fields = split_fields(msg["header_lines"])
         sender, sender_raw = clean_sender(fields.get("From") or "")
+        sender_how = "From: line" if fields.get("From") else ""
         stamp = fields.get("Sent") or fields.get("Date") or ""
         body = strip_quoted(msg["body"])
         # The screenshot layout puts Cc/Subject on their own visual lines, and
@@ -830,7 +880,11 @@ def build_entries(messages):
                 body = body[1:]
                 found = 0
         if found >= 0:
-            for j in range(found):
+            # Split the lines up to AND INCLUDING found: found is the last
+            # field of the run, which is usually the Subject itself -- stopping
+            # one short recovers the recipients but drops the Subject line
+            # unread ("Subject:Re: Teleconference" consumed but never parsed).
+            for j in range(found + 1):
                 extra = split_fields(body[j:j + 1])
                 for k, v in extra.items():
                     if v and not fields.get(k):
@@ -843,6 +897,18 @@ def build_entries(messages):
         # signature's own returns survive.
         body = strip_glyph_soup(body)
         body, signature = split_signature(body)
+        if not fields.get("From"):
+            # The scan ate this message's From: line (it opens on Date:/Sent:).
+            # The signature's name line goes through the roster directly -- a
+            # roster hit attributes, anything else leaves the sender empty
+            # rather than inventing one from a title ("ARC" is not a sender).
+            for sline in signature:
+                hit = next((name for rx, name in SENDER_ROSTER
+                            if rx.search(sline.strip())), None)
+                if hit:
+                    sender, sender_raw = hit, sline.strip()
+                    sender_how = "signature block (From: lost in scan)"
+                    break
         body = unwrap_lines(body)
         content_body = "\n".join(body).strip()
 
@@ -852,7 +918,8 @@ def build_entries(messages):
             entries.append({
                 "date": None, "time": None, "kind": "email",
                 "raw_date": subject or "(undated message)",
-                "sender": sender, "sender_raw": sender_raw, "subject": subject,
+                "sender": sender, "sender_raw": sender_raw, "sender_how": sender_how,
+                "subject": subject,
                 "content": header_block(fields, content_body, sender, signature),
                 "date_note": "no usable timestamp in the release; not plotted",
                 "pages": sorted(set(msg["pages"])), "source": SOURCE_ID,
@@ -886,6 +953,7 @@ def build_entries(messages):
             "kind": "email",
             "raw_date": "%s ET · %s" % (et.strftime("%H:%M"), subject or "(no subject)"),
             "sender": sender, "sender_raw": sender_raw,
+            "sender_how": sender_how,
             "subject": subject,
             "content": header_block(fields, content_body, sender, signature),
             "signature": "\n".join(signature).strip() if signature else None,
@@ -952,8 +1020,13 @@ def merge_page_splits(entries):
         head = parts[0]
         for extra in parts[1:]:
             h, sep, body = extra["content"].partition("----------")
-            head["content"] = (head["content"].rstrip() + "\n" +
-                               (body if sep else extra["content"]).strip())
+            addition = (body if sep else extra["content"]).strip()
+            # The release prints some messages twice (REV batch + LIP/GARRY
+            # batch): same stamp, same body repeated. Concatenating would print
+            # the message twice, so when the new body is already contained in
+            # what we hold, only the page list grows.
+            if addition and addition not in head["content"]:
+                head["content"] = head["content"].rstrip() + "\n" + addition
             head["pages"] = sorted(set(head.get("pages", []) + extra.get("pages", [])))
             head["merged_pages"] = head.get("merged_pages", 0) + 1
         out.append(head)
@@ -1055,12 +1128,15 @@ def main():
     entries.sort(key=lambda e: (e.get("date") or "9999", e.get("time") or "9999"))
     for i, e in enumerate(entries):
         e["idx"] = i
-        e.pop("pages", None)
     linked = thread_entries(entries)
 
     n_pages = len(open(OCR_TXT, encoding="utf-8").read().split("\x0c"))
-    page_map = build_page_map(
-        [dict(e, pages=m["pages"]) for e, m in zip(entries, messages)], n_pages)
+    # Pages ride on the entries themselves (merge_page_splits unions them), so
+    # no positional zip with messages: the sort above already reordered entries
+    # and the counts differ whenever a split or merge fires.
+    page_map = build_page_map(entries, n_pages)
+    for e in entries:
+        e.pop("pages", None)
 
     dated = [e for e in entries if e.get("date")]
     undated = [e for e in entries if not e.get("date")]

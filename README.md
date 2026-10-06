@@ -14,9 +14,9 @@ Four releases are merged into one searchable timeline.
 |---|---|---|---|---|---|
 | **Slack Part 1** — `paper-2020-nature_medicine-proximal_origin` (screenshots) | `Proximal_Origin_Slack.pdf` | Feb 1 &ndash; Apr 30, 2020 | 1,256 | 140 | OCR'd Slack screenshots |
 | **Slack Part 2** — export continuation | `Proximal_Origin_Slack.pdf` | Apr 30, 2020 &ndash; Jun 28, 2023 | 11,351 | 1,123 | Clean text-layer export |
-| **P.O. emails** — the FOI'd email release | `Proximal_Origin_Emails.pdf` | Jan 31 &ndash; Jul 27, 2020 | 87 | 163 | Scanned images, re-OCR'd, split per message |
+| **P.O. emails** — the FOI'd email release | `Proximal_Origin_Emails.pdf` | Jan 31 &ndash; Jul 27, 2020 | 100 | 163 | Scanned images, re-OCR'd, split per message |
 | **Manuscript drafts** | `SSCP-Drafts-of-Proximal-Origin.pdf` | Feb 1 &ndash; Mar 5, 2020 | 20 | 216 | One dated version per entry |
-| **Combined** | | Jan 2020 &ndash; Jun 2023 | **12,713** | 1,642 | |
+| **Combined** | | Jan 2020 &ndash; Jun 2023 | **12,727** | 1,642 | |
 
 The Slack channel is the tip of the story; the emails and the drafts are the
 body of evidence behind it, which is why they sit on the same timeline.
