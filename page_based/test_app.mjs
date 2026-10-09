@@ -250,9 +250,12 @@ ok('guideDocToSource resolves the FOIA email PDF',
 ok('guideDocToSource resolves the SSCP drafts PDF',
    app.guideDocToSource('SSCP-Drafts-of-Proximal-Origin.pdf') === 'sscp',
    String(app.guideDocToSource('SSCP-Drafts-of-Proximal-Origin.pdf')));
-ok('guideDocToSource leaves un-ingested docs non-clickable',
-   app.guideDocToSource('farrar-fauci-comms-full.pdf') === null,
+ok('guideDocToSource resolves the Farrar-Fauci-Collins emails',
+   app.guideDocToSource('farrar-fauci-comms-full.pdf') === 'farrar-fauci',
    String(app.guideDocToSource('farrar-fauci-comms-full.pdf')));
+ok('guideDocToSource leaves genuinely un-ingested docs non-clickable',
+   app.guideDocToSource('Baric-Emails-2.17.21.pdf') === null,
+   String(app.guideDocToSource('Baric-Emails-2.17.21.pdf')));
 
 sec('Bookmarks');
 app.bookmarks = [];

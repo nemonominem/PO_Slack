@@ -24,14 +24,14 @@ pass (see STATUS.md).
 
 | Kind | Document | Citations | Pages cited | Date range | Link |
 |---|---|---|---|---|---|
-| transcript | `2023.06.16-Andersen-Transcript.pdf` | 12 | 43, 50-51, 51, 52-53, 52, 53-54, 54, 55, ... (11) | 2020-02-01 -> 2023-01-01 | - |
+| transcript | `2023.06.16-Andersen-Transcript.pdf` | 12 | 43, 50-51, 51, 52, 52-53, 53-54, 54, 55-56, ... (11) | 2020-02-01 -> 2023-01-01 | - |
 | transcript | `Baric-TI-Transcript.pdf` | 11 | 15, 18, 20-21, 22-23, 30-32, 108-110, 120-121, 121, ... (10) | - | [link](https://drive.google.com/file/d/173bZUapV1fbWx7KXqD30uynH1sQddOLs/view?usp=sharing) |
 | other | `1265-pages.pdf` | 9 | 1, 2, 274, 319, 343-344, 351, 355, 365-366, ... (9) | 2020-02-07 -> 2020-05-29 | [link](https://drive.google.com/file/d/1T2MNgjgjXKDGZFjyJvE2MO0RDb8UFcIe/view?usp=sharing) |
 | email | `Baric-Emails-2.17.21.pdf` | 8 | 102, 115-116, 118, 123, 128, 133, 181-182 | 2020-02-03 -> 2020-02-04 | - |
 | other | `01981-F-Dec-2022-Production-OPAQUE.pdf` | 8 | 1, 2, 9, 26, 61, 138, 142, 223, ... (10) | 2020-01-27 -> 2022-01-01 | - |
 | email | `UTMB-LeDuc-batch-1.pdf` | 7 | 1, 2, 4, 206, 486-487, 593-594, 806-809, 1448, ... (10) | 2020-01-17 -> 2021-05-24 | [link](https://drive.google.com/file/d/1O6_TaUYbPeAsdwOj-1JkvzKQFVBtx_Jw/view?usp=sharing) |
 | other | `Biohazard_FOIA_Maryland_Emails_11.6.20.pdf` | 6 | 255, 278, 284, 292, 304 | 2020-02-06 -> 2020-02-09 | [link](https://drive.google.com/file/d/12NTOh9Aswk5pBf-X_INFB_sdrmoLinjC/view?usp=sharing) |
-| other | `HHS_Garrett-Grigsby_12.30.21_production.pdf` | 5 | 2, 21, 21-23, 22, 23, 36, 37, 38, ... (9) | 2020-02-02 -> 2020-02-09 | - |
+| other | `HHS_Garrett-Grigsby_12.30.21_production.pdf` | 5 | 2, 21-23, 21, 22, 23, 36, 37, 38, ... (9) | 2020-02-02 -> 2020-02-09 | - |
 | other | `00692.pdf` | 2 | 2, 47-48, 145-146 | 2020-01-23 -> 2020-01-27 | - |
 | other | `7.19.21-Partial-Production_Redacted.pdf` | 2 | 1, 22-23 | 2020-01-27 -> 2020-04-24 | - |
 | other | `NIH-FOIA-57153-Murray-Complete-Response.pdf` | 2 | 48, 50-51 | 2020-02-01 -> 2020-02-01 | - |

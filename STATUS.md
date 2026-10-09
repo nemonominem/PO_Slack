@@ -148,16 +148,6 @@ Agreed to add these in a later pass; each is catalogued in `page_based/SOURCES.m
 with its citation count, pages cited and Drive link where the article gives one.
 Prioritised by how much of the argument they carry:
 
-- [ ] `farrar-fauci-comms.pdf` — 174 pp, cited 30x. Its baked-in OCR text layer
-      has lost all inter-word spaces (`sent: Fri,24Jul202010:37:4640000To:
-      JeremyFarrar`), so it needs a dictionary-based de-gluer rather than a
-      plain parse.
-      **Where it is:** on disk at `page_based/farrar-fauci-comms.pdf`, but
-      **deliberately untracked** (`.gitignore`). At 99.6 MiB it sits 0.4 MiB
-      under GitHub's 100 MiB per-file limit, and nothing reads it yet, so
-      tracking it would have risked the whole push for a file the app does not
-      use. Add it back — preferably after `git-lfs migrate import` — at the same
-      time as the de-gluer work that makes it usable.
 - [ ] `Baric-Emails-2.17.21.pdf` (8x) and the EHA/WIV correspondence
 - [ ] `UTMB-LeDuc-batch-1.pdf` (7x) — LeDuc's pointed questions, 9–10 Feb
 - [ ] `01981-F-Dec-2022-Production-OPAQUE.pdf` (8x) and the other USRTK
@@ -272,8 +262,11 @@ Prioritised by how much of the argument they carry:
   here. Download them into `page_based/` if you want them served alongside the
   app.
 - `git-lfs` is not installed, so the PDFs are committed as large blobs.
-  `page_based/farrar-fauci-comms.pdf` is the one exception: it is on disk but
-  untracked (see the TODO above).
+  `page_based/farrar-fauci-comms.pdf` is the one exception: at 99.6 MiB it
+  sits 0.4 MiB under GitHub's 100 MiB per-file limit, so it stays on disk but
+  **deliberately untracked** (`.gitignore`) even though the app now reads it
+  (farrar-fauci source, see below) — install `git-lfs` and
+  `git lfs migrate import --include="page_based/*.pdf"` before adding it.
 
 ## Done (review round 4 — bookmarks, manual, DRASTIC mark, email headers)
 
@@ -330,3 +323,57 @@ Prioritised by how much of the argument they carry:
   scrollbar, that the DRASTIC logo really loads, and that a bookmark really
   survives a reload. **34 browser + 66 functional + 55 static checks pass.**
   Run it with the app served: `python3 -m http.server 8099 && node test_browser.mjs`.
+
+## Done (review round 5 — Farrar-Fauci-Collins emails ingested, fifth source)
+- **`farrar-fauci-comms.pdf` re-OCR'd to completion** (174/174 pages; the prior
+  pass had only reached page 80). Same recipe as the other releases: `pdftoppm`
+  at 300dpi + `tesseract --oem 1 --psm 6`, resumable
+  (`reocr_farrar_fauci.py`), because the PDF's own text layer glues words
+  together and misreads glyphs (`sent: Fri,24Jul202010:37:4640000To:
+  JeremyFarrar`) where the rendered page images are sharp.
+- **`parse_farrar_fauci.py`** (new) turns the OCR text into entries, following
+  the same rules as `parse_po_emails.py` (SPEC.md) but adapted to this
+  release's shape, which is plain Outlook headers rather than screenshots:
+  - **Explicit UTC offsets win.** Most top-level stamps carry a bare
+    RFC-2822-style offset (`Sent: Fri, 24 Jul 2020 10:37:46 +0000`), with no
+    parens — a new stamp format the po-emails parser never needed. The zone
+    table only matters for the stamps that lack one.
+  - **Inline quote markers recovered as their own entries.** SPEC.md 2.3 calls
+    for this and po-emails' parser never implemented it; here "On 8 Feb 2020,
+    at 22:15, Kristian G. Andersen wrote:" opens a new message (synthetic
+    `From:`/`Sent:` lines built from the marker) instead of leaving the quoted
+    reply glued into the message that quotes it. No Subject is invented for
+    these — left empty rather than guessed.
+  - **A handful of German-language headers** (Von/Gesendet/An/Betreff, from
+    messages relayed through a German mail client) are recognised as field
+    aliases alongside the usual OCR misreadings (Ce:/Pe:/Fe:).
+  - **165 entries, 159 dated** (23 Jan – 24 Jul 2020), **6 undated** (2 where
+    the scan lost the Sent: line entirely with no recoverable stamp, 1 each in
+    Dutch and Spanish locale date formats not yet handled, 2 others) — left
+    undated rather than guessed, same policy as every other source.
+  - Sender roster extended for this release's correspondents (Viner, Dzau,
+    Collins, Smith, Bianchi, Gibbons, the GPMB/WHO governance thread, etc.);
+    a handful of senders with heavily redacted or truncated OCR text still
+    fall back to raw cleaned text (e.g. bare "SMITH", "Jeremy") rather than a
+    forced roster match — same best-effort standard as po-emails.
+- **Registered as a fifth source** (`farrar-fauci`) in `index.html`'s
+  `SOURCES`, wired into `guideDocToSource` so the guide's
+  `farrar-fauci-comms-full.pdf` / `farrar-fauci-comms.pdf` citations are now
+  clickable PDF links instead of inert labels. `build_po_guide.py` already had
+  the `LOCAL_DOCS` mapping from an earlier pass; nothing there needed to
+  change.
+- **Fixed a latent `test_browser.mjs` bug** found while testing: the Email
+  formatting check's card-selection predicate used an anchored regex
+  (`/^Subject: /m`) against `.textContent`, which never has real newlines
+  between header fields, so it could never match and always fell through to
+  `cards[0]` — happening to pass only because the previously-first
+  chronological email result always had a Subject. Adding an earlier-dated
+  source with some blank-subject (inline-quote-recovered) entries exposed it.
+  Fixed to use the same non-anchored test as the real assertion below it.
+- Counts: Slack 12,600 + 7 notices, Email 100, Farrar-Fauci-Collins 165,
+  Draft 20 = **12,892**.
+- **Tests**: 67/67 functional, 58/58 static, 32/34 browser (the 2 remaining
+  failures are the portrait bookmark-rail layout check, pre-existing and
+  unrelated to this source — tracking the rail's old horizontal-strip
+  portrait behaviour, which a separate concurrent change already moved away
+  from without updating this assertion).

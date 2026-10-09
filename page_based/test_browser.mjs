@@ -226,7 +226,7 @@ await page.waitForTimeout(800);
 const mail = await page.evaluate(() => {
   // Again, measure a card that has the thing under test.
   const cards = [...document.querySelectorAll('.result-entry')];
-  const card = cards.find(c => /^Subject: /m.test(
+  const card = cards.find(c => /Subject:\s*\S/.test(
     (c.querySelector('.mail-head') || {}).textContent || '')) || cards[0];
     const t = (card ? card.querySelector('.result-content') : {}).textContent || '';
     const head = (card ? card.querySelector('.mail-head') : {}).textContent || '';

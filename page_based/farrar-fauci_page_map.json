@@ -1,0 +1,827 @@
+{
+ "farrar-fauci|2020-01-23|0903": {
+  "start": 174,
+  "end": 174,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-23|2032": {
+  "start": 173,
+  "end": 174,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-24|0108": {
+  "start": 173,
+  "end": 173,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-24|0616": {
+  "start": 173,
+  "end": 173,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-28|0209": {
+  "start": 164,
+  "end": 167,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-28|0938": {
+  "start": 168,
+  "end": 169,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-28|1613": {
+  "start": 168,
+  "end": 168,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-28|1846": {
+  "start": 163,
+  "end": 164,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-29|0545": {
+  "start": 162,
+  "end": 162,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-29|0636": {
+  "start": 163,
+  "end": 163,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-29|0832": {
+  "start": 161,
+  "end": 161,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-29|0921": {
+  "start": 160,
+  "end": 160,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-29|0935": {
+  "start": 159,
+  "end": 159,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-29|1040": {
+  "start": 158,
+  "end": 158,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-29|1543": {
+  "start": 158,
+  "end": 158,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-29|1644": {
+  "start": 161,
+  "end": 162,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-29|1854": {
+  "start": 160,
+  "end": 161,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-29|1929": {
+  "start": 159,
+  "end": 160,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-29|2038": {
+  "start": 159,
+  "end": 159,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-29|2042": {
+  "start": 158,
+  "end": 158,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-30|0926": {
+  "start": 157,
+  "end": 157,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-31|1223": {
+  "start": 156,
+  "end": 156,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-31|1257": {
+  "start": 154,
+  "end": 155,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-31|1543": {
+  "start": 147,
+  "end": 153,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-31|1938": {
+  "start": 154,
+  "end": 154,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-31|2147": {
+  "start": 147,
+  "end": 147,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-31|2234": {
+  "start": 155,
+  "end": 156,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|0055": {
+  "start": 142,
+  "end": 143,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|0534": {
+  "start": 140,
+  "end": 141,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|0555": {
+  "start": 144,
+  "end": 146,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|0700": {
+  "start": 115,
+  "end": 115,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|0700|1": {
+  "start": 138,
+  "end": 139,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|0827": {
+  "start": 142,
+  "end": 142,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|0956": {
+  "start": 119,
+  "end": 122,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1034": {
+  "start": 113,
+  "end": 136,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1034|1": {
+  "start": 116,
+  "end": 134,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1050": {
+  "start": 140,
+  "end": 140,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1051": {
+  "start": 137,
+  "end": 137,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1100": {
+  "start": 115,
+  "end": 115,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1112": {
+  "start": 135,
+  "end": 135,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1149": {
+  "start": 137,
+  "end": 138,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1312": {
+  "start": 127,
+  "end": 127,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1409": {
+  "start": 125,
+  "end": 125,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1412": {
+  "start": 116,
+  "end": 123,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1443": {
+  "start": 116,
+  "end": 122,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1443|1": {
+  "start": 119,
+  "end": 120,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1456": {
+  "start": 115,
+  "end": 116,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1503": {
+  "start": 122,
+  "end": 122,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1513": {
+  "start": 119,
+  "end": 119,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1548": {
+  "start": 140,
+  "end": 140,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1550": {
+  "start": 137,
+  "end": 137,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1706": {
+  "start": 115,
+  "end": 115,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|2012": {
+  "start": 119,
+  "end": 119,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|2050": {
+  "start": 115,
+  "end": 115,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|2348": {
+  "start": 108,
+  "end": 108,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-02|0153": {
+  "start": 106,
+  "end": 107,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-02|0213": {
+  "start": 105,
+  "end": 105,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-02|0230": {
+  "start": 110,
+  "end": 113,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-02|0340": {
+  "start": 109,
+  "end": 110,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-02|0438": {
+  "start": 109,
+  "end": 109,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-02|1027": {
+  "start": 107,
+  "end": 108,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-02|1128": {
+  "start": 105,
+  "end": 105,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-02|1203": {
+  "start": 106,
+  "end": 106,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-02|1247": {
+  "start": 104,
+  "end": 104,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-02|1530": {
+  "start": 105,
+  "end": 105,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-03|1433": {
+  "start": 76,
+  "end": 103,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-03|2101": {
+  "start": 76,
+  "end": 96,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-03|2101|1": {
+  "start": 80,
+  "end": 80,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-04|0108": {
+  "start": 75,
+  "end": 95,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-04|0133": {
+  "start": 96,
+  "end": 96,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-04|0201": {
+  "start": 97,
+  "end": 97,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-04|0403": {
+  "start": 92,
+  "end": 92,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-04|0612": {
+  "start": 75,
+  "end": 95,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-04|0623": {
+  "start": 95,
+  "end": 95,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-04|1058": {
+  "start": 75,
+  "end": 95,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-04|1318": {
+  "start": 74,
+  "end": 92,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-04|1526": {
+  "start": 92,
+  "end": 92,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-04|1553": {
+  "start": 87,
+  "end": 91,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-04|2023": {
+  "start": 92,
+  "end": 92,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-05|0121": {
+  "start": 74,
+  "end": 79,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-05|0157": {
+  "start": 82,
+  "end": 86,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-05|1725": {
+  "start": 77,
+  "end": 78,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-05|2224": {
+  "start": 73,
+  "end": 74,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-06|0000": {
+  "start": 77,
+  "end": 77,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-06|0217": {
+  "start": 77,
+  "end": 77,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-06|0218": {
+  "start": 73,
+  "end": 73,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-06|2021": {
+  "start": 64,
+  "end": 64,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-07|0109": {
+  "start": 66,
+  "end": 72,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-07|1005": {
+  "start": 65,
+  "end": 65,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-07|1217": {
+  "start": 64,
+  "end": 64,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-07|1354": {
+  "start": 64,
+  "end": 64,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-08|0411": {
+  "start": 58,
+  "end": 58,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-08|0446": {
+  "start": 62,
+  "end": 63,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-08|0513": {
+  "start": 61,
+  "end": 61,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-08|0600": {
+  "start": 56,
+  "end": 57,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-08|0703": {
+  "start": 61,
+  "end": 62,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-08|1236": {
+  "start": 61,
+  "end": 61,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-09|0052": {
+  "start": 59,
+  "end": 59,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-09|0115": {
+  "start": 56,
+  "end": 56,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-09|1507": {
+  "start": 55,
+  "end": 56,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-10|0426": {
+  "start": 55,
+  "end": 55,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-26|0236": {
+  "start": 54,
+  "end": 54,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-26|0240": {
+  "start": 53,
+  "end": 53,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-26|0247": {
+  "start": 52,
+  "end": 52,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-26|0259": {
+  "start": 51,
+  "end": 51,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-26|0755": {
+  "start": 51,
+  "end": 52,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-26|0803": {
+  "start": 51,
+  "end": 51,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-26|0804": {
+  "start": 51,
+  "end": 51,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-26|1239": {
+  "start": 53,
+  "end": 54,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-26|1245": {
+  "start": 52,
+  "end": 53,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-26|1252": {
+  "start": 52,
+  "end": 52,
+  "breaks": []
+ },
+ "farrar-fauci|2020-03-01|0937": {
+  "start": 50,
+  "end": 50,
+  "breaks": []
+ },
+ "farrar-fauci|2020-03-03|1806": {
+  "start": 47,
+  "end": 49,
+  "breaks": []
+ },
+ "farrar-fauci|2020-03-06|0534": {
+  "start": 43,
+  "end": 43,
+  "breaks": []
+ },
+ "farrar-fauci|2020-03-06|0656": {
+  "start": 42,
+  "end": 43,
+  "breaks": []
+ },
+ "farrar-fauci|2020-03-06|0913": {
+  "start": 41,
+  "end": 42,
+  "breaks": []
+ },
+ "farrar-fauci|2020-03-06|0933": {
+  "start": 41,
+  "end": 41,
+  "breaks": []
+ },
+ "farrar-fauci|2020-03-13|1727": {
+  "start": 40,
+  "end": 40,
+  "breaks": []
+ },
+ "farrar-fauci|2020-03-25|0423": {
+  "start": 39,
+  "end": 39,
+  "breaks": []
+ },
+ "farrar-fauci|2020-03-25|1232": {
+  "start": 38,
+  "end": 38,
+  "breaks": []
+ },
+ "farrar-fauci|2020-03-25|1315": {
+  "start": 38,
+  "end": 39,
+  "breaks": []
+ },
+ "farrar-fauci|2020-03-25|2226": {
+  "start": 38,
+  "end": 38,
+  "breaks": []
+ },
+ "farrar-fauci|2020-04-07|1214": {
+  "start": 37,
+  "end": 37,
+  "breaks": []
+ },
+ "farrar-fauci|2020-04-08|0556": {
+  "start": 25,
+  "end": 26,
+  "breaks": []
+ },
+ "farrar-fauci|2020-04-08|0556|1": {
+  "start": 32,
+  "end": 34,
+  "breaks": []
+ },
+ "farrar-fauci|2020-04-08|0919": {
+  "start": 37,
+  "end": 37,
+  "breaks": []
+ },
+ "farrar-fauci|2020-04-09|0601": {
+  "start": 24,
+  "end": 32,
+  "breaks": []
+ },
+ "farrar-fauci|2020-04-22|0938": {
+  "start": 36,
+  "end": 36,
+  "breaks": []
+ },
+ "farrar-fauci|2020-04-24|1108": {
+  "start": 35,
+  "end": 35,
+  "breaks": []
+ },
+ "farrar-fauci|2020-04-24|1255": {
+  "start": 35,
+  "end": 35,
+  "breaks": []
+ },
+ "farrar-fauci|2020-04-25|0000": {
+  "start": 23,
+  "end": 31,
+  "breaks": []
+ },
+ "farrar-fauci|2020-04-25|1059": {
+  "start": 22,
+  "end": 30,
+  "breaks": []
+ },
+ "farrar-fauci|2020-04-26|1952": {
+  "start": 22,
+  "end": 30,
+  "breaks": []
+ },
+ "farrar-fauci|2020-04-27|0213": {
+  "start": 21,
+  "end": 29,
+  "breaks": []
+ },
+ "farrar-fauci|2020-04-27|0238": {
+  "start": 27,
+  "end": 28,
+  "breaks": []
+ },
+ "farrar-fauci|2020-04-27|0833": {
+  "start": 27,
+  "end": 27,
+  "breaks": []
+ },
+ "farrar-fauci|2020-04-27|1236": {
+  "start": 20,
+  "end": 29,
+  "breaks": []
+ },
+ "farrar-fauci|2020-04-28|0539": {
+  "start": 19,
+  "end": 20,
+  "breaks": []
+ },
+ "farrar-fauci|2020-04-30|1835": {
+  "start": 19,
+  "end": 19,
+  "breaks": []
+ },
+ "farrar-fauci|2020-05-01|1223": {
+  "start": 15,
+  "end": 18,
+  "breaks": []
+ },
+ "farrar-fauci|2020-05-04|0838": {
+  "start": 15,
+  "end": 15,
+  "breaks": []
+ },
+ "farrar-fauci|2020-05-05|0512": {
+  "start": 14,
+  "end": 14,
+  "breaks": []
+ },
+ "farrar-fauci|2020-05-05|0800": {
+  "start": 14,
+  "end": 14,
+  "breaks": []
+ },
+ "farrar-fauci|2020-05-12|0700": {
+  "start": 10,
+  "end": 10,
+  "breaks": []
+ },
+ "farrar-fauci|2020-05-12|0816": {
+  "start": 7,
+  "end": 9,
+  "breaks": []
+ },
+ "farrar-fauci|2020-05-12|0817": {
+  "start": 11,
+  "end": 13,
+  "breaks": []
+ },
+ "farrar-fauci|2020-05-12|1312": {
+  "start": 6,
+  "end": 7,
+  "breaks": []
+ },
+ "farrar-fauci|2020-05-12|1342": {
+  "start": 11,
+  "end": 11,
+  "breaks": []
+ },
+ "farrar-fauci|2020-05-12|1433": {
+  "start": 7,
+  "end": 7,
+  "breaks": []
+ },
+ "farrar-fauci|2020-05-12|1449": {
+  "start": 10,
+  "end": 10,
+  "breaks": []
+ },
+ "farrar-fauci|2020-05-13|0152": {
+  "start": 6,
+  "end": 6,
+  "breaks": []
+ },
+ "farrar-fauci|2020-05-13|1722": {
+  "start": 5,
+  "end": 5,
+  "breaks": []
+ },
+ "farrar-fauci|2020-05-13|1725": {
+  "start": 5,
+  "end": 5,
+  "breaks": []
+ },
+ "farrar-fauci|2020-07-09|0237": {
+  "start": 4,
+  "end": 4,
+  "breaks": []
+ },
+ "farrar-fauci|2020-07-09|1255": {
+  "start": 3,
+  "end": 4,
+  "breaks": []
+ },
+ "farrar-fauci|2020-07-21|0628": {
+  "start": 2,
+  "end": 3,
+  "breaks": []
+ },
+ "farrar-fauci|2020-07-21|1228": {
+  "start": 2,
+  "end": 2,
+  "breaks": []
+ },
+ "farrar-fauci|2020-07-23|2347": {
+  "start": 1,
+  "end": 1,
+  "breaks": []
+ },
+ "farrar-fauci|2020-07-24|0637": {
+  "start": 1,
+  "end": 1,
+  "breaks": []
+ },
+ "farrar-fauci|undated|RE: URGENT - GPMB COVID-19 FUNDING NOTE": {
+  "start": 43,
+  "end": 44,
+  "breaks": []
+ },
+ "farrar-fauci|undated|(undated message)": {
+  "start": 44,
+  "end": 47,
+  "breaks": []
+ },
+ "farrar-fauci|undated|Re: [ext] 2019 N-CoV": {
+  "start": 57,
+  "end": 57,
+  "breaks": []
+ },
+ "farrar-fauci|undated|[ext] FW: 2019 N-CoV": {
+  "start": 59,
+  "end": 60,
+  "breaks": []
+ },
+ "farrar-fauci|undated|Re: Prevalence of infection and stage of": {
+  "start": 80,
+  "end": 80,
+  "breaks": []
+ },
+ "farrar-fauci|undated|(undated message)|1": {
+  "start": 169,
+  "end": 172,
+  "breaks": []
+ }
+}

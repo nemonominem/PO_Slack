@@ -3232,3 +3232,3431 @@ Please treat in confidence — a very rough first draft from Eddie and team — 
 cleaner version later.
 
 Pushing WHO again today
+From: Edward Holmes)
+
+Date: Tuesday, 4 February 2020 at 06:33
+
+To: Jeremy Farrar)
+
+Subject: Re: Prevalence of infection and stage of the epidemic in Wuhan
+
+Here’s our summary so far. Will be edited further,
+
+It’s fundamental science and completely neutral as written. Did not mention other anomalies as this will
+make us look like loons. As it stands it is excellent basic science | think, which is a service in itself.
+Will finish as soon as we can.
+
+PROFESSOR EDWARD C. HOLMES FAA FRS
+
+ARC Australian Laureate Fellow
+
+THE UNIVERSITY OF SYDNEY
+
+Marie Bashir Institute for Infectious Diseases & Biosecurity.
+
+School of Life & Environmental Sciences and School of Medical Sciences,
+
+The University of Sydney | Sydney | NSW | 2006 | Australia
+
+T
+
+emo
+From: Jeremy Farrar
+
+Sent: Wed, 5 Feb 2020 06:57:54 +0000
+
+To: Collins, Francis (NIH/OD) [E];Fauci, Anthony (NIH/NIAID) [E];Edward Holmes
+Subject: FW: Origins
+
+Attachments: Summary.pdf
+
+Tony and Francis
+
+The revised draft from Eddie, copied here.
+
+| asked Eddie about the addition of the glycans and where these could be added accidentally by passage
+in lab animals or of course in the wild —the reply from Bob and Kristian
+
+?Kristian that’s correct about everything he said for the P residue. It’s what's shifted me to thinking that
+the insert of the furin site is the result of cell culture passage [or less likely intense transmission in a
+nonbat host]. Really need to see the data from Ron about generating the furim cleavage site on in vitro
+passage. Really!
+
+CoV come with or without a furin site. CoV without a furin site are said to be non-cleaved and rely on
+endosomal proteases like cathepsin for entry. However if you infect a virus like SARS in culture in the
+presense of exogenous protease like trypsin its 100X more effective at entering because the spike gets
+cleaved and it can enter at the cell surface.
+
+You have to infect flu viruses (the ones without the multibasic cleavage site) in the presence of trypsin,
+and include trypsin in the overlay if you want to get virus spread aka plaques.
+
+This also contributes to the pathogenicity of - well - highly pathogenic flu virus — different tissues have
+different proteases and are able to “activate” flu to different extents - if the flu v has a furin cleavage
+site it has a lot more choices and canmore easil go systemic.
+
+This is an excellent review on CoV fusion — deals with all the complexities:
+https://www.ncbi.nim.nih.gov/pmc/articles/P>MC3397359/
+
+Bottom line —| think that if you put selection pressure on a Cov without a furin cleavage site in cell
+culture you could well generate a furin cleavage site after a number of passages (but let’s see the data
+Ron!). It will infect a lot better if it can effectively fuse at the cell surface and doesn’t have to rely on
+endosomal cleavage and receptor mediated endocytosis..?
+Overview
+
+Sequencing of 2019-nCoV revealed two notable features of its genome. We investigate these features and
+outline some examples for how the virus may have acquired them. As rumours have been circulating
+about this virus being engineered or otherwise created with intent, we wish to make it clear that our
+analyses show that such scenarios are largely incompatible with the data.
+
+The two primary features of 2019-nCoV of interest were:
+
+e Based on structural modeling and early biochemical experiments, 2019-nCoV appears to be
+optimized for binding to the human ACE2 receptor.
+
+e The highly variable spike protein of 2019-nCoV has a furin cleavage inserted at the S1 and S2
+boundary via the insertion of twelve in-frame nucleotides. Additionally, this event also led to the
+acquisition of three predicted O-linked glycans around the furin cleavage site.
+
+Mutations in the receptor binding domain of 2019-nCoV
+The receptor binding domain (RBD) in the spike protein of SARS-CoV and SARS-like coronaviruses is the
+most variable part of the virus genome. When aligned against related viruses, 2019-nCoV displays a
+similar level of diversity as predicted from previous studies, including to its most closely related virus -
+SARS-like CoV isolated from bats (RaTG13, which is ~96% identical to 2019-nCoV).
+Six residues in the RBD have been described as critical for binding to the human ACE2 receptor and
+determining host range'. Using coordinates based on the Ubani strain of SARS-CoV, they are Y442, L472,
+N479, D480, T487, and Y491 (the corresponding residues in 2019-nCoV are L455, F486, Q493, S494, N501,
+and Y505). Five out of six of these residues are mutated in 2019-nCoV compared to closely related
+viruses, including RaTG13 (Figure 1). Based on modeling’ and early biochemical experiments”?,
+2019-nCoV seems to have an RBD that may bind with high affinity to ACE2 from human, primate, ferret,
+pig, and cat, as well as other species with high receptor homology. In contrast, 2019-nCoV may bind less
+efficiently to ACE2 in other species associated with SARS-like viruses, including rodents, civets, and bats’.
+A phenylalanine at F486 in 2019-nCoV corresponds to L472 in the SARS-CoV Ubani strain. In cell culture
+experiments the leucine at position 472 mutated to phenylalanine (L472F)*, which has been predicted to
+be optimal for binding of the SARS-CoV RBD to the human ACE2 receptor®. However, a phenylalanine in
+this position is also present in several SARS-like CoVs from bats (Figure 1). While these analyses suggest
+that 2019-nCoV may be capable of binding the human ACE2 receptor with high affinity, importantly, the
+interaction is not predicted to be optimal’. Additionally, several of the key residues in the RBD of
+2019-nCoV are different from those previously described to be optimal for human ACE2 receptor binding
+as determined by both natural evolution of SARS-CoV and rational design®. This latter point is strong
+evidence against 2019-nCoV being specifically engineered as, presumably, in such a scenario the most
+optimal residues would have been introduced, which is not what we observe.
+1 SARS coronavirus COIS» AAVO79965.) \WNIRNIDATSWGNBENYKYR RHGKLAPEERDISNVE POGKPCT PEARNCYWPLARBBYGEVT ISG GYUPYRVVVLSEE NAPA
+2, SARS coronavirus AOZ1 ~ AAVS79R6.7 AWNTRNIDATSTGNMNY RK YRMLRHGHLRPFERDISNVE >PDGKPCT PPA iC VY Wwe VYGTYTTSG IYORPYRVVVLSFE NAPAT
+3. SARS coronavirus A001. MAVO7984.9 AWNTRN | DAT SIGNMNYKRIRML RHGKLRPFERDISNVP PRIGK PCT an PGFVTTSGHIGYORVYRYYVL SFE NAPAT
+4. SARS coronavirus B))42-12 « ACBG9905,1 WNTRNIGATSTGNMNYK Yt LA SKLAR OP ECERDISNVPESPOGRPCT F ABNC YW Gevvv77Te 3 VAWYVWLSEE NAS 1
+&. SARS coronavirus A)!82a~ ACBGS860.1 AWNTRNIGCATSTGNMNYE YRMLRHGKLRPEERDISNVP PDGKEPCT PABING YWP YGi rjTTGis VYRVVVLSI NA®AT
+6, SARS coronavirus Frankfurt | WAPI3697.1 SWNTRN || AT Sa a : RHGK 4 ee G4 NVP ro aKPCT 4 Poe Bp ss 8 vi P ravvvt SFE NAPA
+7, SARS coronavirus Urbani- AY278744.1-Sp AWNTRN A TGNMBNVK YE R j4 LRP RO IVF roG T PAMINC YW, StYTTTSGI ave YRVVVI FELL NAPAT
+w ® 8
+$2. SARS coronavirus MATS EKON1 ~AEAI0473.1 AWN T RN Dat STG NENYKYR LRH GK Peet ot NV ROGKRCT 6 ABN iste USE ; TG Gy yt v\ vi c f NA vA
+15. SARS coroneviius ExoN? -AGT21078,1 AWNTRNIGATSTGNANVK YRBELRHGKLRP RBOISNVE POGKPCT PRP ARINC YWPULMEYGE TTTGIGVOFVYRVVVLSEFE NAP 4Y
+18, SARS coronavirus GOO). AAP51727.1 . WNTRNI DAT SIGN NYKYR LRHGK URS FERDISNVI ' KP CT 0 AMINC A Vays F get 5vGF VR VV L SIME | LNAPAT
+21 Bal SARS like corenavirus = AVP7EO31,1 4 WN Te = NYY Rome STK MPP EROS Sam ; NEMRT ST VO: PREY CATR VVVESFELLNARAT
+Si eacoronmng neiOt WNT DAREEG TEN VY AER OR et ae tad ra YP TBS om TYRVVYI SEELENAPAT
+u a ee
+Figure 1 | Mutations in contact residues of the 2019-nCoV spike protein. The spike protein of 2019-nCoV (bottom) was
+aligned against the most closely related SARS and SARS-like CoVs. Key residues in the spike protein that make contact to the
+ACE2 receptor have been marked with blue boxes in both 2019-nCoV and the SARS-CoV Urbani strain.
+Furin cleavage site and O-linked glycans
+An interesting feature of 2019-nCoV is a predicted furin cleavage site in the spike protein (Figure 2). In
+addition to the furin cleavage site (RRAR), a leading P is also inserted so the fully inserted sequence
+becomes PRRA (Figure 2). A proline in this position is predicted to create three flanking O-linked glycans
+at S673, T678, and S686. A furin site has never before been observed in the lineage B betacoronaviruses
+and is a unique feature of 2019-nCoV. Some human betacoronaviruses, including HCoV-HKU1 (lineage A)
+have furin cleavage sites (typically RRKR), although not in such an optimal position.
+De 1, SARS coronavitus C01 ~ AAVI7998, 1 tYSTOMNYVF OTOAC (GAEMVEBPSVYECDOIPIGAGICASYMTMSS! RSTSOKSIVAVYIMSLGAMBSS HAYSNNTIAIPTNE S|
+De 2. SARS coronavirus AD21 AAV SRG, 1 VS TORNV EF OTOAGE |GAEHVEES VECDIPIGAGICASYHT SSL RET SO AAR RE ay — Eitan a te Tee PNA S4
+® 3. SARS coronavirus AOD) » AAV97984,1 YSTGRNVIGCTOA SAENVETSYECDIPIGAGICASYHTRSS1 ASYS5OCr IVAY TS LGABBSSI|AYSNNTIAILP TN i
+T 4. SARS coronavirus B)1 82-12 ACH69905.1 'y 2T 2AG Ck I GAE IM oe v Ect tI 1GAG { c AS | RSTSOASI vA YTMSL GABSS HAY S NNT | A | P TNT oa |
+De 5, SARS ceronavitus BIT82a « ACB6S860.1 YSTGMNVPOTOAG (GAENVETSYECDIPIGAGICASYMTMSHL RSTSORS I VAY TMSLGOABSSIAYSNNTIAIPTNIS |
+De 6. SARS coronavirus Frankfurt 1» AAP33697.4 (YSTGNNVP OTOAGCL | GAESVEBTSVECDIPIGAGICASYHTMSH| STSORSIVAVYTMSLGABISSTAYSNNTIAL PE TIME S|
+De 7, SARS coronavirus Urban). AY278741.1.S pr IYSTGOMNVFOTRAG IGAEHVETSVYECDIPIGAGICASYHTSSEL nT KS IVAYTY¥SLGARS \¥SNNTIALPTNES)
+te 6, SARS coronavirus HKU-29849 « ADC35483.1 YS TORBINVE POA (GAERVETSVYECDIPIGAGICASYTHTESEL ReTSoO IVAYTMSLGABSSIAYSNNTIALPTNIS I
+t* 9, Severe anute respiratory syndrame-retated ¢. YSTGMNVFEDTOAG (GAEMVEETSYECDIP IGAGICASYHWTHRSBL RST KS IVAYTH LGABBSTAYSNNTLALOTNE SS)
+Cw 10. Severe acute respiratory syndrome-related c YS TOMNVE OTOAGY IGATRVETSVECD IP IGAGICASYHTESEL . SOR SIVAVYTMSLGABS: AYSNNTIAILP TNE S41
+fe 11. SARS coronavirus NS). AARS1586.) YSTORNVI OT AGC (GAENVEETSYECDIPIGA (C¢ YH ISB HS TSO} IVAVTMSLGABISS HAYSNNTIAIP INES)
+be 12, SARS coronavirus MAIS ExoN1 -AEAIO473,1 | ¥ TGORNVIPOTQAG IGA VETSVYECDI FP IGAGICA YHTSSS! » t PAS IVAYTMSLGABSSIAVYSNNTIALP TNE 54
+te $3. SARS coronavirus MATS ExoNt - AEAION43,1 =F YS PT ORNNVE OTGAG (GAEMVEETS YECOIP IGAGICASYHIESEL RSETSOKS I VAY IMSLGABIBSUAYSNNTIALR TNF S 4
+f* 14. Severe acute respiratory syndrome related c.. YS TGRNVFOTOA SAENVEETSVYECODIFIGAGICASYHTSRSEL F TSO, \VAYTMSLGABESSIAYSNNTIAILPTNES |
+De 15. SARS coronavirus ExoNt - AGT21078)1 y NY F 'GAG IGAEMVEETSVYECOIPIGAGICASYHTESH RSTSORGSIVAVIMSLGABBSSIAYSNNTIAIP TNE S|
+Ce 1G, SARS coronavirus BI302 AARO7625.! y 3 t NV FOTDAGE 1GAE ivan VECDIPIGAG! a) y HTmeS wy R STS 2h IVAYTMS\|T ApS: AY NNT I A ' R T NF : '
+b» 17, SARS coronavirus BJ302 - AARO7627.1 VS TG NVF OT A 'GAE iV VECD If IGA‘ ASYHT om RST 4 t(VAYTN CARS HAY N HLA TN {
+bw 18, SARS coronavirus GOO) - AAPS1227.1 v TORNVFEOTGAGKE IGAEHVBTSVYECOI NF IGAGICASVHTMSE! ns KS IVAVIMSLGARS AYS INR AL ‘TNE i
+fe 19. Rhinolaphus affinis coronavirus - AHX37558.1 | Y SAGHENVFOTOA IGAEHY Yte PIGA ASYH TASS RATEOR S| VAYTMSLOAM bAYANNSIAILPTINES |
+De 20, Rhinoluphus affinis cororavirus - AHK37569,1 | 7 SIAGEEN VI 1MAGC GAE Vin: YECOIFPIGAGICASTHTS5@! kt hs SIVAYTMSLE ABN NAYMNNSIALP ENES)
+Se 21. Bat SARS Hike corgnavirus » AVE7B039-1 of PRS yA GAEMV SYECDIFIGAGICA > YH TRS L RST SQKhMIVAY TN a HAYENNBIAIP TNT $ |
+O 22. Bat SARS-like coronavirus - AVP78042.) VAMIGTSVFOTOAC (GAENY SYECDOIFIGAG ASYINTASHL RSTEOKMIVAVIMS| GAR LAYANNS IAP INES!
+De 23. Bat coronavirus - QHR63300.1 ae.’ Hi i aSNV FE OTRAGC a VEC Bre 1Gac ica goth “Basa ma IMSL G Am SAY Nee ETN
+Ce 24, EPLISL_40213) [bat/Yunnan/RalG1 3/2013) Y 3SNVEO TRA 5A, Vv YECDOIPIGA AS Y@T § # Sos AYITMSLGARIN AYSNNSIALPTNET
+Dw 25. EPH ISL_402125 | Wultan-Hu-1/2019(MN908... BY STGSNVIOTRAGE) | GAEWVNINSYECD I PIGAG/CASYQT SPRRAN SMASOS MAY TMSLGOA YSNNSIATPE TVET
+we 8 woe
+Figure 2 | Acquisition of furin cleavage site and O-linked glycans. The spike protein of 2019-nCoV (bottom) was aligned
+against the most closely related SARS and SARS-like CoVs. The furin cleavage site is marked in grey with the three adjacent
+predicted O-linked glycans in blue. Both the furin cleavage site and O-linked glycans are unique to 2019-nCoV and not previously
+seen in this group of viruses.
+While the functional consequence - if any - of the furin cleavage site in 2019-nCoV is unknown, previous
+experiments with SARS-CoV have shown that it enhances cell-cell fusion but does not affect virus entry’.
+Furin cleavage sites are often acquired in condition selecting for rapid virus replication and transmission
+(e.g., highly dense chicken populations) and are a hallmark of highly pathogenic avian influenza virus,
+although these viruses acquire the site in different and more direct ways’. The acquisition of furin
+cleavage sites have also been observed after repeated passage of viruses in cell culture (personal
+correspondence and NASEM call, February 3, 2020).
+A potential function of the three predicted O-linked glycans is less clear, but could create a “mucin-like
+domain” shielding potential epitopes or key residues on the 2019-nCovV spike protein.
+Evolution of 2019-nCoV
+As described in the beginning, we believe deliberate engineering can be ruled out with a high degree of
+confidence as the data is inconsistent with this scenario, In addition, if engineering would have been
+performed, one would also expect that a researcher would have used one of the several reverse genetics
+systems available for betacoronaviruses. However, this is not the case as the genetic data clearly shows
+that 2019-nCoV is not derived from any previously used virus backbone, including those recently posited
+by various conspiracy theories, based on a 2015 paper in Nature Medicine"®.
+Three main scenarios could explain how 2019-nCoV acquired the features discussed above: (1) natural
+selection in humans, (2) natural selection in an animal host, or (3) selection during passage.
+Adaptation to humans
+As the features outlined above are likely to enhance the ability of the virus to infect humans, it is possible
+that these are indeed adaptations to humans as a host and arose after the virus jumped from a
+non-human host, during the early stages of the epidemic. However, all of the genome sequences so far
+have the features described above and estimates of the timing of the most recent common ancestor of
+the currently sampled viruses support the seafood market outbreak as the zoonotic origin (i.e., in early
+December) and this would afford little opportunity for adaptation to occur. This may be explained by a
+transition to a rapid growth phase in the epidemic when the features arose and from which all current
+cases are derived. However this would require a prior hidden epidemic of sufficient magnitude and
+duration for the adaptations to occur and there is no evidence of this. We also note that these features
+did not emerge during the SARS epidemic, which involved extensive human to human transmission.
+Selection in an animal host
+
+Given the similarity of 2019-nCoV to bat SARS-like CoVs, particularly RaTG13, it is highly likely that bats
+serve as the reservoir for this virus. However, previous human epidemics caused by betacoronaviruses
+have involved intermediate (possibly amplifying) hosts such as civets and other animals (SARS) and
+camels (MERS). It is therefore likely that an intermediate host would also exist for 2019-nCoV, although it
+is unclear what that host may be. Given the mutations in key residues of the RBD in 2019-nCoV it seems
+less likely that civets would be involved, although it is impossible to say with certainty at this stage.
+
+For the virus to acquire the furin cleavage site and mutations in the spike proteins that appear to be
+suitable for human ACE2 receptor binding, it seems plausible that this animal host would have to have a
+high population density - to allow the necessary natural selection to proceed efficiently - and an ACE2
+gene that is similar to the human orthologue. Since furin cleavage sites have not been observed in
+sarbecoviruses before, it is unclear what conditions would be required for it to be acquired in the lineage
+leading to 2019-nCoV.
+
+Selection during passage
+
+Basic research involving passage of bat SARS-like coronaviruses in cell culture and/or animal models have
+been ongoing in BSL-2 for many years across the world, including in Wuhan (e.g.,''~""’). It is possible that
+2019-nCoV could have acquired the RBD mutations and furin cleavage site as part of passage in cell
+culture, which have been observed in previous studies with e.g., SARS-CoV*. However, it is less clear how
+the O-linked glycans - if functional - would have been acquired, as these typically suggest the involvement
+of an immune system, which is not present in vitro. In this scenario, it is also unclear how the virus would
+be linked to the fact that the epidemic seemed to ‘take off’ at a particular food market, although the exact
+role of this locality is currently uncertain.
+
+Limitations and recommendations
+
+The evolution scenarios discussed above are largely indistinguishable and current data are consistent
+with all three. It is currently impossible to prove or disprove either, and it is unclear whether future data
+or analyses will help resolve this issue. Identifying the immediate non-human animal source and
+obtaining virus sequences from it would be the most definitive way of distinguishing the three scenarios.
+The main limitation of what is described here is our clear ascertainment bias. We are looking for features
+or evolutionary aspects that could help explain how 2019-nCoV lead to such a rapidly expanding human
+epidemic, yet the specific features we are trying to find may be the exact features one would expect ina
+virus that could lead to an epidemic of the magnitude currently observed. Before 2019-nCovV ‘took off
+and started the current epidemic, it is plausible that many stuttering transmission chains of highly similar
+viruses could have entered the human population, but because they never took off they were never
+sampled. It is extremely important to keep this in mind as any inference about the plausibility of various
+scenarios about the evolution and/or epidemic potential of 2019-nCoV is attempted.
+
+To further clarify the evolutionary origins and functional features of 2019-nCoV it would be helpful to
+obtain additional data about the virus - both genetic and functional. This includes experimental studies of
+receptor binding and the role of the furin cleavage site and predicted O-linked glycans. The identification
+of a potential intermediate host of 2019-nCoV as well as sequencing of very early cases, including those
+not connected to the market, could also help refute the passage scenario described above. Even in the
+light of such data, however, it is not guaranteed that data can be obtained to conclusively prove all
+aspects of the initial emergence of 2019-nCovV.
+References
+
+1. Wan, Y., Shang, J., Graham, R., Baric, R. S. & Li, F. Receptor recognition by novel coronavirus from Wuhan: An
+analysis based on decade-long structural studies of SARS. /. Viro/. (2020) doi:10.1128/JVI.00127-20.
+
+2. Letko, M. & Munster, V. Functional assessment of cell entry and receptor usage for lineage B B-coronaviruses,
+including 2019-nCoV. bioRxiv 2020.01.22.915660 (2020) doi:10.1101/2020.01.22.915660.
+
+3. Hoffmann, M. et al. The novel coronavirus 2019 (2019-nCoV) uses the SARS-coronavirus receptor ACE2 and the
+cellular protease TMPRSS2 for entry into target cells. bioRxiv 2020.01.31.929042 (2020)
+doi:10.1101/2020.01.31.929042.
+
+4. Sheahan, T. et al. Mechanisms of zoonotic severe acute respiratory syndrome coronavirus host range
+expansion in human airway epithelium. J. Virol. 82, 2274-2285 (2008).
+
+5. Cui, J., Li, F. & Shi, Z.-L. Origin and evolution of pathogenic coronaviruses. Nat. Rev. Microbiol. 17, 181-192 (2019).
+
+6. Follis, K. E., York, J. & Nunberg, J. H. Furin cleavage of the SARS coronavirus spike glycoprotein enhances cell-cell
+fusion but does not affect virion entry. Virology 350, 358-369 (2006).
+
+7. Longping, V. T., Hamilton, A. M., Friling, T. & Whittaker, G. R. A novel activation mechanism of avian influenza
+virus HON2 by furin. J. Virol. 88, 1673-1683 (2014).
+
+8. Alexander, D. J. & Brown, |. H. History of highly pathogenic avian influenza. Rev. Sci. Tech. 28, 19-38 (2009).
+
+9. Luczo, J. M. et al. Evolution of high pathogenicity of H5 avian influenza virus: haemagglutinin cleavage site
+selection of reverse-genetics mutants during passage in chickens. Sci. Rep. 8, 11518 (2018).
+
+10. Menachery, V. D. et al. A SARS-like cluster of circulating bat coronaviruses shows potential for human
+emergence. Nat. Med. 21, 1508-1513 (2015).
+
+11. Ge, X.-Y. et al. Isolation and characterization of a bat SARS-like coronavirus that uses the ACE2 receptor. Nature
+503, 535-538 (2013).
+
+12. Hu, B. et al. Discovery of a rich gene pool of bat SARS-related coronaviruses provides new insights into the
+origin of SARS coronavirus. PLoS Pathog. 13, e1006698 (2017).
+
+13. Zeng, L.-P. et al. Bat Severe Acute Respiratory Syndrome-Like Coronavirus WIV1 Encodes an Extra Accessory
+Protein, ORFX, Involved in Modulation of the Host Immune Response. /. Viro/. 90, 6573-6582 (2016).
+
+14. Yang, X.-L. et al. Isolation and Characterization of a Novel Bat Coronavirus Closely Related to the Direct
+Progenitor of Severe Acute Respiratory Syndrome Coronavirus. /. Virol. 90, 3253-3256 (2015).
+From: Jeremy Farrar
+
+Sent: Tue, 4 Feb 2020 20:53:09 +0000
+
+To: Collins, Francis (NIH/OD) [E];Fauci, Anthony (NIH/NIAID) [E]
+
+Subject: Origins
+
+Attachments: Summary.pdf
+
+Tidied up
+
+Wellcome exists to improve health by helping great ideas to thrive. We support researchers, we take on big
+health challenges, we campaign for better science, and we help everyone get involved with science and
+health research. We are a politically and financially independent foundation.
+
+The Wellcome Trust is a charity registered in England and Wales, no. 210183. Its sole trustee is The Wellcome Trust
+Limited, a company registered in England and Wales, no. 2711000 (whose registered office is at 215 Euston Road,
+London NW1 2BE, UK)
+Overview
+
+Sequencing of 2019-nCoV revealed two notable features of its genome. We investigate these features and
+outline some examples for how the virus may have acquired them. As rumours have been circulating
+about this virus being engineered or otherwise created with intent, we wish to make it clear that our
+analyses show that such scenarios are largely incompatible with the data.
+
+The two primary features of 2019-nCoV of interest were:
+
+e Based on structural modeling and early biochemical experiments, 2019-nCoV appears to be
+optimized for binding to the human ACE2 receptor.
+
+e The highly variable spike protein of 2019-nCoV has a furin cleavage inserted at the S1 and S2
+boundary via the insertion of twelve in-frame nucleotides. Additionally, this event also led to the
+acquisition of three predicted O-linked glycans around the furin cleavage site.
+
+Mutations in the receptor binding domain of 2019-nCoV
+The receptor binding domain (RBD) in the spike protein of SARS-CoV and SARS-like coronaviruses is the
+most variable part of the virus genome. When aligned against related viruses, 2019-nCoV displays a
+similar level of diversity as predicted from previous studies, including to its most closely related virus -
+SARS-like CoV isolated from bats (RaTG13, which is ~96% identical to 2019-nCoV).
+Six residues in the RBD have been described as critical for binding to the human ACE2 receptor and
+determining host range'. Using coordinates based on the Ubani strain of SARS-CoV, they are Y442, L472,
+N479, D480, T487, and Y491 (the corresponding residues in 2019-nCoV are L455, F486, Q493, S494, N501,
+and Y505). Five out of six of these residues are mutated in 2019-nCoV compared to closely related
+viruses, including RaTG13 (Figure 1). Based on modeling’ and early biochemical experiments”?,
+2019-nCoV seems to have an RBD that may bind with high affinity to ACE2 from human, primate, ferret,
+pig, and cat, as well as other species with high receptor homology. In contrast, 2019-nCoV may bind less
+efficiently to ACE2 in other species associated with SARS-like viruses, including rodents, civets, and bats’.
+A phenylalanine at F486 in 2019-nCoV corresponds to L472 in the SARS-CoV Ubani strain. In cell culture
+experiments the leucine at position 472 mutated to phenylalanine (L472F)*, which has been predicted to
+be optimal for binding of the SARS-CoV RBD to the human ACE2 receptor®. However, a phenylalanine in
+this position is also present in several SARS-like CoVs from bats (Figure 1). While these analyses suggest
+that 2019-nCoV may be capable of binding the human ACE2 receptor with high affinity, importantly, the
+interaction is not predicted to be optimal’. Additionally, several of the key residues in the RBD of
+2019-nCoV are different from those previously described to be optimal for human ACE2 receptor binding
+as determined by both natural evolution of SARS-CoV and rational design®. This latter point is strong
+evidence against 2019-nCoV being specifically engineered as, presumably, in such a scenario the most
+optimal residues would have been introduced, which is not what we observe.
+1 SARS coronavirus COIS» AAVO79965.) \WNIRNIDATSWGNBENYKYR RHGKLAPEERDISNVE POGKPCT PEARNCYWPLARBBYGEVT ISG GYUPYRVVVLSEE NAPA
+2, SARS coronavirus AOZ1 ~ AAVS79R6.7 AWNTRNIDATSTGNMNY RK YRMLRHGHLRPFERDISNVE >PDGKPCT PPA iC VY Wwe VYGTYTTSG IYORPYRVVVLSFE NAPAT
+3. SARS coronavirus A001. MAVO7984.9 AWNTRN | DAT SIGNMNYKRIRML RHGKLRPFERDISNVP PRIGK PCT an PGFVTTSGHIGYORVYRYYVL SFE NAPAT
+4. SARS coronavirus B))42-12 « ACBG9905,1 WNTRNIGATSTGNMNYK Yt LA SKLAR OP ECERDISNVPESPOGRPCT F ABNC YW Gevvv77Te 3 VAWYVWLSEE NAS 1
+&. SARS coronavirus A)!82a~ ACBGS860.1 AWNTRNIGCATSTGNMNYE YRMLRHGKLRPEERDISNVP PDGKEPCT PABING YWP YGi rjTTGis VYRVVVLSI NA®AT
+6, SARS coronavirus Frankfurt | WAPI3697.1 SWNTRN || AT Sa a : RHGK 4 ee G4 NVP ro aKPCT 4 Poe Bp ss 8 vi P ravvvt SFE NAPA
+7, SARS coronavirus Urbani- AY278744.1-Sp AWNTRN A TGNMBNVK YE R j4 LRP RO IVF roG T PAMINC YW, StYTTTSGI ave YRVVVI FELL NAPAT
+w ® 8
+$2. SARS coronavirus MATS EKON1 ~AEAI0473.1 AWN T RN Dat STG NENYKYR LRH GK Peet ot NV ROGKRCT 6 ABN iste USE ; TG Gy yt v\ vi c f NA vA
+15. SARS coroneviius ExoN? -AGT21078,1 AWNTRNIGATSTGNANVK YRBELRHGKLRP RBOISNVE POGKPCT PRP ARINC YWPULMEYGE TTTGIGVOFVYRVVVLSEFE NAP 4Y
+18, SARS coronavirus GOO). AAP51727.1 . WNTRNI DAT SIGN NYKYR LRHGK URS FERDISNVI ' KP CT 0 AMINC A Vays F get 5vGF VR VV L SIME | LNAPAT
+21 Bal SARS like corenavirus = AVP7EO31,1 4 WN Te = NYY Rome STK MPP EROS Sam ; NEMRT ST VO: PREY CATR VVVESFELLNARAT
+Si eacoronmng neiOt WNT DAREEG TEN VY AER OR et ae tad ra YP TBS om TYRVVYI SEELENAPAT
+u a ee
+Figure 1 | Mutations in contact residues of the 2019-nCoV spike protein. The spike protein of 2019-nCoV (bottom) was
+aligned against the most closely related SARS and SARS-like CoVs. Key residues in the spike protein that make contact to the
+ACE2 receptor have been marked with blue boxes in both 2019-nCoV and the SARS-CoV Urbani strain.
+Furin cleavage site and O-linked glycans
+An interesting feature of 2019-nCoV is a predicted furin cleavage site in the spike protein (Figure 2). In
+addition to the furin cleavage site (RRAR), a leading P is also inserted so the fully inserted sequence
+becomes PRRA (Figure 2). A proline in this position is predicted to create three flanking O-linked glycans
+at S673, T678, and S686. A furin site has never before been observed in the lineage B betacoronaviruses
+and is a unique feature of 2019-nCoV. Some human betacoronaviruses, including HCoV-HKU1 (lineage A)
+have furin cleavage sites (typically RRKR), although not in such an optimal position.
+De 1, SARS coronavitus C01 ~ AAVI7998, 1 tYSTOMNYVF OTOAC (GAEMVEBPSVYECDOIPIGAGICASYMTMSS! RSTSOKSIVAVYIMSLGAMBSS HAYSNNTIAIPTNE S|
+De 2. SARS coronavirus AD21 AAV SRG, 1 VS TORNV EF OTOAGE |GAEHVEES VECDIPIGAGICASYHT SSL RET SO AAR RE ay — Eitan a te Tee PNA S4
+® 3. SARS coronavirus AOD) » AAV97984,1 YSTGRNVIGCTOA SAENVETSYECDIPIGAGICASYHTRSS1 ASYS5OCr IVAY TS LGABBSSI|AYSNNTIAILP TN i
+T 4. SARS coronavirus B)1 82-12 ACH69905.1 'y 2T 2AG Ck I GAE IM oe v Ect tI 1GAG { c AS | RSTSOASI vA YTMSL GABSS HAY S NNT | A | P TNT oa |
+De 5, SARS ceronavitus BIT82a « ACB6S860.1 YSTGMNVPOTOAG (GAENVETSYECDIPIGAGICASYMTMSHL RSTSORS I VAY TMSLGOABSSIAYSNNTIAIPTNIS |
+De 6. SARS coronavirus Frankfurt 1» AAP33697.4 (YSTGNNVP OTOAGCL | GAESVEBTSVECDIPIGAGICASYHTMSH| STSORSIVAVYTMSLGABISSTAYSNNTIAL PE TIME S|
+De 7, SARS coronavirus Urban). AY278741.1.S pr IYSTGOMNVFOTRAG IGAEHVETSVYECDIPIGAGICASYHTSSEL nT KS IVAYTY¥SLGARS \¥SNNTIALPTNES)
+te 6, SARS coronavirus HKU-29849 « ADC35483.1 YS TORBINVE POA (GAERVETSVYECDIPIGAGICASYTHTESEL ReTSoO IVAYTMSLGABSSIAYSNNTIALPTNIS I
+t* 9, Severe anute respiratory syndrame-retated ¢. YSTGMNVFEDTOAG (GAEMVEETSYECDIP IGAGICASYHWTHRSBL RST KS IVAYTH LGABBSTAYSNNTLALOTNE SS)
+Cw 10. Severe acute respiratory syndrome-related c YS TOMNVE OTOAGY IGATRVETSVECD IP IGAGICASYHTESEL . SOR SIVAVYTMSLGABS: AYSNNTIAILP TNE S41
+fe 11. SARS coronavirus NS). AARS1586.) YSTORNVI OT AGC (GAENVEETSYECDIPIGA (C¢ YH ISB HS TSO} IVAVTMSLGABISS HAYSNNTIAIP INES)
+be 12, SARS coronavirus MAIS ExoN1 -AEAIO473,1 | ¥ TGORNVIPOTQAG IGA VETSVYECDI FP IGAGICA YHTSSS! » t PAS IVAYTMSLGABSSIAVYSNNTIALP TNE 54
+te $3. SARS coronavirus MATS ExoNt - AEAION43,1 =F YS PT ORNNVE OTGAG (GAEMVEETS YECOIP IGAGICASYHIESEL RSETSOKS I VAY IMSLGABIBSUAYSNNTIALR TNF S 4
+f* 14. Severe acute respiratory syndrome related c.. YS TGRNVFOTOA SAENVEETSVYECODIFIGAGICASYHTSRSEL F TSO, \VAYTMSLGABESSIAYSNNTIAILPTNES |
+De 15. SARS coronavirus ExoNt - AGT21078)1 y NY F 'GAG IGAEMVEETSVYECOIPIGAGICASYHTESH RSTSORGSIVAVIMSLGABBSSIAYSNNTIAIP TNE S|
+Ce 1G, SARS coronavirus BI302 AARO7625.! y 3 t NV FOTDAGE 1GAE ivan VECDIPIGAG! a) y HTmeS wy R STS 2h IVAYTMS\|T ApS: AY NNT I A ' R T NF : '
+b» 17, SARS coronavirus BJ302 - AARO7627.1 VS TG NVF OT A 'GAE iV VECD If IGA‘ ASYHT om RST 4 t(VAYTN CARS HAY N HLA TN {
+bw 18, SARS coronavirus GOO) - AAPS1227.1 v TORNVFEOTGAGKE IGAEHVBTSVYECOI NF IGAGICASVHTMSE! ns KS IVAVIMSLGARS AYS INR AL ‘TNE i
+fe 19. Rhinolaphus affinis coronavirus - AHX37558.1 | Y SAGHENVFOTOA IGAEHY Yte PIGA ASYH TASS RATEOR S| VAYTMSLOAM bAYANNSIAILPTINES |
+De 20, Rhinoluphus affinis cororavirus - AHK37569,1 | 7 SIAGEEN VI 1MAGC GAE Vin: YECOIFPIGAGICASTHTS5@! kt hs SIVAYTMSLE ABN NAYMNNSIALP ENES)
+Se 21. Bat SARS Hike corgnavirus » AVE7B039-1 of PRS yA GAEMV SYECDIFIGAGICA > YH TRS L RST SQKhMIVAY TN a HAYENNBIAIP TNT $ |
+O 22. Bat SARS-like coronavirus - AVP78042.) VAMIGTSVFOTOAC (GAENY SYECDOIFIGAG ASYINTASHL RSTEOKMIVAVIMS| GAR LAYANNS IAP INES!
+De 23. Bat coronavirus - QHR63300.1 ae.’ Hi i aSNV FE OTRAGC a VEC Bre 1Gac ica goth “Basa ma IMSL G Am SAY Nee ETN
+Ce 24, EPLISL_40213) [bat/Yunnan/RalG1 3/2013) Y 3SNVEO TRA 5A, Vv YECDOIPIGA AS Y@T § # Sos AYITMSLGARIN AYSNNSIALPTNET
+Dw 25. EPH ISL_402125 | Wultan-Hu-1/2019(MN908... BY STGSNVIOTRAGE) | GAEWVNINSYECD I PIGAG/CASYQT SPRRAN SMASOS MAY TMSLGOA YSNNSIATPE TVET
+we 8 woe
+Figure 2 | Acquisition of furin cleavage site and O-linked glycans. The spike protein of 2019-nCoV (bottom) was aligned
+against the most closely related SARS and SARS-like CoVs. The furin cleavage site is marked in grey with the three adjacent
+predicted O-linked glycans in blue. Both the furin cleavage site and O-linked glycans are unique to 2019-nCoV and not previously
+seen in this group of viruses.
+While the functional consequence - if any - of the furin cleavage site in 2019-nCoV is unknown, previous
+experiments with SARS-CoV have shown that it enhances cell-cell fusion but does not affect virus entry’.
+Furin cleavage sites are often acquired in condition selecting for rapid virus replication and transmission
+(e.g., highly dense chicken populations) and are a hallmark of highly pathogenic avian influenza virus,
+although these viruses acquire the site in different and more direct ways’. The acquisition of furin
+cleavage sites have also been observed after repeated passage of viruses in cell culture (personal
+correspondence and NASEM call, February 3, 2020).
+A potential function of the three predicted O-linked glycans is less clear, but could create a “mucin-like
+domain” shielding potential epitopes or key residues on the 2019-nCovV spike protein.
+Evolution of 2019-nCoV
+As described in the beginning, we believe deliberate engineering can be ruled out with a high degree of
+confidence as the data is inconsistent with this scenario, In addition, if engineering would have been
+performed, one would also expect that a researcher would have used one of the several reverse genetics
+systems available for betacoronaviruses. However, this is not the case as the genetic data clearly shows
+that 2019-nCoV is not derived from any previously used virus backbone, including those recently posited
+by various conspiracy theories, based on a 2015 paper in Nature Medicine"®.
+Three main scenarios could explain how 2019-nCoV acquired the features discussed above: (1) natural
+selection in humans, (2) natural selection in an animal host, or (3) selection during passage.
+Adaptation to humans
+As the features outlined above are likely to enhance the ability of the virus to infect humans, it is possible
+that these are indeed adaptations to humans as a host and arose after the virus jumped from a
+non-human host, during the early stages of the epidemic. However, all of the genome sequences so far
+have the features described above and estimates of the timing of the most recent common ancestor of
+the currently sampled viruses support the seafood market outbreak as the zoonotic origin (i.e., in early
+December) and this would afford little opportunity for adaptation to occur. This may be explained by a
+transition to a rapid growth phase in the epidemic when the features arose and from which all current
+cases are derived. However this would require a prior hidden epidemic of sufficient magnitude and
+duration for the adaptations to occur and there is no evidence of this. We also note that these features
+did not emerge during the SARS epidemic, which involved extensive human to human transmission.
+Selection in an animal host
+
+Given the similarity of 2019-nCoV to bat SARS-like CoVs, particularly RaTG13, it is highly likely that bats
+serve as the reservoir for this virus. However, previous human epidemics caused by betacoronaviruses
+have involved intermediate (possibly amplifying) hosts such as civets and other animals (SARS) and
+camels (MERS). It is therefore likely that an intermediate host would also exist for 2019-nCoV, although it
+is unclear what that host may be. Given the mutations in key residues of the RBD in 2019-nCoV it seems
+less likely that civets would be involved, although it is impossible to say with certainty at this stage.
+
+For the virus to acquire the furin cleavage site and mutations in the spike proteins that appear to be
+suitable for human ACE2 receptor binding, it seems plausible that this animal host would have to have a
+high population density - to allow the necessary natural selection to proceed efficiently - and an ACE2
+gene that is similar to the human orthologue. Since furin cleavage sites have not been observed in
+sarbecoviruses before, it is unclear what conditions would be required for it to be acquired in the lineage
+leading to 2019-nCoV.
+
+Selection during passage
+
+Basic research involving passage of bat SARS-like coronaviruses in cell culture and/or animal models have
+been ongoing in BSL-2 for many years across the world, including in Wuhan (e.g.,''~""’). It is possible that
+2019-nCoV could have acquired the RBD mutations and furin cleavage site as part of passage in cell
+culture, which have been observed in previous studies with e.g., SARS-CoV*. However, it is less clear how
+the O-linked glycans - if functional - would have been acquired, as these typically suggest the involvement
+of an immune system, which is not present in vitro. In this scenario, it is also unclear how the virus would
+be linked to the fact that the epidemic seemed to ‘take off’ at a particular food market, although the exact
+role of this locality is currently uncertain.
+
+Limitations and recommendations
+
+The evolution scenarios discussed above are largely indistinguishable and current data are consistent
+with all three. It is currently impossible to prove or disprove either, and it is unclear whether future data
+or analyses will help resolve this issue. Identifying the immediate non-human animal source and
+obtaining virus sequences from it would be the most definitive way of distinguishing the three scenarios.
+The main limitation of what is described here is our clear ascertainment bias. We are looking for features
+or evolutionary aspects that could help explain how 2019-nCoV lead to such a rapidly expanding human
+epidemic, yet the specific features we are trying to find may be the exact features one would expect ina
+virus that could lead to an epidemic of the magnitude currently observed. Before 2019-nCovV ‘took off
+and started the current epidemic, it is plausible that many stuttering transmission chains of highly similar
+viruses could have entered the human population, but because they never took off they were never
+sampled. It is extremely important to keep this in mind as any inference about the plausibility of various
+scenarios about the evolution and/or epidemic potential of 2019-nCoV is attempted.
+
+To further clarify the evolutionary origins and functional features of 2019-nCoV it would be helpful to
+obtain additional data about the virus - both genetic and functional. This includes experimental studies of
+receptor binding and the role of the furin cleavage site and predicted O-linked glycans. The identification
+of a potential intermediate host of 2019-nCoV as well as sequencing of very early cases, including those
+not connected to the market, could also help refute the passage scenario described above. Even in the
+light of such data, however, it is not guaranteed that data can be obtained to conclusively prove all
+aspects of the initial emergence of 2019-nCovV.
+References
+
+1. Wan, Y., Shang, J., Graham, R., Baric, R. S. & Li, F. Receptor recognition by novel coronavirus from Wuhan: An
+analysis based on decade-long structural studies of SARS. /. Viro/. (2020) doi:10.1128/JVI.00127-20.
+
+2. Letko, M. & Munster, V. Functional assessment of cell entry and receptor usage for lineage B B-coronaviruses,
+including 2019-nCoV. bioRxiv 2020.01.22.915660 (2020) doi:10.1101/2020.01.22.915660.
+
+3. Hoffmann, M. et al. The novel coronavirus 2019 (2019-nCoV) uses the SARS-coronavirus receptor ACE2 and the
+cellular protease TMPRSS2 for entry into target cells. bioRxiv 2020.01.31.929042 (2020)
+doi:10.1101/2020.01.31.929042.
+
+4. Sheahan, T. et al. Mechanisms of zoonotic severe acute respiratory syndrome coronavirus host range
+expansion in human airway epithelium. J. Virol. 82, 2274-2285 (2008).
+
+5. Cui, J., Li, F. & Shi, Z.-L. Origin and evolution of pathogenic coronaviruses. Nat. Rev. Microbiol. 17, 181-192 (2019).
+
+6. Follis, K. E., York, J. & Nunberg, J. H. Furin cleavage of the SARS coronavirus spike glycoprotein enhances cell-cell
+fusion but does not affect virion entry. Virology 350, 358-369 (2006).
+
+7. Longping, V. T., Hamilton, A. M., Friling, T. & Whittaker, G. R. A novel activation mechanism of avian influenza
+virus HON2 by furin. J. Virol. 88, 1673-1683 (2014).
+
+8. Alexander, D. J. & Brown, |. H. History of highly pathogenic avian influenza. Rev. Sci. Tech. 28, 19-38 (2009).
+
+9. Luczo, J. M. et al. Evolution of high pathogenicity of H5 avian influenza virus: haemagglutinin cleavage site
+selection of reverse-genetics mutants during passage in chickens. Sci. Rep. 8, 11518 (2018).
+
+10. Menachery, V. D. et al. A SARS-like cluster of circulating bat coronaviruses shows potential for human
+emergence. Nat. Med. 21, 1508-1513 (2015).
+
+11. Ge, X.-Y. et al. Isolation and characterization of a bat SARS-like coronavirus that uses the ACE2 receptor. Nature
+503, 535-538 (2013).
+
+12. Hu, B. et al. Discovery of a rich gene pool of bat SARS-related coronaviruses provides new insights into the
+origin of SARS coronavirus. PLoS Pathog. 13, e1006698 (2017).
+
+13. Zeng, L.-P. et al. Bat Severe Acute Respiratory Syndrome-Like Coronavirus WIV1 Encodes an Extra Accessory
+Protein, ORFX, Involved in Modulation of the Host Immune Response. /. Viro/. 90, 6573-6582 (2016).
+
+14. Yang, X.-L. et al. Isolation and Characterization of a Novel Bat Coronavirus Closely Related to the Direct
+Progenitor of Severe Acute Respiratory Syndrome Coronavirus. /. Virol. 90, 3253-3256 (2015).
+From: Jeremy Farrar
+
+Sent: Tue, 4 Feb 2020 20:26:23 +0000
+
+To: Collins, Francis (NIH/OD) [E];Fauci, Anthony (NIH/NIAID) [E]
+
+Subject: Re: Prevalence of infection and stage of the epidemic in Wuhan
+
+Wild West.....
+
+From: Francis Collins) ®@
+
+Date: Tuesday, 4 February 2020 at 20:23
+
+To: Jeremy Farrar) 9G, "Fauci, Anthony (NIH/NIAID) [E]"
+
+Subject: RE: Prevalence of infection and stage of the epidemic in Wuhan
+
+Surely that wouldn’t be done in a BSL-2 lab?
+
+From: Jeremy Farrar)
+
+Sent: Tuesday, February 4, 2020 9:03 AM
+
+To: Fauci, Anthony (NIH/NIAID) [E] <9 Wcollins, Francis (NIH/OD) [E]
+
+< OO
+
+Subject: Re: Prevalence of infection and stage of the epidemic in Wuhan
+
+Exactly!
+
+From: "Fauci, Anthony (NIH/NIAID) [E]"{ 9 @@>
+
+Date: Tuesday, 4 February 2020 at 13:18
+
+To: Francis Collins) 7) @@, Jeremy Farrar)
+Subject: RE: Prevalence of infection and stage of the epidemic in Wuhan
+
+?? Serial passage in ACE2-transgenic mice
+
+Anthony S. Fauci, MD
+
+Director
+
+National Institute of Allergy and Infectious Diseases
+
+Building 31, Room 7A-03
+
+31 Center Drive, MSC 2520
+
+National Institutes of Health
+
+Bethesda, MD 20892-2520
+
+FAX: (301) 496-4409
+
+E-mail
+
+The information in this e-mail and any of its attachments is confidential and may contain sensitive
+information. It should not be used by anyone who is not the original intended recipient. If you
+have received this e-mail in error please inform the sender and delete it from your mailbox or any
+other storage devices. The National Institute of Allergy and Infectious Diseases (NIAID) shall not
+accept liability for any statements made that are the sender's own and not expressly made on
+behalf of the NIAID by one of its representatives.
+From: Collins, Francis (NIH/OD) [EJ Oe
+
+Sent: Tuesday, February 4, 2020 6:12 AM
+
+To: Jeremy Farrar)
+
+Cc: Fauci, Anthony (NIH/NIAID) [E]/ 9 oe
+
+Subject: RE: Prevalence of infection and stage of the epidemic in Wuhan
+
+Yes, |’d be interested in the proposal of accidental lab passage in animals (which ones?).
+Francis
+
+From: Jeremy Farrar)
+
+Sent: Tuesday, February 4, 2020 6:08 AM
+
+To: Collins, Francis (NIH/OD) [E] DY yy oe
+
+Ce: Fauci, Anthony (NIH/NIAID) [E]|
+
+Subject: Re: Prevalence of infection and stage of the epidemic in Wuhan
+
+Being very careful in the morning wording
+
+“Engineered” probably not.
+
+Remains very real possibility of accidental lab passage in animals to give glycans. Will forward
+immediately or if you want to give Eddie a ring.
+
+Eddie would be 60:40 lab side. | remain 50:50...
+
+On 4 Feb 2020, at 10:58, Collins, Francis (NIH/OD) [EJ @Owrote:
+
+Very thoughtful analysis. | note that Eddie is now arguing against the idea that this is the
+product of intentional human engineering. But repeated tissue culture passage is still an option
+— though it doesn’t explain the O-linked glycans.
+
+Francis
+
+From: Jeremy Farrar [ill
+
+Sent: Tuesday, February 4, 2020 2:01 AM
+
+To: Fauci, Anthony (NIH/NIAID) [E] 9 @@>; collins, Francis (NIH/OD) [E}
+OO
+
+Subject: FW: Prevalence of infection and stage of the epidemic in Wuhan
+
+Please treat in confidence — a very rough first draft from Eddie and team — they will send on the edited,
+cleaner version later,
+
+Pushing WHO again today
+From: Edward Holmes)
+
+Date: Tuesday, 4 February 2020 at 06:33
+
+To: Jeremy Farrar)
+
+Subject: Re: Prevalence of infection and stage of the epidemic in Wuhan
+
+Here’s our summary so far. Will be edited further,
+
+It’s fundamental science and completely neutral as written. Did not mention other anomalies as this will
+make us look like loons. As it stands it is excellent basic science | think, which is a service in itself.
+Will finish as soon as we can.
+
+PROFESSOR EDWARD C. HOLMES FAA FRS
+
+ARC Australian Laureate Fellow
+
+THE UNIVERSITY OF SYDNEY
+
+Marie Bashir Institute for Infectious Diseases & Biosecurity.
+
+School of Life & Environmental Sciences and School of Medical Sciences,
+
+The University of Sydney | Sydney | NSW | 2006 | Australia
+
+T
+
+emo
+From: Fauci, Anthony (NIH/NIAID) [E]
+
+Sent: Tue, 4 Feb 2020 11:23:44 +0000
+
+To: Collins, Francis (NIH/OD) [E];Jeremy Farrar
+
+Subject: RE: Prevalence of infection and stage of the epidemic in Wuhan
+
+Agree. Very thoughtful summary and analysis. We really need to get WHO moving on getting
+the convening started.
+
+From: Collins, Francis (NIH/OD) [EI IT oe
+
+Sent: Tuesday, February 4, 2020 6:12 AM
+
+To: Jeremy Farrar <J.Farrar@wellcome.ac.uk>
+
+Ce: Fauci, Anthony (NIH/NIAID) [EJ Oe
+
+Subject: RE: Prevalence of infection and stage of the epidemic in Wuhan
+
+Yes, |’d be interested in the proposal of accidental lab passage in animals (which ones?).
+Francis
+
+From: Jeremy Farrar) ee
+
+Sent: Tuesday, February 4, 2020 6:08 AM
+
+To: Collins, Francis (NIH/OD) [E] {iNOS
+
+Ce: Fauci, Anthony (NIH/NIAID) [EJ 7 @e@
+
+Subject: Re: Prevalence of infection and stage of the epidemic in Wuhan
+
+Being very careful in the morning wording
+
+“Engineered” probably not.
+
+inmedatyoryouvanttopve C6de 9 tee.
+
+Eddie would be 60:40 lab side. | remain 50:50...
+
+On 4 Feb 2020, at 10:58, Collins, Francis (NIH/OD) [E] TOG wrote:
+
+Very thoughtful analysis. Ke pa
+Francis
+
+From: Jeremy Farrar [iin
+
+Sent: Tuesday, February 4, 2020 2:01 AM
+To: Fauci, Anthony (NIH/NIAID) [E] 9 WG; Collins, Francis (NIH/OD) [E]
+
+Subject: FW: Prevalence of infection and stage of the epidemic in Wuhan
+
+Please treat in confidence — a very rough first draft from Eddie and team — they will send on the edited,
+cleaner version later.
+
+Pushing WHO again today
+
+From: Edward Holres fillllllilNO
+
+Date: Tuesday, 4 February 2020 at 06:33
+
+Subject: Re: Prevalence of infection and stage of the epidemic in Wuhan
+
+Here’s our summary so far. Will be edited further.
+
+It’s fundamental science and completely neutral as written. Did not mention other anomalies as this will
+make us look like loons. As it stands it is excellent basic science | think, which is a service in itself.
+
+Will finish as soon as we can.
+
+PROFESSOR EDWARD C. HOLMES FAA FRS
+
+ARC Australian Laureate Fellow
+
+THE UNIVERSITY OF SYDNEY
+
+Marie Bashir Institute for Infectious Diseases & Biosecurity,
+
+School of Life & Environmental Sciences and School of Medical Sciences.
+
+The University of Sydney | Sydney | NSW | 2006 | Australia
+
+T Noe
+
+EDS e228
+From: Jeremy Farrar
+
+Sent: Tue, 4 Feb 2020 07:01:16 +0000
+
+To: Fauci, Anthony (NIH/NIAID) [E];Collins, Francis (NIH/OD) [E]
+
+Subject: FW: Prevalence of infection and stage of the epidemic in Wuhan
+Attachments: Summary.docx
+
+Please treat in confidence — a very rough first draft from Eddie and team — they will send on the edited,
+cleaner version later.
+
+Pushing WHO again today
+
+From: Edward Holmes) ©
+
+Date: Tuesday, 4 February 2020 at 06:33
+
+To: Jeremy Farrar)
+
+Subject: Re: Prevalence of infection and stage of the epidemic in Wuhan
+
+Here’s our summary so far. Will be edited further.
+
+It’s fundamental science and completely neutral as written. Did not mention other anomalies as this will
+make us look like loons. As it stands it is excellent basic science | think, which is a service in itself.
+Will finish as soon as we can.
+
+PROFESSOR EDWARD C,. HOLMES FAA FRS
+
+ARC Australian Laureate Fellow
+
+THE UNIVERSITY OF SYDNEY
+
+Marie Bashir Institute for Infectious Diseases & Biosecurity,
+
+School of Life & Environmental Sciences and School of Medical Sciences,
+
+The University of Sydney | Sydney | NSW | 2006 | Australia
+
+T
+
+mos
+Overview
+Sequencing of 2019-nCoV revealed two particularly notable features of its genome. We investigate these
+features and outline some examples for how the virus may have acquired them. As rumours have been
+circulating about this virus being engineered or otherwise created with intent, we wish to make it clear that
+our analyses show that such scenarios are largely incompatible with the data.
+The two primary features of 2019-nCoV of interest were:
+e Based on structural modeling and early biochemical experiments, 2019-nCoV appears to be
+optimized for binding to the human ACE2 receptor.
+e The highly variable spike protein of 2019-nCoV has an optimal furin cleavage inserted at the S1 and
+S2 boundary via the insertion of twelve in-frame nucleotides. Additionally, this event also led to the
+acquisition of three O-linked glycans around the furin cleavage site.
+Mutations in the receptor binding domain of 2019-nCoV
+The receptor binding domain (RBD) in the spike protein of SARS-CoV and SARS-like coronaviruses is the
+most variable part of the virus genome. When aligned against related viruses, 2019-nCoV displays. a similar
+level of diversity as predicted from previous studies, including to its most closely related virus - SARS-like
+CoV isolated from bats (RaTG13, which is ~96% identical to 2019-nCoV).
+Six residues in the RBD have been described as critical for binding to the human ACE2 receptor and
+determining host range’. Using coordinates based on the Ubani strain of SARS-CoV, they are Y442, L472,
+N479, D480, T487, and Y491 (the corresponding residues in 2019-nCoV are L455, F486, Q493, S494, N501,
+and Y505), Five out of six of these residues are mutated in 2019-nCoV compared to closely related viruses,
+including RaTG13 (Figure 1). Based on modeling! and early biochemical experiments*?, 2019-nCoV seems
+to have an RBD that may bind with high affinity to ACE2 from human, primate, ferret, pig, and cat, as well
+as other species with high receptor homology. In contrast, 2019-nCoV may bind less efficiently to ACE2 in
+other species often associated with SARS-like viruses, including rodents, civets, and bats’.
+A phenylalanine at F486 in 2019-nCoV corresponds to L472 in the SARS-CoV Ubani Strain. In tissue culture
+experiments the leucine at position 472 mutated to phenylalanine (L472F)*, which has been predicted to
+be optimal for binding of the SARS-CoV RBD to the human ACE2 receptor®. However, a phenylalanine in
+this position is also present in several SARS-like CoVs from bats (Figure 1). While these analyses suggest
+that 2019-nCoV may be capable of binding the human ACE2 receptor with high affinity, importantly, the
+interaction is not predicted to be optimal’. Additionally, several of the key residues in the RBD of 2019-
+nCoV are different from those previously described to be optimal for human ACE2 receptor binding>. This
+latter point is strong evidence against 2019-nCoV being specifically engineered as, presumably, in such a
+scenario the most optimal residues would have been introduced, which is not what we observe.
+Sion Bet pel Eee TE fi hig
+Figure 1 | Mutations in contact residues of the 2019-nCoV spike protein. The spike protein of 2019-nCoV (bottom) was
+aligned against the most closely related SARS and SARS-like CoVs. Key residues in the spike protein that make contact to the
+ACE2 receptor have been marked with blue boxes in both 2019-nCoV and the SARS-CoV Urbani strain.
+
+Acquisition of furin cleavage site and O-linked glycans
+
+An interesting feature of 2019-nCoV is the acquisition of a predicted furin cleavage site in the spike protein
+(Figure 2). In addition to the furin cleavage site (RRAR), a leading P is also inserted so the fully inserted
+sequence becomes PRRA (Figure 2). [he addition of a proline in this position is also predicted to create
+three O-linked glycans at S673, T678, and S686. The addition of afurin site has never before been observed
+in the lineage B betacoronaviruses and is a unique feature of 2019-nCoV. Some human betacoronaviruses,
+including HCoV-HKU1 (lineage A) have furin cleavage sites (typically RRKR), although not in such an optimal
+position. Commented [1]: Is this comment correct?
+> 3 SARS pronewrus AO)T - aAvO7 ONE! ’ “ve TOAGE ‘ “y FP » CA “tt 7 ' Tesi vVAVIM a ay Ww eiPpin
+
+D> & SARS neces AON AAW TONS 4. Inve Toate Ga Mu a ' a AGIGA ey ’ 7” 1 VAY TM te ay Mf ° pin '
+se ceasseoonernn inten aiivessiat ee TaBAVe GYONded Lose vee t LOAteMTEe NEEAOULIVAVEMed en AViSNE] sib Y me a |
+0% & Sovwry draile tesgriratury syridremne~ miele r wv TOAUC OAL MN Ve tw SOCAL ENTERS rat KE IVAVTMSA Ge AViWNT #1 Ph ToS
+De 10. Severe ucule recINFetury SyNIronS relaied 5 r ‘ViEGTOANC wee) ’ CAtyH Tas eae) 1VAWTS o Ay iwiy aur }
+O> 11, GAAS ronaveus N61 - AAS T5841 ’ ive TOAGC GA ‘ +. ore FOLCAT HTB vf 27 1VAV IMS) a iAVTN . rin
+
+Oy Uy, SARS poreraeus WATS Evo! - AEA) DAIS T ' “" TOAGC ‘ ‘er 4 tf ‘ CA\¥uT ' ’ VAYIM Ga A ly’ eiPpyn
+
+De 17 GARS coreretus MALS Enel) - AIA 044.1 wir RA TOAUC ‘ “Vv te Catynt tir JF VAV IM za ATtwW ep TH
+
+Om 14 Server acaane femjm airy cpedrierne seated © ’ YVEOTOANC 1. tr SOLOCASY HTS ar x VAY TM avian ‘ Th
+
+OD 15, SARS ppronaeus Bell! - AGTIIOT!| v4 WV ve ‘ amy , i ‘ CALYHTBS nyt 2* VAY TM Stay wiv ‘ Th
+
+Oe 18, GAAS crenaus B02 - AAROTESS T rare vr TAAGC m My tF ® CAEN TES of “1 VAYTM ‘ ay wiv ‘ mth
+
+De If, GAAS ymrorowus B02 - AARO EIT. 1 ' nv FOANC oars 2 tf AOLCATY NTRS Sr oF Vavth . avon ‘ TH
+
+> 18, GAAS yorerawus S001 - AAPSI 07.) vir VEGTOAGC ‘AD MY a s* CAL SurTes SaaeL VAYIM LY iv iwW . eal
+a Fiat SURS-Ihe cmrenaverus -AVPTECL aot) TOANC 4 ’ «. tF 4m GASYHMTAS e571 ‘a vA VTMS) oe » ARN . al
+Figure 2 | Acquisition of furin cleavage site and O-linked glycans. The spike protein of 2019-nCoV (bottom) was aligned
+against the most closely related SARS end SARS-like CoVs. The furin cleavage site is marked in grey with the three adjacent
+predicted O-linked glycans in blue. Both the furin cleavage site and O-linked glycans are unique to 2019-nCoV and not previously
+seen in this graup of viruses,
+
+While the functional consequence - if any - of the furin cleavage site in 2019-nCoV is unknown, previous
+experiments with SARS-CoV have shown that it enhances cell-cell fusion but does not affect virus entry®.
+Furin cleavage sites are often acquired in condition selecting for rapid virus replication and transmission
+(e.g., highly dense chicken populations) and are a hallmark of highly pathogenic avian influenza virus’~*.
+The acquisition of furin cleavage sites have also been observed after repeated passage of
+betacoronaviruses in tissue culture (personal correspondence and NASEM call, February 3, 2020).
+
+A potential function of the three O-linked glycans is less clear, but could create a “mucin-like domain”
+shielding potential epitopes or key residues on the 2019-nCoV spike protein,
+
+Evolution of 2019-nCoV
+
+Three main scenarios could explain how 2019-nCoV acquired the features discussed above: (1) natural
+selection in an animal host, (2) selection during passage, or (3) deliberate engineering. As described in the
+beginning, engineering (#3) can be ruled out with a high degree of confidence as the data is inconsistent
+with this scenario. In addition, if engineering would have been performed, one would also expect that a
+researcher would have used one of the several reverse genetics systems available for betacoronaviruses.
+However, this is not the case as the genetic data clearly shows that 2019-nCoV is not derived from any
+previously used virus backbone, including those recently posited by various conspiracy theories, based on
+a 2015 paper in Nature Medicine’.
+
+The other two scenarios are largely indistinguishable and current data are consistent with both. It is
+currently impossible to prove or disprove either, and it is unclear whether future data or analyses will help
+resolve this issue.
+Selection in an animal host
+
+Given the similarity of 2019-nCoV to bat SARS-like CoVs, particularly RaTG13, it is highly likely that bats also
+serve as the reservoir for this virus. However, previous human epidemics caused by betacoronaviruses
+have involved intermediate (possibly amplifying) hosts such as civets (SARS) and camels (MERS). It is
+therefore likely that an intermediate host would also exist for 2019-nCoV, although it is currently unclear
+what that host may be. Given the mutations in key residues of the RBD in 2019-nCovV it seems less likely
+that civets would be involved, although it is impossible to say with certainty at this stage.
+
+For the virus to acquire the furin cleavage site and mutations in the spike proteins that appear to be
+suitable for human ACE2 receptor binding, it seems plausible that this animal host would have to have a
+very high population density, to allow the necessary natural selection to proceed efficiently, and an ACE2
+gene that is similar to the human orthologue. Since furin cleavage sites have not been observed in this
+group of viruses before, it is unclear what conditions would be required for it to be acquired in the lineage
+leading to 2019-nCoV.
+
+Selection during passage
+
+Basic research involving passage of bat SARS-like coronaviruses in tissue culture and/or animal models
+have been ongoing in BSL-2 for many years across the world, including in Wuhan (e.g.,''~'). It is possible
+that 2019-nCoV could have acquired the RBD mutations and furin cleavage site as part of passage in tissue
+culture, which have been observed in previous studies with e.g., SARS-CoV4. However, it is less clear how
+the O-linked glycans - if functional - would have been acquired, as these typically suggest the involvement
+of an immune system, which is not present in vitro. In this scenario, it is also unclear how the virus would
+be linked to the fact that the epidemic seemed to ‘take off at a particular food market, although the exact
+role of this locality is currently uncertain.
+
+Limitations and recommendations
+
+The main limitation of what is described here is the clear ascertainment bias. We are looking for features
+or evolutionary aspects that could help explain how 2019-nCoV could lead to a rapidly evolving human
+epidemic, yet the specific features we are trying to find may be the exact features one would expect in a
+virus that could lead to an epidemic of the magnitude currently observed. Before 2019-nCoV ‘took off’ and
+started the current epidemic, it is plausible that many stuttering transmission chains of highly similar
+viruses could have entered the human population, but because they never took off they were never
+detected. It is extremely important to keep this in mind as any inference about the plausibility of various
+scenarios about the evolution and/or epidemic potential of 2019-nCovV is attempted.
+
+To further clarify the evolutionary origins and functional features of 2019-nCoV it would be helpful to obtain
+additional data about the virus - both genetic and functional. This includes experimental studies of receptor
+binding and the role of the furin cleavage site and O-linked glycans. The identification of a potential
+intermediate host of 2019-nCoV as well as sequencing of very early cases, including those not connected
+to the market, could also help refute the passage scenario described above. Even in the light of such data,
+however, it is not guaranteed that data can be obtained to conclusively prove all aspects of the initial
+emergence of 2019-nCoV.
+Background:
+
+Bat coronavirus RaTG13 is the closest relative to nCoV-2019. Two recombinant bat viruses are close in some
+
+regions of the genomes. Pangolin virus?
+
+Furin cleavage site rough notes about evolutionary origins:
+
+Avian influenza example of natural and spontaneous evolution - get references and details.
+
+There are two scenarios by which we could imagine the furin cleavage site could evolve.
+
+1. As a human adaptation during the initial stages of the outbreak. The appearance of the mutation
+may have then triggered a second phase of rapid transmission. All current genome sequences are
+from this second phase and thus show limited diversity.
+
+2. Adaptation to anon-human host prior to the jump to humans. This mutation is not seen in any bat
+coronavirus and is thus unlikely to be adaptive in those species.
+
+Thoughts on 1: is it likely to spontaneously appear in a relatively short amount of time (and presumably
+
+small number of infections). It didn’t happen in SARS with 8000 infections over 6 months. The link to the
+
+market would then be spurious - some doubt on that already. Prediction would be that the
+animal/environmental samples apparently found by China CDC would not have cleavage site.
+
+Thoughts on 2: can we suggest a host where this cleavage site would likely be advantageous.
+
+Ferrets/polecats? Rodents - bamboo rats (don’t know if they are popular in China)? Circulating in wild
+
+populations so limited prior human exposure until infected individual brought to the market.
+
+1. Wan, Y., Shang, J., Graham, R., Baric, R. S. & Li, F. Receptor recognition by novel coronavirus from
+Wuhan: An analysis based on decade-long structural studies of SARS. J. Virol. (2020)
+doi:10.1128/JVI.00127-20.
+
+2. Letko, M. & Munster, V. Functional assessment of cell entry and receptor usage for lineage B B-
+coronaviruses, including 2019-nCoV. bioRxiv 2020.01.22.915660 (2020)
+doi:10.1101/2020.01.22.915660.
+
+3. Hoffmann, M. et al. The novel coronavirus 2019 (2019-nCoV) uses the SARS-coronavirus receptor
+ACE2 and the cellular protease TMPRSS2 for entry into target cells. bioRxiv 2020.01.31.929042 (2020)
+doi:10.1101/2020.01.31.929042.
+
+4. Sheahan, T. et al. Mechanisms of zoonotic severe acute respiratory syndrome coronavirus host range
+expansion in human airway epithelium. J. Virol. 82, 2274-2285 (2008).
+
+5. Cui,J., Li, F. & Shi, Z.-L. Origin and evolution of pathogenic coronaviruses. Nat. Rev. Microbiol. 17, 181-
+192 (2019).
+
+6. Follis, K. E., York, J. & Nunberg, J. H. Furin cleavage of the SARS coronavirus spike glycoprotein
+enhances cell-cell fusion but does not affect virion entry. Virology 350, 358-369 (2006).
+
+7. Longping, V. T., Hamilton, A. M., Friling, T. & Whittaker, G. R. A novel activation mechanism of avian
+influenza virus H9N2 by furin. J. Virol. 88, 1673-1683 (2014).
+
+8. Alexander, D. J. & Brown, |. H. History of highly pathogenic avian influenza. Rev. Sci. Tech. 28, 19-38
+(2009).
+
+9. Luczo, J. M. et a/. Evolution of high pathogenicity of H5 avian influenza virus: haemagglutinin cleavage
+site selection of reverse-genetics mutants during passage in chickens. Sci. Rep. 8, 11518 (2018).
+
+10. Menachery, V. D. et a/. A SARS-like cluster of circulating bat coronaviruses shows potential for human
+emergence. Nat. Med. 21, 1508-1513 (2015).
+
+11. Ge, X.-Y. et al. Isolation and characterization of a bat SARS-like coronavirus that uses the ACE2
+receptor. Nature 503, 535-538 (2013).
+
+12. Hu, B. et al. Discovery of a rich gene pool of bat SARS-related coronaviruses provides new insights
+into the origin of SARS coronavirus. PLoS Pathog. 13, e1006698 (2017).
+
+13. Zeng, L.-P. et al. Bat Severe Acute Respiratory Syndrome-Like Coronavirus WIV1 Encodes an Extra
+Accessory Protein, ORFX, Involved in Modulation of the Host Immune Response. J. Virol. 90, 6573-
+6582 (2016).
+
+14. Yang, X.-L. et al. Isolation and Characterization of a Novel Bat Coronavirus Closely Related to the
+Direct Progenitor of Severe Acute Respiratory Syndrome Coronavirus. J. Virol. 90, 3253-3256 (2015).
+From: Jeremy Farrar
+Sent: Sun, 2 Feb 2020 17:47:36 +0000
+To: Michael RYAN;Bernhard Schwartlander;Collins, Francis (NIH/OD) [E];Fauci,
+Anthony (NIH/NIAID) [E];Dr Tedros
+Subject: 2019nC-V
+Mike and Bernhard
+Thank you for phoning — very helpful, copying in Francis and Tony as well as Tedros.
+Fully agree with your summary.
+© Best is if this is addressed under the umbrella of WHO
+e Has to be framed as ‘To understand the source and evolution of the 2019n-CoV”
+o Within that a number of issues to be addressed including — Environmental and animal
+sampling, human viral genome sequencing and analysis, and more
+® Quickest is via a Working Group within an established structure rather than set something new
+up
+e@ Multiple options for this within WHO
+e@ Mike and Bernhard will work out best approach
+e Appreciate the urgency and importance of this issue in midst of a very troubling epidemic
+® Gathering interest evident in the science literature and in mainstream and social media to the
+question of the origin of this virus
+@ Critical that responsible, respected scientists and agencies get ahead of the science and the
+narrative of this and are not reacting to reports which could be very damaging.
+e | am sure | speak for Francis and Tony when | say we are here and ready to play any constructive
+role in this
+@ Do think this is an urgent matter to address (among many we appreciate)
+e Fully agree to your comments on the GCM.
+Hope that is a reasonable summary
+Wellcome exists to improve health by helping great ideas to thrive. We support researchers, we take on big
+health challenges, we campaign for better science, and we help everyone get involved with science and
+health research. We are a politically and financially independent foundation.
+The Wellcome Trust is a charity registered in England and Wales, no. 210183. Its sole trustee is The Wellcome Trust
+Limited, a company registered in England and Wales, no. 2711000 (whose registered office is at 215 Euston Road,
+London NW1 2BE, UK)
+From: Jeremy Farrar
+
+Sent: Sun, 2 Feb 2020 16:28:29 +0000
+
+To: Fauci, Anthony (NIH/NIAID) [E];Collins, Francis (NIH/OD) [E]
+
+Cc: Tabak, Lawrence (NIH/OD) [E]
+
+Subject: Re: Teleconference
+
+Tedros and Bernhard have apparently gone into conclave....they need to decide today in my view. If
+they do prevaricate, | would appreciate a call with you later tonight or tomorrow to think how we might
+take forward.
+
+Meanwhile...
+https://www.zerohedge.com/geopolitical/coronavirus-contains-hiv-insertions-stoking-fears-over-
+artificially-created-bioweapon
+
+From: "Fauci, Anthony (NIH/NIAID) [E]") 7 @O
+
+Date: Sunday, 2 February 2020 at 15:30
+
+To: Jeremy Farrar) 9 Francis Collins ee
+
+Ce; "Tabak, Lawrence (NIH/OD) [E]"/7 Oo
+
+Subject: RE: Teleconference
+
+Jeremy:
+
+Sorry that | took so long to weigh in on your e-mails with Francis and me. | was on
+conference calls. | agree that we really cannot take Ron’s suggestion about waiting. Like all of
+us, | do not know how this evolved, but given the concerns of so many people and the threat of
+further distortions on social media, it is essential that we move quickly. Hopefully, we can get
+WHO to convene.
+
+Best regards,
+
+Tony
+
+From: Jeremy Farrar illllliinnneO
+
+Sent: Sunday, February 2, 2020 7:13 AM
+
+To: Collins, Francis (NIH/OD) [E] TI yee
+
+Cc: Fauci, Anthony (NIH/NIAID) [E]/ 9 Tabak, Lawrence (NIH/OD) [E]
+OO
+
+Subject: Re: Teleconference
+
+.... Really appreciate us thinking through the options.....if Wellcome — | would need 110% support from
+you all.....it will not be easy!
+From: Francis Collins) @@
+Date: Sunday, 2 February 2020 at 12:03
+To: Jeremy Farrar)
+Ce: "Fauci, Anthony (NIH/NIAID) [E]"|) 9 WG, "Tabak, Lawrence (NIH/OD) [E]"
+Subject: RE: Teleconference
+Hi Jeremy,
+Thanks for forwarding these additional reflections from Mike and Bob. | hadn’t given much
+consideration to the idea of lab-based evolution by tissue-culture passage, but that is worth
+including on the list of options. Waiting a month sounds like a really bad idea. If that’s the
+response from WHO, then another plan will be needed. Would Wellcome be willing to be the
+host then?
+Francis
+From: Jeremy Farrar iil
+Sent: Sunday, February 2, 2020 6:53 AM
+To: Collins, Francis (NIH/OD) [E] Oe
+Ce: Fauci, Anthony (NIH/NIAID) [E] yO Tabak, Lawrence (NIH/OD) [E]
+OO
+Subject: Re: Teleconference
+Thank you
+See thoughts overnight from others.
+On a spectrum if Ois nature and 100 is release —| am honestly at 50! My guess is that this will remain
+grey, unless there is access to the Wuhan lab — and | suspect that is unlikely!
+But grey, from a respected group, under the umbrella of let us say WHO, would in itself help!
+A question for you — if WHO say, well maybe, let us think, we might do it in a month. What would be
+our next step?
+Jeremy
+From Mike Farzan (discoverer of SARS receptor):
+1. The RBD didn't look ‘engineered! to him - as in, no human would have selected the individual
+mutations and cloned them into the RBD (I think we all agree)
+2. Tissue culture passage can often lead to gain of basic sites - including furin cleavage sites (this is
+stuff they have seen with human coronaviruses)
+3. Heis bothered by the furin site and has a hard time explaining that as an event outside the lab
+(though, there are possible ways in nature, but highly unlikely)
+4. Instead of directed engineering, changes in the RBD and acquisition of furin site would be highly
+compatible with the idea of continued passage of virus in tissue culture
+5. Acquisition of furin site would likely destabilize the virus, but would make it disseminate to new
+tissues
+So given above, a likely explanation could be something as simple as passaging SARS-like CoVs in tissue
+culture on human cell lines (under BSL-2) for an extended period time, accidentally creating a virus that
+would be primed for rapid transmission between humans via gain of furin site (from tissue culture) and
+adaptation to human ACE2 receptor via repeated passage.
+All of this brings it back to a simple conversation about how this virus might have gained a furin site (but
+with a stretch and series of coincidences you can find a way to explain others — although very odd all
+together) and there are ways in which that could occur both in nature and in the lab. Nothing seems to
+specifically suggest whether this virus was most likely to be "adapted", "evolved", or maybe even
+"engineered". So | think it becomes a question of how do you put all this together, whether you believe
+in this series of coincidences, what you know of the lab in Wuhan, how much could be in nature -
+accidental release or natural event? | am 70:30 or 60:40.
+From Bob
+Before | left the office for the ball | aligned nCoV with the 96% bat CoV sequenced at WIV. Except for
+the RBD the S proteins are essentially identical at the amino acid level - well all but the perfect insertion
+of 12 nucleotides that adds the furin site. S2 is over its whole Jength essentially identical. | really can’t
+think of a plausible natural scenario where you get from the bat virus or one very similar to it to nCoV
+where you insert exactly 4 amino acids 12 nucleotide that all have to be added at the exact same time to
+gain this function- that and you don’t change any other amino acid in $2? | just can’t figure out how this
+gets accomplished in nature. Do the alignment of the spikes at the amino acid level - it’s stunning. Of
+course in the lab it would be easy to generate the perfect 12 base insert that you wanted.
+Another scenario is that the progenitor of nCoV was a bat virus with the perfect furin cleavage site
+generated over evolutionary time. In this scenario RaTG13 the wiv virus was generated by a perfect
+deletion of 12 nucleotides while essentially not changing any other S2 amino acid. Even more
+implausible imo.
+That is the big if.
+You were doing gain of function research you would NOT use an existing clone of sars or mersv. These
+viruses are already human pathogens. What you would do is clone a bat virus they had not yet emerged.
+Maybe then pass it in human cells for a while to lock in the rbs, then you reclonec and put in the
+mutations you are interested - one of the first a polybasic cleavage site.
+From: Francis Collins yy yee
+Date: Sunday, 2 February 2020 at 10:27
+To: Jeremy Farrar OO
+Ce: "Fauci, Anthony (NIH/NIAID) [E]" 9 @)@ "Tabak, Lawrence (NIH/OD) [E]"
+OG)
+Subject: RE: Teleconference
+Jeremy,
+
+Though the arguments from Ron Fouchier and Christian Drosten are presented with more
+forcefulness than necessary, | am coming around to the view that a natural origin is more
+likely. But | share your view that a swift convening of experts in a confidence-inspiring
+framework (WHO seems really the only option) is needed, or the voices of conspiracy will
+quickly dominate, doing great potential harm to science and international harmony.
+
+I’m available any time today except 3:15 — 5:45 pm EST (ona plane) fora call to Tedros. Let me
+know if | can help get through his thicket of protectors.
+
+Francis
+
+From: Jeremy Farrar)
+
+Sent: Sunday, February 2, 2020 4:48 AM
+
+To: Andrew Rambaut oe
+
+Cc: R.A.M. Fouchier yyy OG; Fauci, Anthony (NIH/NIAID) [E]
+OO >; Patrick Vallance TO Drosten, Christian
+POO >: VPS. Koopmans PGE ddie Holmes
+OOS Kristian G. Andersen I O@>;
+Paul Schreier OG: Ferguson, Mike
+ANNE collins, Francis (NIH/OD) [E] NNO: Tabak, Lawrence
+(NIH/OD) [E}[9 0 MONO; Josie Golding TT
+
+Subject: Re: Teleconference
+
+This is a very complex issue.
+
+| will:
+
+e Bein contact with WHO today. | contacted them last night and will speak with them today and
+set up a broader call with them as soon as possible.
+
+e As discussed on the phone this discussion is not limited to those on this email, itis happening
+wider in the scientific, social and main stream media.
+
+e | believe the best way forward is for a body like the WHO has to ask or commission a group of
+scientists from around the world to ask the neutral question “To understand the evolutionary
+origins of 2019-nCoV, important for this epidemic and for future risk assessment and
+understanding of animal/human coronaviruses”.
+
+© That should be done in an open way and quite quickly so that the world can see it is being done,
+it can respect the report when it is available and | think that will help with the growing interest
+of this question.
+
+| suggest we don’t get into a further scientific discussion here, but wait for that group to be established.
+Jeremy
+From: iN
+
+Date: Sunday, 2 February 2020 at 09:38
+
+To: Jeremy Farrar)
+
+Ce: ANANNNPENG "Favici, Anthony (NIH/NIAID) [E]'
+Eclwarci Holts lll iit neeeeux0
+Pye, "Kristian G. Andersen" PHY WG, Paul Schreier
+LLL eA Michael FMedsci
+NE Josie Golding
+
+<J.Golding @wellcome.ac.uk>
+
+Subject: Re: Teleconference
+
+Dear Jeremey, Ron and all,
+
+Thanks for inviting me on the call yesterday. |am also agnostic on this - | do not have any experience of
+laboratory virology and don’t know what it is likely or not in that context. From a (natural) evolutionary
+point of view the only thing here that strikes me as unusual is the furin cleavage site. It strongly suggests
+to me that we are missing something important in the origin of this virus. My inclination would be that it
+is a missing host species in which this feature arose because it was selected for in that host. We can see
+this insertion has resulted in an extremely fit virus in humans - we can also deduce that it is not optimal
+for transmission in bat species.
+
+The alternative is that it arose early in the human outbreak, perhaps during a longer period of hidden
+transmission and then the current epidemic is the result of this mutation but this seems less likely to me
+(it didn’t happen in SARS for example).
+
+Perhaps this needs to be discussed urgently, not only because of the lurid claims on Twitter but because
+if it is ina non-human host, pre-adapted, it may threaten control efforts through new zoonotic jumps
+(although perhaps we are beyond this point now).
+
+The biggest hindrance at the moment (for this and more generally) is the lack of data and information.
+There have been no genome sequences from Wuhan for cases more recent than the beginning of
+January and reports, but no information, about virus from non-human animals in Wuhan. If the
+evolutionary origins of the epidemic were to be discussed, | think the only people with sufficient
+information or access to samples to address it would be the teams working in Wuhan.
+
+Best,
+
+Andrew
+
+On 2 Feb 2020, at 08:40, Jeremy Farrar) yyy wrote:
+
+Thanks Ron
+My view is completely neutral on this. The evolutionary origins on this virus are clearly important.
+I do know these questions are being asked by politicians, starting in the scientific literature, certainly on social and main stream
+media. If, and I stress if, this does spread further. pressure and tensions rise, j fear these questions will get louder and more
+polarised and people will start to look who to blame. We live in a polarised world where there is a quick reaction to try and
+deflect issues by blaming someone somewhere. That may only increase tension and reduce cooperation.
+A respected body convening a group now to consider the evolutionary origins of this, with an open mind, neutral. and in a
+transparent way is | think an approach that may prevent wild claims being made.
+Such a group needs the best minds, from around the world. not just US-Europe-Australia. It needs to be transparent and
+respected.
+| am not sure your thoughts on “short time frame”. Lam concerned if this is not done quite quickly: it will be reacting to what
+may be lurid claims.
+Thoughts on that very welcome.
+On 2 Feb 2020, at 08:30, R.A.M. Fouchier 9 yyyyyy@@ wrote:
+Dear Jeremy and others,
+This was a very useful teleconference. Given the evidence presented and the discussions around it, |
+would conclude that a follow-up discussion on the possible origin of 2019-nCoV would be of much
+interest. However, | doubt if it needs to be done on very short term, given the importance of other
+activities of the scientific community, WHO and other stakeholders at present. It is my opinion that a
+non-natural origin of 2019-nCoV is highly unlikely at present. Any conspiracy theory can be approached
+with factual information. | have written down some of the counter-arguments. It is a bit long (below) but
+wanted to share it with you anyway.
+Thanks for organizing this on such short notice,
+Kind regards
+Ron
+Ron’s notes:
+An accusation that nCoV-2019 might have been engineered and released into the environment by
+humans (accidental or intentional) would need to be supported by strong data, beyond reasonable
+doubt. It is good that this possibility was discussed in detail with a team of experts. However, further
+debate about such accusations would unnecessarily distract top researchers from their active duties and
+do unnecessary harm to science in general and science in China in particular. At present, the arguments
+that nCoV-2019 could have emerged from an animal source is much stronger than other possibilities.
+Observations about the genome that were inferred to be suggestive for a non-animal origin:
+
+1. HIV-like sequences in the spike protein.
+
+2. Level of mutations in the spike protein region.
+3. Presence of a furin cleavage site in the middle of spike
+
+4. BamH1 restriction site at the end of the spike sequence
+
+5. An F-to-Y substitution in the receptor-binding domain of spike
+
+6. Potential O-linked glycan sites protecting the cleavage site of spike
+
+1. The biorxiv publication by Prashant Pradhan and colleagues from Delhi (“Uncanny similarity of
+unique inserts in the 2019-nCoV spike protein to HIV-1 gp120 and Gag“) has already been
+heavily debated on biorxiv and virological.org. The similarity between the inserts in 2019-nCoV
+spike and sequences of HIV-1 is accidental. These are very short insert sequences that are highly
+similar to many Genbank entries. Such similarities are explained by pure chance alone.
+
+2. Andrew Rambaut analyzed the level of mutations in the spike region of SARS-CoV with that of its
+closest bat virus relative and of 2019-nCoV and its closest bat virus relative. The level of
+mutations between the two pairs of viruses was in the same range. Thus, this level of mutations
+can arise under circumstances of natural emergence.
+
+3. Bat coronaviruses generally do not have a furin cleavage site in the spike protein. Some human
+coronaviruses do have a furin cleavage site in spike, which must have evolved naturally. As
+animal reservoir and spill-over hosts are highly under-sampled, the presence of a furin cleavage
+site in spike in such species is unknown. When coronaviruses jump host barriers, this frequently
+involved adaptation of cleavage sites that may be targeted by various proteases. Given the
+presence of furin-like sites in human coronavirus and the mutation of protease cleavage sites
+upon coronavirus host-jumps in general, a natural origin of the furin site is certainly not
+impossible.
+
+4. The BamHI restriction endonuclease site evolved due to a single (silent) nucleotide substitution
+as compared to the closest relative bat virus genome sequence. Restriction sites of 6 nucleotides
+can be found in every sequence, all over the genome, when 1 of the 6 positions is allowed to
+vary. We now find BamHI, next time it might be one of the plethora of other 6-nucleotide
+sequence motifs. This can be explained by pure chance.
+
+5. The F-Y substitution in the spike receptor binding domain was observed in mouse-adapted SARS-
+CoV and in 2019-nCovV. It is generally absent in bat coronaviruses. This substitution is associated
+with host adaptation in mice. It may point to (natural) host adaption of 2019-nCoV (in mice,
+humans or unknown hosts) as well. It is possible that scientists would like to test the effect of F-
+Y because it was found in a mouse adaptation experiment. However, the logical way to test it
+would be in the original (SARS-CoV) virus backbone. There is no other reason to insert the F-Y
+substitution in an engineered virus.
+
+6. It is unclear if the potential O-linked glycosylation sites 1) are used during glycosylation; 2) have
+a functional role for the spike protein; 3) were present in the ancestral virus from the original
+host. This is not an argument in the discussion on the origin of 2019-nCoV.
+
+Additional arguments:
+
+A. All focus is on spike. Spike is a highly variable protein in general, crucial for host adaptation and
+under strong natural selection.
+
+B. The virus backbone (beyond spike) is not an indicator of a human source of 2019-nCoV
+emergence. The virus itself has not been described or characterized previously and no reverse
+genetics system has been described for this virus. Any scientist wanting to investigate spike
+function (e.g. to study protease cleavage or the receptor-binding domain) would have used a
+well-characterized reverse genetics system that is already available (making accidental lab-
+escape unlikely). Anyone with malicious intend would have used a well-characterized virulent
+strain (SARS-CoV, MERS-CoV) described and characterized (by others) in the literature.
+C. The patterns of mutations we observe in the receptor-binding domain and the protease
+cleavage sites of spike are typical for host-switched naturally evolving viruses. We can infer it for
+the naturally evolved human coronaviruses, we have seen it for the natural zoonoses of SARS-
+CoV and MERS-CoV. Convergent (parallel) evolutionary events are common in virology. Also for
+influenza, we see the same mutations emerge during the pandemics of 1918 (H1N1), 1957
+(H2N2) and 1968 (H3N2), in the 2013 zoonotic H7N9 virus and e.g. an epizootic in seals in 2014
+(H1ON7). Regardless of the divergent subtype, we see identical substitutions in the receptor-
+binding domains, identical substitutions in polymerase, and non-identical substitutions with
+identical phenotypic consequences (e.g. stability) in the genome. The fact that we (think we) see
+recognizable traits in spike does not mean it must be man-made.
+
+D. We do not know the source of 2019-nCoV. There is “~30 years of evolutionary gap” between
+2019-nCoV and the closest bat virus relative. These 30 years may have been in any host. We
+have no idea what might have happened (in evolutionary sense) between BatCov/RaTG13 and
+2019-nCoV. We should rest our case until we have a close relative of 2019-nCoV.
+
+Van: Jeremy Farrar) yO e>
+
+Datum: zaterdag 1 februari 2020 om 21:59
+
+Aan: "Fauci, Anthony (NIH/NIAID) [E]" 9 yyyyyyywe Patrick Vallance
+OH
+
+CC: Christian Drosten yyw, "M. Koopmans"
+IN @,, "B.A... Fouchier" <r.fouchier@erasmusme.nl>, Edward
+hh ee
+Andrew Rambaut 9 OG, "Kristian G. Andersen") WG, Paul
+Schreier Tee
+NH. Josie Golding
+LO)
+
+Onderwerp: Re: Teleconference
+
+Thank you to everyone for joining.
+
+There is clearly much to understand understand in this. This call was very helpful to hear some of our
+current understanding and the many gaps in our knowledge. | do not believe this is a question of a
+binary outcome, it is more a question of “What are the evolutionary origins of 2019-nCoV,
+important for future risk assessment and understanding of animal/human coronaviruses”.
+
+| do know there are papers being prepared, there will media interest and there is already chat on
+Twitter/WeChat.
+
+We on this call are not the only ones with scientific expertise in this area and this was an ad hoc group
+that came together to air some thoughts. It is clearly not the sole group to take this forward, that will
+need a broader range of imput and a respected international body to ask an expert group to explore
+this, with a completely open mind. In order to stay ahead of the conspiracy theories and social media |
+do think there is an urgency for a body to convene such a group and commission some work to — (draft)
+“To understand the evolutionary origins of 2019-nCoV, important for this epidemic and for
+future risk assessment and understanding of animal/human coronaviruses”.
+In other words a completely open minded and neutral question bringing in the best minds, and
+under the umbrella of a respected international agency
+| hope that is a reasonable approach, please send any thoughts or suggestions.
+Once again, thank you for making time over a weekend and for such an informed discussion on
+a complex issue.
+Thank you and best wishes Jeremy
+From: Jeremy Farrar ililillNOXO
+Date: Saturday, 1 February 2020 at 15:34
+To: "Fauci, Anthony (NIH/NIAID) [E]"{7 7 ®G, Patrick Vallance
+Cc: "Drosten, Christian" yyy marion Koopmans
+Edward Holmes)
+OO Kristian G. Andersen"
+Pe, Paul Schreier TH ee
+<rfgarry@tulane.edu>, Michael FMedSci yyy oo
+Subject: Teleconference
+1st February (2nd Feb for Eddie)
+Information and discussion is shared in total confidence and not to be shared until agreement on next
+steps.
+Dial in details attached.
+Please mute phones.
+| will be on email throughout — email Paul or | Paul if any problems
+If you cannot make it, | will phone you afterwards to update.
+One Hour
+6am Sydney
+8pm CET
+7pm GMT
+2pm EST
+11am PST
+(Hope | have the times right!)
+Thank you for the series of calls and for agreeing to join this call.
+Agenda
+e Introduction, focus and desired outcomes - JF
+e Summary — KA
+e Comments — EH
+« Q&A —All
+® Summary and next steps - JF
+Kristian Anderson
+Bob Garry - | have not been able to contact Bob. Please forward if you can.
+Christian Drosten
+Tony Fauci
+Mike Ferguson
+Ron Fouchier
+Eddie Holmes
+Marion Koopmans
+Stefan Pohlmann
+Andrew Rambaut
+Paul Schreier
+Patrick Vallance
+Andrew Rambaut
+Institute for Evolutionary Biology
+Ashworth Laboratories, University of Edinburgh, Edinburgh, EH9 3FL, UK
+contact —- (NGS | hips trce bin cd ack | SOO
+The University of Edinburgh is a charitable body, registered in Scotland, with registration number
+$C005336.
+From: Fauci, Anthony (NIH/NIAID) [E]
+
+Sent: Sat, 1 Feb 2020 22:06:26 +0000
+
+To: Jeremy Farrar;Collins, Francis (NIH/OD) [E]
+
+Subject: RE: Teleconference
+
+Thanks, Jeremy. We really appreciate what you are doing here. Pleasure to work with you.
+Best,
+
+Tony
+
+From: Jeremy Farrar illite
+
+Sent: Saturday, February 1, 2020 4:00 PM
+
+To: Collins, Francis (NIH/OD) [E] Toe
+
+Cc; Fauci, Anthony (NIH/NIAID) [EJ TIP yee
+
+Subject: Re: Teleconference
+
+We are altogether as you know! Conversations with you and Tony, and Patrick and others — always
+great working with you both
+
+From: Francis Collins PY yy yoo
+
+Date: Saturday, 1 February 2020 at 20:50
+
+To: Jeremy Farrar illllllinnnCOO
+
+Ce: "Fauci, Anthony (NIH/NIAID) [E]" PPP yoo
+
+Subject: Re: Teleconference
+
+Hi Jeremy,
+
+| can make myself available at any time 24/7 for the call with Tedros. Just let me know.
+Thanks for your leadership on this critical and sensitive issue.
+
+Francis
+
+Sent from my iPhone
+
+On Feb 1, 2020, at 3:07 PM, Jeremy Farrar) yyy wrote:
+
+| have rejoined so a line is open if any help to rejoin.
+
+From: Jeremy Farrar illlilillllnnnC2®
+
+Date: Saturday, 1 February 2020 at 19:56
+
+To: "Fauci, Anthony (NIH/NIAID) [E]" yyy OG, Francis Collins
+MAN Michael FMedSci iN, Patrick Vallance
+OO
+
+Subject: Re: Teleconference
+Can | suggest we shut down the call and then redial in?
+
+Just for 5-10mins?
+
+From: Marion Koopmans)
+
+Date: Saturday, 1 February 2020 at 19:43
+
+Ce: "Fauci, Anthony (NIH/NIAID) [E]" yyy yO@, Patrick Vallance
+PWS. "Drosten, christian" Ty yyyee
+RN, Edward Hoimes
+
+Pal Schreier tt eee,
+Michael FMedSci 9 Francis Collins Oe
+Subject: Re: Teleconference
+
+Re the pangolin sequence: there are sections of the genome that have higher homology, and there is
+suggestion of recombinant history. And how much of the observation could be explained by having the
+wrong comparator?
+
+Finally, we see in coronaviruses very similar functional domains in highly dissimilar core structures
+On 1 Feb 2020, at 19:12, Jeremy Farrar yy OG wrote:
+
+Kristen and Eddie have shared this and will talk through it on the call. Thank you.
+
+Hope it will help frame the discussions.
+
+From: Jeremy Farrar illite
+
+Date: Saturday, 1 February 2020 at 15:34
+1st February (2nd Feb for Eddie)
+Information and discussion is shared in total confidence and not to be shared until agreement on next
+steps.
+Dial in details attached.
+Please mute phones.
+| will be on email throughout — email Paul or | Paul if any problems
+If you cannot make it, | will phone you afterwards to update.
+One Hour
+6am Sydney
+8pm CET
+7pm GMT
+2pm EST
+11am PST
+(Hope | have the times right!)
+Thank you for the series of calls and for agreeing to join this call.
+Agenda
+e Introduction, focus and desired outcomes - JF
+e Summary — KA
+e Comments — EH
+e Q&A -—All
+e Summary and next steps - JF
+Kristian Anderson
+Bob Garry - | have not been able to contact Bob. Please forward if you can.
+Christian Drosten
+Tony Fauci
+Mike Ferguson
+Ron Fouchier
+Eddie Holmes
+Marion Koopmans
+Stefan Pohlmann
+Andrew Rambaut
+Paul Schreier
+Patrick Vallance
+<Coronavirus sequence comparison[1].pdf>
+From: Jeremy Farrar
+
+Sent: Sat, 1 Feb 2020 20:13:15 +0000
+
+To: Collins, Francis (NIH/OD) [E];Fauci, Anthony (NIH/NIAID) [E];Ferguson,
+Mike;Patrick Vallance
+
+Subject: Re: Teleconference
+
+sure
+
+From: Francis Collins yy oe
+
+Date: Saturday, 1 February 2020 at 20:12
+
+To: Jeremy Farrar WG, "Fauci, Anthony (NIH/NIAID) [E]"
+PO. Michael FMedsci PO, Patrick Vallance
+>
+
+Subject: RE: Teleconference
+
+Just saw this, still want me to call in?
+
+From: Jeremy Farrar)
+
+Sent: Saturday, February 1, 2020 2:56 PM
+
+To: Fauci, Anthony (NIH/NIAID) [E] S99 Collins, Francis (NIH/OD) [E]
+(EEEENEEIWO>; Ferguson, Mike MNNNNINONG Patrick Vallance
+LO)
+
+Subject: Re: Teleconference
+
+Can | suggest we shut down the call and then redial in?
+
+Just for 5-10mins?
+
+From: Marion Koopman filllllillinnnnCx®
+
+Date: Saturday, 1 February 2020 at 19:43
+
+Ce: "Fauci, Anthony (NIH/NIAID) [E]" |) 9 >, Patrick Vallance
+(ANG ‘Drosten, christian” [NOS
+(ANNE Edward Holmes
+
+Paul Schreier ee
+Michael FMedScil OG, Francis Collins {OO
+Subject: Re: Teleconference
+Re the pangolin sequence: there are sections of the genome that have higher homology, and there is
+suggestion of recombinant history. And how much of the observation could be explained by having the
+wrong comparator?
+
+Finally, we see in coronaviruses very similar functional domains in highly dissimilar core structures
+On 1Feb 2020, at 19:12, Jeremy Farrar yy wrote:
+
+Kristen and Eddie have shared this and will talk through it on the call. Thank you,
+
+Hope it will help frame the discussions.
+
+From: Jeremy Farrar lillie
+
+Date: Saturday, 1 February 2020 at 15:34
+
+1st February (2nd Feb for Eddie)
+
+Information and discussion is shared in total confidence and not to be shared until agreement on next
+steps.
+
+Dial in details attached.
+
+Please mute phones.
+
+| will be on email throughout — email Paul or I Paul if any problems
+
+Hf you cannot make it, | will phone you afterwards to update.
+
+One Hour
+
+6am Sydney
+
+8pm CET
+
+7pm GMT
+
+2pm EST
+
+11am PST
+
+(Hope | have the times right!)
+
+Thank you for the series of calls and for agreeing to join this call.
+Agenda
+e Introduction, focus and desired outcomes - JF
+e Summary — KA
+e Comments — EH
+e Q&A -All
+e Summary and next steps - JF
+Kristian Anderson
+Bob Garry - | have not been able to contact Bob. Please forward if you can.
+Christian Drosten
+Tony Fauci
+Mike Ferguson
+Ron Fouchier
+Eddie Holmes
+Marion Koopmans
+Stefan Pohlmann
+Andrew Rambaut
+Paul Schreier
+Patrick Vallance
+<Coronavirus sequence comparison[1].pdf>
+From: Fauci, Anthony (NIH/NIAID) [E]
+
+Sent: Sat, 1 Feb 2020 20:03:12 +0000
+
+To: Jeremy Farrar
+
+Subject: RE: Teleconference
+
+Yes
+
+From: Jeremy Farrar) ee
+
+Sent: Saturday, February 1, 2020 2:56 PM
+
+To: Fauci, Anthony (NIH/NIAID) [E] ye Collins, Francis (NIH/OD) [E]
+WO Ferguson, Mike TI Patrick Vallance
+
+<< OOH
+
+Subject: Re: Teleconference
+
+Can | suggest we shut down the call and then redial in?
+
+Just for 5-10mins?
+
+From: Marion Koopmans ee
+
+Date: Saturday, 1 February 2020 at 19:43
+
+Ce: "Fauci, Anthony (NIH/NIAID) [E]" 9) OG Patrick Vallance
+NEM Edward HoImes
+
+Paul Schreier [le
+Michael FMedScif $0, Francis Collins| 0
+Subject: Re: Teleconference
+
+Re the pangolin sequence: there are sections of the genome that have higher homology, and there is
+suggestion of recombinant history. And how much of the observation could be explained by having the
+wrong comparator?
+
+Finally, we see in coronaviruses very similar functional domains in highly dissimilar core structures
+On 1 Feb 2020, at 19:12, Jeremy Farrar OG wrote:
+
+Kristen and Eddie have shared this and will talk through it on the call. Thank you.
+Hope it will help frame the discussions.
+From: Jeremy Farrar %) ©
+Date: Saturday, 1 February 2020 at 15:34
+ist February (2nd Feb for Eddie)
+Information and discussion is shared in total confidence and not to be shared until agreement on next
+steps.
+Dial in details attached.
+Please mute phones.
+| will be on email throughout — email Paul or ! Paul if any problems
+If you cannot make it, | will phone you afterwards to update.
+One Hour
+6am Sydney
+8pm CET
+7pm GMT
+2pm EST
+11am PST
+(Hope | have the times right!)
+Thank you for the series of calls and for agreeing to join this call.
+Agenda
+e Introduction, focus and desired outcomes - JF
+e Summary — KA
+* Comments — EH
+* Q&A - All
+e Summary and next steps - JF
+Kristian Anderson
+Bob Garry - | have not been able to contact Bob, Please forward if you can.
+Christian Drosten
+Tony Fauci
+
+Mike Ferguson
+
+Ron Fouchier
+
+Eddie Holmes
+
+Marion Koopmans
+
+Stefan Pohlmann
+
+Andrew Rambaut
+
+Paul Schreier
+
+Patrick Vallance
+
+<Coronavirus sequence comparison[1].pdf>
+From: Jeremy Farrar
+
+Sent: Sat, 1 Feb 2020 19:09:05 +0000
+
+To: Fauci, Anthony (NIH/NIAID) [E];Patrick Vallance
+
+Cc: Drosten, Christian;Marion Koopmans;R.A.M. Fouchier;Edward
+
+Holmes) WO Gu;Andrew Rambaut;Kristian G. Andersen;Paul
+
+Schreier YY OG@i;Ferguson, Mike;Collins, Francis (NIH/OD) [E];Tabak, Lawrence (NIH/OD)
+[E];Josie Golding
+
+Subject: Re: Teleconference
+
+If any issues come up, please email me and | will try and adjust or try and help,
+
+From: Jeremy Farrar [iillillilnnNNEO®
+
+Date: Saturday, 1 February 2020 at 15:34
+
+To: "Fauci, Anthony (NIH/NIAID) [E]" {9 9 9G Patrick Vallance
+
+Cc: "Drosten, Christian"), Marion Koopmans
+
+Edward Holmes ee
+SO "Kristian G. Andersen"
+8G, Paul Schreier EO
+TE Michael FMedsci OO
+
+Subject: Teleconference
+
+1st February (2nd Feb for Eddie)
+
+Information and discussion is shared in total confidence and not to be shared until agreement on next
+steps.
+
+Dial in details attached.
+
+Please mute phones.
+
+1 will be on email throughout — email Paul or | Paul if any problems
+
+If you cannot make it, | will phone you afterwards to update.
+
+One Hour
+
+6am Sydney
+
+8pm CET
+
+7pm GMT
+
+2pm EST
+
+11am PST
+
+(Hope | have the times right!)
+Thank you for the series of calls and for agreeing to join this call.
+Agenda
+e Introduction, focus and desired outcomes - JF
+e Summary — KA
+e Comments — EH
+¢ Q&A -All
+e Summary and next steps - JF
+Kristian Anderson
+Bob Garry - | have not been able to contact Bob. Please forward if you can.
+Christian Drosten
+Tony Fauci
+Mike Ferguson
+Ron Fouchier
+Eddie Holmes
+Marion Koopmans
+Stefan Pohlmann
+Andrew Rambaut
+Paul Schreier
+Patrick Vallance
+From: Jeremy Farrar
+Sent: Sat, 1 Feb 2020 18:12:57 +0000
+To: Fauci, Anthony (NIH/NIAID) [E];Patrick Vallance
+Ce: Drosten, Christian;Marion Koopmans;R.A.M. Fouchier;Edward
+Holmes) @)@u;Andrew Rambaut;Kristian G. Andersen;Paul
+Schreier) 7) @)@i;Ferguson, Mike;Collins, Francis (NIH/OD) [E]
+Subject: Re: Teleconference
+Attachments: Coronavirus sequence comparison[1].pdf
+Kristen and Eddie have shared this and will talk through it on the call. Thank you,
+Hope it will help frame the discussions.
+From: Jeremy Farrar)
+Date: Saturday, 1 February 2020 at 15:34
+ist February (2nd Feb for Eddie)
+Information and discussion is shared in total confidence and not to be shared until agreement on next
+steps.
+Dial in details attached.
+Please mute phones.
+| will be on email throughout — email Paul or | Paul if any problems
+If you cannot make it, | will phone you afterwards to update.
+One Hour
+6am Sydney
+8pm CET
+7pm GMT
+2pm EST
+11am PST
+(Hope | have the times right!)
+Thank you for the series of calls and for agreeing to join this call.
+Agenda
+® Introduction, focus and desired outcomes - JF
+e Summary — KA
+@ Comments — EH
+© Q&A-All
+e Summary and next steps - JF
+Kristian Anderson
+Bob Garry - | have not been able to contact Bob. Please forward if you can.
+Christian Drosten
+Tony Fauci
+Mike Ferguson
+Ron Fouchier
+Eddie Holmes
+Marion Koopmans
+Stefan Pohlmann
+Andrew Rambaut
+Paul Schreier
+Patrick Vallance
+Main comparison is between 2019-nCoV (top)
+and bat SARS-like coronavirus RaTG13 (96%
+identical; bottom)
+
+MT TE TT A A A Me A
+nCoV ae Ey EE ies 1 ps pail witiciel
+BatRaTG13 t=" aS a I OI SM AT TAR SI OE SNE I Le a eet A, Km pnt A
+
+SY a: Ye Vi We
+High level of mutations around key residues in
+the receptor binding domain
+oe [c] [] G eo 8
+ek 2 hee
+8 We Ee a ee - re [aa ® Lil ' i et Brace rar | CAR Li ae Bea SA i Uo ae.
+Gain of furin cleavage site in nCoV - not
+present in bat coronaviruses, SARS, or MERS
+23,540 23,550 23,560 23,570 23,580 23,590 23,600 23,616 23,620 23,630 23,640 23,650 23,660 23,670 23,680
+23,540 23,550 23,560 23,570 23,580 23,590 23,600 23,610 23,620 23,630 23,640 23,650 23,660 23,670 23,680
+23,540 23,350 23,560 23,570 23,580 23,590 23,600 23,610 23,620 23,630 23,640 23,650 23,660 23,670 23,680
+_furin dea...
+ACTCHTATGAGTGTGACATACCHATTGGCTGCAGGMATATGCOCHAGTTATCAGACTCAGACTAAT TEEEEMMMNGGINGGGC ACGTAGTGTIIGCHAGTCAATCHATEATTGCCTACACTATGTCACTTGGTGCAGAAAATTCAGTTGCTTARITC
+(EE ee ee ees ee ee ee ee eS eee
+23,522 23,532 23,542 23,552 2. 3,562 23,572 23,582 23,583 23,590 23,600 23,61 0 23,620 23,630 23,640 23,650
+\ACTCBTATGAGTGTGACATACCHATTGGTGCAGGMATA TGCGCIRAG TTATCAGACTCAMACTAATT ---------- =-CACGTAGT GTEGCHAGTCAAT CHA TINA FT GCCTACACTATGTCACTTGG TGCAGAASATTCAGTTGCTTAMT(
+Gain of BamHI restriction site in nCoV at the
+very end of the spike protein. Note, diversity
+upstream of site, followed by none downstream
+25,240 25,250 25,260 25,270 25,280 25,290 25,300 25,310 25,320 25,330 25,340 25,350 25,360 25,370 25,380 25
+25,240 25,2 50 25,260 25,270 25,280 25,290 25,300 25,310 25,320 25,330 25,340 25,350 25,360 25,370 25,380 2
+GR cCEABARIIAAT GG TRACHATIAD G Chr G Gt GRAM G ACCA cM G ORGIIAG TM GROMGAA GG COMGIM GIPOME Gil GANG CGE GOAA AMI GAMG AA GAG G ACG GA GOCA G BG OMCAAAG GA GI AAATEACAMIACACAMAAADGAA
+25,240 25,2 50 25,260 25,270 25,280 25,290 25,300 25,310 25,320 25,330 25,340 25,350 25,360 25,370 25,380 2
+——~ BamHI (25,314)
+TTGCCATAGTAATGGTGACHATTATGCTTTGCTGTATGACCAGTIGCTGMAGTTGTCTCAAGGGCTGTIGTICT a. Tas Aa TGCAAATTTGATGAAGACGACTCTGAGCCAGTGCTCAAAGGAGTCAAATTACATTACACATAAACGAA
+25,210 25,220 25,230 25,240 25,250 25,260 25,270 25, 280 25,290 25,300 25,310 25,320 25,330 25,340 25,350 25
+TTGCCATARTAA TGGTBACGAT TATGCTTTGCTGTATGACCAGTIGCTGMAGTTGTE TCAAGGGCTGTIGTTCTTGEGGA TCT GCTGCAAATT TGATGAAGACGACTCTGAGCCAGTGCTCAAAGGAGTCAKATTACAT TACACATAAACGAA
+( i ec i Tat TE Eanes See ES —lCrSlCUL hee
+A “gain of function” (PMID: 17222058) in spike
+reverts to SARS sequence in RBD
+22,910 22,920 22,930 22,940 22. 950 22,960 22,970
+TARA AGT TGATHEICHIAMIGGHENGGMGGTAATTATAART ARREEIGT AGRA GAEEEEGENT T A GGA GHEE A AMC TRARIAC C/
+OND SNEED S K REEGEEEGEN: Y ONG Y Mi Y R MMF RK S ONUEEE KP
+nCoV A St
+[GOF
+a
+TAMGBASATTGATGCMAMAIGHIGGGEIGGTAATTETAART AGT AGREE T TOA GHEAA RGA AMIC THARIAC C|
+BatRalG13 (ce A kK CN —§ NY  R MZ! —- oR kK A ONO KP
+ee
+VA GGRAGAUUGAUGCEA RRERIIBAIANEIE GG GUA AUUMUA ABU ARAL AAG GRAMS U A GABAMIGGBAAGCUBAGGC Cl
+SARS a AS TS 7 SBN YoRNEYO K Sve R SORE R BG K MR Pp
+—
+Ga
+a
+A few references - to be significantly updated
+A SARS-like cluster of circulating bat coronaviruses shows potential for human emergence ; hitps://www.ncbi.nim_nih.gov/pubmed/26552008
+A mouse-adapted SARS-coronavirus causes disease and mortality in BALB/c mice ; httos://www_ncbi.nim_nih.gov/pubmed/17222058
+SARS-like WIV1-CoV poised for human emergence ; https://www.ncbi.nim_nih.gov/pubmed/26976607
+Modeling pathogenesis of emergent and pre-emergent human coronaviruses in mice ; htips://www.ncbi_nim.nih.gov/pubmed/30043100
+Receptor recognition by novel coronavirus from Wuhan: An analysis based on decade-long structural studies of SARS ;
+httos://www.nebi.nim.nih.gov/pubmed/31996437
+Molecular determinants of severe acute respiratory syndrome coronavirus pathogenesis and virulence in young and aged mouse models of human
+disease ; https://www.ncbi.nlm.nih.gov/pubmed/22072787
+From: Jeremy Farrar
+
+Sent: Sat, 1 Feb 2020 16:12:51 +0000
+
+To: Fauci, Anthony (NIH/NIAID) [E];Patrick Vallance
+
+Cec: Drosten, Christian;Marion Koopmans;R.A.M. Fouchier;Edward
+Holmes) OG, Andrew Rambaut;Kristian G. Andersen;Paul
+
+Schreier PY @Gi;Ferguson, Mike;Collins, Francis (NIH/OD) [E]
+
+Subject: Re: Teleconference
+
+Dial in details
+
++44 208 322 2629
+
+Participant Code - 565941
+
+From: Jeremy Farrar) @@
+
+Date: Saturday, 1 February 2020 at 15:34
+
+To: "Fauci, Anthony (NIH/NIAID) [E]" yy OG, Patrick Vallance
+Ce: "Drosten, Christian" OG, Marion Koopmans
+Edward Holmes)
+a
+(NNN Miche! viectSci inn
+Subject: Teleconference
+
+ist February (2nd Feb for Eddie)
+
+Information and discussion is shared in total confidence and not to be shared until agreement on next
+steps.
+
+Dial in details attached.
+
+Please mute phones.
+
+| will be on email throughout — email Paul or | Paul if any problems
+
+If you cannot make it, | will phone you afterwards to update.
+
+One Hour
+
+6am Sydney
+
+8pm CET
+
+7pm GMT
+
+2pm EST
+
+11am PST
+(Hope | have the times right!)
+Thank you for the series of calls and for agreeing to join this call.
+Agenda
+e Introduction, focus and desired outcomes - JF
+e Summary — KA
+e Comments — EH
+e Q&A -All
+e Summary and next steps - JF
+Kristian Anderson
+Bob Garry - | have not been able to contact Bob. Please forward if you can.
+Christian Drosten
+Tony Fauci
+Mike Ferguson
+Ron Fouchier
+Eddie Holmes
+Marion Koopmans
+Stefan Pohlmann
+Andrew Rambaut
+Paul Schreier
+Patrick Vallance
+From: Jeremy Farrar
+
+Sent: Sat, 1 Feb 2020 15:51:54 +0000
+
+To: Fauci, Anthony (NIH/NIAID) [E];Garry, Robert F
+
+Cec: Patrick Vallance;Drosten, Christian;Marion Koopmans;R.A.M. Fouchier;Edward
+Holmes) OG, Andrew Rambaut;Kristian G. Andersen;Paul Schreier;Ferguson,
+Mike;Collins, Francis (NIH/OD) [E];Tabak, Lawrence (NIH/OD) [E]
+
+Subject: Re: Teleconference
+
+Francis
+
+Call me on
+
+OO
+
+From: "Fauci, Anthony (NIH/NIAID) [E]" OO
+
+Date: Saturday, 1 February 2020 at 15:50
+
+To: "Garry, Robert Fill NIX Jererny Farrar ill
+
+Ce: Patrick Vallance yyy GG, "Drosten, Christian"
+BS, marion Koopmans [MNS
+SO Edward Holmes
+BD
+WD "Kristian G. Andersen" TE ee,
+paul Schreier, Michael FMedsci {fn OO
+Francis Collins) OG "Tabak, Lawrence (NIH/OD) [E]"
+ee
+
+Subject: RE: Teleconference
+
+Please include Francis Collins (copied here) on all subsequent correspondence regarding this
+call. Thanks.
+
+From: Garry, Robert F999 O@
+
+Sent: Saturday, February 1, 2020 10:49 AM
+
+To: Jeremy Farrar yy yyyyyooe
+
+Ce: Fauci, Anthony (NIH/NIAID) [E] OG; Patrick Vallance PII Oo
+PY; Drosten, Christian PIG; Marion Koopmans i
+SSO 8.A.M. Fouchier PO; Edward Holmes
+WD Anarew Rambaut Hoe
+Kristian G. Andersen) WG; Paul Schreie PG Ferguson,
+Mike wo
+
+Subject: Re: Teleconference
+
+Thanks Jeremy
+| will be on the call
+Bob Garry
+Sent from my iPhone
+On Feb 1, 2020, at 9:34 AM, Jeremy Farrar ©) © wrote:
+| External Sender. Be aware of links, attachments and requests.
+1st February (2nd Feb for Eddie)
+Information and discussion is shared in total confidence and not to be shared until agreement on next
+steps.
+Dial in details attached.
+Please mute phones.
+| will be on email throughout — email Paul or | Paul if any problems
+if you cannot make it, | will phone you afterwards to update.
+One Hour
+6am Sydney
+8pm CET
+7pm GMT
+2pm EST
+11am PST
+(Hope | have the times right!)
+Thank you for the series of calls and for agreeing to join this call.
+Agenda
+e Introduction, focus and desired outcomes - JF
+e Summary — KA
+« Comments — EH
+® Q&A —All
+e Summary and next steps - JF
+Kristian Anderson
+Bob Garry - | have not been able to contact Bob. Please forward if you can.
+Christian Drosten
+Tony Fauci
+Mike Ferguson
+Ron Fouchier
+Eddie Holmes
+
+Marion Koopmans
+
+Stefan Pohlmann
+
+Andrew Rambaut
+
+Paul Schreier
+
+Patrick Vallance
+
+Wellcome exists to improve health by helping great ideas to thrive. We support researchers, we take on big
+health challenges, we campaign for better science, and we help everyone get involved with science and
+health research. We are a politically and financially independent foundation.
+
+The Wellcome Trust is a charity registered in England and Wales, no. 210183. Its sole trustee is The Wellcome Trust
+Limited, a company registered in England and Wales, no. 2711000 (whose registered office is at 215 Euston Road,
+London NW1 2BE, UK)
+
+<Teleconference Dial In.jpg>
+From: Jeremy Farrar
+Sent: Sat, 1 Feb 2020 15:50:28 +0000
+To: Fauci, Anthony (NIH/NIAID) [E]
+Ce: Collins, Francis (NIH/OD) [E]
+Subject: Re: Teleconference
+excellent
+From: "Fauci, Anthony (NIH/NIAID) [E]" ees
+Date: Saturday, 1 February 2020 at 15:48
+To: Jeremy Farrar) ee
+Ce; Francis Collins) Oe
+Subject: RE: Teleconference
+Jeremy:
+Francis will be on the call. He is trying to phone you.
+Tony
+From: Jeremy Farrar iliillinNNC®
+Sent: Saturday, February 1, 2020 10:34 AM
+To: Fauci, Anthony (NIH/NIAID) [E] TOG Patrick Vallance TY OO
+fF
+Ce: Drosten, Christian yyy WO>; Marion Koopmans
+(HG; £.A.M. Fouchier | NNNNNNNNO; Edward Holmes
+SW] Andrew Rambaut we
+Kristian G. Andersen |) paul Schreier Too
+Pe: Fereuson, Mike PP yee
+Subject: Teleconference
+1st February (2nd Feb for Eddie)
+Information and discussion is shared in total confidence and not to be shared until agreement on next
+steps.
+Dial in details attached,
+Please mute phones.
+| will be on email throughout — email Paul or | Paul if any problems
+If you cannot make it, | will phone you afterwards to update.
+One Hour
+6am Sydney
+8pm CET
+7pm GMT
+2pm EST
+11am PST
+(Hope | have the times right!)
+Thank you for the series of calls and for agreeing to join this call.
+Agenda
+e Introduction, focus and desired outcomes - JF
+e Summary — KA
+e Comments — EH
+¢ Q&A -All
+e Summary and next steps - JF
+Kristian Anderson
+Bob Garry - | have not been able to contact Bob. Please forward if you can.
+Christian Drosten
+Tony Fauci
+Mike Ferguson
+Ron Fouchier
+Eddie Holmes
+Marion Koopmans
+Stefan Pohlmann
+Andrew Rambaut
+Paul Schreier
+Patrick Vallance
+Wellcome exists to improve health by helping great ideas to thrive. We support researchers, we take on big
+health challenges, we campaign for better science, and we help everyone get involved with science and
+health research. We are a politically and financially independent foundation.
+The Wellcome Trust is a charity registered in England and Wales, no. 210183. Its sole trustee is The Wellcome Trust
+Limited, a company registered in England and Wales, no. 2711000 (whose registered office is at 215 Euston Road,
+London NW1 2BE, UK)
+From: Jeremy Farrar
+Sent: Sat, 1 Feb 2020 13:27:42 +0000
+To: Fauci, Anthony (NIH/NIAID) [E]
+Subject: Re: Conf details
+Thanks Tony!
+| will make sure we have the correct times.
+On 01/02/2020, 13:26, "Fauci, Anthony (NIH/NIAID) [E]" 9 9 @G> wrote:
+Jeremy:
+I can be on the 2:00 PM EST call (8:00 PM CET). Note for West Coast callers, that 2:00 PM EST equal 11:00
+AM West Coast and not 9:00 AM West Coast
+Thanks,
+Tony
+-----Original Message-----
+From: Jeremy Farrar) @@>
+Sent: Saturday, February 1, 2020 5:55 AM
+To: Fauci, Anthony (NIH/NIAID) [E] 9 9 @@-
+Subject: Re: Conf details
+Could you join?
+Trying to set up an initial call with
+Kristian Anderson
+Bob Garry
+Christian Drosten
+Tony Fauci
+Ron Fouchier
+Eddie Holmes
+Marion Koopmans
+Patrick Vallance - Chief Scientist UK
+Time zones a challenge
+Suggestion - Today Ist February (2nd Feb for Eddie) - I Will confirm later today. If you cannot make it, we
+will phone you afterwards to update.
+6am Sydney
+8pm CET
+7pm GMT
+2pm EST
+9am West Coast
+My preference is to keep this really tight group.
+To listen to the work Eddie, Bob and Kristian have done.
+Question it
+And think through next steps.
+Obviously ask everyone to treat in total confidence.
+From: Jeremy Farrar
+Sent: Sat, 1 Feb 2020 10:55:15 +0000
+To: Fauci, Anthony (NIH/NIAID) [E]
+Subject: Re: Conf details
+Attachments: IMG_1781[2].JPG
+Could you join?
+
+Trying to set up an initial call with
+
+Kristian Anderson
+
+Bob Garry
+
+Christian Drosten
+
+Tony Fauci
+
+Ron Fouchier
+
+Eddie Holmes
+
+Marion Koopmans
+
+Patrick Vallance - Chief Scientist UK
+
+Time zones a challenge
+
+Suggestion - Today Ist February (2nd Feb for Eddie) - I Will confirm later today. If you cannot make it, we will
+phone you afterwards to update.
+
+6am Sydney
+
+8pm CET
+
+7pm GMT
+
+2pm EST
+
+9am West Coast
+
+My preference is to keep this really tight group.
+
+To listen to the work Eddie, Bob and Kristian have done.
+
+Question it
+
+And think through next steps.
+
+Obviously ask everyone to treat in total confidence.
+pe ees:
+. ry Shea Bs
+deal stirs er
+ah ee as =
+ia — = : i
+_ és
+a
+> Le |
+‘ of)
+i =!
+7 J
+i r tad i:
+; , *" _— > Pe
+7 F F ll a . r ~~. a abs *
+A . F “ 4 ya . eae pe x . e 7 >
+dF 2 APS eel te vs
+: . S " é .
+cam A° ae ;- 1. e* ss
+‘ ‘ " _ = = . Ay
+2 * > Vat... few ‘ MN °?
+pa - 4 ” fs ~ j * a — tk’, 7
+i 4 - ee [Pp ¢ 7 -s ee ta +i ‘ 4
+\s 7. YS Se a+ ch. Pe SF a
+” aad o
+ey 45 Ay
+“y 7
+Ft Bs hs a
+, ee | «fer7
+b yy P . :
+_ i " - ..
+i —— 7 “yy a ~ a Den he 7s) - ae 7 i oo as : ay . a Oa ya aa
+7 : = ay) Tr eo fs I / Z, 7 er, [ae es 2s ‘he re 4 3 a7 st
+a ' i . 2 : I 7 a a. a= . os : _ e 7 ; = i: ) | ‘ : -
+_— : os _ =! i ' . | B P — o : 7 os va | : re
+‘ P 7 : ’ J a” Py 7, : ve
+i 7 : :
+— “a C
+ae |
+ale ' a
+an | =a 4 ;
+im
+i
+7_= =
+From: Fauci, Anthony (NIH/NIAID) [E]
+Sent: Sat, 1 Feb 2020 02:47:39 +0000
+To: Jeremy Farrar;Kristian G. Andersen
+Subject: FW: Science: Mining coronavirus genomes for clues to the outbreak’s origins
+Jeremy/Kristian:
+This just came out today. You may have seen it. If not, itis of interest to the current
+discussion.
+Best,
+Tony
+From: Folkers, Greg (NIH/NIAID) [E] &) (6)
+Sent: Friday, January 31, 2020 8:43 PM
+Subject: Science: Mining coronavirus genomes for clues to the outbreak’s origins
+—~% ;
+4 ™
+<= a
+h ‘eA ;
+| a FS? —
+lis wx
+a ioe fa
+re am ; ‘*%
+ee es :
+
+As part of a long-running effort to see what viruses bats harbor, researchers in China collect one froma
+cave in Guandong.
+EcoHealth Alliance
+Mining coronavirus genomes for clues to the
+outbreak’s origins
+By Jon CohenJan. 31, 2020, 6:20 PM
+attaaaggtt tataccttcc caggtaacaa accaaccaac tttcgatctc ttgtagatct ...
+That string of apparent gibberish is anything but: It’s a snippet of a DNA sequence from the viral
+pathogen, dubbed 2019 novel coronavirus (2019-nCoV), that is overwhelming China and frightening the
+entire world. Scientists are publicly sharing an ever-growing number of full sequences of the virus from
+patients—53 at last count in the Global Initiative on Sharing All Influenza Data database. These viral
+genomes are being intensely studied to try to understand the origin of 2019-nCoV and how it fits on the
+family tree of related viruses found in bats and other species. They have also given glimpses into what
+this newly discovered virus physically looks like, how it’s changing, and how it might be stopped.
+“One of the biggest takeaway messages [from the viral sequences] is that there was a single
+introduction into humans and then human-to-human spread,” says Trevor Bedford, a bioinformatics
+specialist at the University of Washington, Seattle. The role of Huanan Seafood Wholesale Market in
+Wuhan, China, in spreading 2019-nCoV remains murky, though such sequencing, combined with
+sampling the market’s environment for the presence of the virus, is clarifying that it indeed had an
+important early role in amplifying the outbreak. The viral sequences, most researchers say, also knock
+down the idea the pathogen came from a virology institute in Wuhan.
+
+In all, 2019-nCoV has nearly 29,000 nucleotides bases that hold the genetic instruction book to produce
+the virus. Although it’s one of the many viruses whose genes are in the form of RNA, scientists convert
+the viral genome into DNA, with bases known in shorthand as A, T, C, and G, to make it easier to study.
+Many analyses of 2019-nCoV’s sequences have already appeared on virological.org, nextstrain.org,
+preprint servers like bioRxiv, and even in peer-reviewed journals. The sharing of the sequences by
+Chinese researchers allowed public health labs around the world to develop their own diagnostics for
+the virus, which now has been found in 18 other countries. (Science's news stories on the outbreak can
+be found here.)
+
+When the first 2019-nCoV sequence became available, researchers placed it on a family tree of known
+coronaviruses—which are abundant and infect many species—and found that it was most closely
+related to relatives found in bats. A team led by Shi Zheng-Li, a coronavirus specialist at the Wuhan
+Institute of Virology, reported on 23 January on bioRxiv that 2019-nCoV’'s sequence was 96.2% similar to
+a bat virus and had 79.5% similarity to the coronavirus that causes severe acute respiratory syndrome
+(SARS), a disease whose initial outbreak was also in China more than 15 years ago. But the SARS
+coronavirus has a similarly close relationship to bat viruses, and sequence data make a powerful case
+that it jumped into people from a coronavirus in civets that differed from human SARS viruses by as few
+as 10 nucleotides. That’s one reason why many scientists suspect there’s an “intermediary” host
+species—or several—between bats and 2019-nCoV.
+
+According to Bedford’s analysis, the bat coronavirus sequence that Shi Zheng-Li’s team highlighted,
+dubbed RaTG13, differs from 2019-nCoV by nearly 1100 nucleotides. On nextstrain.org, a site he co-
+founded, Bedford has created coronavirus family trees (example below) that include bat, civet, SARS,
+and 2019-nCoV sequences. (The trees are interactive—by dragging a computer mouse over them, it’s
+easy to see the differences and similarities between the sequences.)
+Ptr ageeety
+2.2. 1...
+——a
+| t=
+eo wen
+Lg Mne?}
+-—— Grae
+L—~@ O05
+as.
+| a ee
+Bedford’s analyses of RaTG13 and 2019-nCoV suggest that the two viruses shared a common ancestor
+25 to 65 years ago, an estimate he arrived at by combining the difference in nucleotides between the
+viruses with the presumed rates of mutation in other coronaviruses. So it likely took decades for
+RaTG13-like viruses to mutate into 2019-nCoV.
+Middle East respiratory syndrome (MERS), another human disease caused by a coronavirus, similarly has
+a link to bat viruses. But studies have built a compelling case it jumped to humans from camels. And the
+phylogenetic tree from Shi’s bioRxiv paper (below) makes the camel-MERS link easy to see.
+100 TGEV
+Mink CoV
+190 Ferret CoV
+ve Bat CoV CDPHE15
+109 ‘ig Scotophilus bat CoV 512
+a0) PEDV
+Bat CoV HKU10
+6 Miniopterus bat CoV 1
+$00 Miniopterus bat CoV HKU8
+i i Oe. Human CoV NL63
+Bat NL63-related CoV
+Human CoV 229E
+SADS-CoV
+10 Rhinolophus bat CoV HKU2
+road. Human CoV OC43
+sn Murine hepatitis virus
+Rat CoV HKU24
+Human CoV HKU1
+°°; Human MERS-CoV oo
+io Camel MERS-CoV
+‘an Pipistrellus bat CoV HKU5
+Tylonycteris Bat CoV HKU4
+Hedgehog CoV
+500 109 SARS-CoV BJ01
+100) ' Civet SARS-CoV SZ3
+100] Ly Bat SARSr-CoV WIV4
+ae Bat SARSr-CoV SHC014
+Bat SARSr-CoV LYRa11
+a Bat SARSr-CoV Rf1
+= 83 Bat SARSr-CoV ZC45
+100 Bat SARSr-CoV HKU3-1
+Bat SARSr-CoV BM48-31
+= BetaCoV/Wuhan/WIV0S5/2019
+100] BetaCoV/Wuhan/WIV02/2018
+Foe BetaCoV/Wuhan/WIV04/2019
+BetaCoV/Wuhan/WIV06/2019
+100)’ BetaCoV/Wuhan/WIV07/2019
+Bat CoV RaTG13
+= Bat Hp BetaCoV Zhejiang 2013
+Rousettus bat CoV HKU9
+100 Bat CoV GCCDC1
+IBV
+75"
+The longer a virus circulates in a human populations, the more time it has to develop mutations that
+differentiate strains in infected people, and given that the 2019-nCoV sequences analyzed to date differ
+from each other by seven nucleotides at most, this suggests it jumped into humans very recently. But it
+remains a mystery which animal spread the virus to humans. “There’s a very large gray area between
+viruses detected in bats and the virus now isolated in humans,” says Vincent Munster, a virologist at the
+U.S. National Institute of Allergy and Infectious Diseases who studies coronaviruses in bats, camels, and
+others species.
+Strong evidence suggests the marketplace played an early role in spreading 2019-nCoV, but whether it
+was the origin of the outbreak remains uncertain. Many of the initially confirmed 2019-nCoV cases—27
+of the first 41 in one report, 26 of 47 in another—were connected to the Wuhan market, but up to 45%,
+including the earliest handful, were not. This raises the possibility that the initial jump into people
+happened elsewhere.
+According to Xinhua, the state-run news agency, “environmental! sampling” of the Wuhan seafood
+market has found evidence of 2019-nCoV. Of the 585 samples tested, 33 were positive for 2019-nCoV
+and all were in the huge market’s western portion, which is where wildlife were sold. “The positive tests
+from the wet market are hugely important,” says Edward Holmes, an evolutionary biologist at the
+University of Sydney who collaborated with the first group to publicly release a 2019-nCoV sequence.
+“Such a high rate of positive tests would strongly imply that animals in the market played a key role in
+the emergence of the virus.”
+Yet there have been no preprints or official scientific reports on the sampling, so it’s not clear which, if
+any, animals tested positive. “Until you consistently isolate the virus out of a single species, it’s really,
+really difficult to try and determine what the natural host is,” says Kristian Andersen, an evolutionary
+biologist at Scripps Research.
+One possible explanation for the confusion about where the virus first entered humans is if there was a
+batch of recently infected animals sold at different marketplaces. Or an infected animal trader could
+have transmitted the virus to different people at different markets. Or, Bedford suggests, those early
+cases could have been infected by viruses that didn’t easily transmit and sputtered out. “It would be
+hugely helpful to have just a sequence or two from the marketplace [environmental sampling] that
+could illuminate how many zoonoses occurred and when they occurred,” Bedford says.
+*’*, . ’ ~~] a / 2 ~~
+mo . . —_
+; { ar, ae =
+om -~ (i % 7 ‘ m, te
+, ” 2 AS
+~~ “ \ ia _
+i ) . +
+, Ja a
+A research group sent fecal and other bodily samples from bats they trapped in caves to the Wuhan
+Institute of Virology to search for coronaviruses.
+EcoHealth Alliance
+In the absence of clear conclusions about the outbreak’s origin, theories thrive, and some have been
+scientifically shaky. A sequence analysis led by Wei Ji of Peking University and published online by the
+Journal of Medical Virology received substantial press coverage when it suggested that “snake is the
+most probable wildlife animal reservoir for the 2019-nCoV.” Sequence specialists, however, pilloried it.
+Conspiracy theories also abound. A CBC News report about the Canadian government deporting Chinese
+scientists who worked in a Winnipeg lab that studies dangerous pathogens was distorted on social
+media to suggest that they were spies who had smuggled out coronaviruses. The Wuhan Institute of
+Virology, which is the premier lab in China that studies bat and human coronaviruses, has also come
+under fire. “Experts debunk fringe theory linking China’s coronavirus to weapons research,” read a
+headline on a story in The Washington Post that focused on the facility.
+Concerns about the institute predate this outbreak. Nature ran a story in 2017 about it building a new
+biosafety level 4 lab and included molecular biologist Richard Ebright of Rutgers University, Piscataway,
+expressing concerns about accidental infections, which he noted repeatedly happened with lab workers
+handling SARS in Beijing. Ebright, who has a long history of raising red flags about studies with
+dangerous pathogens, also in 2015 criticized an experiment in which modifications were made toa
+SARS-like virus circulating in Chinese bats to see whether it had the potential to cause disease in
+humans. Earlier this week, Ebright questioned the accuracy of Bedford’s calculation that there are at
+least 25 years of evolutionary distance between RaTG13—the virus held in the Wuhan virology
+institute—and 2019-nCovV, arguing that the mutation rate may have been different as it passed through
+different hosts before humans. Ebright tells Scienceinsider that the 2019-nCoV data are “consistent with
+entry into the human population as a natural accident.”
+Shi did not reply to emails from Science, but her longtime collaborator, disease ecologist Peter Daszak of
+the EcoHealth Alliance, dismissed Ebright’s conjecture. “Every time there’s an emerging disease, a new
+virus, the same story comes out: This is a spillover or the release of an agent or a bioengineered virus,”
+Daszak says. “It’s just a shame. It seems humans can’t resist controversy and these myths, yet it’s staring
+us right in the face. There’s this incredible diversity of viruses in wildlife and we’ve just scratched the
+surface. Within that diversity, there will be some that can infect people and within that group will be
+some that cause illness.”
+es
+; ‘t : lee
+.
+in
+A team of researchers from the Wuhan Institute of Virology and the EcoHealth Alliance have trapped
+bats in caves all over China, like this one in Guangdong, to sample them for coronaviruses.
+EcoHealth Alliance
+Daszak and Shi’s group have for 8 years been trapping bats in caves around China to sample their feces
+and blood for viruses. He says they have sampled more than 10,000 bats and 2000 other species. They
+have found some 500 novel coronaviruses, about 50 of which fall relatively close to the SARS virus on
+the family tree, including RaTG13—it was fished out of a bat fecal sample they collected in 2013 froma
+cave in Moglang in Yunnan province. “We cannot assume that just because this virus from Yunnan has
+high sequence identity with the new one that that’s the origin,” Daszak says, noting that only a tiny
+fraction of coronaviruses that infect bats have been discovered. “I expect that once we’ve sampled and
+sampled and sampled across southern China and central China that we’re going to find many other
+viruses and some of them will be closer [to 2019-nCoV].”
+It’s not just a “curious interest” to figure out what sparked the current outbreak, Daszak says. “If we
+don't find the origin, it could still be a raging infection at a farm somewhere, and once this outbreak
+dies, there could be a continued spillover that’s really hard to stop. But the jury is still out on what the
+real origins of this are.”
+Posted in:
+© Asia/Pacific
+e Health
+e Coronavirus
+doi:10.1126/science.abb1256
+os ~* =
+Jon Cohen
+Jon is a staff writer for Science.
+e Email Jon
+e Twitter
+Disclaimer; Any third-party material in this email has been shared for internal use under fair use provisions
+of U.S. copyright law, without further verification of its accuracy/veracity, It does not necessarily represent
+my views nor those of NIAID, NIH, HHS, or the U.S. government.
+From: Fauci, Anthony (NIH/NIAID) [E]
+Sent: Sat, 1 Feb 2020 00:38:35 +0000
+To: Jeremy Farrar
+Ge: Kristian G. Andersen
+Bcc: Conrad, Patricia (NIH/NIAID) [E];Mascola, John (NIH/VRC) [E];Conrad, Patricia
+(NIH/NIAID) [E]
+Subject: RE: Phone call
+Jeremy:
+
+| just got off the phone with Kristian Anderson and he related to me his concern
+about the Furine site mutation in the spike protein of the currently circulating
+2019-nCoV. | told him that as soon as possible he and Eddie Holmes should get a
+group of evolutionary biologists together to examine carefully the data to
+determine if his concerns are validated. He should do this very quickly and if
+everyone agrees with this concern, they should report it to the appropriate
+authorities. | would imagine that in the USA this would be the FBI and in the UK
+it would be MI5. It would be important to quickly get confirmation of the cause
+of his concern by experts in the field of coronaviruses and evolutionary biology.
+In the meantime, | will alert my US. Government official colleagues of my
+conversation with you and Kristian and determine what further investigation they
+recommend. Let us stay in touch.
+Best regards,
+Tony
+Anthony S. Fauci, MD
+Director
+National Institute of Allergy and Infectious Diseases
+Building 31, Room 7A-03
+31 Center Drive, MSC 2520
+National Institutes of Health
+Bethesda, MD 20892-2520
+Phone: (00
+FAX: (301) 496-4409
+E-mail:
+The information in this e-mail and any of its attachments is confidential and may contain sensitive
+information. It should not be used by anyone who is not the original intended recipient. If you
+have received this e-mail in error please inform the sender and delete it from your mailbox or any
+other storage devices. The National Institute of Allergy and Infectious Diseases (NIAID) shall not
+accept liability for any statements made that are the sender's own and not expressly made on
+behalf of the NIAID by one of its representatives.
+From: Jeremy Farrar
+Sent: Friday, January 31, 2020 5:57 PM
+To: Fauci, Anthony (NIH/NIAID) [EJ TP oe
+
+Subject: Re: Phone call
+
+Thanks Tony
+
+Can you phone Kristian Anderson
+
+He is expecting your call now.
+
+The people involved are:
+
+Kristian Anderson
+
+https://www.-scripps.edu/faculty/andersen/
+
+Bob Garry
+https://medicine.tulane.edu/departments/microbiology-immunology-tulane-cancer-
+center/faculty/robert-f-garry-jr-phd
+
+Eddie Holmes
+https://sydney.edu.au/science/about/our-people/academic-staff/edward-holmes.html
+From: "Conrad, Patricia (NIH/NIAID) [E]" 9 @> on behalf of "Fauci,
+Anthony (NIH/NIAID) [E]' [lili O20
+
+Date: Friday, 31 January 2020 at 22:34
+
+To: Jeremy Farrar)
+
+Subject: RE: Phone call
+
+Will call shortly...
+
+Patricia L. Conrad
+
+Public Health Analyst and
+
+Special Assistant to the Director
+
+National Institute of Allergy and Infectious Diseases
+
+The National Institutes of Health
+
+31 Center Drive, MSC 2520 - Room 7A03
+
+Bethesda, Maryland 20892
+
+301-496-4409 fax
+Disclaimer:
+
+The information in this e-mail and any ofits attachments is confidential and may contain sensitive information. It should not be used
+by anyone who is not the original intended recipient. If you have received this e-mail in error please inform the sender and delete it
+from your mailbox or any other storage devices. National Institute of Allergy and Infectious Diseases (NIAID) shall not accept
+liability for any statement made that are sender's own and not expressly made on behalf of the NIAID by one of its representatives.
+From: Jeremy Farrar ill
+
+Sent: Friday, January 31, 2020 5:23 PM
+
+To: Fauci, Anthony (NIH/NIAID) [EJ Ty oe
+
+Subject: Phone call
+
+Tony
+
+Really would like to speak with you this evening
+
+It is 10pm now UK
+
+Can you phone me on!) @@
+
+Jeremy
+
+Wellcome exists to improve health by helping great ideas to thrive. We support researchers, we take on big
+health challenges, we campaign for better science, and we help everyone get involved with science and
+health research. We are a politically and financially independent foundation.
+
+The Wellcome Trust is a charity registered in England and Wales, no. 210183. Its sole trustee is The Wellcome Trust
+Limited, a company registered in England and Wales, no. 2711000 (whose registered office is at 215 Euston Road,
+London NW1 2BE, UK)
+From: Fauci, Anthony (NIH/NIAID) [E]
+
+Sent: Thu, 30 Jan 2020 14:26:15 +0000
+
+To: Jeremy Farrar
+
+Ce: Patrick Vallance
+
+Subject: Re: Contacts
+
+Thanks, Jeremy. Great chatting with you and Patrick. Will stay in close touch.
+
+Best,
+
+Tony
+
+> On Jan 30, 2020, at 7:13 AM, Jeremy Farrar 9 yyyO@ wrote:
+
+>
+
+> Tony
+
+> Prefect timing - thank you. Great to catch up.
+
+>
+
+> Patrick Vallance
+
+> Chief Scientific Advisor UK
+
+> 88
+
+>
+
+> You have mine
+
+>
+
+> Keep in touch
+
+>
+
+>J
+
+>
+
+>
+
+>
+
+>
+
+>
+
+>
+
+> Wellcome exists to improve health by helping great ideas to thrive. We support researchers, we take on big health
+challenges, we campaign for better science, and we help everyone get involved with science and health research. We
+are a politically and financially independent foundation.
+
+>
+
+> The Wellcome Trust is a charity registered in England and Wales, no. 210183. Its sole trustee is The Wellcome
+Trust Limited, a company registered in England and Wales, no. 2711000 (whose registered office is at 215 Euston
+Road, London NW! 2BE, UK)
+From: Jeremy Farrar
+
+Sent: Wed, 29 Jan 2020 20:43:32 +0000
+
+To: Fauci, Anthony (NIH/NIAID) [E]
+
+Subject: Re: Informal coronavirus teleconference, 29 January, 19.00 CET
+
+So kind!!
+
+From: "Conrad, Patricia (NIH/NIAID) [E]" {9 @> on behalf of "Fauci,
+Anthony (NIH/NIAID) [E]" ee
+
+Date: Wednesday, 29 January 2020 at 20:42
+
+To: Jeremy Farral OO
+
+Subject: RE: Informal coronavirus teleconference, 29 January, 19.00 CET
+
+Ok ~ we will try to call you eatly morning our time tomorrow. Thanks.
+
+Patricia L. Conrad
+
+Public Health Analyst and
+
+Special Assistant to the Director
+
+National Institute of Allergy and Infectious Diseases
+
+The National Institutes of Health
+
+31 Center Drive, MSC 2520 - Room 7A03
+
+Bethesda, Maryland 20892
+
+301-496-4409 fax
+
+Disclaimer:
+
+The information in this e-mail and any of its attachments is confidential and may contain sensitive information. It should not be used
+by anyone who is not the original intended recipient. If you have received this e-mail in error please inform the sender and delete it
+from your mailbox or any other storage devices. National Institute of Allergy and Infectious Diseases (NIAID) shall not accept
+liability for any statement made that are sender's own and not expressly made on behalf of the NIAID by one of its representatives.
+Fram: Jeremy Farrar illlllillilnxO
+
+Sent: Wednesday, January 29, 2020 3:40 PM
+
+To: Fauci, Anthony (NIH/NIAID) [EJ WO
+
+Subject: Re: Informal coronavirus teleconference, 29 January, 19.00 CET
+
+Will probably run over at the WH. Thank you and him so much!
+On 29 Jan 2020, at 20:38, Fauci, Anthony (NIH/NIAID) [E] SOG wrote:
+
+Dr Fauci is in meeting at the WH until about 5 pm ET so he would likely call you
+between 5 pm —7 pm ET —is that too late today?
+
+Patricia L. Conrad
+
+Public Health Analyst and
+
+Special Assistant to the Director
+
+National Institute of Allergy and Infectious Diseases
+
+The National Institutes of Health
+
+31 Center Drive, MSC 2520 - Room 7A03
+
+Bethesda, Maryland 20892
+
+301-496-4409 fax
+
+Disclaimer:
+
+The information in this e-mail and any of its attachments is confidential and may contain sensitive information. It should not be used
+by anyone who is not the original intended recipient. If you have received this e-mail in error please inform the sender and delete it
+from your mailbox or any other storage devices. National Institute of Allergy and Infectious Diseases (NIAID) shall not accept
+liability for any statement made that are sender’s own and not expressly made on behalf of the NIAID by one of its representatives.
+From: Jeremy Farrar illllnnO®
+
+Sent: Wednesday, January 29, 2020 2:35 PM
+
+To: Fauci, Anthony (NIH/NIAID) [E] yyy oe-
+
+Subject: Re: Informal coronavirus teleconference, 29 January, 19.00 CET
+
+Sure
+
+Anytime -  @@
+
+Tonight from 5pm would be fine, but tomorrow also possible...
+
+From: "Conrad, Patricia (NIH/NIAID) [E]" 99 on behalf of "Fauci,
+Anthony (NIH/NIAID) [E]" 9 ee
+
+Date: Wednesday, 29 January 2020 at 19:29
+
+To: Jeremy Farrar) 7), "Fauci, Anthony (NIH/NIAID) (E]"
+
+Subject: RE: Informal coronavirus teleconference, 29 January, 19.00 CET
+
+Is there a cell number to reach you? or best number?
+
+Patricia L. Conrad
+
+Public Health Analyst and
+
+Special Assistant to the Director
+
+National Institute of Allergy and Infectious Diseases
+The National Institutes of Health
+
+31 Center Drive, MSC 2520 - Room 7A03
+
+Bethesda, Maryland 20892
+
+OO
+
+301-496-4409 fax
+
+Disclaimer:
+
+The information in this e-mail and any of its attachments is confidential and may contain sensitive information. It should not be used
+by anyone who is not the original intended recipient. If you have received this e-mail in error please inform the sender and delete it
+from your mailbox or any other storage devices, National Institute of Allergy and Infectious Diseases (NIAID) shall not accept
+liability for any statement made that are sender’s own and not expressly made on behalf of the NIAID by one of its representatives.
+From: Jeremy Farrar) OO
+
+Sent: Wednesday, January 29, 2020 2:21 PM
+
+To: Fauci, Anthony (NIH/NIAID) [E]/ 7 @O
+
+Subject: Re: Informal coronavirus teleconference, 29 January, 19.00 CET
+
+| could not make it until 5pm CET today. But next few days also OK.
+
+From: "Conrad, Patricia (NIH/NIAID) [EJ")) 7) on behalf of "Fauci,
+Anthony (NIH/NIAID) {E]" [iin
+
+Date: Wednesday, 29 January 2020 at 18:54
+
+To: Jeremy Farrar)
+
+Subject: RE: Informal coronavirus teleconference, 29 January, 19.00 CET
+
+Dr Fauci is in back to back meetings but hopes to be able to step out and call you
+between 3:00 pm ET-—4:00 pm ET. Is that time ok and what is the best number
+to reach you at that time?
+
+Best,
+
+Patricia L. Conrad
+
+Public Health Analyst and
+
+Special Assistant to the Director
+
+National Institute of Allergy and Infectious Diseases
+
+The National Institutes of Health
+
+31 Center Drive, MSC 2520 - Room 7A03
+
+Bethesda, Maryland 20892
+
+301-496-4409 fax
+
+Disclaimer:
+
+The information in this e-mail and any ofits attachments {s confidential and may contain sensitive information. It should not be used
+by anyone who is not the original intended recipient. If you have received this e-mail in error please inform the sender and delete it
+from your mailbox or any other storage devices. National Institute of Allergy and Infectious Diseases (NIAID) shall not accept
+liability for any statement made that are sender's own and not expressly made on behalf of the NIAID by one of its representatives.
+From: Jeremy Farrar) yyy oe
+Sent: Wednesday, January 29, 2020 1:32 PM
+To: Fauci, Anthony (NIH/NIAID) [FE] TY yy oe
+Subject: Re: Informal coronavirus teleconference, 29 January, 19.00 CET
+Tony - Would be very keen to hear your personal views on n-CoV. If you have 5 mins for a phone call.
+Best wishes Jeremy
+From: "Fauci, Anthony (NIH/NIAID) [E]"/ 9 Oo
+Date: Wednesday, 29 January 2020 at 16:44
+To: Michael _ "Redfield, Robert R. (CDC/OD)" >
+>, David Heymanni WO
+Oe. "chris. elias”
+Ly yyy We, Richard Hatchett <richard.hatchett@cepi.net>, Jeremy
+ANG *Cox, Pau! Michael” NOS
+SHOC) © "GREIN, Thomas") 9 "Conrad, Patricia (NIH/NIAID) [E]"
+NS, "Marston, Hilary (NIH/NIAID) (€]" NCO
+Ce: "GHEBREYESUS, Tedros Adhanom"|)))))))))))@@, Bernhard Schwartlander
+ENO, “intias, Raman" SO
+Subject: RE: Informal coronavirus teleconference, 29 January, 19.00 CET
+Mike:
+
+lam sorry but | have an important meeting with Secretary Azar that is a prep
+meeting for another important meeting at the White House. These overlap with
+the 19:00 CET time frame of your call. Unless something changes | cannot be on
+the call. If that is the case, | will ask Hilary Marston from my staff to fill in for me
+and report back to me. Please send the call in information to my Special
+Assistant, Patty Conrad, and me just in case something changes.
+Thanks,
+Tony
+Anthony S. Fauci, MD
+Director
+National Institute of Allergy and Infectious Diseases
+Building 31, Room 7A-03
+31 Center Drive, MSC 2520
+National Institutes of Health
+Bethesda, MD 20892-2520
+Phone: SOO
+FAX: (301) 496-4409
+E-mail:
+The information in this e-mail and any of its attachments is confidential and may contain sensitive
+information. It should not be used by anyone who is not the original intended recipient. If you
+have received this e-mail in error please inform the sender and delete it from your mailbox or any
+other storage devices. The National Institute of Allergy and Infectious Diseases (NIAID) shall not
+accept liability for any statements made that are the sender's own and not expressly made on
+behalf of the NIAID by one of its representatives.
+From: RYAN, Michael J...) 99 @e@
+Sent: Wednesday, January 29, 2020 10:45 AM
+To: Redfield, Robert R. (CDC/OD
+
+; Chris.Elias
+SEE ESE OO Fauci, Anthony
+(NIH/NIAID) (E} lO;
+yyy @@; cox, Paul Michael ®@>; sHOC| ®@; GREIN, Thomas
+Cc: GHEBREYESUS, Tedros Adhanom |) WG; scHWARTLANDER, Bernhard F.
+NL; Minas, Raman <I OO
+Subject: Informal coronavirus teleconference, 29 January, 19.00 CET
+Dear colleagues,
+Dr Tedros would like to take the opportunity to informally discuss with you the ongoing 2019 novel
+coronavirus.
+We are planning to host a teleconference today at 19.00 CET and will provide a dial-in number with a
+passcode.
+If you face any difficulties with the dial-in number, please provide us with a contact number and we will
+attempt to dial you in.
+Best,
+Mike
+From: Fauci, Anthony (NIH/NIAID) [E]
+
+Sent: Wed, 29 Jan 2020 11:36:40 +0000
+
+To: Dzau, Victor J.;'"GPMB Secretariat';As Sy Elhadj;Brundtland Gro
+Harlem;Chris.Elias;Farrar Jeremy;Fore Henrietta;Gao Fu;Gashumba Diane;Kaag Sigrid;llona
+Kickbusch;Suzuki Yasuhiro;Vega Morales Jeanette;Vega Morales Jeanette;VijayRaghavan
+Krishnaswamy;'Skvortsova Veronika’
+
+Ce: MAHJOUR, Jaouad;MINHAS, Raman;Toomas Palu;Pate Muhamed;RYAN,
+Michael J.;SCHWARTLANDER, Bernhard F.;Alex Harris;Alveberg, Benedikte Louise;Chiaki
+NOGUCHI;Esveld Marja;Esveld Marja;Esveld Marja;Gonggrijp Mette;Julie. HALL; Kanarek,
+Morgan;Marston, Hilary (NIH/NIAID) [E];Omar Abdi;Amelie RIOUX;Tore Godal;GABEDAVA, Tsira;ROSS,
+Alex;Banks Lynn;Block, Bruce;Conrad Jane;Conrad, Patricia (NIH/NIAID) [E];Del Sol Dinia;Diao
+Fay;Gahungu Zacharie;Harikumar M K;Harikumar M K;Kabagire Christine;KITA Yosuke) @@
+PysMiller de Vega Teresa; MURIUKI, Hilda Wairimu;Muzenda Sindiso;Sarah Belmir;YU Bai;Kirsi
+
+Madi! 99 9GG Oleg Sonin ';Marston, Hilary (NIH/NIAID) [E]
+
+Subject: RE: TIME SENSITIVE Message from GPMB Co-Chairs: review of draft GPMB
+Statement on 2019-novel coronavirus
+
+Attachments: Draft GPMB Statement_nCOV_28Jan_for Bd member review NIAID.docx
+Looks fine. Please see my comments in attached document.
+
+Thanks,
+
+Tony
+
+From: Dzau, Victor) Oe
+
+Sent: Tuesday, January 28, 2020 11:46 PM
+
+To: 'GPMB Secretariat’ yyy Gas Sy Elhadj PWG; Brundtland Gro
+Harlem yO chris.£lias F999 WO>-; Farrar Jeremy
+PG, Fauci, Anthony (NIH/NIAID) [E] TI @G; Fore Henrietta
+62. Fu ENNIO; Gashumba Diane | MNONO>; Kaag
+Sigrid II OG; llona Kickbusch FIG; suzuki Yasuhiro (OO
+PP) Vega Morales Jeanette <j yyy; vege Morales Jeanette
+PG VijayRaghavan Krishnaswamy Fy yy @G; ‘skvortsova Veronika’
+OO)
+
+Cc: MAHJOUR, Jaouad SW; MINHAS, Raman PPP; Toomas Palu
+PYG; Pate Muhamed PIII GG, RYAN, Michael J.
+WG; SCHWARTLANDER, Bernhard F... 7 WG; Alex Harris
+IO: Alvebere, Benedikte Louise I Chiaki
+NOGUCHISIyyyyG>; Esveld Marja TI yyy Esveld Marja
+MG; Esveld Marja MNNO>; Gonggrijp Mette OO;
+Julie. HALL OG; Kanarek, Morgan FOG; Marston, Hilary (NIH/NIAID)
+EE) PG; Omar Addi POG; Amelie RIOUX
+PA Tore Godal HPP PPO GaBedava, Tsira Toe;
+(HO Banks Lynn iN Block, Bruce
+<BBlock@nas.edu>; Conrad JaneW Conrad, Patricia (NIH/NIAID) [E]
+PPO Del Sol Dinia TY O@diao Fay oe
+Gahungu Zacharie) OG; Harikumar MK oe
+Harikumar M KI OO@kebagire Christine yyy >; KITA Yosuke
+OO WO Miller de Vega Teresa
+GS MLRIUK!, Hilda Wairinu IY GG Muzenda Sindiso
+WG; sarah Belmir NNO; YU Bai ENO; Kirsi Madi
+EW ‘Oleg Sonin' | OO
+
+Subject: RE: TIME SENSITIVE Message from GPMB Co-Chairs: review of draft GPMB Statement on 2019-
+novel coronavirus
+
+The message is clear and appropriate. | support it.
+
+From: GPMB Secretariat) Oo
+
+Sent: Tuesday, January 28, 2020 7:09 AM
+
+To: As Sy Elhadj SPY OG; Brundtland Gro Harlem PYG; Dzau, Victor J.
+POG; Chris.clias TG; Farrar Jeremy
+PO; Fauci Anthony HNO Fore Henrietta NOS
+Gao Ful We Gashumba Diane PI OG>; Kaag Sigrid Oo
+ona Kickbusch) Ge suzuki Yasuhiro PY yyyyyyyyWG>: vega
+Morales Jeanette [yyy yy@G;, Vega Morales Jeanette PI yyywe
+VijayRaghavan Krishnaswamy |) @@ 'skvortsova Veronika II ee@
+Cc: MAHJOUR, Jaouad PO G>; MINHAS, Raman {Py OG@; Toomas Palu
+PYG, Pate Muhamed PII yyyyyyyW@ryvan, Michael J.
+Py; SCHWARTLANDER, Bernhard IIe Alex Harris
+DIO Alveberg, Benedikte Louise OO; Chiaki
+NOGUCHI OG; Esveld Maria WO Esveld Marja
+(NENG; esveld Maria MNO: Gonggriip Mette) OO:
+Julie. HALL II GG; Kanarek, Morgan POG Marston Hilary
+EE O>; Omar Abci [TNE OG; Amelie RIOUX [NCS
+Tore Godal OG; GABEDAVA, Tsira I yOG, Ross, Alex
+
+(NEEL ©; Banks Lynn | HENNE LG Block, Bruce flO
+Conrad Jane OG; Conrad Patricia II yOG>; De! sol Dinia
+PYG; Diao Fay Fy WG; Gahungu Zacharie
+Oe; Harikumar M Ke Harikumar Mk GOO
+PY >; Kabagire Christine yy yy GG>-; KITA Yosuke (OO
+>: OO niiller de Vega Teresa
+BGO; MvRivKi, Hilda Wairimu FIG muzenda Sindiso
+PO]; Sarah Belmir HH OO>; vu Bai OG; Kirsi Madi
+(ENC ‘Oleg Sonin ‘OO
+
+Subject: TIME SENSITIVE Message from GPMB Co-Chairs: review of draft GPMB Statement on 2019-
+novel coronavirus
+
+Importance: High
+
+Dear Board members,
+
+Thank you to all who participated in yesterday’s teleconference call regarding the novel 2019-
+Coronavirus outbreak.
+
+We received excellent updates from WHO and from Professor Gao.
+There was consensus for the GPMB to issue a statement supportive of countries’ (especially China) and
+WHO response efforts, and to call for urgent actions to further strengthen global preparedness and
+response to this outbreak.
+
+Please find attached a draft GPMB Statement.
+
+We ask that you please send us any feedback (preferably in track change mode) no later than 1700
+Wednesday 29 January, Geneva time
+
+Thank you very much.
+
+Kinds regards,
+
+Gro and As
+DRAFT 0 — Statement from the Global Preparedness Monitoring Board on the Outbreak of 2019-
+novel Coronavirus (2019-nCoV)— DRAFT — 27 January 2020
+Xx January 2020, Geneva — The Global Preparedness Monitoring Board (GPMB) convened on 27
+January 2020 to discuss the current outbreak of 2019-nCoV which was first detected in Wuhan, China
+and has now reached fourteen countries as of 28 January 2020. The Board praises the speed of the Commented [A1]: Please note: we fill finalise this figure
+response so far by countries and the World Health organization (WHO), the transparency of China in prior to release of the Statement
+rapidly sharing information and the genome sequence, -and commends the strong collaboration
+| between China and affected countries and with WHO. The Board would recommend that China invite
+and WHO facilitate expert epidemiologic and other assistance. The Board however is concerned that
+many countries remain unprepared and urges leaders in all countries to take immediate action to
+ensure that they have the necessary capacities in place.
+The Board recommends the following urgent actions:
+1) Countries, institutions, communities and partners should ensure that all relevant information about
+the outbreak is shared fully and freely, in a timely manner, to support the response (in accordance
+with the International Health Regulations (IHR (2005);
+2) Countries should support and enable WHO's central role in the response, including by fully financing
+WHO’s preparedness and response activities through voluntary contributions and replenishment of
+the WHO Contingency Fund for Emergencies, and to strengthen its communication capacity. The WHO Commented [A2]: May want to consider an additional
+should ensure that it provides timely, accurate and easily accessible information on the outbreak sentence that calls for WHO action; WHO should lead the
+: 2 % global response through effective action to minimize risks of
+| status and best practices in responding. ; transmission, support care for people who are infected,
+3) The research & development community, including national research institutions, the Coalition for Ai tess ete a eat dina esta par
+Epidemic Preparedness Innovations (CEPI) and related dedicated efforts in the public and private their preparedness and response efforts.
+sectors, should urgently accelerate the development of a vaccine, diagnostics and therapeutics against Commented [A3]: Not sure why CEP! in particular should
+the coronavirus. This could be facilitated through, inter alia, the prompt and unrestricted sharing of be singled out here
+| coronavirus specimens_and clinical samples. Countries and the international community should | Commented [A4R4]: Agree especially because so far
+expand understanding of potential trajectories of the epidemic and its social-economic impact; they are primarily vaccines
+4) Ensuring that communities are properly informed and trust the response is crucial to controlling
+| the outbreak. Countries, institutions and the WHO should regularly and pro-actively communicate
+information about the outbreak in a transparent and open manner, and should find ways to engage
+local organizations and communities in the planning and implementation of response activities;
+5) All countries, including those that have not yet been affected, must urgently dedicate resources to
+building their essential preparedness capacities (as described in the IHR (2005) to prevent, detect,
+inform about and respond to the outbreak and to strengthen their health systems. All donors and
+international financing institutions should financially support lower resourced countries, including
+using existing instruments. Donor and development partners should prioritize Emphasis mustbe giver
+te-previdine financial and technical support to low- and middle-income countries at risk to assist them
+in building these capacities, notably to improve early detection of the virus and to take actions to limit
+the risk of transmission. Commented [AS]: Prompt data sharing and
+harmonization of clinical protocols (as was done in the Zika
+About the GPMB response) should be encouraged and facilitated by WHO.
+As an independent monitoring and advocacy body, the GPIB urges political action to prepare for and
+mitigate the effects of global health emergencies. Co-convened by the World Bank Group and the
+WHO, the GPMB works independently to provide expert assessments and recommendations on the
+SENSITIVE BUT UNCLASSIFIED
+state of global preparedness. The opinions and recommendations contained in the GPMB report are
+| those of the Board and do not necessarily represent the views of the World Bank Group and the WHO.
+SENSITIVE BUT UNCLASSIFIED
+From: Jeremy Farrar
+
+Sent: Tue, 28 Jan 2020 21:13:22 +0000
+
+To: Jeanette Vega Morales;GPMB Secretariat;As Sy Elhadj;Brundtland Gro
+Harlem;Dzau Victor;Chris.Elias;Fauci, Anthony (NIH/NIAID) [E];Fore Henrietta;Gao Fu;Gashumba
+Diane;Kaag Sigrid;llona Kickbusch;Suzuki Yasuhiro;Vega Morales Jeanette;Vega Morales
+Jeanette;VijayRaghavan Krishnaswamy;'Skvortsova Veronika’
+
+Ce: MAHJOUR, Jaocuad;MINHAS, Raman;Toomas Palu;Pate Muhamed;RYAN,
+Michael J.;SCHWARTLANDER, Bernhard F.;Alex Harris;Alveberg, Benedikte Louise; Chiaki
+NOGUCHI;Esveld Marja;Esveld MarjajEsveld Marja;Gonggrijp Mette;Julie. HALL; Kanarek
+Morgan;Marston, Hilary (NIH/NIAID) [E];Omar Abdi;Amelie RIOUX;Tore Godal;William Hall;GABEDAVA,
+Tsira;ROSS, Alex;Banks Lynn;Block Bruce;Conrad Jane;Conrad, Patricia (NIH/NIAID) [E];Del Sol Dinia;Diao
+Fay;Gahungu Zacharie;Harikumar M K;Harikumar M K;Kabagire Christine;KITA Yosuke) @@
+Teresa Miller de Vega; MURIUKI, Hilda Wairimu;Muzenda Sindiso;Sarah Belmir;YU Bai;Kirsi
+
+Madi PYG ; Oleg Sonin ';Alice Jamieson;Alex Harris
+
+Subject: Re: TIME SENSITIVE Message from GPMB Co-Chairs: review of draft GPMB
+Statement on 2019-novel coronavirus
+
+Attachments: Draft GPMB Statement_nCOV_28Jan_for Bd member review_JF.docx
+Suggestions — thank you
+
+From: Jeanette Vega Morales) 6
+
+Date: Tuesday, 28 January 2020 at 14:38
+
+To: GPMB Secretariat ill, As Sy Elhad) [NNO
+Brundtland Gro Harlem! 9 OG, victor Dzau Pe, "chris.elias"
+(HUHNE, Jeremy Farrar [NNN O, Fauci Anthony
+(TW Fore Henrietta [NNN OG, Gao Ful OS
+Diane Gashumba! 9), Kaag Sigrid) 7G, Ilona Kickbusch
+POO Suzuki Yasuhiro PY Vega Morales
+Jeanette Be, vega Morales Jeanette ee
+VijayRaghavan Krishnaswamy) 9) 'skvortsova Veronika’
+OO
+
+Cc: "MAHJOUR, Jaouad" OG, "MINHAS, Raman" OG, Toomas
+Palu Py OG>, Pate Muhamed) OG, Michael RYAN
+yO Bernhard Schwartlander WG, Alex Harris
+PI INWO "Alveberg, Benedikte Louise"
+IW, Chiaki NocUCH De,
+OO Esveld Marja Pee,
+Esveld Marjal) 7 @ ©, Gonggrijp Mette 0, “Julie. HALL"
+Pye, Kanarek Morgan) YG, Marston Hilary
+(WO, Omar Addi NO Amelie RIOUX
+(9G, Tore Goda OO "GABEDAVA, Tsira’
+OO "Ross, Alex" TI, Banks Lynn
+SN, Block Bruce NNO, Conrad Jane
+PYG, Conrad Patricia TYG, Del Sol Dinia
+(RENN, Diao Fay iNNNNNNNNNNNNONO, Gahungu Zacharie
+EEE) Harikurnar Mk NNN, tarikumnar MK
+PO Gkabagire Christine He 7A Yosuke (OO
+SES SE Teresa de Vega
+SSS O® "MURIUKI, Hilda Wairimu" HO, Muzenda
+Sindiso iN, Sarah Belmir NNNIONE, YU a
+SUNN, si ac i NOS
+
+PS @, ‘oleg Sonin' HI ee
+
+Subject: RE: TIME SENSITIVE Message from GPMB Co-Chairs: review of draft GPMB Statement
+on 2019-novel coronavirus
+
+Dear Gro and As
+
+As requested please see attached
+
+Best,
+
+Jeanette
+
+From: GPMB Secretariat! yyy woe
+
+Sent: martes, 28 de enero de 2020 9:09
+
+To: As Sy Elhadj OG brundtland Gro Harlem PWG dzau Victor
+(NNN; Chris.cias [NNO Farrar Jeremy
+POG; Fauci Anthony HE OG; Fore Henrietta TP O@;
+Gao FullllllllllNNNON@ Gashumnba Diane [llllllNNNONG); Kaag Sigrid fNNOO
+llona Kickbusch NGG; suzuki Yasuhiro Fy ywWG>; vega
+Morales Jeanette [yyy WG Vega Morales Jeanette Oe;
+VijayRaghavan Krishnaswamy) OG; 'skvortsova Veronika TI yy ee>
+Cc: MAHJOUR, Jaouad EG; MINHAS, Raman POG; Toomas Palu
+PWG; Pate Muhamed III WG RYAN, Michael J.
+PY; ScHWARTLANDER, Bernhard F. yyw; Alex Harris
+PO, Alveberg, Benedikte Louise Fe chiaki
+NOGUCH! iNNNNNNNNCON:>; Esveld Marja lllNNNNNNNOWOEsveid Marja
+OO; Esveld Marja OO; Gongerijp Mete Te;
+Julie. HALL IYO; Kanarek Morgan HYPO; Marston Hilary
+WE; Omar Abdi HO; Amelie ROUX we;
+Tore Godal WE GABEDAVA, Tsira WG; ross, Alex
+PG; Banks Lynn FE OG@>; Block Bruce Oe;
+Conrad Jane yO; Conrad Patricia yyy; Del Sol Dinia
+PY YOO; Diao Fay FPO; Gahungu Zacharie
+[NNN Havikurrar MK ICON; Harikurnar MK ON
+YI Kabagire Christine <christine.kabagire@moh.gov.rw>; KITA Yosuke Ree
+SS I OO>, Miller de Vega Teresa
+<T.MillerdeVega@wellcome.ac.uk>; MURIUKI, Hilda Wairimu <muriukih@who.int>; Muzenda Sindiso
+PPG: Sarah Belmir HI OG; Yu Bai FO @>; Kirsi Madi
+PPP OOO leg Sonin' Hee
+
+Subject: TIME SENSITIVE Message from GPMB Co-Chairs: review of draft GPMB Statement on 2019-
+novel coronavirus
+
+Importance: High
+
+Dear Board members,
+
+Thank you to all who participated in yesterday’s teleconference call regarding the novel 2019-
+Coronavirus outbreak.
+
+We received excellent updates from WHO and from Professor Gao.
+
+There was consensus for the GPMB to issue a statement supportive of countries’ (espetiaity China) and
+WHO response efforts, and to call for urgent actions to further strengthen global preparedness and
+response to this outbreak.
+
+Please find attached a draft GPMB Statement.
+
+We ask that you please send us any feedback (preferably in track change mode) no later than 1700
+Wednesday 29 January, Geneva time
+
+Thank you very much.
+
+Kinds regards,
+
+Gro and As
+DRAFT 0 -- Statement from the Global Preparedness Monitoring Board on the Outbreak of 2019-
+
+novel Coronavirus (2019-nCoV)— DRAFT — 27 January 2020
+
+Xx January 2020, Geneva — The Global Preparedness Monitoring Board (GPMB) convened on 27
+
+January 2020 to discuss the current outbreak of 2019-nCoV which was first detected in Wuhan, China
+
+and has now reached fourteen countries as of 28 January 2020. The Board praises the speed of the
+
+response so far by countries and the World Health organization (WHO), the transparency of China in prior to release of the Statement
+| rapidly sharing information and the genome sequence_of the virus, and commends the strong
+
+collaboration between China and affected countries and with WHO. The Board however is concerned
+
+that many countries remain unprepared and urges leaders in all countries to take immediate action
+
+to ensure that they have the necessary capacities in place.
+
+The Board recommends the following urgent actions:
+
+1) _ 4)}Countries, institutions, communities and partners should ensure that all relevant
+information about the outbreak is shared fthy-andtreelyin-atimel+manneropenly and
+rapidly, to support the response (in accordance with the International Health Regulations (IHR
+(2005);
+
+2) The research & development community, including national research institutions, the Coalition for
+Epidemic Preparedness Innovations (CEP!) and related dedicated efforts in the public and private
+sectors, should urgently accelerate the coordinated development of a vaccine, diagnostics and
+therapeutics against the coronavirus. The rapid sharing of coronavirus specimens is essential to
+advancing this research & development, early detection and the global public health response. To
+ensure rapid access to emerging findings, all peer-reviewed research publications relevant to the
+outbreak should be made open access immediately. Research findings relevant to the outbreak should
+be shared rapidly with WHO, In line with recent commitments by some journals’. Countries and the
+international community should expand understanding of potential trajectories of the epidemic and
+its social-economic impact;
+2) Countries should support and enable WHO's central role in the response, including by fully financing
+WHO's preparedness and response activities through voluntary contributions and replenishment of
+the WHO Contingency Fund for Emergencies, and to strengthen its communication capacity;
+4) Ensuring that communities are properly informed and trust the response is crucial to controlling
+
+| the outbreak. Countries and WHO should regularly communicate information about the outbreak ina
+transparent and open manner, and should find ways to engage local organizations and communities
+in the planning and implementation of response activities;
+
+| 1 Medical Journals and the 2019-nCoV Outbreak, NEJM
+https://www.nejm.org/doi/full/10.1056/NEJMe2001329?query=featured_home
+5) All countries, including those that have not yet been affected, must urgently dedicate resources to
+building their essential preparedness capacities (as described in the IHR (2005) to prevent, detect,
+inform about and respond to the outbreak and to strengthen their health systems. All donors and
+international financing institutions should financially support lower resourced countries, including
+using existing instruments. Emphasis must be given to providing financial and technical support to
+low- and middle-income countries to assist them in building these capacities, notably to improve early
+| detection of the virus, to enhance their ability to respond.
+
+About the GPMB
+
+As an independent monitoring and advocacy body, the GPMB urges political action to prepare for and
+mitigate the effects of global health emergencies. Co-convened by the World Bank Group and the
+WHO, the GPMB works independently to provide expert assessments and recommendations on the
+state of global preparedness. The opinions and recommendations contained in the GPMB report are
+those of the Board and do not necessarily represent the views of the World Bank Group and WHO.
+From: Fauci, Anthony (NIH/NIAID) [E]
+Sent: Fri, 24 Jan 2020 11:16:47 +0000
+To: Jeremy Farrar
+Ce: Collins, Francis (NIH/OD) [EF] TI oe
+Subject: RE: nCo-V
+Jeremy:
+Thank you for letting me know. Very sad and a great loss. Every day is a blessing.
+Best,
+Tony
+From: Jeremy Farrar)
+Sent: Friday, January 24, 2020 6:08 AM
+To: Fauci, Anthony (NIH/NIAID) [EI Oe
+Cc: Collins, Francis (NIH/OD) [FE] TY yoo
+Subject: Re: nCo-V
+Tragic news - Pete Salama died last night, life is very fragile - what a loss.
+On 23 Jan 2020, at 20:32, Fauci, Anthony (NIH/NIAID) [E] 9 @@> wrote:
+Jeremy:
+| hope that all is well with you. Happy New Year! |, like you, am somewhat
+baffled by the recommendation of the Emergency Committee at WHO. They are
+probably hesitating to declare a PHEIC because they have not seen “sustained”
+human-to-human transmission in other countries that have cases such as Japan,
+Thailand, South Korea. | do not necessarily agree with that opinion. We havea
+rapidly evolving outbreak with the epicenter in Wuhan, but with multiple cities in
+China and multiple countries in Asia involved. To me, that would be enough for a
+PHEIC. But then again, | am not the one that decides.
+Best regards,
+Tony
+Anthony S. Fauci, MD
+Director
+National Institute of Allergy and Infectious Diseases
+Building 31, Room 7A-03
+31 Center Drive, MSC 2520
+National Institutes of Health
+Bethesda, MD 20892-2520
+Phone: OO
+
+FAX: (301) 496-4409
+
+E-mail: oe
+
+The information in this e-mail and any of its attachments is confidential and may contain sensitive
+information. It should not be used by anyone who is not the original intended recipient. If you
+have received this e-mail in error please inform the sender and delete it from your mailbox or any
+other storage devices. The National Institute of Allergy and Infectious Diseases (NIAID) shall not
+accept liability for any statements made that are the sender's own and not expressly made on
+behalf of the NIAID by one of its representatives.
+
+From: Jeremy Farrar)
+
+Sent: Thursday, January 23, 2020 2:03 PM
+
+To: Fauci, Anthony (NIH/NIAID) [E]) 9) @)@; Richard Hatchett
+
+Subject: nCo-V
+
+Tony
+
+Happy New Year!
+
+Difficult to understand the advice from the Emergency Ctte at WHO.
+
+Reach out if anything — best wishes Jeremy
+
+Wellcome exists to improve health by helping great ideas to thrive. We support researchers, we take on big
+health challenges, we campaign for better science, and we help everyone get involved with science and
+health research. We are a politically and financially independent foundation.
+
+The Wellcome Trust is a charity registered in England and Wales, no. 210183. Its sole trustee is The Wellcome Trust
+Limited, a company registered in England and Wales, no. 2711000 (whose registered office is at 215 Euston Road,
+London NW1 2BE, UK)
