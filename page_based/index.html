@@ -288,8 +288,13 @@ body.layout-landscape .panel-resizer.dragging::before {
   background: #fff;
 }
 
-/* ── Layout: Portrait (stacked) ───────────────────────────────────── */
-body.layout-portrait .content-area { flex-direction: column; }
+/* ── Layout: Portrait (panels stacked beside a vertical bookmark rail) ─ */
+body.layout-portrait .content-area { flex-direction: row; }
+body.layout-portrait .content-stack {
+  flex: 1; min-width: 0; min-height: 0;
+  display: flex; flex-direction: column; overflow: hidden;
+}
+body.layout-landscape .content-stack { display: contents; }
 /* Horizontal timelines: keep panel short (~40% of prior 280px / 40vh) */
 body.layout-portrait .charts-panel {
   border-bottom: 2px solid var(--border);
@@ -338,13 +343,13 @@ body.layout-portrait .pdf-panel {
 }
 
 /* ── Bookmarks rail ────────────────────────────────────────────────────────
-   A third collapsible sidebar, beside the P.O. guide. It sits as the first
-   child of .content-area because that container's flex-direction already flips
-   between the two layouts: row in landscape (so the rail is vertical, down the
-   left edge) and column in portrait (so the same markup becomes a horizontal
-   strip across the top). No layout-specific markup is needed.
-   The list scrolls with explicit ▲▼ buttons as well as the wheel, because the
-   rail is often too short for the wheel to be obvious. */
+   A vertical sidebar beside the P.O. guide, first child of .content-area,
+   in both layouts. Landscape: .content-stack is display:contents, so the
+   rail and the other panels are one row. Portrait: .content-stack is a
+   column beside the rail, so the rail stays a vertical column down the
+   left instead of a strip across the top. The list scrolls with explicit
+   ▲▼ buttons as well as the wheel, because the rail is often too short
+   for the wheel to be obvious. */
 .bm-rail {
   width: 260px; flex-shrink: 0; background: var(--panel);
   border-right: 1px solid var(--border-2);
@@ -422,9 +427,9 @@ body.layout-portrait .pdf-panel {
 .bm-toggle:hover { color: var(--accent); }
 .bm-toggle.on { color: var(--accent); }
 
-/* Portrait: the rail stays a vertical column down the side, exactly as in
+/* Portrait: the rail stays a vertical column down the left, exactly as in
    landscape (same width, same top-to-bottom list, same up/down arrows).
-   Only the surrounding .content-area stacks vertically. */
+   The panels in .content-stack are what stack. */
 body.layout-portrait .bm-rail {
   width: 260px; flex-shrink: 0;
   border-right: 1px solid var(--border-2); border-bottom: none;
@@ -879,6 +884,10 @@ mark.hit-current {
     </div>
   </div>
 
+  <!-- Other panels. display:contents in landscape (siblings of the rail);
+       a column beside the rail in portrait. -->
+  <div class="content-stack">
+
   <!-- ── Dual vertical timeline: entries LEFT | hits RIGHT, shared Y = time ── -->
   <div class="charts-panel" id="chartsPanel">
     <div class="panel-header" onclick="toggleCharts()">
@@ -958,6 +967,7 @@ mark.hit-current {
     </div>
   </div>
 
+  </div><!-- /.content-stack -->
 </div><!-- /content-area -->
 </div><!-- /workspace -->
 
@@ -1001,6 +1011,15 @@ const SOURCES = {
     badge: '✉ emails',
     release: 'FOIA · P.O. emails',
     badgeTitle: 'The FOI\'d P.O. email release, cited throughout the P.O. piece as Proximal_Origin_Emails.pdf',
+  },
+  'farrar-fauci': {
+    json: 'farrar-fauci.json',
+    pageMap: 'farrar-fauci_page_map.json',
+    pdf: 'farrar-fauci-comms.pdf',
+    label: 'Farrar–Fauci–Collins emails: Jan–Jul 2020',
+    badge: '✉ Farrar-Fauci',
+    release: 'FOIA · Farrar-Fauci-Collins',
+    badgeTitle: 'The Farrar-Fauci-Collins email correspondence, cited in the P.O. piece as farrar-fauci-comms.pdf / farrar-fauci-comms-full.pdf',
   },
 };
 const DEFAULT_PDF_SOURCE = 'part1';   // which PDF shows on page load
@@ -1055,6 +1074,7 @@ function guideDocToSource(doc) {
   if (d.indexOf('proximal_origin_emails') !== -1) return 'po-emails';
   if (d.indexOf('sscp-drafts-of-proximal-origin') !== -1 ||
       d.indexOf('drafts-of-proximal-origin') !== -1) return 'sscp';
+  if (d.indexOf('farrar-fauci-comms') !== -1) return 'farrar-fauci';
   return null;
 }
 
