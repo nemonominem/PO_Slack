@@ -46,6 +46,33 @@ def page_texts():
     return [(i + 1, (p.extract_text() or "")) for i, p in enumerate(reader.pages)]
 
 
+# A diagonal rotated character sometimes confuses pypdf's text extraction into
+# stranding a word's first letter alone on its own line -- "B" / "amHI site
+# doesn't mean anything", "3. G" / "ain of BamHI restriction site", "W" /
+# "e discussed four specific features". The stray line is always just that:
+# optional list numbering plus exactly one bare capital letter and nothing
+# else, so this never touches a real line (an acronym like "ACE2" ending a
+# wrapped line is far longer than this pattern allows) -- it only fires when
+# the next line also continues lower-case, i.e. clearly the rest of the same
+# word.
+RE_STRAY_INITIAL = re.compile(r"^\s*(?:\d+\.\s*)?[A-Z]\s*$")
+
+
+def merge_split_initial(lines):
+    out = []
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        nxt = lines[i + 1] if i + 1 < len(lines) else None
+        if nxt is not None and RE_STRAY_INITIAL.match(line) and re.match(r"^[a-z]", nxt):
+            out.append(line.rstrip() + nxt)
+            i += 2
+            continue
+        out.append(line)
+        i += 1
+    return out
+
+
 def parse_stamp(line):
     m = RE_STAMP.match(line)
     if not m:
@@ -69,25 +96,39 @@ def main():
     pages = page_texts()
     n_pages = len(pages)
 
-    # Split the running text into versions at each new stamp.
-    versions, cur = [], None
+    # Split the running text into versions, sealed by each page's own stamp.
+    #
+    # The stamp is a diagonal watermark on every page of a given printed
+    # version, but pypdf's extraction order puts it textually AFTER that
+    # page's body rather than before (where it sits visually). So a stamp
+    # closes the content that has been accumulating since the previous one
+    # -- it does not open a new block for what follows. Treating it as an
+    # opener (the previous version of this parser did) attributes page N's
+    # stamp to page N+1's content: the entry shown for "1 Feb, 8:57pm" was
+    # actually the next page's "Four features..." bullet notes, which
+    # belongs to the version stamped "2 Feb, 6:29pm" two pages later.
+    versions = []
+    cur_lines, cur_pages = [], []
     for pageno, text in pages:
-        lines = [l.rstrip() for l in text.split("\n")]
+        lines = merge_split_initial([l.rstrip() for l in text.split("\n")])
         for line in lines:
             stamp = parse_stamp(line)
             if stamp:
                 date, time = stamp
-                if cur is None or cur["stamp"] != date + " " + time:
-                    cur = {"date": date, "time": time, "stamp": date + " " + time,
-                           "lines": [], "pages": [pageno]}
-                    versions.append(cur)
+                stamp_str = date + " " + time
+                cur_pages.append(pageno)
+                if versions and versions[-1]["stamp"] == stamp_str:
+                    # Same version carrying on from the previous page.
+                    versions[-1]["lines"].extend(cur_lines)
+                    versions[-1]["pages"].extend(cur_pages)
                 else:
-                    cur["pages"].append(pageno)
+                    versions.append({"date": date, "time": time, "stamp": stamp_str,
+                                      "lines": cur_lines, "pages": cur_pages})
+                cur_lines, cur_pages = [], []
                 continue
-            if cur is not None:
-                if line.strip():
-                    cur["lines"].append(line.rstrip())
-                cur["pages"].append(pageno)
+            if line.strip():
+                cur_lines.append(line.rstrip())
+            cur_pages.append(pageno)
 
     entries = []
     for i, v in enumerate(versions):

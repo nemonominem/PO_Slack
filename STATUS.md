@@ -377,3 +377,45 @@ Prioritised by how much of the argument they carry:
   unrelated to this source — tracking the rail's old horizontal-strip
   portrait behaviour, which a separate concurrent change already moved away
   from without updating this assertion).
+
+## Done (review round 6 — OCR fixes: Farrar-Fauci "I"/bullets, sscp version mix-up)
+- **Fixed a real content/stamp mismatch in the manuscript drafts.** Every
+  printed copy in `sscp-drafts.pdf` carries a diagonal version-stamp
+  watermark on each of its pages, but `pypdf.extract_text()` places that
+  stamp's text *after* the page's body in the extracted string even though
+  it sits visually at/near the top — so the stamp is a closer of the content
+  that precedes it, not an opener of what follows. `parse_sscp.py` had it
+  backwards: it treated a stamp as starting a new version and attributed
+  everything *after* it (up to the next stamp) to that version — which is
+  actually the next page's content. The entry labelled "2020-02-01 20:57pm"
+  was showing the "Four features — already noticed..." bullet notes that
+  really belong to "2020-02-02 18:29pm" (one stamp later), while the prose
+  that genuinely carries the 20:57 stamp sat one entry early. Rewrote the
+  segmentation to seal a version on *finding* its stamp rather than on
+  seeing the next one. Version count unchanged (20, same 1 Feb – 5 Mar 2020
+  range) — only which text goes with which stamp changed. Also fixed a
+  separate, unrelated extraction glitch while in there: a word's first
+  letter sometimes lands alone on its own line ("B" / "amHI site doesn't
+  mean..." → "BamHI site doesn't mean...", "W" / "e discussed..." → "We
+  discussed...") — `merge_split_initial()` rejoins a bare (optionally
+  numbered) capital letter with a following lower-case line, narrowly scoped
+  so it can't touch a real line (an acronym like "ACE2" ending a wrapped
+  line is far longer than the pattern allows).
+  Known remaining limitation: a handful of PDFs in this release have a
+  single stray space inserted inside an otherwise normal word by the same
+  extraction quirk ("re sidues", "fo r interaction", "ti ssue culture") —
+  rare (~10 instances across 216 pages) and left alone rather than risking a
+  dictionary-based de-glue that could silently join words that were never
+  meant to be one.
+- **Cleaned up `farrar-fauci-comms.pdf`'s OCR noise**, the same two patterns
+  parse_part1.py already fixed for the Slack scans, now ported to this
+  release: a standalone `|` bounded by whitespace/punctuation is a garbled
+  capital "I" (`STANDALONE_PIPE_RE`, ~380 occurrences — "| will:" → "I
+  will:"), and Tesseract reads the round bullet glyph as the nearest Latin
+  letter/symbol, "e" or "©" here (`RE_BULLET_MISREAD`, ~78 occurrences — "e
+  Bein contact with WHO" → "• Be in contact with WHO", restoring the real
+  bullet and, via a small `GLUED_WORDS` table of specifically-verified
+  glue losses, the dropped space). Zero standalone pipes or bullet
+  misreads remain in any of the 165 entries.
+- **Tests**: 67/67 functional, 58/58 static (browser suite unchanged from
+  the previous round).

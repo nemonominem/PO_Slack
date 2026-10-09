@@ -82,6 +82,26 @@ ZONE_OVERRIDES = {}
 NOISE_TAIL = re.compile(r"\s*[|Il\[\]{}<>«»“”„’‘—–\-–—_=+*#§¶©®™✓✔✗✘»«»…@]+"
                         r"\s*(?:[a-zA-Z]{1,6})?\s*$")
 HEADER_JUNK = re.compile(r"^[^A-Za-z0-9]+|[^A-Za-z0-9)\]]+$")
+# A standalone "|" bounded by whitespace/punctuation is almost always a
+# garbled capital "I" ("| will:" -> "I will:", "| believe" -> "I believe"),
+# the same misreading parse_part1.py fixed for the Slack scans. ~380
+# occurrences in this release.
+STANDALONE_PIPE_RE = re.compile(r"(?<![^\s])\|(?![^\s.,!?;:'\")\]])")
+# Tesseract reads a round bullet glyph as the nearest Latin letter/symbol --
+# "e" or "©" here -- so a line that opens on a bare one of those followed by
+# a capitalised word is a bullet point, not a word starting a sentence
+# (English prose essentially never opens a line on a lone lower-case "e").
+# ~78 occurrences.
+RE_BULLET_MISREAD = re.compile(r"^[e©]\s+(?=[A-Z])")
+# A handful of specific word-glue losses the scan makes at a line-wrap or
+# bullet boundary, each confirmed by checking every occurrence in context
+# (not a general dictionary de-gluer, which risks inventing words it
+# shouldn't touch).
+GLUED_WORDS = {
+    "itis": "it is", "Bein": "Be in", "Atable": "A table",
+    "ina": "in a", "toa": "to a",
+}
+GLUED_WORDS_RE = re.compile(r"\b(%s)\b" % "|".join(map(re.escape, GLUED_WORDS)))
 RE_AVATAR_BRACKET = re.compile(r"[\[(][^)\]]{0,2}[)\]]")
 RE_AVATAR_GLYPH = re.compile(r"[€¢§¶©®™]")
 
@@ -354,6 +374,9 @@ def clean_line(line):
     if RE_FROM.match(line):
         line = HEADER_JUNK.sub("", line)
         line = NOISE_TAIL.sub("", line)
+    line = STANDALONE_PIPE_RE.sub("I", line)
+    line = RE_BULLET_MISREAD.sub("• ", line)
+    line = GLUED_WORDS_RE.sub(lambda m: GLUED_WORDS[m.group(1)], line)
     return line.strip()
 
 
