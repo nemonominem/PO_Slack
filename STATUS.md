@@ -419,3 +419,44 @@ Prioritised by how much of the argument they carry:
   misreads remain in any of the 165 entries.
 - **Tests**: 67/67 functional, 58/58 static (browser suite unchanged from
   the previous round).
+
+## Done (review round 7 — long redacted recipient lists, embedded attachments)
+- **Fixed a real header/body mix-up on GPMB Board broadcasts.** These
+  messages go to 30+ redacted recipients wrapped over 20+ visual lines, far
+  past what `MAX_HEADER_LINES` (12, sized for po-emails' smaller correspondent
+  circles) allowed — `segment()` never re-enters header mode once it gives up,
+  so the back half of the recipient list, and the Subject/Importance lines
+  that followed it, fell into the message body as if they were the author's
+  own prose. Raised the cap to 80 (the real gatekeeper stays the line-shape
+  test, this only bounds how long it is trusted), and made the body-recovery
+  sweep's own stopping rule more robust: it used to give up the moment any
+  one line failed a *positive* "this still looks like a name" test, which an
+  OCR-garbled name anywhere in a long list could trip (one did: "Teresa
+  Miller de Vega" read as "niiller de Vega" broke the all-known-tokens check
+  13 lines into a 17-line list, stranding the Subject just past it). Replaced
+  it with the opposite, safer default (`looks_like_body_prose`): keep
+  scanning for a stranded field until a line *positively* looks like real
+  prose (a greeting, or a long sentence with several ordinary words), not the
+  other way round. Also fixed two smaller bugs the same sweep uncovered: a
+  second non-recipient field (Importance, after Subject) wasn't moving the
+  recovery position onto itself before stopping, leaving it stranded too; and
+  a Subject that wraps onto its own line with no field keyword of its own
+  ("...on 2019-" / "novel coronavirus") was silently dropped by the sweep's
+  one-line-at-a-time reprocessing — now reattached.
+- **An attached Word document (with reviewer comments) no longer reads as
+  part of the covering email.** `strip_quoted()`'s sign-off list required
+  "Kind regards" and didn't match this release's "Kinds regards" (OCR
+  pluralised); once fixed, the existing cut-everything-after-the-sign-off
+  behaviour correctly drops the attachment along with it. Added a second,
+  independent line of defence for releases/messages with no recognisable
+  sign-off at all: Word's own "Commented [A1]:" / "Commented [A4R4]:" review
+  markers are specific enough to never appear in real prose, so finding one
+  anywhere in a body now cuts there too, leaving
+  `== ATTACHMENT: document with reviewer comments (not transcribed) ==`
+  rather than silently gluing the attachment's text onto the author's own.
+- Two residual, lower-priority cases remain (both already-`undated` duplicate
+  prints of messages that ARE fully correct in their dated form elsewhere):
+  a Dutch- and a Spanish-locale version stamp, neither parsed by `parse_stamp`
+  (pre-existing, documented limitation), still leave `Importance:` unresolved
+  in the body for those two copies specifically.
+- **Tests**: 67/67 functional, 58/58 static.
