@@ -607,3 +607,24 @@ Prioritised by how much of the argument they carry:
 - **Tests**: 73/73 functional, 66/66 static (+8 new: the three tab buttons,
   `TRAGICOMEDY_PDFS` paths, every `complementary.json` PDF present),
   32/34 browser.
+
+## Done (review round 11 — git-lfs installed, the two near-the-limit PDFs committed)
+- **`git-lfs` installed** (was the one missing piece — `.gitattributes`
+  already named four PDFs for it, aspirationally, since before this
+  machine had it). Neither `farrar-fauci-comms.pdf` nor Tragicomedy's Part 2
+  PDF had ever been committed before (both were deliberately gitignored),
+  so tracking them in `.gitattributes` *before* their first commit means
+  they enter history as real LFS objects from the start — no history
+  rewrite needed for these two specifically.
+  `page_based/farrar-fauci-comms.pdf` and
+  `page_based/tragicomedy/full-text-…-draft-p2-….pdf` are committed; the
+  farrar-fauci source's PDF viewer and the Tragicomedy tab's Part 2 no
+  longer 404 on a fresh clone.
+- **Deliberately not done**: the four PDFs `.gitattributes` already named
+  (`slack-part1.pdf`, `slack-part2.pdf`, `po-emails.pdf`, `sscp-drafts.pdf`)
+  are already in history as plain blobs from before git-lfs existed on this
+  machine — the `.gitattributes` pattern is a no-op for them until
+  `git lfs migrate import --include="page_based/*.pdf"` rewrites history
+  and force-pushes the branch. Not run without being asked, since the
+  branch is already shared on origin; STATUS.md now says so explicitly
+  rather than implying "enable once installed" was still pending.

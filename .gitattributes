@@ -1,6 +1,18 @@
-# Git LFS for the large source PDFs (enable once git-lfs is installed,
-# before pushing to a remote — see STATUS.md).
+# Git LFS for the large source PDFs. git-lfs is now installed, but this
+# pattern only takes effect on a commit MADE after a file starts being
+# tracked by it: the four entries below predate git-lfs being installed on
+# this machine, so they are already in history as plain blobs -- this line
+# is currently a no-op for them. Converting them to real LFS objects needs
+# `git lfs migrate import --include="page_based/*.pdf"`, which rewrites
+# history and force-pushes; not done here without being asked, since the
+# branch is already shared on origin.
 page_based/slack-part1.pdf filter=lfs diff=lfs merge=lfs -text
 page_based/slack-part2.pdf filter=lfs diff=lfs merge=lfs -text
 page_based/po-emails.pdf filter=lfs diff=lfs merge=lfs -text
 page_based/sscp-drafts.pdf filter=lfs diff=lfs merge=lfs -text
+# These two were NEVER committed before (deliberately gitignored -- see
+# STATUS.md), so there is no prior plain-blob history to rewrite: tracking
+# them here before their first commit means they go into history as real
+# LFS objects from the start.
+page_based/farrar-fauci-comms.pdf filter=lfs diff=lfs merge=lfs -text
+page_based/tragicomedy/full-text-proximal-origin-a-tragicomedy-of-our-times-draft-p2-39b90684bf01.pdf filter=lfs diff=lfs merge=lfs -text

@@ -4,19 +4,3 @@
 __pycache__/
 *.pyc
 .DS_Store
-
-# 99.6 MiB. The app has read this since the farrar-fauci source was ingested
-# (see STATUS.md) -- it is NOT still "nothing reads it yet" -- but it is too
-# close to GitHub's 100 MiB per-file limit to risk committing as a plain blob.
-# Needs git-lfs (`git lfs migrate import --include="page_based/**/*.pdf"`)
-# before this branch is pushed somewhere that must actually serve the PDF
-# (GitHub Pages included) -- until then this stays a known gap: the
-# farrar-fauci source's JSON/entries work, but its PDF viewer 404s on a
-# fresh clone.
-page_based/farrar-fauci-comms.pdf
-# 91 MiB, same reasoning: one of the article's own three PDF exports (the
-# Tragicomedy reader tab), close enough to the 100 MiB limit to need git-lfs
-# rather than a plain blob. Its sibling (Part 1, 68 MiB) has enough headroom
-# to commit as one; this one and farrar-fauci-comms.pdf above are the two
-# files actually blocking this repo from going git-lfs-free.
-page_based/tragicomedy/full-text-proximal-origin-a-tragicomedy-of-our-times-draft-p2-39b90684bf01.pdf
