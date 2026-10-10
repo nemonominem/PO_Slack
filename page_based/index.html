@@ -3819,14 +3819,23 @@ function selectGuideSection(id) {
     const page = (ev.pages && ev.pages.length) ? parseInt(ev.pages[0].split('-')[0], 10) : 1;
     const src = guideDocToSource(ev.doc, ev.date);
     const colour = kindColor(ev.kind);
+    // A citation with no document filename (a tweet, a press article, a
+    // quoted Slack line with no PDF named) still has identifying text in the
+    // article itself -- show that instead of the bare kind name, so "social"
+    // reads as "Farrar's tweet, 8 Feb, 11:04 am UK" rather than nothing more
+    // specific than its own category. Footnote markers ("[^85]") are the
+    // article's own markdown syntax, stripped here for display only -- the
+    // stored `raw` keeps them, unmodified, as the article actually wrote it.
+    const rawLabel = (ev.raw || '').replace(/\[\^[0-9A-Za-z_]+\]/g, '').trim();
+    const label = ev.doc || rawLabel || ev.kind;
     // The document name is coloured by its media and, where we hold the PDF, is
     // a link that opens it at the cited page in the reading area.
     const docHtml = src
       ? '<span class="gd-doc gd-doc-link" data-guide-pdf="' + escapeHtml(src) +
         '" data-guide-page="' + page + '" style="color:' + colour +
         '" title="Open this document at the cited page in the reading area">' +
-        escapeHtml(ev.doc || ev.kind) + '</span>'
-      : '<span class="gd-doc" style="color:' + colour + '">' + escapeHtml(ev.doc || ev.kind) + '</span>';
+        escapeHtml(label) + '</span>'
+      : '<span class="gd-doc" style="color:' + colour + '">' + escapeHtml(label) + '</span>';
     const link = ev.url
       ? ' <a href="' + escapeHtml(ev.url) + '" target="_blank" rel="noopener" title="Open the public copy on Google Drive">Drive &#8599;</a>'
       : '';
