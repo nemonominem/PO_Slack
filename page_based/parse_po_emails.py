@@ -93,7 +93,7 @@ FURNITURE = re.compile(
     r"National Institutes of Health$)", re.I)
 
 # ── header grammar ──────────────────────────────────────────────────────────
-HEADER_FIELDS = ("From", "To", "Cc", "Bcc", "Subject", "Sent", "Date", "Importance")
+HEADER_FIELDS = ("From", "To", "Cc", "Bcc", "Subject", "Sent", "Date", "Importance", "Attachments")
 RE_FROM = re.compile(r"^From:\s*(.+)$", re.I)
 # Note: the re.I already covers a lowercase "from:" -- case-insensitivity here
 # is load-bearing, not cosmetic. The amputated "\x0crom:" (line 4711) is NOT
@@ -135,10 +135,25 @@ FIELD_ALIAS_RE = re.compile(
                                        key=len, reverse=True)), re.I)
 RE_FIELD = FIELD_ALIAS_RE
 # quoted reply marker: "On 8 Feb 2020, at 22:15, Kristian G. Andersen wrote:"
-# The most header lines Outlook ever prints in this release: From, Sent, To,
-# Cc, Subject, and a recipient list that wrapped over a few lines. Anything
-# beyond this is quoted material, not header.
-MAX_HEADER_LINES = 12
+# A group message (the NASEM/GPMB-style broadcasts) can carry 20+ redacted
+# recipients wrapped over as many lines -- a cap sized for an ordinary
+# Outlook header silently dropped the back half of the list, and with it
+# the Subject/Attachments/Importance lines that followed, into the message
+# body (segment() never re-enters header mode once it gives up). The real
+# gatekeeper is still the line-shape test (is_wrapped_recipient /
+# continues_recipient_run) -- this only bounds how long it is trusted.
+MAX_HEADER_LINES = 80
+# Distance (in lines past a message's own From:) before a bare Date:/Sent:
+# line is trusted as a NEW message whose From: the scan ate, rather than
+# this message's own stamp -- a SEPARATE, smaller threshold from
+# MAX_HEADER_LINES above. Sharing one constant for both meant raising the
+# header cap for long recipient lists also made this reopen check 5x less
+# sensitive, silently breaking it for an ordinary short message: Fouchier's
+# reply (a few lines long) no longer crossed the raised threshold before the
+# next message's "Sent:" line arrived, so that next message (Ferguson's, with
+# no From: line at all) stopped reopening and was swallowed whole into
+# Fouchier's instead.
+REOPEN_MIN_DISTANCE = 16
 
 RE_INLINE_QUOTE = re.compile(
     r"^On\s+(.{3,40}?),\s*(?:at\s*)?(\d{1,2}:\d{2}\s*(?:am|pm)?|[ap]\.?m\.?),?\s+"
@@ -395,7 +410,7 @@ def segment(pages):
                 pos += 1
                 continue
             if RE_HDR_DATE.match(line) and cur is not None and body_mode \
-                    and pos - cur_from_at > MAX_HEADER_LINES + 4:
+                    and pos - cur_from_at > REOPEN_MIN_DISTANCE:
                 # A new message whose From: the scan ate: the Date:/Sent: line
                 # opens its header, the following To:/Subject: lines join it in
                 # the normal way. Without a current message, or while still in
@@ -622,6 +637,32 @@ def is_wrapped_recipient(line, nxt=None):
     return nxt is not None and (is_name_debris(nxt) or RE_FIELD.match(nxt.strip()))
 
 
+def looks_like_body_prose(line):
+    """True once we're confident the message's real body text has started.
+
+    The per-line "does this look like a recipient" classifiers
+    (is_name_debris / is_wrapped_recipient / continues_recipient_run) are
+    inherently fragile over a long redacted mailing list: a single
+    OCR-garbled name can fail every one of them and wrongly end the scan
+    many lines before the Subject/Attachments/Importance line it is looking
+    for. Giving up on the first line that fails a positive "looks like a
+    name" test is the wrong default for a recovery sweep whose only job is
+    to find a stranded field line -- the much safer default is to keep
+    scanning until a line positively looks like real body prose (a
+    greeting, or a long sentence with several ordinary lowercase words),
+    and only give up then.
+    """
+    s = (line or "").strip()
+    if not s:
+        return False
+    if re.match(r"^(Dear|Hi|Hello|Hey)\b", s, re.I):
+        return True
+    if len(s) > 40 and RE_SENTENCE_END.search(s):
+        if len(re.findall(r"[a-z]{3,}", s)) >= 5:
+            return True
+    return False
+
+
 # ── recipient-run continuation ───────────────────────────────────────────────
 # Once the header block is known to be inside a To:/Cc: list, the run continues
 # until something that cannot be a recipient appears. Individual lines are hard
@@ -748,7 +789,7 @@ def strip_quoted(body):
     out, cut = [], None
     for i, line in enumerate(body):
         if cut is None and re.match(
-                r"^(Best regards|Best wishes|Warm regards|Thanks,|Kind regards|"
+                r"^(Best regards|Best wishes|Warm regards|Thanks,|Kinds?\s+regards|"
                 r"With best wishes|Yours sincerely|Yours,|Best,|Many thanks|"
                 r"Jeremy Farrar$|Anthony S\. Fauci|Tony$|Eddie$|Anders$|"
                 r"Andrew Rambaut$|Robert Garry$)", line.strip(), re.I):
@@ -758,6 +799,30 @@ def strip_quoted(body):
     return out
 
 
+# A document attached straight into this release reads as part of the
+# covering email's body unless specifically guarded against. Two independent
+# signals, verified against every occurrence in this release's own OCR text
+# (see parse_farrar_fauci.py, which shares the same release family and the
+# same two triggers):
+#   - Word's own "Commented [A1]:" / "Commented [A4R4]:" review markers,
+#     which never occur in ordinary email prose.
+#   - The P.O. manuscript's own print always opens on a page whose first
+#     line is the bare word "Overview" -- a real email never has a
+#     standalone paragraph that is just that one word.
+RE_WORD_COMMENT_MARKER = re.compile(r"Commented\s*\[A\d+")
+RE_ATTACHED_DOC_HEADING = re.compile(r"^(?:Overview)\s*$")
+
+
+def strip_embedded_attachment(body):
+    for i, line in enumerate(body):
+        if RE_WORD_COMMENT_MARKER.search(line):
+            return body[:i] + ["== ATTACHMENT: document with reviewer comments "
+                                "(not transcribed) =="]
+        if RE_ATTACHED_DOC_HEADING.match(line.strip()):
+            return body[:i] + ["== ATTACHMENT: document (not transcribed) =="]
+    return body
+
+
 def build_entries(messages):
     entries = []
     for msg in messages:
@@ -765,7 +830,7 @@ def build_entries(messages):
         sender, sender_raw = clean_sender(fields.get("From") or "")
         sender_how = "From: line" if fields.get("From") else ""
         stamp = fields.get("Sent") or fields.get("Date") or ""
-        body = strip_quoted(msg["body"])
+        body = strip_embedded_attachment(strip_quoted(msg["body"]))
         # The screenshot layout puts Cc/Subject on their own visual lines, and
         # the OCR sometimes yields them after the block has already been read
         # as body. Anything that is plainly a header field at the very top of
@@ -814,7 +879,7 @@ def build_entries(messages):
             # from the body. Stopping at the first would leave the Subject that
             # follows the run stranded in the message text.
             j = found + 1
-            while j < min(len(body), 60):
+            while j < min(len(body), 150):
                 if RE_FIELD.match(body[j].strip()):
                     names = [n.strip().lower() for n in RE_FIELD.findall(body[j])]
                     if any(n in ("to", "cc", "bcc", "ce", "fe", "pe", "gc")
@@ -828,7 +893,7 @@ def build_entries(messages):
                     # body from `found + 1` onward.
                     found = j
                     break
-                if not continues_recipient_run(body[j]):
+                if looks_like_body_prose(body[j]):
                     break
                 j += 1
             else:
@@ -841,29 +906,33 @@ def build_entries(messages):
             # The loop starts one line early because a recipient field ("Cc:",
             # OCR'd as "GC:") may itself sit past the window.
             i = max(0, window - 1)
-            while i < min(len(body), 60):
+            while i < min(len(body), 150):
                 if RE_FIELD.match(body[i].strip()):
                     found = i
                     break
-                if not (is_name_debris(body[i]) or is_header_fragment(body[i])
-                        or is_wrapped_recipient(body[i], body[i + 1] if i + 1 < len(body) else None)
-                        or is_junk_line(body[i])):
+                if looks_like_body_prose(body[i]):
                     break
                 i += 1
             if found >= 0:
                 # Follow the recipient run to its end, so the Subject behind it
                 # is reached rather than the Cc line in front of it.
                 j = found + 1
-                while j < min(len(body), 60):
+                while j < min(len(body), 150):
                     if RE_FIELD.match(body[j].strip()):
                         names = [n.strip().lower() for n in RE_FIELD.findall(body[j])]
                         if not any(n in ("to", "cc", "bcc", "ce", "fe", "pe", "gc")
                                    for n in names):
+                            # A second, non-recipient field also ends the
+                            # header -- and is itself part of it, so `found`
+                            # must move to it before breaking, or it is left
+                            # stranded in the body along with everything
+                            # recovered so far.
+                            found = j
                             break
                         found = j
                         j += 1
                         continue
-                    if not continues_recipient_run(body[j]):
+                    if looks_like_body_prose(body[j]):
                         break
                     j += 1
         # No field at all. A Subject can still be sitting immediately
@@ -884,11 +953,23 @@ def build_entries(messages):
             # field of the run, which is usually the Subject itself -- stopping
             # one short recovers the recipients but drops the Subject line
             # unread ("Subject:Re: Teleconference" consumed but never parsed).
+            last_field = None
             for j in range(found + 1):
                 extra = split_fields(body[j:j + 1])
-                for k, v in extra.items():
-                    if v and not fields.get(k):
-                        fields[k] = v
+                if extra:
+                    for k, v in extra.items():
+                        if v and not fields.get(k):
+                            fields[k] = v
+                    last_field = next(iter(extra))
+                elif last_field == "Subject" and not looks_like_body_prose(body[j]):
+                    # A long Subject can wrap onto its own physical line with
+                    # no field keyword of its own -- reprocessing this
+                    # recovery sweep one line at a time (so a bare
+                    # recipient-debris line yields nothing rather than
+                    # wrongly opening a new field) also loses a wrapped
+                    # Subject's tail unless it is explicitly reattached here.
+                    fields["Subject"] = (fields.get("Subject", "") + " "
+                                         + body[j].strip()).strip()
             body = body[found + 1:]
         subject = (fields.get("Subject") or "").strip()
         # Order matters: junk is dropped first (so it cannot open a block), then
@@ -979,7 +1060,7 @@ def header_block(fields, body, sender, signature=None):
     it reads as a signature rather than as more of the message. Its returns are
     the sender's own, so they are kept exactly as scanned."""
     head = []
-    for k in ("From", "To", "Cc", "Bcc", "Subject", "Sent", "Date", "Importance"):
+    for k in ("From", "To", "Cc", "Bcc", "Subject", "Sent", "Date", "Importance", "Attachments"):
         if fields.get(k):
             head.append("%s: %s" % (k, clean_field_value(k, fields[k], sender)))
     out = "\n\n".join(head) + "\n\n----------\n\n" + body

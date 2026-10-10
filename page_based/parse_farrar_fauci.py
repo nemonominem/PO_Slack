@@ -148,6 +148,13 @@ RE_FIELD = FIELD_ALIAS_RE
 # The real gatekeeper is still the shape test (is_wrapped_recipient /
 # continues_recipient_run) -- this cap only bounds how long it is trusted.
 MAX_HEADER_LINES = 80
+# Distance (in lines past a message's own From:) before a bare Date:/Sent:
+# line is trusted as a NEW message whose From: the scan ate, rather than
+# this message's own stamp -- kept as a SEPARATE, smaller threshold from
+# MAX_HEADER_LINES above (see parse_po_emails.py, where sharing one constant
+# for both silently broke this check for ordinary short messages once the
+# header cap was raised for long recipient lists).
+REOPEN_MIN_DISTANCE = 16
 
 # "On 8 Feb 2020, at 22:15, Kristian G. Andersen) @)@> wrote:" and its
 # variants ("On Sat, Feb 8, 2020 at 12:38 PM Drosten, Christian) 7 wrote:",
@@ -666,7 +673,7 @@ def segment(pages):
                 pos += 1
                 continue
             if RE_HDR_DATE.match(line) and cur is not None and body_mode \
-                    and pos - cur_from_at > MAX_HEADER_LINES + 4:
+                    and pos - cur_from_at > REOPEN_MIN_DISTANCE:
                 cur = {"header_lines": [line], "body": [], "pages": [pageno]}
                 messages.append(cur)
                 cur_from_at = pos

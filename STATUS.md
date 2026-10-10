@@ -507,3 +507,41 @@ Prioritised by how much of the argument they carry:
   accurate, but reads as a source count at a glance).
 - **Tests**: 73/73 functional, 58/58 static, 32/34 browser (same 2
   pre-existing, unrelated portrait failures as every prior round).
+
+## Done (review round 9 — same header/attachment bugs, ported to po-emails.py)
+- **The exact same two bugs from rounds 7-8, found independently in
+  `po-emails.pdf`.** A citation in the guide (13.3, Ferguson's comments on
+  the glycans) pointed at an email that had no corresponding entry anywhere
+  in `po-emails.json` — not a display bug, a genuine parsing gap. Root
+  cause, found by tracing the raw OCR directly: Ferguson's message opens
+  `Message` / `Sent: 2/9/2020 12:00:46 PM` with **no `From:` line at all**
+  (not OCR-mangled — the scan genuinely never printed one), and the
+  preceding message (Fouchier's, a few lines long) wasn't long enough to
+  cross the reopen-fallback's distance threshold before Ferguson's `Sent:`
+  line arrived, so it never reopened and Ferguson's content was swallowed
+  whole into Fouchier's entry instead. Separately, the same manuscript
+  attachment bleed from round 8 (`Summary.Feb7_RF.pdf` / `_MF.pdf`, opening
+  on a bare "Overview") was present here too.
+- **Ported every fix from rounds 7-8 to `parse_po_emails.py`**: raised
+  `MAX_HEADER_LINES` (12 -> 80), replaced the body-recovery sweep's "give up
+  when a line stops looking like a recipient" with "keep going until a line
+  positively looks like body prose", fixed the matching missing
+  `found = j` bug, added the wrapped-Subject reattachment, registered
+  `Attachments` as a header field, and added `strip_embedded_attachment()`
+  (the "Overview" trigger; `Commented [A` carried over for parity though
+  this release has none).
+- **Found and fixed a new bug introduced by round 8's own `MAX_HEADER_LINES`
+  raise**, in both parsers: the reopen-fallback's "how far past a message's
+  own `From:` before a bare `Date:`/`Sent:` line is trusted as a new
+  message" check shared the *same* constant as the header-continuation cap.
+  Raising the cap for long recipient lists silently made the reopen check
+  5x less sensitive too — which is exactly what swallowed Ferguson's message
+  in the first place once the other fixes were applied. Split into two
+  independent constants (`MAX_HEADER_LINES` stays at 80;
+  `REOPEN_MIN_DISTANCE = 16` keeps the reopen check at its original
+  sensitivity) in both `parse_po_emails.py` and `parse_farrar_fauci.py`.
+- po-emails.json: 100 entries (unchanged from the pre-round-6 baseline —
+  the fix changes which text is attributed to which entry, not how many
+  entries there are, net of the Ferguson recovery and some previously
+  duplicate/fragmented entries now correctly merging).
+- **Tests**: 73/73 functional, 58/58 static, 32/34 browser.
