@@ -643,7 +643,7 @@ body.layout-portrait .pdf-panel {
 .guide-dot.d-slack { color: var(--blue); border-color: rgba(88,166,255,0.4); }
 .guide-dot.d-email { color: var(--green); border-color: rgba(78,204,163,0.4); }
 .guide-dot.d-draft, .guide-dot.d-document { color: #ffd479; border-color: rgba(255,212,121,0.4); }
-.guide-dot.d-transcript { color: #d2a8ff; border-color: rgba(210,168,255,0.4); }
+.guide-dot.d-transcript { color: #ff9a3c; border-color: rgba(255,154,60,0.4); }
 /* The detail box below the section list: shown when a section is selected.
    The list above stays the rail's usual dark grey (#1a1a1a); this gets a
    distinctly lighter "silver" grey plus an accent left edge, so it reads
@@ -1022,7 +1022,7 @@ function kindDef(kind) { return KIND_DEFS[kind] || { label: kind, icon: '•', t
 // guide's citation list, so a document's colour means the same thing everywhere.
 const KIND_HUE = {
   slack: 210, email: 150, draft: 45, attachment: 275, note: 0,
-  transcript: 275, document: 45, social: 25, press: 300, link: 190, other: 0,
+  transcript: 30, document: 45, social: 25, press: 300, link: 190, other: 0,
 };
 function kindColor(kind, alpha) {
   const grey = (kind === 'note' || kind === 'other');
