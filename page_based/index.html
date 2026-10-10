@@ -692,6 +692,17 @@ mark.hit-current {
 .pdf-panel {
   display: flex; flex-direction: column; background: var(--bg);
 }
+.pdf-tabs {
+  display: flex; gap: 2px; padding: 6px 8px 0; background: var(--panel);
+  border-bottom: 1px solid var(--border); flex-shrink: 0;
+}
+.pdf-tab {
+  background: var(--panel-2); color: var(--muted); border: 1px solid var(--border-2);
+  border-bottom: none; padding: 6px 12px; border-radius: 6px 6px 0 0; cursor: pointer;
+  font-size: 12px; font-weight: 600;
+}
+.pdf-tab:hover { color: var(--text); background: var(--border-2); }
+.pdf-tab.active { background: var(--bg); color: var(--text); border-color: var(--border); }
 .pdf-toolbar {
   padding: 8px 12px; background: var(--panel); border-bottom: 1px solid var(--border);
   display: flex; align-items: center; gap: 8px; flex-shrink: 0; flex-wrap: wrap;
@@ -912,6 +923,11 @@ mark.hit-current {
 
   <!-- ── PDF panel ────────────────────────────────────────────────── -->
   <div class="pdf-panel" id="pdfPanel">
+    <div class="pdf-tabs" id="pdfTabs" role="tablist" title="Timeline: the five searchable, ingested sources. Complementary: other documents the piece cites, trimmed to their cited pages. Tragicomedy: the article itself.">
+      <button type="button" class="pdf-tab active" id="pdfTabTimeline" onclick="switchReaderTab('timeline')">Timeline</button>
+      <button type="button" class="pdf-tab" id="pdfTabComplementary" onclick="switchReaderTab('complementary')">Complementary</button>
+      <button type="button" class="pdf-tab" id="pdfTabTragicomedy" onclick="switchReaderTab('tragicomedy')">P.O. — A Tragicomedy</button>
+    </div>
     <div class="pdf-toolbar">
       <span id="pdfSourceLabel" title="Which Congressional release PDF is displayed" style="font-size:11px;color:var(--muted);font-weight:600;margin-right:6px;padding:3px 8px;background:var(--panel-2);border-radius:4px;border:1px solid var(--border-2);white-space:nowrap">Part 1</span>
       <button id="pdfPrev" onclick="pdfPrevPage()">◀ Prev</button>
@@ -997,6 +1013,42 @@ const SOURCES = {
   },
 };
 const DEFAULT_PDF_SOURCE = 'part1';   // which PDF shows on page load
+
+// ── Reader tabs: Timeline / Complementary / Tragicomedy ──────────────────────
+// The reading panel on the right shows one of three pools of PDFs, switched
+// by a tab rather than mixed into one list:
+//   Timeline      the five ingested, searchable sources above (SOURCES) --
+//                 unchanged, existing renderEntryPdf()/pdfDocs machinery.
+//   Complementary other documents the piece cites that are NOT one of the
+//                 five -- trimmed to just their cited pages (most of a
+//                 212-1265+ page production is not relevant), built by
+//                 fetch_complementary.py into complementary.json +
+//                 complementary/<doc>.pdf. No search, no entries: a page
+//                 number is all a citation ever names here.
+//   Tragicomedy   the article itself -- the three Medium pieces' own PDF
+//                 exports (tragicomedy/*.pdf), each page already opening on
+//                 a heading, so a section maps directly to a page
+//                 (article_page_map.json, built by build_article_page_map.py
+//                 by searching each PDF's text layer -- Medium's own anchor
+//                 links cannot be verified to work and are not used here).
+// All three share the SAME pdfDoc/currentPage/pdfScale viewer state and
+// rendering code (paintPdfPageToCanvas, renderPdfPage, zoom, view mode) --
+// switching tabs just repoints pdfDoc at a different pool and restores
+// that pool's own last-viewed doc/page, exactly how switching Timeline
+// sources already repoints pdfDoc today.
+const TRAGICOMEDY_PDFS = {
+  summary: { pdf: 'tragicomedy/summary-proximal-origin-a-tragicomedy-of-our-times-1ed5b4dae506.pdf',
+             label: 'P.O. — A Tragicomedy: Summary' },
+  p1: { pdf: 'tragicomedy/full-text-proximal-origin-a-tragicomedy-of-our-times-draft-p1-626c72cb05b1.pdf',
+        label: 'P.O. — A Tragicomedy: Part 1' },
+  p2: { pdf: 'tragicomedy/full-text-proximal-origin-a-tragicomedy-of-our-times-draft-p2-39b90684bf01.pdf',
+        label: 'P.O. — A Tragicomedy: Part 2' },
+};
+let readerTab = 'timeline';                        // 'timeline' | 'complementary' | 'tragicomedy'
+let complementaryData = null;                       // complementary.json, once loaded
+let articlePageMap = null;                          // article_page_map.json, once loaded
+let complementaryState = { doc: null, page: 1 };    // last-viewed doc/page in that tab
+let tragicomedyState = { part: 'p1', page: 1 };     // last-viewed part/page in that tab
 
 // ── Document kinds ───────────────────────────────────────────────────────────
 // One taxonomy across every release, so the box-type filter, the badges and
@@ -1268,8 +1320,15 @@ function switchPdfSource(source) {
 
 function updatePdfSourceUI() {
   var labelEl = document.getElementById('pdfSourceLabel');
-  if (labelEl) labelEl.textContent = SOURCES[currentPdfSource]
-    ? SOURCES[currentPdfSource].label : '';
+  if (labelEl) {
+    if (readerTab === 'complementary') {
+      labelEl.textContent = complementaryState.doc || 'Complementary';
+    } else if (readerTab === 'tragicomedy') {
+      labelEl.textContent = (TRAGICOMEDY_PDFS[tragicomedyState.part] || {}).label || '';
+    } else {
+      labelEl.textContent = SOURCES[currentPdfSource] ? SOURCES[currentPdfSource].label : '';
+    }
+  }
   if (!pdfDoc) return;
   document.getElementById('pdfTotalPages').textContent = pdfDoc.numPages;
   var inp = document.getElementById('pdfPageInput');
@@ -1307,6 +1366,122 @@ async function renderEntryPdf(source, page) {
   } catch (err) {
     pdfPending[source] = null;
     console.error('Load of ' + source + ' PDF failed:', err);
+  }
+}
+
+/** Complementary tab: load one trimmed PDF (pdfDocs/pdfPending cache keyed
+ * "complementary:<doc>", namespaced away from the Timeline SOURCES keys they
+ * share the same two cache objects with) and jump to `trimmedPage` -- a
+ * position inside the TRIMMED file, already translated from the article's
+ * own (original-document) page number by the caller. */
+async function loadComplementaryPdf(docName, trimmedPage) {
+  if (!complementaryData || !complementaryData[docName]) return;
+  const key = 'complementary:' + docName;
+  complementaryState = { doc: docName, page: trimmedPage || 1 };
+  updatePdfSourceUI();
+
+  if (pdfDocs[key]) {
+    pdfDoc = pdfDocs[key];
+    updatePdfSourceUI();
+    renderPdfPage(complementaryState.page);
+    return;
+  }
+  if (!pdfPending[key]) {
+    pdfPending[key] = pdfjsLib.getDocument('complementary/' + complementaryData[docName].pdf).promise;
+  }
+  try {
+    const doc = await pdfPending[key];
+    pdfDocs[key] = doc;
+    pdfPending[key] = null;
+    if (readerTab !== 'complementary' || complementaryState.doc !== docName) return;
+    pdfDoc = doc;
+    updatePdfSourceUI();
+    renderPdfPage(complementaryState.page);
+  } catch (err) {
+    pdfPending[key] = null;
+    console.error('Load of complementary ' + docName + ' failed:', err);
+  }
+}
+
+/** Open a Complementary citation by the article's own page number (what
+ * every citation and guide entry carries) -- translates it to the trimmed
+ * PDF's own page via that document's page_map, then loads it. */
+function openComplementaryCitation(docName, origPage) {
+  const entry = complementaryData && complementaryData[docName];
+  if (!entry) return;
+  const trimmedPage = entry.page_map[String(origPage)] || 1;
+  switchReaderTab('complementary');
+  loadComplementaryPdf(docName, trimmedPage);
+}
+
+/** Tragicomedy tab: load one of the article's own three PDF exports and
+ * jump to `page` -- a real page in that PDF, not a translated one (unlike
+ * Complementary, these are never trimmed). */
+async function loadTragicomedyPart(part, page) {
+  const cfg = TRAGICOMEDY_PDFS[part];
+  if (!cfg) return;
+  const key = 'tragicomedy:' + part;
+  tragicomedyState = { part: part, page: page || 1 };
+  updatePdfSourceUI();
+
+  if (pdfDocs[key]) {
+    pdfDoc = pdfDocs[key];
+    updatePdfSourceUI();
+    renderPdfPage(tragicomedyState.page);
+    return;
+  }
+  if (!pdfPending[key]) {
+    pdfPending[key] = pdfjsLib.getDocument(cfg.pdf).promise;
+  }
+  try {
+    const doc = await pdfPending[key];
+    pdfDocs[key] = doc;
+    pdfPending[key] = null;
+    if (readerTab !== 'tragicomedy' || tragicomedyState.part !== part) return;
+    pdfDoc = doc;
+    updatePdfSourceUI();
+    renderPdfPage(tragicomedyState.page);
+  } catch (err) {
+    pdfPending[key] = null;
+    console.error('Load of tragicomedy ' + part + ' failed:', err);
+  }
+}
+
+/** Open a guide section in the Tragicomedy tab, at the page its own heading
+ * was found on (article_page_map.json). Falls back to the section's part
+ * at page 1 if that section wasn't mapped (one known case: the article
+ * itself reuses a section number -- see SPEC.md -- which collides in the
+ * map; harmless, it just lands on its sibling section's page instead). */
+function openTragicomedySection(sectionId, part) {
+  const page = (articlePageMap && articlePageMap[sectionId]) || 1;
+  switchReaderTab('tragicomedy');
+  loadTragicomedyPart(part, page);
+}
+
+/** Switch which of the three pools of PDFs the shared viewer (pdfDoc /
+ * currentPage / pdfScale, and every render/zoom/view-mode function that
+ * reads them) is currently showing, restoring that pool's own last-viewed
+ * doc/page rather than reloading from scratch. */
+function switchReaderTab(tab) {
+  if (tab === readerTab) return;
+  readerTab = tab;
+  ['Timeline', 'Complementary', 'Tragicomedy'].forEach(function(name) {
+    const btn = document.getElementById('pdfTab' + name);
+    if (btn) btn.classList.toggle('active', name.toLowerCase() === tab);
+  });
+  if (tab === 'timeline') {
+    renderEntryPdf(currentPdfSource, currentPage);
+  } else if (tab === 'complementary') {
+    if (complementaryState.doc) {
+      loadComplementaryPdf(complementaryState.doc, complementaryState.page);
+    } else if (complementaryData) {
+      const firstDoc = Object.keys(complementaryData)[0];
+      if (firstDoc) loadComplementaryPdf(firstDoc, 1);
+    } else {
+      updatePdfSourceUI();
+    }
+  } else if (tab === 'tragicomedy') {
+    loadTragicomedyPart(tragicomedyState.part, tragicomedyState.page);
   }
 }
 
@@ -3732,6 +3907,16 @@ async function loadGuide() {
     return;
   }
   renderGuideList();
+  // Complementary/Tragicomedy are optional extras of the guide: a citation
+  // still shows (just not as a clickable tag) if either fails to load.
+  try {
+    const r = await fetch('complementary.json');
+    if (r.ok) complementaryData = await r.json();
+  } catch (err) { /* no Complementary tab content; citations stay inert */ }
+  try {
+    const r = await fetch('article_page_map.json');
+    if (r.ok) articlePageMap = await r.json();
+  } catch (err) { /* "read this section" falls back to the Medium link */ }
 }
 
 function renderGuideList() {
@@ -3800,14 +3985,23 @@ function selectGuideSection(id) {
     const pages = (ev.pages || []).length ? ' p.' + ev.pages.join(', p.') : '';
     const page = (ev.pages && ev.pages.length) ? parseInt(ev.pages[0].split('-')[0], 10) : 1;
     const src = guideDocToSource(ev.doc, ev.date);
+    const inComplementary = !src && ev.doc && complementaryData && complementaryData[ev.doc];
     const colour = kindColor(ev.kind);
     const label = guideCitationLabel(ev);
-    // The document name is coloured by its media and, where we hold the PDF, is
-    // a link that opens it at the cited page in the reading area.
+    // The document name is coloured by its media and is a link into whichever
+    // reader tab actually holds it: Timeline for one of the five ingested
+    // sources, Complementary for a trimmed excerpt of anything else the piece
+    // cites. Neither resolving (a tweet, a press article, a document with no
+    // Drive copy at all) leaves it an inert label, same as always.
     const docHtml = src
       ? '<span class="gd-doc gd-doc-link" data-guide-pdf="' + escapeHtml(src) +
         '" data-guide-page="' + page + '" style="color:' + colour +
-        '" title="Open this document at the cited page in the reading area">' +
+        '" title="Open this document at the cited page in the reading area (Timeline)">' +
+        escapeHtml(label) + '</span>'
+      : inComplementary
+      ? '<span class="gd-doc gd-doc-link" data-guide-complementary="' + escapeHtml(ev.doc) +
+        '" data-guide-orig-page="' + page + '" style="color:' + colour +
+        '" title="Open this document at the cited page in the reading area (Complementary)">' +
         escapeHtml(label) + '</span>'
       : '<span class="gd-doc" style="color:' + colour + '">' + escapeHtml(label) + '</span>';
     const link = ev.url
@@ -3822,8 +4016,18 @@ function selectGuideSection(id) {
       link + jump + '</div>';
   });
   if (s.number) {
-    html += '<div class="gd-ev" style="margin-top:6px"><a href="' +
-      escapeHtml(sectionUrl(s)) + '" target="_blank" rel="noopener">read this section in the piece &#8599;</a></div>';
+    // Primary action opens the article's own PDF in the Tragicomedy tab, at
+    // the page its heading was actually found on (article_page_map.json) --
+    // reliable and offline, unlike the Medium link (kept as a small secondary
+    // action: Medium's anchor behaviour for an arbitrary heading has not been
+    // verified to work at all).
+    html += '<div class="gd-ev" style="margin-top:6px">' +
+      '<span class="gd-doc gd-doc-link" data-guide-tragicomedy="' + escapeHtml(s.id) +
+      '" data-guide-part="' + escapeHtml(s.part) +
+      '" title="Open this section in the article itself (Tragicomedy)">' +
+      'read this section in the piece</span>' +
+      ' <a href="' + escapeHtml(sectionUrl(s)) + '" target="_blank" rel="noopener" ' +
+      'title="Open on Medium instead" style="color:var(--muted)">(Medium &#8599;)</a></div>';
   }
   detail.innerHTML = html;
   detail.classList.remove('hidden');
@@ -3835,7 +4039,21 @@ function selectGuideSection(id) {
       ev.stopPropagation();
       const src = doc.getAttribute('data-guide-pdf');
       const page = parseInt(doc.getAttribute('data-guide-page'), 10) || 1;
+      switchReaderTab('timeline');
       renderEntryPdf(src, page);
+      return;
+    }
+    const comp = ev.target.closest('[data-guide-complementary]');
+    if (comp) {
+      ev.stopPropagation();
+      const origPage = parseInt(comp.getAttribute('data-guide-orig-page'), 10) || 1;
+      openComplementaryCitation(comp.getAttribute('data-guide-complementary'), origPage);
+      return;
+    }
+    const trag = ev.target.closest('[data-guide-tragicomedy]');
+    if (trag) {
+      ev.stopPropagation();
+      openTragicomedySection(trag.getAttribute('data-guide-tragicomedy'), trag.getAttribute('data-guide-part'));
     }
   };
   if (s.date) openEntryFromRawBar(s.date);

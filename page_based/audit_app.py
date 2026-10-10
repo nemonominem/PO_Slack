@@ -10,6 +10,7 @@ they are checked directly against the markup.
 
 Usage: python3 audit_app.py
 """
+import json
 import os
 import re
 import sys
@@ -134,6 +135,22 @@ if src_block:
         if m:
             check(os.path.exists(os.path.join(HERE, m.group(1))),
                   "SOURCES.%s.pdf -> %s exists" % (sid.strip("'"), m.group(1)))
+
+# ── reader tabs: Timeline / Complementary / Tragicomedy ──────────────────────
+for tab_id in ("pdfTabTimeline", "pdfTabComplementary", "pdfTabTragicomedy"):
+    check('id="%s"' % tab_id in src, "%s tab button is in the markup" % tab_id)
+trag_block = re.search(r"const TRAGICOMEDY_PDFS = \{(.*?)\n\};", body, re.S)
+check(bool(trag_block), "TRAGICOMEDY_PDFS block found")
+if trag_block:
+    for pid, pdf_path in re.findall(r"(\w+):\s*\{\s*pdf:\s*'([^']+)'", trag_block.group(1)):
+        check(os.path.exists(os.path.join(HERE, pdf_path)),
+              "TRAGICOMEDY_PDFS.%s -> %s exists" % (pid, pdf_path))
+if os.path.exists(os.path.join(HERE, "complementary.json")):
+    comp = json.load(open(os.path.join(HERE, "complementary.json"), encoding="utf-8"))
+    missing_comp = [d["pdf"] for d in comp.values()
+                    if not os.path.exists(os.path.join(HERE, "complementary", d["pdf"]))]
+    check(not missing_comp, "every complementary.json PDF exists" +
+          (" (missing: %s)" % missing_comp if missing_comp else ""))
 
 # ── bookmarks rail ──────────────────────────────────────────────────────────
 check('id="bmRail"' in src, "bookmarks rail is in the markup")

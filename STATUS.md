@@ -545,3 +545,65 @@ Prioritised by how much of the argument they carry:
   entries there are, net of the Ferguson recovery and some previously
   duplicate/fragmented entries now correctly merging).
 - **Tests**: 73/73 functional, 58/58 static, 32/34 browser.
+
+## Done (review round 10 — three reader tabs: Timeline, Complementary, Tragicomedy)
+- **The reading panel is now three tabs**, not one implicit mode:
+  - **Timeline** — the five ingested, searchable sources, unchanged.
+  - **Complementary** — other documents the piece cites that are not one of
+    the five, **trimmed to just their cited pages** (per-page extraction,
+    not the full release — most of a 212-4578 page production is not
+    relevant to anything cited here). `fetch_complementary.py` downloads
+    each from its Drive link (handling Drive's large-file confirm-token
+    interstitial, which currently posts to `drive.usercontent.google.com`
+    with hidden form fields rather than appending a query param to the
+    original URL) and writes a trimmed PDF + an original-page -> trimmed-
+    page map to `complementary/` + `complementary.json`. All 6 of the
+    documents with a Drive link downloaded cleanly (sizes ranged 5.7 MB to
+    1.49 GB *before* trimming; every trimmed output is under 12 MB, 18 MB
+    total). The other 39 cited-but-unheld documents have no Drive link at
+    all and stay exactly as inert as before — Complementary has nothing to
+    show for those regardless.
+  - **Tragicomedy** — the article's own three Medium pieces, as their own
+    PDF exports (already sitting next to the markdown this project parses).
+    `build_article_page_map.py` maps every guide section to the exact page
+    its heading was found on (each PDF page happens to open on a heading,
+    so this is a direct text search, not a heuristic) — 210/211 sections
+    mapped (the one "miss" is the pre-existing duplicate section-number
+    collision noted below, not a real gap). This replaces guessing a Medium
+    URL fragment, which cannot be verified to actually scroll anywhere from
+    this sandbox (Cloudflare-blocked from reaching medium.com) and is now
+    kept only as a secondary "(Medium ↗)" link beside the primary, reliable,
+    offline in-app jump.
+  - A citation's document-name tag routes to whichever tab actually holds
+    it (`guideDocToSource` for Timeline, a `complementary.json` lookup
+    otherwise); "read this section in the piece" routes to Tragicomedy.
+    All three share the existing `pdfDoc`/`currentPage`/`pdfScale` viewer
+    state and every render/zoom/view-mode function that already reads them
+    — switching tabs repoints `pdfDoc` at a different pool and restores
+    that pool's own last-viewed doc/page, the same mechanism Timeline's own
+    source-switching already used.
+- **Fixed the hard-to-read purple "transcript" chips** (shared `attachment`'s
+  hue; purple reads darker than warm hues at the same lightness) — now a
+  distinct orange.
+- **Known pre-existing gap, surfaced while deciding what to commit**:
+  `page_based/farrar-fauci-comms.pdf` (99.6 MiB) has been deliberately
+  untracked since before the farrar-fauci source was ingested, on the
+  assumption that "nothing reads it yet" — that assumption is now false
+  (the farrar-fauci source has used it for several rounds), but the file is
+  still gitignored. The source's JSON/entries all work from this repo as
+  committed; its **PDF viewer will 404 on a fresh clone** until this file
+  goes through git-lfs. The same treatment now applies to one of the three
+  new Tragicomedy PDFs (Part 2, 91 MiB) for the same reason (too close to
+  GitHub's 100 MiB limit to risk as a plain blob) — these two files are
+  what's actually blocking this repo from being git-lfs-free; everything
+  else (including Tragicomedy's Part 1, 68 MiB, and all of Complementary,
+  18 MiB total) commits as a normal blob.
+- Confirmed, independently of this round's work: 1 duplicate section number
+  in the article itself (`p1-2.1` names two different sections — see
+  SOURCES.md-adjacent code comments) — pre-existing, affects both
+  `selectGuideSection`'s id lookup (always finds the first) and this
+  round's own `article_page_map.json` (one entry overwrites the other, so
+  both resolve to the first section's page). Noted, not fixed this round.
+- **Tests**: 73/73 functional, 66/66 static (+8 new: the three tab buttons,
+  `TRAGICOMEDY_PDFS` paths, every `complementary.json` PDF present),
+  32/34 browser.
