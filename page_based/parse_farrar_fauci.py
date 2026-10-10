@@ -119,7 +119,7 @@ FURNITURE = re.compile(
     r"Limited, a company registered|London NW1)", re.I)
 
 # ── header grammar ──────────────────────────────────────────────────────────
-HEADER_FIELDS = ("From", "To", "Cc", "Bcc", "Subject", "Sent", "Date", "Importance")
+HEADER_FIELDS = ("From", "To", "Cc", "Bcc", "Subject", "Sent", "Date", "Importance", "Attachments")
 RE_FROM = re.compile(r"^From:\s*(.+)$", re.I)
 # "Von:" opens a message the same way "From:" does (German Outlook export);
 # a handful of messages in this release were forwarded/printed in German.
@@ -618,12 +618,24 @@ def strip_quoted(body):
 # as if it were the author's own words.
 RE_WORD_COMMENT_MARKER = re.compile(r"Commented\s*\[A\d+")
 
+# The P.O. manuscript itself ("Summary.pdf" / "Summary.Feb7.pdf" /
+# "Summary.docx") is attached straight into this release and, when it is,
+# the very next page of the print opens on a bare "Overview" heading --
+# verified against every one of the 4 occurrences in the whole corpus
+# (pages 67, 83, 88, 98), each immediately following a message whose
+# Attachments: field names one of these files. A real email never has a
+# standalone paragraph that is just the word "Overview" with nothing else,
+# so this is as safe a trigger as the Word comment marker above.
+RE_ATTACHED_DOC_HEADING = re.compile(r"^(?:Overview)\s*$")
+
 
 def strip_embedded_attachment(body):
     for i, line in enumerate(body):
         if RE_WORD_COMMENT_MARKER.search(line):
             return body[:i] + ["== ATTACHMENT: document with reviewer comments "
                                 "(not transcribed) =="]
+        if RE_ATTACHED_DOC_HEADING.match(line.strip()):
+            return body[:i] + ["== ATTACHMENT: document (not transcribed) =="]
     return body
 
 
@@ -877,7 +889,7 @@ def build_entries(messages):
 
 def header_block(fields, body, sender, signature=None):
     head = []
-    for k in ("From", "To", "Cc", "Bcc", "Subject", "Sent", "Date", "Importance"):
+    for k in ("From", "To", "Cc", "Bcc", "Subject", "Sent", "Date", "Importance", "Attachments"):
         if fields.get(k):
             head.append("%s: %s" % (k, clean_field_value(k, fields[k], sender)))
     out = "\n\n".join(head) + "\n\n----------\n\n" + body

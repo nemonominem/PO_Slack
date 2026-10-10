@@ -142,12 +142,12 @@ check('id="bmUp"' in src and 'id="bmDown"' in src,
       "bookmarks list has both scroll arrows")
 check('id="bmFile"' in src, "bookmarks file input is in the markup")
 check("data-bm-toggle" in body, "every result box gets a bookmark toggle")
-# The rail must be a child of .content-area, whose flex-direction flips between
-# the layouts -- that is what makes it vertical in landscape, horizontal in
-# portrait, with no layout-specific markup.
-check(re.search(r'<div class="content-area">\s*<!--[^>]*-->\s*<div class="bm-rail"', src)
-      or re.search(r'<div class="content-area">\s*<div class="bm-rail"', src),
-      "bookmarks rail sits inside .content-area (so it follows the layout flip)")
+# The rail is a direct child of .workspace, before the guide rail -- .workspace
+# never flips flex-direction between layouts, so both rails stay plain
+# left-hand columns (vertical) in landscape and portrait alike, with no
+# layout-specific markup needed for either.
+check(re.search(r'<div class="workspace"[^>]*>\s*<!--[^>]*-->\s*<div class="bm-rail"', src),
+      "bookmarks rail sits directly in .workspace, before the guide rail")
 for fn in ("toggleBookmark", "isBookmarked", "removeBookmark", "openBookmark",
            "renderBookmarks", "bookmarksPayload", "loadBookmarksFile",
            "initBookmarks", "toggleBmRail", "bmScrollBy", "syncBmScrollBtns"):
@@ -172,7 +172,7 @@ if os.path.exists(HELP):
     hp = open(HELP, encoding="utf-8").read()
     check(hp.count("<html") == 1 and "</html>" in hp, "help.html is a whole document")
     for term, why in (("search", "searching"), ("Bookmarks", "bookmarks"),
-                      ("Dual timeline", "the timeline"), ("P.O. guide", "the guide"),
+                      ("Timeline", "the timeline"), ("P.O. guide", "the guide"),
                       ("Keyboard", "the keyboard"), ("Release notes", "release notes"),
                       ("Known limits", "the limits")):
         check(term in hp, "the manual covers %s" % why)

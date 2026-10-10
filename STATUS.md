@@ -460,3 +460,50 @@ Prioritised by how much of the argument they carry:
   (pre-existing, documented limitation), still leave `Importance:` unresolved
   in the body for those two copies specifically.
 - **Tests**: 67/67 functional, 58/58 static.
+
+## Done (review round 8 — guide summaries live, panel order, Attachments: fields)
+- **Attached documents glued into a covering email's body, round 2.** The
+  GPMB-statement case (round 7) was one of two patterns in this release, not
+  the only one: the P.O. manuscript itself is also attached straight in
+  ("Summary.pdf" / "Summary.Feb7.pdf" / "Summary.docx"), and when it is, the
+  attached document's own content — a 7-page document in one case — was
+  reading as the covering email's body (one entry ran to 17,928 characters).
+  Verified against every one of the 4 occurrences in the whole corpus: the
+  attached manuscript's print always opens on a page whose very first line
+  is a bare "Overview" heading, immediately after a message whose
+  `Attachments:` field names one of those three files. A real email never
+  has a standalone paragraph that is just the word "Overview", so
+  `strip_embedded_attachment()` now also cuts there (alongside the existing
+  "Commented [A1]:" trigger from round 7), leaving a short covering note
+  (e.g. "Tidied up", or a real multi-paragraph discussion) intact where one
+  existed, and just the elision marker where it didn't. Also: `Attachments:`
+  is now a recognised header field (was silently swallowed into the body
+  before), so it shows where the real document does -- right under Subject,
+  above the `----------` rule.
+- **Guide section summaries are live for Part 1** (107 sections, read from
+  the article's own text — see round 7's note on how `attach_summaries()`
+  pairs them). Shown under each section's title in the guide list.
+- **Guide fixes**: `guideDocToSource` never resolved `Proximal_Origin_Slack.pdf`
+  — 104 citations, the largest single category, were never clickable. Fixed
+  (the citation's own date picks Part 1 vs Part 2, since one filename covers
+  two separately-paginated PDFs). A citation with no document filename (a
+  tweet, a press article) now shows its own citation text instead of the
+  bare kind name ("social" → "Tedros' tweet, 11 Jan, 9:43 pm UK..."), with
+  the alphabetical sort key fixed to match (a `guideCitationLabel()` helper
+  shared by both, so they can't diverge again). The guide's citation/detail
+  panel gets a full accent-red border + glow instead of an easy-to-miss 1px
+  left edge on a background only 12-of-255 shades off the list above it.
+- **Panel order**: Bookmarks now sits left of the P.O. guide (was: guide,
+  then bookmarks) in every layout. This simplified the portrait-layout fix
+  from round 6/7 (`.content-stack`) back out entirely: the bookmarks rail is
+  now a plain `.workspace`-level column exactly like the guide rail already
+  was, so neither needs any portrait-specific CSS at all -- `.workspace`
+  never flips flex-direction, which is what made the guide rail
+  layout-independent in the first place.
+- **"Dual timeline" → "Timeline"** everywhere (this app, and for consistency
+  also Fauci_Diary and DaszakCalendar): the stacked-by-media timeline has
+  more than two sources now, so "Dual" undersells what's actually being
+  shown (its original sense — the two-pane entries/hits layout — is still
+  accurate, but reads as a source count at a glance).
+- **Tests**: 73/73 functional, 58/58 static, 32/34 browser (same 2
+  pre-existing, unrelated portrait failures as every prior round).

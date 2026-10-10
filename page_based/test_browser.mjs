@@ -62,7 +62,7 @@ const bm = await page.locator('#bmRail').boundingBox();
 const guide = await page.locator('#guideRail').boundingBox();
 ok('the rail is a vertical column (tall, narrow)', bm.height > 500 && bm.width < 400,
    Math.round(bm.width) + 'x' + Math.round(bm.height));
-ok('it stands to the right of the guide rail', bm.x > guide.x,
+ok('it stands to the left of the guide rail', bm.x < guide.x,
    'guide.x=' + Math.round(guide.x) + ' bm.x=' + Math.round(bm.x));
 ok('the scroll arrows are stacked vertically', await page.evaluate(() => {
   const a = document.getElementById('bmUp').getBoundingClientRect();

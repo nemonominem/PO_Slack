@@ -73,6 +73,7 @@ globalThis.__app = { SOURCES, KIND_DEFS, KIND_ALIASES, entryKind, kindDef,
   availableKinds, kindListed, loadKindFilter, saveKindFilter, loadData, doSearch,
   displayResults, entryChipsHtml, buildTimelineSeries, entryMapKey, highlightWithHits,
   openEntryRef, rebuildThreadDownLinks, KIND_HUE, kindColor, guideDocToSource,
+  guideCitationLabel,
   toggleBookmark, isBookmarked, removeBookmark, openBookmark, renderBookmarks,
   bookmarksPayload, bmAppFor, refreshBookmarkToggles, openEntryByBmKey,
   get bookmarks(){ return bookmarks; },
@@ -265,6 +266,13 @@ ok('guideDocToSource resolves the Farrar-Fauci-Collins emails',
 ok('guideDocToSource leaves genuinely un-ingested docs non-clickable',
    app.guideDocToSource('Baric-Emails-2.17.21.pdf') === null,
    String(app.guideDocToSource('Baric-Emails-2.17.21.pdf')));
+ok('guideCitationLabel uses the document name when there is one',
+   app.guideCitationLabel({ doc: 'Proximal_Origin_Emails.pdf', kind: 'email', raw: 'x' }) === 'Proximal_Origin_Emails.pdf');
+ok('guideCitationLabel falls back to the citation\'s own text, footnote markers stripped',
+   app.guideCitationLabel({ doc: null, kind: 'social', raw: 'Tedros’ tweet, 11 Jan[^9]' }) === 'Tedros’ tweet, 11 Jan',
+   app.guideCitationLabel({ doc: null, kind: 'social', raw: 'Tedros’ tweet, 11 Jan[^9]' }));
+ok('guideCitationLabel falls back to the bare kind only as a last resort',
+   app.guideCitationLabel({ doc: null, kind: 'other', raw: '' }) === 'other');
 
 sec('Bookmarks');
 app.bookmarks = [];

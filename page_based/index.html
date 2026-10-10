@@ -288,13 +288,8 @@ body.layout-landscape .panel-resizer.dragging::before {
   background: #fff;
 }
 
-/* ── Layout: Portrait (panels stacked beside a vertical bookmark rail) ─ */
-body.layout-portrait .content-area { flex-direction: row; }
-body.layout-portrait .content-stack {
-  flex: 1; min-width: 0; min-height: 0;
-  display: flex; flex-direction: column; overflow: hidden;
-}
-body.layout-landscape .content-stack { display: contents; }
+/* ── Layout: Portrait (stacked) ───────────────────────────────────── */
+body.layout-portrait .content-area { flex-direction: column; }
 /* Horizontal timelines: keep panel short (~40% of prior 280px / 40vh) */
 body.layout-portrait .charts-panel {
   border-bottom: 2px solid var(--border);
@@ -343,13 +338,12 @@ body.layout-portrait .pdf-panel {
 }
 
 /* ── Bookmarks rail ────────────────────────────────────────────────────────
-   A vertical sidebar beside the P.O. guide, first child of .content-area,
-   in both layouts. Landscape: .content-stack is display:contents, so the
-   rail and the other panels are one row. Portrait: .content-stack is a
-   column beside the rail, so the rail stays a vertical column down the
-   left instead of a strip across the top. The list scrolls with explicit
-   ▲▼ buttons as well as the wheel, because the rail is often too short
-   for the wheel to be obvious. */
+   A plain column at the left of .workspace, before the P.O. guide rail --
+   .workspace never flips to column (same reason the guide rail is already
+   layout-independent), so this one set of rules covers both layouts with
+   no portrait override needed. The list scrolls with explicit ▲▼ buttons
+   as well as the wheel, because the rail is often too short for the wheel
+   to be obvious. */
 .bm-rail {
   width: 260px; flex-shrink: 0; background: var(--panel);
   border-right: 1px solid var(--border-2);
@@ -369,7 +363,7 @@ body.layout-portrait .pdf-panel {
   background: none; border: none; color: var(--muted); font-size: 16px;
   cursor: pointer; padding: 0 4px; line-height: 1; flex-shrink: 0; margin-left: auto;
 }
-.bm-body { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.bm-body { display: flex; flex-direction: column; align-items: stretch; flex: 1; min-height: 0; }
 .bm-rail.collapsed .bm-body { display: none; }
 .bm-rail.collapsed .bm-head {
   flex-direction: column; align-items: center; justify-content: flex-start;
@@ -390,7 +384,7 @@ body.layout-portrait .pdf-panel {
 }
 .bm-scroll-btns button:hover:not(:disabled) { color: var(--accent); background: #2a2a2a; }
 .bm-scroll-btns button:disabled { opacity: 0.3; cursor: default; }
-.bm-list { flex: 1; overflow-y: auto; padding: 6px; min-height: 0; }
+.bm-list { flex: 1; overflow-x: hidden; overflow-y: auto; padding: 6px; min-height: 0; }
 .bm-list::-webkit-scrollbar { width: 8px; }
 .bm-list::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 4px; }
 .bm-item {
@@ -428,36 +422,6 @@ body.layout-portrait .pdf-panel {
 }
 .bm-toggle:hover { color: var(--accent); }
 .bm-toggle.on { color: var(--accent); }
-
-/* Portrait: the rail stays a vertical column down the left, exactly as in
-   landscape (same width, same top-to-bottom list, same up/down arrows).
-   The panels in .content-stack are what stack. */
-body.layout-portrait .bm-rail {
-  width: 260px; flex-shrink: 0;
-  border-right: 1px solid var(--border-2); border-bottom: none;
-  max-height: none;
-}
-body.layout-portrait .bm-rail.collapsed {
-  width: 36px; min-width: 36px; max-width: 36px; max-height: none;
-}
-body.layout-portrait .bm-head { padding: 8px 12px; }
-body.layout-portrait .bm-rail.collapsed .bm-head {
-  flex-direction: column; align-items: center; justify-content: flex-start;
-  height: 100%; padding: 10px 4px; gap: 14px; border-bottom: none; border-right: none;
-}
-body.layout-portrait .bm-rail.collapsed .bm-head h3 {
-  writing-mode: vertical-rl; transform: rotate(180deg);
-  letter-spacing: 0.04em; font-size: 12px; flex: 0 0 auto;
-}
-body.layout-portrait .bm-body { flex-direction: column; align-items: stretch; }
-body.layout-portrait .bm-scroll-btns {
-  flex-direction: column; border-bottom: 1px solid var(--border-2); border-right: none;
-}
-body.layout-portrait .bm-scroll-btns button { width: 100%; padding: 5px 0; }
-body.layout-portrait .bm-list {
-  overflow-x: hidden; overflow-y: auto; padding: 6px; display: block;
-}
-body.layout-portrait .bm-file-bar { border-top: 1px solid var(--border-2); border-left: none; }
 
 /* ── Main content area ─────────────────────────────────────────────── */
 .content-area { flex: 1; display: flex; overflow: hidden; }
@@ -626,7 +590,7 @@ body.layout-portrait .bm-file-bar { border-top: 1px solid var(--border-2); borde
   display: flex; flex-direction: column; overflow: hidden;
   transition: width 0.18s ease, min-width 0.18s ease, max-width 0.18s ease;
 }
-/* Collapsed = thin vertical rail only (same mechanism as the Dual timeline) */
+/* Collapsed = thin vertical rail only (same mechanism as the Timeline) */
 .guide-rail.collapsed { width: 36px; min-width: 36px; max-width: 36px; }
 .guide-head {
   padding: 8px 12px; border-bottom: 1px solid var(--border-2); background: var(--panel-2);
@@ -649,7 +613,7 @@ body.layout-portrait .bm-file-bar { border-top: 1px solid var(--border-2); borde
 }
 .guide-rail.collapsed .guide-head h3 {
   writing-mode: vertical-rl; transform: rotate(180deg); letter-spacing: 0.04em; font-size: 12px;
-  flex: 0 0 auto;   /* no grow: the expand chevron stays at the top, like the Dual timeline's */
+  flex: 0 0 auto;   /* no grow: the expand chevron stays at the top, like the Timeline's */
 }
 .guide-rail.collapsed .guide-sub { display: none; }
 .guide-list { flex: 1; overflow-y: auto; padding: 6px; }
@@ -686,7 +650,8 @@ body.layout-portrait .bm-file-bar { border-top: 1px solid var(--border-2); borde
    unmistakably as its own zone -- the citation/link index for whatever is
    selected above -- rather than blending into the list. */
 .guide-detail {
-  border-top: 1px solid var(--border-2); border-left: 3px solid var(--accent);
+  border: 2px solid var(--accent); box-shadow: 0 0 10px rgba(233,69,96,0.25);
+  margin: 6px; border-radius: 6px;
   padding: 8px 10px; background: #3c3f44;
 }
 .guide-detail h4 { margin: 0 0 6px; font-size: 12px; color: var(--text); }
@@ -854,6 +819,35 @@ mark.hit-current {
 
 <div class="workspace" id="workspace">
 
+<!-- ── Bookmarks rail: your own saved pointers into the record ────────────
+     A plain column, left of everything else, in every layout -- same
+     mechanism as the P.O. guide rail right after it (workspace never
+     flips to column, so this ordering is layout-independent). -->
+<div class="bm-rail" id="bmRail">
+  <div class="bm-head" onclick="toggleBmRail()" title="Collapse / expand the bookmarks">
+    <h3>🔖 Bookmarks</h3>
+    <button type="button" class="collapse-btn" id="bmToggleBtn" title="Collapse bookmarks">◀</button>
+  </div>
+  <div class="bm-body">
+    <div class="bm-scroll-btns">
+      <button type="button" id="bmUp" onclick="bmScrollBy(-1)" title="Scroll the bookmarks up">▲</button>
+      <button type="button" id="bmDown" onclick="bmScrollBy(1)" title="Scroll the bookmarks down">▼</button>
+    </div>
+    <div class="bm-list" id="bmList" title="Your saved bookmarks. Click one to jump back to that box in the record; the ✕ removes it. Save writes a bookmarks JSON file you can keep or move to another app."></div>
+    <div class="bm-file-bar">
+      <button type="button" onclick="saveBookmarks()" title="Download the bookmarks as a JSON file">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3h10l4 4v14H5V3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 3.5V8h7V3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 21v-6h8v6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span>Save</span>
+      </button>
+      <button type="button" onclick="document.getElementById('bmFile').click()" title="Load a bookmarks file (replaces the current list)">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 7.5h5.2L10 5h11v13.5H3V7.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9.2v6.4M9.2 13l2.8 2.8L14.8 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Load</span>
+      </button>
+      <input type="file" id="bmFile" accept=".json,application/json" style="display:none" onchange="loadBookmarksFile(this)">
+    </div>
+  </div>
+</div>
+
 <!-- ── The P.O. guide: the article's own sections, and what each rests on ─── -->
 <div class="guide-rail" id="guideRail">
   <div class="guide-head" onclick="toggleGuideRail()" title="Collapse / expand the P.O. guide">
@@ -869,42 +863,10 @@ mark.hit-current {
 
 <div class="content-area">
 
-  <!-- ── Bookmarks rail: your own saved pointers into the record ────────────
-       Vertical in landscape and portrait alike (vertical column down the side
-       in every layout). Open on load, like the other rails. -->
-  <div class="bm-rail" id="bmRail">
-    <div class="bm-head" onclick="toggleBmRail()" title="Collapse / expand the bookmarks">
-      <h3>🔖 Bookmarks</h3>
-      <button type="button" class="collapse-btn" id="bmToggleBtn" title="Collapse bookmarks">◀</button>
-    </div>
-    <div class="bm-body">
-      <div class="bm-scroll-btns">
-        <button type="button" id="bmUp" onclick="bmScrollBy(-1)" title="Scroll the bookmarks up">▲</button>
-        <button type="button" id="bmDown" onclick="bmScrollBy(1)" title="Scroll the bookmarks down">▼</button>
-      </div>
-      <div class="bm-list" id="bmList" title="Your saved bookmarks. Click one to jump back to that box in the record; the ✕ removes it. Save writes a bookmarks JSON file you can keep or move to another app."></div>
-      <div class="bm-file-bar">
-        <button type="button" onclick="saveBookmarks()" title="Download the bookmarks as a JSON file">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3h10l4 4v14H5V3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 3.5V8h7V3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 21v-6h8v6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
-          <span>Save</span>
-        </button>
-        <button type="button" onclick="document.getElementById('bmFile').click()" title="Load a bookmarks file (replaces the current list)">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 7.5h5.2L10 5h11v13.5H3V7.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9.2v6.4M9.2 13l2.8 2.8L14.8 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Load</span>
-        </button>
-        <input type="file" id="bmFile" accept=".json,application/json" style="display:none" onchange="loadBookmarksFile(this)">
-      </div>
-    </div>
-  </div>
-
-  <!-- Other panels. display:contents in landscape (siblings of the rail);
-       a column beside the rail in portrait. -->
-  <div class="content-stack">
-
   <!-- ── Dual vertical timeline: entries LEFT | hits RIGHT, shared Y = time ── -->
   <div class="charts-panel" id="chartsPanel">
     <div class="panel-header" onclick="toggleCharts()">
-      <h2>📊 Dual timeline</h2>
+      <h2>📊 Timeline</h2>
       <div style="display:flex;align-items:center;gap:4px">
         <button onclick="event.stopPropagation();resetTimelineZoom()" title="Reset zoom (or double-click chart)" style="background:none;border:none;color:var(--muted);font-size:15px;cursor:pointer;padding:0 4px;flex-shrink:0">&#10226;</button>
         <button class="collapse-btn" id="chartsCollapseBtn" title="Collapse timeline">◀</button>
@@ -980,7 +942,6 @@ mark.hit-current {
     </div>
   </div>
 
-  </div><!-- /.content-stack -->
 </div><!-- /content-area -->
 </div><!-- /workspace -->
 
@@ -1097,6 +1058,20 @@ function guideDocToSource(doc, date) {
       d.indexOf('drafts-of-proximal-origin') !== -1) return 'sscp';
   if (d.indexOf('farrar-fauci-comms') !== -1) return 'farrar-fauci';
   return null;
+}
+
+// A citation with no document filename (a tweet, a press article, a quoted
+// Slack line with no PDF named) still has identifying text in the article
+// itself -- show that instead of the bare kind name, so "social" reads as
+// "Farrar's tweet, 8 Feb, 11:04 am UK" rather than nothing more specific
+// than its own category. Footnote markers ("[^85]") are the article's own
+// markdown syntax, stripped here for display only -- the stored `raw` keeps
+// them, unmodified, as the article actually wrote it. Used for both the
+// displayed label and its sort key, so the two never diverge.
+function guideCitationLabel(ev) {
+  if (ev.doc) return ev.doc;
+  const rawLabel = (ev.raw || '').replace(/\[\^[0-9A-Za-z_]+\]/g, '').trim();
+  return rawLabel || ev.kind;
 }
 
 let diaryData = null;                 // merged { total_entries, date_range, entries[] }
@@ -3811,11 +3786,14 @@ function selectGuideSection(id) {
   if (!s || !detail) return;
   let html = '<h4>' + escapeHtml(s.number || '') + ' ' + escapeHtml(s.title) + '</h4>';
   if (s.date_raw) html += '<div class="gd-ev">Section date: ' + escapeHtml(s.date_raw) + '</div>';
-  // Alphabetical by document name (case-insensitive, punctuation ignored) so
-  // the same document always sits in the same place in every section's list.
+  // Alphabetical by the same label every citation is shown under (case-
+  // insensitive, punctuation ignored) so the same document, or the same
+  // doc-less citation's own text, always sits in the same place in every
+  // section's list -- sorting by `doc || kind` while displaying something
+  // else entirely (guideCitationLabel) would make the list look unsorted.
   const evidence = (s.evidence || []).slice().sort(function(a, b) {
-    const na = (a.doc || a.kind || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ');
-    const nb = (b.doc || b.kind || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ');
+    const na = guideCitationLabel(a).toLowerCase().replace(/[^a-z0-9]+/g, ' ');
+    const nb = guideCitationLabel(b).toLowerCase().replace(/[^a-z0-9]+/g, ' ');
     return na < nb ? -1 : (na > nb ? 1 : 0);
   });
   evidence.forEach(function(ev) {
@@ -3823,15 +3801,7 @@ function selectGuideSection(id) {
     const page = (ev.pages && ev.pages.length) ? parseInt(ev.pages[0].split('-')[0], 10) : 1;
     const src = guideDocToSource(ev.doc, ev.date);
     const colour = kindColor(ev.kind);
-    // A citation with no document filename (a tweet, a press article, a
-    // quoted Slack line with no PDF named) still has identifying text in the
-    // article itself -- show that instead of the bare kind name, so "social"
-    // reads as "Farrar's tweet, 8 Feb, 11:04 am UK" rather than nothing more
-    // specific than its own category. Footnote markers ("[^85]") are the
-    // article's own markdown syntax, stripped here for display only -- the
-    // stored `raw` keeps them, unmodified, as the article actually wrote it.
-    const rawLabel = (ev.raw || '').replace(/\[\^[0-9A-Za-z_]+\]/g, '').trim();
-    const label = ev.doc || rawLabel || ev.kind;
+    const label = guideCitationLabel(ev);
     // The document name is coloured by its media and, where we hold the PDF, is
     // a link that opens it at the cited page in the reading area.
     const docHtml = src
@@ -4210,7 +4180,7 @@ function toggleGuideRail() {
 function initGuide() {
   const rail = document.getElementById('guideRail');
   if (!rail) return;
-  // Always start open, like the Dual timeline — no persisted collapsed state.
+  // Always start open, like the Timeline — no persisted collapsed state.
   rail.classList.remove('collapsed');
   const btn = document.getElementById('guideToggleBtn');
   if (btn) { btn.textContent = '◀'; btn.title = 'Collapse guide'; }
