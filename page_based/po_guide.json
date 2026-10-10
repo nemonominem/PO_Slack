@@ -78,7 +78,8 @@
    "heading": "1. CONTEXT: The fight for the sequence publication (Zhang, Holmes, Farrar, WHO)",
    "date": null,
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "Sets the scene: Farrar, Holmes and the WHO's early-January struggle to pry the virus sequence and reliable epidemiological data out of China."
   },
   {
    "id": "p1-1.1",
@@ -88,7 +89,8 @@
    "heading": "1.1 Sequencing of SARS-CoV-2 (5 Jan)",
    "date": "2020-01-05",
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "Zhang's team sequences the new virus from a patient sample on 5 Jan, with Eddie Holmes brought in from Sydney to help analyse it."
   },
   {
    "id": "p1-1.2",
@@ -139,7 +141,8 @@
      "source_part": "p1",
      "raw": "https://virological.org/t/novel-2019-coronavirus-genome/319"
     }
-   ]
+   ],
+   "summary": "China sits on the sequence for weeks despite WHO pressure, until Holmes and Zhang threaten a unilateral release; Farrar and the WHO's Van Kerkhove help force the issue, and Rambaut publishes it on virological.org on 11 Jan."
   },
   {
    "id": "p1-1.3",
@@ -159,7 +162,8 @@
      "source_part": "p1",
      "raw": "Tedros’ tweet, 11 Jan, 9:43 pm UK (time and date in the tweet are NZ)"
     }
-   ]
+   ],
+   "summary": "Tedros publicly thanks China for sharing the sequence ‘in a timely manner’ — rhetoric that papers over the WHO's actual struggle to extract it."
   },
   {
    "id": "p1-2",
@@ -169,7 +173,8 @@
    "heading": "2. CONTEXT: Questions about human transmission (Holmes, Farrar, WHO)",
    "date": null,
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "Sets up the WHO's next struggle: getting China to acknowledge human-to-human transmission amid a near-total data blackout."
   },
   {
    "id": "p1-2.1",
@@ -179,7 +184,8 @@
    "heading": "2.1 The absence of data",
    "date": null,
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "With the sequence out, the WHO's new problem is the complete absence of any newly reported case for the first two weeks of January."
   },
   {
    "id": "p1-2.1",
@@ -189,7 +195,8 @@
    "heading": "2.1 Farrar redirects some key concerns to the WHO (19 Jan)",
    "date": "2020-01-19",
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "Farrar directs emerging origin concerns toward the WHO rather than handling them himself."
   },
   {
    "id": "p1-2.2",
@@ -209,7 +216,8 @@
      "source_part": "p1",
      "raw": "WHO team at Tianhe (Wuhan) airport, source: https://archive.ph/oALoU"
     }
-   ]
+   ],
+   "summary": "An under-the-radar first WHO mission to Wuhan on 20–21 Jan turns out to be the WHO's best on-the-ground access for the entire following year."
   },
   {
    "id": "p1-2.3",
@@ -219,7 +227,8 @@
    "heading": "2.3 WHO meeting in Geneva to review the situation (22–23 Jan)",
    "date": "2020-01-23",
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "As Wuhan locks down and China admits human-to-human transmission, a WHO Geneva meeting on 22–23 Jan fails to agree on declaring a PHEIC."
   },
   {
    "id": "p1-2.4",
@@ -242,7 +251,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms.pdf, p. 174, 23 Jan 2020, and p. 173, 24 Jan 2020"
     }
-   ]
+   ],
+   "summary": "The WHO again declines to declare a PHEIC after Beijing signals it would read one as a vote of no confidence."
   },
   {
    "id": "p1-2.5",
@@ -264,7 +274,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms.pdf, p. 169–170 and 166, 28 Jan 2020, and WHO/World Bank GPMB Annual Report 2019, p.32"
     }
-   ]
+   ],
+   "summary": "The GPMB (with Farrar and Fauci as board members) circulates a draft statement still praising China's ‘transparency’ and ‘collaboration’, even as WHO staff privately fume over stonewalling."
   },
   {
    "id": "p1-2.6",
@@ -284,7 +295,8 @@
      "source_part": "p1",
      "raw": "source: WHO Situation report of 1 Feb 2020, with annotations"
     }
-   ]
+   ],
+   "summary": "Tedros travels to Beijing and lavishes praise on Xi Jinping's leadership in exchange for only a vague promise of future access — China's own reporting makes clear no return to Wuhan was actually agreed."
   },
   {
    "id": "p1-2.7",
@@ -294,7 +306,8 @@
    "heading": "2.7 Tedros praises China further back in Geneva (29 Jan)",
    "date": "2020-01-29",
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "Back in Geneva, Tedros piles on more praise for China, enough that the US ambassador privately warns him he is risking his own and the WHO's reputation."
   },
   {
    "id": "p1-2.8",
@@ -317,7 +330,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms.pdf, p. 157–162, 29 Jan 2020"
     }
-   ]
+   ],
+   "summary": "WHO's Michael Ryan loops in Fauci, Farrar and Redfield for an informal chat with Tedros; Farrar separately asks Fauci for his personal views on the virus's origin."
   },
   {
    "id": "p1-2.9",
@@ -346,7 +360,8 @@
      "source_part": "p1",
      "raw": "Source: YouTube"
     }
-   ]
+   ],
+   "summary": "Tedros finally declares a PHEIC on 30 Jan, but frames it explicitly as ‘not a vote of no confidence in China’ and again praises its transparency."
   },
   {
    "id": "p1-3",
@@ -356,7 +371,8 @@
    "heading": "3. Concerns about the sequence (unspecified US scientists, MI5, Farrar, Holmes)",
    "date": null,
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "Sets up the thread of early, non-public doubts about the genome's origin reaching Farrar via intelligence channels."
   },
   {
    "id": "p1-3.1",
@@ -421,7 +437,8 @@
      "source_part": "p1",
      "raw": "Trump’s tweet — 16 Mar 2020, 6:51 pm EST"
     }
-   ]
+   ],
+   "summary": "The first press mentions of a possible lab origin (Daily Mail, Washington Times, Washington Post) appear and are quickly dismissed; Sen. Cotton raises the question politically, while Trump keeps praising China for trade reasons."
   },
   {
    "id": "p1-3.2",
@@ -443,7 +460,8 @@
      "source_part": "p1",
      "raw": "Baric-TI-Transcript.pdf, p.120–121"
     }
-   ]
+   ],
+   "summary": "Baric later testifies he laid out three possible origins — natural, lab escape of a natural virus, or lab escape of an engineered one — at a classified BSEG meeting, though newly released documents suggest the actual date was 29 Jan."
   },
   {
    "id": "p1-3.3",
@@ -453,7 +471,8 @@
    "heading": "3.3 Farrar learns about some US scientist doubts (before 27 Jan)",
    "date": "2020-01-27",
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "Farrar learns, via unnamed ‘credible scientists’ in the US, that the virus looks ‘almost engineered to infect human cells’ — most likely relayed through his MI5 contacts rather than directly from the scientists themselves."
   },
   {
    "id": "p1-3.4",
@@ -482,7 +501,8 @@
      "source_part": "p1",
      "raw": "Andersen’s Transcript[^101], p. 51"
     }
-   ]
+   ],
+   "summary": "Farrar consults former MI5 chief Eliza Manningham-Buller and requests a burner phone the same day — Andersen later says he believes the original rumours came from UK intelligence."
   },
   {
    "id": "p1-3.5",
@@ -504,7 +524,8 @@
      "source_part": "p1",
      "raw": "2023.06.16-Andersen-Transcript.pdf, p. 50–51, and Proximal_Origin_Emails.pdf, p. 149, 28 Jul"
     }
-   ]
+   ],
+   "summary": "On his new burner phone, Farrar asks Holmes to check whether the virus could be a lab escape; Holmes looks at the data and sees nothing suspicious."
   },
   {
    "id": "p1-3.6",
@@ -535,7 +556,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf p.157, then p 158, 30 Jan (2 pm, UK time) and nih-foia-request-60081and-59096-march-production_redactedpdf-tobias-foia.pdf, p.219"
     }
-   ]
+   ],
+   "summary": "Farrar and UK chief scientific adviser Vallance hold a short call with Fauci whose purpose is unclear — Fauci later says under oath he has no memory of it."
   },
   {
    "id": "p1-3.7",
@@ -557,7 +579,8 @@
      "source_part": "p1",
      "raw": "2023.06.16-Andersen-Transcript.pdf, p. 51"
     }
-   ]
+   ],
+   "summary": "Andersen is separately asked to examine the genome, unaware yet of Holmes's own look days earlier."
   },
   {
    "id": "p1-3.8",
@@ -567,7 +590,8 @@
    "heading": "3.8 Andersen expresses his concerns to Holmes (31 Jan)",
    "date": "2022-01-31",
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "Andersen calls Holmes and flags three red flags in the genome: a near-perfect RBD, a furin cleavage site in a key spot, and the fact that the WIV had been doing exactly this kind of spike/RBD manipulation."
   },
   {
    "id": "p1-3.9",
@@ -598,7 +622,8 @@
      "source_part": "p1",
      "raw": "2023.06.16-Andersen-Transcript.pdf, p. 52"
     }
-   ]
+   ],
+   "summary": "Holmes tells Andersen he needs to check with his ‘handler’ before going further — Andersen later testifies this confirms Farrar was operating under instruction from UK intelligence."
   },
   {
    "id": "p1-3.10",
@@ -621,7 +646,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.2–3, 31 Jan 2020"
     }
-   ]
+   ],
+   "summary": "Farrar briefs Fauci on Andersen's concerns and sends him profiles of Andersen, Garry and Holmes as the scientists involved, asking Fauci to call Andersen directly."
   },
   {
    "id": "p1-3.11",
@@ -643,7 +669,8 @@
      "source_part": "p1",
      "raw": "2023.06.16-Andersen-Transcript.pdf, p.53–54"
     }
-   ]
+   ],
+   "summary": "Andersen walks Fauci through the furin cleavage site, the RBD and other oddities; Fauci suggests going public with a paper, but Andersen says it's too early and more analysis is needed."
   },
   {
    "id": "p1-3.12",
@@ -665,7 +692,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf p.154, just past midnight on 1 Feb UK time (31 Jan 2020 US time) showing who was in BCC on that call. and Proximal_Origin_Emails.pdf, p.49, 7 Feb 2020"
     }
-   ]
+   ],
+   "summary": "Fauci proposes widening the review to a larger group of scientists (the future ‘Tony Call’ group) and warns that if Andersen's concerns hold up, the FBI and MI5 would need to be alerted."
   },
   {
    "id": "p1-3.13",
@@ -722,7 +750,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.1, 31 Jan 2020 (afternoon, US time) and Spike"
     }
-   ]
+   ],
+   "summary": "Farrar splits the review into an ‘inner group’ (Holmes, Andersen, Garry, Rambaut — the eventual co-authors) and a separate ‘bounce-off’ group (Fouchier, Drosten, Koopmans, Farzan) to satisfy Fauci's request while keeping the core discussion tight; Baric and Daszak are deliberately excluded for having co-published with the WIV."
   },
   {
    "id": "p1-3.14",
@@ -765,7 +794,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf p. 4–5 31 Jan 10:32 pm EST"
     }
-   ]
+   ],
+   "summary": "Fauci forwards a Science article on the genome's clues to Farrar and Andersen; the piece also carries Daszak's public dismissal of Ebright's lab-origin conjecture."
   },
   {
    "id": "p1-4",
@@ -775,7 +805,8 @@
    "heading": "4. The Farrar call",
    "date": null,
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "Sets up the first full expert review call that Farrar convenes on 1 Feb to assess Andersen's concerns."
   },
   {
    "id": "p1-4.1",
@@ -831,7 +862,8 @@
      "source_part": "p1",
      "raw": "BuzzFeed-v.-HHS-20-cv-2704–7.19.21-Partial-Production_Redacted.pdf, p.22–23,and NIH-FOIA-Request-60130-Complete-Response.pdf, p.3–4, 27 Jan 2020"
     }
-   ]
+   ],
+   "summary": "NIH staff scramble from 23 Jan to brief Fauci on NIH-funded EcoHealth Alliance/WIV work, flagging Daszak's R01 grant with Baric as a collaborator."
   },
   {
    "id": "p1-4.2",
@@ -878,7 +910,8 @@
      "source_part": "p1",
      "raw": "A SARS-like cluster of circulating bat coronaviruses shows potential for human emergence, Baric and Shi paper (2015)"
     }
-   ]
+   ],
+   "summary": "Just after midnight, Fauci tells his deputy Auchincloss to drop everything and check the scope of NIH's funding relationship with China — Fauci later says this was the first he'd heard of it."
   },
   {
    "id": "p1-4.3",
@@ -953,7 +986,8 @@
      "source_part": "p1",
      "raw": "Baric-TI-Transcript.pdf, p.108–110"
     }
-   ]
+   ],
+   "summary": "Farrar formally invites the ‘core’ and ‘bounce-off’ groups to a 2pm call; later testimony confirms Tabak and Collins also joined, while whether Baric was quietly on the line at all remains unresolved."
   },
   {
    "id": "p1-4.4",
@@ -973,7 +1007,8 @@
      "source_part": "p1",
      "raw": "Fauci’s testimony (Nov 2022)"
     }
-   ]
+   ],
+   "summary": "Auchincloss reports back that Daszak's grant never needed the extra P3CO review for risky pathogen work — raising the separate question of whether that oversight framework was actually functioning."
   },
   {
    "id": "p1-4.5",
@@ -995,7 +1030,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.3, 1 Feb 2020, 1::52 pm EST"
     }
-   ]
+   ],
+   "summary": "Andersen creates the ‘project-wuhan_engineering’ Slack channel ahead of the call; Holmes previews that the lab-escape idea came from unnamed ‘others’ that Farrar had asked him to look into."
   },
   {
    "id": "p1-4.6",
@@ -1015,7 +1051,8 @@
      "source_part": "p1",
      "raw": "extract of the presentation for the call (‘Coronavirus sequence comparison[1].pdf’), extracted from farrar-fauci-comms-full.pdf"
     }
-   ]
+   ],
+   "summary": "Farrar circulates Rambaut/Andersen/Holmes's sequence-comparison slides, built around six Baric papers on exactly this kind of spike/RBD engineering — with Baric himself excluded from the call over his WIV ties."
   },
   {
    "id": "p1-4.7",
@@ -1048,7 +1085,8 @@
      "source_part": "p1",
      "raw": "NIH-FOIA-57153-Murray-Complete-Response.pdf, p. 48, 1 Feb 2020 and farrar-fauci-comms-full.pdf, p.123, 1 Feb 2020"
     }
-   ]
+   ],
+   "summary": "The call turns into open conflict: Fouchier and Drosten dismiss any engineering discussion outright, leaving the group unable to agree and concluding the question needs a broader, more formal international process."
   },
   {
    "id": "p1-4.8",
@@ -1068,7 +1106,8 @@
      "source_part": "p1",
      "raw": "Andersem, in 2023.06.16-Andersen-Transcript.pdf"
     }
-   ]
+   ],
+   "summary": "Fauci, backed by Collins, suggests the core group write up their doubts as a peer-reviewed paper — premature at this stage, though a confidential report instead would make sense."
   },
   {
    "id": "p1-4.9",
@@ -1090,7 +1129,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.4, 1 Feb 2020, during the call"
     }
-   ]
+   ],
+   "summary": "Andersen, Holmes and Rambaut hold their own private follow-up call, after which Andersen shares the first draft summary of their analysis on Slack."
   },
   {
    "id": "p1-4.10",
@@ -1121,7 +1161,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.153, 1 Feb 2020, 3:12 pm EST (for Collins’ email), and farrar-fauci-comms-full.pdf, p. 115, 3:50 pm (for Collins’ email)"
     }
-   ]
+   ],
+   "summary": "Farrar, Fauci, Collins, Vallance and Ferguson hold a short closed-door call of their own to agree next steps — Fauci later says he has no memory of it either."
   },
   {
    "id": "p1-4.11",
@@ -1143,7 +1184,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf, p. 112, 1 Feb 2020, 3:59 pm EST"
     }
-   ]
+   ],
+   "summary": "Farrar writes up a plan to hand the origin question to the WHO using carefully neutral wording, with no mention of Fauci's earlier suggestion to publish a paper."
   },
   {
    "id": "p1-4.12",
@@ -1163,7 +1205,8 @@
      "source_part": "p1",
      "raw": "email from 1 Feb 2020 (UK Time), Source: COVID Select Committee tweet"
     }
-   ]
+   ],
+   "summary": "Fauci briefs a group of HHS officials on the call's outcome, repeating Farrar's neutral framing (typo and all) and noting Farrar and Collins will approach Tedros the next day."
   },
   {
    "id": "p1-4.13",
@@ -1185,7 +1228,8 @@
      "source_part": "p1",
      "raw": "NIH-FOIA-57153-Murray-Complete-Response.pdf, p. 50–51, 1 Feb 2020, 2:29 pm EST"
     }
-   ]
+   ],
+   "summary": "An HHS email shows Fauci's contacts had already been discussing routing the origin question to the WHO before the Farrar call even happened."
   },
   {
    "id": "p1-4.14",
@@ -1205,7 +1249,8 @@
      "source_part": "p1",
      "raw": "extract from Spike"
     }
-   ]
+   ],
+   "summary": "Per Spike, the US, UK and Australian intelligence services are briefed on Andersen's findings after the call — Vallance, Holmes and Collins each updating their own country's services."
   },
   {
    "id": "p1-5",
@@ -1215,7 +1260,8 @@
    "heading": "5. Farrar and the ‘core-group’ compare notes and estimates",
    "date": null,
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "Sets up the core group's post-call exchange of probability estimates for a lab-related origin."
   },
   {
    "id": "p1-5.1",
@@ -1248,7 +1294,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf, p.107, 2 Feb 2020"
     }
-   ]
+   ],
+   "summary": "Despite Fouchier and Drosten's pushback, Farzan and Garry's updated estimates (Farzan: 60:40 to 70:30 for a lab accident) show passaging remains a live hypothesis."
   },
   {
    "id": "p1-5.2",
@@ -1270,7 +1317,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf, p.110 and 153–154, 2 Feb 2020"
     }
-   ]
+   ],
+   "summary": "Fouchier argues the question shouldn't go beyond the closed group at all unless a non-natural origin can be shown ‘beyond reasonable doubt’, warning it would otherwise harm science and China."
   },
   {
    "id": "p1-5.3",
@@ -1303,7 +1351,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf, p.112, 2 Feb 2020"
     }
-   ]
+   ],
+   "summary": "Farrar pushes back, arguing it's better to address the question openly now than let it fester and polarise later."
   },
   {
    "id": "p1-5.4",
@@ -1325,7 +1374,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf, p.109, 2 Feb 2020"
     }
-   ]
+   ],
+   "summary": "Rambaut also pushes back on Fouchier, arguing a non-natural origin could complicate containment and so needs urgent evaluation, not avoidance."
   },
   {
    "id": "p1-5.5",
@@ -1347,7 +1397,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf, p.108, 2 Feb 2020"
     }
-   ]
+   ],
+   "summary": "Farrar effectively closes the internal debate, telling the group discussions should pause until the question moves to the WHO — without revealing that HHS had already settled on that plan."
   },
   {
    "id": "p1-5.6",
@@ -1413,7 +1464,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.5, 2 Feb 2020, 6:42 pm EST"
     }
-   ]
+   ],
+   "summary": "On Slack, Andersen and Rambaut privately dismiss Fouchier and Drosten as ‘too conflicted to think about this issue straight’, agree to route around them going forward, and settle on writing the eventual report ‘erring on the side of extreme caution’ toward a natural-origin conclusion."
   },
   {
    "id": "p1-6",
@@ -1423,7 +1475,8 @@
    "heading": "6. Farrar shares the passaging hypothesis with the ‘Bethesda boys’",
    "date": null,
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "Sets up Farrar's follow-up push to Fauci and Collins, introducing passaging as the more realistic non-natural hypothesis after the call's clash."
   },
   {
    "id": "p1-6.1",
@@ -1445,7 +1498,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf, p.107–108, 2 Feb 2020"
     }
-   ]
+   ],
+   "summary": "Collins tells Farrar he's leaning toward a natural origin, echoing some of Fouchier's and Drosten's call-room arguments."
   },
   {
    "id": "p1-6.2",
@@ -1478,7 +1532,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf, p.106, 2 Feb 2020, ~7am EST"
     }
-   ]
+   ],
+   "summary": "Farrar reintroduces passaging (which Fouchier and Drosten hadn't actually addressed) and makes a prescient call: he's honestly at 50:50, and it will likely ‘remain grey’ unless there's access to the Wuhan lab."
   },
   {
    "id": "p1-6.3",
@@ -1500,7 +1555,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf, p.105–106, 2 Feb 2020"
     }
-   ]
+   ],
+   "summary": "Collins notes the passaging possibility and suggests Wellcome itself could pick up the question if the WHO is too slow; Fauci confirms waiting is not acceptable."
   },
   {
    "id": "p1-7",
@@ -1510,7 +1566,8 @@
    "heading": "7. In Parallel: Trying to get the WHO on-board",
    "date": null,
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "Sets up the parallel diplomatic push to get the WHO to formally take over the origin question."
   },
   {
    "id": "p1-7.1",
@@ -1543,7 +1600,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms.pdf, p.107–108 and 105, 2 Feb 2020"
     }
-   ]
+   ],
+   "summary": "Farrar struggles to reach Tedros or his chief of staff Schwartländer — a former WHO China representative — to get the broader WHO process moving."
   },
   {
    "id": "p1-7.2",
@@ -1565,7 +1623,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms.pdf, p.104, 2 Feb 2020, 5:47 pm UK and Rand Paul’s tweet, 2 Feb 2020, 7:16 pm UK."
     }
-   ]
+   ],
+   "summary": "Farrar, Schwartländer and Ryan agree to ask Tedros to take over a forensic investigation of the origin — the email explicitly frames this as getting ‘ahead of the science and the narrative’, which Fauci and Collins also worry the WHO will be too slow to deliver on."
   },
   {
    "id": "p1-7.3",
@@ -1585,7 +1644,8 @@
      "source_part": "p1",
      "raw": "_Spike_). The purpose of the call was to let the Chinese Government know, via a back channel, that some enquiries in the origin of the outbreak were likely, and that it would be essential to keep open links with China even if a non-natural origin was the conclusion."
     }
-   ]
+   ],
+   "summary": "Farrar calls former Chinese health minister Chen Zhu as a back-channel, to warn Beijing that an origin inquiry is coming and to keep communication open regardless of the outcome."
   },
   {
    "id": "p1-7.4",
@@ -1632,7 +1692,8 @@
      "source_part": "p1",
      "raw": "HHS_Garrett-Grigsby_12.30.21_production.pdf, p.22, 21, 2–3 Feb 2020"
     }
-   ]
+   ],
+   "summary": "HHS's Grigsby forwards the ‘Tedros Proposal’ document to the WHO's US liaison office, with State Department officials copied in."
   },
   {
    "id": "p1-8",
@@ -1642,7 +1703,8 @@
    "heading": "8. CONTEXT: US parallel effort: Track II via NASEM",
    "date": null,
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "Sets up a parallel US ‘Track II’ diplomatic channel, run through the National Academies (NASEM) and China's CAS, to get isolates and data out of China."
   },
   {
    "id": "p1-8.1",
@@ -1685,7 +1747,8 @@
      "source_part": "p1",
      "raw": "U.S. China dialogue on the Challenges of Emerging Infections, Laboratory Safety and Global Health Security, Galveston, Jan 16–18 2018, grant Oct 2016, NAS-CISAC SWOT analysis (Strengths, Weaknesses, Opportunities and Threats), Sep 2019"
     }
-   ]
+   ],
+   "summary": "Introduces NASEM's Track II science-diplomacy channel with China's CAS (led by LeDuc and Franz), already in use before the outbreak and which would shape the choices made around the Farrar call."
   },
   {
    "id": "p1-8.2",
@@ -1753,7 +1816,8 @@
      "source_part": "p1",
      "raw": "UTMB-LeDuc-batch-1.pdf, p.1448, p.672, 29 Jan 2020"
     }
-   ]
+   ],
+   "summary": "LeDuc flatters Chinese counterparts in a published Op-Ed while quietly asking for virus isolates; NASEM leadership formally backs the request, and by early February CAS's president signals the WIV is willing to share."
   },
   {
    "id": "p1-8.3",
@@ -1883,7 +1947,8 @@
      "source_part": "p1",
      "raw": "NASEM answer to OSTP — final — 6 Feb 2020v"
     }
-   ]
+   ],
+   "summary": "A White House-backed request to NASEM for data/isolates turns, at a 3 Feb expert meeting including Andersen, Daszak, Fauci and Baric, into a drafting fight over origin wording — Andersen reports Baric attacking him on the call as pushing ‘crackpot theories’ — ending with the final NASEM letter dodging the origin question entirely."
   },
   {
    "id": "p1-8.4",
@@ -1940,7 +2005,8 @@
      "source_part": "p1",
      "raw": "OSU-1.12.23–1265-pages.pdf, p. 319, 18 Feb 2020"
     }
-   ]
+   ],
+   "summary": "An ABC article misrepresents the NASEM exercise and quotes Fauci sounding confident the US could tell if the virus were lab-made — alarming China just as Chen Zhu's back-channel outreach was underway, and later fuelling Daszak's resentment of Andersen."
   },
   {
    "id": "p1-8.5",
@@ -1973,7 +2039,8 @@
      "source_part": "p1",
      "raw": "ED-20–01981-F-Dec-2022-Production-OPAQUE.pdf, p.142, 9 Feb 2020"
     }
-   ]
+   ],
+   "summary": "LeDuc tells NASEM's Hamburg an accidental release from the WIV's BSL-3 (though not its BSL-4) work is plausible, then hours later tells intelligence contacts an accidental release is ‘highly unlikely’."
   },
   {
    "id": "p1-8.6",
@@ -1995,7 +2062,8 @@
      "source_part": "p1",
      "raw": "UTMB-LeDuc-batch-1.pdf, p.806–809, 9 Feb 2020"
     }
-   ]
+   ],
+   "summary": "The same day, LeDuc presses the WIV's Yuan Zhiming to ‘fess up’ to any biosafety shortcomings — again at odds with what he'd just told US intelligence about the risk being low."
   },
   {
    "id": "p1-8.7",
@@ -2017,7 +2085,8 @@
      "source_part": "p1",
      "raw": "ED-20–01981-F-Dec-2022-Production-OPAQUE.pdf, p.61 and 209, 10–11 Feb 2020, and UTMB-LeDuc-batch-1.pdf, p.799, 12 Feb"
     }
-   ]
+   ],
+   "summary": "The OSTP/NASEM effort ends in fiasco: the public misreads it as an origin investigation, and China draws the opposite conclusion from Fauci's comments to the real ask for isolates."
   },
   {
    "id": "p1-8.8",
@@ -2051,7 +2120,8 @@
      "source_part": "p1",
      "raw": "UTMB-LeDuc-batch-1.pdf, p.2825, 18 May 2021"
     }
-   ]
+   ],
+   "summary": "China tells NASEM that isolate-sharing must now go through a WHO framework — leaving the US Track II effort, in LeDuc's own words, unimpressed by the WHO's ability to deliver."
   },
   {
    "id": "p1-9",
@@ -2061,7 +2131,8 @@
    "heading": "9. Writing a confidential report while waiting for the WHO",
    "date": null,
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "Turns to the drafting of the confidential report that would eventually become the published ‘Proximal Origin’ paper."
   },
   {
    "id": "p1-9.1",
@@ -2083,7 +2154,8 @@
      "source_part": "p1",
      "raw": "2023.06.16-Andersen-Transcript.pdf, p.55–56, Proximal_Origin_Slack.pdf, p.4, 1 Feb 2020, and DrSSCP-Drafts-of-Proximal-Origin.pdf, p.1, 1 Feb 2020 7:40pm EST"
     }
-   ]
+   ],
+   "summary": "Andersen's first one-page draft (1 Feb) flags the BamHI site and the furin cleavage site as the two potentially problematic features, discarding direct gene editing in favour of tissue-culture passage as the leading non-natural hypothesis."
   },
   {
    "id": "p1-9.2",
@@ -2105,7 +2177,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.5, 2 Feb 2020"
     }
-   ]
+   ],
+   "summary": "Garry joins the drafting Slack and Google Doc."
   },
   {
    "id": "p1-9.3",
@@ -2127,7 +2200,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.5, 2 Feb 2020"
     }
-   ]
+   ],
+   "summary": "Andersen reiterates that accidental escape is ‘highly likely’, not a fringe theory, even as the group narrows who gets to take part in the drafting."
   },
   {
    "id": "p1-10",
@@ -2137,7 +2211,8 @@
    "heading": "10. Drafts are shared with Fauci and Collins (4 Feb)",
    "date": "2020-02-04",
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "Sets up the moment the draft report is first shared outside the core group, with Fauci and Collins."
   },
   {
    "id": "p1-10.1",
@@ -2203,7 +2278,8 @@
      "source_part": "p1",
      "raw": "source: Baric-TI-Transcript.pdf[^241], extracts from p.20–21"
     }
-   ]
+   ],
+   "summary": "Andersen and Holmes finish a four-page draft ruling out deliberate engineering but leaving passaging open; Holmes shares it with Farrar (and from there Fauci and Collins) before Garry — asleep in the US — has even seen it."
   },
   {
    "id": "p1-10.2",
@@ -2247,7 +2323,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms.pdf, p.88–91, 4 Feb 2020, second version shared with Farrar and Collins"
     }
-   ]
+   ],
+   "summary": "Garry finally reviews the draft and flags likely pushback on passaging; the co-authors privately agree a non-natural origin is plausible but decide to ‘give the benefit of the doubt’ to nature in the writing, for political rather than scientific reasons."
   },
   {
    "id": "p1-10.3",
@@ -2269,7 +2346,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.30–31, 4 Feb 2020 9.59 to 10:56 pm UK, and farrar-fauci-comms.pdf, p.82–86, 5 Feb 2020,6:57 am UK"
     }
-   ]
+   ],
+   "summary": "Farrar reiterates that the furin cleavage site could be explained by passaging and flags undisclosed Fouchier lab data on forced FCS evolution."
   },
   {
    "id": "p1-10.4",
@@ -2373,7 +2451,8 @@
      "source_part": "p1",
      "raw": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA573298/, SSCP-Drafts-of-Proximal-Origin.pdf, p. 7"
     }
-   ]
+   ],
+   "summary": "New pangolin sequence data reaches Holmes via a contact already drafting a separate pangolin paper; the co-authors conclude these pangolin viruses are too distant to be SARS-CoV-2's direct progenitor."
   },
   {
    "id": "p1-10.5",
@@ -2404,7 +2483,8 @@
      "source_part": "p1",
      "raw": "v4 of P.O. draft — 3 Feb 2020"
     }
-   ]
+   ],
+   "summary": "The co-authors push to get hold of Farzan's and Fouchier's alluded-to lab data showing passaging can produce a furin site in a coronavirus — data that, tellingly, never surfaces in any P.O. draft or the final paper."
   },
   {
    "id": "p1-11",
@@ -2414,7 +2494,8 @@
    "heading": "11. WHO agrees to get involved (5–7 Feb)",
    "date": "2020-02-07",
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "The WHO formally agrees to take up the origin question."
   },
   {
    "id": "p1-11.1",
@@ -2436,7 +2517,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms.pdf, p.74, 5 Feb 2020 and p.73, 6 Feb 2020"
     }
-   ]
+   ],
+   "summary": "Farrar gets the WHO's go-ahead to convene an origins-and-evolution group at its meeting the following week."
   },
   {
    "id": "p1-11.2",
@@ -2446,7 +2528,8 @@
    "heading": "11.2 Koopmans and WHO recommend publication (4–5 Feb)",
    "date": "2020-02-05",
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "Both Koopmans and the WHO independently float publishing the report directly, as a way to pre-empt conspiracy theories."
   },
   {
    "id": "p1-11.3",
@@ -2456,7 +2539,8 @@
    "heading": "11.3 Farrar sounds out the co-drafters about publication (6 Feb)",
    "date": "2020-02-06",
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "Farrar asks the co-authors, via Holmes, whether they should publish the report rather than keep it confidential."
   },
   {
    "id": "p1-11.4",
@@ -2478,7 +2562,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.35, 5 Feb 2020 (7:36 am UK)"
     }
-   ]
+   ],
+   "summary": "Farrar also asks for the ‘conspiracy’ language in the draft to be dampened down and made ‘totally neutral’."
   },
   {
    "id": "p1-11.5",
@@ -2511,7 +2596,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.20, 6 Feb 2020"
     }
-   ]
+   ],
+   "summary": "On Slack, Garry, Rambaut and Andersen agree passaging remains genuinely plausible but worry publishing could be career-ending and hand the WHO a political problem; Rambaut recalls how badly a past scientist was pilloried for suggesting a lab escape."
   },
   {
    "id": "p1-12",
@@ -2521,7 +2607,8 @@
    "heading": "12. ‘Pangomania’ and a fateful decision (7 Feb)",
    "date": "2020-02-07",
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "Covers the day a (false) pangolin-virus homology claim and Farrar's decision to publish collide."
   },
   {
    "id": "p1-12.1",
@@ -2550,7 +2637,8 @@
      "source_part": "p1",
      "raw": "Reuters article updated on 8 Feb, published on 7 Feb, 4:53 pm UK"
     }
-   ]
+   ],
+   "summary": "A Chinese university (SCAU) announces pangolin coronaviruses ‘99% similar’ to SARS-CoV-2 — later shown to be false — triggering what Holmes calls ‘pangomania’; Koopmans publicly urges caution before the sequences are even published."
   },
   {
    "id": "p1-12.2",
@@ -2581,7 +2669,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms.pdf, p.66–71, 5 Feb 2020, third version shared with Farrar and Collins"
     }
-   ]
+   ],
+   "summary": "The draft's ‘Evolution of 2019-nCoV’ section is quietly renamed ‘Origin of 2019-nCoV’ — a wording shift the piece argues is misleading, since the content never actually addresses outbreak origin."
   },
   {
    "id": "p1-12.3",
@@ -2603,7 +2692,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms.pdf, p.64, 7 Feb 2020 (US time)"
     }
-   ]
+   ],
+   "summary": "Farrar flags the SCAU pangolin claim to Fauci and Collins as potentially the ‘missing link’; Collins immediately asks the key question — does it have the furin cleavage site?"
   },
   {
    "id": "p1-12.4",
@@ -2646,7 +2736,8 @@
      "source_part": "p1",
      "raw": "Carl Zimmer’s article in the NY Times[^283]"
     }
-   ]
+   ],
+   "summary": "Farrar decides to go for publication and starts planning author list, journals (Lancet, Nature, NEJM) and WHO sign-off with Holmes — a decision the piece argues both had their own separate reasons to want, independent of the still-unverified pangolin news."
   },
   {
    "id": "p1-12.5",
@@ -2690,7 +2781,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.21, 7 Feb 2020 (UK)"
     }
-   ]
+   ],
+   "summary": "Holmes shares Farrar's publication decision with the co-drafters, who push to see the actual SCAU pangolin sequence (and whether it has a furin site) before going any further."
   },
   {
    "id": "p1-13",
@@ -2700,7 +2792,8 @@
    "heading": "13. Sharing the decision with the Tony Call group and some pushback (8 Feb)",
    "date": "2020-02-08",
    "date_raw": null,
-   "evidence": []
+   "evidence": [],
+   "summary": "The full ‘Tony Call’ group sees the draft and the publication plan for the first time, and some of them push back."
   },
   {
    "id": "p1-13.1",
@@ -2722,7 +2815,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.57–58, 8 Feb 2020, 9:45 UK"
     }
-   ]
+   ],
+   "summary": "Farrar sends the draft to the wider call group (Fouchier, Koopmans, Drosten, Vallance, Ferguson, Golding) for the first time, asking whether it should be published."
   },
   {
    "id": "p1-13.2",
@@ -2744,7 +2838,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.55, 8 Feb 2020, 10:36 am UK"
     }
-   ]
+   ],
+   "summary": "Fouchier argues passaging should also be rejected, on the (weak) grounds that nobody is known to have worked on a close viral relative in China — an argument the piece says later shapes his and Daszak's move to torpedo the manuscript at Nature."
   },
   {
    "id": "p1-13.3",
@@ -2777,7 +2872,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.56, 8 Feb 2020, 12 pm UK"
     }
-   ]
+   ],
+   "summary": "Ferguson's feedback says the glycan shield isn't incompatible with passaging, and confirms Tabak (a glycoprotein expert) was on the original Farrar call."
   },
   {
    "id": "p1-13.4",
@@ -2799,7 +2895,8 @@
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf, p.62, 8 Feb 2020, 12.03 pm UK"
     }
-   ]
+   ],
+   "summary": "Vallance backs publication, leaning against passaging and wanting the glycans used as further evidence for a natural origin."
   },
   {
    "id": "p1-13.5",
@@ -2821,7 +2918,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.21, 8 Feb 2020"
     }
-   ]
+   ],
+   "summary": "Garry and Rambaut float offering SCAU a Nature co-publication (even the cover) in exchange for early access to their pangolin sequence."
   },
   {
    "id": "p1-13.6",
@@ -2865,7 +2963,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.22, p.22–23, 8 Feb 2020, ~6 pm UK"
     }
-   ]
+   ],
+   "summary": "The group debates whether the spike protein's glycan shield rules out passaging; Garry and Rambaut conclude it doesn't — the same immune-driven signature would appear either way."
   },
   {
    "id": "p1-13.7",
@@ -2887,7 +2986,8 @@
      "source_part": "p1",
      "raw": "Drosten, Proximal_Origin_Emails.pdf[^292], p.53, 8 Feb 2020, 19:52 UK, 20:52 Germany"
     }
-   ]
+   ],
+   "summary": "Drosten, largely absent since the original call, asks bluntly whether they're ‘debunking our own conspiracy theory’ — seemingly unaware the group had already shifted from engineering to the still-live passaging question."
   },
   {
    "id": "p1-13.8",
@@ -2909,7 +3009,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.52, 8 Feb 2020, 8.11 pm UK"
     }
-   ]
+   ],
+   "summary": "Holmes explains the point was always to also address a credible accidental-escape scenario, not just outlandish bioweapon claims — while the piece notes the group's key counter-argument (no known close relative in Chinese labs) rests on knowledge nobody actually had."
   },
   {
    "id": "p1-13.9",
@@ -2975,7 +3076,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.150, draft email to Jon Cohen"
     }
-   ]
+   ],
+   "summary": "Holmes, Farrar and (more hesitantly) Rambaut all say the pangolin data now has them leaning toward a natural origin and support publishing — reasoning the piece calls backwards, arguments assembled to fit a conclusion already reached."
   },
   {
    "id": "p1-13.10",
@@ -3008,7 +3110,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.23, 8 Feb 2020, 8:53 pm UK"
     }
-   ]
+   ],
+   "summary": "Privately on Slack, Andersen dismisses Fouchier's ‘no lab has passaged a close relative’ argument by noting exactly that kind of work was being done in Wuhan, in BSL-2."
   },
   {
    "id": "p1-13.11",
@@ -3041,7 +3144,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.23, 8 Feb 2020, 9:19 pm UK"
     }
-   ]
+   ],
+   "summary": "Andersen alone pushes back on publishing now, saying it's premature without seeing the actual pangolin data first."
   },
   {
    "id": "p1-13.12",
@@ -3074,7 +3178,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.23, 8 Feb 2020, 9:30 pm UK"
     }
-   ]
+   ],
+   "summary": "Farrar firmly overrules Andersen's objection and makes clear he wants a ‘conclusive’ statement that becomes ‘the go-to scientific statement to refer to’ — and the co-authors fall in line."
   },
   {
    "id": "p1-13.13",
@@ -3107,7 +3212,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.23, 8 Feb 2020, 10:52 pm UK"
     }
-   ]
+   ],
+   "summary": "Fouchier shifts his argument again, inadvertently conceding — as Andersen notes — that the sequence data alone can't actually rule out deliberate engineering either."
   },
   {
    "id": "p1-13.14",
@@ -3129,7 +3235,8 @@
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.24, 8 Feb 2020, 11:42 pm UK"
     }
-   ]
+   ],
+   "summary": "Holmes admits the ‘99%’ pangolin homology was actually ‘up to 99%’ and overstated — news that never reaches the wider call group or visibly changes the drafts, even as Farrar pushes ahead toward publication regardless."
   },
   {
    "id": "p2-preamble",
@@ -7221,11 +7328,11 @@
    "cites": 71,
    "pages_cited": [
     "1",
-    "2",
     "2-3",
+    "2",
     "3",
-    "4-5",
     "4",
+    "4-5",
     "16",
     "23",
     "25",
@@ -7239,8 +7346,8 @@
     "44",
     "46-48",
     "49-50",
-    "51",
     "51-52",
+    "51",
     "52",
     "53",
     "55",
@@ -7354,12 +7461,12 @@
     "43",
     "50-51",
     "51",
-    "52",
     "52-53",
+    "52",
     "53-54",
     "54",
-    "55-56",
     "55",
+    "55-56",
     "64",
     "146-147"
    ],

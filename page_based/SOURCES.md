@@ -24,7 +24,7 @@ pass (see STATUS.md).
 
 | Kind | Document | Citations | Pages cited | Date range | Link |
 |---|---|---|---|---|---|
-| transcript | `2023.06.16-Andersen-Transcript.pdf` | 12 | 43, 50-51, 51, 52, 52-53, 53-54, 54, 55-56, ... (11) | 2020-02-01 -> 2023-01-01 | - |
+| transcript | `2023.06.16-Andersen-Transcript.pdf` | 12 | 43, 50-51, 51, 52-53, 52, 53-54, 54, 55, ... (11) | 2020-02-01 -> 2023-01-01 | - |
 | transcript | `Baric-TI-Transcript.pdf` | 11 | 15, 18, 20-21, 22-23, 30-32, 108-110, 120-121, 121, ... (10) | - | [link](https://drive.google.com/file/d/173bZUapV1fbWx7KXqD30uynH1sQddOLs/view?usp=sharing) |
 | other | `1265-pages.pdf` | 9 | 1, 2, 274, 319, 343-344, 351, 355, 365-366, ... (9) | 2020-02-07 -> 2020-05-29 | [link](https://drive.google.com/file/d/1T2MNgjgjXKDGZFjyJvE2MO0RDb8UFcIe/view?usp=sharing) |
 | email | `Baric-Emails-2.17.21.pdf` | 8 | 102, 115-116, 118, 123, 128, 133, 181-182 | 2020-02-03 -> 2020-02-04 | - |

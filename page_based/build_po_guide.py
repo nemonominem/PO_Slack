@@ -343,6 +343,45 @@ def write_sources_md(guide, path):
         f.write("\n".join(L))
 
 
+SUMMARIES_PATH = os.path.join(HERE, "guide_summaries.json")
+
+
+def attach_summaries(all_sections):
+    """Merge hand-written 1-2 sentence summaries (guide_summaries.json) onto
+    their section.
+
+    Matched by POSITION within each part, not by `id` alone -- the article
+    itself repeats a section number at least once (p1-2.1 names two
+    different sections), so `id` cannot key a dict here. The `id` is still
+    checked at each position as a sanity guard: if the article has been
+    revised since a summary was written, the positions could now line up
+    with the wrong sections entirely, so a mismatch drops that part's
+    summaries (with a warning) rather than silently misattribute them.
+    """
+    if not os.path.exists(SUMMARIES_PATH):
+        return
+    with open(SUMMARIES_PATH, encoding="utf-8") as f:
+        by_part = json.load(f)
+    for pid, entries in by_part.items():
+        secs = [s for s in all_sections if s["part"] == pid and s["number"]]
+        if len(secs) != len(entries):
+            print("WARNING: guide_summaries.json has %d entries for %s, "
+                  "article now has %d sections -- summaries NOT applied "
+                  "(the article changed; re-pair by hand)"
+                  % (len(entries), pid, len(secs)), file=sys.stderr)
+            continue
+        mismatches = [(sec["id"], entry["id"]) for sec, entry in zip(secs, entries)
+                      if sec["id"] != entry["id"]]
+        if mismatches:
+            print("WARNING: guide_summaries.json for %s has %d id mismatch(es) "
+                  "(e.g. section %r vs summary %r) -- summaries NOT applied"
+                  % (pid, len(mismatches), mismatches[0][0], mismatches[0][1]),
+                  file=sys.stderr)
+            continue
+        for sec, entry in zip(secs, entries):
+            sec["summary"] = entry["summary"]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--article-dir", default=DEFAULT_ARTICLE_DIR)
@@ -366,6 +405,8 @@ def main():
 
     if missing:
         print("WARNING: missing article files:\n  " + "\n  ".join(missing), file=sys.stderr)
+
+    attach_summaries(all_sections)
 
     doc_urls = build_doc_urls(all_lines, footnotes)
     attach_urls(all_sections, doc_urls, footnotes)
