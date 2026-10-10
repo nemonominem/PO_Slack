@@ -677,16 +677,18 @@ body.layout-portrait .bm-file-bar { border-top: 1px solid var(--border-2); borde
 .guide-dot.d-email { color: var(--green); border-color: rgba(78,204,163,0.4); }
 .guide-dot.d-draft, .guide-dot.d-document { color: #ffd479; border-color: rgba(255,212,121,0.4); }
 .guide-dot.d-transcript { color: #d2a8ff; border-color: rgba(210,168,255,0.4); }
-/* The detail box below the section list: shown when a section is selected, so it
-   gets a darker grey (vs. the rail's #1a1a1a and header #222) plus an accent
-   left edge, so it reads as the result of the selection. */
+/* The detail box below the section list: shown when a section is selected.
+   The list above stays the rail's usual dark grey (#1a1a1a); this gets a
+   distinctly lighter "silver" grey plus an accent left edge, so it reads
+   unmistakably as its own zone -- the citation/link index for whatever is
+   selected above -- rather than blending into the list. */
 .guide-detail {
   border-top: 1px solid var(--border-2); border-left: 3px solid var(--accent);
-  padding: 8px 10px; background: #262626;
+  padding: 8px 10px; background: #3c3f44;
 }
 .guide-detail h4 { margin: 0 0 6px; font-size: 12px; color: var(--text); }
 .guide-detail .gd-ev {
-  font-size: 11px; color: var(--muted); padding: 4px 0; border-bottom: 1px solid var(--border);
+  font-size: 11px; color: var(--muted); padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
   line-height: 1.4;
 }
 .guide-detail .gd-ev:last-child { border-bottom: none; }
@@ -1076,9 +1078,17 @@ function kindColor(kind, alpha) {
 // app's source keys so a citation can open the right PDF in the reading area.
 // Only sources we actually hold as in-app PDFs resolve; everything else stays
 // a coloured label with a Drive link (or is queued for later ingestion).
-function guideDocToSource(doc) {
+function guideDocToSource(doc, date) {
   if (!doc) return null;
   const d = doc.toLowerCase();
+  if (d.indexOf('proximal_origin_slack') !== -1) {
+    // One filename, two separate PDFs with their own page numbering each --
+    // the citation's own date is what says which release a page number
+    // belongs to. Both parts cover 2020-04-30 (Part 2 opens on the same
+    // message Part 1 closes on), so that day and the handful of citations
+    // with no date at all default to Part 1.
+    return (date && date > '2020-04-30') ? 'part2' : 'part1';
+  }
   if (d.indexOf('proximal_origin_emails') !== -1) return 'po-emails';
   if (d.indexOf('sscp-drafts-of-proximal-origin') !== -1 ||
       d.indexOf('drafts-of-proximal-origin') !== -1) return 'sscp';
@@ -3807,7 +3817,7 @@ function selectGuideSection(id) {
   evidence.forEach(function(ev) {
     const pages = (ev.pages || []).length ? ' p.' + ev.pages.join(', p.') : '';
     const page = (ev.pages && ev.pages.length) ? parseInt(ev.pages[0].split('-')[0], 10) : 1;
-    const src = guideDocToSource(ev.doc);
+    const src = guideDocToSource(ev.doc, ev.date);
     const colour = kindColor(ev.kind);
     // The document name is coloured by its media and, where we hold the PDF, is
     // a link that opens it at the cited page in the reading area.

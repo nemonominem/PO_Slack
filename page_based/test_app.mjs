@@ -244,6 +244,15 @@ ok('kindColor matches timeline hue for email', /hsl\(150/.test(app.kindColor('em
    app.kindColor('email'));
 ok('kindColor gives grey for unclassified other', /hsl\(0, 0%/.test(app.kindColor('other')),
    app.kindColor('other'));
+ok('guideDocToSource resolves Slack citations to Part 1 before the handover day',
+   app.guideDocToSource('Proximal_Origin_Slack.pdf', '2020-02-11') === 'part1',
+   String(app.guideDocToSource('Proximal_Origin_Slack.pdf', '2020-02-11')));
+ok('guideDocToSource resolves Slack citations to Part 2 after the handover day',
+   app.guideDocToSource('Proximal_Origin_Slack.pdf', '2021-01-01') === 'part2',
+   String(app.guideDocToSource('Proximal_Origin_Slack.pdf', '2021-01-01')));
+ok('guideDocToSource defaults undated Slack citations to Part 1',
+   app.guideDocToSource('Proximal_Origin_Slack.pdf', null) === 'part1',
+   String(app.guideDocToSource('Proximal_Origin_Slack.pdf', null)));
 ok('guideDocToSource resolves the FOIA email PDF',
    app.guideDocToSource('Proximal_Origin_Emails.pdf') === 'po-emails',
    String(app.guideDocToSource('Proximal_Origin_Emails.pdf')));
