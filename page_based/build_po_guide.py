@@ -55,6 +55,10 @@ RE_HEADING = re.compile(r"^(#{2,4})\s+(.*)$")
 RE_SECTION_NO = re.compile(r"^(\d{1,2})\.(\d{1,2})\s+(.*)$")
 RE_TOP_NO = re.compile(r"^(\d{1,2})\.\s+(.*)$")
 RE_CAPTION = re.compile(r"^>\s*_(.+?)_\s*$")
+# some exports (unlike medium-to-md.py) render an image's caption as a bare
+# plain-text line directly under the image markdown, with no blockquote or
+# "source:" marker at all -- "![](...)\nProximal_Origin_Slack.pdf, p.3, ...".
+RE_IMAGE = re.compile(r"^!\[[^\]]*\]\([^)]*\)\s*$")
 RE_INLINE_SRC = re.compile(r"source:\s*(.+)$", re.I)
 RE_FOOTNOTE_DEF = re.compile(r"^\[\^([0-9A-Za-z_]+)\]:\s*(\S+)\s*$")
 RE_FOOTNOTE_REF = re.compile(r"\[\^([0-9A-Za-z_]+)\](?!:)")
@@ -65,8 +69,28 @@ RE_DOC_REF = re.compile(
 RE_PAGE = re.compile(
     r"\bpp?\.\s*([0-9]+(?:\s*[–\-—]\s*[0-9]+)?(?:\s*,\s*[0-9]+(?:\s*[–\-—]\s*[0-9]+)?)*)"
     r"(?!\s*(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b)", re.I)
-RE_DRIVE_FILE = re.compile(r"drive\.google\.com/file/d/([A-Za-z0-9_\-]+)")
-RE_DRIVE_FOLDER = re.compile(r"drive\.google\.com/drive/folders/([A-Za-z0-9_\-]+)")
+RE_DRIVE_FILE = re.compile(r"(?:https?://)?drive\.google\.com/file/d/([A-Za-z0-9_\-]+)")
+RE_DRIVE_FOLDER = re.compile(r"(?:https?://)?drive\.google\.com/drive/folders/([A-Za-z0-9_\-]+)")
+# some exports (browser "save as markdown" extensions, unlike medium-to-md.py)
+# backslash-escape markdown-significant punctuation so it isn't misread as
+# syntax: "1\. CONTEXT" for a heading, "Proximal\_Origin\_Emails.pdf" for a
+# plain filename. Unescaping up front, before any other regex runs, means
+# every existing regex below (heading numbers, document names, captions)
+# keeps working unchanged on both this format and medium-to-md.py's own.
+RE_MD_ESCAPE = re.compile(r"\\([\\`*_{}\[\]()#+.!>~-])")
+# the same exports write citations as inline markdown links --
+# "[doc.pdf](https://...)" -- instead of medium-to-md.py's footnote markers;
+# collapse them to their link text for the human-readable "raw" field once
+# the url/doc/page/date have already been pulled from the un-collapsed text.
+RE_MD_LINK = re.compile(r"\[([^\]]+)\]\([^)]+\)")
+
+
+def unescape_md(text):
+    return RE_MD_ESCAPE.sub(r"\1", text)
+
+
+def plain_text(text):
+    return RE_MD_LINK.sub(r"\1", text)
 
 MONTHS = {m: i for i, m in enumerate(
     ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
@@ -151,8 +175,12 @@ parse_date.year = 2020
 def first_url(text):
     m = RE_DRIVE_FILE.search(text) or RE_DRIVE_FOLDER.search(text)
     if m:
-        return m.group(0)
-    m = re.search(r"https?://\S+", text)
+        url = m.group(0)
+        return url if url.startswith("http") else "https://" + url
+    # stop at ')' too: inline-markdown-link exports write the url as
+    # "...](https://example.com/x), rest of caption" with no space before
+    # the closing paren, and a bare \S+ would swallow it into the url.
+    m = re.search(r"https?://[^\s)]+", text)
     return m.group(0) if m else None
 
 
@@ -184,7 +212,7 @@ def make_evidence(raw, part, refs=()):
         ("kind", classify(doc) if doc else classify_caption(raw)),
         ("pages", norm_pages(page_m.group(1)) if (page_m and doc) else []),
         ("date", parse_date(raw)), ("url", first_url(raw)),
-        ("source_part", part), ("raw", raw.strip()), ("_refs", list(refs)),
+        ("source_part", part), ("raw", plain_text(raw).strip()), ("_refs", list(refs)),
     ])
 
 
@@ -221,9 +249,12 @@ def parse_part(part_id, path):
         ensure()["evidence"].append(ev)
         evidence.append(ev)
 
-    lines = []
-    for line in read_lines(path):
-        lines.append(line)
+    lines = [unescape_md(line) for line in read_lines(path)]
+    n = len(lines)
+    consumed = set()   # caption lines already folded into the image above them
+    for i, line in enumerate(lines):
+        if i in consumed:
+            continue
         fm = RE_FOOTNOTE_DEF.match(line)
         if fm:
             footnote_urls[fm.group(1)] = fm.group(2)
@@ -250,6 +281,13 @@ def parse_part(part_id, path):
         if im:
             # markers adjacent to a filename on this very line, nothing looser
             add(im.group(1), [m.group(2) for m in RE_DOC_REF.finditer(line)])
+            continue
+        if RE_IMAGE.match(line) and i + 1 < n:
+            nxt = lines[i + 1]
+            if (nxt.strip() and not RE_HEADING.match(nxt)
+                    and not RE_IMAGE.match(nxt) and not nxt.lstrip().startswith(">")):
+                add(nxt)
+                consumed.add(i + 1)
     return sections, evidence, footnote_urls, lines
 
 

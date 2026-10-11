@@ -53,6 +53,7 @@ def main():
 
     result = {}
     misses = []
+    last_page = {pid: 1 for pid in PART_PDF}
     for s in guide["sections"]:
         if not s.get("number"):
             continue
@@ -64,21 +65,38 @@ def main():
         # didn't catch) breaks the match.
         needle = " ".join(heading_n.split()[:8])
         pages = page_texts.get(s["part"], [])
+        # A browser Print-to-PDF of the page also renders the article's own
+        # in-page table of contents near the top, which repeats every
+        # heading verbatim as a link -- searching from page 1 every time
+        # re-matches *that* instead of the real heading further in. Sections
+        # are visited in document order, so search forward from wherever the
+        # previous section in this part was found: the real body can only
+        # move forward, never back to the ToC.
+        start = last_page[s["part"]]
         found = None
-        for i, text in enumerate(pages, start=1):
-            if text.startswith(needle):
+        for i in range(start, len(pages) + 1):
+            if pages[i - 1].startswith(needle):
                 found = i
                 break
         if found is None:
             # Fall back to "needle appears anywhere on the page" -- some
             # sections' first page opens on something other than the
             # heading itself (a block quote, a pull-image caption).
+            for i in range(start, len(pages) + 1):
+                if needle in pages[i - 1]:
+                    found = i
+                    break
+        if found is None:
+            # Last resort: the heading moved earlier than the previous
+            # section's page (should not happen in a well-formed export) --
+            # search the whole document rather than leave it unmapped.
             for i, text in enumerate(pages, start=1):
-                if needle in text:
+                if text.startswith(needle) or needle in text:
                     found = i
                     break
         if found is not None:
             result[s["id"]] = found
+            last_page[s["part"]] = found
         else:
             misses.append(s["id"])
 

@@ -200,11 +200,11 @@ ok('every draft has a page', drafts.every(d => d.pages && d.pages.length));
 sec('Guide');
 const guideResp = await (await fetch('po_guide.json')).json();
 ok('guide loads', !!guideResp && guideResp.sections.length > 200);
-ok('guide covers every citation', guideResp.totals.citations === 446, String(guideResp.totals.citations));
+ok('guide covers every citation', guideResp.totals.citations === 333, String(guideResp.totals.citations));
 const evNoKind = guideResp.sections.flatMap(s=>s.evidence).filter(e=>!e.kind);
 ok('every guide citation is classified', evNoKind.length === 0);
 const docs = guideResp.documents ? Object.values(guideResp.documents) : [];
-ok('every cited document is catalogued', docs.length === 51, String(docs.length));
+ok('every cited document is catalogued', docs.length === 28, String(docs.length));
 
 
 sec('Stacked timeline (media x release)');

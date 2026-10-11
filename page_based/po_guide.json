@@ -17,7 +17,7 @@
    "url": "https://medium.com/p/626c72cb05b1",
    "file": "full-text-proximal-origin-a-tragicomedy-of-our-times-draft-p1-626c72cb05b1.md",
    "sections": 108,
-   "evidence": 180
+   "evidence": 132
   },
   {
    "id": "p2",
@@ -25,7 +25,7 @@
    "url": "https://medium.com/p/39b90684bf01",
    "file": "full-text-proximal-origin-a-tragicomedy-of-our-times-draft-p2-39b90684bf01.md",
    "sections": 105,
-   "evidence": 265
+   "evidence": 200
   }
  ],
  "generated_from": "/Users/gillesdemaneuf/Work/Edition/medium_to_md/examples/proximal_origin",
@@ -89,7 +89,26 @@
    "heading": "1.1 Sequencing of SARS-CoV-2 (5 Jan)",
    "date": "2020-01-05",
    "date_raw": null,
-   "evidence": [],
+   "evidence": [
+    {
+     "doc": null,
+     "kind": "other",
+     "pages": [],
+     "date": "2022-01-01",
+     "url": "https://theconversation.com/the-covid-lab-leak-theory-is-dead-heres-how-we-know-the-virus-came-from-a-wuhan-market-188163",
+     "source_part": "p1",
+     "raw": "Eddie Holmes, quoted in “The COVID lab leak theory is dead. Here’s how we know the virus came from a Wuhan market”, The Conversation, Aug 2022."
+    },
+    {
+     "doc": null,
+     "kind": "link",
+     "pages": [],
+     "date": "2020-02-26",
+     "url": "https://bit.ly/Caixin_SARS2_NGS",
+     "source_part": "p1",
+     "raw": "‘New coronavirus gene sequencing traceability: when the alarm was sounded’, Caixin, 26 Feb 2020"
+    }
+   ],
    "summary": "Zhang's team sequences the new virus from a patient sample on 5 Jan, with Eddie Holmes brought in from Sydney to help analyse it."
   },
   {
@@ -119,9 +138,18 @@
       "30-32"
      ],
      "date": null,
-     "url": "https://drive.google.com/file/d/18G0YpLT3q0E6y0mTP2_ncLdImM1DNGs6/view?usp=drive_link",
+     "url": "https://drive.google.com/file/d/173bZUapV1fbWx7KXqD30uynH1sQddOLs",
      "source_part": "p1",
-     "raw": "Baric-TI-Transcript.pdf[^47], extracts from p.30–32"
+     "raw": "Baric-TI-Transcript.pdf, extracts from p.30–32"
+    },
+    {
+     "doc": null,
+     "kind": "other",
+     "pages": [],
+     "date": null,
+     "url": "https://apnews.com/article/united-nations-health-ap-top-news-virus-outbreak-public-health-3c061794970661042b18d5aeaaed9fae",
+     "source_part": "p1",
+     "raw": "AP article"
     },
     {
      "doc": null,
@@ -152,17 +180,7 @@
    "heading": "1.3 Dr. Tedros thanks China for sharing the sequence ‘in a timely manner’ (11 Jan)",
    "date": "2020-01-11",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": null,
-     "kind": "social",
-     "pages": [],
-     "date": "2020-01-11",
-     "url": null,
-     "source_part": "p1",
-     "raw": "Tedros’ tweet, 11 Jan, 9:43 pm UK (time and date in the tweet are NZ)"
-    }
-   ],
+   "evidence": [],
    "summary": "Tedros publicly thanks China for sharing the sequence ‘in a timely manner’ — rhetoric that papers over the WHO's actual struggle to extract it."
   },
   {
@@ -188,22 +206,22 @@
    "summary": "With the sequence out, the WHO's new problem is the complete absence of any newly reported case for the first two weeks of January."
   },
   {
-   "id": "p1-2.1",
+   "id": "p1-2.2",
    "part": "p1",
-   "number": "2.1",
+   "number": "2.2",
    "title": "Farrar redirects some key concerns to the WHO (19 Jan)",
-   "heading": "2.1 Farrar redirects some key concerns to the WHO (19 Jan)",
+   "heading": "2.2 Farrar redirects some key concerns to the WHO (19 Jan)",
    "date": "2020-01-19",
    "date_raw": null,
    "evidence": [],
    "summary": "Farrar directs emerging origin concerns toward the WHO rather than handling them himself."
   },
   {
-   "id": "p1-2.2",
+   "id": "p1-2.3",
    "part": "p1",
-   "number": "2.2",
+   "number": "2.3",
    "title": "First WHO visit to China (20–21 Jan)",
-   "heading": "2.2 First WHO visit to China (20–21 Jan)",
+   "heading": "2.3 First WHO visit to China (20–21 Jan)",
    "date": "2020-01-21",
    "date_raw": null,
    "evidence": [
@@ -220,69 +238,44 @@
    "summary": "An under-the-radar first WHO mission to Wuhan on 20–21 Jan turns out to be the WHO's best on-the-ground access for the entire following year."
   },
   {
-   "id": "p1-2.3",
+   "id": "p1-2.4",
    "part": "p1",
-   "number": "2.3",
+   "number": "2.4",
    "title": "WHO meeting in Geneva to review the situation (22–23 Jan)",
-   "heading": "2.3 WHO meeting in Geneva to review the situation (22–23 Jan)",
+   "heading": "2.4 WHO meeting in Geneva to review the situation (22–23 Jan)",
    "date": "2020-01-23",
    "date_raw": null,
    "evidence": [],
    "summary": "As Wuhan locks down and China admits human-to-human transmission, a WHO Geneva meeting on 22–23 Jan fails to agree on declaring a PHEIC."
   },
   {
-   "id": "p1-2.4",
-   "part": "p1",
-   "number": "2.4",
-   "title": "No PHEIC declared — Farrar contacts Fauci (23 Jan)",
-   "heading": "2.4 No PHEIC declared — Farrar contacts Fauci (23 Jan)",
-   "date": "2020-01-23",
-   "date_raw": null,
-   "evidence": [
-    {
-     "doc": "farrar-fauci-comms.pdf",
-     "kind": "email",
-     "pages": [
-      "174",
-      "2"
-     ],
-     "date": "2020-01-23",
-     "url": null,
-     "source_part": "p1",
-     "raw": "farrar-fauci-comms.pdf, p. 174, 23 Jan 2020, and p. 173, 24 Jan 2020"
-    }
-   ],
-   "summary": "The WHO again declines to declare a PHEIC after Beijing signals it would read one as a vote of no confidence."
-  },
-  {
    "id": "p1-2.5",
    "part": "p1",
    "number": "2.5",
-   "title": "Global Preparedness Monitoring Board steps in (27–28 Jan)",
-   "heading": "2.5 Global Preparedness Monitoring Board steps in (27–28 Jan)",
-   "date": "2020-01-28",
+   "title": "No PHEIC declared — Farrar contacts Fauci (23 Jan)",
+   "heading": "2.5 No PHEIC declared — Farrar contacts Fauci (23 Jan)",
+   "date": "2020-01-23",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "farrar-fauci-comms.pdf",
-     "kind": "email",
-     "pages": [
-      "169-170"
-     ],
-     "date": "2020-01-28",
-     "url": null,
-     "source_part": "p1",
-     "raw": "farrar-fauci-comms.pdf, p. 169–170 and 166, 28 Jan 2020, and WHO/World Bank GPMB Annual Report 2019, p.32"
-    }
-   ],
-   "summary": "The GPMB (with Farrar and Fauci as board members) circulates a draft statement still praising China's ‘transparency’ and ‘collaboration’, even as WHO staff privately fume over stonewalling."
+   "evidence": [],
+   "summary": "The WHO again declines to declare a PHEIC after Beijing signals it would read one as a vote of no confidence."
   },
   {
    "id": "p1-2.6",
    "part": "p1",
    "number": "2.6",
+   "title": "Global Preparedness Monitoring Board steps in (27–28 Jan)",
+   "heading": "2.6 Global Preparedness Monitoring Board steps in (27–28 Jan)",
+   "date": "2020-01-28",
+   "date_raw": null,
+   "evidence": [],
+   "summary": "The GPMB (with Farrar and Fauci as board members) circulates a draft statement still praising China's ‘transparency’ and ‘collaboration’, even as WHO staff privately fume over stonewalling."
+  },
+  {
+   "id": "p1-2.7",
+   "part": "p1",
+   "number": "2.7",
    "title": "Dr. Tedros is in Beijing to try to negotiate WHO access (end Jan)",
-   "heading": "2.6 Dr. Tedros is in Beijing to try to negotiate WHO access (end Jan)",
+   "heading": "2.7 Dr. Tedros is in Beijing to try to negotiate WHO access (end Jan)",
    "date": null,
    "date_raw": null,
    "evidence": [
@@ -299,46 +292,43 @@
    "summary": "Tedros travels to Beijing and lavishes praise on Xi Jinping's leadership in exchange for only a vague promise of future access — China's own reporting makes clear no return to Wuhan was actually agreed."
   },
   {
-   "id": "p1-2.7",
-   "part": "p1",
-   "number": "2.7",
-   "title": "Tedros praises China further back in Geneva (29 Jan)",
-   "heading": "2.7 Tedros praises China further back in Geneva (29 Jan)",
-   "date": "2020-01-29",
-   "date_raw": null,
-   "evidence": [],
-   "summary": "Back in Geneva, Tedros piles on more praise for China, enough that the US ambassador privately warns him he is risking his own and the WHO's reputation."
-  },
-  {
    "id": "p1-2.8",
    "part": "p1",
    "number": "2.8",
-   "title": "WHO reaches out to Fauci, Farrar and Redfield (29–30 Jan)",
-   "heading": "2.8 WHO reaches out to Fauci, Farrar and Redfield (29–30 Jan)",
-   "date": "2020-01-30",
+   "title": "Tedros praises China further back in Geneva (29 Jan)",
+   "heading": "2.8 Tedros praises China further back in Geneva (29 Jan)",
+   "date": "2020-01-29",
    "date_raw": null,
    "evidence": [
     {
-     "doc": "farrar-fauci-comms.pdf",
-     "kind": "email",
-     "pages": [
-      "157-162",
-      "2"
-     ],
-     "date": "2020-01-29",
-     "url": null,
+     "doc": null,
+     "kind": "other",
+     "pages": [],
+     "date": null,
+     "url": "http://epaper.chinadaily.com.cn/a/202001/31/WS5e33568ea310a2fabb7a1d06.html",
      "source_part": "p1",
-     "raw": "farrar-fauci-comms.pdf, p. 157–162, 29 Jan 2020"
+     "raw": "China Daily: page 1 and page 2 (with infographics)"
     }
    ],
-   "summary": "WHO's Michael Ryan loops in Fauci, Farrar and Redfield for an informal chat with Tedros; Farrar separately asks Fauci for his personal views on the virus's origin."
+   "summary": "Back in Geneva, Tedros piles on more praise for China, enough that the US ambassador privately warns him he is risking his own and the WHO's reputation."
   },
   {
    "id": "p1-2.9",
    "part": "p1",
    "number": "2.9",
+   "title": "WHO reaches out to Fauci, Farrar and Redfield (29–30 Jan)",
+   "heading": "2.9 WHO reaches out to Fauci, Farrar and Redfield (29–30 Jan)",
+   "date": "2020-01-30",
+   "date_raw": null,
+   "evidence": [],
+   "summary": "WHO's Michael Ryan loops in Fauci, Farrar and Redfield for an informal chat with Tedros; Farrar separately asks Fauci for his personal views on the virus's origin."
+  },
+  {
+   "id": "p1-2.10",
+   "part": "p1",
+   "number": "2.10",
    "title": "Dr. Tedros praises China while declaring a Health Emergency (30 Jan)",
-   "heading": "2.9 Dr. Tedros praises China while declaring a Health Emergency (30 Jan)",
+   "heading": "2.10 Dr. Tedros praises China while declaring a Health Emergency (30 Jan)",
    "date": "2020-01-30",
    "date_raw": null,
    "evidence": [
@@ -347,18 +337,18 @@
      "kind": "other",
      "pages": [],
      "date": "2020-01-30",
-     "url": null,
+     "url": "https://www.who.int/director-general/speeches/detail/who-director-general-s-statement-on-ihr-emergency-committee-on-novel-coronavirus-(2019-ncov",
      "source_part": "p1",
-     "raw": "Dr. Tedros, 30 Jan 2020, IHR Emergency Committee on Novel Coronavirus[^81]"
+     "raw": "Dr. Tedros, 30 Jan 2020, IHR Emergency Committee on Novel Coronavirus#:~:text=On%20the%20contrary%2C%20WHO%20continues,to%20protecting%20the%20world's%20people.)"
     },
     {
      "doc": null,
      "kind": "other",
      "pages": [],
      "date": null,
-     "url": null,
+     "url": "https://youtu.be/P26BTkx-9nk?si=1nSimuizzJnlkiWx&t=223",
      "source_part": "p1",
-     "raw": "Source: YouTube"
+     "raw": "YouTube"
     }
    ],
    "summary": "Tedros finally declares a PHEIC on 30 Jan, but frames it explicitly as ‘not a vote of no confidence in China’ and again praises its transparency."
@@ -385,12 +375,30 @@
    "evidence": [
     {
      "doc": null,
+     "kind": "other",
+     "pages": [],
+     "date": "2020-01-23",
+     "url": "https://www.dailymail.co.uk/health/article-7922379/Chinas-lab-studying-SARS-Ebola-Wuhan-outbreaks-center.html",
+     "source_part": "p1",
+     "raw": "Daily Mail article, 23 Jan 2020 (~5 pm EST)"
+    },
+    {
+     "doc": null,
+     "kind": "press",
+     "pages": [],
+     "date": "2020-01-26",
+     "url": "https://www.washingtontimes.com/news/2020/jan/26/coronavirus-link-to-china-biowarfare-program-possi/",
+     "source_part": "p1",
+     "raw": "Washington Time article, 26 Jan 2020"
+    },
+    {
+     "doc": null,
      "kind": "press",
      "pages": [],
      "date": "2020-01-29",
-     "url": null,
+     "url": "https://www.washingtonpost.com/world/2020/01/29/experts-debunk-fringe-theory-linking-chinas-coronavirus-weapons-research/",
      "source_part": "p1",
-     "raw": "Washington Post article[^85], 29 Jan"
+     "raw": "Washington Post article, 29 Jan"
     },
     {
      "doc": null,
@@ -405,15 +413,6 @@
      "doc": null,
      "kind": "social",
      "pages": [],
-     "date": "2020-01-30",
-     "url": null,
-     "source_part": "p1",
-     "raw": "Sen Cotton’s tweet, 30 Jan 2020 (US time)"
-    },
-    {
-     "doc": null,
-     "kind": "social",
-     "pages": [],
      "date": "2020-02-07",
      "url": null,
      "source_part": "p1",
@@ -423,10 +422,19 @@
      "doc": null,
      "kind": "other",
      "pages": [],
-     "date": null,
-     "url": null,
+     "date": "2020-02-07",
+     "url": "https://x.com/realDonaldTrump/status/1225728756456808448?s=20",
      "source_part": "p1",
-     "raw": "Pres. Trump, Feb 29, press conference[^92]"
+     "raw": "Pres. Trump, 7 Feb 2020,_ [_Tweet__]"
+    },
+    {
+     "doc": null,
+     "kind": "other",
+     "pages": [],
+     "date": null,
+     "url": "https://trumpwhitehouse.archives.gov/briefings-statements/remarks-president-trump-vice-president-pence-members-coronavirus-task-force-press-conference-2/",
+     "source_part": "p1",
+     "raw": "Pres. Trump, Feb 29, press conference"
     },
     {
      "doc": null,
@@ -444,9 +452,9 @@
    "id": "p1-3.2",
    "part": "p1",
    "number": "3.2",
-   "title": "Baric lays out some concerns (25 or 26 Jan)",
-   "heading": "3.2 Baric lays out some concerns (25 or 26 Jan)",
-   "date": "2020-01-26",
+   "title": "Baric lays out some concerns (29 Jan)",
+   "heading": "3.2 Baric lays out some concerns (29 Jan)",
+   "date": "2020-01-29",
    "date_raw": null,
    "evidence": [
     {
@@ -456,7 +464,7 @@
       "120-121"
      ],
      "date": null,
-     "url": "https://drive.google.com/file/d/18G0YpLT3q0E6y0mTP2_ncLdImM1DNGs6/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Baric-TI-Transcript.pdf, p.120–121"
     }
@@ -471,7 +479,17 @@
    "heading": "3.3 Farrar learns about some US scientist doubts (before 27 Jan)",
    "date": "2020-01-27",
    "date_raw": null,
-   "evidence": [],
+   "evidence": [
+    {
+     "doc": null,
+     "kind": "other",
+     "pages": [],
+     "date": null,
+     "url": "https://drive.google.com/file/d/1E_UJCSq-fsQV5HvxAEmhMLVrQQAzSiem",
+     "source_part": "p1",
+     "raw": "Andersen’s Transcript, p. 51"
+    }
+   ],
    "summary": "Farrar learns, via unnamed ‘credible scientists’ in the US, that the virus looks ‘almost engineered to infect human cells’ — most likely relayed through his MI5 contacts rather than directly from the scientists themselves."
   },
   {
@@ -488,18 +506,18 @@
      "kind": "other",
      "pages": [],
      "date": null,
-     "url": null,
+     "url": "https://profilebooks.com/work/spike/",
      "source_part": "p1",
-     "raw": "Jeremy Farrar, as recorded in his book, Spike[^100]"
+     "raw": "Jeremy Farrar, as recorded in his book, Spike"
     },
     {
      "doc": null,
      "kind": "other",
      "pages": [],
      "date": null,
-     "url": null,
+     "url": "https://drive.google.com/file/d/1E_UJCSq-fsQV5HvxAEmhMLVrQQAzSiem",
      "source_part": "p1",
-     "raw": "Andersen’s Transcript[^101], p. 51"
+     "raw": "Andersen’s Transcript, p. 51"
     }
    ],
    "summary": "Farrar consults former MI5 chief Eliza Manningham-Buller and requests a burner phone the same day — Andersen later says he believes the original rumours came from UK intelligence."
@@ -512,19 +530,7 @@
    "heading": "3.5 Farrar talks to Holmes on his new burner phone (27 Jan)",
    "date": "2020-01-27",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "2023.06.16-Andersen-Transcript.pdf",
-     "kind": "transcript",
-     "pages": [
-      "50-51"
-     ],
-     "date": "2020-07-28",
-     "url": null,
-     "source_part": "p1",
-     "raw": "2023.06.16-Andersen-Transcript.pdf, p. 50–51, and Proximal_Origin_Emails.pdf, p. 149, 28 Jul"
-    }
-   ],
+   "evidence": [],
    "summary": "On his new burner phone, Farrar asks Holmes to check whether the virus could be a lab escape; Holmes looks at the data and sees nothing suspicious."
   },
   {
@@ -544,17 +550,6 @@
      "url": null,
      "source_part": "p1",
      "raw": "Fauci’s testimony of 23 Nov 2022, p. 84–85"
-    },
-    {
-     "doc": "farrar-fauci-comms-full.pdf",
-     "kind": "email",
-     "pages": [
-      "157"
-     ],
-     "date": "2022-01-30",
-     "url": null,
-     "source_part": "p1",
-     "raw": "farrar-fauci-comms-full.pdf p.157, then p 158, 30 Jan (2 pm, UK time) and nih-foia-request-60081and-59096-march-production_redactedpdf-tobias-foia.pdf, p.219"
     }
    ],
    "summary": "Farrar and UK chief scientific adviser Vallance hold a short call with Fauci whose purpose is unclear — Fauci later says under oath he has no memory of it."
@@ -607,9 +602,9 @@
      "kind": "other",
      "pages": [],
      "date": null,
-     "url": null,
+     "url": "https://drive.google.com/file/d/1E_UJCSq-fsQV5HvxAEmhMLVrQQAzSiem",
      "source_part": "p1",
-     "raw": "Andersen’s transcript[^105], p. 52"
+     "raw": "Andersen’s transcript, p. 52"
     },
     {
      "doc": "2023.06.16-Andersen-Transcript.pdf",
@@ -633,20 +628,7 @@
    "heading": "3.10 Garry joins Andersen and Holmes — Farrar updates Fauci (31 Jan, ~6 pm EST)",
    "date": "2022-01-31",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "2-3",
-      "3"
-     ],
-     "date": "2020-01-31",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf, p.2–3, 31 Jan 2020"
-    }
-   ],
+   "evidence": [],
    "summary": "Farrar briefs Fauci on Andersen's concerns and sends him profiles of Andersen, Garry and Holmes as the scientists involved, asking Fauci to call Andersen directly."
   },
   {
@@ -655,21 +637,9 @@
    "number": "3.11",
    "title": "Andersen briefs Fauci (31 Jan, ~7 pm EST)",
    "heading": "3.11 Andersen briefs Fauci (31 Jan, ~7 pm EST)",
-   "date": "2020-01-31",
+   "date": "2022-01-31",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "2023.06.16-Andersen-Transcript.pdf",
-     "kind": "transcript",
-     "pages": [
-      "53-54"
-     ],
-     "date": "2023-01-01",
-     "url": null,
-     "source_part": "p1",
-     "raw": "2023.06.16-Andersen-Transcript.pdf, p.53–54"
-    }
-   ],
+   "evidence": [],
    "summary": "Andersen walks Fauci through the furin cleavage site, the RBD and other oddities; Fauci suggests going public with a paper, but Andersen says it's too early and more analysis is needed."
   },
   {
@@ -678,21 +648,9 @@
    "number": "3.12",
    "title": "Fauci suggest a call with a larger group of experts (31 Jan, 7:38 pm EST)",
    "heading": "3.12 Fauci suggest a call with a larger group of experts (31 Jan, 7:38 pm EST)",
-   "date": "2020-01-31",
+   "date": "2022-01-31",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "farrar-fauci-comms-full.pdf",
-     "kind": "email",
-     "pages": [
-      "154"
-     ],
-     "date": "2020-01-31",
-     "url": null,
-     "source_part": "p1",
-     "raw": "farrar-fauci-comms-full.pdf p.154, just past midnight on 1 Feb UK time (31 Jan 2020 US time) showing who was in BCC on that call. and Proximal_Origin_Emails.pdf, p.49, 7 Feb 2020"
-    }
-   ],
+   "evidence": [],
    "summary": "Fauci proposes widening the review to a larger group of scientists (the future ‘Tony Call’ group) and warns that if Andersen's concerns hold up, the FBI and MI5 would need to be alerted."
   },
   {
@@ -701,7 +659,7 @@
    "number": "3.13",
    "title": "Constitution of the ‘bounce-off’ group (31 Jan–1 Feb morning)",
    "heading": "3.13 Constitution of the ‘bounce-off’ group (31 Jan–1 Feb morning)",
-   "date": "2020-01-31",
+   "date": "2022-01-31",
    "date_raw": null,
    "evidence": [
     {
@@ -712,9 +670,9 @@
       "3"
      ],
      "date": "2020-01-31",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf,[^108] p.1, 31 Jan 2020 8:05 pm EST"
+     "raw": "Proximal_Origin_Emails.pdf, p.1, 31 Jan 2020 8:05 pm EST"
     },
     {
      "doc": "Baric-Emails-2.17.21.pdf",
@@ -726,29 +684,6 @@
      "url": null,
      "source_part": "p1",
      "raw": "Baric-Emails-2.17.21.pdf, p.102"
-    },
-    {
-     "doc": "2023.06.16-Andersen-Transcript.pdf",
-     "kind": "transcript",
-     "pages": [
-      "52-53"
-     ],
-     "date": "2023-01-01",
-     "url": null,
-     "source_part": "p1",
-     "raw": "2023.06.16-Andersen-Transcript.pdf, p.52–53"
-    },
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "1",
-      "3"
-     ],
-     "date": "2020-01-31",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf, p.1, 31 Jan 2020 (afternoon, US time) and Spike"
     }
    ],
    "summary": "Farrar splits the review into an ‘inner group’ (Holmes, Andersen, Garry, Rambaut — the eventual co-authors) and a separate ‘bounce-off’ group (Fouchier, Drosten, Koopmans, Farzan) to satisfy Fauci's request while keeping the core discussion tight; Baric and Daszak are deliberately excluded for having co-published with the WIV."
@@ -779,9 +714,9 @@
       "3"
      ],
      "date": "2020-01-31",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf[^110] p. 4, 31 Jan 10:32 pm EST"
+     "raw": "Proximal_Origin_Emails.pdf p. 4, 31 Jan 10:32 pm EST"
     },
     {
      "doc": "Proximal_Origin_Emails.pdf",
@@ -790,7 +725,7 @@
       "4-5"
      ],
      "date": "2020-01-31",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf p. 4–5 31 Jan 10:32 pm EST"
     }
@@ -816,53 +751,7 @@
    "heading": "4.1 Information about EHA work with WIV received by Fauci by 31 Jan",
    "date": "2020-01-31",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "00692.pdf",
-     "kind": "other",
-     "pages": [
-      "47-48",
-      "2"
-     ],
-     "date": "2020-01-23",
-     "url": null,
-     "source_part": "p1",
-     "raw": "JW-v-HHS-NIAID-Wuhan-June-2021–00692.pdf, p.47–48, 23 Jan 2020, and Fauci-Part-1-Transcript.pdf, p. 209–210."
-    },
-    {
-     "doc": "103122-partial-production.pdf",
-     "kind": "other",
-     "pages": [
-      "108-109"
-     ],
-     "date": "2018-01-01",
-     "url": null,
-     "source_part": "p1",
-     "raw": "Excerpt of the FACTS file (tracking w/r State Department Clearance), year 5 of R01AI120964 (2018) as per tobias-v-hhs-21-cv-02805–103122-partial-production.pdf, p. 108–109"
-    },
-    {
-     "doc": "00692.pdf",
-     "kind": "other",
-     "pages": [
-      "145-146"
-     ],
-     "date": "2020-01-27",
-     "url": null,
-     "source_part": "p1",
-     "raw": "JW-v-HHS-NIAID-Wuhan-June-2021–00692.pdf, p.145–146 and p.151, 27 Jan 2020"
-    },
-    {
-     "doc": "7.19.21-Partial-Production_Redacted.pdf",
-     "kind": "other",
-     "pages": [
-      "22-23"
-     ],
-     "date": "2020-01-27",
-     "url": null,
-     "source_part": "p1",
-     "raw": "BuzzFeed-v.-HHS-20-cv-2704–7.19.21-Partial-Production_Redacted.pdf, p.22–23,and NIH-FOIA-Request-60130-Complete-Response.pdf, p.3–4, 27 Jan 2020"
-    }
-   ],
+   "evidence": [],
    "summary": "NIH staff scramble from 23 Jan to brief Fauci on NIH-funded EcoHealth Alliance/WIV work, flagging Daszak's R01 grant with Baric as a collaborator."
   },
   {
@@ -888,9 +777,9 @@
      "kind": "other",
      "pages": [],
      "date": "2022-01-01",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1kZHT0VL-YTHCCfcu1H9I4W_jzd2kpY2_",
      "source_part": "p1",
-     "raw": "Fauci’s testimony[^119] of Nov 2022"
+     "raw": "Fauci’s testimony of Nov 2022"
     },
     {
      "doc": null,
@@ -900,15 +789,6 @@
      "url": null,
      "source_part": "p1",
      "raw": "Fauci’s email to Auchincloss, 1 Feb (half past midnight) (source not clear)"
-    },
-    {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": "2015-01-01",
-     "url": null,
-     "source_part": "p1",
-     "raw": "A SARS-like cluster of circulating bat coronaviruses shows potential for human emergence, Baric and Shi paper (2015)"
     }
    ],
    "summary": "Just after midnight, Fauci tells his deputy Auchincloss to drop everything and check the scope of NIH's funding relationship with China — Fauci later says this was the first he'd heard of it."
@@ -935,21 +815,10 @@
      "doc": "Proximal_Origin_Emails.pdf",
      "kind": "email",
      "pages": [
-      "155-156"
-     ],
-     "date": "2020-02-01",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf, p.155–156, 1 Feb 2020"
-    },
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
       "153"
      ],
      "date": "2020-02-01",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.153, 1 Feb 2020, 4 pm EST"
     },
@@ -963,28 +832,6 @@
      "url": null,
      "source_part": "p1",
      "raw": "Tabak-TI-Transcript.pdf, p. 17"
-    },
-    {
-     "doc": "Baric-TI-Transcript.pdf",
-     "kind": "transcript",
-     "pages": [
-      "15"
-     ],
-     "date": null,
-     "url": "https://drive.google.com/file/d/18G0YpLT3q0E6y0mTP2_ncLdImM1DNGs6/view?usp=drive_link",
-     "source_part": "p1",
-     "raw": "Baric-TI-Transcript.pdf, p.15, then p.109–110"
-    },
-    {
-     "doc": "Baric-TI-Transcript.pdf",
-     "kind": "transcript",
-     "pages": [
-      "108-110"
-     ],
-     "date": null,
-     "url": "https://drive.google.com/file/d/18G0YpLT3q0E6y0mTP2_ncLdImM1DNGs6/view?usp=drive_link",
-     "source_part": "p1",
-     "raw": "Baric-TI-Transcript.pdf, p.108–110"
     }
    ],
    "summary": "Farrar formally invites the ‘core’ and ‘bounce-off’ groups to a 2pm call; later testimony confirms Tabak and Collins also joined, while whether Baric was quietly on the line at all remains unresolved."
@@ -997,17 +844,7 @@
    "heading": "4.4 Fauci gets some feedback from Auchincloss (11:47 am EST)",
    "date": null,
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": "2022-01-01",
-     "url": null,
-     "source_part": "p1",
-     "raw": "Fauci’s testimony (Nov 2022)"
-    }
-   ],
+   "evidence": [],
    "summary": "Auchincloss reports back that Daszak's grant never needed the extra P3CO review for risky pathogen work — raising the separate question of whether that oversight framework was actually functioning."
   },
   {
@@ -1026,7 +863,7 @@
       "3"
      ],
      "date": "2020-02-01",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.3, 1 Feb 2020, 1::52 pm EST"
     }
@@ -1062,30 +899,7 @@
    "heading": "4.7 ‘Derision down the phone line’ (1 Feb, call: 2 to 3 pm EST)",
    "date": "2020-02-01",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Proximal_Origin_Slack.pdf",
-     "kind": "slack",
-     "pages": [
-      "4"
-     ],
-     "date": "2020-02-01",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Slack.pdf, p.4, 1 Feb 2020, during the call, and extract from Spike"
-    },
-    {
-     "doc": "NIH-FOIA-57153-Murray-Complete-Response.pdf",
-     "kind": "other",
-     "pages": [
-      "48"
-     ],
-     "date": "2020-02-01",
-     "url": null,
-     "source_part": "p1",
-     "raw": "NIH-FOIA-57153-Murray-Complete-Response.pdf, p. 48, 1 Feb 2020 and farrar-fauci-comms-full.pdf, p.123, 1 Feb 2020"
-    }
-   ],
+   "evidence": [],
    "summary": "The call turns into open conflict: Fouchier and Drosten dismiss any engineering discussion outright, leaving the group unable to agree and concluding the question needs a broader, more formal international process."
   },
   {
@@ -1125,7 +939,7 @@
       "4"
      ],
      "date": "2020-02-01",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.4, 1 Feb 2020, during the call"
     }
@@ -1149,17 +963,6 @@
      "url": null,
      "source_part": "p1",
      "raw": "Fauci’s testimony of 23 Nov 2022, p. 92–93"
-    },
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "153"
-     ],
-     "date": "2020-02-01",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf, p.153, 1 Feb 2020, 3:12 pm EST (for Collins’ email), and farrar-fauci-comms-full.pdf, p. 115, 3:50 pm (for Collins’ email)"
     }
    ],
    "summary": "Farrar, Fauci, Collins, Vallance and Ferguson hold a short closed-door call of their own to agree next steps — Fauci later says he has no memory of it either."
@@ -1170,7 +973,7 @@
    "number": "4.11",
    "title": "Farrar proposes a way out via the WHO (1 Feb, 3:59 pm EST)",
    "heading": "4.11 Farrar proposes a way out via the WHO (1 Feb, 3:59 pm EST)",
-   "date": "2020-02-01",
+   "date": "2022-02-01",
    "date_raw": null,
    "evidence": [
     {
@@ -1290,6 +1093,17 @@
       "107"
      ],
      "date": "2020-02-02",
+     "url": "https://drive.google.com/file/d/1l04ZiPQ09bp4_x4SkJ-vCpbzhg35EVWu",
+     "source_part": "p1",
+     "raw": "farrar-fauci-comms-full.pdf, p.107, 2 Feb 2020"
+    },
+    {
+     "doc": "farrar-fauci-comms-full.pdf",
+     "kind": "email",
+     "pages": [
+      "107"
+     ],
+     "date": "2020-02-02",
      "url": null,
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf, p.107, 2 Feb 2020"
@@ -1305,19 +1119,7 @@
    "heading": "5.2 Fouchier argues against bothering the WHO with the question (2 Feb, 8:30am UK)",
    "date": "2020-02-02",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "farrar-fauci-comms-full.pdf",
-     "kind": "email",
-     "pages": [
-      "110"
-     ],
-     "date": "2020-02-02",
-     "url": null,
-     "source_part": "p1",
-     "raw": "farrar-fauci-comms-full.pdf, p.110 and 153–154, 2 Feb 2020"
-    }
-   ],
+   "evidence": [],
    "summary": "Fouchier argues the question shouldn't go beyond the closed group at all unless a non-natural origin can be shown ‘beyond reasonable doubt’, warning it would otherwise harm science and China."
   },
   {
@@ -1336,9 +1138,9 @@
       "112"
      ],
      "date": "2020-02-02",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1l04ZiPQ09bp4_x4SkJ-vCpbzhg35EVWu",
      "source_part": "p1",
-     "raw": "farrar-fauci-comms-full.pdf[^166], p.112, 2 Feb 2020"
+     "raw": "farrar-fauci-comms-full.pdf, p.112, 2 Feb 2020"
     },
     {
      "doc": "farrar-fauci-comms-full.pdf",
@@ -1416,7 +1218,7 @@
       "5"
      ],
      "date": "2020-02-01",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.5, 1 Feb 2020, 10:42 pm EST"
     },
@@ -1427,7 +1229,7 @@
       "5"
      ],
      "date": "2020-02-02",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.5, 2 Feb 2020, 9:44 am EST"
     },
@@ -1438,7 +1240,7 @@
       "5"
      ],
      "date": "2020-02-02",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.5, 2 Feb 2020, 11:10 am EST"
     },
@@ -1449,7 +1251,7 @@
       "5"
      ],
      "date": "2020-02-02",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.5, 2 Feb 2020, 11:47 am EST"
     },
@@ -1460,7 +1262,7 @@
       "5"
      ],
      "date": "2020-02-02",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.5, 2 Feb 2020, 6:42 pm EST"
     }
@@ -1517,9 +1319,9 @@
       "106"
      ],
      "date": "2020-02-02",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1l04ZiPQ09bp4_x4SkJ-vCpbzhg35EVWu",
      "source_part": "p1",
-     "raw": "farrar-fauci-comms-full.pdf[^177], p.106, 2 Feb 2020, ~7am EST"
+     "raw": "farrar-fauci-comms-full.pdf, p.106, 2 Feb 2020, ~7am EST"
     },
     {
      "doc": "farrar-fauci-comms-full.pdf",
@@ -1543,19 +1345,7 @@
    "heading": "6.3 Fauci and Collins reply to Farrar (2 Feb, 7:03am & 10:30am EST)",
    "date": "2020-02-02",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "farrar-fauci-comms-full.pdf",
-     "kind": "email",
-     "pages": [
-      "105-106"
-     ],
-     "date": "2020-02-02",
-     "url": null,
-     "source_part": "p1",
-     "raw": "farrar-fauci-comms-full.pdf, p.105–106, 2 Feb 2020"
-    }
-   ],
+   "evidence": [],
    "summary": "Collins notes the passaging possibility and suggests Wellcome itself could pick up the question if the WHO is too slow; Fauci confirms waiting is not acceptable."
   },
   {
@@ -1588,17 +1378,6 @@
      "url": null,
      "source_part": "p1",
      "raw": "2023.06.16-Andersen-Transcript.pdf p.64"
-    },
-    {
-     "doc": "farrar-fauci-comms.pdf",
-     "kind": "email",
-     "pages": [
-      "107-108"
-     ],
-     "date": "2020-02-02",
-     "url": null,
-     "source_part": "p1",
-     "raw": "farrar-fauci-comms.pdf, p.107–108 and 105, 2 Feb 2020"
     }
    ],
    "summary": "Farrar struggles to reach Tedros or his chief of staff Schwartländer — a former WHO China representative — to get the broader WHO process moving."
@@ -1611,19 +1390,7 @@
    "heading": "7.2 Farrar’s call with WHO — The ‘Tedros Proposal’ (2 Feb, ~ 5 pm UK)",
    "date": "2020-02-02",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "farrar-fauci-comms.pdf",
-     "kind": "email",
-     "pages": [
-      "104"
-     ],
-     "date": "2020-02-02",
-     "url": null,
-     "source_part": "p1",
-     "raw": "farrar-fauci-comms.pdf, p.104, 2 Feb 2020, 5:47 pm UK and Rand Paul’s tweet, 2 Feb 2020, 7:16 pm UK."
-    }
-   ],
+   "evidence": [],
    "summary": "Farrar, Schwartländer and Ryan agree to ask Tedros to take over a forensic investigation of the origin — the email explicitly frames this as getting ‘ahead of the science and the narrative’, which Fauci and Collins also worry the WHO will be too slow to deliver on."
   },
   {
@@ -1663,34 +1430,9 @@
       "23"
      ],
      "date": "2020-02-02",
-     "url": null,
+     "url": "https://drive.google.com/file/d/16fDGqcKgY1NzDiZcBzrzUzKlP9752RuD",
      "source_part": "p1",
-     "raw": "HHS_Garrett-Grigsby_12.30.21_production.pdf[^195], p.23, 2 Feb 2020"
-    },
-    {
-     "doc": "HHS_Garrett-Grigsby_12.30.21_production.pdf",
-     "kind": "other",
-     "pages": [
-      "21-23",
-      "2"
-     ],
-     "date": "2020-02-03",
-     "url": null,
-     "source_part": "p1",
-     "raw": "HHS_Garrett-Grigsby_12.30.21_production.pdf, p.21–23, 2–3 Feb 2020"
-    },
-    {
-     "doc": "HHS_Garrett-Grigsby_12.30.21_production.pdf",
-     "kind": "other",
-     "pages": [
-      "22",
-      "21",
-      "2"
-     ],
-     "date": "2020-02-03",
-     "url": null,
-     "source_part": "p1",
-     "raw": "HHS_Garrett-Grigsby_12.30.21_production.pdf, p.22, 21, 2–3 Feb 2020"
+     "raw": "HHS_Garrett-Grigsby_12.30.21_production.pdf, p.23, 2 Feb 2020"
     }
    ],
    "summary": "HHS's Grigsby forwards the ‘Tedros Proposal’ document to the WHO's US liaison office, with State Department officials copied in."
@@ -1714,40 +1456,7 @@
    "heading": "8.1 Introduction: Track II diplomacy, NASEM and CAS",
    "date": null,
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "01981-March-2022-Production_Redacted_Upload.pdf",
-     "kind": "other",
-     "pages": [
-      "45-48"
-     ],
-     "date": "2022-01-01",
-     "url": null,
-     "source_part": "p1",
-     "raw": "ED-20–01981-March-2022-Production_Redacted_Upload.pdf, p.45–48, Jul 2019.and op38, Jun 2019"
-    },
-    {
-     "doc": "01981-March-2022-Production_Redacted_Upload.pdf",
-     "kind": "other",
-     "pages": [
-      "38",
-      "40"
-     ],
-     "date": "2022-01-01",
-     "url": null,
-     "source_part": "p1",
-     "raw": "ED-20–01981-March-2022-Production_Redacted_Upload.pdf, p.38, 40, Jun 2019.and p.99, Jul 2019"
-    },
-    {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": "2018-01-01",
-     "url": null,
-     "source_part": "p1",
-     "raw": "U.S. China dialogue on the Challenges of Emerging Infections, Laboratory Safety and Global Health Security, Galveston, Jan 16–18 2018, grant Oct 2016, NAS-CISAC SWOT analysis (Strengths, Weaknesses, Opportunities and Threats), Sep 2019"
-    }
-   ],
+   "evidence": [],
    "summary": "Introduces NASEM's Track II science-diplomacy channel with China's CAS (led by LeDuc and Franz), already in use before the outbreak and which would shape the choices made around the Farrar call."
   },
   {
@@ -1758,65 +1467,7 @@
    "heading": "8.2 Isolates Effort #1: NASEM to CAS (starting ~17 Jan)",
    "date": "2020-01-17",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "UTMB-LeDuc-batch-1.pdf",
-     "kind": "email",
-     "pages": [
-      "593-594"
-     ],
-     "date": "2020-01-17",
-     "url": "https://drive.google.com/file/d/1O6_TaUYbPeAsdwOj-1JkvzKQFVBtx_Jw/view?usp=sharing",
-     "source_part": "p1",
-     "raw": "UTMB-LeDuc-batch-1.pdf, p.593–594, and p.487, 17 Jan 2020"
-    },
-    {
-     "doc": "UTMB-LeDuc-batch-1.pdf",
-     "kind": "email",
-     "pages": [
-      "486-487",
-      "2"
-     ],
-     "date": "2020-01-22",
-     "url": "https://drive.google.com/file/d/1O6_TaUYbPeAsdwOj-1JkvzKQFVBtx_Jw/view?usp=sharing",
-     "source_part": "p1",
-     "raw": "UTMB-LeDuc-batch-1.pdf, p.486–487, 22 Jan 2020, p.355, 26 Jan 2020 and p.356–357, 26 Jan 2020"
-    },
-    {
-     "doc": "01981-F-Dec-2022-Production-OPAQUE.pdf",
-     "kind": "other",
-     "pages": [
-      "26",
-      "2"
-     ],
-     "date": "2020-01-27",
-     "url": null,
-     "source_part": "p1",
-     "raw": "ED-20–01981-F-Dec-2022-Production-OPAQUE.pdf, p.26, 27 Jan 2020, UTMB-LeDuc-batch-1.pdf, p. 813, 29 Jan 2020, and p.800,801, 3–5 Feb 2020"
-    },
-    {
-     "doc": "01981-F-Dec-2022-Production-OPAQUE.pdf",
-     "kind": "other",
-     "pages": [
-      "9"
-     ],
-     "date": "2020-01-27",
-     "url": null,
-     "source_part": "p1",
-     "raw": "ED-20–01981-F-Dec-2022-Production-OPAQUE.pdf, p.9 and p.26, 27 Jan 2020, UTMB-LeDuc-batch-1.pdf, p.1720, 27 Jan 2020, p. 813"
-    },
-    {
-     "doc": "UTMB-LeDuc-batch-1.pdf",
-     "kind": "email",
-     "pages": [
-      "1448"
-     ],
-     "date": "2020-01-29",
-     "url": "https://drive.google.com/file/d/1O6_TaUYbPeAsdwOj-1JkvzKQFVBtx_Jw/view?usp=sharing",
-     "source_part": "p1",
-     "raw": "UTMB-LeDuc-batch-1.pdf, p.1448, p.672, 29 Jan 2020"
-    }
-   ],
+   "evidence": [],
    "summary": "LeDuc flatters Chinese counterparts in a published Op-Ed while quietly asking for virus isolates; NASEM leadership formally backs the request, and by early February CAS's president signals the WIV is willing to share."
   },
   {
@@ -1829,6 +1480,15 @@
    "date_raw": null,
    "evidence": [
     {
+     "doc": null,
+     "kind": "other",
+     "pages": [],
+     "date": "2020-02-03",
+     "url": "https://drive.google.com/file/d/1PNeJWqZGHlFqIEbqGVpIipRac6k9_UPm",
+     "source_part": "p1",
+     "raw": "OSTP letter to NASEM, 3 Feb 2020"
+    },
+    {
      "doc": "Baric-Emails-2.17.21.pdf",
      "kind": "email",
      "pages": [
@@ -1840,26 +1500,15 @@
      "raw": "Baric-Emails-2.17.21.pdf, p.118, 3 Feb 2020"
     },
     {
-     "doc": "Baric-Emails-2.17.21.pdf",
-     "kind": "email",
-     "pages": [
-      "115-116"
-     ],
-     "date": "2020-02-03",
-     "url": null,
-     "source_part": "p1",
-     "raw": "Baric-Emails-2.17.21.pdf, p.115–116, 3 Feb 2020, and 2023.06.16-Andersen-Transcript.pdf, p. 104b"
-    },
-    {
      "doc": "Baric-TI-Transcript.pdf",
      "kind": "transcript",
      "pages": [
       "120-121"
      ],
      "date": null,
-     "url": "https://drive.google.com/file/d/18G0YpLT3q0E6y0mTP2_ncLdImM1DNGs6/view?usp=drive_link",
+     "url": "https://drive.google.com/file/d/173bZUapV1fbWx7KXqD30uynH1sQddOLs",
      "source_part": "p1",
-     "raw": "Baric-TI-Transcript.pdf[^216], p.120–121 [quoting the edited Slack]"
+     "raw": "Baric-TI-Transcript.pdf, p.120–121 [quoting the edited Slack]"
     },
     {
      "doc": "Baric-TI-Transcript.pdf",
@@ -1868,20 +1517,9 @@
       "121"
      ],
      "date": null,
-     "url": "https://drive.google.com/file/d/18G0YpLT3q0E6y0mTP2_ncLdImM1DNGs6/view?usp=drive_link",
-     "source_part": "p1",
-     "raw": "Baric-TI-Transcript.pdf, p. 121"
-    },
-    {
-     "doc": "Baric-Emails-2.17.21.pdf",
-     "kind": "email",
-     "pages": [
-      "133"
-     ],
-     "date": "2020-02-04",
      "url": null,
      "source_part": "p1",
-     "raw": "Pope’s email and attached Draft, 4 Feb 2020, Baric-Emails-2.17.21.pdf, p.133 and p. 120"
+     "raw": "Baric-TI-Transcript.pdf, p. 121"
     },
     {
      "doc": "Baric-Emails-2.17.21.pdf",
@@ -1912,7 +1550,18 @@
       "16"
      ],
      "date": "2020-02-04",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
+     "source_part": "p1",
+     "raw": "Proximal_Origin_Emails.pdf, p.16, 4 Feb 2020"
+    },
+    {
+     "doc": "Proximal_Origin_Emails.pdf",
+     "kind": "email",
+     "pages": [
+      "16"
+     ],
+     "date": "2020-02-04",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.16, 4 Feb 2020"
     },
@@ -1923,7 +1572,7 @@
       "32"
      ],
      "date": "2020-02-04",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.32, 4 Feb 2020"
     },
@@ -1945,7 +1594,7 @@
      "date": "2020-02-06",
      "url": null,
      "source_part": "p1",
-     "raw": "NASEM answer to OSTP — final — 6 Feb 2020v"
+     "raw": "NASEM answer to OSTP — final — 6 Feb 2020"
     }
    ],
    "summary": "A White House-backed request to NASEM for data/isolates turns, at a 3 Feb expert meeting including Andersen, Daszak, Fauci and Baric, into a drafting fight over origin wording — Andersen reports Baric attacking him on the call as pushing ‘crackpot theories’ — ending with the final NASEM letter dodging the origin question entirely."
@@ -1960,27 +1609,24 @@
    "date_raw": null,
    "evidence": [
     {
+     "doc": null,
+     "kind": "other",
+     "pages": [],
+     "date": "2020-02-06",
+     "url": "https://web.archive.org/web/20200206230603/https://abcnews.go.com/Politics/white-house-asks-scientists-investigate-origins-coronavirus/story?id=68807304",
+     "source_part": "p1",
+     "raw": "‘White House asks scientists to investigate origins of coronavirus’, ABC News, 6 Feb 2020, 5:35 PM EST."
+    },
+    {
      "doc": "Proximal_Origin_Slack.pdf",
      "kind": "slack",
      "pages": [
       "25"
      ],
      "date": null,
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
-     "raw": "Proximal_Origin_Slack.pdf,[^224] p.25"
-    },
-    {
-     "doc": "Proximal_Origin_Slack.pdf",
-     "kind": "slack",
-     "pages": [
-      "25",
-      "1"
-     ],
-     "date": "2020-02-10",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Slack.pdf, p.25, 10 Feb 2020, 8:14 pm UK, and ABC article extract, 6 Feb 2020"
+     "raw": "Proximal_Origin_Slack.pdf, p.25"
     },
     {
      "doc": "Biohazard_FOIA_Maryland_Emails_11.6.20.pdf",
@@ -1989,7 +1635,7 @@
       "278"
      ],
      "date": "2020-02-06",
-     "url": "https://drive.google.com/file/d/12NTOh9Aswk5pBf-X_INFB_sdrmoLinjC/view?usp=sharing",
+     "url": null,
      "source_part": "p1",
      "raw": "Biohazard_FOIA_Maryland_Emails_11.6.20.pdf. p.278, 6 Feb 2020"
     },
@@ -2001,7 +1647,7 @@
       "1"
      ],
      "date": "2020-02-18",
-     "url": "https://drive.google.com/file/d/1T2MNgjgjXKDGZFjyJvE2MO0RDb8UFcIe/view?usp=sharing",
+     "url": null,
      "source_part": "p1",
      "raw": "OSU-1.12.23–1265-pages.pdf, p. 319, 18 Feb 2020"
     }
@@ -2017,17 +1663,6 @@
    "date": "2020-02-09",
    "date_raw": null,
    "evidence": [
-    {
-     "doc": "01981-F-Dec-2022-Production-OPAQUE.pdf",
-     "kind": "other",
-     "pages": [
-      "138"
-     ],
-     "date": "2020-02-09",
-     "url": null,
-     "source_part": "p1",
-     "raw": "ED-20–01981-F-Dec-2022-Production-OPAQUE.pdf, p.138.-140. 9 Feb 2020"
-    },
     {
      "doc": "01981-F-Dec-2022-Production-OPAQUE.pdf",
      "kind": "other",
@@ -2050,19 +1685,7 @@
    "heading": "8.6 LeDuc sends some pointed questions to Yuan Zhiming of the WIV (9 Feb)",
    "date": "2020-02-09",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "UTMB-LeDuc-batch-1.pdf",
-     "kind": "email",
-     "pages": [
-      "806-809"
-     ],
-     "date": "2020-02-09",
-     "url": "https://drive.google.com/file/d/1O6_TaUYbPeAsdwOj-1JkvzKQFVBtx_Jw/view?usp=sharing",
-     "source_part": "p1",
-     "raw": "UTMB-LeDuc-batch-1.pdf, p.806–809, 9 Feb 2020"
-    }
-   ],
+   "evidence": [],
    "summary": "The same day, LeDuc presses the WIV's Yuan Zhiming to ‘fess up’ to any biosafety shortcomings — again at odds with what he'd just told US intelligence about the risk being low."
   },
   {
@@ -2073,19 +1696,7 @@
    "heading": "8.7 Track II hits a wall with the isolates request (10 Feb)",
    "date": "2020-02-10",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "01981-F-Dec-2022-Production-OPAQUE.pdf",
-     "kind": "other",
-     "pages": [
-      "61"
-     ],
-     "date": "2020-02-11",
-     "url": null,
-     "source_part": "p1",
-     "raw": "ED-20–01981-F-Dec-2022-Production-OPAQUE.pdf, p.61 and 209, 10–11 Feb 2020, and UTMB-LeDuc-batch-1.pdf, p.799, 12 Feb"
-    }
-   ],
+   "evidence": [],
    "summary": "The OSTP/NASEM effort ends in fiasco: the public misreads it as an origin investigation, and China draws the opposite conclusion from Fauci's comments to the real ask for isolates."
   },
   {
@@ -2098,17 +1709,6 @@
    "date_raw": null,
    "evidence": [
     {
-     "doc": "01981-F-Dec-2022-Production-OPAQUE.pdf",
-     "kind": "other",
-     "pages": [
-      "223"
-     ],
-     "date": "2020-02-11",
-     "url": null,
-     "source_part": "p1",
-     "raw": "ED-20–01981-F-Dec-2022-Production-OPAQUE.pdf, p.223. 11 Feb 2020 and ED-20–01981-March-2022-Production_Redacted_Upload.pdf, p.362, 13 Feb 2020"
-    },
-    {
      "doc": "UTMB-LeDuc-batch-1.pdf",
      "kind": "email",
      "pages": [
@@ -2116,7 +1716,7 @@
       "1"
      ],
      "date": "2021-05-18",
-     "url": "https://drive.google.com/file/d/1O6_TaUYbPeAsdwOj-1JkvzKQFVBtx_Jw/view?usp=sharing",
+     "url": null,
      "source_part": "p1",
      "raw": "UTMB-LeDuc-batch-1.pdf, p.2825, 18 May 2021"
     }
@@ -2142,19 +1742,7 @@
    "heading": "9.1 Andersen starts writing a report (1 Feb)",
    "date": "2021-02-01",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "2023.06.16-Andersen-Transcript.pdf",
-     "kind": "transcript",
-     "pages": [
-      "55-56"
-     ],
-     "date": "2020-02-01",
-     "url": null,
-     "source_part": "p1",
-     "raw": "2023.06.16-Andersen-Transcript.pdf, p.55–56, Proximal_Origin_Slack.pdf, p.4, 1 Feb 2020, and DrSSCP-Drafts-of-Proximal-Origin.pdf, p.1, 1 Feb 2020 7:40pm EST"
-    }
-   ],
+   "evidence": [],
    "summary": "Andersen's first one-page draft (1 Feb) flags the BamHI site and the furin cleavage site as the two potentially problematic features, discarding direct gene editing in favour of tissue-culture passage as the leading non-natural hypothesis."
   },
   {
@@ -2163,7 +1751,7 @@
    "number": "9.2",
    "title": "Garry is added — conversations run free (2 Feb)",
    "heading": "9.2 Garry is added — conversations run free (2 Feb)",
-   "date": "2020-02-02",
+   "date": "2021-02-02",
    "date_raw": null,
    "evidence": [
     {
@@ -2173,7 +1761,7 @@
       "5"
      ],
      "date": "2020-02-02",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.5, 2 Feb 2020"
     }
@@ -2196,7 +1784,7 @@
       "5"
      ],
      "date": "2020-02-02",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.5, 2 Feb 2020"
     }
@@ -2230,7 +1818,7 @@
       "14"
      ],
      "date": "2020-02-04",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.14, 4 Feb 2020"
     },
@@ -2246,37 +1834,26 @@
      "raw": "farrar-fauci-comms.pdf, p.97, 4 Feb, 7:01 am UK"
     },
     {
-     "doc": "farrar-fauci-comms.pdf",
-     "kind": "email",
-     "pages": [
-      "98-101"
-     ],
-     "date": "2020-02-04",
-     "url": null,
-     "source_part": "p1",
-     "raw": "farrar-fauci-comms.pdf, p.98–101, 4 Feb 2020, first version shared with Farrar and Collins"
-    },
-    {
-     "doc": "farrar-fauci-comms.pdf",
-     "kind": "email",
-     "pages": [
-      "95"
-     ],
-     "date": "2020-02-04",
-     "url": null,
-     "source_part": "p1",
-     "raw": "farrar-fauci-comms.pdf, p.95 and 92, 4 Feb 2020"
-    },
-    {
      "doc": "Baric-TI-Transcript.pdf",
      "kind": "transcript",
      "pages": [
       "20-21"
      ],
      "date": null,
-     "url": "https://drive.google.com/file/d/18G0YpLT3q0E6y0mTP2_ncLdImM1DNGs6/view?usp=drive_link",
+     "url": "https://drive.google.com/file/d/173bZUapV1fbWx7KXqD30uynH1sQddOLs",
      "source_part": "p1",
-     "raw": "source: Baric-TI-Transcript.pdf[^241], extracts from p.20–21"
+     "raw": "source: Baric-TI-Transcript.pdf, extracts from p.20–21"
+    },
+    {
+     "doc": "Baric-TI-Transcript.pdf",
+     "kind": "transcript",
+     "pages": [
+      "26-27"
+     ],
+     "date": null,
+     "url": "https://drive.google.com/file/d/173bZUapV1fbWx7KXqD30uynH1sQddOLs",
+     "source_part": "p1",
+     "raw": "source: Baric-TI-Transcript.pdf, extracts from p.26–27"
     }
    ],
    "summary": "Andersen and Holmes finish a four-page draft ruling out deliberate engineering but leaving passaging open; Holmes shares it with Farrar (and from there Fauci and Collins) before Garry — asleep in the US — has even seen it."
@@ -2297,31 +1874,9 @@
       "26"
      ],
      "date": "2020-02-04",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf, p.26, 4 Feb 2020, around 7 to 8 pm UK"
-    },
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "25"
-     ],
-     "date": "2020-02-04",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf, p.25, 4 Feb 2020, 8:36 pm UK, farrar-fauci-comms.pdf, p. 87, 4 Feb 2020, 8:53 pm UK and Proximal_Origin_Emails.pdf, p.25, 4 Feb 2020, 9:38 pm UK,"
-    },
-    {
-     "doc": "farrar-fauci-comms.pdf",
-     "kind": "email",
-     "pages": [
-      "88-91"
-     ],
-     "date": "2020-02-04",
      "url": null,
      "source_part": "p1",
-     "raw": "farrar-fauci-comms.pdf, p.88–91, 4 Feb 2020, second version shared with Farrar and Collins"
+     "raw": "Proximal_Origin_Emails.pdf, p.26, 4 Feb 2020, around 7 to 8 pm UK"
     }
    ],
    "summary": "Garry finally reviews the draft and flags likely pushback on passaging; the co-authors privately agree a non-natural origin is plausible but decide to ‘give the benefit of the doubt’ to nature in the writing, for political rather than scientific reasons."
@@ -2334,19 +1889,7 @@
    "heading": "10.3 Farrar updates Fauci and Collins about the glycans (5 Feb, 6:57 am UK)",
    "date": "2020-02-05",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "30-31"
-     ],
-     "date": "2020-02-04",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf, p.30–31, 4 Feb 2020 9.59 to 10:56 pm UK, and farrar-fauci-comms.pdf, p.82–86, 5 Feb 2020,6:57 am UK"
-    }
-   ],
+   "evidence": [],
    "summary": "Farrar reiterates that the furin cleavage site could be explained by passaging and flags undisclosed Fouchier lab data on forced FCS evolution."
   },
   {
@@ -2365,91 +1908,21 @@
       "44"
      ],
      "date": "2020-02-04",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p. 44, 4 Feb 2020, 10:31 am UK"
     },
     {
-     "doc": "Proximal_Origin_Slack.pdf",
-     "kind": "slack",
-     "pages": [
-      "14"
-     ],
-     "date": "2020-02-05",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Slack.pdf, p.14, 5 Feb 2020, 5:15 pm UK, and p.16, 10:14 pm UK"
-    },
-    {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": null,
-     "url": null,
-     "source_part": "p1",
-     "raw": "Actual figures from Lam et al."
-    },
-    {
      "doc": "Proximal_Origin_Emails.pdf",
      "kind": "email",
      "pages": [
-      "43"
+      "161",
+      "2"
      ],
-     "date": null,
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "date": "2020-07-25",
+     "url": "http://Proximal_Origin_Emails.pdf,",
      "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf[^250], p.43]"
-    },
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "28"
-     ],
-     "date": "2020-02-05",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf, p.28, and p.43, 5 Feb 2020, 10::52 am UK"
-    },
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "42-43"
-     ],
-     "date": "2020-02-05",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf, p.42–43, 5 Feb 2020"
-    },
-    {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": null,
-     "url": null,
-     "source_part": "p1",
-     "raw": "Details of the review of Wong’s analysis in his lab"
-    },
-    {
-     "doc": null,
-     "kind": "link",
-     "pages": [],
-     "date": "2019-01-01",
-     "url": "https://virological.org/t/ncov-2019-spike-protein-receptor-binding-domain-shares-high-amino-acid-identity-with-a-coronavirus-recovered-from-a-pangolin-viral-metagenomic-dataset/362,",
-     "source_part": "p1",
-     "raw": "https://virological.org/t/ncov-2019-spike-protein-receptor-binding-domain-shares-high-amino-acid-identity-with-a-coronavirus-recovered-from-a-pangolin-viral-metagenomic-dataset/362,"
-    },
-    {
-     "doc": "SSCP-Drafts-of-Proximal-Origin.pdf",
-     "kind": "draft",
-     "pages": [
-      "7"
-     ],
-     "date": null,
-     "url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA573298/,",
-     "source_part": "p1",
-     "raw": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA573298/, SSCP-Drafts-of-Proximal-Origin.pdf, p. 7"
+     "raw": "Proximal_Origin_Emails.pdf, p.43]"
     }
    ],
    "summary": "New pangolin sequence data reaches Holmes via a contact already drafting a separate pangolin paper; the co-authors conclude these pangolin viruses are too distant to be SARS-CoV-2's direct progenitor."
@@ -2463,17 +1936,6 @@
    "date": "2020-02-05",
    "date_raw": null,
    "evidence": [
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "23"
-     ],
-     "date": "2020-02-04",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf, p.23, 4 Feb 2020 and Proximal_Origin_Slack.pdf, p.15, 5 Feb 2020"
-    },
     {
      "doc": null,
      "kind": "other",
@@ -2505,19 +1967,7 @@
    "heading": "11.1 WHO willing to onboard the ‘evolutionary origin’ question (5 Feb)",
    "date": "2020-02-05",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "farrar-fauci-comms.pdf",
-     "kind": "email",
-     "pages": [
-      "74"
-     ],
-     "date": "2020-02-05",
-     "url": null,
-     "source_part": "p1",
-     "raw": "farrar-fauci-comms.pdf, p.74, 5 Feb 2020 and p.73, 6 Feb 2020"
-    }
-   ],
+   "evidence": [],
    "summary": "Farrar gets the WHO's go-ahead to convene an origins-and-evolution group at its meeting the following week."
   },
   {
@@ -2558,7 +2008,7 @@
       "35"
      ],
      "date": "2020-02-05",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.35, 5 Feb 2020 (7:36 am UK)"
     }
@@ -2581,7 +2031,7 @@
       "19"
      ],
      "date": "2020-02-06",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.19, 6 Feb 2020"
     },
@@ -2592,7 +2042,7 @@
       "20"
      ],
      "date": "2020-02-06",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.20, 6 Feb 2020"
     }
@@ -2644,8 +2094,8 @@
    "id": "p1-12.2",
    "part": "p1",
    "number": "12.2",
-   "title": "Farrar shares the latest draft with Farrar and Collins — Semantics get slippery (7 Feb, 6:09 am UK)",
-   "heading": "12.2 Farrar shares the latest draft with Farrar and Collins — Semantics get slippery (7 Feb, 6:09 am UK)",
+   "title": "Farrar shares the latest draft with Fauci and Collins — Semantics get slippery (7 Feb, 6:09 am UK)",
+   "heading": "12.2 Farrar shares the latest draft with Fauci and Collins — Semantics get slippery (7 Feb, 6:09 am UK)",
    "date": "2020-02-07",
    "date_raw": null,
    "evidence": [
@@ -2657,17 +2107,6 @@
      "url": null,
      "source_part": "p1",
      "raw": "Matrix: P.O. coverage of Evolutionary vs. Outbreak Origins (source: author)"
-    },
-    {
-     "doc": "farrar-fauci-comms.pdf",
-     "kind": "email",
-     "pages": [
-      "66-71"
-     ],
-     "date": "2020-02-05",
-     "url": null,
-     "source_part": "p1",
-     "raw": "farrar-fauci-comms.pdf, p.66–71, 5 Feb 2020, third version shared with Farrar and Collins"
     }
    ],
    "summary": "The draft's ‘Evolution of 2019-nCoV’ section is quietly renamed ‘Origin of 2019-nCoV’ — a wording shift the piece argues is misleading, since the content never actually addresses outbreak origin."
@@ -2699,8 +2138,8 @@
    "id": "p1-12.4",
    "part": "p1",
    "number": "12.4",
-   "title": "Farrar aims for publication with Holmes (7 Feb, 6:26 am UK[^275])",
-   "heading": "12.4 Farrar aims for publication with Holmes (7 Feb, 6:26 am UK[^275])",
+   "title": "Farrar aims for publication with Holmes (7 Feb, [6:26 am UK](https://dateful.com/convert/australia-sydney?t=1726&d=2020-02-07&tz2=London-UK))",
+   "heading": "12.4 Farrar aims for publication with Holmes (7 Feb, [6:26 am UK](https://dateful.com/convert/australia-sydney?t=1726&d=2020-02-07&tz2=London-UK))",
    "date": "2020-02-07",
    "date_raw": null,
    "evidence": [
@@ -2711,7 +2150,7 @@
       "49-50"
      ],
      "date": "2020-02-07",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.49–50, 7 Feb 2020"
     },
@@ -2723,7 +2162,7 @@
       "5"
      ],
      "date": "2020-02-06",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.16, 5–6 Feb 2020"
     },
@@ -2731,10 +2170,10 @@
      "doc": null,
      "kind": "press",
      "pages": [],
-     "date": null,
-     "url": null,
+     "date": "2022-01-01",
+     "url": "https://web.archive.org/web/20240319020627/https://www.nytimes.com/2022/03/21/health/covid-lab-leak-eddie-holmes.html",
      "source_part": "p1",
-     "raw": "Carl Zimmer’s article in the NY Times[^283]"
+     "raw": "Carl Zimmer’s article in the NY Times"
     }
    ],
    "summary": "Farrar decides to go for publication and starts planning author list, journals (Lancet, Nature, NEJM) and WHO sign-off with Holmes — a decision the piece argues both had their own separate reasons to want, independent of the still-unverified pangolin news."
@@ -2749,24 +2188,13 @@
    "date_raw": null,
    "evidence": [
     {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "46-48"
-     ],
-     "date": "2020-02-07",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf, p.46–48, 7 Feb 2020 (US time)"
-    },
-    {
      "doc": "Proximal_Origin_Slack.pdf",
      "kind": "slack",
      "pages": [
       "46"
      ],
      "date": "2020-02-07",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.46, 7 Feb 2020 (UK)"
     },
@@ -2777,7 +2205,7 @@
       "21"
      ],
      "date": "2020-02-07",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.21, 7 Feb 2020 (UK)"
     }
@@ -2788,8 +2216,8 @@
    "id": "p1-13",
    "part": "p1",
    "number": "13",
-   "title": "Sharing the decision with the Tony Call group and some pushback (8 Feb)",
-   "heading": "13. Sharing the decision with the Tony Call group and some pushback (8 Feb)",
+   "title": "Sharing the decision with the call group and some pushback (8 Feb)",
+   "heading": "13. Sharing the decision with the call group and some pushback (8 Feb)",
    "date": "2020-02-08",
    "date_raw": null,
    "evidence": [],
@@ -2799,8 +2227,8 @@
    "id": "p1-13.1",
    "part": "p1",
    "number": "13.1",
-   "title": "Farrar forwards the latest report to the full ‘Tony Call’ group and discusses going for publication (8 Feb, 9:45 am UK)",
-   "heading": "13.1 Farrar forwards the latest report to the full ‘Tony Call’ group and discusses going for publication (8 Feb, 9:45 am UK)",
+   "title": "Farrar forwards the latest report to the full call group and discusses going for publication (8 Feb, 9:45 am UK)",
+   "heading": "13.1 Farrar forwards the latest report to the full call group and discusses going for publication (8 Feb, 9:45 am UK)",
    "date": "2020-02-08",
    "date_raw": null,
    "evidence": [
@@ -2811,7 +2239,7 @@
       "57-58"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.57–58, 8 Feb 2020, 9:45 UK"
     }
@@ -2834,7 +2262,7 @@
       "55"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.55, 8 Feb 2020, 10:36 am UK"
     }
@@ -2857,7 +2285,7 @@
       "61"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.61, 8 Feb 2020, 12:00 pm UK"
     },
@@ -2868,7 +2296,7 @@
       "56"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.56, 8 Feb 2020, 12 pm UK"
     }
@@ -2914,7 +2342,7 @@
       "21"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.21, 8 Feb 2020"
     }
@@ -2937,20 +2365,9 @@
       "22"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Slack.pdf, p.22, 8 Feb 2020, 1:43 pm UK"
-    },
-    {
-     "doc": "farrar-fauci-comms-full.pdf",
-     "kind": "email",
-     "pages": [
-      "61-62"
-     ],
-     "date": "2020-02-08",
      "url": null,
      "source_part": "p1",
-     "raw": "farrar-fauci-comms-full.pdf, p. 61–62 8 Feb 2020, 12:03 pm, 3:13 pm and 5:36 pm UK"
+     "raw": "Proximal_Origin_Slack.pdf, p.22, 8 Feb 2020, 1:43 pm UK"
     },
     {
      "doc": "Proximal_Origin_Slack.pdf",
@@ -2959,7 +2376,7 @@
       "22"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.22, p.22–23, 8 Feb 2020, ~6 pm UK"
     }
@@ -2982,9 +2399,18 @@
       "53"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
-     "raw": "Drosten, Proximal_Origin_Emails.pdf[^292], p.53, 8 Feb 2020, 19:52 UK, 20:52 Germany"
+     "raw": "Drosten, Proximal_Origin_Emails.pdf, p.53, 8 Feb 2020, 19:52 UK, 20:52 Germany"
+    },
+    {
+     "doc": null,
+     "kind": "other",
+     "pages": [],
+     "date": "2024-01-01",
+     "url": "https://www.amazon.de/Alles-%C3%BCberstanden-%C3%BCberf%C3%A4lliges-einzigartigen-Einblicken/dp/3550203020",
+     "source_part": "p1",
+     "raw": "Drosten and Mascolo, Alles überstanden? (‘Through it all?’), June 2024"
     }
    ],
    "summary": "Drosten, largely absent since the original call, asks bluntly whether they're ‘debunking our own conspiracy theory’ — seemingly unaware the group had already shifted from engineering to the still-live passaging question."
@@ -3005,7 +2431,7 @@
       "52"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.52, 8 Feb 2020, 8.11 pm UK"
     }
@@ -3027,10 +2453,10 @@
      "pages": [
       "28"
      ],
-     "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/1jNeqlHWUnV2QoEL5fvnzHX7sq867ue3Z/view?usp=sharing",
+     "date": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
-     "raw": "Holmes to his co-authors, Proximal_Origin_Emails.pdf[^297], p.28**Holmes (8 Feb 2020, 8:11 pm UK):"
+     "raw": "Holmes to his co-authors, Proximal_Origin_Emails.pdf, p.28"
     },
     {
      "doc": "Proximal_Origin_Emails.pdf",
@@ -3039,9 +2465,31 @@
       "52"
      ],
      "date": null,
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
-     "raw": "Holmes to the Farrar call group, Proximal_Origin_Emails.pdf[^298], p.52"
+     "raw": "Holmes to the Farrar call group, Proximal_Origin_Emails.pdf, p.52"
+    },
+    {
+     "doc": "Proximal_Origin_Emails.pdf",
+     "kind": "email",
+     "pages": [
+      "52"
+     ],
+     "date": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
+     "source_part": "p1",
+     "raw": "Farrar to the Farrar call group, Proximal_Origin_Emails.pdf, p.52"
+    },
+    {
+     "doc": "Proximal_Origin_Emails.pdf",
+     "kind": "email",
+     "pages": [
+      "51"
+     ],
+     "date": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
+     "source_part": "p1",
+     "raw": "Rambaut to the Farrar call group, Proximal_Origin_Emails.pdf, p.51"
     },
     {
      "doc": "Proximal_Origin_Emails.pdf",
@@ -3050,20 +2498,9 @@
       "51"
      ],
      "date": "2030-02-08",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
-     "raw": "Rambaut to the Farrar call group, Proximal_Origin_Emails.pdf[^301], p.51, 8 Feb 2030, 9:16 pm UK, 4:16 pm EST"
-    },
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "51-52"
-     ],
-     "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf, p.51–52, 8 Feb 2020, 8:11 to 9:16 PM UK"
+     "raw": "Rambaut to the Farrar call group, Proximal_Origin_Emails.pdf, p.51, 8 Feb 2030, 9:16 pm UK, 4:16 pm EST"
     },
     {
      "doc": "Proximal_Origin_Emails.pdf",
@@ -3072,7 +2509,7 @@
       "150"
      ],
      "date": null,
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.150, draft email to Jon Cohen"
     }
@@ -3085,7 +2522,7 @@
    "number": "13.10",
    "title": "On Slack: the co-authors discuss Fouchier (8 Feb, 7:47 pm to 8:53 pm UK)",
    "heading": "13.10 On Slack: the co-authors discuss Fouchier (8 Feb, 7:47 pm to 8:53 pm UK)",
-   "date": "2020-02-08",
+   "date": "2030-02-08",
    "date_raw": null,
    "evidence": [
     {
@@ -3095,9 +2532,9 @@
       "23"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
-     "raw": "Andersen on Slack, Proximal_Origin_Slack.pdf[^302], p.23, 8 Feb 2020, 8.53 pm UK"
+     "raw": "Andersen on Slack, Proximal_Origin_Slack.pdf, p.23, 8 Feb 2020, 8.53 pm UK"
     },
     {
      "doc": "Proximal_Origin_Slack.pdf",
@@ -3106,7 +2543,7 @@
       "23"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.23, 8 Feb 2020, 8:53 pm UK"
     }
@@ -3129,7 +2566,7 @@
       "144"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.144, 8 Feb 2020, 9:16 pm UK"
     },
@@ -3140,7 +2577,7 @@
       "23"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.23, 8 Feb 2020, 9:19 pm UK"
     }
@@ -3163,7 +2600,7 @@
       "144"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.144, 8 Feb 2020, 9:27 pm UK"
     },
@@ -3174,7 +2611,7 @@
       "23"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.23, 8 Feb 2020, 9:30 pm UK"
     }
@@ -3197,7 +2634,7 @@
       "51"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.51, 8 Feb 2020, 10:50 pm UK"
     },
@@ -3208,7 +2645,7 @@
       "23"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.23, 8 Feb 2020, 10:52 pm UK"
     }
@@ -3231,7 +2668,7 @@
       "24"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.24, 8 Feb 2020, 11:42 pm UK"
     }
@@ -3318,7 +2755,17 @@
    "heading": "14.3 Tedros sets the tone for the WHO (8 Feb, before 4 pm UK)",
    "date": "2020-02-08",
    "date_raw": null,
-   "evidence": []
+   "evidence": [
+    {
+     "doc": null,
+     "kind": "other",
+     "pages": [],
+     "date": "2020-02-08",
+     "url": "https://www.who.int/director-general/speeches/detail/director-general-s-remarks-at-the-media-briefing-on-2019-novel-coronavirus---8-february-2020",
+     "source_part": "p2",
+     "raw": "Tedros’ remarks at the media briefing on 2019 novel coronavirus on 8 February 2020 (before 4 pm UK)"
+    }
+   ]
   },
   {
    "id": "p2-14.4",
@@ -3336,7 +2783,7 @@
       "23"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.23, 8 Feb 2020, 11:10 pm UK"
     },
@@ -3347,7 +2794,7 @@
       "144"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p.144, 8 Feb 2020, 9:27 pm UK"
     }
@@ -3364,12 +2811,21 @@
    "evidence": [
     {
      "doc": null,
-     "kind": "social",
+     "kind": "other",
      "pages": [],
-     "date": "2020-02-09",
-     "url": null,
+     "date": "2020-01-28",
+     "url": "https://www.cotton.senate.gov/news/press-releases/cotton-calls-for-targeted-china-travel-ban-to-stop-coronavirus",
      "source_part": "p2",
-     "raw": "Amb. Tiankai tweet, Sen. Cotton’s response, Transcript of Cui Tiankai on Face The Nation, 9 Feb, ~ 4 pm UK."
+     "raw": "letter from Sen. Tom Cotton., 28 Jan 2020"
+    },
+    {
+     "doc": null,
+     "kind": "other",
+     "pages": [],
+     "date": "2020-02-03",
+     "url": "https://www.c-span.org/video/?468720-1%2Fus-africa-southern-command-operations=",
+     "source_part": "p2",
+     "raw": "Sen. Cotton, session of the Senate Armed Service Committee, 3 Feb 2020."
     }
    ]
   },
@@ -3382,15 +2838,6 @@
    "date": "2020-02-09",
    "date_raw": null,
    "evidence": [
-    {
-     "doc": null,
-     "kind": "social",
-     "pages": [],
-     "date": "2020-02-09",
-     "url": null,
-     "source_part": "p2",
-     "raw": "Tedros’ tweet (9 Feb in Geneva, time in tweet is NZ time)"
-    },
     {
      "doc": "HHS_Garrett-Grigsby_12.30.21_production.pdf",
      "kind": "other",
@@ -3414,26 +2861,24 @@
    "date_raw": null,
    "evidence": [
     {
+     "doc": "HHS_Garrett-Grigsby_12.30.21_production.pdf",
+     "kind": "other",
+     "pages": [
+      "38"
+     ],
+     "date": null,
+     "url": "https://drive.google.com/file/d/16fDGqcKgY1NzDiZcBzrzUzKlP9752RuD",
+     "source_part": "p2",
+     "raw": "HHS_Garrett-Grigsby_12.30.21_production.pdf, p. 38"
+    },
+    {
      "doc": null,
      "kind": "other",
      "pages": [],
      "date": "2020-02-09",
-     "url": null,
+     "url": "https://drive.google.com/file/d/16fDGqcKgY1NzDiZcBzrzUzKlP9752RuD",
      "source_part": "p2",
-     "raw": "email from Garrett Grigsby to Fauci[^62], 9 Feb 2020, 18:34 EST"
-    },
-    {
-     "doc": "HHS_Garrett-Grigsby_12.30.21_production.pdf",
-     "kind": "other",
-     "pages": [
-      "38",
-      "37",
-      "36"
-     ],
-     "date": "2020-02-09",
-     "url": null,
-     "source_part": "p2",
-     "raw": "HHS_Garrett-Grigsby_12.30.21_production.pdf, p. 38, 37, 36 (in chronological order, 9 Feb 2020)"
+     "raw": "email from Garrett Grigsby to Fauci, 9 Feb 2020, 18:34 EST"
     }
    ]
   },
@@ -3463,7 +2908,7 @@
       "24"
      ],
      "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.24, 8 Feb 2020, 11:33 pm UK"
     },
@@ -3474,7 +2919,7 @@
       "26"
      ],
      "date": "2020-02-09",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.26, 9 Feb 2020, 9:09 pm UK"
     },
@@ -3485,7 +2930,7 @@
       "28"
      ],
      "date": "2020-02-09",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.28, 9 Feb 2020, 11:18 to 11:43 pm UK"
     },
@@ -3496,7 +2941,7 @@
       "28"
      ],
      "date": "2020-02-09",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.28, 9 Feb 2020, 11:46 pm UK"
     },
@@ -3508,7 +2953,7 @@
       "1"
      ],
      "date": "2020-02-10",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.28, 10 Feb 2020, 3:31 am UK"
     },
@@ -3520,7 +2965,7 @@
       "1"
      ],
      "date": "2020-02-10",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.28, 10 Feb 2020, 3:35 pm UK"
     },
@@ -3532,7 +2977,7 @@
       "1"
      ],
      "date": "2020-02-11",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.31, 11 Feb 2020, 4:49 am UK"
     },
@@ -3544,7 +2989,7 @@
       "1"
      ],
      "date": "2020-02-11",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.32, 11 Feb 2020, ~9:52 am UK"
     },
@@ -3556,7 +3001,7 @@
       "1"
      ],
      "date": "2020-02-11",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.33, 11 Feb 2020, ~7:30 pm UK"
     }
@@ -3578,7 +3023,7 @@
       "69"
      ],
      "date": "2020-02-09",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p.69, 9 Feb 2020, 8:07 pm UK"
     }
@@ -3600,7 +3045,7 @@
       "69"
      ],
      "date": "2020-02-09",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p.69, 9 Feb 2020, 9:26 am UK"
     },
@@ -3625,6 +3070,17 @@
    "date_raw": null,
    "evidence": [
     {
+     "doc": "Baric-TI-Transcript.pdf",
+     "kind": "transcript",
+     "pages": [
+      "15"
+     ],
+     "date": null,
+     "url": "https://drive.google.com/file/d/173bZUapV1fbWx7KXqD30uynH1sQddOLs",
+     "source_part": "p2",
+     "raw": "Baric-TI-Transcript.pdf, extracts, p.15. then p.38–39"
+    },
+    {
      "doc": null,
      "kind": "slack",
      "pages": [],
@@ -3642,29 +3098,7 @@
      "date": "2020-02-18",
      "url": null,
      "source_part": "p2",
-     "raw": "ED-20–01981-F-Dec-2022-Production-OPAQUE.pdf, p.283 18 Feb,"
-    },
-    {
-     "doc": "10.12_NIH_FOIA_57351_07.29.2022_Production1.pdf",
-     "kind": "other",
-     "pages": [
-      "103"
-     ],
-     "date": "2018-07-05",
-     "url": null,
-     "source_part": "p2",
-     "raw": "10.12_NIH_FOIA_57351_07.29.2022_Production1.pdf, p.103 and EcoHealth harvesting viruses across Asia White Coat Waste.pdf, p. 57–59, 5 Jul 2018"
-    },
-    {
-     "doc": "Waste.pdf",
-     "kind": "other",
-     "pages": [
-      "365"
-     ],
-     "date": "2017-03-03",
-     "url": null,
-     "source_part": "p2",
-     "raw": "EcoHealth harvesting viruses across Asia White Coat Waste.pdf, p. 365, 3 Mar 2017, and p.298–299, Apr 23, 2020, and BuzzFeed-v.-HHS-20-cv-2704–7.19.21-Partial-Production_Redacted.pdf, p.3, 21 Apr 2020"
+     "raw": "ED-20–01981-F-Dec-2022-Production-OPAQUE.pdf, p.283 18 Feb 2020"
     }
    ]
   },
@@ -3674,7 +3108,7 @@
    "number": "16",
    "title": "Working towards publication (10–16 Feb)",
    "heading": "16. Working towards publication (10–16 Feb)",
-   "date": "2017-02-16",
+   "date": "2020-02-16",
    "date_raw": null,
    "evidence": []
   },
@@ -3684,7 +3118,7 @@
    "number": "16.1",
    "title": "Lipkin joins the authoring group (10–12 Feb):",
    "heading": "16.1 Lipkin joins the authoring group (10–12 Feb):",
-   "date": "2017-02-12",
+   "date": "2020-02-12",
    "date_raw": null,
    "evidence": [
     {
@@ -3695,7 +3129,7 @@
       "1"
      ],
      "date": "2020-02-10",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p.66, 10 Feb 2020, 7:11 pm UK"
     },
@@ -3703,47 +3137,23 @@
      "doc": "2023.04.06-Lipkin-Transcript.pdf",
      "kind": "transcript",
      "pages": [
-      "35"
+      "47"
      ],
      "date": "2023-01-01",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Ecqlkw1ahfAfR2m--wajPW8-cjKHf1BL",
      "source_part": "p2",
-     "raw": "2023.04.06-Lipkin-Transcript.pdf, p.35, p.47 and p.109–110"
+     "raw": "2023.04.06-Lipkin-Transcript.pdf, p.47"
     },
     {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
+     "doc": "2023.04.06-Lipkin-Transcript.pdf",
+     "kind": "transcript",
      "pages": [
-      "67",
-      "1"
+      "88"
      ],
-     "date": "2020-02-10",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "date": "2023-01-01",
+     "url": "https://drive.google.com/file/d/1Ecqlkw1ahfAfR2m--wajPW8-cjKHf1BL",
      "source_part": "p2",
-     "raw": "Proximal_Origin_Emails.pdf, p.67, 10 Feb 2020, and p.77, 11 Feb 2020"
-    },
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "65",
-      "1"
-     ],
-     "date": "2020-02-12",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Emails.pdf, p.65, 10 Feb 8:51 pm UK, p.76, 12 Feb 2020"
-    },
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "66"
-     ],
-     "date": "2020-02-10",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Emails.pdf, p.66 10 Feb, 7:52 pm UK,"
+     "raw": "2023.04.06-Lipkin-Transcript.pdf, p.88"
     },
     {
      "doc": "Baric-TI-Transcript.pdf",
@@ -3752,9 +3162,9 @@
       "18"
      ],
      "date": null,
-     "url": "https://drive.google.com/file/d/173bZUapV1fbWx7KXqD30uynH1sQddOLs/view?usp=sharing",
+     "url": "https://drive.google.com/file/d/173bZUapV1fbWx7KXqD30uynH1sQddOLs",
      "source_part": "p2",
-     "raw": "Baric-TI-Transcript.pdf[^94], p.18"
+     "raw": "Baric-TI-Transcript.pdf, p.18"
     }
    ]
   },
@@ -3775,33 +3185,9 @@
       "1"
      ],
      "date": "2020-02-12",
-     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS/view?usp=drive_link",
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
-     "raw": "Proximal_Origin_Emails.pdf,[^96] p.81, 12 Feb 2020, 11:09 pm UK"
-    },
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "81",
-      "1"
-     ],
-     "date": "2020-02-12",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Emails.pdf, p. 81, 12 Feb 2020 11:09 pm UK and p. 80, 13 Feb 9:34 am UK, Proximal_Origin_Slack.pdf, p. 40, 13 Feb, 2:49 pm UK"
-    },
-    {
-     "doc": "Proximal_Origin_Slack.pdf",
-     "kind": "slack",
-     "pages": [
-      "39",
-      "1"
-     ],
-     "date": "2020-02-12",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Slack.pdf, p. 39, 12 Feb 2020, 10:58 pm UK"
+     "raw": "Proximal_Origin_Emails.pdf, p.81, 12 Feb 2020, 11:09 pm UK"
     },
     {
      "doc": "Proximal_Origin_Slack.pdf",
@@ -3811,19 +3197,7 @@
       "1"
      ],
      "date": "2020-02-13",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Slack.pdf, p.41, 13 Feb 2020, 8:13 pm UK"
-    },
-    {
-     "doc": "Proximal_Origin_Slack.pdf",
-     "kind": "slack",
-     "pages": [
-      "41",
-      "1"
-     ],
-     "date": "2020-02-13",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p. 41, 13 Feb, 11:40 pm UK"
     }
@@ -3837,32 +3211,7 @@
    "heading": "16.3 Some new figures are considered for publication (12 Feb)",
    "date": "2020-02-12",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Proximal_Origin_Slack.pdf",
-     "kind": "slack",
-     "pages": [
-      "36",
-      "1"
-     ],
-     "date": "2020-02-11",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Slack.pdf, p. 36, 11 Feb, 11:40 pm UK and p. 40, 13 Feb, 5:29 pm UK"
-    },
-    {
-     "doc": "Proximal_Origin_Slack.pdf",
-     "kind": "slack",
-     "pages": [
-      "36",
-      "1"
-     ],
-     "date": "2020-02-12",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Slack.pdf, p. 36, 12 Feb, 11:20 pm UK and 11:45 pm UK"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-16.4",
@@ -3894,19 +3243,7 @@
    "heading": "16.5 The Passaging option is weakened for a possible publication (13–14 Feb)",
    "date": "2020-02-14",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Drafts-of-Proximal-Origin.pdf",
-     "kind": "document",
-     "pages": [
-      "58"
-     ],
-     "date": "2020-02-13",
-     "url": null,
-     "source_part": "p2",
-     "raw": "Drafts-of-Proximal-Origin.pdf, p.58 and 67, versions of the 12 and 13 Feb."
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-17",
@@ -3968,7 +3305,17 @@
    "heading": "17.3 Washington Post vs. Tom Cotton",
    "date": null,
    "date_raw": null,
-   "evidence": []
+   "evidence": [
+    {
+     "doc": null,
+     "kind": "slack",
+     "pages": [],
+     "date": "2020-02-16",
+     "url": null,
+     "source_part": "p2",
+     "raw": "Washington Post, 16 Feb 2020, ~5 pm EST"
+    }
+   ]
   },
   {
    "id": "p2-17.4",
@@ -3978,17 +3325,7 @@
    "heading": "17.4 Political radicalisation",
    "date": null,
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": null,
-     "kind": "social",
-     "pages": [],
-     "date": "2020-02-16",
-     "url": null,
-     "source_part": "p2",
-     "raw": "Washington Post article (16 Feb), NY Times article (17 Feb), Tom’s Cotton Tweets on 17 Feb"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-18",
@@ -4017,7 +3354,7 @@
       "1"
      ],
      "date": "2020-02-15",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.43, 15 Feb 2020, 7:58 pm UK"
     },
@@ -4029,33 +3366,9 @@
       "1"
      ],
      "date": "2020-02-15",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.44, 15 Feb 2020, 11:13 to 11:59 pm UK"
-    },
-    {
-     "doc": "nih-foia-request-60081and-59096-march-production_redactedpdf-tobias-foia.pdf",
-     "kind": "other",
-     "pages": [
-      "80",
-      "1"
-     ],
-     "date": "2020-02-16",
-     "url": null,
-     "source_part": "p2",
-     "raw": "nih-foia-request-60081and-59096-march-production_redactedpdf-tobias-foia.pdf, p.80, 16 Feb, 0:15 am UK, Proximal_Origin_Emails.pdf, p.83, 16 Feb 2020, 8:36 am UK"
-    },
-    {
-     "doc": "Pronih-foia-request-60081and-59096-march-production_redactedpdf-tobias-foia.pdf",
-     "kind": "other",
-     "pages": [
-      "79",
-      "1"
-     ],
-     "date": "2020-02-16",
-     "url": null,
-     "source_part": "p2",
-     "raw": "Pronih-foia-request-60081and-59096-march-production_redactedpdf-tobias-foia.pdf, p.79, 16 Feb, 11:46 am UK, Proximal_Origin_Emails.pdf, p.89, 16 Feb 2020, 10:04 pm UK"
     },
     {
      "doc": null,
@@ -4085,19 +3398,7 @@
    "heading": "18.2 Sense of urgency after the Washington Post piece on Tom Cotton (16 Feb, 10:52 pm UK)",
    "date": "2020-02-16",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Proximal_Origin_Slack.pdf",
-     "kind": "slack",
-     "pages": [
-      "44"
-     ],
-     "date": "2020-02-16",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Slack.pdf, p.44 and Proximal_Origin_Emails.pdf, p.88, 16 Feb 2020, 10:52 pm UK"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-18.3",
@@ -4128,7 +3429,7 @@
       "1"
      ],
      "date": "2020-02-17",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p.94, 17 Feb, 1.59 am UK"
     }
@@ -4142,20 +3443,7 @@
    "heading": "18.4 Urgent submission to Nature (17 Feb, ~2:30 am UK)",
    "date": "2020-02-17",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "85",
-      "1"
-     ],
-     "date": "2020-02-17",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Emails.pdf, p.85, 16 Feb 3:46 am UK and p.88, 17 Feb 2020, 2:48 am UK"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-18.5",
@@ -4165,20 +3453,7 @@
    "heading": "18.5 Nature agrees for the manuscript to be released while it is being reviewed (17 Feb, 8:07 am UK)",
    "date": "2020-02-17",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "105-106",
-      "1"
-     ],
-     "date": "2020-02-17",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Emails.pdf, p.105–106, 17 Feb 2020, 7:50 am UK"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-18.6",
@@ -4188,20 +3463,7 @@
    "heading": "18.6 Tidying up of manuscript on Virological.org (17 Feb, 10:41 am UK)",
    "date": "2020-02-17",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "103",
-      "1"
-     ],
-     "date": "2020-02-17",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Emails.pdf, p. 103, 17 Feb 10:41 am UK, p.105–106, and archive of virological.org"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-18.7",
@@ -4211,20 +3473,7 @@
    "heading": "18.7 Farrar requests the final version for the WHO (17 Feb, 3:28 pm UK)",
    "date": "2020-02-17",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "102",
-      "1"
-     ],
-     "date": "2020-02-17",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Emails.pdf, p.102, 17 Feb, 3:28 pm UK, and Proximal_Origin_Slack.pdf, p.45, 17 Feb 2020, ~3.31 pm UK"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-18.8",
@@ -4243,7 +3492,7 @@
       "1"
      ],
      "date": "2020-02-17",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.45, 17 Feb 2020, 3:53 pm UK"
     },
@@ -4260,23 +3509,11 @@
      "doc": "Proximal_Origin_Slack.pdf",
      "kind": "slack",
      "pages": [
-      "45",
-      "1"
-     ],
-     "date": "2020-02-17",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Slack.pdf, p.45, 17 Feb 2020, 4:09 pm UK, and original tweet."
-    },
-    {
-     "doc": "Proximal_Origin_Slack.pdf",
-     "kind": "slack",
-     "pages": [
       "46",
       "1"
      ],
      "date": "2020-02-17",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.46, 17 Feb 2020, 5:41 pm UK"
     }
@@ -4290,20 +3527,7 @@
    "heading": "18.9 Farrar asks for some further watering down of the deliberate engineering scenario (17 Feb, 6:02 pm UK)",
    "date": "2020-02-17",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "109",
-      "1"
-     ],
-     "date": "2020-02-17",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Emails.pdf, p.109, 17 Feb 2020, 6:02 pm UK, and Change on virological.org, 17 Feb 2020"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-18.10",
@@ -4322,7 +3546,7 @@
       "1"
      ],
      "date": "2020-02-17",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.46, 17 Feb 2020, ~6 pm UK"
     }
@@ -4345,7 +3569,7 @@
       "1"
      ],
      "date": "2020-02-17",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.47, 17 Feb 2020, 6:19 pm UK"
     }
@@ -4359,20 +3583,7 @@
    "heading": "18.12 Farrar asks for the preprint release date to organise some publicity (17 Feb, 6:22 pm UK)",
    "date": "2020-02-17",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "109",
-      "1"
-     ],
-     "date": "2020-02-17",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Emails.pdf, p.109, 17 Feb 2020, 6:22 pm UK and 6:35 UK"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-18.13",
@@ -4391,7 +3602,7 @@
       "1"
      ],
      "date": "2020-02-17",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 108–109, 17 Feb 2020, 6:30 pm UK"
     }
@@ -4434,7 +3645,7 @@
       "1"
      ],
      "date": "2020-02-19",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 140–141, 19 Feb 2020"
     },
@@ -4443,20 +3654,27 @@
      "kind": "press",
      "pages": [],
      "date": "2020-11-02",
-     "url": null,
+     "url": "https://archive.li/p1Sof",
      "source_part": "p2",
-     "raw": "NY Times, ‘In Hunt for virus source, WHO let China take charge[^138]’, 2 Nov 2020"
+     "raw": "NY Times, ‘In Hunt for virus source, WHO let China take charge’, 2 Nov 2020"
     },
     {
-     "doc": "Lane-Transcript.pdf",
-     "kind": "transcript",
-     "pages": [
-      "86-90"
-     ],
-     "date": null,
-     "url": null,
+     "doc": null,
+     "kind": "other",
+     "pages": [],
+     "date": "2020-02-10",
+     "url": "https://www.science.org/content/article/mission-impossible-who-director-fights-prevent-pandemic-without-offending-china",
      "source_part": "p2",
-     "raw": "Clifford Lane Interview Transcript, Lane-Transcript.pdf, p.86–90"
+     "raw": "Science, ‘The health career’, 10 Feb 2020"
+    },
+    {
+     "doc": null,
+     "kind": "other",
+     "pages": [],
+     "date": "2020-02-10",
+     "url": "https://www.science.org/content/article/mission-impossible-who-director-fights-prevent-pandemic-without-offending-china",
+     "source_part": "p2",
+     "raw": "Science, ‘The health career’, 10 Feb 2020"
     }
    ]
   },
@@ -4478,19 +3696,7 @@
    "heading": "19.1 The need to close the gaps in the NASEM letter (5 Feb)",
    "date": "2020-02-05",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Biohazard_FOIA_Maryland_Emails_11.6.20.pdf",
-     "kind": "other",
-     "pages": [
-      "284"
-     ],
-     "date": "2020-02-07",
-     "url": "https://drive.google.com/file/d/12NTOh9Aswk5pBf-X_INFB_sdrmoLinjC/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "Biohazard_FOIA_Maryland_Emails_11.6.20.pdf. p.284, and 289, 6 and 7 Feb 2020"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-19.2",
@@ -4500,19 +3706,7 @@
    "heading": "19.2 Daszak decides to hide his role after talking to Baric and Linfa Wang (6 Feb)",
    "date": "2020-02-06",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Baric-Emails-2.17.21.pdf",
-     "kind": "email",
-     "pages": [
-      "181-182"
-     ],
-     "date": null,
-     "url": null,
-     "source_part": "p2",
-     "raw": "Baric-Emails-2.17.21.pdf, p.181–182, date, Baric-TI-Transcript.pdf, p. 126"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-19.3",
@@ -4528,9 +3722,9 @@
      "kind": "other",
      "pages": [],
      "date": "2020-02-09",
-     "url": "https://drive.google.com/file/d/12NTOh9Aswk5pBf-X_INFB_sdrmoLinjC/view?usp=sharing",
+     "url": "https://drive.google.com/file/d/12NTOh9Aswk5pBf-X_INFB_sdrmoLinjC",
      "source_part": "p2",
-     "raw": "Daszak, Biohazard_FOIA_Maryland_Emails_11.6.20.pdf[^151], 9 Feb 2020"
+     "raw": "Daszak, Biohazard_FOIA_Maryland_Emails_11.6.20.pdf, 9 Feb 2020"
     },
     {
      "doc": "Biohazard_FOIA_Maryland_Emails_11.6.20.pdf",
@@ -4539,7 +3733,7 @@
       "304"
      ],
      "date": "2020-02-09",
-     "url": "https://drive.google.com/file/d/12NTOh9Aswk5pBf-X_INFB_sdrmoLinjC/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "Biohazard_FOIA_Maryland_Emails_11.6.20.pdf, p. 304, 9 Feb 2020, 4:56 pm UK"
     }
@@ -4559,18 +3753,18 @@
      "kind": "email",
      "pages": [],
      "date": "2020-02-10",
-     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS/view?usp=drive_link",
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
-     "raw": "Holmes, Proximal_Origin_Emails.pdf[^152], 10 Feb 2020."
+     "raw": "Holmes, Proximal_Origin_Emails.pdf, 10 Feb 2020."
     },
     {
      "doc": "Proximal_Origin_Emails.pdf",
      "kind": "email",
      "pages": [],
      "date": "2020-02-10",
-     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS/view?usp=drive_link",
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
-     "raw": "Garry, Proximal_Origin_Emails.pdf[^153], 10 Feb 2020"
+     "raw": "Garry, Proximal_Origin_Emails.pdf, 10 Feb 2020"
     },
     {
      "doc": "Proximal_Origin_Emails.pdf",
@@ -4580,7 +3774,7 @@
       "1"
      ],
      "date": "2020-02-10",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 65–70, 10 Feb 2020 (US Time)"
     }
@@ -4602,9 +3796,9 @@
       "274"
      ],
      "date": null,
-     "url": "https://drive.google.com/file/d/1T2MNgjgjXKDGZFjyJvE2MO0RDb8UFcIe/view?usp=sharing",
+     "url": "https://drive.google.com/file/d/1T2MNgjgjXKDGZFjyJvE2MO0RDb8UFcIe",
      "source_part": "p2",
-     "raw": "OSU-1.12.23–1265-pages.pdf[^156], p.274"
+     "raw": "OSU-1.12.23–1265-pages.pdf, p.274"
     },
     {
      "doc": null,
@@ -4673,13 +3867,12 @@
      "doc": "1265-pages.pdf",
      "kind": "other",
      "pages": [
-      "365-366",
-      "1"
+      "365"
      ],
-     "date": "2020-02-16",
-     "url": "https://drive.google.com/file/d/1T2MNgjgjXKDGZFjyJvE2MO0RDb8UFcIe/view?usp=sharing",
+     "date": null,
+     "url": "https://drive.google.com/file/d/1T2MNgjgjXKDGZFjyJvE2MO0RDb8UFcIe",
      "source_part": "p2",
-     "raw": "OSU-1.12.23–1265-pages.pdf p.365–366, 16 Feb, 3:48 pm UK and 365, 4:11 pm UK"
+     "raw": "OSU-1.12.23–1265-pages.pdf p.365"
     },
     {
      "doc": null,
@@ -4692,12 +3885,12 @@
     },
     {
      "doc": null,
-     "kind": "other",
+     "kind": "press",
      "pages": [],
-     "date": null,
-     "url": null,
+     "date": "2020-11-02",
+     "url": "https://archive.li/p1Sof",
      "source_part": "p2",
-     "raw": "EHA emails — unreleased"
+     "raw": "NY Times, ‘In Hunt for virus source, WHO let China take charge’, 2 Nov 2020."
     }
    ]
   },
@@ -4719,31 +3912,7 @@
    "heading": "19.7 Publication of the Statement on change.org and in Lancet (18 Feb)",
    "date": "2020-02-18",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "1265-pages.pdf",
-     "kind": "other",
-     "pages": [
-      "351"
-     ],
-     "date": null,
-     "url": "https://drive.google.com/file/d/1T2MNgjgjXKDGZFjyJvE2MO0RDb8UFcIe/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "OSU-1.12.23–1265-pages.pdf, p. 351, change.org and Lancet"
-    },
-    {
-     "doc": "1265-pages.pdf",
-     "kind": "other",
-     "pages": [
-      "355",
-      "1"
-     ],
-     "date": "2020-02-07",
-     "url": "https://drive.google.com/file/d/1T2MNgjgjXKDGZFjyJvE2MO0RDb8UFcIe/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "OSU-1.12.23–1265-pages.pdf, p. 355, 18 Feb 10:51 am UK, and p. 351, 18 Feb, 2:10 pm UK, and Biohazard_FOIA_Maryland_Emails_11.6.20.pdf, p. 283, 7 Feb 2020, 8:22 pm UK"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-19.8",
@@ -4753,26 +3922,7 @@
    "heading": "19.8 Farrar pushes Daszak’s Statement on Twitter (18 Feb)",
    "date": "2020-02-18",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": null,
-     "kind": "social",
-     "pages": [],
-     "date": "2020-02-18",
-     "url": null,
-     "source_part": "p2",
-     "raw": "Farrar tweets, 18 Feb, 6:01 pm UK< and exchange on Twitter, 18 Feb (NZ Time),"
-    },
-    {
-     "doc": null,
-     "kind": "social",
-     "pages": [],
-     "date": "2020-02-20",
-     "url": null,
-     "source_part": "p2",
-     "raw": "Koopmans’, Golding’s and Swaminathan’s tweets, 19 and 20 Feb (NZ time)"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-20",
@@ -4801,7 +3951,7 @@
       "1"
      ],
      "date": "2020-02-17",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.46, 17 Feb, 5:51 pm UK"
     },
@@ -4813,7 +3963,7 @@
       "1"
      ],
      "date": "2020-02-17",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.47, 17 Feb, 9:08 pm UK"
     },
@@ -4825,18 +3975,9 @@
       "1"
      ],
      "date": "2020-02-17",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Slack.pdf, p.48, 17 Feb, 11:34 pm UK"
-    },
-    {
-     "doc": null,
-     "kind": "social",
-     "pages": [],
-     "date": "2020-02-17",
      "url": null,
      "source_part": "p2",
-     "raw": "Tweet showing publication of data on 17 Feb, 8:23 pm UK Time (18 Feb NZ time)"
+     "raw": "Proximal_Origin_Slack.pdf, p.48, 17 Feb, 11:34 pm UK"
     }
    ]
   },
@@ -4866,7 +4007,7 @@
       "1"
      ],
      "date": "2020-02-18",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.49, 18 Feb, 11:52 pm UK"
     },
@@ -4878,7 +4019,7 @@
       "1"
      ],
      "date": "2020-02-18",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.50, 18 Feb, 11:56 pm UK"
     },
@@ -4901,17 +4042,7 @@
    "heading": "20.3 Two pangolin preprints and a funeral (18–20 Feb)",
    "date": "2020-02-20",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": null,
-     "kind": "social",
-     "pages": [],
-     "date": "2020-02-18",
-     "url": null,
-     "source_part": "p2",
-     "raw": "Lam et al. (pub. 18 Feb) and Kangpeng Xiao et al. (pub. 20 Feb), and Trevor Bedford’s tweet about these sequences"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-20.4",
@@ -4939,7 +4070,7 @@
       "1"
      ],
      "date": "2020-02-19",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.50, 19 Feb 2020, 0:18 am UK"
     },
@@ -4951,21 +4082,9 @@
       "2"
      ],
      "date": "2020-02-20",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.55, 20 Feb, 2:38 pm UK"
-    },
-    {
-     "doc": "Proximal_Origin_Slack.pdf",
-     "kind": "slack",
-     "pages": [
-      "55",
-      "2"
-     ],
-     "date": "2020-02-20",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Slack.pdf, p.55, 20 Feb, 11:45 am UK, and p.56, 20 Feb, 3:09 pm UK"
     },
     {
      "doc": "Proximal_Origin_Slack.pdf",
@@ -4975,7 +4094,7 @@
       "2"
      ],
      "date": "2020-02-20",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.56, 20 Feb, 3:09 pm UK"
     },
@@ -5029,21 +4148,9 @@
       "1"
      ],
      "date": "2020-02-19",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.50, 19 Feb 2020, 0:37 am UK"
-    },
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "128-131",
-      "2"
-     ],
-     "date": "2020-02-20",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "Email from Clare Thomas with Referees; comments, Proximal_Origin_Emails.pdf, p. 128–131, 20 Feb 2020, 4:52 pm UK"
     }
    ]
   },
@@ -5064,7 +4171,7 @@
       "2"
      ],
      "date": "2020-02-20",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.56, 20 Feb 2020, 5:26 pm UK,"
     },
@@ -5076,9 +4183,9 @@
       "2"
      ],
      "date": "2020-02-20",
-     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS/view?usp=drive_link",
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
-     "raw": "Proximal_Origin_Emails.pdf[^179], p. 118, 20 Feb 2020, 5:48 pm UK"
+     "raw": "Proximal_Origin_Emails.pdf, p. 118, 20 Feb 2020, 5:48 pm UK"
     },
     {
      "doc": "Proximal_Origin_Emails.pdf",
@@ -5087,7 +4194,7 @@
       "119"
      ],
      "date": "2020-02-20",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 119. 20 Feb 2020, 5:48 pm UK"
     }
@@ -5110,7 +4217,7 @@
       "2"
      ],
      "date": "2020-02-20",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.57, 20 Feb 2020, 6:19 to 6:36 pm UK,"
     },
@@ -5122,7 +4229,7 @@
       "2"
      ],
      "date": "2020-02-20",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.57, 20 Feb 2020,"
     },
@@ -5134,9 +4241,20 @@
       "2"
      ],
      "date": "2020-02-22",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.61, 22 Feb 2020,"
+    },
+    {
+     "doc": "Proximal_Origin_Emails.pdf",
+     "kind": "email",
+     "pages": [
+      "130"
+     ],
+     "date": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
+     "source_part": "p2",
+     "raw": "Proximal_Origin_Emails.pdf, p. 130"
     },
     {
      "doc": "Proximal_Origin_Slack.pdf",
@@ -5146,7 +4264,7 @@
       "2"
      ],
      "date": "2020-02-20",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.57, 20 Feb 2020, 6:29 pm UK"
     }
@@ -5169,7 +4287,7 @@
       "2"
      ],
      "date": "2020-02-20",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.57, 20 Feb 2020, 6:32 to 6:36 pm UK"
     },
@@ -5181,7 +4299,7 @@
       "2"
      ],
      "date": "2020-02-20",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.57, 20 Feb 2020, 6:37 pm to 6:58 pm UK"
     },
@@ -5193,7 +4311,7 @@
       "2"
      ],
      "date": "2020-02-21",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.58, 21 Feb 2020, 0:33 am UK"
     }
@@ -5226,7 +4344,7 @@
       "2"
      ],
      "date": "2020-02-21",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.59, 21 Feb 2020, 6:37pm to 10:56 pm UK"
     }
@@ -5249,7 +4367,7 @@
       "2"
      ],
      "date": "2020-02-22",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.60, 22 Feb 2020, 2:30 pm to 6:56 pm UK"
     },
@@ -5261,7 +4379,7 @@
       "2"
      ],
      "date": "2020-02-22",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.60, 22 Feb 2020, 11:33 pm to 23 Feb, 0:44 am UK"
     },
@@ -5270,16 +4388,25 @@
      "kind": "other",
      "pages": [],
      "date": null,
+     "url": "https://youtu.be/g2V1870jVsM?si=gCtOp3KyTlINjmTS&t=2581",
+     "source_part": "p2",
+     "raw": "Racaniello, on TWiV 588 (43:02)"
+    },
+    {
+     "doc": null,
+     "kind": "other",
+     "pages": [],
+     "date": null,
      "url": null,
      "source_part": "p2",
-     "raw": "Racaniello, on TWiV 588 (43:02[^192])"
+     "raw": "___"
     },
     {
      "doc": "Proximal_Origin_Slack.pdf",
      "kind": "slack",
      "pages": [],
      "date": null,
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf"
     },
@@ -5291,7 +4418,7 @@
       "2"
      ],
      "date": "2020-02-24",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 64, 24 Feb 2020"
     }
@@ -5314,7 +4441,7 @@
       "2"
      ],
      "date": "2020-02-24",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.64–65, 24 Feb 2020, 7:41 pm UK"
     },
@@ -5337,20 +4464,7 @@
    "heading": "22.4 The FCS argument (25 Feb)",
    "date": "2020-02-25",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Proximal_Origin_Slack.pdf",
-     "kind": "slack",
-     "pages": [
-      "67",
-      "2"
-     ],
-     "date": "2020-02-24",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Slack.pdf, p.67, 24 Feb 2020, 11:38 pm UK, and p.67, 25 Feb 2020, 5 am to 8:30 am UK"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-22.5",
@@ -5369,18 +4483,9 @@
       "2"
      ],
      "date": "2020-02-25",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Slack.pdf, p.70, 25 Feb 2020, 1 am to 4:35 pm UK"
-    },
-    {
-     "doc": "5_20200229_1347_clean.pdf",
-     "kind": "other",
-     "pages": [],
-     "date": null,
      "url": null,
      "source_part": "p2",
-     "raw": "Comparison of Rebuttal#5_20200229_1347_clean.pdf and Rebuttal#4_20200222_1604_clean.pdf (ilovepdf.com)"
+     "raw": "Proximal_Origin_Slack.pdf, p.70, 25 Feb 2020, 1 am to 4:35 pm UK"
     }
    ]
   },
@@ -5401,7 +4506,7 @@
       "2"
      ],
      "date": "2020-02-25",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.67, 25 Feb 2020, 6:31 am to 9:20am UK"
     },
@@ -5413,7 +4518,7 @@
       "2"
      ],
      "date": "2020-02-25",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.68, 25 Feb 2020, 10:00 am UK"
     },
@@ -5425,7 +4530,7 @@
       "2"
      ],
      "date": "2020-02-25",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.69, 25 Feb 2020, 11:46 am UK"
     },
@@ -5434,9 +4539,9 @@
      "kind": "other",
      "pages": [],
      "date": null,
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W84jSM5wkBWd0lYNUzwaSkuKdwK23Kmr",
      "source_part": "p2",
-     "raw": "FOI by Tobias[^208], p. 5."
+     "raw": "FOI by Tobias, p. 5."
     }
    ]
   },
@@ -5463,23 +4568,11 @@
      "doc": "Proximal_Origin_Slack.pdf",
      "kind": "slack",
      "pages": [
-      "72",
-      "2"
-     ],
-     "date": "2020-02-26",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Slack.pdf, p.72, 26 Feb 2020, 3:00 pm to 3:24 pm UK, and image from version 13d of 26 Feb"
-    },
-    {
-     "doc": "Proximal_Origin_Slack.pdf",
-     "kind": "slack",
-     "pages": [
       "73",
       "2"
      ],
      "date": "2020-02-26",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.73, 26 Feb 2020, 6:42 pm to 10:57 pm UK"
     }
@@ -5493,20 +4586,7 @@
    "heading": "23.2 Decision to go with Nature Medicine (27 Feb)",
    "date": "2020-02-27",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Proximal_Origin_Slack.pdf",
-     "kind": "slack",
-     "pages": [
-      "73",
-      "2"
-     ],
-     "date": "2020-02-27",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Slack.pdf, p.73, 27 Feb 2020"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-23.3",
@@ -5518,6 +4598,17 @@
    "date_raw": null,
    "evidence": [
     {
+     "doc": "Proximal_Origin_Emails.pdf",
+     "kind": "email",
+     "pages": [
+      "138"
+     ],
+     "date": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
+     "source_part": "p2",
+     "raw": "Monteiro, in Proximal_Origin_Emails.pdf, p.138, Feb 28, 1:53 am UK."
+    },
+    {
      "doc": "Proximal_Origin_Slack.pdf",
      "kind": "slack",
      "pages": [
@@ -5525,7 +4616,7 @@
       "2"
      ],
      "date": "2020-02-28",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.74, 28 Feb 2020, 0:39 am to 6:56 am UK"
     },
@@ -5537,44 +4628,9 @@
       "2"
      ],
      "date": "2020-02-29",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.77, 29 Feb 2020, 9:06 pm UK"
-    },
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "134-137",
-      "2"
-     ],
-     "date": "2020-03-04",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Emails.pdf, p. 134–137, 29 Feb to 4 Mar 2020"
-    },
-    {
-     "doc": "Proximal_Origin_Slack.pdf",
-     "kind": "slack",
-     "pages": [
-      "78"
-     ],
-     "date": "2020-03-01",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Slack.pdf, p.78, 1 Mar 2020, 0:23 am UK and p.78, 1 Mar 2020, 0:23 am UK, p. 84, 3 Mar 2020, 5:45 am UK"
-    },
-    {
-     "doc": "Proximal_Origin_Slack.pdf",
-     "kind": "slack",
-     "pages": [
-      "65-66",
-      "2"
-     ],
-     "date": "2020-02-24",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Slack.pdf, p.65–66, 24 Feb 2020, 8:36 pm UK and p.89, 5 Mar 2020, 11:07 pm UK"
     }
    ]
   },
@@ -5622,15 +4678,6 @@
    "date_raw": null,
    "evidence": [
     {
-     "doc": null,
-     "kind": "social",
-     "pages": [],
-     "date": "2020-03-17",
-     "url": null,
-     "source_part": "p2",
-     "raw": "17 Mar: P.O. in Nature Medicine (v19) and Monteiro’s tweet"
-    },
-    {
      "doc": "Proximal_Origin_Slack.pdf",
      "kind": "slack",
      "pages": [
@@ -5638,7 +4685,7 @@
       "1"
      ],
      "date": "2020-03-19",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.105, 19 Mar, 8:28 pm EST"
     }
@@ -5661,7 +4708,7 @@
       "1"
      ],
      "date": "2020-03-17",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 140, 17 Mar 2020"
     }
@@ -5707,6 +4754,15 @@
     },
     {
      "doc": null,
+     "kind": "other",
+     "pages": [],
+     "date": "2020-03-06",
+     "url": "https://www.cnbc.com/2020/03/06/secretary-of-state-mike-pompeo-says-china-not-forthcoming-initially-on-coronavirus-setting-prevention-efforts-back.html",
+     "source_part": "p2",
+     "raw": "CNBC article, 6 Mar 2020"
+    },
+    {
+     "doc": null,
      "kind": "social",
      "pages": [],
      "date": "2020-03-12",
@@ -5728,18 +4784,9 @@
      "kind": "other",
      "pages": [],
      "date": "2020-03-17",
-     "url": null,
+     "url": "https://web.archive.org/web/20200330083752/https://www.telegraph.co.uk/news/2020/03/17/tensions-us-china-escalate-trump-calls-covid-19-chinese-virus/",
      "source_part": "p2",
-     "raw": "Telegraph UK article[^238], 17 Mar 2020"
-    },
-    {
-     "doc": null,
-     "kind": "slack",
-     "pages": [],
-     "date": "2020-03-18",
-     "url": null,
-     "source_part": "p2",
-     "raw": "The Atlantic, 18 Mar 2020 and CGTN, 17 Mar 2020"
+     "raw": "Telegraph UK article, 17 Mar 2020"
     }
    ]
   },
@@ -5783,6 +4830,15 @@
    "date_raw": null,
    "evidence": [
     {
+     "doc": null,
+     "kind": "other",
+     "pages": [],
+     "date": null,
+     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta",
+     "source_part": "p2",
+     "raw": "Proximal Origin (Nature Medicine)."
+    },
+    {
      "doc": "01.09.24.doj-nih.pdf",
      "kind": "other",
      "pages": [
@@ -5792,6 +4848,15 @@
      "url": null,
      "source_part": "p2",
      "raw": "USRTK-Prod-2–01.09.24.doj-nih.pdf, p. 35"
+    },
+    {
+     "doc": "2023.04.06-Lipkin-Transcript.pdf",
+     "kind": "transcript",
+     "pages": [],
+     "date": "2023-01-01",
+     "url": "https://drive.google.com/file/d/1Ecqlkw1ahfAfR2m--wajPW8-cjKHf1BL",
+     "source_part": "p2",
+     "raw": "2023.04.06-Lipkin-Transcript.pdf"
     }
    ]
   },
@@ -5823,20 +4888,7 @@
    "heading": "26.1 Initial euphoria (17 Mar–14 Apr)",
    "date": "2020-03-17",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Proximal_Origin_Slack.pdf",
-     "kind": "slack",
-     "pages": [
-      "101",
-      "1"
-     ],
-     "date": "2020-03-18",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Slack.pdf, p.101, 18 Mar 2020, 11:42 pm CA and p.102, 19 Mar, 9:04 pm CA, p.103, 19 Mar, 10:34 pm CA"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-26.2",
@@ -5846,7 +4898,17 @@
    "heading": "26.2 The Embassy cables (14 Apr)",
    "date": "2020-04-14",
    "date_raw": null,
-   "evidence": []
+   "evidence": [
+    {
+     "doc": null,
+     "kind": "press",
+     "pages": [],
+     "date": "2020-04-14",
+     "url": "https://www.washingtonpost.com/opinions/2020/04/14/state-department-cables-warned-safety-issues-wuhan-lab-studying-bat-coronaviruses/",
+     "source_part": "p2",
+     "raw": "Washington Post piece by Josh Rogin, 14 Apr 2020"
+    }
+   ]
   },
   {
    "id": "p2-26.3",
@@ -5866,29 +4928,7 @@
    "heading": "26.4 Fauci pushes P.O. from the White House podium (17 Apr)",
    "date": "2020-04-17",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Letter-Re.-Feb-1-Emails-011122.pdf",
-     "kind": "other",
-     "pages": [
-      "15",
-      "1"
-     ],
-     "date": "2020-04-16",
-     "url": null,
-     "source_part": "p2",
-     "raw": "Letter-Re.-Feb-1-Emails-011122.pdf, p.15, 16 Apr 2020, p.16, 17 Apr 2020"
-    },
-    {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": "2020-04-17",
-     "url": null,
-     "source_part": "p2",
-     "raw": "Question to Fauci — Coronavirus Task Force Hold a Press Briefing — 17 Apr 2020"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-26.5",
@@ -5907,7 +4947,7 @@
       "1"
      ],
      "date": "2020-04-17",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.128, 17 Apr 2020"
     }
@@ -5923,6 +4963,15 @@
    "date_raw": null,
    "evidence": [
     {
+     "doc": null,
+     "kind": "slack",
+     "pages": [],
+     "date": null,
+     "url": "https://drive.google.com/file/d/126z1_ot8e-GyQSkOJHQKEQXPWdA805Xq",
+     "source_part": "p2",
+     "raw": "Proximal_Origin_Slack.pdf, p.129"
+    },
+    {
      "doc": "Proximal_Origin_Slack.pdf",
      "kind": "slack",
      "pages": [
@@ -5930,7 +4979,7 @@
       "1"
      ],
      "date": "2020-04-17",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.129, 17 Apr 2020"
     },
@@ -5942,7 +4991,7 @@
       "1"
      ],
      "date": "2020-04-18",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.130, 18 Apr 2020"
     },
@@ -5954,7 +5003,7 @@
       "1"
      ],
      "date": "2020-04-18",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.131, 18 Apr 2020"
     },
@@ -5966,7 +5015,7 @@
       "1"
      ],
      "date": "2020-04-18",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.131, 18 Apr 2020"
     }
@@ -5989,7 +5038,7 @@
       "3"
      ],
      "date": "2020-04-30",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.140, 30 Apr 2020"
     }
@@ -6023,20 +5072,7 @@
    "heading": "27.1 A strange email (25 Jul)",
    "date": "2020-07-25",
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "161",
-      "2"
-     ],
-     "date": "2020-07-25",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Emails.pdf, p. 161, 25 Jul 2020, and another source"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-27.2",
@@ -6057,18 +5093,6 @@
      "url": null,
      "source_part": "p2",
      "raw": "Email sent to Fauci with Farrar in CC (from Andersen’s box — CA time), source: ‘Obtain, but verify.pdf’, p. 4"
-    },
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "160-161",
-      "2"
-     ],
-     "date": "2020-07-27",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Emails.pdf, p. 160–161, 27 Jul 2020 and p. 143, 28 Jul 2020"
     }
    ]
   },
@@ -6089,7 +5113,7 @@
       "2"
      ],
      "date": "2020-07-25",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 161, 25 Jul 2020"
     },
@@ -6101,7 +5125,7 @@
       "2"
      ],
      "date": "2020-07-28",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 151, 28 Jul 2020"
     }
@@ -6125,19 +5149,7 @@
    "heading": "27.5 Not Baric",
    "date": null,
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Baric-TI-Transcript.pdf",
-     "kind": "transcript",
-     "pages": [
-      "125"
-     ],
-     "date": null,
-     "url": "https://drive.google.com/file/d/18G0YpLT3q0E6y0mTP2_ncLdImM1DNGs6/view?usp=drive_link",
-     "source_part": "p2",
-     "raw": "source: Vanity Fair and Baric-TI-Transcript.pdf, p.125 and p.163"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-27.6",
@@ -6176,7 +5188,7 @@
       "2"
      ],
      "date": "2020-07-28",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "answer back to Cohen, Proximal_Origin_Emails.pdf, p.159, 28 Jul 2020"
     }
@@ -6190,35 +5202,7 @@
    "heading": "27.9 A third clue",
    "date": null,
    "date_raw": null,
-   "evidence": [
-    {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": "2018-01-01",
-     "url": null,
-     "source_part": "p2",
-     "raw": "Bellagio GVP attendees, consideration of Marion Koopmans for the GVP Board of Directors (Dec 2018), Lipkin-Daszak paper pushing for GVP activities"
-    },
-    {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": "2017-01-01",
-     "url": null,
-     "source_part": "p2",
-     "raw": "GVP Organisarional chart (Feb 2017), and letter to Science suggesting Lipkin as peer reviewer for the GVP ‘launch’ Policy Forum article."
-    },
-    {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": null,
-     "url": null,
-     "source_part": "p2",
-     "raw": "GVP training in Lipkin’s lan in NY for two tecnicians from Supaporn’s team and two technicians from Thanat Chookajorn’s team. Source: unreleased"
-    }
-   ]
+   "evidence": []
   },
   {
    "id": "p2-28",
@@ -6269,49 +5253,15 @@
      "raw": "Daszak’s decision to answer Holmes, Andersen and Rambaut (USRTK_UCDavis_PROD_06.pdf, p. 290, March 2018)"
     },
     {
-     "doc": "USRTK_UCDavis_PROD_06.pdf",
-     "kind": "email",
-     "pages": [
-      "289"
-     ],
-     "date": "2018-01-01",
-     "url": null,
-     "source_part": "p2",
-     "raw": "Holmes et al (Nature, June 2018), Daszak’s decision to reply (June 2018, USRTK_UCDavis_PROD_06.pdf, p. 289), and Daszak’s reply (USRTK_UCDavis_PROD_06.pdf, p. 292)"
-    },
-    {
-     "doc": "USRTK_UCDavis_PROD_30.pdf",
-     "kind": "email",
-     "pages": [
-      "105"
-     ],
-     "date": "2018-01-01",
-     "url": null,
-     "source_part": "p2",
-     "raw": "The criticism by Holmes and Andersen of the GVP enterprise pushed by Daszak’s et al (Nature), Nature’s Correspondence Editor’s reply back to Daszak (USRTK_UCDavis_PROD_30.pdf, p.105, Aug 2018), and Dasak discussing that reply (UCD-Batch-28-Combined.pdf, p.73, Aug 2018)."
-    },
-    {
      "doc": "USRTK_UCDavis_PROD_06-ocr.pdf",
      "kind": "email",
      "pages": [
       "1004"
      ],
      "date": "2018-06-21",
-     "url": "https://drive.google.com/file/d/14b5S7CZnQndWzZxBuLFxDbvarZgItEj9/view?usp=sharing",
+     "url": "https://drive.google.com/file/d/14b5S7CZnQndWzZxBuLFxDbvarZgItEj9",
      "source_part": "p2",
-     "raw": "Peter Daszak, 21 June 2018, USRTK_UCDavis_PROD_06-ocr.pdf[^296], p.1004"
-    },
-    {
-     "doc": "USRTK_UCDavis_PROD_06-ocr.pdf",
-     "kind": "email",
-     "pages": [
-      "1004",
-      "21"
-     ],
-     "date": "2018-06-21",
-     "url": "https://drive.google.com/file/d/14b5S7CZnQndWzZxBuLFxDbvarZgItEj9/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "sources: Twitter, and USRTK_UCDavis_PROD_06-ocr.pdf, p.1004, 21 June 2018"
+     "raw": "Peter Daszak, 21 June 2018, USRTK_UCDavis_PROD_06-ocr.pdf, p.1004"
     },
     {
      "doc": null,
@@ -6338,9 +5288,9 @@
       "1205"
      ],
      "date": "2019-01-03",
-     "url": "https://drive.google.com/file/d/1jNeqlHWUnV2QoEL5fvnzHX7sq867ue3Z/view?usp=sharing",
+     "url": "https://drive.google.com/file/d/1jNeqlHWUnV2QoEL5fvnzHX7sq867ue3Z",
      "source_part": "p2",
-     "raw": "Peter discussing a coming Symposium in Geneva, 3 Jan 2019 USRTK_UCDavis_PROD_38-ocr.pdf[^297], p. 1205"
+     "raw": "Peter discussing a coming Symposium in Geneva, 3 Jan 2019 USRTK_UCDavis_PROD_38-ocr.pdf, p. 1205"
     }
    ]
   },
@@ -6358,6 +5308,15 @@
      "kind": "press",
      "pages": [],
      "date": "2019-01-01",
+     "url": "https://web.archive.org/web/20191101005742/https://www.nytimes.com/2019/10/25/health/predict-usaid-viruses.html",
+     "source_part": "p2",
+     "raw": "‘Scientists Were Hunting for the Next Ebola. Now the U.S. Has Cut Off Their Funding’, NY Times, Oct 2019, Donald G. McNeil Jr."
+    },
+    {
+     "doc": null,
+     "kind": "press",
+     "pages": [],
+     "date": "2019-01-01",
      "url": null,
      "source_part": "p2",
      "raw": "Andersen commenting on NY Times article by G. McNeil Jr, Oct-Nov 2019"
@@ -6370,28 +5329,6 @@
      "url": null,
      "source_part": "p2",
      "raw": "Lobbying spreadsheet of the GVP, with Donald McNeil as main NY Times contact"
-    },
-    {
-     "doc": "USRTK_UCDavis_PROD_18-ocr.pdf",
-     "kind": "email",
-     "pages": [
-      "72-75"
-     ],
-     "date": "2017-01-24",
-     "url": null,
-     "source_part": "p2",
-     "raw": "source: USRTK_UCDavis_PROD_18-ocr.pdf, 24 Jan 2017, p.72–75"
-    },
-    {
-     "doc": "USRTK_UCDavis_PROD_17-ocr.pdf",
-     "kind": "email",
-     "pages": [
-      "12"
-     ],
-     "date": "2020-04-03",
-     "url": null,
-     "source_part": "p2",
-     "raw": "source: USRTK_UCDavis_PROD_17-ocr.pdf, 3 April 2020, p.12 & 734"
     }
    ]
   },
@@ -6405,15 +5342,6 @@
    "date_raw": "12 Jan 2020",
    "evidence": [
     {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": "2018-01-01",
-     "url": null,
-     "source_part": "p2",
-     "raw": "left: extract of Holmes et al mentioning virological.org (Nature, June 2018), right: reactions to Holmes et al during a GVP call (Eddy in ‘Eddy was on’ is Eddy Rubin of Metabiota)"
-    },
-    {
      "doc": "Proximal_Origin_Slack.pdf",
      "kind": "slack",
      "pages": [
@@ -6421,7 +5349,7 @@
       "1"
      ],
      "date": "2020-02-11",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.32, 11 Feb 2020"
     }
@@ -6444,7 +5372,7 @@
       "1"
      ],
      "date": "2020-02-10",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p.65, 10 Feb 2020"
     },
@@ -6456,7 +5384,7 @@
       "1"
      ],
      "date": "2020-02-18",
-     "url": "https://drive.google.com/file/d/1T2MNgjgjXKDGZFjyJvE2MO0RDb8UFcIe/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "OSU-1.12.23–1265-pages.pdf, p. 319, 18 Feb 2020"
     },
@@ -6467,7 +5395,7 @@
       "319"
      ],
      "date": "2020-02-18",
-     "url": "https://drive.google.com/file/d/1T2MNgjgjXKDGZFjyJvE2MO0RDb8UFcIe/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "OSU-1.12.23–1265-pages.pdf, p. 319,-320, 17–18 Feb 2020"
     }
@@ -6483,45 +5411,13 @@
    "date_raw": null,
    "evidence": [
     {
-     "doc": "7.19.21-Partial-Production_Redacted.pdf",
-     "kind": "other",
-     "pages": [
-      "1"
-     ],
-     "date": "2020-04-24",
-     "url": null,
-     "source_part": "p2",
-     "raw": "BuzzFeed-v.-HHS-20-cv-2704–7.19.21-Partial-Production_Redacted.pdf, p.1 and p.8, 24 Apr 2020"
-    },
-    {
-     "doc": "email-04.pdf",
-     "kind": "other",
-     "pages": [],
-     "date": "2020-04-26",
-     "url": null,
-     "source_part": "p2",
-     "raw": "email-04.pdf (note that the email header is also the header of the cancellation email from Lauer), and email-02.pdf, both 26 Apr 2020"
-    },
-    {
      "doc": null,
      "kind": "other",
      "pages": [],
      "date": "2020-01-01",
-     "url": null,
+     "url": "https://www.politico.com/news/2020/04/27/trump-cuts-research-bat-human-virus-china-213076",
      "source_part": "p2",
-     "raw": "Politico[^312], April 27, 2020"
-    },
-    {
-     "doc": "1265-pages.pdf",
-     "kind": "other",
-     "pages": [
-      "505-506",
-      "2"
-     ],
-     "date": "2020-05-29",
-     "url": "https://drive.google.com/file/d/1T2MNgjgjXKDGZFjyJvE2MO0RDb8UFcIe/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "OSU-1.12.23–1265-pages.pdf, p.505–506, 29 May 2020"
+     "raw": "Politico, April 27, 2020"
     },
     {
      "doc": null,
@@ -6531,24 +5427,6 @@
      "url": null,
      "source_part": "p2",
      "raw": "Peter’s tweets, 25 Jul 2020"
-    },
-    {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": null,
-     "url": null,
-     "source_part": "p2",
-     "raw": "left: map shown during high-level meetings with the Chinese government and US. State Dep in Beijing, right: expected cost of GVP — the $1.3bln aim at discovering 75% of targeted global virome (at a given time), source: DRASTIC FOIA"
-    },
-    {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": null,
-     "url": null,
-     "source_part": "p2",
-     "raw": "source: GVP (Inc.) Consortium Prospectus & Joining Form"
     },
     {
      "doc": null,
@@ -6567,18 +5445,6 @@
      "url": null,
      "source_part": "p2",
      "raw": "Daszak’s email to Morens about his work with Koopmans to sink the WHO mission"
-    },
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "157",
-      "2"
-     ],
-     "date": "2020-07-28",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Emails.pdf, p.157, 28 Jul 2020, and p. 57, 8 Feb 2020"
     },
     {
      "doc": null,
@@ -6612,17 +5478,6 @@
      "raw": "2023.06.16-Andersen-Transcript.pdf, p.146–147"
     },
     {
-     "doc": "135885afauci112322-Full-Redacted.pdf",
-     "kind": "other",
-     "pages": [
-      "35"
-     ],
-     "date": null,
-     "url": "https://x.com/Florin_Uncovers/status/1646123630265266176?s=20",
-     "source_part": "p2",
-     "raw": "https://x.com/Florin_Uncovers/status/1646123630265266176?s=20 and 612472407–135885afauci112322-Full-Redacted.pdf, p. 35"
-    },
-    {
      "doc": null,
      "kind": "other",
      "pages": [],
@@ -6648,7 +5503,7 @@
       "2"
      ],
      "date": "2021-05-24",
-     "url": "https://drive.google.com/file/d/1O6_TaUYbPeAsdwOj-1JkvzKQFVBtx_Jw/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "UTMB-LeDuc-batch-1.pdf, p.2816, 24 May 2021"
     },
@@ -6687,20 +5542,9 @@
       "206"
      ],
      "date": null,
-     "url": "https://drive.google.com/file/d/1O6_TaUYbPeAsdwOj-1JkvzKQFVBtx_Jw/view?usp=sharing",
+     "url": "https://drive.google.com/file/d/1O6_TaUYbPeAsdwOj-1JkvzKQFVBtx_Jw",
      "source_part": "p2",
-     "raw": "UTMB-LeDuc-batch-1.pdf,[^342] p.4,206 and 4,678]"
-    },
-    {
-     "doc": "2023.04.06-Lipkin-Transcript.pdf",
-     "kind": "transcript",
-     "pages": [
-      "104-107"
-     ],
-     "date": "2023-01-01",
-     "url": null,
-     "source_part": "p2",
-     "raw": "2023.04.06-Lipkin-Transcript.pdf, p84–85 and p.104–107"
+     "raw": "UTMB-LeDuc-batch-1.pdf, p.4,206 and 4,678]"
     },
     {
      "doc": "Proximal_Origin_Slack.pdf",
@@ -6710,7 +5554,7 @@
       "1"
      ],
      "date": "2020-02-10",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.34, 10 Feb 2020"
     },
@@ -6722,20 +5566,9 @@
       "2"
      ],
      "date": "2020-02-25",
-     "url": "https://drive.google.com/file/d/1T2MNgjgjXKDGZFjyJvE2MO0RDb8UFcIe/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "OSU-1.12.23–1265-pages.pdf, p. 343–344, 25 Feb 2020"
-    },
-    {
-     "doc": "Biohazard_FOIA_Maryland_Emails_11.6.20.pdf",
-     "kind": "other",
-     "pages": [
-      "255"
-     ],
-     "date": null,
-     "url": "https://drive.google.com/file/d/12NTOh9Aswk5pBf-X_INFB_sdrmoLinjC/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "Biohazard_FOIA_Maryland_Emails_11.6.20.pdf, p.255 and CSU_records.pdf, p.1538"
     },
     {
      "doc": null,
@@ -6747,24 +5580,15 @@
      "raw": "Source: Katherine Eban’s tweet, from Baric’s emails"
     },
     {
-     "doc": "00220_redacted-records_pt1.pdf",
-     "kind": "other",
+     "doc": "Baric-TI-Transcript.pdf",
+     "kind": "transcript",
      "pages": [
-      "562"
+      "93"
      ],
-     "date": "2020-02-23",
-     "url": null,
+     "date": null,
+     "url": "https://drive.google.com/file/d/173bZUapV1fbWx7KXqD30uynH1sQddOLs",
      "source_part": "p2",
-     "raw": "21–00220_redacted-records_pt1.pdf, p.562 and 627, 22 and 23 Feb 2020."
-    },
-    {
-     "doc": null,
-     "kind": "social",
-     "pages": [],
-     "date": "2020-02-12",
-     "url": null,
-     "source_part": "p2",
-     "raw": "Daszak’s tweet (12 Feb 2020) and Daszak’s presentation on 2021 WHO mission (Feb 2021)"
+     "raw": "Baric-TI-Transcript.pdf, p.93"
     },
     {
      "doc": "covid-19-global-research-and-innovation-forum-2020-overview.pdf",
@@ -6776,33 +5600,13 @@
      "raw": "covid-19-global-research-and-innovation-forum-2020-overview.pdf"
     },
     {
-     "doc": "04.10.24.doj-nih.pdf",
-     "kind": "other",
-     "pages": [
-      "184-186"
-     ],
-     "date": "2021-08-05",
-     "url": null,
-     "source_part": "p2",
-     "raw": "USRTK-Prod-4–04.10.24.doj-nih.pdf, p.184–186, 5 Aug 2021"
-    },
-    {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": null,
-     "url": null,
-     "source_part": "p2",
-     "raw": "Extract from ‘Viral’, by Chan and Ridley, p.259–260"
-    },
-    {
      "doc": "Proximal_Origin_Slack.pdf",
      "kind": "slack",
      "pages": [
       "45"
      ],
-     "date": "2021-02-17",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "date": "2020-02-17",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p. 45 and 47, 17 Feb"
     },
@@ -6811,39 +5615,27 @@
      "kind": "other",
      "pages": [],
      "date": "2016-01-01",
-     "url": "https://doi.org/10.1073%2Fpnas.1601512113[^368]",
+     "url": "https://doi.org/10.1073%2Fpnas.1601512113](https://doi.org/10.1073%2Fpnas.1601512113",
      "source_part": "p2",
-     "raw": "‘Moving beyond metagenomics to find the next pandemic virus’, PNAS, Mar 2016, https://doi.org/10.1073%2Fpnas.1601512113[^368]"
+     "raw": "‘Moving beyond metagenomics to find the next pandemic virus’, PNAS, Mar 2016, https://doi.org/10.1073%2Fpnas.1601512113"
+    },
+    {
+     "doc": null,
+     "kind": "press",
+     "pages": [],
+     "date": null,
+     "url": "https://www.straitstimes.com/world/united-states/coronavirus-was-not-synthesized-in-a-laboratory-whos-chief-scientist](https://www.straitstimes.com/world/united-states/coronavirus-was-not-synthesized-in-a-laboratory-whos-chief-scientist",
+     "source_part": "p2",
+     "raw": "https://www.straitstimes.com/world/united-states/coronavirus-was-not-synthesized-in-a-laboratory-whos-chief-scientist"
     },
     {
      "doc": null,
      "kind": "other",
      "pages": [],
      "date": null,
-     "url": null,
+     "url": "https://youtu.be/g2V1870jVsM?si=ZbBivUxlMPXGkg8d&t=3575",
      "source_part": "p2",
-     "raw": "Racaniello, on TWiV 588 (59:37[^374])"
-    },
-    {
-     "doc": "OSU-records-Shan-Lu-Liu-Aug-4.pdf",
-     "kind": "email",
-     "pages": [
-      "253",
-      "1"
-     ],
-     "date": "2020-02-16",
-     "url": null,
-     "source_part": "p2",
-     "raw": "OSU-records-Shan-Lu-Liu-Aug-4.pdf, p.253, 16 Feb 2020, email-02.pdf 26 Apr 2020, and article on Baric’s interview from Sep 2020."
-    },
-    {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": "2017-01-01",
-     "url": null,
-     "source_part": "p2",
-     "raw": "Extracts from Daszak’s GVP deck for the DoD, Sep. 2017."
+     "raw": "Racaniello, on TWiV 588 (59:37)"
     },
     {
      "doc": null,
@@ -6891,15 +5683,15 @@
      "raw": "USRTK FOI — drafting of the DEFUSE proposal"
     },
     {
-     "doc": "536974886-Gain-Of-Function-Communications-Between-EcoHealth-Alliance-And-NIAID-2.pdf",
-     "kind": "other",
+     "doc": "Baric-TI-Transcript.pdf",
+     "kind": "transcript",
      "pages": [
-      "57"
+      "77"
      ],
      "date": null,
-     "url": null,
+     "url": "https://drive.google.com/file/d/173bZUapV1fbWx7KXqD30uynH1sQddOLs",
      "source_part": "p2",
-     "raw": "536974886-Gain-Of-Function-Communications-Between-EcoHealth-Alliance-And-NIAID-2.pdf, p. 57 and 68–59"
+     "raw": "Baric-TI-Transcript.pdf, extracts from p.77"
     },
     {
      "doc": "Baric-TI-Transcript.pdf",
@@ -6908,52 +5700,9 @@
       "122"
      ],
      "date": null,
-     "url": "https://drive.google.com/file/d/18G0YpLT3q0E6y0mTP2_ncLdImM1DNGs6/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Baric-TI-Transcript.pdf, p.122"
-    },
-    {
-     "doc": "Saif-OSU-Batch-1.pdf",
-     "kind": "email",
-     "pages": [
-      "209"
-     ],
-     "date": "2020-02-12",
-     "url": null,
-     "source_part": "p2",
-     "raw": "Saif-OSU-Batch-1.pdf, p.209 12 Feb 2020 11:49 am EST and p.177, 12:32 pm EST"
-    },
-    {
-     "doc": null,
-     "kind": "press",
-     "pages": [],
-     "date": "2013-01-01",
-     "url": null,
-     "source_part": "p2",
-     "raw": "James Chau on CGTN presenting the forced confession of Peter Humphrey (2013, YouTube), and James Chau with Dr. Tedros and Schwartländer (2017, Twitter)"
-    },
-    {
-     "doc": "320.pdf",
-     "kind": "other",
-     "pages": [
-      "244"
-     ],
-     "date": null,
-     "url": null,
-     "source_part": "p2",
-     "raw": "Request-20–320.pdf, p. 244 and p. 264"
-    },
-    {
-     "doc": "tobias-nih-foia-60136-august-production-redacted_redacted.pdf",
-     "kind": "other",
-     "pages": [
-      "214",
-      "1"
-     ],
-     "date": "2020-08-10",
-     "url": null,
-     "source_part": "p2",
-     "raw": "tobias-nih-foia-60136-august-production-redacted_redacted.pdf, p. 214, 10 Aug 2020, and p. 203–204, 18 Aug 2020"
     },
     {
      "doc": "Proximal_Origin_Emails.pdf",
@@ -6963,20 +5712,9 @@
       "2"
      ],
      "date": "2020-07-25",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 161, 25 Jul 2020"
-    },
-    {
-     "doc": "Biohazard_FOIA_Maryland_Emails_11.6.20.pdf",
-     "kind": "other",
-     "pages": [
-      "292"
-     ],
-     "date": "2020-02-07",
-     "url": "https://drive.google.com/file/d/12NTOh9Aswk5pBf-X_INFB_sdrmoLinjC/view?usp=sharing",
-     "source_part": "p2",
-     "raw": "Biohazard_FOIA_Maryland_Emails_11.6.20.pdf, p. 292, 7 Feb 2020, and live tweets by Daszak during the 11–12 BluePrint event in Geneva"
     },
     {
      "doc": "Underlying-Docs_Morens-Memo-5.22.pdf",
@@ -6996,46 +5734,7 @@
      "date": null,
      "url": null,
      "source_part": "p2",
-     "raw": "sources: web page and oath"
-    },
-    {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": null,
-     "url": null,
-     "source_part": "p2",
      "raw": "source: Paul D. Thacker"
-    },
-    {
-     "doc": "2024-final-production-for-nih-foia-request-61568_OCR_Copy.pdf",
-     "kind": "other",
-     "pages": [
-      "19",
-      "23"
-     ],
-     "date": "2024-01-01",
-     "url": null,
-     "source_part": "p2",
-     "raw": "source: 11–7–2024-final-production-for-nih-foia-request-61568_OCR_Copy.pdf, p. 19, 23 and 5."
-    },
-    {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": null,
-     "url": null,
-     "source_part": "p2",
-     "raw": "source: WHO website"
-    },
-    {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": null,
-     "url": null,
-     "source_part": "p2",
-     "raw": "source: Visual Capitalist"
     },
     {
      "doc": null,
@@ -7047,13 +5746,15 @@
      "raw": "(Unreleased doc)"
     },
     {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": null,
-     "url": null,
+     "doc": "USRTK_UCDavis_PROD_27-ocr.pdf",
+     "kind": "email",
+     "pages": [
+      "274"
+     ],
+     "date": "2017-12-10",
+     "url": "https://drive.google.com/file/d/1J-hkudlaRz17Q1z6l0dcnVSuWHmOp-s5",
      "source_part": "p2",
-     "raw": "(Unreleased FOI)"
+     "raw": "Daszak to his co-authors, 10 Dec 2017, USRTK_UCDavis_PROD_27-ocr.pdf, p.274"
     },
     {
      "doc": "USRTK_UCDavis_PROD_27-ocr.pdf",
@@ -7065,18 +5766,6 @@
      "url": null,
      "source_part": "p2",
      "raw": "source: USRTK_UCDavis_PROD_27-ocr.pdf, p.274"
-    },
-    {
-     "doc": "01981-F-Dec-2022-Production-OPAQUE.pdf",
-     "kind": "other",
-     "pages": [
-      "1",
-      "592"
-     ],
-     "date": "2022-01-01",
-     "url": null,
-     "source_part": "p2",
-     "raw": "source: ED-20–01981-F-Dec-2022-Production-OPAQUE.pdf, p. 1,592 and 503"
     },
     {
      "doc": null,
@@ -7103,9 +5792,9 @@
       "22-23"
      ],
      "date": null,
-     "url": "https://drive.google.com/file/d/173bZUapV1fbWx7KXqD30uynH1sQddOLs/view?usp=sharing",
+     "url": "https://drive.google.com/file/d/173bZUapV1fbWx7KXqD30uynH1sQddOLs",
      "source_part": "p2",
-     "raw": "Baric-TI-Transcript.pdf[^468], extracts from p.22–23"
+     "raw": "Baric-TI-Transcript.pdf, extracts from p.22–23"
     },
     {
      "doc": "Proximal_Origin_Slack.pdf",
@@ -7114,7 +5803,7 @@
       "21"
      ],
      "date": "2020-02-07",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.21, 7 Feb 2020"
     },
@@ -7126,7 +5815,7 @@
       "1"
      ],
      "date": "2020-02-12",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.39, 12 Feb 2020"
     },
@@ -7138,7 +5827,7 @@
       "1"
      ],
      "date": "2020-02-12",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.39, 12 Feb 2020"
     },
@@ -7150,7 +5839,7 @@
       "2"
      ],
      "date": "2020-02-25",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.70, 25 Feb 2020"
     },
@@ -7162,7 +5851,7 @@
       "2"
      ],
      "date": "2020-02-25",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.70, 25 Feb 2020"
     },
@@ -7174,7 +5863,7 @@
       "2"
      ],
      "date": "2020-02-27",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.73, 27 Feb 2020"
     },
@@ -7185,7 +5874,7 @@
       "87"
      ],
      "date": "2020-03-04",
-     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.87, 4 Mar 2020"
     },
@@ -7196,7 +5885,7 @@
       "135"
      ],
      "date": "2020-03-04",
-     "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
+     "url": null,
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 135, 4 Mar 2020"
     },
@@ -7216,7 +5905,7 @@
   "Proximal_Origin_Slack.pdf": {
    "doc": "Proximal_Origin_Slack.pdf",
    "kind": "slack",
-   "cites": 104,
+   "cites": 88,
    "pages_cited": [
     "1",
     "2",
@@ -7238,7 +5927,6 @@
     "32",
     "33",
     "34",
-    "36",
     "39",
     "41",
     "43",
@@ -7257,18 +5945,14 @@
     "60",
     "61",
     "64-65",
-    "65-66",
     "67",
     "68",
     "69",
     "70",
-    "72",
     "73",
     "74",
     "77",
-    "78",
     "87",
-    "101",
     "105",
     "128",
     "129",
@@ -7280,7 +5964,6 @@
     "2020-02-01",
     "2020-02-02",
     "2020-02-04",
-    "2020-02-05",
     "2020-02-06",
     "2020-02-07",
     "2020-02-08",
@@ -7290,7 +5973,6 @@
     "2020-02-12",
     "2020-02-13",
     "2020-02-15",
-    "2020-02-16",
     "2020-02-17",
     "2020-02-18",
     "2020-02-19",
@@ -7303,17 +5985,14 @@
     "2020-02-27",
     "2020-02-28",
     "2020-02-29",
-    "2020-03-01",
     "2020-03-04",
-    "2020-03-18",
     "2020-03-19",
     "2020-04-17",
     "2020-04-18",
-    "2020-04-30",
-    "2021-02-17"
+    "2020-04-30"
    ],
    "urls": [
-    "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7/view?usp=drive_link"
+    "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7"
    ],
    "parts": [
     "p1",
@@ -7325,28 +6004,20 @@
   "Proximal_Origin_Emails.pdf": {
    "doc": "Proximal_Origin_Emails.pdf",
    "kind": "email",
-   "cites": 71,
+   "cites": 50,
    "pages_cited": [
     "1",
-    "2-3",
     "2",
     "3",
     "4",
     "4-5",
     "16",
-    "23",
-    "25",
     "26",
     "28",
-    "30-31",
     "32",
     "35",
-    "42-43",
-    "43",
     "44",
-    "46-48",
     "49-50",
-    "51-52",
     "51",
     "52",
     "53",
@@ -7358,31 +6029,22 @@
     "65-70",
     "65",
     "66",
-    "67",
     "69",
     "81",
-    "85",
     "94",
-    "102",
-    "103",
-    "105-106",
     "108-109",
-    "109",
     "118",
     "119",
-    "128-131",
-    "134-137",
+    "130",
     "135",
+    "138",
     "140",
     "140-141",
     "144",
     "150",
     "151",
     "153",
-    "155-156",
-    "157",
     "159",
-    "160-161",
     "161"
    ],
    "dates": [
@@ -7402,14 +6064,12 @@
     "2020-03-04",
     "2020-03-17",
     "2020-07-25",
-    "2020-07-27",
     "2020-07-28",
     "2030-02-08"
    ],
    "urls": [
-    "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta/view?usp=sharing",
-    "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS/view?usp=drive_link",
-    "https://drive.google.com/file/d/1jNeqlHWUnV2QoEL5fvnzHX7sq867ue3Z/view?usp=sharing"
+    "http://Proximal_Origin_Emails.pdf,",
+    "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS"
    ],
    "parts": [
     "p1",
@@ -7421,31 +6081,26 @@
   "farrar-fauci-comms-full.pdf": {
    "doc": "farrar-fauci-comms-full.pdf",
    "kind": "email",
-   "cites": 18,
+   "cites": 14,
    "pages_cited": [
-    "61-62",
     "62",
     "65",
-    "105-106",
     "106",
     "107-108",
     "107",
     "108",
     "109",
-    "110",
-    "112",
-    "154",
-    "157"
+    "112"
    ],
    "dates": [
-    "2020-01-31",
     "2020-02-01",
     "2020-02-02",
     "2020-02-07",
-    "2020-02-08",
-    "2022-01-30"
+    "2020-02-08"
    ],
-   "urls": [],
+   "urls": [
+    "https://drive.google.com/file/d/1l04ZiPQ09bp4_x4SkJ-vCpbzhg35EVWu"
+   ],
    "parts": [
     "p1",
     "p2"
@@ -7453,27 +6108,206 @@
    "local": "farrar-fauci",
    "local_file": "farrar-fauci-comms.pdf"
   },
-  "2023.06.16-Andersen-Transcript.pdf": {
-   "doc": "2023.06.16-Andersen-Transcript.pdf",
+  "Baric-TI-Transcript.pdf": {
+   "doc": "Baric-TI-Transcript.pdf",
    "kind": "transcript",
    "cites": 12,
    "pages_cited": [
+    "15",
+    "18",
+    "20-21",
+    "22-23",
+    "26-27",
+    "30-32",
+    "77",
+    "93",
+    "120-121",
+    "121",
+    "122"
+   ],
+   "dates": [],
+   "urls": [
+    "https://drive.google.com/file/d/173bZUapV1fbWx7KXqD30uynH1sQddOLs"
+   ],
+   "parts": [
+    "p1",
+    "p2"
+   ],
+   "local": null,
+   "local_file": null
+  },
+  "2023.06.16-Andersen-Transcript.pdf": {
+   "doc": "2023.06.16-Andersen-Transcript.pdf",
+   "kind": "transcript",
+   "cites": 8,
+   "pages_cited": [
     "43",
-    "50-51",
     "51",
-    "52-53",
     "52",
-    "53-54",
     "54",
     "55",
-    "55-56",
     "64",
     "146-147"
    ],
    "dates": [
-    "2020-02-01",
-    "2020-07-28",
     "2023-01-01"
+   ],
+   "urls": [],
+   "parts": [
+    "p1",
+    "p2"
+   ],
+   "local": null,
+   "local_file": null
+  },
+  "1265-pages.pdf": {
+   "doc": "1265-pages.pdf",
+   "kind": "other",
+   "cites": 6,
+   "pages_cited": [
+    "1",
+    "2",
+    "274",
+    "319",
+    "343-344",
+    "365"
+   ],
+   "dates": [
+    "2020-02-18",
+    "2020-02-25"
+   ],
+   "urls": [
+    "https://drive.google.com/file/d/1T2MNgjgjXKDGZFjyJvE2MO0RDb8UFcIe"
+   ],
+   "parts": [
+    "p1",
+    "p2"
+   ],
+   "local": null,
+   "local_file": null
+  },
+  "Baric-Emails-2.17.21.pdf": {
+   "doc": "Baric-Emails-2.17.21.pdf",
+   "kind": "email",
+   "cites": 5,
+   "pages_cited": [
+    "102",
+    "118",
+    "123",
+    "128"
+   ],
+   "dates": [
+    "2020-02-03",
+    "2020-02-04"
+   ],
+   "urls": [],
+   "parts": [
+    "p1"
+   ],
+   "local": null,
+   "local_file": null
+  },
+  "HHS_Garrett-Grigsby_12.30.21_production.pdf": {
+   "doc": "HHS_Garrett-Grigsby_12.30.21_production.pdf",
+   "kind": "other",
+   "cites": 3,
+   "pages_cited": [
+    "23",
+    "38",
+    "39"
+   ],
+   "dates": [
+    "2020-02-02"
+   ],
+   "urls": [
+    "https://drive.google.com/file/d/16fDGqcKgY1NzDiZcBzrzUzKlP9752RuD"
+   ],
+   "parts": [
+    "p1",
+    "p2"
+   ],
+   "local": null,
+   "local_file": null
+  },
+  "Biohazard_FOIA_Maryland_Emails_11.6.20.pdf": {
+   "doc": "Biohazard_FOIA_Maryland_Emails_11.6.20.pdf",
+   "kind": "other",
+   "cites": 3,
+   "pages_cited": [
+    "278",
+    "304"
+   ],
+   "dates": [
+    "2020-02-06",
+    "2020-02-09"
+   ],
+   "urls": [
+    "https://drive.google.com/file/d/12NTOh9Aswk5pBf-X_INFB_sdrmoLinjC"
+   ],
+   "parts": [
+    "p1",
+    "p2"
+   ],
+   "local": null,
+   "local_file": null
+  },
+  "UTMB-LeDuc-batch-1.pdf": {
+   "doc": "UTMB-LeDuc-batch-1.pdf",
+   "kind": "email",
+   "cites": 3,
+   "pages_cited": [
+    "1",
+    "2",
+    "4",
+    "206",
+    "2816",
+    "2825"
+   ],
+   "dates": [
+    "2021-05-18",
+    "2021-05-24"
+   ],
+   "urls": [
+    "https://drive.google.com/file/d/1O6_TaUYbPeAsdwOj-1JkvzKQFVBtx_Jw"
+   ],
+   "parts": [
+    "p1",
+    "p2"
+   ],
+   "local": null,
+   "local_file": null
+  },
+  "2023.04.06-Lipkin-Transcript.pdf": {
+   "doc": "2023.04.06-Lipkin-Transcript.pdf",
+   "kind": "transcript",
+   "cites": 3,
+   "pages_cited": [
+    "47",
+    "88"
+   ],
+   "dates": [
+    "2023-01-01"
+   ],
+   "urls": [
+    "https://drive.google.com/file/d/1Ecqlkw1ahfAfR2m--wajPW8-cjKHf1BL"
+   ],
+   "parts": [
+    "p2"
+   ],
+   "local": null,
+   "local_file": null
+  },
+  "01981-F-Dec-2022-Production-OPAQUE.pdf": {
+   "doc": "01981-F-Dec-2022-Production-OPAQUE.pdf",
+   "kind": "other",
+   "cites": 2,
+   "pages_cited": [
+    "142",
+    "283"
+   ],
+   "dates": [
+    "2020-02-09",
+    "2020-02-18"
    ],
    "urls": [],
    "parts": [
@@ -7486,29 +6320,13 @@
   "farrar-fauci-comms.pdf": {
    "doc": "farrar-fauci-comms.pdf",
    "kind": "email",
-   "cites": 12,
+   "cites": 2,
    "pages_cited": [
-    "2",
     "64",
-    "66-71",
-    "74",
-    "88-91",
-    "95",
-    "97",
-    "98-101",
-    "104",
-    "107-108",
-    "157-162",
-    "169-170",
-    "174"
+    "97"
    ],
    "dates": [
-    "2020-01-23",
-    "2020-01-28",
-    "2020-01-29",
-    "2020-02-02",
     "2020-02-04",
-    "2020-02-05",
     "2020-02-07"
    ],
    "urls": [],
@@ -7518,415 +6336,21 @@
    "local": "farrar-fauci",
    "local_file": "farrar-fauci-comms.pdf"
   },
-  "Baric-TI-Transcript.pdf": {
-   "doc": "Baric-TI-Transcript.pdf",
-   "kind": "transcript",
-   "cites": 11,
-   "pages_cited": [
-    "15",
-    "18",
-    "20-21",
-    "22-23",
-    "30-32",
-    "108-110",
-    "120-121",
-    "121",
-    "122",
-    "125"
-   ],
-   "dates": [],
-   "urls": [
-    "https://drive.google.com/file/d/173bZUapV1fbWx7KXqD30uynH1sQddOLs/view?usp=sharing",
-    "https://drive.google.com/file/d/18G0YpLT3q0E6y0mTP2_ncLdImM1DNGs6/view?usp=drive_link"
-   ],
-   "parts": [
-    "p1",
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "1265-pages.pdf": {
-   "doc": "1265-pages.pdf",
-   "kind": "other",
-   "cites": 9,
-   "pages_cited": [
-    "1",
-    "2",
-    "274",
-    "319",
-    "343-344",
-    "351",
-    "355",
-    "365-366",
-    "505-506"
-   ],
-   "dates": [
-    "2020-02-07",
-    "2020-02-16",
-    "2020-02-18",
-    "2020-02-25",
-    "2020-05-29"
-   ],
-   "urls": [
-    "https://drive.google.com/file/d/1T2MNgjgjXKDGZFjyJvE2MO0RDb8UFcIe/view?usp=sharing"
-   ],
-   "parts": [
-    "p1",
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "Baric-Emails-2.17.21.pdf": {
-   "doc": "Baric-Emails-2.17.21.pdf",
-   "kind": "email",
-   "cites": 8,
-   "pages_cited": [
-    "102",
-    "115-116",
-    "118",
-    "123",
-    "128",
-    "133",
-    "181-182"
-   ],
-   "dates": [
-    "2020-02-03",
-    "2020-02-04"
-   ],
-   "urls": [],
-   "parts": [
-    "p1",
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "01981-F-Dec-2022-Production-OPAQUE.pdf": {
-   "doc": "01981-F-Dec-2022-Production-OPAQUE.pdf",
-   "kind": "other",
-   "cites": 8,
-   "pages_cited": [
-    "1",
-    "2",
-    "9",
-    "26",
-    "61",
-    "138",
-    "142",
-    "223",
-    "283",
-    "592"
-   ],
-   "dates": [
-    "2020-01-27",
-    "2020-02-09",
-    "2020-02-11",
-    "2020-02-18",
-    "2022-01-01"
-   ],
-   "urls": [],
-   "parts": [
-    "p1",
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "UTMB-LeDuc-batch-1.pdf": {
-   "doc": "UTMB-LeDuc-batch-1.pdf",
-   "kind": "email",
-   "cites": 7,
-   "pages_cited": [
-    "1",
-    "2",
-    "4",
-    "206",
-    "486-487",
-    "593-594",
-    "806-809",
-    "1448",
-    "2816",
-    "2825"
-   ],
-   "dates": [
-    "2020-01-17",
-    "2020-01-22",
-    "2020-01-29",
-    "2020-02-09",
-    "2021-05-18",
-    "2021-05-24"
-   ],
-   "urls": [
-    "https://drive.google.com/file/d/1O6_TaUYbPeAsdwOj-1JkvzKQFVBtx_Jw/view?usp=sharing"
-   ],
-   "parts": [
-    "p1",
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "Biohazard_FOIA_Maryland_Emails_11.6.20.pdf": {
-   "doc": "Biohazard_FOIA_Maryland_Emails_11.6.20.pdf",
-   "kind": "other",
-   "cites": 6,
-   "pages_cited": [
-    "255",
-    "278",
-    "284",
-    "292",
-    "304"
-   ],
-   "dates": [
-    "2020-02-06",
-    "2020-02-07",
-    "2020-02-09"
-   ],
-   "urls": [
-    "https://drive.google.com/file/d/12NTOh9Aswk5pBf-X_INFB_sdrmoLinjC/view?usp=sharing"
-   ],
-   "parts": [
-    "p1",
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "HHS_Garrett-Grigsby_12.30.21_production.pdf": {
-   "doc": "HHS_Garrett-Grigsby_12.30.21_production.pdf",
-   "kind": "other",
-   "cites": 5,
-   "pages_cited": [
-    "2",
-    "21-23",
-    "21",
-    "22",
-    "23",
-    "36",
-    "37",
-    "38",
-    "39"
-   ],
-   "dates": [
-    "2020-02-02",
-    "2020-02-03",
-    "2020-02-09"
-   ],
-   "urls": [],
-   "parts": [
-    "p1",
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "00692.pdf": {
-   "doc": "00692.pdf",
-   "kind": "other",
-   "cites": 2,
-   "pages_cited": [
-    "2",
-    "47-48",
-    "145-146"
-   ],
-   "dates": [
-    "2020-01-23",
-    "2020-01-27"
-   ],
-   "urls": [],
-   "parts": [
-    "p1"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "7.19.21-Partial-Production_Redacted.pdf": {
-   "doc": "7.19.21-Partial-Production_Redacted.pdf",
-   "kind": "other",
-   "cites": 2,
-   "pages_cited": [
-    "1",
-    "22-23"
-   ],
-   "dates": [
-    "2020-01-27",
-    "2020-04-24"
-   ],
-   "urls": [],
-   "parts": [
-    "p1",
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "NIH-FOIA-57153-Murray-Complete-Response.pdf": {
-   "doc": "NIH-FOIA-57153-Murray-Complete-Response.pdf",
-   "kind": "other",
-   "cites": 2,
-   "pages_cited": [
-    "48",
-    "50-51"
-   ],
-   "dates": [
-    "2020-02-01"
-   ],
-   "urls": [],
-   "parts": [
-    "p1"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "01981-March-2022-Production_Redacted_Upload.pdf": {
-   "doc": "01981-March-2022-Production_Redacted_Upload.pdf",
-   "kind": "other",
-   "cites": 2,
-   "pages_cited": [
-    "38",
-    "40",
-    "45-48"
-   ],
-   "dates": [
-    "2022-01-01"
-   ],
-   "urls": [],
-   "parts": [
-    "p1"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "2023.04.06-Lipkin-Transcript.pdf": {
-   "doc": "2023.04.06-Lipkin-Transcript.pdf",
-   "kind": "transcript",
-   "cites": 2,
-   "pages_cited": [
-    "35",
-    "104-107"
-   ],
-   "dates": [
-    "2023-01-01"
-   ],
-   "urls": [],
-   "parts": [
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "nih-foia-request-60081and-59096-march-production_redactedpdf-tobias-foia.pdf": {
-   "doc": "nih-foia-request-60081and-59096-march-production_redactedpdf-tobias-foia.pdf",
-   "kind": "other",
-   "cites": 2,
-   "pages_cited": [
-    "1",
-    "77",
-    "80"
-   ],
-   "dates": [
-    "2020-02-16"
-   ],
-   "urls": [],
-   "parts": [
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "OSU-records-Shan-Lu-Liu-Aug-4.pdf": {
-   "doc": "OSU-records-Shan-Lu-Liu-Aug-4.pdf",
+  "USRTK_UCDavis_PROD_27-ocr.pdf": {
+   "doc": "USRTK_UCDavis_PROD_27-ocr.pdf",
    "kind": "email",
    "cites": 2,
    "pages_cited": [
-    "1",
-    "2",
-    "8",
-    "253"
+    "274"
    ],
    "dates": [
-    "2020-02-16",
-    "2020-02-21"
-   ],
-   "urls": [],
-   "parts": [
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "320.pdf": {
-   "doc": "320.pdf",
-   "kind": "other",
-   "cites": 2,
-   "pages_cited": [
-    "1",
-    "240",
-    "244"
-   ],
-   "dates": [
-    "2020-03-17"
-   ],
-   "urls": [],
-   "parts": [
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "USRTK_UCDavis_PROD_06.pdf": {
-   "doc": "USRTK_UCDavis_PROD_06.pdf",
-   "kind": "email",
-   "cites": 2,
-   "pages_cited": [
-    "289",
-    "290"
-   ],
-   "dates": [
-    "2018-01-01"
-   ],
-   "urls": [],
-   "parts": [
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "USRTK_UCDavis_PROD_06-ocr.pdf": {
-   "doc": "USRTK_UCDavis_PROD_06-ocr.pdf",
-   "kind": "email",
-   "cites": 2,
-   "pages_cited": [
-    "21",
-    "1004"
-   ],
-   "dates": [
-    "2018-06-21"
+    "2017-12-10"
    ],
    "urls": [
-    "https://drive.google.com/file/d/14b5S7CZnQndWzZxBuLFxDbvarZgItEj9/view?usp=sharing"
+    "https://drive.google.com/file/d/1J-hkudlaRz17Q1z6l0dcnVSuWHmOp-s5"
    ],
    "parts": [
     "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "103122-partial-production.pdf": {
-   "doc": "103122-partial-production.pdf",
-   "kind": "other",
-   "cites": 1,
-   "pages_cited": [
-    "108-109"
-   ],
-   "dates": [
-    "2018-01-01"
-   ],
-   "urls": [],
-   "parts": [
-    "p1"
    ],
    "local": null,
    "local_file": null
@@ -7946,70 +6370,19 @@
    "local": null,
    "local_file": null
   },
-  "SSCP-Drafts-of-Proximal-Origin.pdf": {
-   "doc": "SSCP-Drafts-of-Proximal-Origin.pdf",
-   "kind": "draft",
+  "NIH-FOIA-57153-Murray-Complete-Response.pdf": {
+   "doc": "NIH-FOIA-57153-Murray-Complete-Response.pdf",
+   "kind": "other",
    "cites": 1,
    "pages_cited": [
-    "7"
+    "50-51"
    ],
-   "dates": [],
-   "urls": [
-    "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA573298/,"
+   "dates": [
+    "2020-02-01"
    ],
+   "urls": [],
    "parts": [
     "p1"
-   ],
-   "local": "sscp",
-   "local_file": "sscp-drafts.pdf"
-  },
-  "10.12_NIH_FOIA_57351_07.29.2022_Production1.pdf": {
-   "doc": "10.12_NIH_FOIA_57351_07.29.2022_Production1.pdf",
-   "kind": "other",
-   "cites": 1,
-   "pages_cited": [
-    "103"
-   ],
-   "dates": [
-    "2018-07-05"
-   ],
-   "urls": [],
-   "parts": [
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "Waste.pdf": {
-   "doc": "Waste.pdf",
-   "kind": "other",
-   "cites": 1,
-   "pages_cited": [
-    "365"
-   ],
-   "dates": [
-    "2017-03-03"
-   ],
-   "urls": [],
-   "parts": [
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "Drafts-of-Proximal-Origin.pdf": {
-   "doc": "Drafts-of-Proximal-Origin.pdf",
-   "kind": "document",
-   "cites": 1,
-   "pages_cited": [
-    "58"
-   ],
-   "dates": [
-    "2020-02-13"
-   ],
-   "urls": [],
-   "parts": [
-    "p2"
    ],
    "local": null,
    "local_file": null
@@ -8031,13 +6404,13 @@
    "local": null,
    "local_file": null
   },
-  "Pronih-foia-request-60081and-59096-march-production_redactedpdf-tobias-foia.pdf": {
-   "doc": "Pronih-foia-request-60081and-59096-march-production_redactedpdf-tobias-foia.pdf",
+  "nih-foia-request-60081and-59096-march-production_redactedpdf-tobias-foia.pdf": {
+   "doc": "nih-foia-request-60081and-59096-march-production_redactedpdf-tobias-foia.pdf",
    "kind": "other",
    "cites": 1,
    "pages_cited": [
     "1",
-    "79"
+    "77"
    ],
    "dates": [
     "2020-02-16"
@@ -8049,27 +6422,17 @@
    "local": null,
    "local_file": null
   },
-  "Lane-Transcript.pdf": {
-   "doc": "Lane-Transcript.pdf",
-   "kind": "transcript",
+  "OSU-records-Shan-Lu-Liu-Aug-4.pdf": {
+   "doc": "OSU-records-Shan-Lu-Liu-Aug-4.pdf",
+   "kind": "email",
    "cites": 1,
    "pages_cited": [
-    "86-90"
+    "2",
+    "8"
    ],
-   "dates": [],
-   "urls": [],
-   "parts": [
-    "p2"
+   "dates": [
+    "2020-02-21"
    ],
-   "local": null,
-   "local_file": null
-  },
-  "5_20200229_1347_clean.pdf": {
-   "doc": "5_20200229_1347_clean.pdf",
-   "kind": "other",
-   "cites": 1,
-   "pages_cited": [],
-   "dates": [],
    "urls": [],
    "parts": [
     "p2"
@@ -8094,6 +6457,24 @@
    "local": null,
    "local_file": null
   },
+  "320.pdf": {
+   "doc": "320.pdf",
+   "kind": "other",
+   "cites": 1,
+   "pages_cited": [
+    "1",
+    "240"
+   ],
+   "dates": [
+    "2020-03-17"
+   ],
+   "urls": [],
+   "parts": [
+    "p2"
+   ],
+   "local": null,
+   "local_file": null
+  },
   "01.09.24.doj-nih.pdf": {
    "doc": "01.09.24.doj-nih.pdf",
    "kind": "other",
@@ -8102,24 +6483,6 @@
     "35"
    ],
    "dates": [],
-   "urls": [],
-   "parts": [
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "Letter-Re.-Feb-1-Emails-011122.pdf": {
-   "doc": "Letter-Re.-Feb-1-Emails-011122.pdf",
-   "kind": "other",
-   "cites": 1,
-   "pages_cited": [
-    "1",
-    "15"
-   ],
-   "dates": [
-    "2020-04-16"
-   ],
    "urls": [],
    "parts": [
     "p2"
@@ -8142,17 +6505,36 @@
    "local": null,
    "local_file": null
   },
-  "USRTK_UCDavis_PROD_30.pdf": {
-   "doc": "USRTK_UCDavis_PROD_30.pdf",
+  "USRTK_UCDavis_PROD_06.pdf": {
+   "doc": "USRTK_UCDavis_PROD_06.pdf",
    "kind": "email",
    "cites": 1,
    "pages_cited": [
-    "105"
+    "290"
    ],
    "dates": [
     "2018-01-01"
    ],
    "urls": [],
+   "parts": [
+    "p2"
+   ],
+   "local": null,
+   "local_file": null
+  },
+  "USRTK_UCDavis_PROD_06-ocr.pdf": {
+   "doc": "USRTK_UCDavis_PROD_06-ocr.pdf",
+   "kind": "email",
+   "cites": 1,
+   "pages_cited": [
+    "1004"
+   ],
+   "dates": [
+    "2018-06-21"
+   ],
+   "urls": [
+    "https://drive.google.com/file/d/14b5S7CZnQndWzZxBuLFxDbvarZgItEj9"
+   ],
    "parts": [
     "p2"
    ],
@@ -8170,91 +6552,8 @@
     "2019-01-03"
    ],
    "urls": [
-    "https://drive.google.com/file/d/1jNeqlHWUnV2QoEL5fvnzHX7sq867ue3Z/view?usp=sharing"
+    "https://drive.google.com/file/d/1jNeqlHWUnV2QoEL5fvnzHX7sq867ue3Z"
    ],
-   "parts": [
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "USRTK_UCDavis_PROD_18-ocr.pdf": {
-   "doc": "USRTK_UCDavis_PROD_18-ocr.pdf",
-   "kind": "email",
-   "cites": 1,
-   "pages_cited": [
-    "72-75"
-   ],
-   "dates": [
-    "2017-01-24"
-   ],
-   "urls": [],
-   "parts": [
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "USRTK_UCDavis_PROD_17-ocr.pdf": {
-   "doc": "USRTK_UCDavis_PROD_17-ocr.pdf",
-   "kind": "email",
-   "cites": 1,
-   "pages_cited": [
-    "12"
-   ],
-   "dates": [
-    "2020-04-03"
-   ],
-   "urls": [],
-   "parts": [
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "email-04.pdf": {
-   "doc": "email-04.pdf",
-   "kind": "other",
-   "cites": 1,
-   "pages_cited": [],
-   "dates": [
-    "2020-04-26"
-   ],
-   "urls": [],
-   "parts": [
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "135885afauci112322-Full-Redacted.pdf": {
-   "doc": "135885afauci112322-Full-Redacted.pdf",
-   "kind": "other",
-   "cites": 1,
-   "pages_cited": [
-    "35"
-   ],
-   "dates": [],
-   "urls": [
-    "https://x.com/Florin_Uncovers/status/1646123630265266176?s=20"
-   ],
-   "parts": [
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "00220_redacted-records_pt1.pdf": {
-   "doc": "00220_redacted-records_pt1.pdf",
-   "kind": "other",
-   "cites": 1,
-   "pages_cited": [
-    "562"
-   ],
-   "dates": [
-    "2020-02-23"
-   ],
-   "urls": [],
    "parts": [
     "p2"
    ],
@@ -8268,73 +6567,6 @@
    "pages_cited": [],
    "dates": [
     "2020-01-01"
-   ],
-   "urls": [],
-   "parts": [
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "04.10.24.doj-nih.pdf": {
-   "doc": "04.10.24.doj-nih.pdf",
-   "kind": "other",
-   "cites": 1,
-   "pages_cited": [
-    "184-186"
-   ],
-   "dates": [
-    "2021-08-05"
-   ],
-   "urls": [],
-   "parts": [
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "536974886-Gain-Of-Function-Communications-Between-EcoHealth-Alliance-And-NIAID-2.pdf": {
-   "doc": "536974886-Gain-Of-Function-Communications-Between-EcoHealth-Alliance-And-NIAID-2.pdf",
-   "kind": "other",
-   "cites": 1,
-   "pages_cited": [
-    "57"
-   ],
-   "dates": [],
-   "urls": [],
-   "parts": [
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "Saif-OSU-Batch-1.pdf": {
-   "doc": "Saif-OSU-Batch-1.pdf",
-   "kind": "email",
-   "cites": 1,
-   "pages_cited": [
-    "209"
-   ],
-   "dates": [
-    "2020-02-12"
-   ],
-   "urls": [],
-   "parts": [
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "tobias-nih-foia-60136-august-production-redacted_redacted.pdf": {
-   "doc": "tobias-nih-foia-60136-august-production-redacted_redacted.pdf",
-   "kind": "other",
-   "cites": 1,
-   "pages_cited": [
-    "1",
-    "214"
-   ],
-   "dates": [
-    "2020-08-10"
    ],
    "urls": [],
    "parts": [
@@ -8359,56 +6591,23 @@
    ],
    "local": null,
    "local_file": null
-  },
-  "2024-final-production-for-nih-foia-request-61568_OCR_Copy.pdf": {
-   "doc": "2024-final-production-for-nih-foia-request-61568_OCR_Copy.pdf",
-   "kind": "other",
-   "cites": 1,
-   "pages_cited": [
-    "19",
-    "23"
-   ],
-   "dates": [
-    "2024-01-01"
-   ],
-   "urls": [],
-   "parts": [
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
-  },
-  "USRTK_UCDavis_PROD_27-ocr.pdf": {
-   "doc": "USRTK_UCDavis_PROD_27-ocr.pdf",
-   "kind": "email",
-   "cites": 1,
-   "pages_cited": [
-    "274"
-   ],
-   "dates": [],
-   "urls": [],
-   "parts": [
-    "p2"
-   ],
-   "local": null,
-   "local_file": null
   }
  },
  "citations_without_document": {
-  "cites": 126,
+  "cites": 118,
   "by_kind": {
-   "other": 87,
-   "social": 21,
+   "other": 85,
    "link": 5,
-   "press": 9,
-   "slack": 4
+   "social": 10,
+   "press": 13,
+   "slack": 5
   }
  },
  "totals": {
   "sections": 214,
-  "citations": 446,
-  "documents": 51,
-  "slack_citations": 108,
-  "drive_links": 12
+  "citations": 333,
+  "documents": 28,
+  "slack_citations": 93,
+  "drive_links": 13
  }
 }
