@@ -172,14 +172,22 @@ def parse_date(text):
 parse_date.year = 2020
 
 
+RE_MD_LINK_HREF = re.compile(r"\]\((https?://[^\s)]+)\)")
+
+
 def first_url(text):
     m = RE_DRIVE_FILE.search(text) or RE_DRIVE_FOLDER.search(text)
     if m:
         url = m.group(0)
         return url if url.startswith("http") else "https://" + url
-    # stop at ')' too: inline-markdown-link exports write the url as
-    # "...](https://example.com/x), rest of caption" with no space before
-    # the closing paren, and a bare \S+ would swallow it into the url.
+    # Prefer a markdown link's own href over a bare URL scan: when the link
+    # text is itself a URL (common for bare citations: "[https://x](https://x)"),
+    # a bare https?://[^\s)]+ scan starts at the first "https://" -- inside
+    # the link TEXT -- and, since "]" and "(" aren't excluded, keeps matching
+    # straight through into the href, doubling the whole thing.
+    m = RE_MD_LINK_HREF.search(text)
+    if m:
+        return m.group(1)
     m = re.search(r"https?://[^\s)]+", text)
     return m.group(0) if m else None
 
@@ -225,6 +233,11 @@ def read_lines(path):
 
 
 def new_section(part_id, number, title, heading):
+    # A heading can itself carry an inline markdown link -- the article uses
+    # dateful.com timezone-conversion links right inside some headings, e.g.
+    # "12.4 ... (7 Feb, [6:26 am UK](https://dateful.com/convert/...))" --
+    # collapse to the link text so the raw URL never leaks into the guide.
+    title, heading = plain_text(title), plain_text(heading)
     dm = RE_DATE.search(heading)
     return OrderedDict([
         ("id", "%s-%s" % (part_id, number) if number else "%s-preamble" % part_id),
@@ -262,6 +275,11 @@ def parse_part(part_id, path):
         hm = RE_HEADING.match(line)
         if hm:
             level, text = len(hm.group(1)), hm.group(2).strip()
+            # a handful of headings are written fully bold-wrapped --
+            # "### **23.5 Daszak is cautiously confident (...)**" -- which
+            # otherwise hides the leading digit from RE_SECTION_NO/RE_TOP_NO
+            # and silently drops the whole section.
+            text = text.replace("**", "").strip()
             sm, tm = RE_SECTION_NO.match(text), RE_TOP_NO.match(text)
             if sm and level >= 3:
                 cur[0] = new_section(part_id, "%s.%s" % (sm.group(1), sm.group(2)),

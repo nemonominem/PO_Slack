@@ -428,5 +428,451 @@
    "id": "p1-13.14",
    "summary": "Holmes admits the ‘99%’ pangolin homology was actually ‘up to 99%’ and overstated — news that never reaches the wider call group or visibly changes the drafts, even as Farrar pushes ahead toward publication regardless."
   }
+ ],
+ "p2": [
+  {
+   "id": "p2-14",
+   "summary": "Sets up the converging pressure from NASEM, the US government and the WHO, all independently racing to get access to China in the second week of February."
+  },
+  {
+   "id": "p2-14.1",
+   "summary": "Farrar reaches out to NASEM president Victor Dzau to share his analysis of the virus's origins — the first time he mentions his effort to Dzau at all."
+  },
+  {
+   "id": "p2-14.2",
+   "summary": "Farrar tweets publicly demanding new SARS-CoV-2 sequences from Wuhan, noting none had been published since 4 Jan."
+  },
+  {
+   "id": "p2-14.3",
+   "summary": "Tedros declares the WHO is ‘battling the trolls and conspiracy theorists’ — unusually combative rhetoric that, the piece argues, was really about shoring up his negotiating position with China just as the WHO needed access."
+  },
+  {
+   "id": "p2-14.4",
+   "summary": "Farrar and Holmes brief Dzau's NASEM team by phone, with Andersen privately doubtful the initiative will amount to much — not yet aware that the hyped pangolin sequence was about to disappoint."
+  },
+  {
+   "id": "p2-14.5",
+   "summary": "China's ambassador calls Sen. Tom Cotton's lab-escape questions ‘absolutely crazy’ on US television, while deflecting on whether CDC experts will actually be let into China."
+  },
+  {
+   "id": "p2-14.6",
+   "summary": "After ten days of negotiation, a three-person WHO advance team finally departs for Beijing to negotiate terms for a larger mission — a mission the piece notes nobody even noticed."
+  },
+  {
+   "id": "p2-14.7",
+   "summary": "Tedros's vague hope that the WHO team might include US CDC experts alarms Washington; the WHO's own right-hand man bluntly tells the US it is just one country among many, despite being its largest funder."
+  },
+  {
+   "id": "p2-15",
+   "summary": "Sets up the mounting pressure Farrar comes under to actually deliver the publication he has promised."
+  },
+  {
+   "id": "p2-15.1",
+   "summary": "The long-awaited ‘environmental’ market samples turn out to be genetically identical to early patient sequences — spectacularly uninformative, as Holmes puts it — deepening doubts that the market was really the source, while Drosten separately tells Rambaut he thinks the virus had already been circulating in humans for a while."
+  },
+  {
+   "id": "p2-15.2",
+   "summary": "Koopmans, unaware the pangolin match had already been downgraded, argues any lab-escape scenario should be buried in the discussion section rather than addressed head-on in the paper's body."
+  },
+  {
+   "id": "p2-15.3",
+   "summary": "Farrar politely but firmly tells Fouchier, Koopmans and Drosten that his decision is final and the co-authors will take it from there — a decision the piece argues had nothing to do with the WHO being ‘too busy’, as Farrar later claimed, and everything to do with Fauci's own remarks days earlier that the US could determine if the virus was lab-made."
+  },
+  {
+   "id": "p2-15.4",
+   "summary": "Fauci sits in for only five or ten minutes of a meeting on regulatory compliance for Baric's 2015 chimera paper before excusing himself for a secure call — an exit Baric himself found a little odd, and which the piece reads as deliberate deniability."
+  },
+  {
+   "id": "p2-16",
+   "summary": "Covers the week the co-authors spend finishing the manuscript for publication."
+  },
+  {
+   "id": "p2-16.1",
+   "summary": "Ian Lipkin, flagging that ‘higher-ups’ and intelligence contacts share his concern about the furin cleavage site, is recruited as a co-author partly to help counterbalance the Fouchier-Koopmans-Drosten opposition."
+  },
+  {
+   "id": "p2-16.2",
+   "summary": "Within 36 hours, Andersen pitches Nature's senior editor, Farrar calls the editor-in-chief directly, and Holmes closes the loop — Nature agrees to consider the piece."
+  },
+  {
+   "id": "p2-16.3",
+   "summary": "The co-authors sketch extra explanatory figures, including one joking use of Daszak's own photo to illustrate the ‘lab passage’ scenario — none of which makes the final draft."
+  },
+  {
+   "id": "p2-16.4",
+   "summary": "With Andersen on a break, Holmes — most fluent in the pangolin sequences and most in tune with Farrar — takes over editing the manuscript."
+  },
+  {
+   "id": "p2-16.5",
+   "summary": "Just as Nature shows interest, the passaging section is quietly downgraded from a live hypothesis to ‘extremely unlikely’ with no discussion on Slack explaining why — a change Andersen may not even have seen before leaving on his break."
+  },
+  {
+   "id": "p2-17",
+   "summary": "Sets up how a hostile domestic press cycle around Tom Cotton collided with the WHO's delicate mission into China."
+  },
+  {
+   "id": "p2-17.1",
+   "summary": "The full WHO team begins its first day of meetings in Beijing with no visit to Wuhan yet agreed, and no clarity on what access China is actually willing to give."
+  },
+  {
+   "id": "p2-17.2",
+   "summary": "US ambassador Andrew Bremberg presses Tedros directly for Wuhan access just as the full mission arrives."
+  },
+  {
+   "id": "p2-17.3",
+   "summary": "The Washington Post savages Tom Cotton's Fox News remarks on a possible lab escape as a ‘conspiracy theory... repeatedly debunked’, even though Cotton had explicitly said there was no evidence either way."
+  },
+  {
+   "id": "p2-17.4",
+   "summary": "US media largely falls in behind the Washington Post's framing, hardening the question of the virus's origin into a partisan one almost overnight."
+  },
+  {
+   "id": "p2-18",
+   "summary": "Covers the frantic 48 hours in which the manuscript goes from draft to public release."
+  },
+  {
+   "id": "p2-18.1",
+   "summary": "The co-authors, minus Andersen (on vacation), finalise author order and reviewers; Holmes stresses the piece presents no new data of its own, and the group expects a fast, easy peer review."
+  },
+  {
+   "id": "p2-18.2",
+   "summary": "Garry circulates the Washington Post's attack on Cotton as fresh justification for getting the manuscript out quickly."
+  },
+  {
+   "id": "p2-18.3",
+   "summary": "Collins urges publication ‘ASAP’; Lipkin reports both Farrar and Collins ‘very happy’ — the priority now is getting Nature's blessing to post a preprint while formal review continues."
+  },
+  {
+   "id": "p2-18.4",
+   "summary": "Acting on ‘pressure from on high’, Holmes submits the manuscript to Nature at 2:30 am UK — hours before Andersen, officially due to send it himself, is even back from his break."
+  },
+  {
+   "id": "p2-18.5",
+   "summary": "Nature's editor green-lights releasing the manuscript publicly while formal peer review is still underway."
+  },
+  {
+   "id": "p2-18.6",
+   "summary": "Rambaut formats and uploads the final text to his own virological.org board — which Daszak's Statement of Support in Lancet would cite within hours."
+  },
+  {
+   "id": "p2-18.7",
+   "summary": "Farrar asks to be sent the finished text immediately so the WHO can see it ‘ASAP’ — Garry notes on Slack it ‘makes a much stronger case against bioengineering’."
+  },
+  {
+   "id": "p2-18.8",
+   "summary": "Andersen privately concedes ‘the guy isn't totally wrong’ about Cotton, while Farrar confirms to Lipkin that the Cotton controversy is part of why he wants rapid publication."
+  },
+  {
+   "id": "p2-18.9",
+   "summary": "Farrar asks for ‘unlikely’ to become ‘improbable’ on deliberate engineering — a change Andersen considers trivial, since passaging, not engineering, is what the co-authors actually still consider live."
+  },
+  {
+   "id": "p2-18.10",
+   "summary": "Farrar asks the co-authors to take the manuscript down from virological.org so he can instead stage a press conference — evidence, the piece argues, that Farrar saw himself as effectively owning the paper he had commissioned."
+  },
+  {
+   "id": "p2-18.11",
+   "summary": "Andersen refuses to remove the manuscript or hold it for a press release, wary that moving it to a formal preprint server would make it look institutionally sanctioned."
+  },
+  {
+   "id": "p2-18.12",
+   "summary": "Farrar presses for a release date so he can coordinate press briefings to ensure ‘the key messages are reasonably reported’."
+  },
+  {
+   "id": "p2-18.13",
+   "summary": "Andersen tells Farrar that bioRxiv doesn't accept opinion pieces — a technicality that conveniently sidesteps airing his deeper doubts about the manuscript's readiness."
+  },
+  {
+   "id": "p2-18.14",
+   "summary": "Farrar retweets Andersen's thread, tagging the WHO's top officials directly."
+  },
+  {
+   "id": "p2-18.15",
+   "summary": "NIAID staff check in on the manuscript's progress toward peer-reviewed publication, confirming the NIH's own strong interest in seeing it formally published."
+  },
+  {
+   "id": "p2-19",
+   "summary": "Turns to Daszak's parallel effort to pre-empt the origin question with his own public statement."
+  },
+  {
+   "id": "p2-19.1",
+   "summary": "Daszak begins drafting his ‘Statement of Support’ explicitly to close gaps he sees in the NASEM letter — not realising the reassuring language he's relying on had already been struck from the final version."
+  },
+  {
+   "id": "p2-19.2",
+   "summary": "After Baric declines to sign over conflict-of-interest concerns, Daszak decides not to sign either — then signs anyway while still concealing that he wrote and organised the whole thing."
+  },
+  {
+   "id": "p2-19.3",
+   "summary": "Daszak folds Tedros's ‘trolls and conspiracy theorists’ line straight into his draft, later softened for the final published version."
+  },
+  {
+   "id": "p2-19.4",
+   "summary": "The co-authors read Daszak's letter as a pre-emptive strike against the passaging hypothesis, mocking him as the ‘Grand wizard of EgoHealth’ leading the ‘Ego krewe’."
+  },
+  {
+   "id": "p2-19.5",
+   "summary": "What started as an online petition becomes, thanks to Farrar's direct intervention with Lancet's editor, a publication in one of the world's most prestigious medical journals within two days."
+  },
+  {
+   "id": "p2-19.6",
+   "summary": "Daszak complains that ‘conspiracy theories’ have reached high levels of the US government — effectively confirming that the unresolved NASEM letter had let the origin question travel further than he wanted."
+  },
+  {
+   "id": "p2-19.7",
+   "summary": "Daszak's Statement is published simultaneously on change.org and in Lancet, with Baric and Linfa Wang conspicuously absent from the signatory list."
+  },
+  {
+   "id": "p2-19.8",
+   "summary": "Farrar tweets about Daszak's Statement; Daszak, trying to keep his authorship quiet, replies in a way deliberately readable as either a general thank-you or an acknowledgment of his hidden role."
+  },
+  {
+   "id": "p2-20",
+   "summary": "Covers the week in which the pangolin evidence the co-authors were counting on falls apart."
+  },
+  {
+   "id": "p2-20.1",
+   "summary": "A fresh GISAID upload briefly raises hopes before Holmes clarifies it's just his own, unrelated pangolin preprint — with no furin cleavage site at all."
+  },
+  {
+   "id": "p2-20.2",
+   "summary": "The actual SCAU sequences finally appear: no furin site, and the hyped ‘up to 99%’ similarity turns out to average just 90.3% — Holmes admits SCAU ‘totally over-hyped in the press release’."
+  },
+  {
+   "id": "p2-20.3",
+   "summary": "Both pangolin preprints confirm the viruses are too distant to be SARS-CoV-2's direct progenitor, leaving the origin question wide open again despite the SCAU press conference's early claims."
+  },
+  {
+   "id": "p2-20.4",
+   "summary": "With the pangolin lead dead, Andersen starts treating passaging as a ‘quite a high probability’ explanation for the RBD — just two days after the manuscript downplayed it in stealth mode."
+  },
+  {
+   "id": "p2-21",
+   "summary": "Covers Nature's rejection of the manuscript and the scramble that follows."
+  },
+  {
+   "id": "p2-21.1",
+   "summary": "Nature turns the manuscript down: Reviewer #2 warns it could fuel conspiracy theories by even mentioning lab-escape, and Nature itself worries the piece will quickly go out of date."
+  },
+  {
+   "id": "p2-21.2",
+   "summary": "Andersen fires back within an hour, insisting a lab origin ‘must be considered a serious scientific theory... not dismissed out of hand as another conspiracy theory’."
+  },
+  {
+   "id": "p2-21.3",
+   "summary": "Holmes and Garry conclude Reviewer #2 thinks exactly like Fouchier, and suspect the reviewer sent Nature's editor an alarming private note behind the scenes."
+  },
+  {
+   "id": "p2-21.4",
+   "summary": "The co-authors agree to draft a rebuttal and ask Farrar to lean on Nature's editor-in-chief directly, while preparing a fallback submission to Nature Medicine."
+  },
+  {
+   "id": "p2-22",
+   "summary": "Covers the discovery of a new bat virus, RmYN02, and how it reshapes — and ultimately kills — the passaging argument."
+  },
+  {
+   "id": "p2-22.1",
+   "summary": "Holmes hears early ‘rumblings’ of a bat virus with a furin cleavage site — information that, Andersen and Garry note, wouldn't actually rule out any of their three scenarios."
+  },
+  {
+   "id": "p2-22.2",
+   "summary": "Nature itself publishes an editor's note favouring a market origin, and a TWiV podcast episode turns the manuscript's deliberate ambiguity into a one-sided case against any lab escape — pressure the co-authors increasingly feel from ‘reliable’ scientific sources."
+  },
+  {
+   "id": "p2-22.3",
+   "summary": "Holmes privately shares the still-unpublished RmYN02 bat sequence, revealing he has quietly joined its authoring team over the preceding weekend."
+  },
+  {
+   "id": "p2-22.4",
+   "summary": "RmYN02 shows that furin-site-like insertions are possible in nature — a fact the co-authors stretch, the piece argues, from evidence that passaging isn't necessary into justification for dropping it as implausible."
+  },
+  {
+   "id": "p2-22.5",
+   "summary": "The co-authors reach for weak, shifting arguments to avoid even mentioning the possibility of a researcher being infected by a natural virus handled in a lab."
+  },
+  {
+   "id": "p2-22.6",
+   "summary": "The co-authors agree to rush out the RmYN02 paper, rewrite the manuscript to further downgrade the lab-product hypothesis, and switch to the WHO's preferred name, HCoV-19, over the official SARS-CoV-2."
+  },
+  {
+   "id": "p2-23",
+   "summary": "The final stretch to publication, this time in Nature Medicine."
+  },
+  {
+   "id": "p2-23.1",
+   "summary": "Holmes threatens to pull his name from the paper rather than let it specify which part of the genome came from where, forcing the co-authors to stay vague about the RBD's actual origin."
+  },
+  {
+   "id": "p2-23.2",
+   "summary": "With the publication window closing, the co-authors pivot to Nature Medicine and decide to reference RmYN02 only obliquely, so as to ‘look wicked smart’ once the real paper comes out."
+  },
+  {
+   "id": "p2-23.3",
+   "summary": "Nature Medicine agrees to reuse Nature's existing peer review, and after some final cuts and edits, the manuscript is formally transferred and accepted within a week."
+  },
+  {
+   "id": "p2-23.4",
+   "summary": "Andersen thanks Farrar, Fauci and Collins for their ‘advice and leadership’ as the manuscript clears its final hurdle."
+  },
+  {
+   "id": "p2-23.5",
+   "summary": "Hours before publication, Daszak emails Baric that he's confident the White House's new OSTP committee won't revisit the origin question — a prognosis the piece notes was ‘way off’, since the Lijian Zhao wolf-warrior flare-up hits that very same day."
+  },
+  {
+   "id": "p2-23.6",
+   "summary": "Proximal Origin is published, with Nature's own tweet calling it a ‘paper’ that shows the virus is ‘not a laboratory construct’ — the same day Trump's ‘Chinese virus’ comment ignites a controversy that, the piece notes, became the paper's accidental marketing."
+  },
+  {
+   "id": "p2-23.7",
+   "summary": "NIAID is formally notified of the publication, closing the loop on the update request from three weeks earlier."
+  },
+  {
+   "id": "p2-23.8",
+   "summary": "Scripps' press release headline (‘natural origin... scientists say’) overstates what Andersen's own words actually claimed, quietly erasing the lab-escape-of-a-natural-virus scenario the paper never addressed."
+  },
+  {
+   "id": "p2-24",
+   "summary": "Sets up the geopolitical backdrop — Trump's shift from praising China to the ‘Chinese virus’ controversy — against which Proximal Origin lands."
+  },
+  {
+   "id": "p2-24.1",
+   "summary": "Through early March, Trump stays conciliatory toward China while chasing a trade deal, criticised at the time only for downplaying the pandemic's risk — not for blaming China for it."
+  },
+  {
+   "id": "p2-24.2",
+   "summary": "As the trade deal fades and tensions rise, Pompeo calls it ‘incredibly frustrating’ to get data from China and uses the term ‘Wuhan virus’ on 6 Mar — a complaint the piece judges factually correct, if not widely recognised as such at the time."
+  },
+  {
+   "id": "p2-24.3",
+   "summary": "China's Foreign Ministry spokesman Zhao Lijian goes on the offensive, suggesting the US army brought the virus to Wuhan; the Chinese ambassador is summoned to the State Department the next day."
+  },
+  {
+   "id": "p2-24.5",
+   "summary": "On the evening of 16 Mar, Trump tweets about the ‘Chinese virus’ for the first time, explaining it as a response to China's own false claim that the US military had brought the virus there."
+  },
+  {
+   "id": "p2-24.6",
+   "summary": "China reacts angrily and expels NYT, WSJ and Washington Post journalists on 17 Mar, the same day US media frame Trump's tweet as straightforward racism — and P.O. is published."
+  },
+  {
+   "id": "p2-25",
+   "summary": "Compares the published Nature Medicine text against the earlier virological.org draft, line by line."
+  },
+  {
+   "id": "p2-25.1",
+   "summary": "Key phrasing shifts from ‘genetic engineering’ to ‘purposeful manipulation’, and from ‘necessary’ to ‘plausible’ — changes that, the piece argues, quietly widen what the paper claims to rule out."
+  },
+  {
+   "id": "p2-25.2",
+   "summary": "The paper's single most-cited sentence is shown to be logically vacuous: finding ‘all notable features’ in nature elsewhere is equally consistent with either a natural origin or a lab-engineered one built from those same natural parts."
+  },
+  {
+   "id": "p2-25.3",
+   "summary": "The paper's ‘parsimony’ claim for a natural RBD is exposed as comparing the wrong kind of odds — generic background probability instead of the actual circumstances (timing, location, known research) of the outbreak."
+  },
+  {
+   "id": "p2-26",
+   "summary": "Covers the co-authors' own private second-guessing in the weeks after publication, as doubts about Proximal Origin's conclusions start resurfacing."
+  },
+  {
+   "id": "p2-26.1",
+   "summary": "The paper becomes a runaway success — three million views within a month — and the co-authors spend weeks simply enjoying its Altmetric score."
+  },
+  {
+   "id": "p2-26.2",
+   "summary": "A Washington Post opinion piece reveals State Department cables taking a lab leak seriously — this time coming from inside the administration, not dismissed as Cotton-style conspiracy."
+  },
+  {
+   "id": "p2-26.3",
+   "summary": "Collins frets that Proximal Origin hasn't killed the ‘destructive conspiracy’; Fauci dismisses it as ‘a shiny object that will go away in time’."
+  },
+  {
+   "id": "p2-26.4",
+   "summary": "Fauci cites Proximal Origin from the White House podium to rebut a reporter's lab-origin question — a paper, the piece notes, that had itself been written specifically to appease China and smooth the WHO's access, with Fauci's own earlier remarks part of what made that appeasement necessary."
+  },
+  {
+   "id": "p2-26.5",
+   "summary": "Privately, Andersen admits he still can't rule out engineering or passaging, undercutting the very confidence Fauci had just projected publicly."
+  },
+  {
+   "id": "p2-26.6",
+   "summary": "Holmes offers a string of weak counter-arguments against Andersen's doubts; Andersen politely but firmly holds his ground on BSL-2 culturing work at the WIV as a genuine concern."
+  },
+  {
+   "id": "p2-26.7",
+   "summary": "The co-authors return to celebrating the paper's renewed Altmetric score, even as Andersen takes an unexpectedly political stance on a White House advisory call."
+  },
+  {
+   "id": "p2-26.8",
+   "summary": "A reflective recap: the co-authors, cornered between the WHO's need for access and the NIH's preferred narrative, quietly set a much higher bar of proof for a lab origin than for a natural one — the asymmetry the piece says explains the whole drafting process."
+  },
+  {
+   "id": "p2-27",
+   "summary": "Covers an anonymous 2020 attempt to discredit the Proximal Origin authors, and the piece's own speculation about who sent it."
+  },
+  {
+   "id": "p2-27.1",
+   "summary": "An anonymous email to journalist Jon Cohen accuses the Proximal Origin authors of having needed to be ‘schooled’ by real experts on the Farrar call, and claims Nature initially rejected the paper over this."
+  },
+  {
+   "id": "p2-27.2",
+   "summary": "Rather than publish it, Cohen forwards the email straight to Andersen and Holmes, who — with Farrar, Fauci and Wellcome's own comms team — draft and send a rebuttal within 24 hours."
+  },
+  {
+   "id": "p2-27.3",
+   "summary": "The email's own wording points to someone who was on the original Farrar call — most likely Fouchier or Koopmans."
+  },
+  {
+   "id": "p2-27.4",
+   "summary": "The piece narrows the likely motive to either genuine authorship grievance, or a deliberate attempt to damage the authors' reputations."
+  },
+  {
+   "id": "p2-27.5",
+   "summary": "Despite Holmes's suspicion, the piece argues Baric is an implausible suspect — he had nothing to gain and would go on to publicly call for a proper origins investigation."
+  },
+  {
+   "id": "p2-27.6",
+   "summary": "The piece argues an authorship motive doesn't hold up either, since neither Fouchier nor Drosten — the ones who actually shaped the paper's conclusions — ever showed interest in claiming credit."
+  },
+  {
+   "id": "p2-27.7",
+   "summary": "The email's odd fixation on what Fauci ‘first’ believed, rather than the authorship question it claims to raise, is read as a tell about who really wrote it."
+  },
+  {
+   "id": "p2-27.8",
+   "summary": "The email's date and opening line tie it directly to a Science article published the day before, quoting Daszak, Holmes and Andersen together."
+  },
+  {
+   "id": "p2-27.9",
+   "summary": "The email's careful effort to exempt Lipkin from blame points toward someone protective of him — and of his long-standing ties to the Global Virome Project."
+  },
+  {
+   "id": "p2-27.10",
+   "summary": "Pulling the clues together, the piece builds a profile and a motive — protecting Daszak's Global Virome Project and NIH funding from Andersen, Holmes and Rambaut — without ever naming a suspect outright."
+  },
+  {
+   "id": "p2-28",
+   "summary": "Steps back to the years-long feud and funding rivalry between Daszak and the Proximal Origin authors that the piece argues shaped much of this story."
+  },
+  {
+   "id": "p2-28.1",
+   "summary": "Traces years of public sniping between Daszak's Global Virome Project and Holmes/Andersen/Rambaut's rival surveillance approach, through journal comments, rebuttals and conference jabs."
+  },
+  {
+   "id": "p2-28.2",
+   "summary": "Andersen publicly mocks Daszak's PREDICT funding complaints as ‘hyped marketing claims’, directly threatening the funding model Daszak's whole operation depends on."
+  },
+  {
+   "id": "p2-28.3",
+   "summary": "Andersen and Rambaut publicly call out EcoHealth Alliance for publishing the new coronavirus's sequence tree without crediting Zhang and Holmes, who actually did the work."
+  },
+  {
+   "id": "p2-28.4",
+   "summary": "Daszak complains to a colleague that the Proximal Origin authors are ‘the exact same group’ who pushed the lab-leak question all the way to the White House — the very scientists he blames for jeopardising his own grants."
+  },
+  {
+   "id": "p2-28.5",
+   "summary": "After the NIH suspends his R01 grant following Proximal Origin's publication, Daszak — backed quietly by Fauci's advisor Morens — spends months fighting to reverse it, blaming political interference even as his funding model (PREDICT, the GVP) keeps unravelling."
+  }
  ]
 }

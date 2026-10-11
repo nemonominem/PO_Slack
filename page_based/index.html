@@ -653,7 +653,13 @@ body.layout-portrait .pdf-panel {
   border: 2px solid var(--accent); box-shadow: 0 0 10px rgba(233,69,96,0.25);
   margin: 6px; border-radius: 6px;
   padding: 8px 10px; background: #3c3f44;
+  /* A section can cite 25+ documents (e.g. 28.5) -- cap at half the rail's
+     own height and scroll internally rather than push the section list
+     (and everything above it) off screen. */
+  flex-shrink: 0; max-height: 50%; overflow-y: auto;
 }
+.guide-detail::-webkit-scrollbar { width: 8px; }
+.guide-detail::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 4px; }
 .guide-detail h4 { margin: 0 0 6px; font-size: 12px; color: var(--text); }
 .guide-detail .gd-ev {
   font-size: 11px; color: var(--muted); padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -1124,6 +1130,21 @@ function guideCitationLabel(ev) {
   if (ev.doc) return ev.doc;
   const rawLabel = (ev.raw || '').replace(/\[\^[0-9A-Za-z_]+\]/g, '').trim();
   return rawLabel || ev.kind;
+}
+
+// A citation's url is whatever the article actually links to -- a Drive
+// copy, a web.archive.org snapshot, or any other outside page -- so the
+// link's own label has to match, rather than always claiming "Drive".
+function externalLinkLabel(url) {
+  if (/drive\.google\.com/.test(url)) return 'Drive';
+  if (/web\.archive\.org|archive\.ph|archive\.li|archive\.today/.test(url)) return 'Archive';
+  return 'Link';
+}
+function externalLinkTitle(url) {
+  const label = externalLinkLabel(url);
+  return label === 'Drive' ? 'Open the public copy on Google Drive'
+    : label === 'Archive' ? 'Open the archived snapshot'
+    : 'Open the linked page';
 }
 
 let diaryData = null;                 // merged { total_entries, date_range, entries[] }
@@ -4005,7 +4026,8 @@ function selectGuideSection(id) {
         escapeHtml(label) + '</span>'
       : '<span class="gd-doc" style="color:' + colour + '">' + escapeHtml(label) + '</span>';
     const link = ev.url
-      ? ' <a href="' + escapeHtml(ev.url) + '" target="_blank" rel="noopener" title="Open the public copy on Google Drive">Drive &#8599;</a>'
+      ? ' <a href="' + escapeHtml(ev.url) + '" target="_blank" rel="noopener" title="' +
+        escapeHtml(externalLinkTitle(ev.url)) + '">' + escapeHtml(externalLinkLabel(ev.url)) + ' &#8599;</a>'
       : '';
     const jump = (ev.kind === 'email' || ev.kind === 'slack') && ev.date
       ? ' <span class="chip" data-guide-date="' + escapeHtml(ev.date) + '">show that day</span>'
@@ -4016,18 +4038,16 @@ function selectGuideSection(id) {
       link + jump + '</div>';
   });
   if (s.number) {
-    // Primary action opens the article's own PDF in the Tragicomedy tab, at
-    // the page its heading was actually found on (article_page_map.json) --
-    // reliable and offline, unlike the Medium link (kept as a small secondary
-    // action: Medium's anchor behaviour for an arbitrary heading has not been
-    // verified to work at all).
+    // Opens the article's own PDF in the Tragicomedy tab, at the page its
+    // heading was actually found on (article_page_map.json) -- reliable and
+    // offline, unlike a guessed Medium URL fragment (dropped: Medium's
+    // anchor behaviour for an arbitrary heading was never verified to work
+    // at all, and this sandbox cannot reach medium.com to check).
     html += '<div class="gd-ev" style="margin-top:6px">' +
       '<span class="gd-doc gd-doc-link" data-guide-tragicomedy="' + escapeHtml(s.id) +
       '" data-guide-part="' + escapeHtml(s.part) +
       '" title="Open this section in the article itself (Tragicomedy)">' +
-      'read this section in the piece</span>' +
-      ' <a href="' + escapeHtml(sectionUrl(s)) + '" target="_blank" rel="noopener" ' +
-      'title="Open on Medium instead" style="color:var(--muted)">(Medium &#8599;)</a></div>';
+      'P.O. Tragicomedy section</span></div>';
   }
   detail.innerHTML = html;
   detail.classList.remove('hidden');
@@ -4373,12 +4393,6 @@ function initBookmarks() {
   }
   window.addEventListener('resize', syncBmScrollBtns);
   renderBookmarks();
-}
-
-function sectionUrl(s) {
-  const p = (guideData.parts || []).find(function(x) { return x.id === s.part; });
-  const base = (p && p.url) || guideData.article_url;
-  return base + '#' + s.id.replace(/^[a-z0-9]+-/, '');
 }
 
 function toggleGuideRail() {
