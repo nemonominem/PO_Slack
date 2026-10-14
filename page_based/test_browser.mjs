@@ -42,9 +42,14 @@ ok('the three rails are all present',
    await page.locator('#chartsPanel').count() === 1);
 const openByDefault = await page.evaluate(() =>
   !document.getElementById('guideRail').classList.contains('collapsed') &&
-  !document.getElementById('bmRail').classList.contains('collapsed') &&
   !document.getElementById('chartsPanel').classList.contains('collapsed'));
-ok('all three rails open by default', openByDefault);
+ok('the guide and timeline rails open by default', openByDefault);
+ok('the bookmarks rail starts collapsed', await page.evaluate(() =>
+  document.getElementById('bmRail').classList.contains('collapsed')));
+// Expand it for every test below that needs its body visible -- the
+// "Collapsing" section further down is what actually tests the toggle.
+await page.click('#bmToggleBtn');
+await page.waitForTimeout(250);
 
 sec('DRASTIC mark');
 const brand = page.locator('.header-brand img');
@@ -110,6 +115,10 @@ await page.waitForFunction(() => document.getElementById('entryStats') &&
   document.getElementById('entryStats').textContent.length > 0, { timeout: 120000 });
 ok('the bookmark survives a reload',
    await page.locator('.bm-item').count() === 1);
+// The reload landed on a fresh page, so it's collapsed-by-default again --
+// re-expand for the geometry checks below.
+await page.click('#bmToggleBtn');
+await page.waitForTimeout(250);
 
 sec('Portrait layout');
 await page.click('#layoutToggle');

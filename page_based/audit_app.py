@@ -163,7 +163,7 @@ check("data-bm-toggle" in body, "every result box gets a bookmark toggle")
 # never flips flex-direction between layouts, so both rails stay plain
 # left-hand columns (vertical) in landscape and portrait alike, with no
 # layout-specific markup needed for either.
-check(re.search(r'<div class="workspace"[^>]*>\s*<!--[^>]*-->\s*<div class="bm-rail"', src),
+check(re.search(r'<div class="workspace"[^>]*>\s*<!--[^>]*-->\s*<div class="bm-rail[^"]*"', src),
       "bookmarks rail sits directly in .workspace, before the guide rail")
 for fn in ("toggleBookmark", "isBookmarked", "removeBookmark", "openBookmark",
            "renderBookmarks", "bookmarksPayload", "loadBookmarksFile",

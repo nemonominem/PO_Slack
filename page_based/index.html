@@ -49,6 +49,7 @@ body {
 .header h1 { font-size: 26px; color: var(--accent); white-space: nowrap; line-height: 1.15; }
 .header .subtitle { font-size: 12px; color: #fff; white-space: nowrap; }
 .header .subtitle a { color: #fff; text-decoration: underline; }
+.header .subtitle-stats { font-size: 11px; color: var(--muted); white-space: nowrap; }
 /* DRASTIC mark, pushed to the far right of the header row. The image carries
    its own background, so it needs no border -- just breathing room and a
    pointer cursor to say it is a link. */
@@ -351,6 +352,22 @@ body.layout-portrait .pdf-panel {
   transition: width 0.18s ease, min-width 0.18s ease, max-width 0.18s ease;
 }
 .bm-rail.collapsed { width: 36px; min-width: 36px; max-width: 36px; }
+/* Drag handle between the bookmarks rail and whatever sits next to it
+   (the P.O. guide rail, or the main workspace) -- always a vertical bar:
+   unlike the charts/PDF resizers, the bookmarks rail never flips to a
+   horizontal strip in portrait, so this one doesn't need a layout switch. */
+.bm-resizer {
+  width: 10px; flex-shrink: 0; cursor: col-resize; background: #555; position: relative;
+}
+.bm-rail.collapsed + .bm-resizer { display: none; }
+.bm-resizer::before {
+  content: '';
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 3px; height: 32px; background: #6c9ff2; border-radius: 2px;
+  transition: background 0.15s;
+}
+.bm-resizer:hover, .bm-resizer.dragging { background: var(--accent); }
+.bm-resizer:hover::before, .bm-resizer.dragging::before { background: #fff; }
 .bm-head {
   padding: 8px 12px; border-bottom: 1px solid var(--border-2); background: var(--panel-2);
   display: flex; align-items: center; gap: 8px;
@@ -399,6 +416,11 @@ body.layout-portrait .pdf-panel {
 }
 .bm-item .bm-x:hover { color: var(--accent); }
 .bm-empty { font-size: 12px; color: var(--muted); padding: 10px 8px; line-height: 1.5; }
+.bm-notice {
+  font-size: 11px; color: var(--text); background: var(--panel-2);
+  border: 1px solid var(--accent); border-radius: 4px; padding: 8px;
+  margin-bottom: 8px; line-height: 1.4;
+}
 /* Save / load the bookmark file */
 /* Save / Load icon buttons: dark keys matching the HUD style, always
    stacked vertically (one on top of the other) in every layout. */
@@ -451,6 +473,8 @@ body.layout-portrait .pdf-panel {
 }
 .result-content mark { cursor: pointer; }
 .result-content mark:hover { outline: 1px solid var(--accent); }
+.body-link { color: #6cb6ff; text-decoration: underline; word-break: break-all; }
+.body-link:hover { color: var(--accent); }
 .result-date { font-size: 15px; font-weight: 700; color: var(--accent); }
 .result-time { font-size: 12px; color: var(--muted); font-weight: 600; margin-left: 8px; }
 .result-raw-date { font-size: 11px; color: var(--muted); margin-left: 8px; }
@@ -513,6 +537,12 @@ body.layout-portrait .pdf-panel {
   white-space: nowrap;
 }
 .expand-btn:hover { border-color: var(--accent); color: var(--accent); }
+.thread-btn {
+  background: var(--panel); color: var(--text); border: 1px solid var(--border-2);
+  padding: 2px 8px; border-radius: 4px; cursor: pointer; font-size: 11px; margin-left: 8px;
+  white-space: nowrap;
+}
+.thread-btn:hover { border-color: var(--green); color: var(--green); }
 .scroll-hint {
   padding: 3px 14px; font-size: 11px; color: var(--muted); font-style: italic;
   border-top: 1px solid var(--border-2); background: var(--panel-2);
@@ -537,7 +567,6 @@ body.layout-portrait .pdf-panel {
   white-space: pre-line; font-size: 12px; color: var(--muted);
   border-bottom: 1px solid var(--border-2); padding-bottom: 6px; margin-bottom: 8px;
 }
-.mail-head-subject { color: var(--text); font-weight: 600; }
 /* Chips: thread links, attachment pointers, citations, external documents */
 .chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 14px 8px; }
 .chip {
@@ -592,6 +621,19 @@ body.layout-portrait .pdf-panel {
 }
 /* Collapsed = thin vertical rail only (same mechanism as the Timeline) */
 .guide-rail.collapsed { width: 36px; min-width: 36px; max-width: 36px; }
+/* Drag handle to resize the guide rail -- same mechanism as .bm-resizer. */
+.guide-resizer {
+  width: 10px; flex-shrink: 0; cursor: col-resize; background: #555; position: relative;
+}
+.guide-rail.collapsed + .guide-resizer { display: none; }
+.guide-resizer::before {
+  content: '';
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 3px; height: 32px; background: #6c9ff2; border-radius: 2px;
+  transition: background 0.15s;
+}
+.guide-resizer:hover, .guide-resizer.dragging { background: var(--accent); }
+.guide-resizer:hover::before, .guide-resizer.dragging::before { background: #fff; }
 .guide-head {
   padding: 8px 12px; border-bottom: 1px solid var(--border-2); background: var(--panel-2);
   display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
@@ -741,6 +783,48 @@ mark.hit-current {
 }
 .pdf-viewer-container::-webkit-scrollbar { width: 8px; height: 8px; }
 .pdf-viewer-container::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 4px; }
+.thread-view { flex: 1; overflow: auto; background: #1a1a1a; padding: 16px; }
+.thread-view-inner { max-width: 780px; margin: 0 auto; }
+.thread-empty { color: var(--muted); font-size: 13px; padding: 24px; text-align: center; }
+.thread-msg {
+  border: 1px solid var(--border-2); border-radius: 6px; padding: 12px 14px;
+  margin-bottom: 10px; background: var(--panel-2); cursor: pointer;
+}
+.thread-msg:hover { border-color: var(--accent); }
+.thread-msg.current { border-color: var(--green); border-width: 2px; cursor: default; }
+.thread-msg.downstream { border-style: dashed; }
+.thread-msg-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+.thread-msg-sender { font-weight: 600; color: var(--green); font-size: 13px; }
+.thread-msg-date { color: var(--muted); font-size: 11px; }
+.thread-msg-subject { color: var(--text); font-size: 12px; font-style: italic; }
+.thread-msg-fields {
+  font-size: 11.5px; line-height: 1.6; color: var(--muted); white-space: pre-wrap;
+  border-bottom: 1px solid var(--border-2); padding-bottom: 6px; margin-bottom: 8px;
+}
+.thread-msg-stamp { font-size: 10.5px; color: var(--muted); margin-bottom: 8px; }
+.thread-msg-body {
+  font-size: 12.5px; line-height: 1.5; white-space: pre-wrap; color: var(--text);
+  max-height: 220px; overflow-y: auto;
+}
+.thread-chain-arrow { text-align: center; color: var(--muted); font-size: 16px; margin: -2px 0 6px; }
+.thread-section-label {
+  font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em;
+  margin: 14px 0 6px;
+}
+/* A downstream reply's lineage back to its parent, as a rule down the left
+   edge of its own indent -- each further level of reply nests one step
+   deeper, so the rules visually chain into the message above it. */
+.thread-down { border-left: 2px solid var(--border-2); padding-left: 10px; margin-top: 8px; }
+.thread-collapsed {
+  display: flex; align-items: center; gap: 10px; padding: 8px 12px;
+  border: 1px dashed var(--border-2); border-radius: 6px; background: var(--panel-2);
+}
+.thread-collapsed-label { font-size: 12px; color: var(--muted); flex: 1; }
+.thread-downstream-btn {
+  background: var(--panel); color: var(--text); border: 1px solid var(--border-2);
+  padding: 3px 9px; border-radius: 4px; cursor: pointer; font-size: 11px; white-space: nowrap;
+}
+.thread-downstream-btn:hover { border-color: var(--green); color: var(--green); }
 .pdf-page-view {
   display: flex; flex-direction: row; gap: 12px; align-items: flex-start; justify-content: center;
   flex-wrap: nowrap;
@@ -793,17 +877,18 @@ mark.hit-current {
 <div class="header">
   <div class="title-block">
     <h1>💬 P.O. Record Search</h1>
-    <span class="subtitle"><a href="https://www.paul.senate.gov/readingroom/" target="_blank">Slack (Rand Paul) + FOI'd emails &amp; manuscript drafts</a> &middot; 12,727 entries &middot; Jan 2020 &ndash; Jun 2023</span>
+    <span class="subtitle"><a href="https://www.paul.senate.gov/readingroom/" target="_blank">Slack + FOI'd emails, manuscript drafts &amp; other key sources</a></span>
+    <span class="subtitle-stats">12,727 entries &middot; Jan 2020 &ndash; Jun 2023</span>
   </div>
   <form class="search-bar" id="searchForm" onsubmit="doSearch(); return false;">
-    <input type="text" id="searchInput" enterkeyhint="search" autocomplete="off" placeholder='Phrase: "blue car" · words: happy bunny · help: ?'>
-    <button type="submit" id="searchBtn">Search</button>
-    <button type="button" id="clearBtn" onclick="clearSearch()">Clear</button>
     <label class="case-toggle" title="Off = match any capitalization (default). On = exact capitalization only.">
       <input type="checkbox" id="caseSensitive" onchange="if(document.getElementById('searchInput').value.trim())doSearch()">
       <span><strong>Aa</strong> case sensitive</span>
     </label>
     <button type="button" id="helpBtn" onclick="showHelp()" title="Search help" style="background:var(--panel-2);color:var(--muted);border:1px solid var(--border-2);padding:8px 12px;border-radius:4px;cursor:pointer;font-size:13px;font-weight:600">?</button>
+    <input type="text" id="searchInput" enterkeyhint="search" autocomplete="off" placeholder='Phrase: "blue car" · words: happy bunny · help: ?'>
+    <button type="submit" id="searchBtn">Search</button>
+    <button type="button" id="clearBtn" onclick="clearSearch()">Clear</button>
   </form>
   <!-- DRASTIC mark, top right. Links to the manual/release notes page, which
        opens in a new tab so the search state here is never lost. -->
@@ -840,10 +925,10 @@ mark.hit-current {
      A plain column, left of everything else, in every layout -- same
      mechanism as the P.O. guide rail right after it (workspace never
      flips to column, so this ordering is layout-independent). -->
-<div class="bm-rail" id="bmRail">
+<div class="bm-rail collapsed" id="bmRail">
   <div class="bm-head" onclick="toggleBmRail()" title="Collapse / expand the bookmarks">
     <h3>🔖 Bookmarks</h3>
-    <button type="button" class="collapse-btn" id="bmToggleBtn" title="Collapse bookmarks">◀</button>
+    <button type="button" class="collapse-btn" id="bmToggleBtn" title="Expand bookmarks">▶</button>
   </div>
   <div class="bm-body">
     <div class="bm-scroll-btns">
@@ -864,6 +949,7 @@ mark.hit-current {
     </div>
   </div>
 </div>
+<div class="bm-resizer" id="bmResizer" title="Drag to resize the bookmarks panel"></div>
 
 <!-- ── The P.O. guide: the article's own sections, and what each rests on ─── -->
 <div class="guide-rail" id="guideRail">
@@ -877,6 +963,7 @@ mark.hit-current {
     <div class="guide-detail hidden" id="guideDetail"></div>
   </div>
 </div>
+<div class="guide-resizer" id="guideResizer" title="Drag to resize the P.O. guide panel"></div>
 
 <div class="content-area">
 
@@ -930,11 +1017,12 @@ mark.hit-current {
   <!-- ── PDF panel ────────────────────────────────────────────────── -->
   <div class="pdf-panel" id="pdfPanel">
     <div class="pdf-tabs" id="pdfTabs" role="tablist" title="Timeline: the five searchable, ingested sources. Complementary: other documents the piece cites, trimmed to their cited pages. Tragicomedy: the article itself.">
-      <button type="button" class="pdf-tab active" id="pdfTabTimeline" onclick="switchReaderTab('timeline')">Timeline</button>
-      <button type="button" class="pdf-tab" id="pdfTabComplementary" onclick="switchReaderTab('complementary')">Complementary</button>
-      <button type="button" class="pdf-tab" id="pdfTabTragicomedy" onclick="switchReaderTab('tragicomedy')">P.O. — A Tragicomedy</button>
+      <button type="button" class="pdf-tab active" id="pdfTabTimeline" onclick="openTimelineTab()">Timeline</button>
+      <button type="button" class="pdf-tab" id="pdfTabComplementary" onclick="openComplementaryTab()">Complementary</button>
+      <button type="button" class="pdf-tab" id="pdfTabTragicomedy" onclick="openTragicomedyTab()">P.O. — A Tragicomedy</button>
+      <button type="button" class="pdf-tab" id="pdfTabThread" onclick="openThreadTab()">🧵 Thread</button>
     </div>
-    <div class="pdf-toolbar">
+    <div class="pdf-toolbar" id="pdfToolbar">
       <span id="pdfSourceLabel" title="Which Congressional release PDF is displayed" style="font-size:11px;color:var(--muted);font-weight:600;margin-right:6px;padding:3px 8px;background:var(--panel-2);border-radius:4px;border:1px solid var(--border-2);white-space:nowrap">Part 1</span>
       <button id="pdfPrev" onclick="pdfPrevPage()">◀ Prev</button>
       <input type="number" class="pdf-page-input" id="pdfPageInput" value="1" min="1" max="140" onchange="pdfGoToPage(this.value)">
@@ -961,6 +1049,9 @@ mark.hit-current {
         <canvas id="pdfCanvas2" style="display:none"></canvas>
       </div>
       <div class="pdf-continuous-view" id="pdfContinuousView" style="display:none"></div>
+    </div>
+    <div class="thread-view" id="threadView" style="display:none">
+      <div class="thread-view-inner" id="threadViewInner"></div>
     </div>
   </div>
 
@@ -1268,6 +1359,7 @@ async function loadData() {
     // The box-type button only exists once there is more than one kind to
     // choose between, and it restores whatever was ticked last time.
     loadKindFilter();
+    loadHiddenSegments();
     buildKindFilterPanel();
 
     syncJumpDateInputBounds();
@@ -1289,13 +1381,18 @@ async function loadData() {
 
     // ── Load the default PDF first for immediate display ──
     pdfDocs[DEFAULT_PDF_SOURCE] = await pdfjsLib.getDocument(SOURCES[DEFAULT_PDF_SOURCE].pdf).promise;
-    pdfDoc = pdfDocs[DEFAULT_PDF_SOURCE];
     currentPdfSource = DEFAULT_PDF_SOURCE;
-    updatePdfSourceUI();
-
-    document.getElementById('pdfLoading').style.display = 'none';
-    applyPdfViewModeDom();
-    renderPdfPage(pendingPage || 1);
+    // This fetch chain (page maps, then the default PDF itself) can take a
+    // couple of seconds -- long enough for a fast click to have already
+    // switched to Complementary/Tragicomedy and loaded its own doc, which
+    // this would otherwise clobber the moment it finally resolves.
+    if (readerTab === 'timeline') {
+      pdfDoc = pdfDocs[DEFAULT_PDF_SOURCE];
+      updatePdfSourceUI();
+      document.getElementById('pdfLoading').style.display = 'none';
+      applyPdfViewModeDom();
+      renderPdfPage(pendingPage || 1);
+    }
 
     // ── Load the other PDFs in the background ──
     // A source with no PDF (metadata-only, like the guide) is skipped rather
@@ -1307,7 +1404,11 @@ async function loadData() {
       pdfPending[id].then(function(doc) {
         pdfDocs[id] = doc;
         pdfPending[id] = null;
-        if (currentPdfSource === id) {
+        // readerTab check matters: switching to Complementary/Tragicomedy
+        // never resets currentPdfSource, so a Timeline source's background
+        // preload finishing *after* that switch would otherwise overwrite
+        // the just-loaded Complementary/Tragicomedy doc with this one.
+        if (readerTab === 'timeline' && currentPdfSource === id) {
           pdfDoc = doc;
           updatePdfSourceUI();
           if (pendingPage) renderPdfPage(pendingPage);
@@ -1356,23 +1457,55 @@ function updatePdfSourceUI() {
   if (inp) inp.max = pdfDoc.numPages;
 }
 
+/** Show/hide the loading spinner for a PDF that isn't cached yet (first
+ * view of a Complementary/Tragicomedy document, or a Timeline source not
+ * yet preloaded in the background) -- without this, the viewer kept
+ * showing whatever was on screen before the click, with only the header
+ * label updated, which read as "the tab didn't switch" during the several
+ * seconds a 60-95MB Tragicomedy PDF takes to fetch and parse. */
+function showPdfLoading(show, message) {
+  const loading = document.getElementById('pdfLoading');
+  if (!loading) return;
+  loading.style.display = show ? '' : 'none';
+  if (show) {
+    loading.innerHTML = '<div class="spinner"></div><div>' + escapeHtml(message || 'Loading PDF...') + '</div>';
+    const pageView = document.getElementById('pdfPageView');
+    const contView = document.getElementById('pdfContinuousView');
+    if (pageView) pageView.style.display = 'none';
+    if (contView) contView.style.display = 'none';
+  }
+}
+
 /** Switch the PDF panel to `source` and render `page`, loading the PDF first if
  *  it is not ready yet. This is what a result click must do: the previous code
  *  set pdfDoc to a source whose PDF was still loading in the background, so
- *  nothing rendered and the panel kept showing the wrong release. */
+ *  nothing rendered and the panel kept showing the wrong release.
+ *
+ *  Called even while Complementary/Tragicomedy is the active tab -- selecting
+ *  a guide section also re-centers the Timeline browse list on that day's
+ *  entry, via a requestAnimationFrame-deferred call, so it can land well
+ *  after a same-tick switch to another tab. currentPdfSource/pdfDocs still
+ *  get updated unconditionally (so Timeline shows the right thing whenever
+ *  the user does come back to it), but pdfDoc / the visible canvas / the
+ *  header stats are only touched while Timeline is actually on screen --
+ *  otherwise this was blowing away whatever Complementary/Tragicomedy had
+ *  just rendered. */
 async function renderEntryPdf(source, page) {
-  if (!source || !SOURCES[source]) { if (page) renderPdfPage(page); return; }
+  if (!source || !SOURCES[source]) { if (page && readerTab === 'timeline') renderPdfPage(page); return; }
   if (!SOURCES[source].pdf) return;      // metadata-only source: no PDF to show
 
   currentPdfSource = source;
-  updatePdfSourceUI();
+  if (readerTab === 'timeline') updatePdfSourceUI();
 
   if (pdfDocs[source]) {
-    pdfDoc = pdfDocs[source];
-    updatePdfSourceUI();
-    if (page) renderPdfPage(page);
+    if (readerTab === 'timeline') {
+      pdfDoc = pdfDocs[source];
+      updatePdfSourceUI();
+      if (page) renderPdfPage(page);
+    }
     return;
   }
+  if (readerTab === 'timeline') showPdfLoading(true);
   if (!pdfPending[source]) {
     pdfPending[source] = pdfjsLib.getDocument(SOURCES[source].pdf).promise;
   }
@@ -1380,13 +1513,18 @@ async function renderEntryPdf(source, page) {
     const doc = await pdfPending[source];
     pdfDocs[source] = doc;
     pdfPending[source] = null;
-    if (currentPdfSource !== source) return;   // the reader moved on meanwhile
+    // the reader moved on meanwhile -- to another Timeline source, or away
+    // to Complementary/Tragicomedy entirely (which never resets
+    // currentPdfSource, so that check alone isn't enough here either).
+    if (readerTab !== 'timeline' || currentPdfSource !== source) return;
     pdfDoc = doc;
     updatePdfSourceUI();
+    showPdfLoading(false);
     if (page) renderPdfPage(page);
   } catch (err) {
     pdfPending[source] = null;
     console.error('Load of ' + source + ' PDF failed:', err);
+    if (readerTab === 'timeline') showPdfLoading(true, 'Could not load this PDF.');
   }
 }
 
@@ -1407,6 +1545,7 @@ async function loadComplementaryPdf(docName, trimmedPage) {
     renderPdfPage(complementaryState.page);
     return;
   }
+  showPdfLoading(true);
   if (!pdfPending[key]) {
     pdfPending[key] = pdfjsLib.getDocument('complementary/' + complementaryData[docName].pdf).promise;
   }
@@ -1417,10 +1556,12 @@ async function loadComplementaryPdf(docName, trimmedPage) {
     if (readerTab !== 'complementary' || complementaryState.doc !== docName) return;
     pdfDoc = doc;
     updatePdfSourceUI();
+    showPdfLoading(false);
     renderPdfPage(complementaryState.page);
   } catch (err) {
     pdfPending[key] = null;
     console.error('Load of complementary ' + docName + ' failed:', err);
+    showPdfLoading(true, 'Could not load this PDF.');
   }
 }
 
@@ -1451,6 +1592,11 @@ async function loadTragicomedyPart(part, page) {
     renderPdfPage(tragicomedyState.page);
     return;
   }
+  // These are the largest PDFs the app loads (Part 2 is ~95MB) and are never
+  // preloaded in the background the way Timeline sources are -- a first
+  // view can take several seconds, during which the viewer would otherwise
+  // keep showing whatever was on screen before the click.
+  showPdfLoading(true);
   if (!pdfPending[key]) {
     pdfPending[key] = pdfjsLib.getDocument(cfg.pdf).promise;
   }
@@ -1461,10 +1607,12 @@ async function loadTragicomedyPart(part, page) {
     if (readerTab !== 'tragicomedy' || tragicomedyState.part !== part) return;
     pdfDoc = doc;
     updatePdfSourceUI();
+    showPdfLoading(false);
     renderPdfPage(tragicomedyState.page);
   } catch (err) {
     pdfPending[key] = null;
     console.error('Load of tragicomedy ' + part + ' failed:', err);
+    showPdfLoading(true, 'Could not load this PDF.');
   }
 }
 
@@ -1481,30 +1629,261 @@ function openTragicomedySection(sectionId, part) {
 
 /** Switch which of the three pools of PDFs the shared viewer (pdfDoc /
  * currentPage / pdfScale, and every render/zoom/view-mode function that
- * reads them) is currently showing, restoring that pool's own last-viewed
- * doc/page rather than reloading from scratch. */
+ * reads them) is currently showing. Does NOT load anything itself -- every
+ * caller that wants a specific document (a citation link, a tab button)
+ * follows this with its own load call; this used to also fire an internal
+ * "reload whatever was last shown" call, which raced with that follow-up
+ * call (two concurrent loads sharing one piece of state -- whichever
+ * finished last silently won, regardless of which one the user actually
+ * asked for). See openTimelineTab/openComplementaryTab/openTragicomedyTab
+ * for the plain-tab-click case, which has no such follow-up call of its own. */
 function switchReaderTab(tab) {
   if (tab === readerTab) return;
   readerTab = tab;
-  ['Timeline', 'Complementary', 'Tragicomedy'].forEach(function(name) {
+  ['Timeline', 'Complementary', 'Tragicomedy', 'Thread'].forEach(function(name) {
     const btn = document.getElementById('pdfTab' + name);
     if (btn) btn.classList.toggle('active', name.toLowerCase() === tab);
   });
-  if (tab === 'timeline') {
-    renderEntryPdf(currentPdfSource, currentPage);
-  } else if (tab === 'complementary') {
-    if (complementaryState.doc) {
-      loadComplementaryPdf(complementaryState.doc, complementaryState.page);
-    } else if (complementaryData) {
-      const firstDoc = Object.keys(complementaryData)[0];
-      if (firstDoc) loadComplementaryPdf(firstDoc, 1);
-    } else {
-      updatePdfSourceUI();
-    }
-  } else if (tab === 'tragicomedy') {
-    loadTragicomedyPart(tragicomedyState.part, tragicomedyState.page);
+  // The Thread tab has no PDF of its own -- the canvas/continuous viewer and
+  // its Prev/Next/zoom toolbar (none of which apply) make way for the
+  // thread's own scrolling panel, restored unchanged when leaving the tab.
+  const isThread = tab === 'thread';
+  const toolbar = document.getElementById('pdfToolbar');
+  const viewer = document.getElementById('pdfViewerContainer');
+  const threadView = document.getElementById('threadView');
+  if (toolbar) toolbar.style.display = isThread ? 'none' : '';
+  if (viewer) viewer.style.display = isThread ? 'none' : '';
+  if (threadView) threadView.style.display = isThread ? '' : 'none';
+}
+
+/** Bound to the plain tab buttons -- switching tabs with no specific
+ * document in mind, so (unlike a citation link) this is the one caller
+ * that does need to restore whatever that pool last showed. */
+function openTimelineTab() {
+  switchReaderTab('timeline');
+  renderEntryPdf(currentPdfSource, currentPage);
+}
+function openComplementaryTab() {
+  switchReaderTab('complementary');
+  if (complementaryState.doc) {
+    loadComplementaryPdf(complementaryState.doc, complementaryState.page);
+  } else if (complementaryData) {
+    const firstDoc = Object.keys(complementaryData)[0];
+    if (firstDoc) loadComplementaryPdf(firstDoc, 1);
+  } else {
+    updatePdfSourceUI();
   }
 }
+function openTragicomedyTab() {
+  switchReaderTab('tragicomedy');
+  loadTragicomedyPart(tragicomedyState.part, tragicomedyState.page);
+}
+
+// ============================================================
+// Thread tab — Gmail-style rendering of one conversation
+// ============================================================
+let threadFocusKey = null;   // last entry the Thread panel was centered on
+// Branch keys the user has clicked "⬇ Downstream" on, for the CURRENTLY
+// focused thread -- reset whenever the focus moves to a different root
+// message (openThreadTab), so an old expansion doesn't linger into an
+// unrelated conversation.
+let threadExpandedDownstream = new Set();
+
+function findEntryByThreadKey(key) {
+  if (!diaryData || !key) return null;
+  const entries = diaryData.entries;
+  for (let i = 0; i < entries.length; i++) {
+    if (entries[i].thread_key === key) return entries[i];
+  }
+  return null;
+}
+
+/** Open the Thread tab, centered on `key` (an entry's thread_key) if given,
+ * or whatever it was last centered on otherwise -- so the bare tab button
+ * returns to the last-opened conversation rather than going blank. */
+function openThreadTab(key) {
+  if (key && key !== threadFocusKey) threadExpandedDownstream = new Set();
+  if (key) threadFocusKey = key;
+  switchReaderTab('thread');
+  renderThreadPanel(threadFocusKey);
+}
+
+/** Walk reply_to upward from `e` to the root of its conversation (oldest
+ * first). Guarded against a cyclical reply_to (a data bug, not something
+ * the parser should ever produce, but a UI render loop is the wrong place
+ * to find that out) rather than trusting the chain is finite. */
+function threadUpstreamChain(e) {
+  const chain = [e];
+  let cur = e;
+  let guard = 0;
+  while (cur && cur.reply_to && guard++ < 50) {
+    const parent = findEntryByThreadKey(cur.reply_to);
+    if (!parent || chain.indexOf(parent) !== -1) break;
+    chain.unshift(parent);
+    cur = parent;
+  }
+  return chain;
+}
+
+function threadMsgHtml(e, opts) {
+  opts = opts || {};
+  const cls = 'thread-msg' + (opts.current ? ' current' : '') + (opts.downstream ? ' downstream' : '');
+  const kd = kindDef(entryKind(e));
+  let html = '<div class="' + cls + '"' +
+    (opts.current ? '' : ' data-thread-open="' + escapeHtml(e.thread_key) + '" title="Open this message’s own conversation"') + '>';
+  html += '<div class="thread-msg-head">';
+  html += '<span class="thread-msg-sender">' + escapeHtml(e.sender || '(unknown sender)') + '</span>';
+  html += '<span style="margin-left:auto;font-size:10px;color:var(--muted)">' +
+    kd.icon + ' ' + escapeHtml(kd.label) + '</span>';
+  html += '</div>';
+  // The full header block (From/To/Cc/Bcc/Subject/Sent/Date, whichever were
+  // recovered) -- the same fields the main result card shows, not a
+  // condensed sender/date/subject one-liner.
+  const parts = (e.content || '').split('----------');
+  const headerBlock = parts[0] ? parts[0].trim() : '';
+  if (headerBlock) {
+    html += '<div class="thread-msg-fields">' + escapeHtml(headerBlock) + '</div>';
+  }
+  // Local stamp -> ET, and which zone was assumed to read it in -- the same
+  // evidence the main card's 🕑 chip shows, so a reader can check the
+  // timestamp here rather than trust it blindly.
+  if (e.stamp_line) {
+    html += '<div class="thread-msg-stamp">🕑 ' + escapeHtml(e.stamp_line) +
+      (e.zone_assumed ? ' · ' + escapeHtml(e.zone_assumed) : '') + '</div>';
+  }
+  const body = (parts.length > 1 ? parts.slice(1).join('----------') : (e.content || '')).trim();
+  html += '<div class="thread-msg-body">' + escapeHtml(body) + '</div>';
+  html += '</div>';
+  return html;
+}
+
+function renderThreadPanel(key) {
+  const container = document.getElementById('threadViewInner');
+  if (!container) return;
+  const e = findEntryByThreadKey(key);
+  if (!e) {
+    container.innerHTML = '<div class="thread-empty">Click 🧵 Thread on an email or Slack box ' +
+      'to see its conversation here.</div>';
+    return;
+  }
+  const chain = threadUpstreamChain(e);
+  let html = '';
+  if (chain.length > 1) {
+    html += '<div class="thread-section-label">Upstream — the conversation so far</div>';
+  }
+  chain.forEach(function(msg, i) {
+    if (i > 0) html += '<div class="thread-chain-arrow">↓</div>';
+    html += threadMsgHtml(msg, { current: msg === e });
+  });
+  const downstreamHtml = threadDownstreamHtml(e, 0);
+  if (downstreamHtml) {
+    html += '<div class="thread-section-label">Downstream</div>' + downstreamHtml;
+  }
+  container.innerHTML = html;
+}
+
+/** Render one message's downstream conversation. Indentation and the left
+ * lineage line are reserved strictly for an actual FORK -- two or more
+ * people replying or forwarding directly to the SAME email (one could
+ * answer within the hour, another forward it on 3 years later; both still
+ * count and both still show, ordered by when, but neither "comes after"
+ * the other the way an ordinary reply chain does, which is what the indent
+ * is for signalling). A plain, unbranching reply chain -- the common case
+ * -- stays FLAT, stacked with the same "↓" connector the upstream chain
+ * above the current message already uses, at the SAME indent level the
+ * whole way down, however many messages long. forkDepth only increments
+ * when actually crossing a fork boundary, so a fork nested inside one
+ * already-expanded branch indents one further step than its parent fork,
+ * not one further step per message.
+ *
+ * At a fork, each branch collapses behind its own "⬇ Downstream" button
+ * instead of auto-expanding, so a heavily-forked thread can't render an
+ * enormous tree in one shot; clicking a branch's button (see
+ * initThreadPanelClicks()) applies this exact same rule from that branch
+ * on, so the user can still walk arbitrarily deep into any ONE branch they
+ * actually want, one click at a time. threadExpandedDownstream remembers
+ * which branches have already been opened this focus, so re-rendering
+ * after a click doesn't collapse everything back down.
+ *
+ * Upstream never needs this: reply_to is single-valued by the data model
+ * (one message answers exactly one other), so it's always a plain chain,
+ * never a fork -- the one thing that COULD fork it (forwarding two or more
+ * original emails on as attachments in one message) is an attachment
+ * relationship, not a reply one, and belongs on the main result card's own
+ * reply/forward chips instead, not here.
+ */
+function threadDownstreamHtml(e, forkDepth) {
+  const replies = (e.replied_by || []).slice().sort(function(a, b) {
+    const ea = findEntryByThreadKey(a.key), eb = findEntryByThreadKey(b.key);
+    const ka = ea ? (ea.date || '') + (ea.time || '') : '';
+    const kb = eb ? (eb.date || '') + (eb.time || '') : '';
+    return ka < kb ? -1 : (ka > kb ? 1 : 0);
+  });
+  if (!replies.length) return '';
+  let html = '';
+  if (replies.length === 1) {
+    // Not a fork -- continue the flat stack at the SAME indent, no lineage
+    // line, exactly like the upstream chain's own "↓" connector.
+    const re = findEntryByThreadKey(replies[0].key);
+    if (!re) return '';
+    html += '<div class="thread-chain-arrow">↓</div>';
+    html += threadMsgHtml(re, { downstream: true });
+    html += threadDownstreamHtml(re, forkDepth);
+    return html;
+  }
+  // A genuine fork: indent each branch one step deeper than this fork's
+  // own level, with its own lineage line back to the message that forked.
+  replies.forEach(function(r) {
+    const re = findEntryByThreadKey(r.key);
+    if (!re) return;
+    html += '<div class="thread-down" style="margin-left:' + ((forkDepth + 1) * 18) + 'px">';
+    if (threadExpandedDownstream.has(r.key)) {
+      html += threadMsgHtml(re, { downstream: true });
+      html += threadDownstreamHtml(re, forkDepth + 1);
+    } else {
+      html += '<div class="thread-collapsed">' +
+        '<span class="thread-collapsed-label">' + escapeHtml(re.sender || '(unknown sender)') +
+        ' · ' + escapeHtml(re.raw_date || re.date || '') + '</span>' +
+        '<button type="button" class="thread-downstream-btn" data-thread-downstream="' +
+        escapeHtml(r.key) + '" title="Expand this reply and follow its own conversation">' +
+        '⬇ Downstream</button></div>';
+    }
+    html += '</div>';
+  });
+  return html;
+}
+
+/** Clicking any non-current message in the panel re-centers the thread on
+ * it, AND moves the underlying Timeline/PDF state to its page -- without
+ * actually leaving the Thread tab -- so switching to Timeline afterward
+ * shows the right page rather than wherever it was left before. */
+(function initThreadPanelClicks() {
+  const inner = document.getElementById('threadViewInner');
+  if (!inner) return;
+  inner.addEventListener('click', function(ev) {
+    // "⬇ Downstream": expand this ONE branch in place (and remember it's
+    // open), re-rendering around the same focused message -- never shifts
+    // focus itself, unlike clicking a message card.
+    const dsBtn = ev.target.closest('[data-thread-downstream]');
+    if (dsBtn) {
+      threadExpandedDownstream.add(dsBtn.getAttribute('data-thread-downstream'));
+      renderThreadPanel(threadFocusKey);
+      return;
+    }
+    const el = ev.target.closest('[data-thread-open]');
+    if (!el) return;
+    const key = el.getAttribute('data-thread-open');
+    const e = findEntryByThreadKey(key);
+    if (e) {
+      const mapVal = (pageMaps[e.source] || {})[entryMapKey(e)];
+      const page = pageForContentOffset(mapVal, 0);
+      currentPdfSource = e.source;
+      currentPage = page;
+      renderEntryPdf(e.source, page);   // pre-fetch; a no-op on canvas while off the Timeline tab
+    }
+    openThreadTab(key);
+  });
+})();
 
 // ============================================================
 // PDF rendering — single / double / continuous modes
@@ -2418,9 +2797,10 @@ function doSearch() {
   const results = [];
   for (let i = 0; i < diaryData.entries.length; i++) {
     const entry = diaryData.entries[i];
-    // Box types filter: an unticked kind is not searched, not hidden after the
-    // fact, so the counts and the timeline agree with what is on screen.
-    if (!kindListed(entryKind(entry))) continue;
+    // Box types filter (kind) + timeline legend (source+kind): an unticked
+    // or hidden one is not searched, not hidden after the fact, so the
+    // counts and the timeline agree with what is on screen.
+    if (!entryVisible(entry)) continue;
     const text = entry.content || '';
     const ev = evalQuery(ast, text, caseSensitive);
     if (ev.matched && ev.positions.length > 0) {
@@ -2495,6 +2875,11 @@ function parseLocalISO(iso) {
 let timelineSeries = null; // { labels, entryCounts, stacks[], entryDays, totalDays }
 
 function buildTimelineSeries() {
+  // kindFilter only, deliberately NOT hiddenSegments: every segment must
+  // keep its own dataset here (and so its own legend swatch) so a legend
+  // click can still toggle it back ON -- the segment's bars being hidden on
+  // the canvas is Chart.js's own per-dataset visibility, driven by the
+  // legend click handler directly, not this filter.
   const entries = diaryData.entries.filter(function(e) {
     return kindListed(entryKind(e)) && e.date;
   });
@@ -2582,8 +2967,23 @@ var entryMarkPlugin = {
     var ctx = chart.ctx;
     var ca = chart.chartArea;
     var timeAxis = timelineTimeAxisId(chart);
+    // One stack dataset per (source, kind) pair (see buildTimelineSeries());
+    // anything past that is the separate "Hits" overlay, not a stack.
+    var nStacks = series.stacks.length;
     for (var i = 0; i < meta.data.length; i++) {
-      if ((series.entryCounts[i] || 0) <= 0) continue;
+      // Per-VISIBLE-dataset total, not series.entryCounts[i] (every source's
+      // count, filtered only by the kind dropdown): a legend click hides a
+      // dataset through chart.setDatasetVisibility() alone, never touching
+      // timelineSeries, so trusting entryCounts drew this "keep a sub-pixel
+      // day visible" overlay for every day that EVER had an entry -- a gray
+      // smear across the whole chart even with every legend item toggled off.
+      var visible = 0;
+      for (var j = 0; j < nStacks; j++) {
+        if (chart.getDatasetMeta(j).hidden) continue;
+        var dj = chart.data.datasets[j].data;
+        visible += (dj && dj[i]) || 0;
+      }
+      if (visible <= 0) continue;
       var el = meta.data[i];
       if (!el || !el.getProps) continue;
       var p = el.getProps(['x', 'y', 'base', 'width', 'height'], true);
@@ -2804,6 +3204,10 @@ function jumpToDate(date) {
 function entryStackDatasets(series) {
   // One Chart.js dataset per (source, kind) segment; all negative (entries) so
   // they stack on the left/bottom of the zero line. Colour = media, shade = release.
+  // `hidden` seeds from hiddenSegments so a full chart rebuild (zoom reset,
+  // resize, a new search) doesn't silently un-hide a segment the legend
+  // still shows as off -- Chart.js's own per-dataset visibility lives on
+  // the dataset meta, which is recreated from scratch each time, not kept.
   return (series.stacks || []).map(function(seg) {
     return {
       label: seg.label,
@@ -2815,6 +3219,7 @@ function entryStackDatasets(series) {
       minBarLength: 4,
       order: 2,
       stack: 'entries',
+      hidden: hiddenSegments.has(seg.key),
     };
   });
 }
@@ -2827,17 +3232,25 @@ function renderTimelineLegend() {
   series.stacks.forEach(function(seg, idx) {
     var item = document.createElement('span');
     item.className = 'lg-item';
+    if (hiddenSegments.has(seg.key)) item.classList.add('off');
     item.title = seg.label + ' \u2014 ' + seg.total + (seg.total === 1 ? ' entry' : ' entries') +
-      '. Click to show / hide this medium.';
+      '. Click to show / hide this medium (also hides it from search and a timeline click, not just the chart).';
     item.innerHTML = '<span class="lg-swatch" style="background:' + seg.color + '"></span>' +
       escapeHtml(seg.label) + ' <b>' + seg.total + '</b>';
     item.addEventListener('click', function() {
-      if (!timelineChart) return;
-      var meta = timelineChart.getDatasetMeta(idx);
-      var hiding = !meta.hidden;
-      timelineChart.setDatasetVisibility(idx, !hiding);
-      timelineChart.update();
+      var hiding = !hiddenSegments.has(seg.key);
+      if (hiding) hiddenSegments.add(seg.key); else hiddenSegments.delete(seg.key);
+      saveHiddenSegments();
       item.classList.toggle('off', hiding);
+      if (timelineChart) {
+        timelineChart.setDatasetVisibility(idx, !hiding);
+        timelineChart.update();
+      }
+      // A hidden segment must also stop being reachable by search or a
+      // timeline/browse click, not just vanish from the canvas -- reuse the
+      // exact same "something about visibility changed" refresh the Types
+      // dropdown already triggers.
+      applyKindFilter();
     });
     el.appendChild(item);
   });
@@ -3259,9 +3672,9 @@ function buildBrowseResultsAroundIndex(centerIdx, radius) {
   var results = [];
   var focusLocal = 0;
   for (var j = from; j <= to; j++) {
-    // Skip unticked box types without shifting the focus off the entry the
-    // reader asked for.
-    if (!kindListed(entryKind(entries[j]))) continue;
+    // Skip unticked box types, or a source the timeline legend has hidden,
+    // without shifting the focus off the entry the reader asked for.
+    if (!entryVisible(entries[j])) continue;
     if (j === centerIdx) focusLocal = results.length;
     results.push({
       idx: j,
@@ -3277,10 +3690,18 @@ function buildBrowseResultsAroundIndex(centerIdx, radius) {
 function buildBrowseResultsAroundDate(date, radius) {
   if (!diaryData || !date) return null;
   var entries = diaryData.entries;
-  var center = -1;
+  // Center on the first VISIBLE entry that day, not just the first one --
+  // a day dominated by, say, thousands of Slack messages (with email a tiny
+  // minority) can position the first entry of the day far enough from the
+  // first visible one that a fixed-radius window built around the wrong
+  // center misses every visible entry entirely once Slack is hidden.
+  var center = -1, fallback = -1;
   for (var i = 0; i < entries.length; i++) {
-    if (entries[i].date === date) { center = i; break; }
+    if (entries[i].date !== date) continue;
+    if (fallback < 0) fallback = i;
+    if (entryVisible(entries[i])) { center = i; break; }
   }
+  if (center < 0) center = fallback;
   if (center < 0) return null;
   return buildBrowseResultsAroundIndex(center, radius);
 }
@@ -3605,11 +4026,76 @@ window.addEventListener('resize', function() {
   });
 })();
 
+// Drag the bookmarks rail edge to resize it -- always a vertical column
+// (never flips to a horizontal strip in portrait), so just width, always.
+// ============================================================
+(function() {
+  const resizer = document.getElementById('bmResizer');
+  const rail = document.getElementById('bmRail');
+  if (!resizer || !rail) return;
+  let dragging = false;
+
+  resizer.addEventListener('mousedown', function(e) {
+    if (rail.classList.contains('collapsed')) return;
+    dragging = true;
+    resizer.classList.add('dragging');
+    document.body.style.userSelect = 'none';
+    e.preventDefault();
+  });
+  document.addEventListener('mousemove', function(e) {
+    if (!dragging) return;
+    const workspaceRect = document.getElementById('workspace').getBoundingClientRect();
+    let w = e.clientX - workspaceRect.left;
+    w = Math.max(180, Math.min(520, w));
+    rail.style.width = w + 'px';
+    bmRailWidth = w + 'px';
+  });
+  document.addEventListener('mouseup', function() {
+    if (!dragging) return;
+    dragging = false;
+    resizer.classList.remove('dragging');
+    document.body.style.userSelect = '';
+  });
+})();
+
+// Drag the P.O. guide rail edge to resize it -- same mechanism as the
+// bookmarks rail above (always a vertical column, width-only).
+// ============================================================
+(function() {
+  const resizer = document.getElementById('guideResizer');
+  const rail = document.getElementById('guideRail');
+  if (!resizer || !rail) return;
+  let dragging = false;
+
+  resizer.addEventListener('mousedown', function(e) {
+    if (rail.classList.contains('collapsed')) return;
+    dragging = true;
+    resizer.classList.add('dragging');
+    document.body.style.userSelect = 'none';
+    e.preventDefault();
+  });
+  document.addEventListener('mousemove', function(e) {
+    if (!dragging) return;
+    // Use the rail's own left edge, not the workspace's: unlike the
+    // bookmarks rail, this one isn't the first panel in the row.
+    let w = e.clientX - rail.getBoundingClientRect().left;
+    w = Math.max(220, Math.min(560, w));
+    rail.style.width = w + 'px';
+    guideRailWidth = w + 'px';
+  });
+  document.addEventListener('mouseup', function() {
+    if (!dragging) return;
+    dragging = false;
+    resizer.classList.remove('dragging');
+    document.body.style.userSelect = '';
+  });
+})();
+
 // ============================================================
 // Highlight helper — wraps each hit in a <mark> with an ID
 // ============================================================
 function highlightWithHits(text, query, resultIdx) {
-  if (!query) return escapeHtml(text);
+  if (!query) return linkifyUrls(escapeHtml(text));
 
   const caseSensitive = isCaseSensitive();
   // Prefer terms that actually matched this result (from boolean eval)
@@ -3625,7 +4111,7 @@ function highlightWithHits(text, query, resultIdx) {
   // Unique, longest first so phrases win over sub-words
   terms = Array.from(new Set(terms)).filter(function(t) { return t && t.length; })
     .sort(function(a, b) { return b.length - a.length; });
-  if (!terms.length) return escapeHtml(text);
+  if (!terms.length) return linkifyUrls(escapeHtml(text));
 
   const parts = terms.map(function(t) {
     if (t.indexOf('*') >= 0) return t.split('*').map(escapeRegex).join('.*');
@@ -3635,19 +4121,46 @@ function highlightWithHits(text, query, resultIdx) {
   try {
     regex = new RegExp('(' + parts.join('|') + ')', caseSensitive ? 'g' : 'gi');
   } catch (e) {
-    return escapeHtml(text);
+    return linkifyUrls(escapeHtml(text));
   }
   let hitCount = 0;
-  return escapeHtml(text).replace(regex, function(match) {
+  const marked = escapeHtml(text).replace(regex, function(match) {
     const id = 'hit-' + resultIdx + '-' + hitCount;
     hitCount++;
     return '<mark id="' + id + '">' + match + '</mark>';
   });
+  return linkifyUrls(marked);
 }
 
 function escapeHtml(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+// A web address inside an email/Slack/note box's text becomes a clickable
+// link. Input is already-escaped HTML, possibly with <mark> tags from
+// search highlighting already inserted -- linkify only touches the plain
+// text RUNS between existing tags (never the tags themselves), so a search
+// hit that happens to land inside a URL just splits it into two linked
+// pieces instead of ever risking a <mark> landing inside an href attribute.
+// The OCR routinely leaves the URL readable but imperfect (a parsing-side
+// hardening pass fixes the common, narrow cases -- see foia_parser's
+// harden_urls()); this only wraps whatever text survived, broken or not.
+const RE_BODY_URL = /\bhttps?:\/\/[^\s<>"']+/gi;
+function linkifyUrls(html) {
+  return html.replace(/(<[^>]+>)|([^<]+)/g, function(m, tag, text) {
+    if (tag) return tag;
+    return text.replace(RE_BODY_URL, function(url) {
+      // Trailing sentence punctuation the OCR glued on is never part of the
+      // address itself.
+      let trail = '';
+      const pm = url.match(/([.,;:!?)\]]+)$/);
+      if (pm) { trail = pm[1]; url = url.slice(0, -trail.length); }
+      if (!url) return trail;
+      return '<a href="' + url + '" target="_blank" rel="noopener noreferrer" ' +
+        'class="body-link">' + url + '</a>' + trail;
+    });
+  });
 }
 
 function splitAttachmentNames(raw) {
@@ -3729,6 +4242,32 @@ function openEntryRef(key) {
 const KIND_FILTER_KEY = 'poSlackKindFilter';
 let kindFilter = null;   // null = every kind listed
 
+// The timeline legend (one swatch per source+kind "stack") used to be purely
+// cosmetic: clicking a swatch called Chart.js's own setDatasetVisibility(),
+// which hides that series' bars on the canvas but touches nothing else --
+// search, the browse window and a timeline click all kept reading the full,
+// unfiltered diaryData.entries regardless. That looked like filtering (the
+// bars visibly vanish) but wasn't: clicking the now-apparently-empty part of
+// the chart, or searching, still freely surfaced the "hidden" source. Keyed
+// on the SAME seg.key the legend already builds (source + '|' + kind), so
+// hiding "Slack P1" specifically (not all Slack) is still possible -- the
+// Types dropdown above only ever worked at the coarser kind level.
+const HIDDEN_SEGMENTS_KEY = 'poSlackHiddenSegments';
+let hiddenSegments = new Set();
+
+function loadHiddenSegments() {
+  try {
+    const raw = localStorage.getItem(HIDDEN_SEGMENTS_KEY);
+    hiddenSegments = new Set(raw ? JSON.parse(raw) : []);
+  } catch (e) { hiddenSegments = new Set(); }
+}
+function saveHiddenSegments() {
+  try {
+    if (hiddenSegments.size) localStorage.setItem(HIDDEN_SEGMENTS_KEY, JSON.stringify(Array.from(hiddenSegments)));
+    else localStorage.removeItem(HIDDEN_SEGMENTS_KEY);
+  } catch (e) {}
+}
+
 function availableKinds() {
   const counts = {};
   (diaryData ? diaryData.entries : []).forEach(function(e) {
@@ -3740,6 +4279,13 @@ function availableKinds() {
 function kindListed(kind) {
   if (!kindFilter) return true;
   return kindFilter.indexOf(kind) !== -1;
+}
+/** The one check search, the browse window, the timeline series and a
+ * timeline click all share: both the Types dropdown (kind-level) AND the
+ * timeline legend (source+kind-level) have to agree an entry is shown. */
+function entryVisible(e) {
+  if (!kindListed(entryKind(e))) return false;
+  return !hiddenSegments.has(e.source + '|' + entryKind(e));
 }
 function loadKindFilter() {
   try {
@@ -3755,8 +4301,8 @@ function saveKindFilter() {
   } catch (e) {}
 }
 function filterEntries(entries) {
-  if (!kindFilter) return entries;
-  return entries.filter(function(e) { return kindListed(entryKind(e)); });
+  if (!kindFilter && !hiddenSegments.size) return entries;
+  return entries.filter(entryVisible);
 }
 
 // ── Box types UI ────────────────────────────────────────────────────────────
@@ -4192,11 +4738,22 @@ function removeBookmark(bmKey) {
   renderBookmarks();
 }
 
+let bmRailWidth = null;   // a manually-dragged width, remembered across collapse/expand
+
 function toggleBmRail() {
   const rail = document.getElementById('bmRail');
   const btn = document.getElementById('bmToggleBtn');
   if (!rail) return;
   const collapsing = !rail.classList.contains('collapsed');
+  if (collapsing) {
+    // .bm-rail.collapsed's width only wins over an inline style by CSS
+    // specificity coincidence -- clear it explicitly instead, and remember
+    // it so expanding again restores the size the user actually chose.
+    if (rail.style.width) bmRailWidth = rail.style.width;
+    rail.style.width = '';
+  } else if (bmRailWidth) {
+    rail.style.width = bmRailWidth;
+  }
   rail.classList.toggle('collapsed', collapsing);
   if (btn) {
     // The rail is a vertical column in every layout, so it always folds
@@ -4266,11 +4823,38 @@ function refreshBookmarkToggles() {
 
 // Open a bookmark: in-app entries are jumped to directly, anything else (a
 // pointer into a sibling DRASTIC app, say) follows its url.
+//
+// A po-slack bookmark whose entry can no longer be found (its underlying
+// key can shift when the parser's own output changes -- a zone correction
+// or a dedup fix re-dates the entry it points at) used to fall straight
+// through to opening its bare, entry-less page URL in a new tab: no error,
+// just a blank app at its default view, which reads as "the site reloaded
+// for no reason" rather than "this bookmark is stale." Said so explicitly
+// instead.
 function openBookmark(bmKey) {
   const b = bmFind(bmKey);
   if (!b) return;
-  if (b.app === 'po-slack' && openEntryByBmKey(b.key, b.page)) return;
+  if (b.app === 'po-slack') {
+    if (openEntryByBmKey(b.key, b.page)) return;
+    showBmNotice('Couldn’t find this bookmark’s entry — the data may have ' +
+      'changed since it was saved. Remove it and bookmark the box again.');
+    return;
+  }
   if (b.url) window.open(b.url, '_blank', 'noopener');
+}
+
+// A small transient notice in the bookmarks rail -- not a blocking alert(),
+// and not a new generic toast system just for this one case.
+function showBmNotice(text) {
+  const list = document.getElementById('bmList');
+  if (!list) return;
+  const existing = list.querySelector('.bm-notice');
+  if (existing) existing.remove();
+  const el = document.createElement('div');
+  el.className = 'bm-notice';
+  el.textContent = text;
+  list.insertBefore(el, list.firstChild);
+  setTimeout(function() { el.remove(); }, 6000);
 }
 
 // Resolve a bookmark key back to an entry, then reuse the normal open path so a
@@ -4395,11 +4979,19 @@ function initBookmarks() {
   renderBookmarks();
 }
 
+let guideRailWidth = null;   // a manually-dragged width, remembered across collapse/expand
+
 function toggleGuideRail() {
   const rail = document.getElementById('guideRail');
   const btn = document.getElementById('guideToggleBtn');
   if (!rail) return;
   const collapsing = !rail.classList.contains('collapsed');
+  if (collapsing) {
+    if (rail.style.width) guideRailWidth = rail.style.width;
+    rail.style.width = '';
+  } else if (guideRailWidth) {
+    rail.style.width = guideRailWidth;
+  }
   rail.classList.toggle('collapsed', collapsing);
   if (btn) {
     btn.textContent = collapsing ? '▶' : '◀';
@@ -4504,6 +5096,10 @@ function displayResults(results, query, opts) {
     // 🔖 keeps a pointer to this box in the bookmarks rail; click again to drop it.
     html += '<button type="button" class="bm-toggle" data-bm-toggle="' +
       escapeHtml(e.bm_key || '') + '" title="Bookmark this box">🔖</button>';
+    if (e.reply_to || (e.replied_by && e.replied_by.length)) {
+      html += '<button type="button" class="thread-btn" data-thread-key="' +
+        escapeHtml(e.thread_key || '') + '" title="Open this conversation in the Thread panel">🧵 Thread</button>';
+    }
     html += '<button type="button" class="expand-btn" data-expand-toggle="' + i + '" hidden title="Remove the height cap and show the whole entry">⤢ Full text</button>';
     html += '</span>';
     html += '</div>';
@@ -4539,7 +5135,7 @@ function displayResults(results, query, opts) {
     html += '<div class="result-content" id="content-' + i + '">';
     if (hasMailHead) {
       const headParas = headHtml.split(/\n\n+/).filter(Boolean).map(function(h) {
-        return '<div class="' + (/^Subject:/i.test(h) ? 'mail-head-subject' : '') + '">' + h + '</div>';
+        return '<div>' + h + '</div>';
       }).join('');
       html += '<div class="mail-head">' + headParas + '</div>';
     }
@@ -4596,6 +5192,15 @@ function displayResults(results, query, opts) {
       return;
     }
 
+    // 🧵 Thread: open this conversation in the Thread tab.
+    const threadBtn = ev.target.closest('[data-thread-key]');
+    if (threadBtn) {
+      ev.preventDefault();
+      ev.stopPropagation();
+      openThreadTab(threadBtn.getAttribute('data-thread-key'));
+      return;
+    }
+
     // "Full text": lift the height cap on this card, or put it back.
     const expBtn = ev.target.closest('[data-expand-toggle]');
     if (expBtn) {
@@ -4612,6 +5217,13 @@ function displayResults(results, query, opts) {
 
     // Dragging or clicking this box's own scrollbar must never jump the PDF.
     if (ev.target.closest('.box-scrollbar')) {
+      ev.stopPropagation();
+      return;
+    }
+
+    // A web address inside the body: let the browser open it (new tab,
+    // target="_blank" already set) without also re-jumping the PDF.
+    if (ev.target.closest('.body-link')) {
       ev.stopPropagation();
       return;
     }

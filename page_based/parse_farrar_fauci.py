@@ -14,8 +14,12 @@ headers (Von/Gesendet/An/Betreff), and inline "On <date>, <name> wrote:"
 quote markers that recover a quoted reply as its own entry rather than
 leaving it glued into the message that quotes it.
 
-The rules this follows are the ones written down in SPEC.md (shared with
-po-emails.pdf):
+The segmentation/zone/signature/stamp grammar itself lives in the shared
+`foia_parser` package (Work/Edition/foia_parser) -- the engine this release
+shares with po-emails (see parse_po_emails.py) and, going forward, any other
+FOIA'd email release. This file supplies only what is specific to THIS
+release. The rules followed are the ones written down in that package's
+SKILL.md (shared with po-emails.pdf):
 
   * one entry per message -- an author at an instant -- never a whole thread
   * an entry holds only what its author wrote; quoted history is its own entry
@@ -27,27 +31,19 @@ po-emails.pdf):
 Output: farrar-fauci.json (entries) + farrar-fauci_page_map.json (PDF pages).
 """
 
-import json
 import os
 import re
-from collections import OrderedDict, defaultdict
-from datetime import datetime, timedelta
-from zoneinfo import ZoneInfo
+
+from foia_parser import Profile, run_release
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OCR_TXT = os.path.join(HERE, "farrar-fauci-comms_ocr.txt")
-OUT_JSON = os.path.join(HERE, "farrar-fauci.json")
-OUT_MAP = os.path.join(HERE, "farrar-fauci_page_map.json")
-SOURCE_ID = "farrar-fauci"
-
-ET = ZoneInfo("America/New_York")
 
 # ── time zones ──────────────────────────────────────────────────────────────
 # Most top-level stamps in this release carry an explicit UTC offset ("Sent:
-# Fri, 24 Jul 2020 10:37:46 +0000"), which always wins over this table (see
-# parse_stamp/zone_for). The table is only reached for a stamp with none --
-# mainly the nested "Date:"/inline "On ... wrote:" quotes -- using each
-# correspondent's own institution, as stated in their signature or address:
+# Fri, 24 Jul 2020 10:37:46 +0000"), which always wins over this table. The
+# table is only reached for a stamp with none -- mainly the nested "Date:"/
+# inline "On ... wrote:" quotes -- using each correspondent's own institution,
+# as stated in their signature or address:
 #
 #   Wellcome Trust / UK Government  -> London      (Farrar, Vallance, Viner)
 #   NIH / NIAID / NICHD / NHLBI, Bethesda -> New York (Fauci, Collins, Bianchi, Gibbons)
@@ -72,8 +68,6 @@ ZONE_BY_AFFILIATION = [
 DEFAULT_ZONE = "Europe/London"      # the Wellcome Trust ran this exercise
 DEFAULT_ZONE_WHY = "Wellcome Trust (the release's convener)"
 
-ZONE_OVERRIDES = {}
-
 # ── OCR clean-up ────────────────────────────────────────────────────────────
 # The scans leave black-box redactions as glyph soup on header lines
 # ("Fauci, Anthony (NIH/NIAID) [E] OO", "Dzau, Victor J yoo"); the tail after
@@ -81,11 +75,9 @@ ZONE_OVERRIDES = {}
 # glyphs.
 NOISE_TAIL = re.compile(r"\s*[|Il\[\]{}<>«»“”„’‘—–\-–—_=+*#§¶©®™✓✔✗✘»«»…@]+"
                         r"\s*(?:[a-zA-Z]{1,6})?\s*$")
-HEADER_JUNK = re.compile(r"^[^A-Za-z0-9]+|[^A-Za-z0-9)\]]+$")
 # A standalone "|" bounded by whitespace/punctuation is almost always a
-# garbled capital "I" ("| will:" -> "I will:", "| believe" -> "I believe"),
-# the same misreading parse_part1.py fixed for the Slack scans. ~380
-# occurrences in this release.
+# garbled capital "I" ("| will:" -> "I will:", "| believe" -> "I believe").
+# ~380 occurrences in this release.
 STANDALONE_PIPE_RE = re.compile(r"(?<![^\s])\|(?![^\s.,!?;:'\")\]])")
 # Tesseract reads a round bullet glyph as the nearest Latin letter/symbol --
 # "e" or "©" here -- so a line that opens on a bare one of those followed by
@@ -102,8 +94,14 @@ GLUED_WORDS = {
     "ina": "in a", "toa": "to a",
 }
 GLUED_WORDS_RE = re.compile(r"\b(%s)\b" % "|".join(map(re.escape, GLUED_WORDS)))
-RE_AVATAR_BRACKET = re.compile(r"[\[(][^)\]]{0,2}[)\]]")
-RE_AVATAR_GLYPH = re.compile(r"[€¢§¶©®™]")
+
+
+def clean_line_extra(line):
+    line = STANDALONE_PIPE_RE.sub("I", line)
+    line = RE_BULLET_MISREAD.sub("• ", line)
+    line = GLUED_WORDS_RE.sub(lambda m: GLUED_WORDS[m.group(1)], line)
+    return line
+
 
 FURNITURE = re.compile(
     r"^(REV\d+|CONFIDENTIAL|NIAID|EXCERPT FROM|"
@@ -119,12 +117,10 @@ FURNITURE = re.compile(
     r"Limited, a company registered|London NW1)", re.I)
 
 # ── header grammar ──────────────────────────────────────────────────────────
-HEADER_FIELDS = ("From", "To", "Cc", "Bcc", "Subject", "Sent", "Date", "Importance", "Attachments")
-RE_FROM = re.compile(r"^From:\s*(.+)$", re.I)
 # "Von:" opens a message the same way "From:" does (German Outlook export);
 # a handful of messages in this release were forwarded/printed in German.
-RE_MSG_OPEN = re.compile(r"^(?:From|rom|Fram|Von):\s*(.+)$", re.I)
-RE_HDR_DATE = re.compile(r"^(?:Sent|Date|Gesendet)\s*:\s*(.+)$", re.I)
+MSG_OPEN_RE = re.compile(r"^(?:From|rom|Fram|Von):\s*(.+)$", re.I)
+HDR_DATE_RE = re.compile(r"^(?:Sent|Date|Gesendet)\s*:\s*(.+)$", re.I)
 FIELD_ALIASES = {
     "ce": "Cc", "cc": "Cc", "bce": "Bcc", "bcc": "Bcc", "gc": "Cc",
     "fe": "To", "pe": "To", "to": "To", "fo": "From",
@@ -135,39 +131,13 @@ FIELD_ALIASES = {
     # pages where the message was relayed through a German mail client.
     "von": "From", "gesendet": "Sent", "an": "To", "betreff": "Subject",
 }
-FIELD_ALIAS_RE = re.compile(
-    r"\b(%s)\s*:" % "|".join(sorted(set(HEADER_FIELDS) | set(FIELD_ALIASES),
-                                       key=len, reverse=True)), re.I)
-RE_FIELD = FIELD_ALIAS_RE
 # Outlook's own screenshots (po-emails.pdf) never print more than a dozen
 # header lines, but this release also carries GPMB Board broadcasts to 30+
-# redacted recipients wrapped over 20+ visual lines -- a hard cap sized for
-# the smaller release silently dropped the back half of the recipient list,
-# and with it the Subject/Importance lines that followed, into the message
-# body (segment() never re-enters header mode once body_mode flips true).
-# The real gatekeeper is still the shape test (is_wrapped_recipient /
-# continues_recipient_run) -- this cap only bounds how long it is trusted.
+# redacted recipients wrapped over 20+ visual lines.
 MAX_HEADER_LINES = 80
-# Distance (in lines past a message's own From:) before a bare Date:/Sent:
-# line is trusted as a NEW message whose From: the scan ate, rather than
-# this message's own stamp -- kept as a SEPARATE, smaller threshold from
-# MAX_HEADER_LINES above (see parse_po_emails.py, where sharing one constant
-# for both silently broke this check for ordinary short messages once the
-# header cap was raised for long recipient lists).
 REOPEN_MIN_DISTANCE = 16
-
-# "On 8 Feb 2020, at 22:15, Kristian G. Andersen) @)@> wrote:" and its
-# variants ("On Sat, Feb 8, 2020 at 12:38 PM Drosten, Christian) 7 wrote:",
-# "On May 12, 2020, at 12:57 PM, Jeremy Farrar FOO wrote:"). This is a real
-# message boundary per SPEC.md 2.3: the quoted reply becomes its own entry,
-# recovered from the marker rather than left glued into the message quoting
-# it.
-RE_INLINE_QUOTE = re.compile(
-    r"^On\s+(?:[A-Za-z]{3,9},?\s+)?"
-    r"((?:[A-Za-z]{3,9}\.?\s+\d{1,2}|\d{1,2}\s+[A-Za-z]{3,9}\.?)\s*,?\s*\d{4})"
-    r",?\s*(?:at\s+)?(\d{1,2}:\d{2}(?:\s*[AaPp]\.?[Mm]\.?)?)\s*,?\s+"
-    r"(.+?)\s*wrote:\s*$", re.I)
-
+RECIPIENT_TOKENS = frozenset({"to", "cc", "bcc", "ce", "fe", "pe", "gc", "an"})
+SUBJECT_FALLBACK_RE = re.compile(r"^\s*(?:Subjec\w*|Betreff):?\s*(.+)$", re.I)
 
 # ── sender names ────────────────────────────────────────────────────────────
 # The scans carry redaction/glyph debris on the sender line ("Fauci, Anthony
@@ -240,20 +210,37 @@ FIRST_NAMES = {
     "diane", "hilary", "bernhard", "morgan", "chris", "anthony",
 }
 
+HEADER_FRAGMENT_NAME_RE = re.compile(
+    r"(?:andersen|rambaut|farrar|holmes|garry|fauci|drosten|"
+    r"koopmans|pohlmann|farzan|fouchier|schreier|"
+    r"ferguson|golding|lipkin|vallance|collins|auchincloss|"
+    r"conrad|shabman|folkers|burke|pope|viner|dzau|smith|"
+    r"edward|andrew|jeremy|kristian|robert|anthony|christian|"
+    r"marion|stefan|michael|claire|patricia|reed|martina|"
+    r"greg|josie|amanda|francis|martin|rory|russell|victor|"
+    r"eddie|tony|toney|farrar|beach|comin|perdue)", re.I)
 
-def clean_sender(raw):
-    raw = re.sub(r"\s*<[^>]*>\s*$", "", (raw or "").strip())
-    raw = re.sub(r"\s*\[[^\]]*\]\s*$", "", raw).strip()
-    for rx, name in SENDER_ROSTER:
-        if rx.search(raw):
-            return name, raw
-    tail = re.sub(r"[^A-Za-z].*$", "", raw).strip()
-    return (tail or raw), raw
+# ── signature blocks ─────────────────────────────────────────────────────────
+SIG_AFFIL_RE = re.compile(
+    r"^(?:ARC |THE |UNIVERSITY|University|Institut|CENTRE|Centre|School|"
+    r"Department|Dept\.|Faculty|College|Hospital|Institute|Trust|Laborator|"
+    r"Director|Regents|Dean|Regent|Professor Emeritus|Charit|Campus|"
+    r"Marie Bashir|Wellcome|MRC|NIH|NIAID|Atlanta|Bethesda|London|Sydney|"
+    r"Berlin|D-\d{5})\b")
 
+# "Thanks," and "Many thanks" are deliberately left out here -- both are also
+# how a lot of genuine prose opens ("Thanks, Jeremy. Great chatting with you
+# and Patrick. Will stay in close touch." -- a real reply this exact regex
+# used to wipe out entirely, taking the rest of the body with it), so they're
+# handled by foia_parser's shared strip_quoted_short_re instead, which only
+# trusts them as a sign-off when the whole line is short.
+STRIP_QUOTED_RE = re.compile(
+    r"^(Best regards|Best wishes|Warm regards|Kinds?\s+regards|"
+    r"With best wishes|Yours sincerely|Yours,|Best,|"
+    r"Jeremy Farrar$|Anthony S\. Fauci|Tony$|Eddie$|Anders$|Christian$|"
+    r"Kristian$|Andrew Rambaut$|Robert Garry$)", re.I)
 
-# ── timestamps ──────────────────────────────────────────────────────────────
-MONTHS = {m: i for i, m in enumerate(
-    ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
+# ── timestamps ───────────────────────────────────────────────────────────────
 # German month names/abbreviations, for the handful of Von/Gesendet headers.
 MONTHS_DE = {
     "jan": 1, "januar": 1, "feb": 2, "februar": 2, "mär": 3, "maer": 3,
@@ -262,789 +249,56 @@ MONTHS_DE = {
     "sep": 9, "september": 9, "okt": 10, "oktober": 10, "nov": 11,
     "november": 11, "dez": 12, "dezember": 12,
 }
-
-RE_STAMP_US = re.compile(r"(\d{1,2})/(\d{1,2})/(\d{4})\s+(?:at\s+)?(\d{1,2}):(\d{2})(?::(\d{2}))?\s*([AaPp]\.?[Mm]\.?)")
-RE_STAMP_LONG = re.compile(
-    r"(?:[A-Za-z]+,?\s+)?([A-Za-z]{3,9})\.?\s+(\d{1,2}),?\s+(\d{4})\s+"
-    r"(?:at\s+)?(\d{1,2}):(\d{2})(?::(\d{2}))?\s*([AaPp]\.?[Mm]\.?)")
 # "24 Jul 2020 10:37:46" (day-month-year, 24h clock, this release's default
 # top-level stamp shape; the explicit "+0000" offset that usually follows is
-# pulled separately by RE_STAMP_BARE_OFFSET) and "05 March 2020 02:06" (no
+# pulled separately by STAMP_BARE_OFFSET_RE) and "05 March 2020 02:06" (no
 # am/pm at all, UK-forwarded).
-RE_STAMP_DMY = re.compile(
+STAMP_DMY_RE = re.compile(
     r"(\d{1,2})\s+([A-Za-z]{3,9})\.?\s*,?\s*(\d{4})\s*,?\s*(?:at\s+)?(\d{1,2}):(\d{2})"
     r"(?::(\d{2}))?\s*([AaPp]\.?[Mm]\.?)?")
 # "4. Mai 2020 13:38" (German day-month-year with a period after the day).
-RE_STAMP_DE = re.compile(
+STAMP_DE_RE = re.compile(
     r"(\d{1,2})\.\s*([A-Za-zäöüÄÖÜ]{3,10})\s+(\d{4})\s+(\d{1,2}):(\d{2})")
-# "(UTC-05:00)" / "(GMT+1)" -- an explicit offset given in parens.
-RE_STAMP_OFFSET = re.compile(r"\((?:UTC|GMT)?\s*([+-])\s*(\d{1,2}):?(\d{2})\)", re.I)
 # "... 10:37:46 +0000" -- the bare RFC-2822 offset this release's top-level
 # stamps carry, with no parens. Anchored at the end of the stamp string so it
 # is never mistaken for a page/phone number elsewhere in the line.
-RE_STAMP_BARE_OFFSET = re.compile(r"([+-])(\d{2})(\d{2})\s*$")
-RE_STAMP_PARTIAL = re.compile(
-    r"(?:[A-Za-z]+,?\s+)?([A-Za-z]{3,9})\.?\s+(\d{1,2})\s*(?:,|:|$)")
-
-
-def _ampm(h, ap):
-    h = int(h)
-    ap = (ap or "").lower().replace(".", "")
-    if ap.startswith("p") and h != 12:
-        h += 12
-    if ap.startswith("a") and h == 12:
-        h = 0
-    return h
-
-
-def parse_stamp(text):
-    """-> (naive datetime, offset-or-None, how) or (None, None, 'unparsed')"""
-    t = text.strip()
-    off = None
-    om = RE_STAMP_OFFSET.search(t)
-    if om:
-        sign = 1 if om.group(1) == "+" else -1
-        off = timedelta(hours=sign * int(om.group(2)), minutes=sign * int(om.group(3)))
-    else:
-        bm = RE_STAMP_BARE_OFFSET.search(t)
-        if bm:
-            sign = 1 if bm.group(1) == "+" else -1
-            off = timedelta(hours=sign * int(bm.group(2)), minutes=sign * int(bm.group(3)))
-    m = RE_STAMP_US.search(t)
-    if m:
-        mo, day, yr = int(m.group(1)), int(m.group(2)), int(m.group(3))
-        if 1 <= mo <= 12:
-            dt = datetime(yr, mo, day, _ampm(m.group(4), m.group(7)), int(m.group(5)))
-            return dt, off, ("offset" if off is not None else "outlook-us")
-    m = RE_STAMP_DMY.search(t)
-    if m:
-        mo = MONTHS.get(m.group(2)[:3].lower())
-        if mo:
-            ap = m.group(7) or "12:00am"
-            dt = datetime(int(m.group(3)), mo, int(m.group(1)),
-                          _ampm(m.group(4), ap), int(m.group(5)))
-            return dt, off, ("offset" if off is not None else "day-month-year")
-    m = RE_STAMP_LONG.search(t)
-    if m:
-        mo = MONTHS.get(m.group(1)[:3].lower())
-        if mo:
-            dt = datetime(int(m.group(3)), mo, int(m.group(2)),
-                          _ampm(m.group(4), m.group(7)), int(m.group(5)))
-            return dt, off, ("offset" if off is not None else "long")
-    m = RE_STAMP_DE.search(t)
-    if m:
-        mo = MONTHS_DE.get(m.group(2).lower())
-        if mo:
-            dt = datetime(int(m.group(3)), mo, int(m.group(1)),
-                          int(m.group(4)), int(m.group(5)))
-            return dt, off, ("offset" if off is not None else "german")
-    m = RE_STAMP_PARTIAL.search(t)
-    if m:
-        mo = MONTHS.get(m.group(1)[:3].lower())
-        if mo:
-            return datetime(2020, mo, int(m.group(2)), 12, 0), off, "partial-no-time"
-    return None, None, "unparsed"
-
-
-def zone_for(sender, subject, dt):
-    if dt:
-        ov = ZONE_OVERRIDES.get((dt.strftime("%Y-%m-%d"), dt.strftime("%H:%M"),
-                                 (subject or "")[:40]))
-        if ov:
-            return ZoneInfo(ov[0]), ov[1]
-    for rx, zone, why in ZONE_BY_AFFILIATION:
-        if rx.search(sender or ""):
-            return ZoneInfo(zone), why
-    return ZoneInfo(DEFAULT_ZONE), DEFAULT_ZONE_WHY
-
-
-def to_et(dt, tzinfo, why):
-    local = dt.replace(tzinfo=tzinfo)
-    et = local.astimezone(ET)
-    if local.utcoffset() == et.utcoffset():
-        return et, "%s %s" % (et.strftime("%H:%M"), "ET")
-    return et, "%s %s -> %s ET" % (
-        local.strftime("%H:%M"), tzinfo.key.split("/")[-1].replace("_", " "),
-        et.strftime("%H:%M"))
-
-
-# ── reading the OCR ─────────────────────────────────────────────────────────
-
-def load_pages():
-    """-> [(page_no, [lines])]"""
-    with open(OCR_TXT, encoding="utf-8") as f:
-        raw = f.read()
-    out = []
-    for i, page in enumerate(raw.split("\x0c"), start=1):
-        lines = [clean_line(l) for l in page.split("\n")]
-        lines = [l for l in lines if l and not FURNITURE.match(l)]
-        if lines:
-            out.append((i, lines))
-    return out
-
-
-def clean_line(line):
-    line = line.replace(" ", " ")
-    line = re.sub(r"[ \t]+", " ", line).strip()
-    if RE_FROM.match(line):
-        line = HEADER_JUNK.sub("", line)
-        line = NOISE_TAIL.sub("", line)
-    line = STANDALONE_PIPE_RE.sub("I", line)
-    line = RE_BULLET_MISREAD.sub("• ", line)
-    line = GLUED_WORDS_RE.sub(lambda m: GLUED_WORDS[m.group(1)], line)
-    return line.strip()
-
-
-def split_fields(block):
-    """Split a run of lines into header fields (see parse_po_emails.py)."""
-    fields, order = OrderedDict(), []
-    current = None
-    for line in block:
-        parts = RE_FIELD.split(" " + line)
-        if len(parts) == 1:
-            if current in ("From", "To", "Cc", "Bcc"):
-                fields[current] += " " + line.strip()
-            continue
-        if parts[0].strip():
-            if current in ("From", "To", "Cc", "Bcc"):
-                fields[current] += " " + parts[0].strip()
-        for i in range(1, len(parts) - 1, 2):
-            name = FIELD_ALIASES.get(parts[i].strip().lower()) \
-                or parts[i].strip().title()
-            if name not in HEADER_FIELDS:
-                name = name.title()
-            value = parts[i + 1].strip() if parts[i + 1].strip() else ""
-            if name not in fields:
-                order.append(name)
-            fields[name] = (fields.get(name, "") + (" " if name in fields else "") + value).strip()
-            current = name
-    return fields
-
-
-def is_junk_line(line):
-    s = (line or "").strip()
-    if not s:
-        return True
-    return not (re.search(r"[A-Za-z]{3,}", s)
-                or re.search(r"https?://|www\.|@", s)
-                or re.search(r"\b\d{4,}\b", s))
-
-
-def strip_glyph_soup(lines):
-    return [ln for ln in lines if not is_junk_line(ln)]
-
-
-def clean_field_value(name, value, sender):
-    v = (value or "").strip()
-    if name == "From":
-        return sender
-    v = RE_AVATAR_BRACKET.sub("", v)
-    v = RE_AVATAR_GLYPH.sub("", v)
-    v = re.sub(r"([)\]])\s+[A-Za-z]{1,3}\s*$", r"\1", v)
-    v = re.sub(r"\s+", " ", v).strip()
-    return v
-
-
-# ── signature blocks ─────────────────────────────────────────────────────────
-RE_SIG_NAME = re.compile(
-    r"^(?:PROFESSOR|Professor|DR|Dr|MR|Mr|MS|Ms|SIR|Sir|DAME|Dame)\b"
-    r"|^(?:[A-Z][A-Z.'-]+\s+){1,4}[A-Z][A-Z.'-]*"
-    r"\s+(?:FAA|FRS|FBA|FRCS|FACP|PhD|Ph\.D|MD|M\.D|MP|MSc|BSc|MBBS)\b")
-RE_SIG_AFFIL = re.compile(
-    r"^(?:ARC |THE |UNIVERSITY|University|Institut|CENTRE|Centre|School|"
-    r"Department|Dept\.|Faculty|College|Hospital|Institute|Trust|Laborator|"
-    r"Director|Regents|Dean|Regent|Professor Emeritus|Charit|Campus|"
-    r"Marie Bashir|Wellcome|MRC|NIH|NIAID|Atlanta|Bethesda|London|Sydney|"
-    r"Berlin|D-\d{5})\b")
-
-
-def is_signature_line(s):
-    s = (s or "").strip()
-    if not s:
-        return False
-    return bool(RE_SIG_NAME.match(s) or RE_SIG_AFFIL.match(s))
-
-
-RE_SENTENCE_END = re.compile(r"[.!?:;…]['\")\]]?\s*$")
-RE_SOFT_START = re.compile(r"^\s*[,;:.)\]]")
-RE_ADDR_CONT = re.compile(r"[,;|/\\]|(?:^|[\s(])[\"']?[A-Za-z]{1,3}[\"']?(?:[\s,|]|$)")
-
-
-def is_address_continuation(line):
-    s = (line or "").strip()
-    if not s or RE_SENTENCE_END.search(s):
-        return False
-    if len(s) > 160:
-        return False
-    return bool(RE_ADDR_CONT.search(s))
-
-
-def is_name_debris(line):
-    s = (line or "").strip()
-    if not s or RE_SENTENCE_END.search(s) or len(s) > 200:
-        return False
-    return not re.search(r"[a-z]{5,}", s)
-
-
-def is_wrapped_recipient(line, nxt=None):
-    if is_name_debris(line):
-        return True
-    s = (line or "").strip()
-    if not s or RE_SENTENCE_END.search(s) or len(s) > 120:
-        return False
-    names = re.findall(r"[A-Z][a-zA-Z.'-]{2,}", s)
-    words = re.findall(r"[A-Za-z']{2,}", s)
-    if not names:
-        return False
-    comma_list = s.count(",") >= 2 and len(names) >= 2
-    bare_names = s.count(",") == 0 and len(names) >= 3
-    if comma_list or bare_names:
-        return True
-    tokens = re.findall(r"[A-Za-z']{2,}", s)
-    all_known = bool(tokens) and all(
-        (t.lower() in FIRST_NAMES
-         or any(rx.search(t) for rx, _ in SENDER_ROSTER))
-        for t in tokens)
-    if not all_known and len(names) * 2 < len(words):
-        return False
-    return nxt is not None and (is_name_debris(nxt) or RE_FIELD.match(nxt.strip()))
-
-
-def looks_like_body_prose(line):
-    """True once we're confident the message's real body text has started.
-
-    The per-line "does this look like a recipient" classifiers
-    (is_name_debris / is_wrapped_recipient / continues_recipient_run) are
-    inherently fragile over a long redacted mailing list: a single
-    OCR-garbled name (e.g. "niiller" for "Miller") can fail every one of
-    them and wrongly end the scan 10+ lines before the Subject/Importance
-    line it is looking for. Giving up on the first line that fails a
-    positive "looks like a name" test is the wrong default for a recovery
-    sweep whose only job is to find a stranded field line -- the much safer
-    default is to keep scanning until a line positively looks like real
-    body prose (a greeting, or a long sentence with several ordinary
-    lowercase words), and only give up then.
-    """
-    s = (line or "").strip()
-    if not s:
-        return False
-    if re.match(r"^(Dear|Hi|Hello|Hey)\b", s, re.I):
-        return True
-    if len(s) > 40 and RE_SENTENCE_END.search(s):
-        if len(re.findall(r"[a-z]{3,}", s)) >= 5:
-            return True
-    return False
-
-
-def continues_recipient_run(line, nxt=None):
-    s = (line or "").strip()
-    if not s or RE_SENTENCE_END.search(s) or len(s) > 200:
-        return False
-    words = re.findall(r"[a-z]{3,}", s)
-    names = re.findall(r"[A-Z][a-zA-Z.'-]{2,}", s)
-    if len(words) > 4 and len(names) * 2 < len(words):
-        return False
-    if s.count(",") >= 2 and len(names) >= 2:
-        return True
-    if re.search(r"[.!?]\s+[A-Z][a-z]{2,}", s):
-        return False
-    return True
-
-
-def unwrap_lines(lines):
-    out = []
-    for line in lines:
-        s = line.strip()
-        if not s:
-            out.append(line)
-            continue
-        if out and out[-1].strip() and not RE_SENTENCE_END.search(out[-1]):
-            prev = out[-1].rstrip()
-            cont = (prev.endswith("-")
-                    or RE_SOFT_START.match(s)
-                    or (s[:1].islower() and prev[-1:].isalpha()))
-            if cont and not re.match(r"^(?:[-*•>]|\d+[.)])\s", s):
-                out[-1] = (prev[:-1] if prev.endswith("-") else prev) + " " + s
-                continue
-        out.append(line)
-    return out
-
-
-def is_header_fragment(line):
-    s = (line or "").strip()
-    if not s or len(s) > 40 or RE_SENTENCE_END.search(s):
-        return False
-    if not re.match(r"^[A-Z][A-Za-z'.-]*(?:[ /][A-Za-z][A-Za-z'.-]*){0,3}$", s):
-        return False
-    return bool(re.search(r"(?:andersen|rambaut|farrar|holmes|garry|fauci|drosten|"
-                           r"koopmans|pohlmann|farzan|fouchier|schreier|"
-                           r"ferguson|golding|lipkin|vallance|collins|auchincloss|"
-                           r"conrad|shabman|folkers|burke|pope|viner|dzau|smith|"
-                           r"edward|andrew|jeremy|kristian|robert|anthony|christian|"
-                           r"marion|stefan|michael|claire|patricia|reed|martina|"
-                           r"greg|josie|amanda|francis|martin|rory|russell|victor|"
-                           r"eddie|tony|toney|farrar|beach|comin|perdue)", s, re.I))
-
-
-def split_signature(body):
-    out, sig, cut = [], [], None
-    for i, line in enumerate(body):
-        s = line.strip()
-        if cut is None and out and is_signature_line(s):
-            cut = i
-        if cut is None:
-            out.append(line)
-        else:
-            sig.append(line)
-    return out, sig
-
-
-def strip_quoted(body):
-    out, cut = [], None
-    for i, line in enumerate(body):
-        if cut is None and re.match(
-                r"^(Best regards|Best wishes|Warm regards|Thanks,|Kinds?\s+regards|"
-                r"With best wishes|Yours sincerely|Yours,|Best,|Many thanks|"
-                r"Jeremy Farrar$|Anthony S\. Fauci|Tony$|Eddie$|Anders$|Christian$|"
-                r"Kristian$|Andrew Rambaut$|Robert Garry$)", line.strip(), re.I):
-            cut = i
-        if cut is None:
-            out.append(line)
-    return out
-
-
-# A Word document with reviewer comments, printed/attached straight into a
-# FOIA release, carries Word's own "Commented [A1]:" / "Commented [A4R4]:"
-# review markers -- a signal specific enough that it is never legitimate
-# email prose. Finding one anywhere in a message means an attached document's
-# text has been glued onto the covering email's body (the sign-off that
-# should have stopped it, e.g. strip_quoted() above, can still be missed --
-# an OCR misspelling, a release that signs off differently, or none at all).
-# This is a second, independent line of defence: cut the body at the first
-# such marker and say so, rather than silently keep rendering the attachment
-# as if it were the author's own words.
-RE_WORD_COMMENT_MARKER = re.compile(r"Commented\s*\[A\d+")
-
-# The P.O. manuscript itself ("Summary.pdf" / "Summary.Feb7.pdf" /
-# "Summary.docx") is attached straight into this release and, when it is,
-# the very next page of the print opens on a bare "Overview" heading --
-# verified against every one of the 4 occurrences in the whole corpus
-# (pages 67, 83, 88, 98), each immediately following a message whose
-# Attachments: field names one of these files. A real email never has a
-# standalone paragraph that is just the word "Overview" with nothing else,
-# so this is as safe a trigger as the Word comment marker above.
-RE_ATTACHED_DOC_HEADING = re.compile(r"^(?:Overview)\s*$")
-
-
-def strip_embedded_attachment(body):
-    for i, line in enumerate(body):
-        if RE_WORD_COMMENT_MARKER.search(line):
-            return body[:i] + ["== ATTACHMENT: document with reviewer comments "
-                                "(not transcribed) =="]
-        if RE_ATTACHED_DOC_HEADING.match(line.strip()):
-            return body[:i] + ["== ATTACHMENT: document (not transcribed) =="]
-    return body
-
-
-def segment(pages):
-    """Split the page stream into messages.
-
-    Three kinds of boundary open a new message: a From:/Von: header, a
-    Date:/Sent:/Gesendet: line reopening a message whose From: the scan ate
-    (see po-emails' parser for why), and an inline "On <date>, <name> wrote:"
-    marker, which recovers the quoted reply it introduces as its own entry
-    instead of leaving it glued into the message quoting it.
-    """
-    messages = []
-    cur = None
-    cur_from_at = -1
-    pos = 0
-    in_body = False
-    for pageno, lines in pages:
-        body_mode = in_body
-        for li, line in enumerate(lines):
-            nxt = lines[li + 1] if li + 1 < len(lines) else None
-            if RE_MSG_OPEN.match(line):
-                cur = {"header_lines": [line], "body": [], "pages": [pageno]}
-                messages.append(cur)
-                cur_from_at = pos
-                body_mode = False
-                in_body = False
-                pos += 1
-                continue
-            if RE_HDR_DATE.match(line) and cur is not None and body_mode \
-                    and pos - cur_from_at > REOPEN_MIN_DISTANCE:
-                cur = {"header_lines": [line], "body": [], "pages": [pageno]}
-                messages.append(cur)
-                cur_from_at = pos
-                body_mode = False
-                in_body = False
-                pos += 1
-                continue
-            iq = cur is not None and RE_INLINE_QUOTE.match(line)
-            if iq:
-                date_str, time_str, name = iq.groups()
-                cur = {"header_lines": ["From: %s" % name.strip(),
-                                         "Sent: %s, %s" % (date_str.strip(), time_str.strip())],
-                       "body": [], "pages": [pageno], "recovered_inline": True}
-                messages.append(cur)
-                cur_from_at = pos
-                body_mode = False
-                in_body = False
-                pos += 1
-                continue
-            pos += 1
-            if cur is None:
-                continue
-            cur["pages"].append(pageno)
-            if not body_mode:
-                if len(cur["header_lines"]) > 1 and is_junk_line(line):
-                    continue
-                has_field = bool(RE_FIELD.search(line))
-                if cur["header_lines"] and not has_field and len(cur["header_lines"]) > 1:
-                    if (cur.get("in_addr") and len(cur["header_lines"]) <= MAX_HEADER_LINES
-                            and (is_address_continuation(line)
-                                 or is_wrapped_recipient(line, nxt))):
-                        cur["header_lines"].append(line)
-                        continue
-                    body_mode = True
-                    in_body = True
-                    cur["body"].append(line)
-                elif has_field or len(cur["header_lines"]) == 1:
-                    cur["header_lines"].append(line)
-                    names = [n.strip().lower() for n in RE_FIELD.findall(line)]
-                    if names:
-                        cur["in_addr"] = names[-1] in (
-                            "to", "cc", "bcc", "fe", "pe", "ce", "an")
-                else:
-                    body_mode = True
-                    in_body = True
-                    cur["body"].append(line)
-            else:
-                cur["body"].append(line)
-                in_body = True
-        in_body = body_mode
-    return messages
-
-
-def build_entries(messages):
-    entries = []
-    for msg in messages:
-        fields = split_fields(msg["header_lines"])
-        sender, sender_raw = clean_sender(fields.get("From") or "")
-        sender_how = "inline quote marker (On ... wrote:)" if msg.get("recovered_inline") \
-            else ("From: line" if fields.get("From") else "")
-        stamp = fields.get("Sent") or fields.get("Date") or ""
-        body = strip_embedded_attachment(strip_quoted(msg["body"]))
-        while body:
-            head = body[0].strip()
-            if RE_FIELD.match(head):
-                extra = split_fields(body[:1])
-                for k, v in extra.items():
-                    if v and not fields.get(k):
-                        fields[k] = v
-                body = body[1:]
-                continue
-            if is_junk_line(head) or is_header_fragment(head):
-                body = body[1:]
-                continue
-            break
-        window = min(len(body), 8)
-        found = -1
-        for i in range(window):
-            if RE_FIELD.match(body[i].strip()):
-                found = i
-                break
-        if found >= 0:
-            j = found + 1
-            while j < min(len(body), 150):
-                if RE_FIELD.match(body[j].strip()):
-                    names = [n.strip().lower() for n in RE_FIELD.findall(body[j])]
-                    if any(n in ("to", "cc", "bcc", "ce", "fe", "pe", "gc", "an")
-                           for n in names):
-                        found = j
-                        j += 1
-                        continue
-                    found = j
-                    break
-                if looks_like_body_prose(body[j]):
-                    break
-                j += 1
-            else:
-                found = j - 1
-        if found < 0:
-            i = max(0, window - 1)
-            while i < min(len(body), 150):
-                if RE_FIELD.match(body[i].strip()):
-                    found = i
-                    break
-                if looks_like_body_prose(body[i]):
-                    break
-                i += 1
-            if found >= 0:
-                j = found + 1
-                while j < min(len(body), 150):
-                    if RE_FIELD.match(body[j].strip()):
-                        names = [n.strip().lower() for n in RE_FIELD.findall(body[j])]
-                        if not any(n in ("to", "cc", "bcc", "ce", "fe", "pe", "gc", "an")
-                                   for n in names):
-                            # A second, non-recipient field (Subject, then
-                            # Importance here) also ends the header -- and is
-                            # itself part of it, so `found` must move to it
-                            # before breaking, or it is left stranded in the
-                            # body along with everything recovered so far.
-                            found = j
-                            break
-                        found = j
-                        j += 1
-                        continue
-                    if looks_like_body_prose(body[j]):
-                        break
-                    j += 1
-        if found < 0 and not fields.get("Subject") and body:
-            m = re.match(r"^\s*(?:Subjec\w*|Betreff):?\s*(.+)$", body[0], re.I)
-            if m and len(m.group(1).strip()) > 3:
-                fields["Subject"] = m.group(1).strip()
-                body = body[1:]
-                found = 0
-        if found >= 0:
-            last_field = None
-            for j in range(found + 1):
-                extra = split_fields(body[j:j + 1])
-                if extra:
-                    for k, v in extra.items():
-                        if v and not fields.get(k):
-                            fields[k] = v
-                    last_field = next(iter(extra))
-                elif last_field == "Subject" and not looks_like_body_prose(body[j]):
-                    # A long Subject can wrap onto its own physical line with
-                    # no field keyword of its own ("...on 2019-" / "novel
-                    # coronavirus") -- reprocessing this recovery sweep one
-                    # line at a time (so a bare recipient-debris line yields
-                    # nothing rather than wrongly opening a new field) also
-                    # loses a wrapped Subject's tail unless it is explicitly
-                    # reattached here.
-                    fields["Subject"] = (fields.get("Subject", "") + " "
-                                         + body[j].strip()).strip()
-            body = body[found + 1:]
-        subject = (fields.get("Subject") or "").strip()
-        body = strip_glyph_soup(body)
-        body, signature = split_signature(body)
-        if not fields.get("From"):
-            for sline in signature:
-                hit = next((name for rx, name in SENDER_ROSTER
-                            if rx.search(sline.strip())), None)
-                if hit:
-                    sender, sender_raw = hit, sline.strip()
-                    sender_how = "signature block (From: lost in scan)"
-                    break
-        body = unwrap_lines(body)
-        content_body = "\n".join(body).strip()
-
-        dt, off, how = parse_stamp(stamp)
-        if dt is None:
-            entries.append({
-                "date": None, "time": None, "kind": "email",
-                "raw_date": subject or "(undated message)",
-                "sender": sender, "sender_raw": sender_raw, "sender_how": sender_how,
-                "subject": subject,
-                "content": header_block(fields, content_body, sender, signature),
-                "date_note": "no usable timestamp in the release; not plotted",
-                "pages": sorted(set(msg["pages"])), "source": SOURCE_ID,
-                "stamp_status": how,
-            })
-            continue
-
-        if off is not None:
-            local = dt - off
-            et = local.astimezone(ET) if local.tzinfo else local.replace(tzinfo=ZoneInfo("UTC")).astimezone(ET)
-            zone_why = "explicit UTC%s%02d:%02d in the stamp" % (
-                "+" if off.total_seconds() >= 0 else "-",
-                abs(off.total_seconds()) // 3600,
-                (abs(off.total_seconds()) % 3600) // 60)
-            stamp_line = "%s %s -> %s ET" % (
-                stamp.strip(), ("UTC%s%02d:%02d" % (
-                    "+" if off.total_seconds() >= 0 else "-",
-                    int(abs(off.total_seconds()) // 3600),
-                    int(abs(off.total_seconds()) % 3600 // 60))), et.strftime("%H:%M"))
-        else:
-            tzinfo, zone_why = zone_for(sender, subject, dt)
-            et, stamp_line = to_et(dt, tzinfo, zone_why)
-            if how == "partial-no-time":
-                stamp_line += " (time not recovered)"
-
-        entries.append({
-            "date": et.strftime("%Y-%m-%d"),
-            "time": et.strftime("%H%M"),
-            "kind": "email",
-            "raw_date": "%s ET · %s" % (et.strftime("%H:%M"), subject or "(no subject)"),
-            "sender": sender, "sender_raw": sender_raw,
-            "sender_how": sender_how,
-            "subject": subject,
-            "content": header_block(fields, content_body, sender, signature),
-            "signature": "\n".join(signature).strip() if signature else None,
-            "stamp": stamp.strip(),
-            "stamp_status": how,
-            "zone_assumed": zone_why,
-            "stamp_line": stamp_line,
-            "recovered_inline": bool(msg.get("recovered_inline")),
-            "pages": sorted(set(msg["pages"])),
-            "source": SOURCE_ID,
-        })
-    return entries
-
-
-def header_block(fields, body, sender, signature=None):
-    head = []
-    for k in ("From", "To", "Cc", "Bcc", "Subject", "Sent", "Date", "Importance", "Attachments"):
-        if fields.get(k):
-            head.append("%s: %s" % (k, clean_field_value(k, fields[k], sender)))
-    out = "\n\n".join(head) + "\n\n----------\n\n" + body
-    if signature:
-        out += "\n\n----------\n\n" + "\n".join(signature).strip()
-    return out
-
-
-def merge_page_splits(entries):
-    """Join messages the printer split across a page boundary (see
-    po-emails.py for the full rationale: same sender/stamp/subject, two
-    bodies, not adjacent in the stream)."""
-    groups, order = {}, []
-    for e in entries:
-        ident = (e.get("sender"), e.get("subject"), e.get("stamp"),
-                 e.get("stamp_status"), e.get("kind"))
-        if ident not in groups:
-            groups[ident] = []
-            order.append(ident)
-        groups[ident].append(e)
-
-    out = []
-    for ident in order:
-        parts = groups[ident]
-        head = parts[0]
-        for extra in parts[1:]:
-            h, sep, body = extra["content"].partition("----------")
-            addition = (body if sep else extra["content"]).strip()
-            if addition and addition not in head["content"]:
-                head["content"] = head["content"].rstrip() + "\n" + addition
-            head["pages"] = sorted(set(head.get("pages", []) + extra.get("pages", [])))
-            head["merged_pages"] = head.get("merged_pages", 0) + 1
-        out.append(head)
-    return out
-
-
-# ── threading ───────────────────────────────────────────────────────────────
-RE_SUBJ_PREFIX = re.compile(r"^\s*(re|fw|fwd?|fwd)\s*[:\-]\s*", re.I)
-
-
-def norm_subject(subject):
-    prev = None
-    s = (subject or "").strip()
-    while prev != s:
-        prev = s
-        s = RE_SUBJ_PREFIX.sub("", s).strip()
-    return s.lower()
-
-
-def thread_entries(entries):
-    groups = defaultdict(list)
-    for e in entries:
-        if e.get("date"):
-            groups[norm_subject(e.get("subject"))].append(e)
-    linked = 0
-    for key, group in groups.items():
-        if not key or len(group) < 2:
-            continue
-        group.sort(key=lambda e: (e["date"], e.get("time") or ""))
-        for prev_e, e in zip(group, group[1:]):
-            e["reply_to"] = prev_e["thread_key"]
-            e["reply_to_label"] = prev_e["thread_label"]
-            e["link_kind"] = "inferred (same conversation)"
-            prev_e.setdefault("replied_by", []).append(
-                {"key": e["thread_key"], "label": e["thread_label"]})
-            linked += 1
-    return linked
-
-
-def build_page_map(entries, n_pages):
-    pmap = {}
-    for i, e in enumerate(entries):
-        pages = [p for p in e.get("pages") or [] if 1 <= p <= n_pages]
-        if not pages:
-            continue
-        pmap[entry_key(e, i)] = {"start": pages[0], "end": pages[-1], "breaks": []}
-    return pmap
-
-
-def entry_key(e, i):
-    return e.get("thread_key") or "%s|%s" % (SOURCE_ID, e.get("idx", i))
+STAMP_BARE_OFFSET_RE = re.compile(r"([+-])(\d{2})(\d{2})\s*$")
+
+
+PROFILE = Profile(
+    source_id="farrar-fauci",
+    source_file="farrar-fauci-comms.pdf",
+    title="Farrar-Fauci-Collins emails (FOI release)",
+    ocr_txt=os.path.join(HERE, "farrar-fauci-comms_ocr.txt"),
+    out_json=os.path.join(HERE, "farrar-fauci.json"),
+    out_map=os.path.join(HERE, "farrar-fauci_page_map.json"),
+    sender_roster=SENDER_ROSTER,
+    first_names=FIRST_NAMES,
+    header_fragment_name_re=HEADER_FRAGMENT_NAME_RE,
+    zone_by_affiliation=ZONE_BY_AFFILIATION,
+    default_zone=DEFAULT_ZONE,
+    default_zone_why=DEFAULT_ZONE_WHY,
+    furniture_re=FURNITURE,
+    noise_tail_re=NOISE_TAIL,
+    extra_clean_line=clean_line_extra,
+    field_aliases=FIELD_ALIASES,
+    msg_open_re=MSG_OPEN_RE,
+    hdr_date_re=HDR_DATE_RE,
+    max_header_lines=MAX_HEADER_LINES,
+    reopen_min_distance=REOPEN_MIN_DISTANCE,
+    recipient_tokens=RECIPIENT_TOKENS,
+    subject_fallback_re=SUBJECT_FALLBACK_RE,
+    sig_affil_re=SIG_AFFIL_RE,
+    strip_quoted_re=STRIP_QUOTED_RE,
+    stamp_dmy_re=STAMP_DMY_RE,
+    stamp_bare_offset_re=STAMP_BARE_OFFSET_RE,
+    stamp_de_re=STAMP_DE_RE,
+    months_de=MONTHS_DE,
+)
 
 
 def main():
-    pages = load_pages()
-    messages = segment(pages)
-    entries = merge_page_splits(build_entries(messages))
-    seen_keys = {}
-    for e in entries:
-        e["source"] = SOURCE_ID
-        base = "%s|%s|%s" % (SOURCE_ID, e.get("date") or "undated",
-                             e.get("time") or e["raw_date"][:40])
-        n = seen_keys.get(base, 0)
-        seen_keys[base] = n + 1
-        e["thread_key"] = base if n == 0 else "%s|%d" % (base, n)
-        if n:
-            e["date_note"] = (e.get("date_note", "") +
-                              ("same minute as another message" if n == 1 else "")).strip()
-        e["thread_label"] = "%s %s · %s" % (e.get("date") or "undated",
-                                            (e.get("time") or "")[:2] + ":" +
-                                            (e.get("time") or "")[2:4] if e.get("time") else "",
-                                            e.get("sender") or "")
-        e["replied_by"] = []
-    entries.sort(key=lambda e: (e.get("date") or "9999", e.get("time") or "9999"))
-    for i, e in enumerate(entries):
-        e["idx"] = i
-    linked = thread_entries(entries)
-
-    n_pages = len(open(OCR_TXT, encoding="utf-8").read().split("\x0c"))
-    page_map = build_page_map(entries, n_pages)
-    for e in entries:
-        e.pop("pages", None)
-
-    dated = [e for e in entries if e.get("date")]
-    undated = [e for e in entries if not e.get("date")]
-    senders = defaultdict(int)
-    for e in dated:
-        senders[e["sender"]] += 1
-
-    out = OrderedDict([
-        ("source_file", "farrar-fauci-comms.pdf"),
-        ("source_id", SOURCE_ID),
-        ("title", "Farrar-Fauci-Collins emails (FOI release)"),
-        ("total_entries", len(entries)),
-        ("date_range", {"start": min(e["date"] for e in dated) if dated else None,
-                        "end": max(e["date"] for e in dated) if dated else None}),
-        ("entries", entries),
-    ])
-    with open(OUT_JSON, "w", encoding="utf-8") as f:
-        json.dump(out, f, ensure_ascii=False, indent=2)
-    with open(OUT_MAP, "w", encoding="utf-8") as f:
-        json.dump(page_map, f, indent=1)
-
-    print("Messages segmented: %d" % len(messages))
-    print("Thread links (same conversation): %d" % linked)
-    print("Entries: %d (%d dated, %d undated)"
-          % (len(entries), len(dated), len(undated)))
-    if dated:
-        print("Range: %s .. %s" % (out["date_range"]["start"], out["date_range"]["end"]))
-    print("Senders:")
-    for s, c in sorted(senders.items(), key=lambda kv: -kv[1]):
-        print("  %4d  %s" % (c, s))
-    st = defaultdict(int)
-    for e in dated:
-        st[e["stamp_status"]] += 1
-    print("Stamp parsing: %s" % dict(st))
-    print("Page map: %d keys over %d PDF pages" % (len(page_map), n_pages))
-    print("Wrote %s and %s" % (OUT_JSON, OUT_MAP))
+    run_release(PROFILE)
 
 
 if __name__ == "__main__":

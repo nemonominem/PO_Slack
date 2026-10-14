@@ -85,18 +85,18 @@
   "breaks": []
  },
  "farrar-fauci|2020-01-29|1929": {
-  "start": 159,
+  "start": 155,
   "end": 160,
-  "breaks": []
- },
- "farrar-fauci|2020-01-29|2038": {
-  "start": 159,
-  "end": 159,
   "breaks": []
  },
  "farrar-fauci|2020-01-29|2042": {
   "start": 158,
-  "end": 158,
+  "end": 159,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-30|0213": {
+  "start": 157,
+  "end": 157,
   "breaks": []
  },
  "farrar-fauci|2020-01-30|0926": {
@@ -129,34 +129,14 @@
   "end": 147,
   "breaks": []
  },
- "farrar-fauci|2020-01-31|2234": {
-  "start": 155,
-  "end": 156,
-  "breaks": []
- },
- "farrar-fauci|2020-02-01|0055": {
-  "start": 142,
-  "end": 143,
-  "breaks": []
- },
  "farrar-fauci|2020-02-01|0534": {
   "start": 140,
   "end": 141,
   "breaks": []
  },
  "farrar-fauci|2020-02-01|0555": {
-  "start": 144,
+  "start": 142,
   "end": 146,
-  "breaks": []
- },
- "farrar-fauci|2020-02-01|0700": {
-  "start": 115,
-  "end": 115,
-  "breaks": []
- },
- "farrar-fauci|2020-02-01|0700|1": {
-  "start": 138,
-  "end": 139,
   "breaks": []
  },
  "farrar-fauci|2020-02-01|0827": {
@@ -165,18 +145,18 @@
   "breaks": []
  },
  "farrar-fauci|2020-02-01|0956": {
-  "start": 119,
+  "start": 115,
   "end": 122,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1007": {
+  "start": 115,
+  "end": 115,
   "breaks": []
  },
  "farrar-fauci|2020-02-01|1034": {
   "start": 113,
-  "end": 136,
-  "breaks": []
- },
- "farrar-fauci|2020-02-01|1034|1": {
-  "start": 116,
-  "end": 134,
+  "end": 139,
   "breaks": []
  },
  "farrar-fauci|2020-02-01|1050": {
@@ -205,18 +185,13 @@
   "breaks": []
  },
  "farrar-fauci|2020-02-01|1312": {
-  "start": 127,
+  "start": 116,
   "end": 127,
   "breaks": []
  },
  "farrar-fauci|2020-02-01|1409": {
   "start": 125,
   "end": 125,
-  "breaks": []
- },
- "farrar-fauci|2020-02-01|1412": {
-  "start": 116,
-  "end": 123,
   "breaks": []
  },
  "farrar-fauci|2020-02-01|1443": {
@@ -232,11 +207,6 @@
  "farrar-fauci|2020-02-01|1443|2": {
   "start": 122,
   "end": 122,
-  "breaks": []
- },
- "farrar-fauci|2020-02-01|1456": {
-  "start": 115,
-  "end": 116,
   "breaks": []
  },
  "farrar-fauci|2020-02-01|1503": {
@@ -335,11 +305,6 @@
   "breaks": []
  },
  "farrar-fauci|2020-02-03|2101": {
-  "start": 76,
-  "end": 96,
-  "breaks": []
- },
- "farrar-fauci|2020-02-03|2101|1": {
   "start": 80,
   "end": 80,
   "breaks": []
@@ -355,7 +320,7 @@
   "breaks": []
  },
  "farrar-fauci|2020-02-04|0201": {
-  "start": 97,
+  "start": 76,
   "end": 97,
   "breaks": []
  },
@@ -389,11 +354,6 @@
   "end": 92,
   "breaks": []
  },
- "farrar-fauci|2020-02-04|1553": {
-  "start": 87,
-  "end": 91,
-  "breaks": []
- },
  "farrar-fauci|2020-02-04|2023": {
   "start": 92,
   "end": 92,
@@ -405,18 +365,13 @@
   "breaks": []
  },
  "farrar-fauci|2020-02-05|0157": {
-  "start": 82,
-  "end": 86,
+  "start": 66,
+  "end": 91,
   "breaks": []
  },
  "farrar-fauci|2020-02-05|1725": {
-  "start": 77,
-  "end": 78,
-  "breaks": []
- },
- "farrar-fauci|2020-02-05|2224": {
   "start": 73,
-  "end": 74,
+  "end": 78,
   "breaks": []
  },
  "farrar-fauci|2020-02-06|0000": {
@@ -437,11 +392,6 @@
  "farrar-fauci|2020-02-06|2021": {
   "start": 64,
   "end": 64,
-  "breaks": []
- },
- "farrar-fauci|2020-02-07|0109": {
-  "start": 66,
-  "end": 72,
   "breaks": []
  },
  "farrar-fauci|2020-02-07|1005": {
@@ -474,7 +424,7 @@
   "end": 61,
   "breaks": []
  },
- "farrar-fauci|2020-02-08|0600": {
+ "farrar-fauci|2020-02-08|0638": {
   "start": 56,
   "end": 57,
   "breaks": []
@@ -649,7 +599,7 @@
   "end": 35,
   "breaks": []
  },
- "farrar-fauci|2020-04-25|0000": {
+ "farrar-fauci|2020-04-25|0122": {
   "start": 23,
   "end": 31,
   "breaks": []
@@ -714,19 +664,14 @@
   "end": 14,
   "breaks": []
  },
- "farrar-fauci|2020-05-12|0700": {
-  "start": 10,
-  "end": 10,
-  "breaks": []
- },
  "farrar-fauci|2020-05-12|0816": {
   "start": 7,
-  "end": 9,
+  "end": 13,
   "breaks": []
  },
- "farrar-fauci|2020-05-12|0817": {
-  "start": 11,
-  "end": 13,
+ "farrar-fauci|2020-05-12|0857": {
+  "start": 10,
+  "end": 10,
   "breaks": []
  },
  "farrar-fauci|2020-05-12|1312": {

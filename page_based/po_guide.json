@@ -101,7 +101,7 @@
     },
     {
      "doc": null,
-     "kind": "link",
+     "kind": "other",
      "pages": [],
      "date": "2020-02-26",
      "url": "https://bit.ly/Caixin_SARS2_NGS",
@@ -127,7 +127,7 @@
       "43"
      ],
      "date": "2023-01-01",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1E_UJCSq-fsQV5HvxAEmhMLVrQQAzSiem",
      "source_part": "p1",
      "raw": "2023.06.16-Andersen-Transcript.pdf, p. 43"
     },
@@ -384,7 +384,7 @@
     },
     {
      "doc": null,
-     "kind": "press",
+     "kind": "other",
      "pages": [],
      "date": "2020-01-26",
      "url": "https://www.washingtontimes.com/news/2020/jan/26/coronavirus-link-to-china-biowarfare-program-possi/",
@@ -414,18 +414,9 @@
      "kind": "social",
      "pages": [],
      "date": "2020-02-07",
-     "url": null,
-     "source_part": "p1",
-     "raw": "Pres. Trump, 7 Feb 2020, Tweet"
-    },
-    {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": "2020-02-07",
      "url": "https://x.com/realDonaldTrump/status/1225728756456808448?s=20",
      "source_part": "p1",
-     "raw": "Pres. Trump, 7 Feb 2020,_ [_Tweet__]"
+     "raw": "Pres. Trump, 7 Feb 2020, Tweet"
     },
     {
      "doc": null,
@@ -464,7 +455,7 @@
       "120-121"
      ],
      "date": null,
-     "url": null,
+     "url": "https://drive.google.com/file/d/173bZUapV1fbWx7KXqD30uynH1sQddOLs",
      "source_part": "p1",
      "raw": "Baric-TI-Transcript.pdf, p.120–121"
     }
@@ -481,9 +472,11 @@
    "date_raw": null,
    "evidence": [
     {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
+     "doc": "2023.06.16-Andersen-Transcript.pdf",
+     "kind": "transcript",
+     "pages": [
+      "51"
+     ],
      "date": null,
      "url": "https://drive.google.com/file/d/1E_UJCSq-fsQV5HvxAEmhMLVrQQAzSiem",
      "source_part": "p1",
@@ -511,9 +504,11 @@
      "raw": "Jeremy Farrar, as recorded in his book, Spike"
     },
     {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
+     "doc": "2023.06.16-Andersen-Transcript.pdf",
+     "kind": "transcript",
+     "pages": [
+      "51"
+     ],
      "date": null,
      "url": "https://drive.google.com/file/d/1E_UJCSq-fsQV5HvxAEmhMLVrQQAzSiem",
      "source_part": "p1",
@@ -543,11 +538,13 @@
    "date_raw": null,
    "evidence": [
     {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
+     "doc": "Fauci-TI-Transcript.pdf",
+     "kind": "transcript",
+     "pages": [
+      "84-85"
+     ],
      "date": "2022-11-23",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1kZHT0VL-YTHCCfcu1H9I4W_jzd2kpY2_",
      "source_part": "p1",
      "raw": "Fauci’s testimony of 23 Nov 2022, p. 84–85"
     }
@@ -570,7 +567,7 @@
       "51"
      ],
      "date": "2023-01-01",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1E_UJCSq-fsQV5HvxAEmhMLVrQQAzSiem",
      "source_part": "p1",
      "raw": "2023.06.16-Andersen-Transcript.pdf, p. 51"
     }
@@ -598,9 +595,11 @@
    "date_raw": null,
    "evidence": [
     {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
+     "doc": "2023.06.16-Andersen-Transcript.pdf",
+     "kind": "transcript",
+     "pages": [
+      "52"
+     ],
      "date": null,
      "url": "https://drive.google.com/file/d/1E_UJCSq-fsQV5HvxAEmhMLVrQQAzSiem",
      "source_part": "p1",
@@ -613,7 +612,7 @@
       "52"
      ],
      "date": "2023-01-01",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1E_UJCSq-fsQV5HvxAEmhMLVrQQAzSiem",
      "source_part": "p1",
      "raw": "2023.06.16-Andersen-Transcript.pdf, p. 52"
     }
@@ -725,7 +724,7 @@
       "4-5"
      ],
      "date": "2020-01-31",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf p. 4–5 31 Jan 10:32 pm EST"
     }
@@ -773,8 +772,8 @@
      "raw": "Fauci’s email to Auchincloss, 1 Feb 00:29 am (exact FOI not clear)"
     },
     {
-     "doc": null,
-     "kind": "other",
+     "doc": "Fauci-TI-Transcript.pdf",
+     "kind": "transcript",
      "pages": [],
      "date": "2022-01-01",
      "url": "https://drive.google.com/file/d/1kZHT0VL-YTHCCfcu1H9I4W_jzd2kpY2_",
@@ -818,7 +817,7 @@
       "153"
      ],
      "date": "2020-02-01",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.153, 1 Feb 2020, 4 pm EST"
     },
@@ -863,7 +862,7 @@
       "3"
      ],
      "date": "2020-02-01",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.3, 1 Feb 2020, 1::52 pm EST"
     }
@@ -884,7 +883,7 @@
      "kind": "email",
      "pages": [],
      "date": null,
-     "url": null,
+     "url": "https://drive.google.com/file/d/1l04ZiPQ09bp4_x4SkJ-vCpbzhg35EVWu",
      "source_part": "p1",
      "raw": "extract of the presentation for the call (‘Coronavirus sequence comparison[1].pdf’), extracted from farrar-fauci-comms-full.pdf"
     }
@@ -916,7 +915,7 @@
      "kind": "transcript",
      "pages": [],
      "date": "2023-01-01",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1E_UJCSq-fsQV5HvxAEmhMLVrQQAzSiem",
      "source_part": "p1",
      "raw": "Andersem, in 2023.06.16-Andersen-Transcript.pdf"
     }
@@ -939,7 +938,7 @@
       "4"
      ],
      "date": "2020-02-01",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.4, 1 Feb 2020, during the call"
     }
@@ -956,11 +955,13 @@
    "date_raw": null,
    "evidence": [
     {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
+     "doc": "Fauci-TI-Transcript.pdf",
+     "kind": "transcript",
+     "pages": [
+      "92-93"
+     ],
      "date": "2022-11-23",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1kZHT0VL-YTHCCfcu1H9I4W_jzd2kpY2_",
      "source_part": "p1",
      "raw": "Fauci’s testimony of 23 Nov 2022, p. 92–93"
     }
@@ -983,7 +984,7 @@
       "112"
      ],
      "date": "2020-02-01",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1l04ZiPQ09bp4_x4SkJ-vCpbzhg35EVWu",
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf, p. 112, 1 Feb 2020, 3:59 pm EST"
     }
@@ -1082,29 +1083,7 @@
       "107"
      ],
      "date": "2020-02-02",
-     "url": null,
-     "source_part": "p1",
-     "raw": "farrar-fauci-comms-full.pdf, p.107, 2 Feb 2020"
-    },
-    {
-     "doc": "farrar-fauci-comms-full.pdf",
-     "kind": "email",
-     "pages": [
-      "107"
-     ],
-     "date": "2020-02-02",
      "url": "https://drive.google.com/file/d/1l04ZiPQ09bp4_x4SkJ-vCpbzhg35EVWu",
-     "source_part": "p1",
-     "raw": "farrar-fauci-comms-full.pdf, p.107, 2 Feb 2020"
-    },
-    {
-     "doc": "farrar-fauci-comms-full.pdf",
-     "kind": "email",
-     "pages": [
-      "107"
-     ],
-     "date": "2020-02-02",
-     "url": null,
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf, p.107, 2 Feb 2020"
     }
@@ -1141,17 +1120,6 @@
      "url": "https://drive.google.com/file/d/1l04ZiPQ09bp4_x4SkJ-vCpbzhg35EVWu",
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf, p.112, 2 Feb 2020"
-    },
-    {
-     "doc": "farrar-fauci-comms-full.pdf",
-     "kind": "email",
-     "pages": [
-      "112"
-     ],
-     "date": "2020-02-02",
-     "url": null,
-     "source_part": "p1",
-     "raw": "farrar-fauci-comms-full.pdf, p.112, 2 Feb 2020"
     }
    ],
    "summary": "Farrar pushes back, arguing it's better to address the question openly now than let it fester and polarise later."
@@ -1172,7 +1140,7 @@
       "109"
      ],
      "date": "2020-02-02",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1l04ZiPQ09bp4_x4SkJ-vCpbzhg35EVWu",
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf, p.109, 2 Feb 2020"
     }
@@ -1195,7 +1163,7 @@
       "108"
      ],
      "date": "2020-02-02",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1l04ZiPQ09bp4_x4SkJ-vCpbzhg35EVWu",
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf, p.108, 2 Feb 2020"
     }
@@ -1218,7 +1186,7 @@
       "5"
      ],
      "date": "2020-02-01",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.5, 1 Feb 2020, 10:42 pm EST"
     },
@@ -1229,7 +1197,7 @@
       "5"
      ],
      "date": "2020-02-02",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.5, 2 Feb 2020, 9:44 am EST"
     },
@@ -1240,7 +1208,7 @@
       "5"
      ],
      "date": "2020-02-02",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.5, 2 Feb 2020, 11:10 am EST"
     },
@@ -1251,7 +1219,7 @@
       "5"
      ],
      "date": "2020-02-02",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.5, 2 Feb 2020, 11:47 am EST"
     },
@@ -1262,7 +1230,7 @@
       "5"
      ],
      "date": "2020-02-02",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.5, 2 Feb 2020, 6:42 pm EST"
     }
@@ -1296,7 +1264,7 @@
       "107-108"
      ],
      "date": "2020-02-02",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1l04ZiPQ09bp4_x4SkJ-vCpbzhg35EVWu",
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf, p.107–108, 2 Feb 2020"
     }
@@ -1320,17 +1288,6 @@
      ],
      "date": "2020-02-02",
      "url": "https://drive.google.com/file/d/1l04ZiPQ09bp4_x4SkJ-vCpbzhg35EVWu",
-     "source_part": "p1",
-     "raw": "farrar-fauci-comms-full.pdf, p.106, 2 Feb 2020, ~7am EST"
-    },
-    {
-     "doc": "farrar-fauci-comms-full.pdf",
-     "kind": "email",
-     "pages": [
-      "106"
-     ],
-     "date": "2020-02-02",
-     "url": null,
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf, p.106, 2 Feb 2020, ~7am EST"
     }
@@ -1375,7 +1332,7 @@
       "64"
      ],
      "date": "2023-01-01",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1E_UJCSq-fsQV5HvxAEmhMLVrQQAzSiem",
      "source_part": "p1",
      "raw": "2023.06.16-Andersen-Transcript.pdf p.64"
     }
@@ -1409,7 +1366,7 @@
      "date": null,
      "url": null,
      "source_part": "p1",
-     "raw": "_Spike_). The purpose of the call was to let the Chinese Government know, via a back channel, that some enquiries in the origin of the outbreak were likely, and that it would be essential to keep open links with China even if a non-natural origin was the conclusion."
+     "raw": "Spike). The purpose of the call was to let the Chinese Government know, via a back channel, that some enquiries in the origin of the outbreak were likely, and that it would be essential to keep open links with China even if a non-natural origin was the conclusion."
     }
    ],
    "summary": "Farrar calls former Chinese health minister Chen Zhu as a back-channel, to warn Beijing that an origin inquiry is coming and to keep communication open regardless of the outcome."
@@ -1480,7 +1437,7 @@
    "date_raw": null,
    "evidence": [
     {
-     "doc": null,
+     "doc": "OSTP-Letter-to-NASEM-3Feb2020.pdf",
      "kind": "other",
      "pages": [],
      "date": "2020-02-03",
@@ -1517,20 +1474,9 @@
       "121"
      ],
      "date": null,
-     "url": null,
+     "url": "https://drive.google.com/file/d/173bZUapV1fbWx7KXqD30uynH1sQddOLs",
      "source_part": "p1",
      "raw": "Baric-TI-Transcript.pdf, p. 121"
-    },
-    {
-     "doc": "Baric-Emails-2.17.21.pdf",
-     "kind": "email",
-     "pages": [
-      "128"
-     ],
-     "date": "2020-02-04",
-     "url": null,
-     "source_part": "p1",
-     "raw": "Baric-Emails-2.17.21.pdf, p.128, 4 Feb 2020"
     },
     {
      "doc": "Baric-Emails-2.17.21.pdf",
@@ -1558,21 +1504,10 @@
      "doc": "Proximal_Origin_Emails.pdf",
      "kind": "email",
      "pages": [
-      "16"
-     ],
-     "date": "2020-02-04",
-     "url": null,
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf, p.16, 4 Feb 2020"
-    },
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
       "32"
      ],
      "date": "2020-02-04",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.32, 4 Feb 2020"
     },
@@ -1635,7 +1570,7 @@
       "278"
      ],
      "date": "2020-02-06",
-     "url": null,
+     "url": "https://drive.google.com/file/d/12NTOh9Aswk5pBf-X_INFB_sdrmoLinjC",
      "source_part": "p1",
      "raw": "Biohazard_FOIA_Maryland_Emails_11.6.20.pdf. p.278, 6 Feb 2020"
     },
@@ -1647,7 +1582,7 @@
       "1"
      ],
      "date": "2020-02-18",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1T2MNgjgjXKDGZFjyJvE2MO0RDb8UFcIe",
      "source_part": "p1",
      "raw": "OSU-1.12.23–1265-pages.pdf, p. 319, 18 Feb 2020"
     }
@@ -1716,7 +1651,7 @@
       "1"
      ],
      "date": "2021-05-18",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1O6_TaUYbPeAsdwOj-1JkvzKQFVBtx_Jw",
      "source_part": "p1",
      "raw": "UTMB-LeDuc-batch-1.pdf, p.2825, 18 May 2021"
     }
@@ -1761,7 +1696,7 @@
       "5"
      ],
      "date": "2020-02-02",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.5, 2 Feb 2020"
     }
@@ -1784,7 +1719,7 @@
       "5"
      ],
      "date": "2020-02-02",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.5, 2 Feb 2020"
     }
@@ -1818,7 +1753,7 @@
       "14"
      ],
      "date": "2020-02-04",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.14, 4 Feb 2020"
     },
@@ -1874,7 +1809,7 @@
       "26"
      ],
      "date": "2020-02-04",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.26, 4 Feb 2020, around 7 to 8 pm UK"
     }
@@ -1908,7 +1843,7 @@
       "44"
      ],
      "date": "2020-02-04",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p. 44, 4 Feb 2020, 10:31 am UK"
     },
@@ -2008,7 +1943,7 @@
       "35"
      ],
      "date": "2020-02-05",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.35, 5 Feb 2020 (7:36 am UK)"
     }
@@ -2031,7 +1966,7 @@
       "19"
      ],
      "date": "2020-02-06",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.19, 6 Feb 2020"
     },
@@ -2042,7 +1977,7 @@
       "20"
      ],
      "date": "2020-02-06",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.20, 6 Feb 2020"
     }
@@ -2150,7 +2085,7 @@
       "49-50"
      ],
      "date": "2020-02-07",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.49–50, 7 Feb 2020"
     },
@@ -2162,7 +2097,7 @@
       "5"
      ],
      "date": "2020-02-06",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.16, 5–6 Feb 2020"
     },
@@ -2194,7 +2129,7 @@
       "46"
      ],
      "date": "2020-02-07",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.46, 7 Feb 2020 (UK)"
     },
@@ -2205,7 +2140,7 @@
       "21"
      ],
      "date": "2020-02-07",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.21, 7 Feb 2020 (UK)"
     }
@@ -2239,7 +2174,7 @@
       "57-58"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.57–58, 8 Feb 2020, 9:45 UK"
     }
@@ -2262,7 +2197,7 @@
       "55"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.55, 8 Feb 2020, 10:36 am UK"
     }
@@ -2285,7 +2220,7 @@
       "61"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.61, 8 Feb 2020, 12:00 pm UK"
     },
@@ -2296,7 +2231,7 @@
       "56"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.56, 8 Feb 2020, 12 pm UK"
     }
@@ -2319,7 +2254,7 @@
       "62"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1l04ZiPQ09bp4_x4SkJ-vCpbzhg35EVWu",
      "source_part": "p1",
      "raw": "farrar-fauci-comms-full.pdf, p.62, 8 Feb 2020, 12.03 pm UK"
     }
@@ -2342,7 +2277,7 @@
       "21"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.21, 8 Feb 2020"
     }
@@ -2365,7 +2300,7 @@
       "22"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.22, 8 Feb 2020, 1:43 pm UK"
     },
@@ -2376,7 +2311,7 @@
       "22"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.22, p.22–23, 8 Feb 2020, ~6 pm UK"
     }
@@ -2431,7 +2366,7 @@
       "52"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.52, 8 Feb 2020, 8.11 pm UK"
     }
@@ -2509,7 +2444,7 @@
       "150"
      ],
      "date": null,
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.150, draft email to Jon Cohen"
     }
@@ -2543,7 +2478,7 @@
       "23"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.23, 8 Feb 2020, 8:53 pm UK"
     }
@@ -2566,7 +2501,7 @@
       "144"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.144, 8 Feb 2020, 9:16 pm UK"
     },
@@ -2577,7 +2512,7 @@
       "23"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.23, 8 Feb 2020, 9:19 pm UK"
     }
@@ -2600,7 +2535,7 @@
       "144"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.144, 8 Feb 2020, 9:27 pm UK"
     },
@@ -2611,7 +2546,7 @@
       "23"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.23, 8 Feb 2020, 9:30 pm UK"
     }
@@ -2634,7 +2569,7 @@
       "51"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
      "raw": "Proximal_Origin_Emails.pdf, p.51, 8 Feb 2020, 10:50 pm UK"
     },
@@ -2645,7 +2580,7 @@
       "23"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.23, 8 Feb 2020, 10:52 pm UK"
     }
@@ -2668,7 +2603,7 @@
       "24"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p1",
      "raw": "Proximal_Origin_Slack.pdf, p.24, 8 Feb 2020, 11:42 pm UK"
     }
@@ -2722,7 +2657,7 @@
       "65"
      ],
      "date": "2020-02-07",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1l04ZiPQ09bp4_x4SkJ-vCpbzhg35EVWu",
      "source_part": "p2",
      "raw": "farrar-fauci-comms-full.pdf, p. 65, 7 Feb 2020, 3.06 pm UK"
     }
@@ -2787,7 +2722,7 @@
       "23"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.23, 8 Feb 2020, 11:10 pm UK"
     },
@@ -2798,7 +2733,7 @@
       "144"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p.144, 8 Feb 2020, 9:27 pm UK"
     }
@@ -2851,7 +2786,7 @@
       "39"
      ],
      "date": null,
-     "url": null,
+     "url": "https://drive.google.com/file/d/16fDGqcKgY1NzDiZcBzrzUzKlP9752RuD",
      "source_part": "p2",
      "raw": "HHS_Garrett-Grigsby_12.30.21_production.pdf, p. 39"
     }
@@ -2879,7 +2814,7 @@
      "raw": "HHS_Garrett-Grigsby_12.30.21_production.pdf, p. 38"
     },
     {
-     "doc": null,
+     "doc": "HHS_Garrett-Grigsby_12.30.21_production.pdf",
      "kind": "other",
      "pages": [],
      "date": "2020-02-09",
@@ -2917,7 +2852,7 @@
       "24"
      ],
      "date": "2020-02-08",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.24, 8 Feb 2020, 11:33 pm UK"
     },
@@ -2928,7 +2863,7 @@
       "26"
      ],
      "date": "2020-02-09",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.26, 9 Feb 2020, 9:09 pm UK"
     },
@@ -2939,7 +2874,7 @@
       "28"
      ],
      "date": "2020-02-09",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.28, 9 Feb 2020, 11:18 to 11:43 pm UK"
     },
@@ -2950,7 +2885,7 @@
       "28"
      ],
      "date": "2020-02-09",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.28, 9 Feb 2020, 11:46 pm UK"
     },
@@ -2962,7 +2897,7 @@
       "1"
      ],
      "date": "2020-02-10",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.28, 10 Feb 2020, 3:31 am UK"
     },
@@ -2974,7 +2909,7 @@
       "1"
      ],
      "date": "2020-02-10",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.28, 10 Feb 2020, 3:35 pm UK"
     },
@@ -2986,7 +2921,7 @@
       "1"
      ],
      "date": "2020-02-11",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.31, 11 Feb 2020, 4:49 am UK"
     },
@@ -2998,7 +2933,7 @@
       "1"
      ],
      "date": "2020-02-11",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.32, 11 Feb 2020, ~9:52 am UK"
     },
@@ -3010,7 +2945,7 @@
       "1"
      ],
      "date": "2020-02-11",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.33, 11 Feb 2020, ~7:30 pm UK"
     }
@@ -3033,7 +2968,7 @@
       "69"
      ],
      "date": "2020-02-09",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p.69, 9 Feb 2020, 8:07 pm UK"
     }
@@ -3056,7 +2991,7 @@
       "69"
      ],
      "date": "2020-02-09",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p.69, 9 Feb 2020, 9:26 am UK"
     },
@@ -3143,7 +3078,7 @@
       "1"
      ],
      "date": "2020-02-10",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p.66, 10 Feb 2020, 7:11 pm UK"
     },
@@ -3212,7 +3147,7 @@
       "1"
      ],
      "date": "2020-02-13",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p. 41, 13 Feb, 11:40 pm UK"
     }
@@ -3246,7 +3181,7 @@
       "55"
      ],
      "date": "2023-01-01",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1E_UJCSq-fsQV5HvxAEmhMLVrQQAzSiem",
      "source_part": "p2",
      "raw": "2023.06.16-Andersen-Transcript.pdf, p.55"
     }
@@ -3379,7 +3314,7 @@
       "1"
      ],
      "date": "2020-02-15",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.43, 15 Feb 2020, 7:58 pm UK"
     },
@@ -3391,7 +3326,7 @@
       "1"
      ],
      "date": "2020-02-15",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.44, 15 Feb 2020, 11:13 to 11:59 pm UK"
     },
@@ -3456,7 +3391,7 @@
       "1"
      ],
      "date": "2020-02-17",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p.94, 17 Feb, 1.59 am UK"
     }
@@ -3524,7 +3459,7 @@
       "1"
      ],
      "date": "2020-02-17",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.45, 17 Feb 2020, 3:53 pm UK"
     },
@@ -3545,7 +3480,7 @@
       "1"
      ],
      "date": "2020-02-17",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.46, 17 Feb 2020, 5:41 pm UK"
     }
@@ -3580,7 +3515,7 @@
       "1"
      ],
      "date": "2020-02-17",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.46, 17 Feb 2020, ~6 pm UK"
     }
@@ -3604,7 +3539,7 @@
       "1"
      ],
      "date": "2020-02-17",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.47, 17 Feb 2020, 6:19 pm UK"
     }
@@ -3639,7 +3574,7 @@
       "1"
      ],
      "date": "2020-02-17",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 108–109, 17 Feb 2020, 6:30 pm UK"
     }
@@ -3684,7 +3619,7 @@
       "1"
      ],
      "date": "2020-02-19",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 140–141, 19 Feb 2020"
     },
@@ -3696,15 +3631,6 @@
      "url": "https://archive.li/p1Sof",
      "source_part": "p2",
      "raw": "NY Times, ‘In Hunt for virus source, WHO let China take charge’, 2 Nov 2020"
-    },
-    {
-     "doc": null,
-     "kind": "other",
-     "pages": [],
-     "date": "2020-02-10",
-     "url": "https://www.science.org/content/article/mission-impossible-who-director-fights-prevent-pandemic-without-offending-china",
-     "source_part": "p2",
-     "raw": "Science, ‘The health career’, 10 Feb 2020"
     },
     {
      "doc": null,
@@ -3776,7 +3702,7 @@
       "304"
      ],
      "date": "2020-02-09",
-     "url": null,
+     "url": "https://drive.google.com/file/d/12NTOh9Aswk5pBf-X_INFB_sdrmoLinjC",
      "source_part": "p2",
      "raw": "Biohazard_FOIA_Maryland_Emails_11.6.20.pdf, p. 304, 9 Feb 2020, 4:56 pm UK"
     }
@@ -3818,7 +3744,7 @@
       "1"
      ],
      "date": "2020-02-10",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 65–70, 10 Feb 2020 (US Time)"
     }
@@ -4001,7 +3927,7 @@
       "1"
      ],
      "date": "2020-02-17",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.46, 17 Feb, 5:51 pm UK"
     },
@@ -4013,7 +3939,7 @@
       "1"
      ],
      "date": "2020-02-17",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.47, 17 Feb, 9:08 pm UK"
     },
@@ -4025,7 +3951,7 @@
       "1"
      ],
      "date": "2020-02-17",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.48, 17 Feb, 11:34 pm UK"
     }
@@ -4058,7 +3984,7 @@
       "1"
      ],
      "date": "2020-02-18",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.49, 18 Feb, 11:52 pm UK"
     },
@@ -4070,7 +3996,7 @@
       "1"
      ],
      "date": "2020-02-18",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.50, 18 Feb, 11:56 pm UK"
     },
@@ -4123,7 +4049,7 @@
       "1"
      ],
      "date": "2020-02-19",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.50, 19 Feb 2020, 0:18 am UK"
     },
@@ -4135,7 +4061,7 @@
       "2"
      ],
      "date": "2020-02-20",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.55, 20 Feb, 2:38 pm UK"
     },
@@ -4147,7 +4073,7 @@
       "2"
      ],
      "date": "2020-02-20",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.56, 20 Feb, 3:09 pm UK"
     },
@@ -4203,7 +4129,7 @@
       "1"
      ],
      "date": "2020-02-19",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.50, 19 Feb 2020, 0:37 am UK"
     }
@@ -4227,7 +4153,7 @@
       "2"
      ],
      "date": "2020-02-20",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.56, 20 Feb 2020, 5:26 pm UK,"
     },
@@ -4250,7 +4176,7 @@
       "119"
      ],
      "date": "2020-02-20",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 119. 20 Feb 2020, 5:48 pm UK"
     }
@@ -4274,7 +4200,7 @@
       "2"
      ],
      "date": "2020-02-20",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.57, 20 Feb 2020, 6:19 to 6:36 pm UK,"
     },
@@ -4286,7 +4212,7 @@
       "2"
      ],
      "date": "2020-02-20",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.57, 20 Feb 2020,"
     },
@@ -4298,7 +4224,7 @@
       "2"
      ],
      "date": "2020-02-22",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.61, 22 Feb 2020,"
     },
@@ -4321,7 +4247,7 @@
       "2"
      ],
      "date": "2020-02-20",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.57, 20 Feb 2020, 6:29 pm UK"
     }
@@ -4345,7 +4271,7 @@
       "2"
      ],
      "date": "2020-02-20",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.57, 20 Feb 2020, 6:32 to 6:36 pm UK"
     },
@@ -4357,7 +4283,7 @@
       "2"
      ],
      "date": "2020-02-20",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.57, 20 Feb 2020, 6:37 pm to 6:58 pm UK"
     },
@@ -4369,7 +4295,7 @@
       "2"
      ],
      "date": "2020-02-21",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.58, 21 Feb 2020, 0:33 am UK"
     }
@@ -4404,7 +4330,7 @@
       "2"
      ],
      "date": "2020-02-21",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.59, 21 Feb 2020, 6:37pm to 10:56 pm UK"
     }
@@ -4428,7 +4354,7 @@
       "2"
      ],
      "date": "2020-02-22",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.60, 22 Feb 2020, 2:30 pm to 6:56 pm UK"
     },
@@ -4440,7 +4366,7 @@
       "2"
      ],
      "date": "2020-02-22",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.60, 22 Feb 2020, 11:33 pm to 23 Feb, 0:44 am UK"
     },
@@ -4460,14 +4386,14 @@
      "date": null,
      "url": null,
      "source_part": "p2",
-     "raw": "___"
+     "raw": ""
     },
     {
      "doc": "Proximal_Origin_Slack.pdf",
      "kind": "slack",
      "pages": [],
      "date": null,
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf"
     },
@@ -4479,7 +4405,7 @@
       "2"
      ],
      "date": "2020-02-24",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 64, 24 Feb 2020"
     }
@@ -4503,7 +4429,7 @@
       "2"
      ],
      "date": "2020-02-24",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.64–65, 24 Feb 2020, 7:41 pm UK"
     },
@@ -4547,7 +4473,7 @@
       "2"
      ],
      "date": "2020-02-25",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.70, 25 Feb 2020, 1 am to 4:35 pm UK"
     }
@@ -4571,7 +4497,7 @@
       "2"
      ],
      "date": "2020-02-25",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.67, 25 Feb 2020, 6:31 am to 9:20am UK"
     },
@@ -4583,7 +4509,7 @@
       "2"
      ],
      "date": "2020-02-25",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.68, 25 Feb 2020, 10:00 am UK"
     },
@@ -4595,14 +4521,16 @@
       "2"
      ],
      "date": "2020-02-25",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.69, 25 Feb 2020, 11:46 am UK"
     },
     {
-     "doc": null,
+     "doc": "FOI-by-Tobias.pdf",
      "kind": "other",
-     "pages": [],
+     "pages": [
+      "5"
+     ],
      "date": null,
      "url": "https://drive.google.com/file/d/1W84jSM5wkBWd0lYNUzwaSkuKdwK23Kmr",
      "source_part": "p2",
@@ -4639,7 +4567,7 @@
       "2"
      ],
      "date": "2020-02-26",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.73, 26 Feb 2020, 6:42 pm to 10:57 pm UK"
     }
@@ -4685,7 +4613,7 @@
       "2"
      ],
      "date": "2020-02-28",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.74, 28 Feb 2020, 0:39 am to 6:56 am UK"
     },
@@ -4697,7 +4625,7 @@
       "2"
      ],
      "date": "2020-02-29",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.77, 29 Feb 2020, 9:06 pm UK"
     }
@@ -4768,7 +4696,7 @@
       "1"
      ],
      "date": "2020-03-19",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.105, 19 Mar, 8:28 pm EST"
     }
@@ -4792,7 +4720,7 @@
       "1"
      ],
      "date": "2020-03-17",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 140, 17 Mar 2020"
     }
@@ -4977,8 +4905,8 @@
    "date_raw": null,
    "evidence": [
     {
-     "doc": null,
-     "kind": "other",
+     "doc": "Proximal-Origin-v19-NatureMedicine.pdf",
+     "kind": "document",
      "pages": [],
      "date": null,
      "url": "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta",
@@ -5101,7 +5029,7 @@
       "1"
      ],
      "date": "2020-04-17",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.128, 17 Apr 2020"
     }
@@ -5134,7 +5062,7 @@
       "1"
      ],
      "date": "2020-04-17",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.129, 17 Apr 2020"
     },
@@ -5146,7 +5074,7 @@
       "1"
      ],
      "date": "2020-04-18",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.130, 18 Apr 2020"
     },
@@ -5158,19 +5086,7 @@
       "1"
      ],
      "date": "2020-04-18",
-     "url": null,
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Slack.pdf, p.131, 18 Apr 2020"
-    },
-    {
-     "doc": "Proximal_Origin_Slack.pdf",
-     "kind": "slack",
-     "pages": [
-      "131",
-      "1"
-     ],
-     "date": "2020-04-18",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.131, 18 Apr 2020"
     }
@@ -5194,7 +5110,7 @@
       "3"
      ],
      "date": "2020-04-30",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.140, 30 Apr 2020"
     }
@@ -5274,7 +5190,7 @@
       "2"
      ],
      "date": "2020-07-25",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 161, 25 Jul 2020"
     },
@@ -5286,7 +5202,7 @@
       "2"
      ],
      "date": "2020-07-28",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 151, 28 Jul 2020"
     }
@@ -5354,7 +5270,7 @@
       "2"
      ],
      "date": "2020-07-28",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
      "raw": "answer back to Cohen, Proximal_Origin_Emails.pdf, p.159, 28 Jul 2020"
     }
@@ -5531,7 +5447,7 @@
       "1"
      ],
      "date": "2020-02-11",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.32, 11 Feb 2020"
     }
@@ -5555,7 +5471,7 @@
       "1"
      ],
      "date": "2020-02-10",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p.65, 10 Feb 2020"
     },
@@ -5567,7 +5483,7 @@
       "1"
      ],
      "date": "2020-02-18",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1T2MNgjgjXKDGZFjyJvE2MO0RDb8UFcIe",
      "source_part": "p2",
      "raw": "OSU-1.12.23–1265-pages.pdf, p. 319, 18 Feb 2020"
     },
@@ -5578,7 +5494,7 @@
       "319"
      ],
      "date": "2020-02-18",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1T2MNgjgjXKDGZFjyJvE2MO0RDb8UFcIe",
      "source_part": "p2",
      "raw": "OSU-1.12.23–1265-pages.pdf, p. 319,-320, 17–18 Feb 2020"
     }
@@ -5646,7 +5562,7 @@
       "54"
      ],
      "date": "2023-01-01",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1E_UJCSq-fsQV5HvxAEmhMLVrQQAzSiem",
      "source_part": "p2",
      "raw": "2023.06.16-Andersen-Transcript.pdf, p.54"
     },
@@ -5657,7 +5573,7 @@
       "146-147"
      ],
      "date": "2023-01-01",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1E_UJCSq-fsQV5HvxAEmhMLVrQQAzSiem",
      "source_part": "p2",
      "raw": "2023.06.16-Andersen-Transcript.pdf, p.146–147"
     },
@@ -5687,7 +5603,7 @@
       "2"
      ],
      "date": "2021-05-24",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1O6_TaUYbPeAsdwOj-1JkvzKQFVBtx_Jw",
      "source_part": "p2",
      "raw": "UTMB-LeDuc-batch-1.pdf, p.2816, 24 May 2021"
     },
@@ -5738,7 +5654,7 @@
       "1"
      ],
      "date": "2020-02-10",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.34, 10 Feb 2020"
     },
@@ -5750,7 +5666,7 @@
       "2"
      ],
      "date": "2020-02-25",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1T2MNgjgjXKDGZFjyJvE2MO0RDb8UFcIe",
      "source_part": "p2",
      "raw": "OSU-1.12.23–1265-pages.pdf, p. 343–344, 25 Feb 2020"
     },
@@ -5790,7 +5706,7 @@
       "45"
      ],
      "date": "2020-02-17",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p. 45 and 47, 17 Feb"
     },
@@ -5805,7 +5721,7 @@
     },
     {
      "doc": null,
-     "kind": "press",
+     "kind": "link",
      "pages": [],
      "date": null,
      "url": "https://www.straitstimes.com/world/united-states/coronavirus-was-not-synthesized-in-a-laboratory-whos-chief-scientist",
@@ -5837,7 +5753,7 @@
      "date": null,
      "url": null,
      "source_part": "p2",
-     "raw": "_Spike_)_._"
+     "raw": "Spike)."
     },
     {
      "doc": null,
@@ -5884,7 +5800,7 @@
       "122"
      ],
      "date": null,
-     "url": null,
+     "url": "https://drive.google.com/file/d/173bZUapV1fbWx7KXqD30uynH1sQddOLs",
      "source_part": "p2",
      "raw": "Baric-TI-Transcript.pdf, p.122"
     },
@@ -5896,7 +5812,7 @@
       "2"
      ],
      "date": "2020-07-25",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 161, 25 Jul 2020"
     },
@@ -5947,7 +5863,7 @@
       "274"
      ],
      "date": null,
-     "url": null,
+     "url": "https://drive.google.com/file/d/1J-hkudlaRz17Q1z6l0dcnVSuWHmOp-s5",
      "source_part": "p2",
      "raw": "source: USRTK_UCDavis_PROD_27-ocr.pdf, p.274"
     },
@@ -5987,7 +5903,7 @@
       "21"
      ],
      "date": "2020-02-07",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.21, 7 Feb 2020"
     },
@@ -5999,19 +5915,7 @@
       "1"
      ],
      "date": "2020-02-12",
-     "url": null,
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Slack.pdf, p.39, 12 Feb 2020"
-    },
-    {
-     "doc": "Proximal_Origin_Slack.pdf",
-     "kind": "slack",
-     "pages": [
-      "39",
-      "1"
-     ],
-     "date": "2020-02-12",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.39, 12 Feb 2020"
     },
@@ -6023,19 +5927,7 @@
       "2"
      ],
      "date": "2020-02-25",
-     "url": null,
-     "source_part": "p2",
-     "raw": "Proximal_Origin_Slack.pdf, p.70, 25 Feb 2020"
-    },
-    {
-     "doc": "Proximal_Origin_Slack.pdf",
-     "kind": "slack",
-     "pages": [
-      "70",
-      "2"
-     ],
-     "date": "2020-02-25",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.70, 25 Feb 2020"
     },
@@ -6047,7 +5939,7 @@
       "2"
      ],
      "date": "2020-02-27",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.73, 27 Feb 2020"
     },
@@ -6058,7 +5950,7 @@
       "87"
      ],
      "date": "2020-03-04",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1Tpg4KC1gIiXMaVgyaK80ZKuf_Y8D0vP7",
      "source_part": "p2",
      "raw": "Proximal_Origin_Slack.pdf, p.87, 4 Mar 2020"
     },
@@ -6069,7 +5961,7 @@
       "135"
      ],
      "date": "2020-03-04",
-     "url": null,
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p2",
      "raw": "Proximal_Origin_Emails.pdf, p. 135, 4 Mar 2020"
     },
@@ -6090,7 +5982,7 @@
   "Proximal_Origin_Slack.pdf": {
    "doc": "Proximal_Origin_Slack.pdf",
    "kind": "slack",
-   "cites": 88,
+   "cites": 85,
    "pages_cited": [
     "1",
     "2",
@@ -6189,7 +6081,7 @@
   "Proximal_Origin_Emails.pdf": {
    "doc": "Proximal_Origin_Emails.pdf",
    "kind": "email",
-   "cites": 50,
+   "cites": 49,
    "pages_cited": [
     "1",
     "2",
@@ -6211,8 +6103,8 @@
     "57-58",
     "61",
     "64",
-    "65-70",
     "65",
+    "65-70",
     "66",
     "69",
     "81",
@@ -6223,8 +6115,8 @@
     "130",
     "135",
     "138",
-    "140-141",
     "140",
+    "140-141",
     "144",
     "150",
     "151",
@@ -6263,36 +6155,6 @@
    "local": "po-emails",
    "local_file": "po-emails.pdf"
   },
-  "farrar-fauci-comms-full.pdf": {
-   "doc": "farrar-fauci-comms-full.pdf",
-   "kind": "email",
-   "cites": 14,
-   "pages_cited": [
-    "62",
-    "65",
-    "106",
-    "107",
-    "107-108",
-    "108",
-    "109",
-    "112"
-   ],
-   "dates": [
-    "2020-02-01",
-    "2020-02-02",
-    "2020-02-07",
-    "2020-02-08"
-   ],
-   "urls": [
-    "https://drive.google.com/file/d/1l04ZiPQ09bp4_x4SkJ-vCpbzhg35EVWu"
-   ],
-   "parts": [
-    "p1",
-    "p2"
-   ],
-   "local": "farrar-fauci",
-   "local_file": "farrar-fauci-comms.pdf"
-  },
   "Baric-TI-Transcript.pdf": {
    "doc": "Baric-TI-Transcript.pdf",
    "kind": "transcript",
@@ -6324,7 +6186,7 @@
   "2023.06.16-Andersen-Transcript.pdf": {
    "doc": "2023.06.16-Andersen-Transcript.pdf",
    "kind": "transcript",
-   "cites": 8,
+   "cites": 11,
    "pages_cited": [
     "43",
     "51",
@@ -6337,13 +6199,45 @@
    "dates": [
     "2023-01-01"
    ],
-   "urls": [],
+   "urls": [
+    "https://drive.google.com/file/d/1E_UJCSq-fsQV5HvxAEmhMLVrQQAzSiem"
+   ],
    "parts": [
     "p1",
     "p2"
    ],
    "local": null,
    "local_file": null
+  },
+  "farrar-fauci-comms-full.pdf": {
+   "doc": "farrar-fauci-comms-full.pdf",
+   "kind": "email",
+   "cites": 10,
+   "pages_cited": [
+    "62",
+    "65",
+    "106",
+    "107",
+    "107-108",
+    "108",
+    "109",
+    "112"
+   ],
+   "dates": [
+    "2020-02-01",
+    "2020-02-02",
+    "2020-02-07",
+    "2020-02-08"
+   ],
+   "urls": [
+    "https://drive.google.com/file/d/1l04ZiPQ09bp4_x4SkJ-vCpbzhg35EVWu"
+   ],
+   "parts": [
+    "p1",
+    "p2"
+   ],
+   "local": "farrar-fauci",
+   "local_file": "farrar-fauci-comms.pdf"
   },
   "1265-pages.pdf": {
    "doc": "1265-pages.pdf",
@@ -6374,7 +6268,7 @@
   "Baric-Emails-2.17.21.pdf": {
    "doc": "Baric-Emails-2.17.21.pdf",
    "kind": "email",
-   "cites": 5,
+   "cites": 4,
    "pages_cited": [
     "102",
     "118",
@@ -6395,14 +6289,15 @@
   "HHS_Garrett-Grigsby_12.30.21_production.pdf": {
    "doc": "HHS_Garrett-Grigsby_12.30.21_production.pdf",
    "kind": "other",
-   "cites": 3,
+   "cites": 4,
    "pages_cited": [
     "23",
     "38",
     "39"
    ],
    "dates": [
-    "2020-02-02"
+    "2020-02-02",
+    "2020-02-09"
    ],
    "urls": [
     "https://drive.google.com/file/d/16fDGqcKgY1NzDiZcBzrzUzKlP9752RuD"
@@ -6410,6 +6305,27 @@
    "parts": [
     "p1",
     "p2"
+   ],
+   "local": null,
+   "local_file": null
+  },
+  "Fauci-TI-Transcript.pdf": {
+   "doc": "Fauci-TI-Transcript.pdf",
+   "kind": "transcript",
+   "cites": 3,
+   "pages_cited": [
+    "84-85",
+    "92-93"
+   ],
+   "dates": [
+    "2022-01-01",
+    "2022-11-23"
+   ],
+   "urls": [
+    "https://drive.google.com/file/d/1kZHT0VL-YTHCCfcu1H9I4W_jzd2kpY2_"
+   ],
+   "parts": [
+    "p1"
    ],
    "local": null,
    "local_file": null
@@ -6572,6 +6488,23 @@
    "local": null,
    "local_file": null
   },
+  "OSTP-Letter-to-NASEM-3Feb2020.pdf": {
+   "doc": "OSTP-Letter-to-NASEM-3Feb2020.pdf",
+   "kind": "other",
+   "cites": 1,
+   "pages_cited": [],
+   "dates": [
+    "2020-02-03"
+   ],
+   "urls": [
+    "https://drive.google.com/file/d/1PNeJWqZGHlFqIEbqGVpIipRac6k9_UPm"
+   ],
+   "parts": [
+    "p1"
+   ],
+   "local": null,
+   "local_file": null
+  },
   "Supplemental-Release-to-USRTK-2024.07.31.pdf": {
    "doc": "Supplemental-Release-to-USRTK-2024.07.31.pdf",
    "kind": "email",
@@ -6625,6 +6558,23 @@
    "local": null,
    "local_file": null
   },
+  "FOI-by-Tobias.pdf": {
+   "doc": "FOI-by-Tobias.pdf",
+   "kind": "other",
+   "cites": 1,
+   "pages_cited": [
+    "5"
+   ],
+   "dates": [],
+   "urls": [
+    "https://drive.google.com/file/d/1W84jSM5wkBWd0lYNUzwaSkuKdwK23Kmr"
+   ],
+   "parts": [
+    "p2"
+   ],
+   "local": null,
+   "local_file": null
+  },
   "tranche-06-b.pdf": {
    "doc": "tranche-06-b.pdf",
    "kind": "other",
@@ -6654,6 +6604,21 @@
     "2020-03-17"
    ],
    "urls": [],
+   "parts": [
+    "p2"
+   ],
+   "local": null,
+   "local_file": null
+  },
+  "Proximal-Origin-v19-NatureMedicine.pdf": {
+   "doc": "Proximal-Origin-v19-NatureMedicine.pdf",
+   "kind": "document",
+   "cites": 1,
+   "pages_cited": [],
+   "dates": [],
+   "urls": [
+    "https://drive.google.com/file/d/18P8CaaVJRJPL84wVwI51F5HrObJbyZta"
+   ],
    "parts": [
     "p2"
    ],
@@ -6779,20 +6744,20 @@
   }
  },
  "citations_without_document": {
-  "cites": 118,
+  "cites": 106,
   "by_kind": {
-   "other": 85,
-   "link": 5,
+   "other": 75,
    "social": 10,
-   "press": 13,
+   "link": 5,
+   "press": 11,
    "slack": 5
   }
  },
  "totals": {
   "sections": 221,
-  "citations": 333,
-  "documents": 28,
-  "slack_citations": 93,
-  "drive_links": 13
+  "citations": 322,
+  "documents": 32,
+  "slack_citations": 90,
+  "drive_links": 18
  }
 }

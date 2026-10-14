@@ -148,5 +148,87 @@
   "pages_included": [
    1205
   ]
+ },
+ "2023.06.16-Andersen-Transcript.pdf": {
+  "pdf": "2023.06.16-Andersen-Transcript.pdf",
+  "page_map": {
+   "43": 1,
+   "51": 2,
+   "52": 3,
+   "54": 4,
+   "55": 5,
+   "64": 6,
+   "146": 7,
+   "147": 8
+  },
+  "total_pages_original": 209,
+  "pages_included": [
+   43,
+   51,
+   52,
+   54,
+   55,
+   64,
+   146,
+   147
+  ]
+ },
+ "Fauci-TI-Transcript.pdf": {
+  "pdf": "Fauci-TI-Transcript.pdf",
+  "page_map": {
+   "84": 1,
+   "85": 2,
+   "92": 3,
+   "93": 4
+  },
+  "total_pages_original": 446,
+  "pages_included": [
+   84,
+   85,
+   92,
+   93
+  ]
+ },
+ "OSTP-Letter-to-NASEM-3Feb2020.pdf": {
+  "pdf": "OSTP-Letter-to-NASEM-3Feb2020.pdf",
+  "page_map": {
+   "1": 1
+  },
+  "total_pages_original": 30,
+  "pages_included": [
+   1
+  ]
+ },
+ "FOI-by-Tobias.pdf": {
+  "pdf": "FOI-by-Tobias.pdf",
+  "page_map": {
+   "5": 1
+  },
+  "total_pages_original": 122,
+  "pages_included": [
+   5
+  ]
+ },
+ "Proximal-Origin-v19-NatureMedicine.pdf": {
+  "pdf": "Proximal-Origin-v19-NatureMedicine.pdf",
+  "page_map": {
+   "1": 1,
+   "2": 2,
+   "3": 3,
+   "4": 4,
+   "5": 5,
+   "6": 6,
+   "7": 7
+  },
+  "total_pages_original": 7,
+  "pages_included": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ]
  }
 }

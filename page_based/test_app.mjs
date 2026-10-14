@@ -200,11 +200,11 @@ ok('every draft has a page', drafts.every(d => d.pages && d.pages.length));
 sec('Guide');
 const guideResp = await (await fetch('po_guide.json')).json();
 ok('guide loads', !!guideResp && guideResp.sections.length > 200);
-ok('guide covers every citation', guideResp.totals.citations === 333, String(guideResp.totals.citations));
+ok('guide covers every citation', guideResp.totals.citations === 322, String(guideResp.totals.citations));
 const evNoKind = guideResp.sections.flatMap(s=>s.evidence).filter(e=>!e.kind);
 ok('every guide citation is classified', evNoKind.length === 0);
 const docs = guideResp.documents ? Object.values(guideResp.documents) : [];
-ok('every cited document is catalogued', docs.length === 28, String(docs.length));
+ok('every cited document is catalogued', docs.length === 32, String(docs.length));
 
 
 sec('Stacked timeline (media x release)');
@@ -339,11 +339,13 @@ ok('no entry carries a doubled Subject (stitched messages)',
 ok('no entry carries a doubled stamp (stitched messages)',
    emailsAll.every(e => ((e.stamp || '').match(/2020/g) || []).length <= 1),
    emailsAll.filter(e => ((e.stamp || '').match(/2020/g) || []).length > 1).length + ' doubled');
-// Senders eaten with the From: line are recovered from the signature block,
-// and the attribution is recorded; anything else stays honestly empty.
-ok('signature-recovered senders are recorded',
-   emailsAll.filter(e => e.sender_how && e.sender_how.indexOf('signature') >= 0).length >= 1,
-   emailsAll.filter(e => e.sender_how && e.sender_how.indexOf('signature') >= 0).length + ' recovered');
+// Senders eaten with the From: line are recovered -- from an inline quote
+// marker ("On <date>, <name> wrote:") when the message is a nested reply
+// introduced that way, from the signature block otherwise -- and the
+// attribution is recorded either way; anything else stays honestly empty.
+ok('senders lost with their From: line are recovered and the method recorded',
+   emailsAll.filter(e => e.sender_how && /signature|inline quote marker/.test(e.sender_how)).length >= 1,
+   emailsAll.filter(e => e.sender_how && /signature|inline quote marker/.test(e.sender_how)).length + ' recovered');
 ok('Cc is parsed as Cc, not the OCR\'s "Ce:"',
    emailsAll.some(e => /^Cc: /m.test(e.content)));
 ok('no "Ce:" survives as a header line',

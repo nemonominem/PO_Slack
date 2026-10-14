@@ -82,7 +82,25 @@ RE_MD_ESCAPE = re.compile(r"\\([\\`*_{}\[\]()#+.!>~-])")
 # "[doc.pdf](https://...)" -- instead of medium-to-md.py's footnote markers;
 # collapse them to their link text for the human-readable "raw" field once
 # the url/doc/page/date have already been pulled from the un-collapsed text.
-RE_MD_LINK = re.compile(r"\[([^\]]+)\]\([^)]+\)")
+# Excludes '[' from the link-text class too, not just ']': a caption's own
+# "> _[... [_Tweet_](url) ...]_" wraps the whole attribution in one more
+# pair of brackets around an inner link -- with only ']' excluded, the
+# greedy match starting at the OUTER '[' happily swallows the inner '[' as
+# an ordinary character and closes on the FIRST ']' it meets (the inner
+# link's), truncating everything after it. Excluding '[' too makes that
+# starting position fail to find a matching ']' before hitting the inner
+# '[', so the match can only succeed from the inner, intended '['.
+RE_MD_LINK = re.compile(r"\[([^\[\]]+)\]\([^)]+\)")
+# A link's own display text can itself be italicised ("[_Tweet_](url)"),
+# which RE_MD_LINK's collapse leaves behind as a bare "_Tweet_": a short
+# underscore-wrapped span, bounded so two unrelated underscores elsewhere in
+# a long line are never mistaken for a matching pair. The lookaround pair
+# requires non-alphanumeric (or start/end of string) on the OUTSIDE of each
+# underscore -- the CommonMark rule for when "_..._" counts as emphasis at
+# all -- so an "intraword" underscore is never touched: without it, the two
+# underscores inside "Proximal_Origin_Emails.pdf" read as a matching pair
+# and "Origin" vanishes as if it were the emphasised span.
+RE_MD_EMPHASIS = re.compile(r"(?<![A-Za-z0-9])_([^_\n]{1,80}?)_(?![A-Za-z0-9])")
 
 
 def unescape_md(text):
@@ -90,7 +108,26 @@ def unescape_md(text):
 
 
 def plain_text(text):
-    return RE_MD_LINK.sub(r"\1", text)
+    text = RE_MD_LINK.sub(r"\1", text)
+    text = RE_MD_EMPHASIS.sub(r"\1", text)
+    # A caption's own "> _[... stuff ...]_" italic wrapper can leave a bare
+    # pair of square brackets around the whole thing once the underscores
+    # are consumed by RE_CAPTION's own match -- strip them only when they
+    # genuinely wrap the full (stripped) string, never an internal pair.
+    stripped = text.strip()
+    if stripped.startswith("[") and stripped.endswith("]"):
+        text = stripped[1:-1]
+    # An emphasis marker can survive RE_MD_EMPHASIS as an "orphan" once its
+    # own pair is gone -- the wrapper's closing "_" right after the link text
+    # its own closing "_" already consumed ("Tweet_" + "_" -> "Tweet__"), or
+    # one from a pairing RE_MD_EMPHASIS rejected (its would-be partner butted
+    # straight up against a letter, so it was never a valid closing marker to
+    # begin with). Same rule as RE_MD_EMPHASIS, inverted: an underscore with
+    # no alphanumeric on at least one outside is never intraword (a real
+    # "Proximal_Origin_Emails.pdf" has alphanumerics on both sides of every
+    # underscore it owns, so none of them match this).
+    text = re.sub(r"(?<![A-Za-z0-9])_|_(?![A-Za-z0-9])", "", text)
+    return text
 
 MONTHS = {m: i for i, m in enumerate(
     ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
@@ -127,6 +164,23 @@ LOCAL_DOCS = {
     "farrar-fauci-comms.pdf": ("farrar-fauci", "farrar-fauci-comms.pdf"),
     "SSCP-Drafts-of-Proximal-Origin.pdf": ("sscp", "sscp-drafts.pdf"),
 }
+
+# A handful of documents are only ever cited by description ("Fauci's
+# testimony", "OSTP letter to NASEM"), never by filename -- RE_DOC has
+# nothing to match, even though some of these citations carry a real Drive
+# link. Give each a stable name so they can be tracked as one document
+# (cites, pages, url) like every filename-cited one, and so Complementary
+# has something to key them under once fetched. "Andersen's Transcript"
+# reuses the name the SAME transcript is already cited under elsewhere in
+# the article (2023.06.16-Andersen-Transcript.pdf) rather than inventing a
+# second identity for one document.
+DOC_ALIASES = [
+    (re.compile(r"Andersen['’]s [Tt]ranscript\b"), "2023.06.16-Andersen-Transcript.pdf"),
+    (re.compile(r"Fauci['’]s testimony", re.I), "Fauci-TI-Transcript.pdf"),
+    (re.compile(r"OSTP letter to NASEM", re.I), "OSTP-Letter-to-NASEM-3Feb2020.pdf"),
+    (re.compile(r"FOI by Tobias", re.I), "FOI-by-Tobias.pdf"),
+    (re.compile(r"Proximal Origin \(Nature Medicine\)", re.I), "Proximal-Origin-v19-NatureMedicine.pdf"),
+]
 
 
 def classify(doc):
@@ -214,13 +268,29 @@ def classify_caption(raw):
 def make_evidence(raw, part, refs=()):
     doc_m = RE_DOC.search(raw)
     doc = doc_m.group(1) if doc_m else None
+    if not doc:
+        # match against the markdown-link-collapsed text: "[Proximal
+        # Origin](url) (Nature Medicine)." doesn't contain the alias phrase
+        # contiguously until the link syntax between the two halves is gone.
+        clean = plain_text(raw)
+        for rx, name in DOC_ALIASES:
+            if rx.search(clean):
+                doc = name
+                break
     page_m = RE_PAGE.search(raw)
+    # classify_caption's \btweet etc. need a real word boundary -- markdown
+    # escaping an underscore right before it ("[_Tweet_]") makes that one
+    # character a fellow "word" character as far as \b is concerned, hiding
+    # "Tweet" from the check entirely. Classifying the cleaned text instead
+    # also means the SAME citation reads as the SAME kind regardless of
+    # which of its mentions carried the markdown noise (see dedupe_evidence).
+    clean_raw = plain_text(raw)
     return OrderedDict([
         ("doc", doc),
-        ("kind", classify(doc) if doc else classify_caption(raw)),
+        ("kind", classify(doc) if doc else classify_caption(clean_raw)),
         ("pages", norm_pages(page_m.group(1)) if (page_m and doc) else []),
         ("date", parse_date(raw)), ("url", first_url(raw)),
-        ("source_part", part), ("raw", plain_text(raw).strip()), ("_refs", list(refs)),
+        ("source_part", part), ("raw", clean_raw.strip()), ("_refs", list(refs)),
     ])
 
 
@@ -332,6 +402,73 @@ def build_doc_urls(lines, footnote_urls):
             if url and RE_DRIVE_FILE.search(url):
                 mapping.setdefault(m.group(1), url)
     return mapping
+
+
+def harvest_doc_urls(evidence):
+    """A document's public link is usually only written out once -- the
+    article doesn't repeat the markdown link every time it cites the same
+    document again. Once any citation of a document resolved a url via
+    first_url(), every other citation of that same document should get it
+    too, rather than only the first-seen citation showing as linked."""
+    mapping = {}
+    for ev in evidence:
+        if ev["doc"] and ev["url"] and ev["doc"] not in mapping:
+            mapping[ev["doc"]] = ev["url"]
+    return mapping
+
+
+def harvest_url_docs(evidence):
+    """The reverse: a citation with no filename and no alias match (so
+    still undocumented) whose url is the SAME Drive link already proven to
+    belong to a named document elsewhere -- e.g. "email from Garrett
+    Grigsby to Fauci" shares its link with the separately-cited
+    "HHS_Garrett-Grigsby_12.30.21_production.pdf". Give it that same name
+    rather than leaving an identical document split into two entries, one
+    named and one not."""
+    mapping = {}
+    for ev in evidence:
+        if ev["doc"] and ev["url"] and ev["url"] not in mapping:
+            mapping[ev["url"]] = ev["doc"]
+    return mapping
+
+
+def normalize_for_dedup(raw):
+    return re.sub(r"[^a-z0-9]+", " ", raw.lower()).strip()
+
+
+def dedupe_evidence(sections):
+    """The same quote is sometimes cited twice in immediate succession --
+    once as a bare image caption with no link, once as the attribution line
+    inside the blockquote that follows it, with the real one (e.g. "Pres.
+    Trump, 7 Feb 2020, Tweet" as a caption, then the same words again inside
+    the blockquote quoting the tweet, this time with its actual URL). Each
+    is a perfectly valid citation taken on its own, but showing both in the
+    guide reads as "why does one of these have no link, and are these the
+    same thing?" -- a real question we got asked.
+
+    Merging is deliberately limited to an ADJACENT pair, not "anywhere in
+    the section" -- but adjacency alone is not enough either: a generic
+    placeholder caption like "EHA emails -- unreleased" (no document
+    released, so there is nothing more specific to say) is reused verbatim
+    for several DIFFERENT screenshots in a row, each its own real evidence,
+    with no page, date or url on any of them to tell the repeats apart.
+    "Pres. Trump, 7 Feb 2020, Tweet" repeating is a real duplicate because
+    the date alone already pins it to one specific citation -- a second
+    sighting of that exact combination is vanishingly unlikely to be a
+    different thing. A caption with no doc, no pages and no date pins down
+    nothing at all, so a repeat of it proves nothing; it is left alone."""
+    for sec in sections:
+        out = []
+        for ev in sec["evidence"]:
+            specific = ev["doc"] or ev["pages"] or ev["date"]
+            if out and specific and out[-1]["kind"] == ev["kind"] \
+                    and normalize_for_dedup(out[-1]["raw"]) == normalize_for_dedup(ev["raw"]):
+                prev = out[-1]
+                if (not prev["url"] and ev["url"]) or (not prev["pages"] and ev["pages"]):
+                    out[-1] = ev
+                continue
+            out.append(ev)
+        sec["evidence"] = out
 
 
 def attach_urls(sections, doc_urls, footnote_urls):
@@ -465,7 +602,18 @@ def main():
     attach_summaries(all_sections)
 
     doc_urls = build_doc_urls(all_lines, footnotes)
+    for doc, url in harvest_doc_urls(all_evidence).items():
+        doc_urls.setdefault(doc, url)
     attach_urls(all_sections, doc_urls, footnotes)
+
+    url_docs = harvest_url_docs(all_evidence)
+    for ev in all_evidence:
+        if not ev["doc"] and ev["url"] and ev["url"] in url_docs:
+            ev["doc"] = url_docs[ev["url"]]
+            ev["kind"] = classify(ev["doc"])
+
+    dedupe_evidence(all_sections)
+    all_evidence = [ev for sec in all_sections for ev in sec["evidence"]]
 
     docs = {}
     undoc = {"cites": 0, "by_kind": {}}

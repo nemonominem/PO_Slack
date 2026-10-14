@@ -56,6 +56,29 @@ DOCS = [
     ("USRTK_UCDavis_PROD_38-ocr.pdf",
      "1jNeqlHWUnV2QoEL5fvnzHX7sq867ue3Z",
      ['1205']),
+    # The five below are cited by description only ("Fauci's testimony",
+    # "OSTP letter to NASEM"), never by filename -- build_po_guide.py's
+    # DOC_ALIASES gives each a stable name so they key here the same way.
+    ("2023.06.16-Andersen-Transcript.pdf",
+     "1E_UJCSq-fsQV5HvxAEmhMLVrQQAzSiem",
+     ['43', '51', '52', '54', '55', '64', '146-147']),
+    ("Fauci-TI-Transcript.pdf",
+     "1kZHT0VL-YTHCCfcu1H9I4W_jzd2kpY2_",
+     ['84-85', '92-93']),
+    # No page is ever cited for this one -- just the cover page of the
+    # (30-page) production as a representative excerpt.
+    ("OSTP-Letter-to-NASEM-3Feb2020.pdf",
+     "1PNeJWqZGHlFqIEbqGVpIipRac6k9_UPm",
+     ['1']),
+    ("FOI-by-Tobias.pdf",
+     "1W84jSM5wkBWd0lYNUzwaSkuKdwK23Kmr",
+     ['5']),
+    # The published paper itself, 7 pages -- short enough, and central
+    # enough to section 25's version-by-version comparison, to keep whole
+    # rather than guess at one representative page.
+    ("Proximal-Origin-v19-NatureMedicine.pdf",
+     "18P8CaaVJRJPL84wVwI51F5HrObJbyZta",
+     ['1-7']),
 ]
 
 
