@@ -88,6 +88,7 @@ footer{border-top:1px solid var(--border);margin-top:56px;padding-top:18px;color
     <li><a href="#reading">Reading a box</a></li>
     <li><a href="#boxes">Scrolling inside a box</a></li>
     <li><a href="#timeline">The timeline</a></li>
+    <li><a href="#tabs">Main Docs / Linked Docs / Tragicomedy / Thread</a></li>
     <li><a href="#guide">The P.O. guide rail</a></li>
     <li><a href="#bookmarks">Bookmarks</a></li>
     <li><a href="#keyboard">Keyboard</a></li>
@@ -148,7 +149,7 @@ footer{border-top:1px solid var(--border);margin-top:56px;padding-top:18px;color
       <tr><td>🔖 Bookmarks</td><td>Your own saved pointers into the record.</td></tr>
       <tr><td>📊 Timeline</td><td>Entries and search hits over time.</td></tr>
       <tr><td>Results</td><td>The matched boxes.</td></tr>
-      <tr><td>PDF panel</td><td>The source document, at the page the box came from.</td></tr>
+      <tr><td>PDF panel</td><td>One of four tabs — see §8 — following the box you opened.</td></tr>
     </tbody>
   </table>
   <h3>Collapsing and resizing</h3>
@@ -230,25 +231,64 @@ footer{border-top:1px solid var(--border);margin-top:56px;padding-top:18px;color
   <p class="lede">Two charts sharing one time axis. On the left (bottom in portrait):
   <b>all entries per day</b>. On the right (top): <b>search hits per day</b>.</p>
   <h3>Reading the entries side</h3>
-  <p>Each day's bar is <b>stacked</b>. The colour of a segment is the medium and the shade is
-  the release, exactly as in the table in §2 — so a tall blue bar is Slack, and you can see at
-  a glance whether a busy day was Part 1 or Part 2. A media that is absent from a day simply
-  has no segment there.</p>
+  <p>Each day's bar is <b>stacked</b>, one segment per box kind (Slack message, Email,
+  Manuscript draft, Release note) in a single flat colour — no per-release shading on the bars
+  themselves, so a glance tells you the kind, not which FOIA production it came from. A kind
+  absent from a day simply has no segment there.</p>
   <h3>The legend</h3>
-  <p>Below the chart, one entry per stacked segment with its colour, name and total.
-  <b>Click a swatch to show or hide that segment</b>; it greys out when hidden. Hovering a
-  legend entry gives its exact count.</p>
+  <p>Below the chart, one bordered group per box kind, each with its own checkbox, swatch, name
+  and total. <b>Tick a group's own checkbox</b> to show or hide that whole kind everywhere —
+  search, browse and the chart together, the same thing the <b>Sources</b> dropdown does. Nested
+  under each group is a row of smaller checkboxes, one per release that kind came from (e.g.
+  Slack Part 1 / Part 2) — tick one to show or hide just that release, leaving the rest of the
+  kind in place.</p>
   <h3>Zooming and selecting</h3>
   <ul>
-    <li><b>Scroll</b> over the chart to zoom the time axis; <b>double-click</b> to reset.</li>
+    <li><b>Drag</b> across the chart to draw a box and zoom straight to that stretch (Plotly-style).
+    The entries axis rescales to whatever is actually in view, with a real labelled scale, so the
+    tallest bar on screen reaches close to the top instead of staying sized for the single busiest
+    day across the whole three-and-a-half years.</li>
+    <li><b>Scroll</b> over the chart to zoom at the cursor; <b>double-click</b>, or the
+    <b>↺</b> button by the panel header, resets.</li>
     <li><b>Click a hit bar</b> on the right to jump to that day's matches.</li>
-    <li><b>Click an entry bar</b> to open that day's entries (and clear any search).</li>
+    <li><b>Click an entry bar</b> to open that day's entries (and clear any search) — clicking
+    specifically within one kind's coloured band centres the window on an entry of that kind,
+    not just whichever entry happens to sit first in the merged record for that date.</li>
     <li>Zoom is never carried across a layout switch, because the axis turns 90°.</li>
   </ul>
 </section>
 
+<section id="tabs">
+  <h2>8. Main Docs / Linked Docs / Tragicomedy / Thread</h2>
+  <p class="lede">The PDF panel on the right always shows one of these four. The result list on
+  the left sits in its own panel too, under a single tab labelled <b>Content</b>. "Timeline" used
+  to be the name of one of these tabs too — it now only means the chart in §7, to stop one word
+  meaning two different things.</p>
+  <table>
+    <thead><tr><th>Tab</th><th>Shows</th></tr></thead>
+    <tbody>
+      <tr><td><b>Main Docs</b></td><td>the five ingested, searchable sources (Slack, email,
+      manuscript drafts), following whichever box you opened</td></tr>
+      <tr><td><b>Linked Docs</b></td><td>other documents the article cites that are not one
+      of the five above, trimmed to just their cited pages — no search, no entries, a page number
+      is all a citation ever names here</td></tr>
+      <tr><td><b>P.O. — A Tragicomedy</b></td><td>the article itself, each page already opening on
+      the heading a guide section points to</td></tr>
+      <tr><td><b>🧵 Thread</b></td><td>a message's full reply/forward chain, upstream and
+      downstream, Gmail-style — each message carries an <b>Open in Main Docs</b> link to its
+      scanned page and an <b>Open in Content</b> link that instead recentres the left-hand
+      Content list on it</td></tr>
+    </tbody>
+  </table>
+  <p>A box with a reply/forward link shows a <b>🧵 Thread</b> button; clicking it opens that
+  conversation. Clicking another message's card in the Thread tab re-centres the conversation on
+  it. Each message also carries two jump links: <b>Open in Main Docs</b> jumps straight to that
+  message's scanned page without losing your place in the thread, and <b>Open in Content</b>
+  instead recentres the left-hand Content list on that exact message.</p>
+</section>
+
 <section id="guide">
-  <h2>8. The P.O. guide rail</h2>
+  <h2>9. The P.O. guide rail</h2>
   <p class="lede">The left rail is the index of the article itself — its 214 dated sections —
   so any message can be read against the claim it supports.</p>
   <p>Click a section and the detail box below lists what that section rests on: one line per
@@ -267,7 +307,7 @@ footer{border-top:1px solid var(--border);margin-top:56px;padding-top:18px;color
 </section>
 
 <section id="bookmarks">
-  <h2>9. Bookmarks</h2>
+  <h2>10. Bookmarks</h2>
   <p class="lede">Your own pointers into the record. Click <b>🔖</b> on any box to add one;
   click again to remove it. The rail lists them with the date and the medium.</p>
   <ul>
@@ -291,7 +331,7 @@ footer{border-top:1px solid var(--border);margin-top:56px;padding-top:18px;color
 </section>
 
 <section id="keyboard">
-  <h2>10. Keyboard</h2>
+  <h2>11. Keyboard</h2>
   <div class="keys">
     <span><kbd>Enter</kbd> in the search box — search</span>
     <span><kbd>Enter</kbd> in Jump-to-date — go</span>
@@ -305,7 +345,7 @@ footer{border-top:1px solid var(--border);margin-top:56px;padding-top:18px;color
 </section>
 
 <section id="limits">
-  <h2>11. Known limits</h2>
+  <h2>12. Known limits</h2>
   <p>Stated plainly, because they affect what the record can be asked.</p>
   <ul>
     <li><b>Time zones are assumptions.</b> The emails are stamped without a zone. Each message's
@@ -328,7 +368,44 @@ footer{border-top:1px solid var(--border);margin-top:56px;padding-top:18px;color
 </section>
 
 <section id="releases">
-  <h2>12. Release notes</h2>
+  <h2>13. Release notes</h2>
+
+  <h3>v1.4 — Main Docs / Linked Docs renaming, Content panel, Open in Content</h3>
+  <ul>
+    <li><b>Reading panel tabs renamed again</b>: the PDF-viewer tab is now <b>Main Docs</b> (was
+    "Content" in v1.3); the cited-documents tab is now <b>Linked Docs</b> (was "Reference
+    Sources"). Nothing about what either tab does changed, only the label.</li>
+    <li><b>Result list becomes a panel of its own</b>: the left-hand search/browse list now sits
+    under a single tab labelled <b>Content</b> — the name freed up by the PDF-viewer tab's
+    rename.</li>
+    <li><b>Thread tab's jump button renamed and split in two</b>: the old <b>Open in Content</b>
+    button (which jumped to a message's scanned page) is now <b>Open in Main Docs</b>; a new
+    <b>Open in Content</b> button sits beside it, with a different job — it recentres the
+    left-hand Content list on that exact message instead.</li>
+  </ul>
+
+  <h3>v1.3 — Thread tab, Reference Sources tab, timeline rework, tab renaming</h3>
+  <ul>
+    <li><b>🧵 Thread tab</b>: a Gmail-style view of a message's full reply/forward chain, upstream
+    and downstream; an <b>Open in Content</b> button on every message jumps to its page without
+    losing the thread's own focus.</li>
+    <li><b>Reference Sources tab</b> (renamed from Complementary — see below): unchanged in what
+    it does, cited documents trimmed to their cited pages.</li>
+    <li><b>Timeline legend rebuilt</b>: one coloured group per box kind (no more per-release
+    shading on the bars) with a row of release sub-checkboxes nested under it, replacing the flat
+    per-(source, kind) swatch list.</li>
+    <li><b>Drag-to-zoom</b>: draw a box on the chart to zoom straight to it; the entries axis
+    rescales to whatever stretch is actually in view, with a real labelled scale, instead of
+    staying sized for the single busiest day across the whole record. A day with zero entries no
+    longer draws a stub bar.</li>
+    <li><b>Resizable timeline panel</b> and brighter grid lines.</li>
+    <li><b>Reading panel tabs renamed</b>: the PDF-viewer tab is now <b>Content</b> (it used to
+    share the name "Timeline" with the chart, which was confusing); the cited-documents tab is
+    now <b>Reference Sources</b> (was "Complementary"). Nothing about what either tab does
+    changed, only the label.</li>
+    <li><b>Long email bodies</b> with no natural paragraph break in the source are now split one
+    sentence per line for on-screen readability; the stored text and search are unaffected.</li>
+  </ul>
 
   <h3>v1.2 — bookmarks, guide, provenance</h3>
   <ul>

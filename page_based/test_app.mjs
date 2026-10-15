@@ -207,28 +207,23 @@ const docs = guideResp.documents ? Object.values(guideResp.documents) : [];
 ok('every cited document is catalogued', docs.length === 32, String(docs.length));
 
 
-sec('Stacked timeline (media x release)');
+sec('Stacked timeline (one segment per kind, release sub-totals)');
 app.buildTimelineSeries();
 const ts = app.timelineSeries;
-ok('timeline has stacked segments', !!ts && Array.isArray(ts.stacks) && ts.stacks.length >= 4,
+ok('timeline has one stacked segment per top-level kind', !!ts && Array.isArray(ts.stacks) && ts.stacks.length >= 4,
    ts ? ts.stacks.length + ' segments' : 'none');
 const stackByKind = {};
 (ts.stacks || []).forEach(function(seg) {
   (stackByKind[seg.kind] = stackByKind[seg.kind] || []).push(seg);
 });
-ok('slack is two blues (two shades of the same hue)',
-   (stackByKind.slack || []).length === 2,
-   'slack segments: ' + (stackByKind.slack || []).length);
-if ((stackByKind.slack || []).length === 2) {
-  const h1 = stackByKind.slack[0].color.match(/hsl\((\d+)/);
-  const h2 = stackByKind.slack[1].color.match(/hsl\((\d+)/);
-  ok('both slack segments share the blue hue', h1 && h2 && h1[1] === h2[1],
-     stackByKind.slack[0].color + ' vs ' + stackByKind.slack[1].color);
-  ok('but differ in shade (lightness)',
-     stackByKind.slack[0].color !== stackByKind.slack[1].color);
-}
+ok('each kind is exactly one segment (no per-release shading)',
+   Object.keys(stackByKind).every(function(k) { return stackByKind[k].length === 1; }));
+const slackSeg = (stackByKind.slack || [])[0];
+ok('slack carries both releases as sub-totals, not separate segments',
+   !!slackSeg && Array.isArray(slackSeg.sources) && slackSeg.sources.length === 2,
+   slackSeg ? JSON.stringify(slackSeg.sources) : 'no slack segment');
 ok('email and draft each have their own media colour',
-   !!(stackByKind.email || []).length && !!(stackByKind.draft || []).length);
+   !!stackByKind.email && !!stackByKind.draft);
 const stackTotal = (ts.stacks || []).reduce(function(a, seg) { return a + seg.total; }, 0);
 const entryTotal = (ts.entryCounts || []).reduce(function(a, c) { return a + c; }, 0);
 ok('stack totals equal the per-day entry counts', stackTotal === entryTotal,

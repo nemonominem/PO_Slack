@@ -185,22 +185,42 @@ body {
 .chart-title-main { font-size: 11px; font-weight: 600; color: var(--text); }
 .chart-block-stats { font-size: 10px; color: #fff; }
 .chart-canvas-wrap {
-  position: relative; flex: 1; min-height: 0; width: 100%;
+  /* min-height is a real floor, not 0: .timeline-legend below is
+     flex-shrink:0 (it never yields space), so without this the canvas was
+     the only flexible sibling and a tall legend could squeeze it down to a
+     useless sliver -- especially in Portrait's already-short charts panel. */
+  position: relative; flex: 1; min-height: 40px; width: 100%;
 }
-/* Media-by-release legend under the timeline: swatch + label + total, click to toggle */
+/* Two-tier legend under the timeline: one bordered group per top-level kind
+   (Slack message, Email, ...) -- a bold main checkbox (kind, single flat
+   colour, no per-release shading) with a row of smaller per-release
+   sub-checkboxes grouped visually underneath it inside the same box. */
 .timeline-legend {
-  display: flex; flex-wrap: wrap; gap: 3px 10px; padding: 4px 6px 5px;
+  display: flex; flex-wrap: wrap; align-items: flex-start; gap: 4px 8px; padding: 4px 6px 5px;
   font-size: 10px; color: var(--muted); border-top: 1px solid var(--border);
-  flex-shrink: 0; max-height: 64px; overflow-y: auto;
+  flex-shrink: 0; max-height: 86px; overflow-y: auto;
 }
-.timeline-legend .lg-item {
+.timeline-legend .lg-group {
+  display: inline-flex; flex-direction: column; gap: 2px;
+  border: 1px solid var(--border-2); border-radius: 6px; padding: 3px 6px;
+  background: rgba(255,255,255,0.02);
+}
+.timeline-legend .lg-group.off { opacity: 0.45; }
+.timeline-legend .lg-main {
   display: inline-flex; align-items: center; gap: 4px; cursor: pointer;
-  padding: 1px 5px; border-radius: 8px; white-space: nowrap;
+  font-weight: 700; white-space: nowrap;
 }
-.timeline-legend .lg-item:hover { background: var(--panel-2); }
-.timeline-legend .lg-item.off { opacity: 0.4; text-decoration: line-through; }
 .timeline-legend .lg-swatch { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
-.timeline-legend .lg-hint { color: var(--muted); opacity: 0.7; font-style: italic; }
+.timeline-legend .lg-subs { display: flex; flex-wrap: wrap; gap: 2px 8px; padding-left: 14px; }
+.timeline-legend .lg-sub {
+  display: inline-flex; align-items: center; gap: 3px; cursor: pointer;
+  white-space: nowrap; font-weight: 400; opacity: 0.85;
+}
+.timeline-legend .lg-sub.off { opacity: 0.4; text-decoration: line-through; }
+.timeline-legend .lg-main input, .timeline-legend .lg-sub input {
+  margin: 0; width: 10px; height: 10px; flex-shrink: 0;
+}
+.timeline-legend .lg-hint { color: var(--muted); opacity: 0.7; font-style: italic; align-self: center; }
 /* Landscape: the timeline panel is a narrow column, so let the legend use full
    height instead of capping it at 64px and forcing a scroll to see the sources. */
 body.layout-landscape .timeline-legend { max-height: none; overflow-y: visible; }
@@ -262,7 +282,7 @@ body.layout-landscape .charts-panel.collapsed .panel-header h2 {
   letter-spacing: 0.04em;
   font-size: 12px;
 }
-body.layout-landscape .results-panel {
+body.layout-landscape .results-panel-wrap {
   flex: 1; border-right: 2px solid var(--border); min-width: 0;
 }
 body.layout-landscape .pdf-panel {
@@ -309,7 +329,7 @@ body.layout-portrait .charts-panel.collapsed {
   min-height: 0;
   flex: 0 0 auto;
 }
-body.layout-portrait .results-panel {
+body.layout-portrait .results-panel-wrap {
   flex: 1; border-right: none; border-bottom: none; min-height: 80px;
 }
 /* Horizontal drag handle between results and PDF */
@@ -452,8 +472,12 @@ body.layout-portrait .pdf-panel {
 .workspace { flex: 1; display: flex; overflow: hidden; min-height: 0; }
 
 /* ── Results panel ─────────────────────────────────────────────────── */
+/* The wrap holds the one-tab "Content" header above the scrollable list --
+   it takes over the flex-fill/border role the list itself used to have, so
+   the list underneath it is just flex:1 within that. */
+.results-panel-wrap { display: flex; flex-direction: column; min-width: 0; }
 .results-panel {
-  overflow-y: auto; padding: 12px;
+  flex: 1; min-height: 0; overflow-y: auto; padding: 12px;
 }
 .results-panel::-webkit-scrollbar { width: 8px; }
 .results-panel::-webkit-scrollbar-track { background: var(--panel); }
@@ -916,7 +940,7 @@ mark.hit-current {
       <button type="button" id="kindFilterBtn" onclick="toggleKindFilterPanel(event)">All types</button>
     </span>
   </div>
-  <span class="instructions" id="toolbarInstructions">Search &rarr; click a result / hit bar for matches. Entry bars open that day&rsquo;s entry + PDF (and clear any search). Jump-to-date opens the nearest entry. Scroll wheel zooms; double-click resets.</span>
+  <span class="instructions" id="toolbarInstructions">Search &rarr; click a result / hit bar for matches. Entry bars open that day&rsquo;s entry + PDF (and clear any search). Jump-to-date opens the nearest entry. Drag to zoom into a stretch; scroll wheel zooms at the cursor; double-click resets.</span>
 </div>
 
 <div class="workspace" id="workspace">
@@ -972,7 +996,7 @@ mark.hit-current {
     <div class="panel-header" onclick="toggleCharts()">
       <h2>📊 Timeline</h2>
       <div style="display:flex;align-items:center;gap:4px">
-        <button onclick="event.stopPropagation();resetTimelineZoom()" title="Reset zoom (or double-click chart)" style="background:none;border:none;color:var(--muted);font-size:15px;cursor:pointer;padding:0 4px;flex-shrink:0">&#10226;</button>
+        <button class="collapse-btn" onclick="event.stopPropagation();resetTimelineZoom()" title="Reset zoom (or double-click chart)" style="font-size:20px">&#10226;</button>
         <button class="collapse-btn" id="chartsCollapseBtn" title="Collapse timeline">◀</button>
       </div>
     </div>
@@ -1000,14 +1024,19 @@ mark.hit-current {
   <div class="panel-resizer" id="chartsResizer" title="Drag to resize the timeline panel"></div>
 
   <!-- ── Results panel ────────────────────────────────────────────── -->
-  <div class="results-panel" id="resultsPanel">
-    <div class="placeholder">
-      <h2>Search the P.O. record</h2>
-      <p>Enter a term above to search the Slack messages, the FOI'd emails and the
-      manuscript drafts together (Jan 2020 &ndash; Jun 2023). Results show the
-      matching text highlighted, the source PDF page, and the timeline of
-      entries / hits over time.</p>
-      <div class="stats" id="entryStats"></div>
+  <div class="results-panel-wrap" id="resultsPanelWrap">
+    <div class="pdf-tabs" id="resultsTabs" role="tablist" title="Content: the browse/search list -- a Slack message, email, or draft opened here with 'Open in Content' from Linked Docs or Thread.">
+      <button type="button" class="pdf-tab active" style="cursor: default" disabled>Content</button>
+    </div>
+    <div class="results-panel" id="resultsPanel">
+      <div class="placeholder">
+        <h2>Search the P.O. record</h2>
+        <p>Enter a term above to search the Slack messages, the FOI'd emails and the
+        manuscript drafts together (Jan 2020 &ndash; Jun 2023). Results show the
+        matching text highlighted, the source PDF page, and the timeline of
+        entries / hits over time.</p>
+        <div class="stats" id="entryStats"></div>
+      </div>
     </div>
   </div>
 
@@ -1016,9 +1045,9 @@ mark.hit-current {
 
   <!-- ── PDF panel ────────────────────────────────────────────────── -->
   <div class="pdf-panel" id="pdfPanel">
-    <div class="pdf-tabs" id="pdfTabs" role="tablist" title="Timeline: the five searchable, ingested sources. Complementary: other documents the piece cites, trimmed to their cited pages. Tragicomedy: the article itself.">
-      <button type="button" class="pdf-tab active" id="pdfTabTimeline" onclick="openTimelineTab()">Timeline</button>
-      <button type="button" class="pdf-tab" id="pdfTabComplementary" onclick="openComplementaryTab()">Complementary</button>
+    <div class="pdf-tabs" id="pdfTabs" role="tablist" title="Main Docs: the five searchable, ingested sources. Linked Docs: other documents the piece cites, trimmed to their cited pages. Tragicomedy: the article itself.">
+      <button type="button" class="pdf-tab active" id="pdfTabTimeline" onclick="openTimelineTab()">Main Docs</button>
+      <button type="button" class="pdf-tab" id="pdfTabComplementary" onclick="openComplementaryTab()">Linked Docs</button>
       <button type="button" class="pdf-tab" id="pdfTabTragicomedy" onclick="openTragicomedyTab()">P.O. — A Tragicomedy</button>
       <button type="button" class="pdf-tab" id="pdfTabThread" onclick="openThreadTab()">🧵 Thread</button>
     </div>
@@ -1111,12 +1140,22 @@ const SOURCES = {
 };
 const DEFAULT_PDF_SOURCE = 'part1';   // which PDF shows on page load
 
-// ── Reader tabs: Timeline / Complementary / Tragicomedy ──────────────────────
+// ── Reader tabs: Main Docs ("Timeline" tab) / Linked Docs ("Complementary"
+// tab) / Tragicomedy ──────────────────────────────────────────────────────
+// Internal names (readerTab values, function/id names: 'timeline',
+// 'complementary', openTimelineTab, pdfTabComplementary, ...) are unchanged
+// on purpose -- only the user-visible labels moved, to stop "Timeline"
+// meaning two different things (this tab vs. the actual timeline chart).
+// The result list itself also moved into its own single-tab panel, labelled
+// "Content" (#resultsPanelWrap/#resultsTabs) -- the browse/search list, as
+// distinct from this reading panel's own "Main Docs" tab (the PDF viewer).
 // The reading panel on the right shows one of three pools of PDFs, switched
 // by a tab rather than mixed into one list:
-//   Timeline      the five ingested, searchable sources above (SOURCES) --
+//   Main Docs (readerTab 'timeline')
+//                 the five ingested, searchable sources above (SOURCES) --
 //                 unchanged, existing renderEntryPdf()/pdfDocs machinery.
-//   Complementary other documents the piece cites that are NOT one of the
+//   Linked Docs (readerTab 'complementary')
+//                 other documents the piece cites that are NOT one of the
 //                 five -- trimmed to just their cited pages (most of a
 //                 212-1265+ page production is not relevant), built by
 //                 fetch_complementary.py into complementary.json +
@@ -1365,10 +1404,21 @@ async function loadData() {
     syncJumpDateInputBounds();
     drawTimeline();
 
-    // Run any search the user requested while the data was loading
+    // Run any search the user requested while the data was loading; otherwise
+    // open straight into a browse window of the first boxes, so the results
+    // panel shows real entries on first load instead of an empty placeholder.
     if (pendingSearch) {
       pendingSearch = false;
       doSearch();
+    } else {
+      var firstIdx = diaryData.entries.findIndex(entryVisible);
+      if (firstIdx >= 0) {
+        var initialPack = buildBrowseResultsAroundIndex(firstIdx, BROWSE_RADIUS);
+        if (initialPack && initialPack.results.length) {
+          browseMode = true;
+          displayResults(initialPack.results, '', { autoSelect: false });
+        }
+      }
     }
 
     // ── Fetch every page map in parallel ──
@@ -1728,21 +1778,30 @@ function threadUpstreamChain(e) {
 function threadMsgHtml(e, opts) {
   opts = opts || {};
   const cls = 'thread-msg' + (opts.current ? ' current' : '') + (opts.downstream ? ' downstream' : '');
-  const kd = kindDef(entryKind(e));
+  const kind = entryKind(e);
+  const kd = kindDef(kind);
   let html = '<div class="' + cls + '"' +
     (opts.current ? '' : ' data-thread-open="' + escapeHtml(e.thread_key) + '" title="Open this message’s own conversation"') + '>';
   html += '<div class="thread-msg-head">';
   html += '<span class="thread-msg-sender">' + escapeHtml(e.sender || '(unknown sender)') + '</span>';
   html += '<span style="margin-left:auto;font-size:10px;color:var(--muted)">' +
     kd.icon + ' ' + escapeHtml(kd.label) + '</span>';
+  html += '<button type="button" class="thread-btn" data-thread-jump="' + escapeHtml(e.thread_key) +
+    '" title="Open this message’s scanned page in the Main Docs tab">📄 Open in Main Docs</button>';
+  html += '<button type="button" class="thread-btn" data-thread-content="' + escapeHtml(e.thread_key) +
+    '" title="Open this message in the Content panel’s browse list">📄 Open in Content</button>';
   html += '</div>';
   // The full header block (From/To/Cc/Bcc/Subject/Sent/Date, whichever were
   // recovered) -- the same fields the main result card shows, not a
-  // condensed sender/date/subject one-liner.
+  // condensed sender/date/subject one-liner. Fields are blank-line separated
+  // in the source (one paragraph each); joined with a single line break
+  // here, same as the main result card, instead of dumping the raw text
+  // (with its blank lines intact) into a white-space:pre-wrap block.
   const parts = (e.content || '').split('----------');
   const headerBlock = parts[0] ? parts[0].trim() : '';
   if (headerBlock) {
-    html += '<div class="thread-msg-fields">' + escapeHtml(headerBlock) + '</div>';
+    const fieldLines = headerBlock.split(/\n\n+/).map(function(s) { return s.trim(); }).filter(Boolean);
+    html += '<div class="thread-msg-fields">' + fieldLines.map(escapeHtml).join('\n') + '</div>';
   }
   // Local stamp -> ET, and which zone was assumed to read it in -- the same
   // evidence the main card's 🕑 chip shows, so a reader can check the
@@ -1752,7 +1811,8 @@ function threadMsgHtml(e, opts) {
       (e.zone_assumed ? ' · ' + escapeHtml(e.zone_assumed) : '') + '</div>';
   }
   const body = (parts.length > 1 ? parts.slice(1).join('----------') : (e.content || '')).trim();
-  html += '<div class="thread-msg-body">' + escapeHtml(body) + '</div>';
+  const bodyHtml = kind === 'email' ? addSentenceBreaks(escapeHtml(body)) : escapeHtml(body);
+  html += '<div class="thread-msg-body">' + bodyHtml + '</div>';
   html += '</div>';
   return html;
 }
@@ -1868,6 +1928,28 @@ function threadDownstreamHtml(e, forkDepth) {
     if (dsBtn) {
       threadExpandedDownstream.add(dsBtn.getAttribute('data-thread-downstream'));
       renderThreadPanel(threadFocusKey);
+      return;
+    }
+    // "Open in Main Docs": jump straight to this message's scanned page
+    // without touching the thread's own focus -- unlike clicking the card
+    // itself, which re-centres the conversation on that message instead.
+    const jumpBtn = ev.target.closest('[data-thread-jump]');
+    if (jumpBtn) {
+      ev.stopPropagation();
+      const je = findEntryByThreadKey(jumpBtn.getAttribute('data-thread-jump'));
+      if (je) {
+        switchReaderTab('timeline');
+        renderEntryPdf(je.source, pdfPageForResult({ entry: je }));
+      }
+      return;
+    }
+    // "Open in Content": show this message as a box in the Content panel
+    // (the main browse/search list), independent of whichever reader tab
+    // (Main Docs / Linked Docs / Thread) is currently active.
+    const contentBtn = ev.target.closest('[data-thread-content]');
+    if (contentBtn) {
+      ev.stopPropagation();
+      openEntryInContent(contentBtn.getAttribute('data-thread-content'));
       return;
     }
     const el = ev.target.closest('[data-thread-open]');
@@ -2875,12 +2957,17 @@ function parseLocalISO(iso) {
 let timelineSeries = null; // { labels, entryCounts, stacks[], entryDays, totalDays }
 
 function buildTimelineSeries() {
-  // kindFilter only, deliberately NOT hiddenSegments: every segment must
-  // keep its own dataset here (and so its own legend swatch) so a legend
-  // click can still toggle it back ON -- the segment's bars being hidden on
-  // the canvas is Chart.js's own per-dataset visibility, driven by the
-  // legend click handler directly, not this filter.
+  // One stack segment per TOP-LEVEL kind now (colour = kind, no per-release
+  // shading) -- entryVisible (kind AND hiddenSegments/sub-selection both) so
+  // toggling a release sub-checkbox changes the bar counts directly, rather
+  // than hiding a whole separate per-release dataset.
   const entries = diaryData.entries.filter(function(e) {
+    return entryVisible(e) && e.date;
+  });
+  // A second, kind-only pass (NOT hiddenSegments) for the legend's own
+  // per-release sub-counts -- these stay stable reference totals whether or
+  // not that release is currently ticked on.
+  const kindOnlyEntries = diaryData.entries.filter(function(e) {
     return kindListed(entryKind(e)) && e.date;
   });
 
@@ -2892,44 +2979,45 @@ function buildTimelineSeries() {
   const dayIndex = {};
   labels.forEach(function(iso, i) { dayIndex[iso] = i; });
 
-  // A stack segment is one (source, kind) pair, so colour = media and shade =
-  // release: Slack P1 and Slack P2 are two blues, each FOIA production its own
-  // shade of the email hue, and so on.
-  const kindSources = {};       // kind -> [source, ...] in first-seen order
-  const segByKey = {};          // 'source|kind' -> segment
+  const segByKind = {};          // kind -> segment
   const segOrder = [];
   entries.forEach(function(e) {
     const k = entryKind(e);
-    const key = e.source + '|' + k;
-    kindSources[k] = kindSources[k] || [];
-    if (kindSources[k].indexOf(e.source) < 0) kindSources[k].push(e.source);
-    if (!segByKey[key]) {
-      segByKey[key] = { key: key, source: e.source, kind: k, counts: new Array(labels.length).fill(0) };
-      segOrder.push(key);
+    if (!segByKind[k]) {
+      segByKind[k] = { key: k, kind: k, counts: new Array(labels.length).fill(0), total: 0 };
+      segOrder.push(k);
     }
   });
 
   const stacks = segOrder.map(function(key) {
-    const seg = segByKey[key];
-    const sources = kindSources[seg.kind];
-    const shadeIdx = sources.indexOf(seg.source);
-    const shadeCount = sources.length;
-    const hue = (KIND_HUE[seg.kind] != null) ? KIND_HUE[seg.kind] : 0;
-    // One source in this medium: a single mid shade; several: spread lightness.
-    const light = shadeCount <= 1 ? 52 : 38 + Math.round(26 * shadeIdx / (shadeCount - 1));
-    const src = SOURCES[seg.source] || {};
-    seg.color = seg.kind === 'note'
-      ? 'hsl(0, 0%, ' + light + '%)'
-      : 'hsl(' + hue + ', 60%, ' + light + '%)';
-    seg.label = kindDef(seg.kind).label + ' \u2014 ' + (src.release || src.label);
-    seg.total = 0;
+    const seg = segByKind[key];
+    seg.color = kindColor(seg.kind);
+    seg.label = kindDef(seg.kind).label;
     return seg;
   });
 
   entries.forEach(function(e) {
-    const seg = segByKey[e.source + '|' + entryKind(e)];
+    const seg = segByKind[entryKind(e)];
     const i = dayIndex[e.date];
     if (seg && i != null) { seg.counts[i]++; seg.total++; }
+  });
+
+  // Per-release sub-totals for each kind's legend group, from the
+  // kind-only (hiddenSegments-blind) pass -- 'source|kind' matches the
+  // existing hiddenSegments key so a sub-row's checkbox toggles the same
+  // Set a legend click always has.
+  const subBySegKind = {};        // kind -> { source -> {source, total} }
+  kindOnlyEntries.forEach(function(e) {
+    const k = entryKind(e);
+    subBySegKind[k] = subBySegKind[k] || {};
+    const s = e.source;
+    if (!subBySegKind[k][s]) subBySegKind[k][s] = { source: s, key: s + '|' + k, total: 0 };
+    subBySegKind[k][s].total++;
+  });
+  stacks.forEach(function(seg) {
+    const bySource = subBySegKind[seg.kind] || {};
+    seg.sources = Object.keys(bySource).map(function(s) { return bySource[s]; })
+      .sort(function(a, b) { return b.total - a.total; });
   });
 
   const entryCounts = new Array(labels.length).fill(0);
@@ -2952,6 +3040,34 @@ function getTimelineSeries() {
   return timelineSeries || buildTimelineSeries();
 }
 
+/** Tallest entry-count within day-index range [lo, hi] (inclusive), at least 1. */
+function visibleMaxEntries(series, lo, hi) {
+  lo = Math.max(0, Math.floor(lo == null ? 0 : lo));
+  hi = Math.min(series.labels.length - 1, Math.ceil(hi == null ? series.labels.length - 1 : hi));
+  var m = 0;
+  for (var i = lo; i <= hi; i++) { if (series.entryCounts[i] > m) m = series.entryCounts[i]; }
+  return Math.max(1, m);
+}
+
+/** Re-fit the entries axis to whatever's actually in view, so the tallest
+ * VISIBLE bar reaches ~90% of the axis instead of an axis sized once for the
+ * single busiest day in the whole dataset -- which made every ordinary day's
+ * bar a sliver, and most of the axis wasted space, the moment that one
+ * outlier day scrolled out of view. Re-run after every zoom/pan. */
+function rescaleEntryAxis(chart) {
+  if (!chart) return;
+  var series = getTimelineSeries();
+  var timeAxisId = timelineTimeAxisId(chart);
+  var valueAxisId = timeAxisId === 'y' ? 'x' : 'y';
+  var timeScale = chart.scales[timeAxisId];
+  if (!timeScale) return;
+  var visMax = visibleMaxEntries(series, timeScale.min, timeScale.max);
+  var newMin = -Math.max(1, Math.ceil(visMax / 0.9));
+  if (chart.options.scales[valueAxisId].min === newMin) return;
+  chart.options.scales[valueAxisId].min = newMin;
+  chart.update('none');
+}
+
 // Full-span view has ~1200 day-categories, so a 1-entry day is a sub-pixel
 // sliver — and offset:false clips the first/last bar in half. Isolated days
 // at the end (the Jun 2023 archive notices) vanish. Redraw those bars with a
@@ -2967,19 +3083,15 @@ var entryMarkPlugin = {
     var ctx = chart.ctx;
     var ca = chart.chartArea;
     var timeAxis = timelineTimeAxisId(chart);
-    // One stack dataset per (source, kind) pair (see buildTimelineSeries());
-    // anything past that is the separate "Hits" overlay, not a stack.
+    // One stack dataset per top-level kind (see buildTimelineSeries()); its
+    // counts already have the Types filter and hiddenSegments baked in (a
+    // toggle anywhere rebuilds the series, there is no separate Chart.js
+    // dataset-level hide to check here) -- anything past nStacks is the
+    // separate "Hits" overlay, not a stack.
     var nStacks = series.stacks.length;
     for (var i = 0; i < meta.data.length; i++) {
-      // Per-VISIBLE-dataset total, not series.entryCounts[i] (every source's
-      // count, filtered only by the kind dropdown): a legend click hides a
-      // dataset through chart.setDatasetVisibility() alone, never touching
-      // timelineSeries, so trusting entryCounts drew this "keep a sub-pixel
-      // day visible" overlay for every day that EVER had an entry -- a gray
-      // smear across the whole chart even with every legend item toggled off.
       var visible = 0;
       for (var j = 0; j < nStacks; j++) {
-        if (chart.getDatasetMeta(j).hidden) continue;
         var dj = chart.data.datasets[j].data;
         visible += (dj && dj[i]) || 0;
       }
@@ -3137,6 +3249,12 @@ function focusTimelineOnDate(date) {
     console.warn('focusTimelineOnDate zoom failed:', err);
     timelineChart.update('none');
   }
+  // zoomScale() is the same low-level API applyTimelineZoom() uses -- it
+  // does not fire the zoom plugin's own onZoomComplete, so every other path
+  // that moves the visible window this way (a bar click, jump-to-date) has
+  // to rescale explicitly too, or the entries axis keeps whatever bound the
+  // very first (whole-dataset) render set and never actually narrows.
+  rescaleEntryAxis(timelineChart);
 
   var jumpInput = document.getElementById('jumpDateInput');
   if (jumpInput) jumpInput.value = date;
@@ -3202,12 +3320,14 @@ function jumpToDate(date) {
 }
 
 function entryStackDatasets(series) {
-  // One Chart.js dataset per (source, kind) segment; all negative (entries) so
-  // they stack on the left/bottom of the zero line. Colour = media, shade = release.
-  // `hidden` seeds from hiddenSegments so a full chart rebuild (zoom reset,
-  // resize, a new search) doesn't silently un-hide a segment the legend
-  // still shows as off -- Chart.js's own per-dataset visibility lives on
-  // the dataset meta, which is recreated from scratch each time, not kept.
+  // One Chart.js dataset per TOP-LEVEL kind; all negative (entries) so they
+  // stack on the left/bottom of the zero line. Colour = kind only, no
+  // per-release shading. Sub-selection (which releases count) and the
+  // Types dropdown are both baked into seg.counts already (see
+  // buildTimelineSeries), so there is no separate Chart.js-level `hidden`
+  // toggle here -- a toggle anywhere rebuilds the series instead.
+  // No minBarLength: Chart.js applies it even to a true zero-value bar,
+  // drawing a visible stub on days with no entries at all.
   return (series.stacks || []).map(function(seg) {
     return {
       label: seg.label,
@@ -3216,48 +3336,98 @@ function entryStackDatasets(series) {
       borderWidth: 0,
       barPercentage: 1.0,
       categoryPercentage: 1.0,
-      minBarLength: 4,
       order: 2,
       stack: 'entries',
-      hidden: hiddenSegments.has(seg.key),
     };
   });
 }
 
+/**
+ * Two-tier legend: one group per top-level kind (Slack message, Email, ...),
+ * each a single flat colour with no per-release shading, plus a row of
+ * per-release sub-checkboxes grouped visually underneath it. The top
+ * checkbox is the Types dropdown's own kindFilter; each sub-checkbox is the
+ * existing hiddenSegments Set keyed 'source|kind' -- both just call
+ * applyKindFilter() to rebuild the series, the browse window and search
+ * together, same as toggling Types already did. Built from ALL of
+ * diaryData.entries (not the filtered series), so every kind/release keeps
+ * its own row and checkbox even while fully unticked.
+ */
 function renderTimelineLegend() {
   var el = document.getElementById('timelineLegend');
-  var series = timelineSeries;
-  if (!el || !series || !series.stacks) return;
-  el.innerHTML = '';
-  series.stacks.forEach(function(seg, idx) {
-    var item = document.createElement('span');
-    item.className = 'lg-item';
-    if (hiddenSegments.has(seg.key)) item.classList.add('off');
-    item.title = seg.label + ' \u2014 ' + seg.total + (seg.total === 1 ? ' entry' : ' entries') +
-      '. Click to show / hide this medium (also hides it from search and a timeline click, not just the chart).';
-    item.innerHTML = '<span class="lg-swatch" style="background:' + seg.color + '"></span>' +
-      escapeHtml(seg.label) + ' <b>' + seg.total + '</b>';
-    item.addEventListener('click', function() {
-      var hiding = !hiddenSegments.has(seg.key);
-      if (hiding) hiddenSegments.add(seg.key); else hiddenSegments.delete(seg.key);
-      saveHiddenSegments();
-      item.classList.toggle('off', hiding);
-      if (timelineChart) {
-        timelineChart.setDatasetVisibility(idx, !hiding);
-        timelineChart.update();
-      }
-      // A hidden segment must also stop being reachable by search or a
-      // timeline/browse click, not just vanish from the canvas -- reuse the
-      // exact same "something about visibility changed" refresh the Types
-      // dropdown already triggers.
-      applyKindFilter();
-    });
-    el.appendChild(item);
+  if (!el || !diaryData) return;
+
+  var kindTotals = {};
+  var kindSourceTotals = {};
+  diaryData.entries.forEach(function(e) {
+    if (!e.date) return;
+    var k = entryKind(e);
+    kindTotals[k] = (kindTotals[k] || 0) + 1;
+    kindSourceTotals[k] = kindSourceTotals[k] || {};
+    kindSourceTotals[k][e.source] = (kindSourceTotals[k][e.source] || 0) + 1;
   });
-  var hint = document.createElement('span');
-  hint.className = 'lg-hint';
-  hint.textContent = 'colour = media \u00b7 shade = release \u00b7 click to toggle';
-  el.appendChild(hint);
+
+  var kinds = Object.keys(kindTotals).sort(function(a, b) {
+    return kindTotals[b] - kindTotals[a];
+  });
+
+  var html = '';
+  kinds.forEach(function(kind) {
+    var kdef = kindDef(kind);
+    var kindOn = kindListed(kind);
+    html += '<div class="lg-group' + (kindOn ? '' : ' off') + '">';
+    html += '<label class="lg-main" title="' + escapeHtml(kindTotals[kind] +
+      (kindTotals[kind] === 1 ? ' entry' : ' entries') +
+      '. Tick to show/hide every ' + kdef.label.toLowerCase() + ' box (search, browse and the chart).') + '">' +
+      '<input type="checkbox" data-lg-main="' + escapeHtml(kind) + '"' + (kindOn ? ' checked' : '') + '>' +
+      '<span class="lg-swatch" style="background:' + kindColor(kind) + '"></span>' +
+      escapeHtml(kdef.label) + ' <b>' + kindTotals[kind] + '</b></label>';
+
+    var sources = Object.keys(kindSourceTotals[kind]).sort(function(a, b) {
+      return kindSourceTotals[kind][b] - kindSourceTotals[kind][a];
+    });
+    if (sources.length > 1) {
+      html += '<div class="lg-subs">';
+      sources.forEach(function(source) {
+        var segKey = source + '|' + kind;
+        var subOn = !hiddenSegments.has(segKey);
+        var src = SOURCES[source] || {};
+        html += '<label class="lg-sub' + (subOn ? '' : ' off') + '">' +
+          '<input type="checkbox" data-lg-sub="' + escapeHtml(segKey) + '"' + (subOn ? ' checked' : '') + '>' +
+          escapeHtml(src.release || src.label || source) + ' <b>' + kindSourceTotals[kind][source] + '</b></label>';
+      });
+      html += '</div>';
+    }
+    html += '</div>';
+  });
+  html += '<span class="lg-hint">colour = box kind \u00b7 tick a release to show/hide just that one</span>';
+  el.innerHTML = html;
+
+  // Delegated change handler (not a listener per checkbox): reliable
+  // regardless of how the checkbox's own element was created, and matches
+  // the pattern the rest of this app's dynamically-built panels use.
+  el.onchange = function(ev) {
+    var mainCb = ev.target.closest('[data-lg-main]');
+    if (mainCb) {
+      var kind = mainCb.getAttribute('data-lg-main');
+      var allKinds = Object.keys(availableKinds());
+      if (kindFilter == null) kindFilter = allKinds.slice();
+      var idx = kindFilter.indexOf(kind);
+      if (mainCb.checked && idx < 0) kindFilter.push(kind);
+      if (!mainCb.checked && idx >= 0) kindFilter.splice(idx, 1);
+      if (kindFilter.length === allKinds.length) kindFilter = null;
+      saveKindFilter();
+      applyKindFilter();
+      return;
+    }
+    var subCb = ev.target.closest('[data-lg-sub]');
+    if (subCb) {
+      var segKey = subCb.getAttribute('data-lg-sub');
+      if (subCb.checked) hiddenSegments.delete(segKey); else hiddenSegments.add(segKey);
+      saveHiddenSegments();
+      applyKindFilter();
+    }
+  };
 }
 
 function redrawTimelines(opts) {
@@ -3273,6 +3443,10 @@ function redrawTimelines(opts) {
   const maxEntries = Math.max(1, series.entryCounts.reduce(function(m, v) {
     return v > m ? v : m;
   }, 0));
+  // Fit the axis to the tallest bar (so it reaches ~90%, not a sliver lost
+  // in wasted space) -- on first render that's the whole dataset's peak day;
+  // rescaleEntryAxis() narrows this to just the visible window on zoom/pan.
+  const axisMax = Math.max(1, Math.ceil(maxEntries / 0.9));
 
   if (lastSearchResults && lastSearchResults.length) {
     const totalHits = hitData.reduce(function(a, b) { return a + b; }, 0);
@@ -3376,26 +3550,44 @@ function redrawTimelines(opts) {
             bodyColor: '#fff', borderColor: '#333', borderWidth: 1,
           },
           zoom: {
-            // Higher threshold so a normal click is not treated as a pan.
-            pan: { enabled: true, mode: 'y', threshold: 12 },
-            zoom: { wheel: { enabled: true, speed: 0.1 }, pinch: { enabled: true }, mode: 'y' },
-            onDblClick: function(chart) { chart.resetZoom(); }
+            // Plain drag draws a selection band to zoom into (Plotly-style).
+            // Click-drag-to-pan is dropped: it used the same mouse gesture
+            // as the drag-zoom box and chartjs-plugin-zoom always let the
+            // zoom gesture claim it (confirmed empirically in Fauci_Diary --
+            // gating pan behind a modifier key did not stop the drag from
+            // zooming). Wheel-zoom, double-click, and the reset button
+            // still cover repositioning the view.
+            pan: { enabled: false },
+            zoom: {
+              wheel: { enabled: true, speed: 0.1 },
+              pinch: { enabled: true },
+              drag: { enabled: true, backgroundColor: 'rgba(233,69,96,0.15)', borderColor: 'rgba(233,69,96,0.6)', borderWidth: 1 },
+              mode: 'y',
+              onZoomComplete: function(c) { rescaleEntryAxis(c.chart); }
+            },
+            onDblClick: function(chart) { chart.resetZoom(); rescaleEntryAxis(chart); }
           }
         },
         scales: {
           // Value axis: entries left (negative), fixed-length hit markers right.
-          // No numeric ticks — they only clutter (±1/±2) without adding info.
+          // Ticks show the entries/day scale; rescaleEntryAxis() keeps `min`
+          // fit to whichever window is actually in view (see its own comment).
           x: {
             stacked: true,
-            min: -maxEntries,
+            min: -axisMax,
             max: hitBarMax,
             grace: 0,
-            ticks: { display: false },
+            ticks: {
+              color: 'rgba(255,255,255,0.65)',
+              font: { size: 9 },
+              maxTicksLimit: 6,
+              callback: function(v) { return v <= 0 ? Math.round(Math.abs(v)) : ''; }
+            },
             grid: {
               color: function(c) {
                 return c.tick.value === 0
-                  ? 'rgba(233,69,96,0.45)'
-                  : 'rgba(50,50,50,0.25)';
+                  ? 'rgba(233,69,96,0.55)'
+                  : 'rgba(255,255,255,0.18)';
               },
               lineWidth: function(c) {
                 return c.tick.value === 0 ? 1.5 : 1;
@@ -3416,7 +3608,7 @@ function redrawTimelines(opts) {
             },
             grid: {
               display: true,
-              color: 'rgba(45,45,45,0.3)',
+              color: 'rgba(255,255,255,0.15)',
               drawTicks: false,
             },
             border: { display: false },
@@ -3476,9 +3668,22 @@ function redrawTimelines(opts) {
             bodyColor: '#fff', borderColor: '#333', borderWidth: 1,
           },
           zoom: {
-            pan: { enabled: true, mode: 'x', threshold: 12 },
-            zoom: { wheel: { enabled: true, speed: 0.1 }, pinch: { enabled: true }, mode: 'x' },
-            onDblClick: function(chart) { chart.resetZoom(); }
+            // Plain drag draws a selection band to zoom into (Plotly-style).
+            // Click-drag-to-pan is dropped: it used the same mouse gesture
+            // as the drag-zoom box and chartjs-plugin-zoom always let the
+            // zoom gesture claim it (confirmed empirically in Fauci_Diary --
+            // gating pan behind a modifier key did not stop the drag from
+            // zooming). Wheel-zoom, double-click, and the reset button
+            // still cover repositioning the view.
+            pan: { enabled: false },
+            zoom: {
+              wheel: { enabled: true, speed: 0.1 },
+              pinch: { enabled: true },
+              drag: { enabled: true, backgroundColor: 'rgba(233,69,96,0.15)', borderColor: 'rgba(233,69,96,0.6)', borderWidth: 1 },
+              mode: 'x',
+              onZoomComplete: function(c) { rescaleEntryAxis(c.chart); }
+            },
+            onDblClick: function(chart) { chart.resetZoom(); rescaleEntryAxis(chart); }
           }
         },
         scales: {
@@ -3496,23 +3701,30 @@ function redrawTimelines(opts) {
             },
             grid: {
               display: true,
-              color: 'rgba(45,45,45,0.3)',
+              color: 'rgba(255,255,255,0.15)',
               drawTicks: false,
             },
             border: { display: false },
           },
-          // Entries down, hits up — no numeric ticks (colour encodes hit intensity)
+          // Entries down, hits up. Ticks show the entries/day scale;
+          // rescaleEntryAxis() keeps `min` fit to whichever window is
+          // actually in view (see its own comment).
           y: {
             stacked: true,
-            min: -maxEntries,
+            min: -axisMax,
             max: hitBarMax,
             grace: 0,
-            ticks: { display: false },
+            ticks: {
+              color: 'rgba(255,255,255,0.65)',
+              font: { size: 9 },
+              maxTicksLimit: 6,
+              callback: function(v) { return v <= 0 ? Math.round(Math.abs(v)) : ''; }
+            },
             grid: {
               color: function(c) {
                 return c.tick.value === 0
-                  ? 'rgba(233,69,96,0.45)'
-                  : 'rgba(50,50,50,0.25)';
+                  ? 'rgba(233,69,96,0.55)'
+                  : 'rgba(255,255,255,0.18)';
               },
               lineWidth: function(c) {
                 return c.tick.value === 0 ? 1.5 : 1;
@@ -3569,13 +3781,18 @@ function applyTimelineZoom(saved) {
     timelineChart.options.scales[axisId].max = max;
     timelineChart.update('none');
   }
+  // A restored zoom bypasses the zoom plugin's own pan/zoom gesture, so its
+  // onZoomComplete hook never fires -- rescale explicitly.
+  rescaleEntryAxis(timelineChart);
 }
 
 function drawTimeline() { redrawTimelines(); }
 function drawHitsChart() { redrawTimelines(); }
 
 function resetTimelineZoom() {
-  if (timelineChart) timelineChart.resetZoom();
+  if (!timelineChart) return;
+  timelineChart.resetZoom();
+  rescaleEntryAxis(timelineChart);   // resetZoom() does not fire onZoomComplete
 }
 
 // Track pointer movement so a pan/drag is not treated as a bar click.
@@ -3687,19 +3904,25 @@ function buildBrowseResultsAroundIndex(centerIdx, radius) {
   return { results: results, focusLocal: focusLocal, from: from, to: to, center: centerIdx };
 }
 
-function buildBrowseResultsAroundDate(date, radius) {
+/** `preferredSeg` ('source|kind', the exact stack segment a bar click landed
+ * in): when a day holds more than one medium -- a day of thousands of Slack
+ * messages can still carry one "note" (a channel join/rename) or one email
+ * -- centre on an entry matching that segment, not just the first VISIBLE
+ * entry regardless of kind, or a click on the rare medium's sliver of the
+ * bar would still land on that day's dominant Slack message instead. Falls
+ * back to the first visible entry (the old behaviour) when nothing matches. */
+function buildBrowseResultsAroundDate(date, radius, preferredSeg) {
   if (!diaryData || !date) return null;
   var entries = diaryData.entries;
-  // Center on the first VISIBLE entry that day, not just the first one --
-  // a day dominated by, say, thousands of Slack messages (with email a tiny
-  // minority) can position the first entry of the day far enough from the
-  // first visible one that a fixed-radius window built around the wrong
-  // center misses every visible entry entirely once Slack is hidden.
   var center = -1, fallback = -1;
   for (var i = 0; i < entries.length; i++) {
     if (entries[i].date !== date) continue;
     if (fallback < 0) fallback = i;
-    if (entryVisible(entries[i])) { center = i; break; }
+    if (preferredSeg) {
+      if ((entries[i].source + '|' + entryKind(entries[i])) === preferredSeg) { center = i; break; }
+    } else if (entryVisible(entries[i])) {
+      center = i; break;
+    }
   }
   if (center < 0) center = fallback;
   if (center < 0) return null;
@@ -3833,7 +4056,7 @@ function onBrowseResultsScroll() {
  * clear any search, show a sliding window of surrounding entries,
  * scroll to the target entry, and open its PDF.
  */
-function openEntryFromRawBar(date) {
+function openEntryFromRawBar(date, preferredSeg) {
   if (!date || !diaryData) return;
   var hadSearch = !!(lastSearchResults && lastSearchResults.length);
   if (hadSearch || (document.getElementById('searchInput') || {}).value) {
@@ -3841,7 +4064,7 @@ function openEntryFromRawBar(date) {
     redrawTimelines({ preserveZoom: true });
   }
 
-  var pack = buildBrowseResultsAroundDate(date, BROWSE_RADIUS);
+  var pack = buildBrowseResultsAroundDate(date, BROWSE_RADIUS, preferredSeg);
   if (!pack || !pack.results.length) return;
 
   browseMode = true;
@@ -3888,8 +4111,31 @@ function handleTimelineClick(evt) {
   // surrounding entries, scroll to the clicked day, open its PDF.
   var entryIdx = snapToNearestCountedDay(idx, series.entryCounts, -1);
   if (entryIdx >= 0) {
-    openEntryFromRawBar(series.labels[entryIdx]);
+    // Which stack segment the click actually landed in, e.g. the one Email
+    // sliver of a day otherwise dominated by Slack messages -- without this
+    // the window below always centred on whichever entry happened to sit
+    // first in the merged array for that date, regardless of which
+    // coloured band was clicked.
+    var preferredSeg = segAtStackValue(series, entryIdx, mapped.value);
+    openEntryFromRawBar(series.labels[entryIdx], preferredSeg);
   }
+}
+
+/** Which stack ('source|kind' segment key) a click's cumulative value-axis
+ * reading falls in, for a given day index -- stacks render in series.stacks
+ * order, each one further from zero (all counts negative), so walking them
+ * in order and accumulating finds the first one whose far edge has reached
+ * past the click. */
+function segAtStackValue(series, dayIdx, value) {
+  if (!series || !series.stacks || dayIdx == null || dayIdx < 0) return null;
+  var cum = 0;
+  for (var i = 0; i < series.stacks.length; i++) {
+    var c = series.stacks[i].counts[dayIdx] || 0;
+    if (c <= 0) continue;
+    cum -= c;
+    if (value >= cum) return series.stacks[i].key;
+  }
+  return null;
 }
 
 // Double-click resets zoom and cancels any pending single-click navigation.
@@ -4137,6 +4383,47 @@ function escapeHtml(s) {
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
+/**
+ * Break a long, single-paragraph email body into one line per sentence, for
+ * on-screen readability only -- the stored content and search text are
+ * untouched. Several FOIA emails have no \n\n in the source at all (the
+ * parser doesn't invent paragraph breaks the scan never had), so a wall of
+ * 300+ word prose otherwise shows as one uninterrupted block. Short
+ * paragraphs are left alone. The split is conservative on purpose -- it
+ * skips a candidate break right after an initial ("J."), a short
+ * abbreviation (Dr., approx., Mar., etc.) or a digit (so "3.5" or "No. 2"
+ * stay put) -- so it mostly fires on genuine sentence ends, not perfectly.
+ */
+const SENTENCE_ABBR_RE = /^(mr|mrs|ms|dr|prof|sr|jr|st|vs|etc|approx|cf|al|inc|ltd|co|corp|no|u\.s|u\.k|i\.e|e\.g|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|nov|dec)$/i;
+const SENTENCE_BREAK_RE = /[.!?]+[”’"'\)\]]*\s+(?=[A-Z0-9"“'(])/g;
+function sentenceLines(text) {
+  if (!text || text.length < 160) return [text];
+  const lines = [];
+  let start = 0;
+  let m;
+  SENTENCE_BREAK_RE.lastIndex = 0;
+  while ((m = SENTENCE_BREAK_RE.exec(text))) {
+    const before = text.slice(0, m.index);
+    const word = (before.match(/([A-Za-z]+)$/) || [])[1] || '';
+    if (/\d$/.test(before) || word.length === 1 || SENTENCE_ABBR_RE.test(word)) continue;
+    lines.push(text.slice(start, SENTENCE_BREAK_RE.lastIndex).trim());
+    start = SENTENCE_BREAK_RE.lastIndex;
+  }
+  if (start < text.length) lines.push(text.slice(start).trim());
+  return lines.length > 1 ? lines : [text];
+}
+/** Same split, applied only to the plain-text runs of an HTML string --
+ * tags (and whatever they wrap, like a <mark> search hit) pass through
+ * untouched, the same tag/text split linkifyUrls() uses. */
+function addSentenceBreaks(html) {
+  if (!html) return html;
+  if (html.replace(/<[^>]+>/g, '').length < 160) return html;
+  return html.replace(/(<[^>]+>)|([^<]+)/g, function(whole, tag, text) {
+    if (tag) return tag;
+    return sentenceLines(text).join('<br>');
+  });
+}
+
 // A web address inside an email/Slack/note box's text becomes a clickable
 // link. Input is already-escaped HTML, possibly with <mark> tags from
 // search highlighting already inserted -- linkify only touches the plain
@@ -4200,20 +4487,25 @@ function pdfPageLabel(r) {
   return 'p.' + start;
 }
 
+/** key -> index into diaryData.entries, or -1. Shared by every key-addressed
+ * open action (openEntryRef, openEntryInContent). */
+function findMergedIndexByKey(key) {
+  if (!diaryData || !key) return -1;
+  var entries = diaryData.entries;
+  for (var i = 0; i < entries.length; i++) {
+    var x = entries[i];
+    if (x.thread_key === key || (x.source === key) || String(x.idx) === String(key)) {
+      return i;
+    }
+  }
+  return -1;
+}
+
 // Open another entry of the merged corpus by its key: used by the thread chips
 // and by the guide, which link to entries by key rather than by search.
 function openEntryRef(key) {
-  if (!diaryData || !key) return;
-  var entries = diaryData.entries;
-  var idxInMerged = -1;
-  for (var i = 0; i < entries.length; i++) {
-    const x = entries[i];
-    if (x.thread_key === key || (x.source === key) || String(x.idx) === String(key)) {
-      idxInMerged = i; break;
-    }
-  }
+  var idxInMerged = findMergedIndexByKey(key);
   if (idxInMerged < 0) return;
-  var e = entries[idxInMerged];
 
   if (lastSearchResults && lastSearchResults.length) {
     clearSearchStateForBrowse();
@@ -4233,6 +4525,49 @@ function openEntryRef(key) {
       scrollResultToPanelTop(k);
     });
   });
+}
+
+/**
+ * Open any entry -- including a Thread box whose kind is currently unticked
+ * in Box types -- in the Content panel (the results list), unconditionally.
+ * Unlike openEntryRef(), the window is built the same way (±BROWSE_RADIUS
+ * neighbours, respecting the current kind/release filters) but the CENTRE
+ * entry itself is always included even if its own kind is filtered out right
+ * now -- an entry you explicitly asked to open should never just not appear.
+ */
+function openEntryInContent(key) {
+  var idxInMerged = findMergedIndexByKey(key);
+  if (idxInMerged < 0) return false;
+
+  if (lastSearchResults && lastSearchResults.length) {
+    clearSearchStateForBrowse();
+    redrawTimelines({ preserveZoom: true });
+  }
+  var pack = buildBrowseResultsAroundIndex(idxInMerged, BROWSE_RADIUS);
+  if (!pack) pack = { results: [], focusLocal: -1, from: idxInMerged, to: idxInMerged };
+  var k = pack.focusLocal;
+  if (k < 0 || !pack.results.length || pack.results[k].idx !== idxInMerged) {
+    // The centre entry itself got filtered out of its own window -- splice
+    // it back in at the right sorted position so it is always shown.
+    var insertAt = pack.results.findIndex(function(r) { return r.idx > idxInMerged; });
+    if (insertAt < 0) insertAt = pack.results.length;
+    pack.results.splice(insertAt, 0, {
+      idx: idxInMerged, entry: diaryData.entries[idxInMerged],
+      hits: 0, hitPositions: [], matchTerms: []
+    });
+    k = insertAt;
+  }
+  browseMode = true;
+  displayResults(pack.results, '', { autoSelect: false });
+
+  var r = pack.results[k];
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      selectResult(k, pdfPageForResult(r) || 1, r.idx);
+      scrollResultToPanelTop(k);
+    });
+  });
+  return true;
 }
 
 // ── Box types ───────────────────────────────────────────────────────────────
@@ -4563,12 +4898,12 @@ function selectGuideSection(id) {
     const docHtml = src
       ? '<span class="gd-doc gd-doc-link" data-guide-pdf="' + escapeHtml(src) +
         '" data-guide-page="' + page + '" style="color:' + colour +
-        '" title="Open this document at the cited page in the reading area (Timeline)">' +
+        '" title="Open this document at the cited page in the reading area (Main Docs)">' +
         escapeHtml(label) + '</span>'
       : inComplementary
       ? '<span class="gd-doc gd-doc-link" data-guide-complementary="' + escapeHtml(ev.doc) +
         '" data-guide-orig-page="' + page + '" style="color:' + colour +
-        '" title="Open this document at the cited page in the reading area (Complementary)">' +
+        '" title="Open this document at the cited page in the reading area (Linked Docs)">' +
         escapeHtml(label) + '</span>'
       : '<span class="gd-doc" style="color:' + colour + '">' + escapeHtml(label) + '</span>';
     const link = ev.url
@@ -5144,7 +5479,7 @@ function displayResults(results, query, opts) {
       if (/^== (?:ATTACHMENT|EMBEDDED DOC)/.test(plain)) {
         html += '<p class="attach-block">' + p + '</p>';
       } else {
-        html += '<p>' + p + '</p>';
+        html += '<p>' + (hasMailHead ? addSentenceBreaks(p) : p) + '</p>';
       }
     }
     html += '</div>';
