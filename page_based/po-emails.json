@@ -2,7 +2,7 @@
   "source_file": "po-emails.pdf",
   "source_id": "po-emails",
   "title": "P.O. emails (FOI release)",
-  "total_entries": 222,
+  "total_entries": 234,
   "date_range": {
     "start": "2020-01-31",
     "end": "2020-07-28"
@@ -281,13 +281,35 @@
       "source": "po-emails",
       "thread_key": "po-emails|2020-02-01|1634",
       "thread_label": "2020-02-01 16:34 · Jeremy Farrar",
+      "replied_by": [],
+      "idx": 9
+    },
+    {
+      "date": "2020-02-02",
+      "time": "2030",
+      "kind": "email",
+      "raw_date": "20:30 ET · [NA]",
+      "sender": "",
+      "sender_raw": "",
+      "sender_how": "",
+      "subject": "[NA]",
+      "content": "To: Jeremy Farrar i \"Fauci, Anthony (NIH/NIAID) \" MEE, Patrick Vallance\n\nCc: \"Drosten, Christian\" = as \"| PG Koopmans\"\n\nSubject: [NA]\n\nDate: 2 February 2020 at 7:30:12 pm AEDT\n\n----------\n\nee ward Holmes :\n“spoehimann| , Andrew Rambaut < , \"Kristian\nG. Andersen\" Paul Schreier |\n“rigarry| , \"Ferguson, Mike\"\nFrancis Comins <Comlinst( , lawrence.tabak Josie\nGolding\nDear Jeremy and others,\nThis was a very useful teleconference. Given the evidence presented and the discussions around it, | would conclude that a follow-up discussion on the possible origin of 2019-nCoV would be of much interest. However, | doubt if it needs to be done on very short term, given the importance of other activities of the scientific community, WHO and other stakeholders at present. It is my opinion that a non-natural origin of 2019-nCoV is highly unlikely at present. Any conspiracy theory can be approached with factual information. | have written down some of the counter-arguments. It is a bit long (below) but wanted to share it with you anyway.\nThanks for organizing this on such short notice,",
+      "signature": null,
+      "stamp": "2 February 2020 at 7:30:12 pm AEDT",
+      "stamp_status": "day-month-year",
+      "zone_assumed": "Robert Garry's own mailbox export (page-owner code GARRY)",
+      "stamp_line": "19:30 Chicago -> 20:30 ET",
+      "recovered_inline": false,
+      "source": "po-emails",
+      "thread_key": "po-emails|2020-02-02|2030",
+      "thread_label": "2020-02-02 20:30 · ",
       "replied_by": [
         {
           "key": "po-emails|2020-07-27|2047",
           "label": "2020-07-27 20:47 · Edward Holmes"
         }
       ],
-      "idx": 9
+      "idx": 10
     },
     {
       "date": "2020-02-03",
@@ -309,7 +331,7 @@
       "thread_key": "po-emails|2020-02-03|0404",
       "thread_label": "2020-02-03 04:04 · Pope, Andrew",
       "replied_by": [],
-      "idx": 10
+      "idx": 11
     },
     {
       "date": "2020-02-04",
@@ -341,7 +363,7 @@
           "label": "2020-02-04 15:10 · Edward Holmes"
         }
       ],
-      "idx": 11
+      "idx": 12
     },
     {
       "date": "2020-02-04",
@@ -363,7 +385,7 @@
       "thread_key": "po-emails|2020-02-04|0402",
       "thread_label": "2020-02-04 04:02 · Daszak, Peter",
       "replied_by": [],
-      "idx": 12
+      "idx": 13
     },
     {
       "date": "2020-02-04",
@@ -385,7 +407,7 @@
       "thread_key": "po-emails|2020-02-04|0910",
       "thread_label": "2020-02-04 09:10 · Pope, Andrew",
       "replied_by": [],
-      "idx": 13
+      "idx": 14
     },
     {
       "date": "2020-02-04",
@@ -409,10 +431,6 @@
       "thread_label": "2020-02-04 14:31 · Robert Garry",
       "replied_by": [
         {
-          "key": "po-emails|2020-02-05|0814",
-          "label": "2020-02-05 08:14 · Robert Garry"
-        },
-        {
           "key": "po-emails|2020-02-05|0803",
           "label": "2020-02-05 08:03 · Kristian G. Andersen"
         }
@@ -420,7 +438,7 @@
       "reply_to": "po-emails|2020-02-04|0036",
       "reply_to_label": "2020-02-04 00:36 · Kristian G. Andersen",
       "link_kind": "explicit (quoted inline)",
-      "idx": 14
+      "idx": 15
     },
     {
       "date": "2020-02-04",
@@ -431,7 +449,7 @@
       "sender_raw": "Edward Hole",
       "sender_how": "From: line",
       "subject": "Re: Summary - Invitation to edit",
-      "content": "From: Edward Holmes\n\nTo: Kristian Andersen nn\n\nSubject: Re: Summary - Invitation to edit\n\nDate: Tuesday, February 4, 2020 at 2:10 PM\n\n----------\n\n[_ External Sender. Be aware of links, attachments and requests.\nWorks for me. Should | quickly check with Jeremy to see if he is happy for it to be circulated to the wider group?\nGreat job.\n\n----------\n\nProfessor Edward C. Holmes FAA FRS\nThe University of Sydney",
+      "content": "From: Edward Holmes\n\nTo: Kristian Andersen nn\n\nSubject: Re: Summary - Invitation to edit\n\nDate: Tuesday, February 4, 2020 at 2:10 PM\n\n----------\n\n[_ External Sender. Be aware of links, attachments and requests.\nWorks for me. Should | quickly check with Jeremy to see if he is happy for it to be circulated to the wider group?\nGreat job.\n\n----------\n\nProfessor Edward C. Holmes FAA FRS\nThe University of Sydney\nOn 5 Feb 2020, at 7:03 am, Kristian G. Andersen ; SS\nDid a final pass and | think it looks great.\nUnless others have further comments, I'd say this is ready to go up the chain. Importantly, my assumption is that\nthis will not be a document that is meant for public consumption, as that would require much more careful crafting\nand attention to specific wording of key concepts in the document (not really a task | think we could/should take on -\nthat would be way, way more work).",
       "signature": "Professor Edward C. Holmes FAA FRS\nThe University of Sydney",
       "stamp": "Tuesday, February 4, 2020 at 2:10 PM",
       "stamp_status": "long",
@@ -439,10 +457,16 @@
       "stamp_line": "14:10 Chicago -> 15:10 ET",
       "recovered_inline": false,
       "source": "po-emails",
+      "dedup_merged": 1,
       "thread_key": "po-emails|2020-02-04|1510",
       "thread_label": "2020-02-04 15:10 · Edward Holmes",
-      "replied_by": [],
-      "idx": 15,
+      "replied_by": [
+        {
+          "key": "po-emails|2020-02-05|0814",
+          "label": "2020-02-05 08:14 · Robert Garry"
+        }
+      ],
+      "idx": 16,
       "reply_to": "po-emails|2020-02-04|0036",
       "reply_to_label": "2020-02-04 00:36 · Kristian G. Andersen",
       "link_kind": "inferred (same conversation)"
@@ -473,7 +497,7 @@
           "label": "2020-02-04 17:39 · Kristian G. Andersen"
         }
       ],
-      "idx": 16
+      "idx": 17
     },
     {
       "date": "2020-02-04",
@@ -495,7 +519,7 @@
       "thread_key": "po-emails|2020-02-04|1559",
       "thread_label": "2020-02-04 15:59 · Edward Holmes",
       "replied_by": [],
-      "idx": 17
+      "idx": 18
     },
     {
       "date": "2020-02-04",
@@ -530,7 +554,7 @@
       "reply_to": "po-emails|2020-02-04|1536",
       "reply_to_label": "2020-02-04 15:36 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 18
+      "idx": 19
     },
     {
       "date": "2020-02-04",
@@ -558,7 +582,7 @@
           "label": "2020-02-05 12:53 · Robert Garry"
         }
       ],
-      "idx": 19
+      "idx": 20
     },
     {
       "date": "2020-02-04",
@@ -586,7 +610,7 @@
           "label": "2020-02-04 22:08 · Kristian G. Andersen"
         }
       ],
-      "idx": 20
+      "idx": 21
     },
     {
       "date": "2020-02-04",
@@ -614,7 +638,7 @@
           "label": "2020-02-04 20:56 · Robert Garry"
         }
       ],
-      "idx": 21,
+      "idx": 22,
       "reply_to": "po-emails|2020-02-04|1739",
       "reply_to_label": "2020-02-04 17:39 · Kristian G. Andersen",
       "link_kind": "inferred (same conversation)"
@@ -640,7 +664,7 @@
       "thread_key": "po-emails|2020-02-04|2056",
       "thread_label": "2020-02-04 20:56 · Robert Garry",
       "replied_by": [],
-      "idx": 22,
+      "idx": 23,
       "reply_to": "po-emails|2020-02-04|2008",
       "reply_to_label": "2020-02-04 20:08 · Kristian G. Andersen",
       "link_kind": "inferred (same conversation)"
@@ -678,7 +702,7 @@
       "reply_to": "po-emails|2020-02-04|1934",
       "reply_to_label": "2020-02-04 19:34 · Robert Garry",
       "link_kind": "explicit (quoted inline)",
-      "idx": 23
+      "idx": 24
     },
     {
       "date": "2020-02-05",
@@ -710,7 +734,7 @@
           "label": "2020-02-05 05:22 · Edward Holmes"
         }
       ],
-      "idx": 24,
+      "idx": 25,
       "reply_to": "po-emails|2020-02-04|2208",
       "reply_to_label": "2020-02-04 22:08 · Kristian G. Andersen",
       "link_kind": "inferred (same conversation)"
@@ -741,7 +765,7 @@
           "label": "2020-02-06 00:25 · Andrew Rambaut"
         }
       ],
-      "idx": 25,
+      "idx": 26,
       "reply_to": "po-emails|2020-02-05|0423",
       "reply_to_label": "2020-02-05 04:23 · Edward Holmes",
       "link_kind": "inferred (same conversation)"
@@ -769,7 +793,7 @@
       "reply_to": "po-emails|2020-02-04|1431",
       "reply_to_label": "2020-02-04 14:31 · Robert Garry",
       "link_kind": "explicit (quoted inline)",
-      "idx": 26
+      "idx": 27
     },
     {
       "date": "2020-02-05",
@@ -780,8 +804,8 @@
       "sender_raw": "Garry, Robert a, s—~—~SCiSY",
       "sender_how": "inline quote marker (On ... wrote:)",
       "subject": "[NA]",
-      "content": "From: Robert Garry\n\nSubject: [NA]\n\nSent: 5 Feb 2020 7:14 am\n\n----------\n\nAnother caveat is that | think there is plenty of room for additional discussion amongst the experts. Jeremy’s idea (or was it Tony’s) of a face-to-face under the auspicious of WHO still makes sense to me.\nDate: Tuesday, February 4, ZUZU at Z:1U PIM\nTo: Kristian Andersen Po\nSubject: Re: Summary - Invitation to edit\n[_] External Sender. Be aware of links, attachments and requests.\nWorks for me. Should | quickly check with Jeremy to see if he is happy for it to be circulated to the wider group?\nGreat job.\n\n----------\n\nProfessor Edward C. Holmes FAA FRS\nThe University of Sydney\nOn 5 Feb 2020, at 7:03 am, Kristian G. Andersen ; SS\nDid a final pass and | think it looks great.\nUnless others have further comments, I'd say this is ready to go up the chain. Importantly, my assumption is that\nthis will not be a document that is meant for public consumption, as that would require much more careful crafting\nand attention to specific wording of key concepts in the document (not really a task | think we could/should take on -\nthat would be way, way more work).",
-      "signature": "Professor Edward C. Holmes FAA FRS\nThe University of Sydney\nOn 5 Feb 2020, at 7:03 am, Kristian G. Andersen ; SS\nDid a final pass and | think it looks great.\nUnless others have further comments, I'd say this is ready to go up the chain. Importantly, my assumption is that\nthis will not be a document that is meant for public consumption, as that would require much more careful crafting\nand attention to specific wording of key concepts in the document (not really a task | think we could/should take on -\nthat would be way, way more work).",
+      "content": "From: Robert Garry\n\nSubject: [NA]\n\nSent: 5 Feb 2020 7:14 am\n\n----------\n\nAnother caveat is that | think there is plenty of room for additional discussion amongst the experts. Jeremy’s idea (or was it Tony’s) of a face-to-face under the auspicious of WHO still makes sense to me.",
+      "signature": null,
       "stamp": "5 Feb 2020 7:14 am",
       "stamp_status": "day-month-year",
       "zone_assumed": "Robert Garry's own mailbox export (page-owner code GARRY)",
@@ -792,10 +816,10 @@
       "thread_key": "po-emails|2020-02-05|0814",
       "thread_label": "2020-02-05 08:14 · Robert Garry",
       "replied_by": [],
-      "reply_to": "po-emails|2020-02-04|1431",
-      "reply_to_label": "2020-02-04 14:31 · Robert Garry",
+      "reply_to": "po-emails|2020-02-04|1510",
+      "reply_to_label": "2020-02-04 15:10 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 27
+      "idx": 28
     },
     {
       "date": "2020-02-05",
@@ -822,7 +846,7 @@
           "label": "2020-02-05 09:24 · Robert Garry"
         }
       ],
-      "idx": 28
+      "idx": 29
     },
     {
       "date": "2020-02-05",
@@ -852,7 +876,7 @@
       "reply_to": "po-emails|2020-02-05|0818",
       "reply_to_label": "2020-02-05 08:18 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 29
+      "idx": 30
     },
     {
       "date": "2020-02-05",
@@ -882,7 +906,7 @@
       "reply_to": "po-emails|2020-02-05|0924",
       "reply_to_label": "2020-02-05 09:24 · Robert Garry",
       "link_kind": "explicit (quoted inline)",
-      "idx": 30
+      "idx": 31
     },
     {
       "date": "2020-02-05",
@@ -908,7 +932,7 @@
       "reply_to": "po-emails|2020-02-04|1739",
       "reply_to_label": "2020-02-04 17:39 · Kristian G. Andersen",
       "link_kind": "explicit (quoted inline)",
-      "idx": 31
+      "idx": 32
     },
     {
       "date": "2020-02-05",
@@ -931,18 +955,18 @@
       "thread_label": "2020-02-05 12:27 · Kristian G. Andersen",
       "replied_by": [
         {
-          "key": "po-emails|2020-02-05|1500|3",
+          "key": "po-emails|2020-02-05|1500|4",
           "label": "2020-02-05 15:00 · Robert Garry"
         },
         {
-          "key": "po-emails|2020-02-05|1813",
-          "label": "2020-02-05 18:13 · Edward Holmes"
+          "key": "po-emails|2020-02-05|1500|1",
+          "label": "2020-02-05 15:00 · Edward Holmes"
         }
       ],
       "reply_to": "po-emails|2020-02-05|1020",
       "reply_to_label": "2020-02-05 10:20 · Kristian G. Andersen",
       "link_kind": "explicit (quoted inline)",
-      "idx": 32
+      "idx": 33
     },
     {
       "date": "2020-02-05",
@@ -968,7 +992,7 @@
       "reply_to": "po-emails|2020-02-04|1828",
       "reply_to_label": "2020-02-04 18:28 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 33
+      "idx": 34
     },
     {
       "date": "2020-02-05",
@@ -995,7 +1019,7 @@
           "label": "2020-02-06 00:34 · Andrew Rambaut"
         }
       ],
-      "idx": 34
+      "idx": 35
     },
     {
       "date": "2020-02-05",
@@ -1022,7 +1046,7 @@
           "label": "2020-02-06 00:52 · Andrew Rambaut"
         }
       ],
-      "idx": 35
+      "idx": 36
     },
     {
       "date": "2020-02-05",
@@ -1049,7 +1073,42 @@
           "label": "2020-02-06 14:10 · Kristian G. Andersen"
         }
       ],
-      "idx": 36
+      "idx": 37
+    },
+    {
+      "date": "2020-02-05",
+      "time": "1500",
+      "kind": "email",
+      "raw_date": "15:00 ET · Re: Summary - Invitation to edit",
+      "sender": "Edward Holmes",
+      "sender_raw": "PROFESSOR EDWARD C, HOLMES FAA FRS",
+      "sender_how": "signature block (From: lost in scan)",
+      "subject": "Re: Summary - Invitation to edit",
+      "content": "To: Robert Garry\n\nCc: Kristian Andersen Andrew Rambaut BP\n\nSubject: Re: Summary - Invitation to edit\n\nDate: Wednesday, February 5, 2U2ZU at 4:37 PM\n\n----------\n\na External Sender. Be aware of links, attachments and requests.\nSmuggled in. Captured by the anti-smuggling cops in two southern provinces.\n\n----------\n\nPROFESSOR EDWARD C, HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia",
+      "signature": "PROFESSOR EDWARD C, HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia",
+      "stamp": "Wednesday, February 5, 2U2ZU at 4:37 PM",
+      "stamp_status": "partial-no-time",
+      "zone_assumed": "REV mailbox-stamp owner not identified; empirically US Pacific time (could be off by up to 1 hour)",
+      "stamp_line": "12:00 Los Angeles -> 15:00 ET (time not recovered)",
+      "recovered_inline": false,
+      "source": "po-emails",
+      "thread_key": "po-emails|2020-02-05|1500|1",
+      "date_note": "same minute as another message",
+      "thread_label": "2020-02-05 15:00 · Edward Holmes",
+      "replied_by": [
+        {
+          "key": "po-emails|2020-02-06|0139",
+          "label": "2020-02-06 01:39 · Robert Garry"
+        },
+        {
+          "key": "po-emails|2020-02-05|1813",
+          "label": "2020-02-05 18:13 · Edward Holmes"
+        }
+      ],
+      "idx": 38,
+      "reply_to": "po-emails|2020-02-05|1227",
+      "reply_to_label": "2020-02-05 12:27 · Kristian G. Andersen",
+      "link_kind": "inferred (same conversation)"
     },
     {
       "date": "2020-02-05",
@@ -1068,8 +1127,8 @@
       "stamp_line": "12:00 Los Angeles -> 15:00 ET (time not recovered)",
       "recovered_inline": true,
       "source": "po-emails",
-      "thread_key": "po-emails|2020-02-05|1500|1",
-      "date_note": "same minute as another message",
+      "thread_key": "po-emails|2020-02-05|1500|2",
+      "date_note": "",
       "thread_label": "2020-02-05 15:00 · Robert Garry",
       "replied_by": [
         {
@@ -1077,7 +1136,7 @@
           "label": "2020-02-05 19:01 · Kristian G. Andersen"
         }
       ],
-      "idx": 37
+      "idx": 39
     },
     {
       "date": "2020-02-05",
@@ -1096,7 +1155,7 @@
       "stamp_line": "12:00 Los Angeles -> 15:00 ET (time not recovered)",
       "recovered_inline": true,
       "source": "po-emails",
-      "thread_key": "po-emails|2020-02-05|1500|2",
+      "thread_key": "po-emails|2020-02-05|1500|3",
       "date_note": "",
       "thread_label": "2020-02-05 15:00 · Edward Holmes",
       "replied_by": [
@@ -1105,7 +1164,7 @@
           "label": "2020-02-05 18:58 · Kristian G. Andersen"
         }
       ],
-      "idx": 38
+      "idx": 40
     },
     {
       "date": "2020-02-05",
@@ -1124,7 +1183,7 @@
       "stamp_line": "12:00 Los Angeles -> 15:00 ET (time not recovered)",
       "recovered_inline": true,
       "source": "po-emails",
-      "thread_key": "po-emails|2020-02-05|1500|3",
+      "thread_key": "po-emails|2020-02-05|1500|4",
       "date_note": "",
       "thread_label": "2020-02-05 15:00 · Robert Garry",
       "replied_by": [
@@ -1136,7 +1195,7 @@
       "reply_to": "po-emails|2020-02-05|1227",
       "reply_to_label": "2020-02-05 12:27 · Kristian G. Andersen",
       "link_kind": "explicit (quoted inline)",
-      "idx": 39
+      "idx": 41
     },
     {
       "date": "2020-02-05",
@@ -1162,7 +1221,7 @@
       "reply_to": "po-emails|2020-02-04|2208",
       "reply_to_label": "2020-02-04 22:08 · Kristian G. Andersen",
       "link_kind": "explicit (quoted inline)",
-      "idx": 40
+      "idx": 42
     },
     {
       "date": "2020-02-05",
@@ -1193,9 +1252,9 @@
           "label": "2020-02-05 18:43 · Edward Holmes"
         }
       ],
-      "idx": 41,
-      "reply_to": "po-emails|2020-02-05|1227",
-      "reply_to_label": "2020-02-05 12:27 · Kristian G. Andersen",
+      "idx": 43,
+      "reply_to": "po-emails|2020-02-05|1500|1",
+      "reply_to_label": "2020-02-05 15:00 · Edward Holmes",
       "link_kind": "inferred (same conversation)"
     },
     {
@@ -1223,7 +1282,7 @@
           "label": "2020-02-06 11:55 · Robert Garry"
         }
       ],
-      "idx": 42,
+      "idx": 44,
       "reply_to": "po-emails|2020-02-05|1813",
       "reply_to_label": "2020-02-05 18:13 · Edward Holmes",
       "link_kind": "inferred (same conversation)"
@@ -1248,10 +1307,10 @@
       "thread_key": "po-emails|2020-02-05|1858",
       "thread_label": "2020-02-05 18:58 · Kristian G. Andersen",
       "replied_by": [],
-      "reply_to": "po-emails|2020-02-05|1500|2",
+      "reply_to": "po-emails|2020-02-05|1500|3",
       "reply_to_label": "2020-02-05 15:00 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 43
+      "idx": 45
     },
     {
       "date": "2020-02-05",
@@ -1278,10 +1337,10 @@
           "label": "2020-02-05 19:07 · Robert Garry"
         }
       ],
-      "reply_to": "po-emails|2020-02-05|1500|1",
+      "reply_to": "po-emails|2020-02-05|1500|2",
       "reply_to_label": "2020-02-05 15:00 · Robert Garry",
       "link_kind": "explicit (quoted inline)",
-      "idx": 44
+      "idx": 46
     },
     {
       "date": "2020-02-05",
@@ -1312,7 +1371,7 @@
           "label": "2020-02-05 19:12 · Edward Holmes"
         }
       ],
-      "idx": 45,
+      "idx": 47,
       "reply_to": "po-emails|2020-02-05|1901",
       "reply_to_label": "2020-02-05 19:01 · Kristian G. Andersen",
       "link_kind": "inferred (same conversation)"
@@ -1346,7 +1405,7 @@
           "label": "2020-02-05 20:46 · Edward Holmes"
         }
       ],
-      "idx": 46,
+      "idx": 48,
       "reply_to": "po-emails|2020-02-05|1907",
       "reply_to_label": "2020-02-05 19:07 · Robert Garry",
       "link_kind": "inferred (same conversation)"
@@ -1376,7 +1435,7 @@
           "label": "2020-02-06 05:36 · Edward Holmes"
         }
       ],
-      "idx": 47,
+      "idx": 49,
       "reply_to": "po-emails|2020-02-05|1912",
       "reply_to_label": "2020-02-05 19:12 · Edward Holmes",
       "link_kind": "inferred (same conversation)"
@@ -1409,7 +1468,7 @@
       "reply_to": "po-emails|2020-02-05|0423",
       "reply_to_label": "2020-02-05 04:23 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 48
+      "idx": 50
     },
     {
       "date": "2020-02-05",
@@ -1434,7 +1493,7 @@
       "reply_to": "po-emails|2020-02-05|2144",
       "reply_to_label": "2020-02-05 21:44 · Andrew Rambaut",
       "link_kind": "explicit (quoted inline)",
-      "idx": 49
+      "idx": 51
     },
     {
       "date": "2020-02-06",
@@ -1459,7 +1518,7 @@
       "reply_to": "po-emails|2020-02-05|0522",
       "reply_to_label": "2020-02-05 05:22 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 50
+      "idx": 52
     },
     {
       "date": "2020-02-06",
@@ -1489,7 +1548,7 @@
       "reply_to": "po-emails|2020-02-05|1813",
       "reply_to_label": "2020-02-05 18:13 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 51
+      "idx": 53
     },
     {
       "date": "2020-02-06",
@@ -1514,7 +1573,7 @@
       "reply_to": "po-emails|2020-02-05|1331",
       "reply_to_label": "2020-02-05 13:31 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 52
+      "idx": 54
     },
     {
       "date": "2020-02-06",
@@ -1539,7 +1598,7 @@
       "reply_to": "po-emails|2020-02-05|1347",
       "reply_to_label": "2020-02-05 13:47 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 53
+      "idx": 55
     },
     {
       "date": "2020-02-06",
@@ -1550,8 +1609,8 @@
       "sender_raw": "Garry, Robert F | ss",
       "sender_how": "inline quote marker (On ... wrote:)",
       "subject": "[NA]",
-      "content": "From: Robert Garry\n\nSubject: [NA]\n\nSent: 5 Feb 2020 22:39\n\n----------\n\nFascinating — so does this mean they were infected before being smuggled out of Malaysia?\nDate: Wednesday, February 5, 2U2ZU at 4:37 PM\nTo: Robert Garry\nCe: Kristian Andersen Andrew Rambaut BP\nSubject: Re: Summary - Invitation to edit a External Sender. Be aware of links, attachments and requests.\nSmuggled in. Captured by the anti-smuggling cops in two southern provinces.\n\n----------\n\nPROFESSOR EDWARD C, HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia",
-      "signature": "PROFESSOR EDWARD C, HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia",
+      "content": "From: Robert Garry\n\nSubject: [NA]\n\nSent: 5 Feb 2020 22:39\n\n----------\n\nFascinating — so does this mean they were infected before being smuggled out of Malaysia?",
+      "signature": null,
       "stamp": "5 Feb 2020 22:39",
       "stamp_status": "day-month-year",
       "zone_assumed": "REV mailbox-stamp owner not identified; empirically US Pacific time (could be off by up to 1 hour)",
@@ -1566,7 +1625,10 @@
           "label": "2020-02-06 12:43 · Andrew Rambaut"
         }
       ],
-      "idx": 54
+      "reply_to": "po-emails|2020-02-05|1500|1",
+      "reply_to_label": "2020-02-05 15:00 · Edward Holmes",
+      "link_kind": "explicit (quoted inline)",
+      "idx": 56
     },
     {
       "date": "2020-02-06",
@@ -1588,7 +1650,7 @@
       "thread_key": "po-emails|2020-02-06|0536",
       "thread_label": "2020-02-06 05:36 · Edward Holmes",
       "replied_by": [],
-      "idx": 55,
+      "idx": 57,
       "reply_to": "po-emails|2020-02-05|2046",
       "reply_to_label": "2020-02-05 20:46 · Edward Holmes",
       "link_kind": "inferred (same conversation)"
@@ -1613,10 +1675,10 @@
       "thread_key": "po-emails|2020-02-06|0614",
       "thread_label": "2020-02-06 06:14 · Kristian G. Andersen",
       "replied_by": [],
-      "reply_to": "po-emails|2020-02-05|1500|3",
+      "reply_to": "po-emails|2020-02-05|1500|4",
       "reply_to_label": "2020-02-05 15:00 · Robert Garry",
       "link_kind": "explicit (quoted inline)",
-      "idx": 56
+      "idx": 58
     },
     {
       "date": "2020-02-06",
@@ -1641,7 +1703,7 @@
       "reply_to": "po-emails|2020-02-06|0028",
       "reply_to_label": "2020-02-06 00:28 · Robert Garry",
       "link_kind": "explicit (quoted inline)",
-      "idx": 57
+      "idx": 59
     },
     {
       "date": "2020-02-06",
@@ -1666,7 +1728,7 @@
       "reply_to": "po-emails|2020-02-05|1843",
       "reply_to_label": "2020-02-05 18:43 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 58
+      "idx": 60
     },
     {
       "date": "2020-02-06",
@@ -1691,7 +1753,7 @@
       "reply_to": "po-emails|2020-02-05|1907",
       "reply_to_label": "2020-02-05 19:07 · Robert Garry",
       "link_kind": "explicit (quoted inline)",
-      "idx": 59
+      "idx": 61
     },
     {
       "date": "2020-02-06",
@@ -1716,7 +1778,7 @@
       "reply_to": "po-emails|2020-02-05|1912",
       "reply_to_label": "2020-02-05 19:12 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 60
+      "idx": 62
     },
     {
       "date": "2020-02-06",
@@ -1741,7 +1803,7 @@
       "reply_to": "po-emails|2020-02-06|0139",
       "reply_to_label": "2020-02-06 01:39 · Robert Garry",
       "link_kind": "explicit (quoted inline)",
-      "idx": 61
+      "idx": 63
     },
     {
       "date": "2020-02-06",
@@ -1766,7 +1828,7 @@
       "reply_to": "po-emails|2020-02-05|1500",
       "reply_to_label": "2020-02-05 15:00 · Robert Garry",
       "link_kind": "explicit (quoted inline)",
-      "idx": 62
+      "idx": 64
     },
     {
       "date": "2020-02-07",
@@ -1793,7 +1855,7 @@
           "label": "2020-02-15 04:42 · Michael"
         }
       ],
-      "idx": 63
+      "idx": 65
     },
     {
       "date": "2020-02-07",
@@ -1820,7 +1882,7 @@
           "label": "2020-02-07 12:29 · Kristian G. Andersen"
         }
       ],
-      "idx": 64
+      "idx": 66
     },
     {
       "date": "2020-02-07",
@@ -1847,7 +1909,7 @@
           "label": "2020-02-07 23:55 · Robert Garry"
         }
       ],
-      "idx": 65
+      "idx": 67
     },
     {
       "date": "2020-02-07",
@@ -1869,7 +1931,7 @@
       "thread_key": "po-emails|2020-02-07|0711",
       "thread_label": "2020-02-07 07:11 · Edward Holmes",
       "replied_by": [],
-      "idx": 66
+      "idx": 68
     },
     {
       "date": "2020-02-07",
@@ -1891,7 +1953,7 @@
       "thread_key": "po-emails|2020-02-07|0929",
       "thread_label": "2020-02-07 09:29 · Edward Holmes",
       "replied_by": [],
-      "idx": 67
+      "idx": 69
     },
     {
       "date": "2020-02-07",
@@ -1925,7 +1987,7 @@
       "reply_to": "po-emails|2020-02-07|0541",
       "reply_to_label": "2020-02-07 05:41 · Robert Garry",
       "link_kind": "explicit (quoted inline)",
-      "idx": 68
+      "idx": 70
     },
     {
       "date": "2020-02-07",
@@ -1947,7 +2009,7 @@
       "thread_key": "po-emails|2020-02-07|1236",
       "thread_label": "2020-02-07 12:36 · Edward Holmes",
       "replied_by": [],
-      "idx": 69
+      "idx": 71
     },
     {
       "date": "2020-02-07",
@@ -1974,7 +2036,7 @@
           "label": "2020-02-08 10:51 · Kristian G. Andersen"
         }
       ],
-      "idx": 70
+      "idx": 72
     },
     {
       "date": "2020-02-07",
@@ -2001,7 +2063,7 @@
           "label": "2020-02-08 00:05 · Kristian G. Andersen"
         }
       ],
-      "idx": 71
+      "idx": 73
     },
     {
       "date": "2020-02-07",
@@ -2028,7 +2090,7 @@
           "label": "2020-02-07 17:18 · Edward Holmes"
         }
       ],
-      "idx": 72,
+      "idx": 74,
       "reply_to": "po-emails|2020-02-07|1229",
       "reply_to_label": "2020-02-07 12:29 · Kristian G. Andersen",
       "link_kind": "inferred (same conversation)"
@@ -2053,7 +2115,7 @@
       "thread_key": "po-emails|2020-02-07|1718",
       "thread_label": "2020-02-07 17:18 · Edward Holmes",
       "replied_by": [],
-      "idx": 73,
+      "idx": 75,
       "reply_to": "po-emails|2020-02-07|1610",
       "reply_to_label": "2020-02-07 16:10 · Andrew Rambaut",
       "link_kind": "inferred (same conversation)"
@@ -2078,7 +2140,7 @@
       "thread_key": "po-emails|2020-02-07|2026",
       "thread_label": "2020-02-07 20:26 · Jeremy Farrar",
       "replied_by": [],
-      "idx": 74
+      "idx": 76
     },
     {
       "date": "2020-02-07",
@@ -2100,7 +2162,7 @@
       "thread_key": "po-emails|2020-02-07|2031",
       "thread_label": "2020-02-07 20:31 · ",
       "replied_by": [],
-      "idx": 75
+      "idx": 77
     },
     {
       "date": "2020-02-07",
@@ -2122,7 +2184,7 @@
       "thread_key": "po-emails|2020-02-07|2353",
       "thread_label": "2020-02-07 23:53 · Edward Holmes",
       "replied_by": [],
-      "idx": 76
+      "idx": 78
     },
     {
       "date": "2020-02-07",
@@ -2147,7 +2209,7 @@
       "reply_to": "po-emails|2020-02-07|0646",
       "reply_to_label": "2020-02-07 06:46 · Andrew Rambaut",
       "link_kind": "explicit (quoted inline)",
-      "idx": 77
+      "idx": 79
     },
     {
       "date": "2020-02-08",
@@ -2172,7 +2234,7 @@
       "reply_to": "po-emails|2020-02-07|1559",
       "reply_to_label": "2020-02-07 15:59 · Andrew Rambaut",
       "link_kind": "explicit (quoted inline)",
-      "idx": 78
+      "idx": 80
     },
     {
       "date": "2020-02-08",
@@ -2197,7 +2259,7 @@
       "reply_to": "po-emails|2020-02-07|1229",
       "reply_to_label": "2020-02-07 12:29 · Kristian G. Andersen",
       "link_kind": "explicit (quoted inline)",
-      "idx": 79
+      "idx": 81
     },
     {
       "date": "2020-02-08",
@@ -2222,7 +2284,7 @@
       "reply_to": "po-emails|2020-02-07|1542",
       "reply_to_label": "2020-02-07 15:42 · Robert Garry",
       "link_kind": "explicit (quoted inline)",
-      "idx": 80
+      "idx": 82
     },
     {
       "date": "2020-02-08",
@@ -2249,7 +2311,7 @@
           "label": "2020-02-08 14:36 · R.A.M. Fouchier"
         }
       ],
-      "idx": 81
+      "idx": 83
     },
     {
       "date": "2020-02-08",
@@ -2276,7 +2338,7 @@
           "label": "2020-02-09 09:52 · Christian Drosten"
         }
       ],
-      "idx": 82,
+      "idx": 84,
       "reply_to": "po-emails|2020-02-08|1245",
       "reply_to_label": "2020-02-08 12:45 · Jeremy Farrar",
       "link_kind": "inferred (same conversation)"
@@ -2307,7 +2369,7 @@
           "label": "2020-02-09 00:16 · Kristian G. Andersen"
         }
       ],
-      "idx": 83
+      "idx": 85
     },
     {
       "date": "2020-02-08",
@@ -2334,7 +2396,7 @@
           "label": "2020-02-08 17:50 · R.A.M. Fouchier"
         }
       ],
-      "idx": 84
+      "idx": 86
     },
     {
       "date": "2020-02-08",
@@ -2361,7 +2423,7 @@
           "label": "2020-02-08 19:16 · Andrew Rambaut"
         }
       ],
-      "idx": 85,
+      "idx": 87,
       "reply_to": "po-emails|2020-02-08|1627",
       "reply_to_label": "2020-02-08 16:27 · Jeremy Farrar",
       "link_kind": "inferred (same conversation)"
@@ -2391,7 +2453,7 @@
           "label": "2020-02-08 23:11 · Edward Holmes"
         }
       ],
-      "idx": 86,
+      "idx": 88,
       "reply_to": "po-emails|2020-02-08|1750",
       "reply_to_label": "2020-02-08 17:50 · R.A.M. Fouchier",
       "link_kind": "inferred (same conversation)"
@@ -2422,7 +2484,7 @@
           "label": "2020-02-08 23:21 · Jeremy Farrar"
         }
       ],
-      "idx": 87,
+      "idx": 89,
       "reply_to": "po-emails|2020-02-08|1916",
       "reply_to_label": "2020-02-08 19:16 · Andrew Rambaut",
       "link_kind": "inferred (same conversation)"
@@ -2450,7 +2512,7 @@
       "reply_to": "po-emails|2020-02-08|2311",
       "reply_to_label": "2020-02-08 23:11 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 88
+      "idx": 90
     },
     {
       "date": "2020-02-09",
@@ -2474,14 +2536,14 @@
       "thread_label": "2020-02-09 00:16 · Kristian G. Andersen",
       "replied_by": [
         {
-          "key": "po-emails|2020-02-10|0426",
-          "label": "2020-02-10 04:26 · Jeremy Farrar"
+          "key": "po-emails|2020-02-09|2307",
+          "label": "2020-02-09 23:07 · "
         }
       ],
       "reply_to": "po-emails|2020-02-08|1538",
       "reply_to_label": "2020-02-08 15:38 · Christian Drosten",
       "link_kind": "explicit (quoted inline)",
-      "idx": 89
+      "idx": 91
     },
     {
       "date": "2020-02-09",
@@ -2507,7 +2569,7 @@
       "reply_to": "po-emails|2020-02-08|1436",
       "reply_to_label": "2020-02-08 14:36 · R.A.M. Fouchier",
       "link_kind": "explicit (quoted inline)",
-      "idx": 90
+      "idx": 92
     },
     {
       "date": "2020-02-09",
@@ -2529,7 +2591,37 @@
       "thread_key": "po-emails|2020-02-09|1500",
       "thread_label": "2020-02-09 15:00 · ",
       "replied_by": [],
-      "idx": 91
+      "idx": 93
+    },
+    {
+      "date": "2020-02-09",
+      "time": "2307",
+      "kind": "email",
+      "raw_date": "23:07 ET · Re: [ext] 2019 N-CoV",
+      "sender": "",
+      "sender_raw": "",
+      "sender_how": "",
+      "subject": "Re: [ext] 2019 N-CoV",
+      "content": "To: \"Kristian G. Andersen\" nn \"Drosten, Christian\" iii Jeremy Farrar i Edward Holmes i PS | 2ncis colin: EE ‘afaucid : . SE Josie Golding ES Vike Ferguson\n\nSubject: Re: [ext] 2019 N-CoV\n\nDate: Sunday, 9 February 2020 at 20:07\n\n----------\n\nWow....took off from e-mail for a day.....\nAs mentioned to Jeremy, | would not be in favour of publishing something specific on the lab escape hypothesis,\nbecause | agree (with Kristian) that this could backfire. Yes, there is speculation in the public domain, triggered by several papers, including the rubbish ones. By zooming in on a specific finding that is NOT in the public domain as far as |\nknow, | think this will generate its own conspiracy theories.\nSo if published, | would suggest zooming out a bit for starters, describing that one of the key challenges is where this virus came from, discuss some of the (wild) guesses out there, and then argue step by step what the challenges are in inferring this from sequence data, where you do not know exactly what the pool is that you are sampling from, so end up interpreting the needle drawn out of a haystack. Here, the many pieces of the discussion that passed by these last few days can be included, like rates of evolution and dating of possible origins; examples of cleavage site acquisition from other viruses, recombination in coronavirus evolutionary history, possible abrupt changes in spillover events,\nability to confirm or disproof things in vitro. etc\nAnd | would leave “lab escape” for the discussion, because putting that in the public domain as a hypothesis in my view will be read as “see, they also thought so\"\nMarion",
+      "signature": null,
+      "stamp": "Sunday, 9 February 2020 at 20:07",
+      "stamp_status": "day-month-year",
+      "zone_assumed": "REV mailbox-stamp owner not identified; empirically US Pacific time (could be off by up to 1 hour)",
+      "stamp_line": "20:07 Los Angeles -> 23:07 ET",
+      "recovered_inline": false,
+      "source": "po-emails",
+      "thread_key": "po-emails|2020-02-09|2307",
+      "thread_label": "2020-02-09 23:07 · ",
+      "replied_by": [
+        {
+          "key": "po-emails|2020-02-10|0426",
+          "label": "2020-02-10 04:26 · Jeremy Farrar"
+        }
+      ],
+      "reply_to": "po-emails|2020-02-09|0016",
+      "reply_to_label": "2020-02-09 00:16 · Kristian G. Andersen",
+      "link_kind": "explicit (quoted inline)",
+      "idx": 94
     },
     {
       "date": "2020-02-10",
@@ -2556,10 +2648,10 @@
           "label": "2020-02-10 04:47 · Lipkin"
         }
       ],
-      "reply_to": "po-emails|2020-02-09|0016",
-      "reply_to_label": "2020-02-09 00:16 · Kristian G. Andersen",
-      "link_kind": "explicit (quoted inline)",
-      "idx": 92
+      "idx": 95,
+      "reply_to": "po-emails|2020-02-09|2307",
+      "reply_to_label": "2020-02-09 23:07 · ",
+      "link_kind": "inferred (same conversation)"
     },
     {
       "date": "2020-02-10",
@@ -2589,7 +2681,7 @@
       "reply_to": "po-emails|2020-02-10|0426",
       "reply_to_label": "2020-02-10 04:26 · Jeremy Farrar",
       "link_kind": "explicit (quoted inline)",
-      "idx": 93
+      "idx": 96
     },
     {
       "date": "2020-02-10",
@@ -2616,7 +2708,7 @@
           "label": "2020-02-10 16:51 · Robert Garry"
         }
       ],
-      "idx": 94
+      "idx": 97
     },
     {
       "date": "2020-02-10",
@@ -2643,7 +2735,7 @@
           "label": "2020-02-11 09:17 · Kristian G. Andersen"
         }
       ],
-      "idx": 95
+      "idx": 98
     },
     {
       "date": "2020-02-10",
@@ -2665,7 +2757,7 @@
       "thread_key": "po-emails|2020-02-10|1427",
       "thread_label": "2020-02-10 14:27 · Edward Holmes",
       "replied_by": [],
-      "idx": 96
+      "idx": 99
     },
     {
       "date": "2020-02-10",
@@ -2697,7 +2789,7 @@
           "label": "2020-02-12 02:40 · Lipkin"
         }
       ],
-      "idx": 97
+      "idx": 100
     },
     {
       "date": "2020-02-10",
@@ -2719,7 +2811,7 @@
       "thread_key": "po-emails|2020-02-10|1651",
       "thread_label": "2020-02-10 16:51 · Robert Garry",
       "replied_by": [],
-      "idx": 98,
+      "idx": 101,
       "reply_to": "po-emails|2020-02-10|1300",
       "reply_to_label": "2020-02-10 13:00 · Kristian",
       "link_kind": "inferred (same conversation)"
@@ -2749,7 +2841,7 @@
           "label": "2020-02-10 22:11 · Edward Holmes"
         }
       ],
-      "idx": 99
+      "idx": 102
     },
     {
       "date": "2020-02-10",
@@ -2774,7 +2866,7 @@
       "reply_to": "po-emails|2020-02-10|0447",
       "reply_to_label": "2020-02-10 04:47 · Lipkin",
       "link_kind": "explicit (quoted inline)",
-      "idx": 100
+      "idx": 103
     },
     {
       "date": "2020-02-10",
@@ -2804,7 +2896,7 @@
       "reply_to": "po-emails|2020-02-10|1706",
       "reply_to_label": "2020-02-10 17:06 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 101
+      "idx": 104
     },
     {
       "date": "2020-02-11",
@@ -2829,7 +2921,7 @@
       "reply_to": "po-emails|2020-02-10|2211",
       "reply_to_label": "2020-02-10 22:11 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 102
+      "idx": 105
     },
     {
       "date": "2020-02-11",
@@ -2854,7 +2946,7 @@
       "reply_to": "po-emails|2020-02-10|1633",
       "reply_to_label": "2020-02-10 16:33 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 103
+      "idx": 106
     },
     {
       "date": "2020-02-11",
@@ -2879,7 +2971,7 @@
       "reply_to": "po-emails|2020-02-10|1356",
       "reply_to_label": "2020-02-10 13:56 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 104
+      "idx": 107
     },
     {
       "date": "2020-02-11",
@@ -2906,7 +2998,7 @@
           "label": "2020-02-12 03:24 · Kristian G. Andersen"
         }
       ],
-      "idx": 105
+      "idx": 108
     },
     {
       "date": "2020-02-11",
@@ -2933,7 +3025,7 @@
           "label": "2020-02-12 02:15 · Edward Holmes"
         }
       ],
-      "idx": 106
+      "idx": 109
     },
     {
       "date": "2020-02-12",
@@ -2960,7 +3052,7 @@
           "label": "2020-02-12 14:00 · Robert Garry"
         }
       ],
-      "idx": 107,
+      "idx": 110,
       "reply_to": "po-emails|2020-02-11|2216",
       "reply_to_label": "2020-02-11 22:16 · Robert Garry",
       "link_kind": "inferred (same conversation)"
@@ -2988,7 +3080,7 @@
       "reply_to": "po-emails|2020-02-10|1633",
       "reply_to_label": "2020-02-10 16:33 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 108
+      "idx": 111
     },
     {
       "date": "2020-02-12",
@@ -3022,7 +3114,7 @@
       "reply_to": "po-emails|2020-02-11|1906",
       "reply_to_label": "2020-02-11 19:06 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 109
+      "idx": 112
     },
     {
       "date": "2020-02-12",
@@ -3044,7 +3136,7 @@
       "thread_key": "po-emails|2020-02-12|0357",
       "thread_label": "2020-02-12 03:57 · Edward Holmes",
       "replied_by": [],
-      "idx": 110,
+      "idx": 113,
       "reply_to": "po-emails|2020-02-12|0324",
       "reply_to_label": "2020-02-12 03:24 · Kristian G. Andersen",
       "link_kind": "inferred (same conversation)"
@@ -3072,7 +3164,7 @@
       "reply_to": "po-emails|2020-02-12|0215",
       "reply_to_label": "2020-02-12 02:15 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 111
+      "idx": 114
     },
     {
       "date": "2020-02-12",
@@ -3097,7 +3189,7 @@
       "reply_to": "po-emails|2020-02-12|0324",
       "reply_to_label": "2020-02-12 03:24 · Kristian G. Andersen",
       "link_kind": "explicit (quoted inline)",
-      "idx": 112
+      "idx": 115
     },
     {
       "date": "2020-02-13",
@@ -3120,15 +3212,11 @@
       "thread_label": "2020-02-13 02:09 · Kristian G. Andersen",
       "replied_by": [
         {
-          "key": "po-emails|2020-02-13|0534|1",
-          "label": "2020-02-13 05:34 · Clare Thomas"
-        },
-        {
           "key": "po-emails|2020-02-13|0534",
           "label": "2020-02-13 05:34 · Clare Thomas"
         }
       ],
-      "idx": 113
+      "idx": 116
     },
     {
       "date": "2020-02-13",
@@ -3139,7 +3227,7 @@
       "sender_raw": "Clare Thomas Po",
       "sender_how": "From: line",
       "subject": "RE: Interest in commentary/hypothesis on SARS-CoV-2 origins?",
-      "content": "From: Clare Thomas\n\nTo: Kristian G. Andersen [nn\n\nSubject: RE: Interest in commentary/hypothesis on SARS-CoV-2 origins?\n\nSent: 2/13/2020 2:34:29 AM\n\n----------\n\nDear Clare,\nI can only imagine you must be crazy busy at the moment! I wanted to reach out to you to sce if there would be interest in receiving a commentary/hypothesis piece on the evolutionary origins of SARS-CoV-2? There has been a lot of speculation, fear mongering, and conspiracies put forward in this space and we thought that bringing some clarity to this discussion might be of interest to Nature.\nPrompted by Jeremy Farrah, Tony Fauci, and Francis Collins, Eddie Holmes, Andrew Rambaut, Bob Garry, Ian\nLipkin, and myself have been working through much of the (primarily) genetic data to provide agnostic and scientifically informed hypotheses around the origins of the virus. We are not quite finished with the writeup and we still have some loose ends, but I wanted to reach out to you to see if this might potentially be of interest?\nWe see this more as a commentary/hypothesis, as opposed to a more long-form Letter or Article.",
+      "content": "From: Clare Thomas\n\nTo: Kristian G. Andersen [nn\n\nSubject: RE: Interest in commentary/hypothesis on SARS-CoV-2 origins?\n\nSent: 2/13/2020 2:34:29 AM\n\n----------\n\nDear Kristian,\nYes please! It sounds possibly like a Perspective. | would love to take a look and consider whether it might be suitable for\nNature.\nAll the best,\nClare",
       "signature": null,
       "stamp": "2/13/2020 2:34:29 AM",
       "stamp_status": "outlook-us",
@@ -3147,49 +3235,23 @@
       "stamp_line": "02:34 Los Angeles -> 05:34 ET",
       "recovered_inline": false,
       "source": "po-emails",
+      "dedup_merged": 1,
       "thread_key": "po-emails|2020-02-13|0534",
-      "thread_label": "2020-02-13 05:34 · Clare Thomas",
-      "replied_by": [
-        {
-          "key": "po-emails|2020-02-13|1147",
-          "label": "2020-02-13 11:47 · "
-        }
-      ],
-      "idx": 114,
-      "reply_to": "po-emails|2020-02-13|0209",
-      "reply_to_label": "2020-02-13 02:09 · Kristian G. Andersen",
-      "link_kind": "inferred (same conversation)"
-    },
-    {
-      "date": "2020-02-13",
-      "time": "0534",
-      "kind": "email",
-      "raw_date": "05:34 ET · [NA]",
-      "sender": "Clare Thomas",
-      "sender_raw": "Clare Thomas Ps",
-      "sender_how": "inline quote marker (On ... wrote:)",
-      "subject": "[NA]",
-      "content": "From: Clare Thomas\n\nSubject: [NA]\n\nSent: Feb 13, 2020 2:34 AM\n\n----------\n\nDear Kristian,\nYes please! It sounds possibly like a Perspective. | would love to take a look and consider whether it might be suitable for Nature.\nAll the best,\nClare",
-      "signature": null,
-      "stamp": "Feb 13, 2020 2:34 AM",
-      "stamp_status": "long",
-      "zone_assumed": "REV mailbox-stamp owner not identified; empirically US Pacific time (could be off by up to 1 hour)",
-      "stamp_line": "02:34 Los Angeles -> 05:34 ET",
-      "recovered_inline": true,
-      "source": "po-emails",
-      "thread_key": "po-emails|2020-02-13|0534|1",
-      "date_note": "same minute as another message",
       "thread_label": "2020-02-13 05:34 · Clare Thomas",
       "replied_by": [
         {
           "key": "po-emails|2020-02-13|1933",
           "label": "2020-02-13 19:33 · Kristian G. Andersen"
+        },
+        {
+          "key": "po-emails|2020-02-13|1147",
+          "label": "2020-02-13 11:47 · "
         }
       ],
+      "idx": 117,
       "reply_to": "po-emails|2020-02-13|0209",
       "reply_to_label": "2020-02-13 02:09 · Kristian G. Andersen",
-      "link_kind": "explicit (quoted inline)",
-      "idx": 115
+      "link_kind": "inferred (same conversation)"
     },
     {
       "date": "2020-02-13",
@@ -3211,7 +3273,7 @@
       "thread_key": "po-emails|2020-02-13|1147",
       "thread_label": "2020-02-13 11:47 · ",
       "replied_by": [],
-      "idx": 116,
+      "idx": 118,
       "reply_to": "po-emails|2020-02-13|0534",
       "reply_to_label": "2020-02-13 05:34 · Clare Thomas",
       "link_kind": "inferred (same conversation)"
@@ -3236,10 +3298,10 @@
       "thread_key": "po-emails|2020-02-13|1933",
       "thread_label": "2020-02-13 19:33 · Kristian G. Andersen",
       "replied_by": [],
-      "reply_to": "po-emails|2020-02-13|0534|1",
+      "reply_to": "po-emails|2020-02-13|0534",
       "reply_to_label": "2020-02-13 05:34 · Clare Thomas",
       "link_kind": "explicit (quoted inline)",
-      "idx": 117
+      "idx": 119
     },
     {
       "date": "2020-02-15",
@@ -3269,7 +3331,7 @@
       "reply_to": "po-emails|2020-02-07|0207",
       "reply_to_label": "2020-02-07 02:07 · Michael Farzan",
       "link_kind": "explicit (quoted inline)",
-      "idx": 118
+      "idx": 120
     },
     {
       "date": "2020-02-15",
@@ -3296,7 +3358,7 @@
           "label": "2020-02-16 13:09 · Robert Garry"
         }
       ],
-      "idx": 119
+      "idx": 121
     },
     {
       "date": "2020-02-15",
@@ -3323,7 +3385,39 @@
           "label": "2020-02-16 12:22 · Lipkin"
         }
       ],
-      "idx": 120
+      "idx": 122
+    },
+    {
+      "date": "2020-02-15",
+      "time": "2115",
+      "kind": "email",
+      "raw_date": "21:15 ET · Re: Paper",
+      "sender": "Edward Holmes",
+      "sender_raw": "PROFESSOR EDWARD C. HOLMES FAA FRS",
+      "sender_how": "signature block (From: lost in scan)",
+      "subject": "Re: Paper",
+      "content": "To: Andrew Rambaut\n\nCc: Robert Garry < Kristian Andersen | lan Lipkin\n\nSubject: Re: Paper\n\nDate: Saturday, February 15, 2020 at 6:15 PM\n\n----------\n\n[| External Sender. Be aware of links, attachments and requests.\nFab.\nJust need to sort out author order. Kristian Ist and probably should correspond as he’s chatted with Clare? Bob, | was thinking you might go last? I’d be nervous about putting my name there as | am amateur on the specific virological stuff we discuss. | feel | have only contributed to the writing. | don’t mind Andrew going last either.\n\n----------\n\nPROFESSOR EDWARD C. HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia",
+      "signature": "PROFESSOR EDWARD C. HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia",
+      "stamp": "Saturday, February 15, 2020 at 6:15 PM",
+      "stamp_status": "long",
+      "zone_assumed": "REV mailbox-stamp owner not identified; empirically US Pacific time (could be off by up to 1 hour)",
+      "stamp_line": "18:15 Los Angeles -> 21:15 ET",
+      "recovered_inline": false,
+      "source": "po-emails",
+      "merged_pages": 1,
+      "thread_key": "po-emails|2020-02-15|2115",
+      "thread_label": "2020-02-15 21:15 · Edward Holmes",
+      "replied_by": [
+        {
+          "key": "po-emails|2020-02-16|0320",
+          "label": "2020-02-16 03:20 · Robert Garry"
+        },
+        {
+          "key": "po-emails|2020-02-16|0846",
+          "label": "2020-02-16 08:46 · "
+        }
+      ],
+      "idx": 123
     },
     {
       "date": "2020-02-15",
@@ -3350,7 +3444,7 @@
           "label": "2020-02-16 18:05 · Robert Garry"
         }
       ],
-      "idx": 121
+      "idx": 124
     },
     {
       "date": "2020-02-16",
@@ -3377,7 +3471,7 @@
           "label": "2020-02-16 20:14 · Robert Garry"
         }
       ],
-      "idx": 122
+      "idx": 125
     },
     {
       "date": "2020-02-16",
@@ -3405,7 +3499,7 @@
           "label": "2020-02-16 14:03 · Andrew Rambaut"
         }
       ],
-      "idx": 123
+      "idx": 126
     },
     {
       "date": "2020-02-16",
@@ -3432,7 +3526,7 @@
           "label": "2020-02-16 20:24 · Robert Garry"
         }
       ],
-      "idx": 124
+      "idx": 127
     },
     {
       "date": "2020-02-16",
@@ -3443,8 +3537,8 @@
       "sender_raw": "Garry, Robert F Re",
       "sender_how": "inline quote marker (On ... wrote:)",
       "subject": "[NA]",
-      "content": "From: Robert Garry\n\nSubject: [NA]\n\nSent: 16 Feb 2020 00:20\n\n----------\n\nAndrew should go last — he did the bulk of the heavy lifting.\n' Tulane University, School of Medicine, Department of Microbiology and Immunology, New Orleans, LA, USA\n* Zalgen Labs, LCC, Germantown, MD, USA\n| have to list the latter because of the US Col rules.\nDate: Saturday, February 15, 2020 at 6:15 PM\nTo: Andrew Rambaut\nCc: Robert Garry < Kristian Andersen | lan Lipkin\nSubject: Re: Paper\n[| External Sender. Be aware of links, attachments and requests.\nFab.\nJust need to sort out author order. Kristian Ist and probably should correspond as he’s chatted with Clare? Bob, | was thinking you might go last? I’d be nervous about putting my name there as | am amateur on the specific virological stuff we discuss. | feel | have only contributed to the writing. | don’t mind Andrew going last either.\n\n----------\n\nPROFESSOR EDWARD C. HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia",
-      "signature": "PROFESSOR EDWARD C. HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia",
+      "content": "From: Robert Garry\n\nSubject: [NA]\n\nSent: 16 Feb 2020 00:20\n\n----------\n\nAndrew should go last — he did the bulk of the heavy lifting.\n' Tulane University, School of Medicine, Department of Microbiology and Immunology, New Orleans, LA, USA\n* Zalgen Labs, LCC, Germantown, MD, USA\n| have to list the latter because of the US Col rules.",
+      "signature": null,
       "stamp": "16 Feb 2020 00:20",
       "stamp_status": "day-month-year",
       "zone_assumed": "REV mailbox-stamp owner not identified; empirically US Pacific time (could be off by up to 1 hour)",
@@ -3460,7 +3554,10 @@
           "label": "2020-02-16 08:58 · Andrew Rambaut"
         }
       ],
-      "idx": 125
+      "reply_to": "po-emails|2020-02-15|2115",
+      "reply_to_label": "2020-02-15 21:15 · Edward Holmes",
+      "link_kind": "explicit (quoted inline)",
+      "idx": 128
     },
     {
       "date": "2020-02-16",
@@ -3487,7 +3584,7 @@
           "label": "2020-02-16 20:36 · Robert Garry"
         }
       ],
-      "idx": 126
+      "idx": 129
     },
     {
       "date": "2020-02-16",
@@ -3509,7 +3606,38 @@
       "thread_key": "po-emails|2020-02-16|0338",
       "thread_label": "2020-02-16 03:38 · Edward Holmes",
       "replied_by": [],
-      "idx": 127
+      "idx": 130
+    },
+    {
+      "date": "2020-02-16",
+      "time": "0846",
+      "kind": "email",
+      "raw_date": "08:46 ET · Re: Paper",
+      "sender": "",
+      "sender_raw": "",
+      "sender_how": "",
+      "subject": "Re: Paper",
+      "content": "To: Kristian Andersen (x «Robert Garry < Andrew Rambaut\n\nSubject: Re: Paper\n\nDate: Sunday, February 16, 2020 at 5:46 AM\n\n----------\n\n[| External Sender. Be aware of links, attachments and requests.\nOur audience includes the general public and policy makers as well as the scientific community. Once the paper is accepted we should ask Nature how it and we can promote broad visibility. At minimum we will need a short, powerful press release that hits the high points: who reviewed the data, what we considered, what we concluded, what needs to be done.\nlan\nOur audience includes the general public and policy makers as well as the scientific community. Once the paper is accepted we should ask Nature how it and we can promote broad visibility. At minimum we will need a short,\npowerful press release that hits the high points: who reviewed the data, what we considered, what we concluded,\nwhat needs to be done.\nlan",
+      "signature": null,
+      "stamp": "Sunday, February 16, 2020 at 5:46 AM",
+      "stamp_status": "long",
+      "zone_assumed": "REV mailbox-stamp owner not identified; empirically US Pacific time (could be off by up to 1 hour)",
+      "stamp_line": "05:46 Los Angeles -> 08:46 ET",
+      "recovered_inline": false,
+      "source": "po-emails",
+      "merged_pages": 1,
+      "thread_key": "po-emails|2020-02-16|0846",
+      "thread_label": "2020-02-16 08:46 · ",
+      "replied_by": [
+        {
+          "key": "po-emails|2020-02-16|1121",
+          "label": "2020-02-16 11:21 · "
+        }
+      ],
+      "idx": 131,
+      "reply_to": "po-emails|2020-02-15|2115",
+      "reply_to_label": "2020-02-15 21:15 · Edward Holmes",
+      "link_kind": "inferred (same conversation)"
     },
     {
       "date": "2020-02-16",
@@ -3531,20 +3659,11 @@
       "merged_pages": 1,
       "thread_key": "po-emails|2020-02-16|0858",
       "thread_label": "2020-02-16 08:58 · Andrew Rambaut",
-      "replied_by": [
-        {
-          "key": "po-emails|2020-02-17|0754",
-          "label": "2020-02-17 07:54 · Robert Garry"
-        },
-        {
-          "key": "po-emails|2020-02-16|1121",
-          "label": "2020-02-16 11:21 · "
-        }
-      ],
+      "replied_by": [],
       "reply_to": "po-emails|2020-02-16|0320",
       "reply_to_label": "2020-02-16 03:20 · Robert Garry",
       "link_kind": "explicit (quoted inline)",
-      "idx": 128
+      "idx": 132
     },
     {
       "date": "2020-02-16",
@@ -3555,7 +3674,7 @@
       "sender_raw": "",
       "sender_how": "",
       "subject": "Re: Paper",
-      "content": "To: lan Lipkin EE Kristian Andersen Po Andrew Rambaut SS cic Holmes\n\nSubject: Re: Paper\n\nDate: Sunday, February 16, 2020 at 8:21 AM\n\n----------\n\nJ External Sender. Be aware of links, attachments and requests.\nOur audience includes the general public and policy makers as well as the scientific community. Once the paper is accepted we should ask Nature how it and we can promote broad visibility. At minimum we will need a short,\npowerful press release that hits the high points: who reviewed the data, what we considered, what we concluded,\nwhat needs to be done.\nlan",
+      "content": "To: lan Lipkin «Kristian Andersen Andrew Rambaut\n\nSubject: Re: Paper\n\nDate: Sunday, February 16, 2020 at 8:21 AM\n\n----------\n\nThey might need a cover. ©\nSeriously though NIH Took some pics that Tony would love to see on the Nature cover:\nhttps://www.flickr.com/photos/niaid/albums/72157712914621487\n<image001.png>\nThis one is actually VERY pertinent to our story BTW — notice that there are several fusing virions.\nWe’ve actually seen the same thing with fusion peptides that activate FluV.\nSARS-CoV-2 is “activated!”",
       "signature": null,
       "stamp": "Sunday, February 16, 2020 at 8:21 AM",
       "stamp_status": "long",
@@ -3563,18 +3682,23 @@
       "stamp_line": "08:21 Los Angeles -> 11:21 ET",
       "recovered_inline": false,
       "source": "po-emails",
+      "merged_pages": 1,
       "thread_key": "po-emails|2020-02-16|1121",
       "thread_label": "2020-02-16 11:21 · ",
       "replied_by": [
+        {
+          "key": "po-emails|2020-02-17|0754",
+          "label": "2020-02-17 07:54 · Robert Garry"
+        },
         {
           "key": "po-emails|2020-02-16|1750",
           "label": "2020-02-16 17:50 · Edward Holmes"
         }
       ],
-      "reply_to": "po-emails|2020-02-16|0858",
-      "reply_to_label": "2020-02-16 08:58 · Andrew Rambaut",
-      "link_kind": "explicit (quoted inline)",
-      "idx": 129
+      "idx": 133,
+      "reply_to": "po-emails|2020-02-16|0846",
+      "reply_to_label": "2020-02-16 08:46 · ",
+      "link_kind": "inferred (same conversation)"
     },
     {
       "date": "2020-02-16",
@@ -3599,7 +3723,7 @@
       "reply_to": "po-emails|2020-02-15|2015",
       "reply_to_label": "2020-02-15 20:15 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 130
+      "idx": 134
     },
     {
       "date": "2020-02-16",
@@ -3624,7 +3748,7 @@
       "reply_to": "po-emails|2020-02-15|1926",
       "reply_to_label": "2020-02-15 19:26 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 131
+      "idx": 135
     },
     {
       "date": "2020-02-16",
@@ -3650,7 +3774,7 @@
       "reply_to": "po-emails|2020-02-16|0301",
       "reply_to_label": "2020-02-16 03:01 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 132
+      "idx": 136
     },
     {
       "date": "2020-02-16",
@@ -3677,13 +3801,44 @@
           "label": "2020-02-17 10:57 · Robert Garry"
         },
         {
+          "key": "po-emails|2020-02-16|1750|1",
+          "label": "2020-02-16 17:50 · "
+        }
+      ],
+      "idx": 137,
+      "reply_to": "po-emails|2020-02-16|1121",
+      "reply_to_label": "2020-02-16 11:21 · ",
+      "link_kind": "inferred (same conversation)"
+    },
+    {
+      "date": "2020-02-16",
+      "time": "1750",
+      "kind": "email",
+      "raw_date": "17:50 ET · Re: Paper",
+      "sender": "",
+      "sender_raw": "",
+      "sender_how": "",
+      "subject": "Re: Paper",
+      "content": "To: Robert Garry\n\nCc: lan Lipkin Kristian Andersen Po Andrew Rambaut\n\nSubject: Re: Paper\n\nDate: Sunday, February 16, 2020 at 2:50 PM\n\n----------\n\n|) External Sender. Be aware of links, attachments and requests.\nGreat pics. Let’s see what Nature say. | will get the paper out the door today.\nCheers,",
+      "signature": null,
+      "stamp": "Sunday, February 16, 2020 at 2:50 PM",
+      "stamp_status": "long",
+      "zone_assumed": "REV mailbox-stamp owner not identified; empirically US Pacific time (could be off by up to 1 hour)",
+      "stamp_line": "14:50 Los Angeles -> 17:50 ET",
+      "recovered_inline": false,
+      "source": "po-emails",
+      "thread_key": "po-emails|2020-02-16|1750|1",
+      "date_note": "same minute as another message",
+      "thread_label": "2020-02-16 17:50 · ",
+      "replied_by": [
+        {
           "key": "po-emails|2020-02-16|1806",
           "label": "2020-02-16 18:06 · "
         }
       ],
-      "idx": 133,
-      "reply_to": "po-emails|2020-02-16|1121",
-      "reply_to_label": "2020-02-16 11:21 · ",
+      "idx": 138,
+      "reply_to": "po-emails|2020-02-16|1750",
+      "reply_to_label": "2020-02-16 17:50 · Edward Holmes",
       "link_kind": "inferred (same conversation)"
     },
     {
@@ -3709,7 +3864,7 @@
       "reply_to": "po-emails|2020-02-15|2346",
       "reply_to_label": "2020-02-15 23:46 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 134
+      "idx": 139
     },
     {
       "date": "2020-02-16",
@@ -3736,9 +3891,9 @@
           "label": "2020-02-16 19:04 · Edward Holmes"
         }
       ],
-      "idx": 135,
-      "reply_to": "po-emails|2020-02-16|1750",
-      "reply_to_label": "2020-02-16 17:50 · Edward Holmes",
+      "idx": 140,
+      "reply_to": "po-emails|2020-02-16|1750|1",
+      "reply_to_label": "2020-02-16 17:50 · ",
       "link_kind": "inferred (same conversation)"
     },
     {
@@ -3771,7 +3926,7 @@
           "label": "2020-02-16 19:14 · Edward Holmes"
         }
       ],
-      "idx": 136,
+      "idx": 141,
       "reply_to": "po-emails|2020-02-16|1806",
       "reply_to_label": "2020-02-16 18:06 · ",
       "link_kind": "inferred (same conversation)"
@@ -3793,6 +3948,7 @@
       "stamp_line": "16:14 Los Angeles -> 19:14 ET",
       "recovered_inline": false,
       "source": "po-emails",
+      "merged_pages": 1,
       "thread_key": "po-emails|2020-02-16|1914",
       "thread_label": "2020-02-16 19:14 · Edward Holmes",
       "replied_by": [
@@ -3805,7 +3961,7 @@
           "label": "2020-02-16 20:06 · Edward Holmes"
         }
       ],
-      "idx": 137,
+      "idx": 142,
       "reply_to": "po-emails|2020-02-16|1904",
       "reply_to_label": "2020-02-16 19:04 · Edward Holmes",
       "link_kind": "inferred (same conversation)"
@@ -3835,7 +3991,7 @@
           "label": "2020-02-17 16:41 · Kristian"
         }
       ],
-      "idx": 138
+      "idx": 143
     },
     {
       "date": "2020-02-16",
@@ -3866,7 +4022,7 @@
           "label": "2020-02-16 21:59 · Edward Holmes"
         }
       ],
-      "idx": 139,
+      "idx": 144,
       "reply_to": "po-emails|2020-02-16|1914",
       "reply_to_label": "2020-02-16 19:14 · Edward Holmes",
       "link_kind": "inferred (same conversation)"
@@ -3894,7 +4050,7 @@
       "reply_to": "po-emails|2020-02-16|0144",
       "reply_to_label": "2020-02-16 01:44 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 140
+      "idx": 145
     },
     {
       "date": "2020-02-16",
@@ -3919,7 +4075,7 @@
       "reply_to": "po-emails|2020-02-16|0318",
       "reply_to_label": "2020-02-16 03:18 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 141
+      "idx": 146
     },
     {
       "date": "2020-02-16",
@@ -3944,7 +4100,7 @@
       "reply_to": "po-emails|2020-02-16|0329",
       "reply_to_label": "2020-02-16 03:29 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 142
+      "idx": 147
     },
     {
       "date": "2020-02-16",
@@ -3971,7 +4127,7 @@
           "label": "2020-02-17 16:53 · Kristian G. Andersen"
         }
       ],
-      "idx": 143
+      "idx": 148
     },
     {
       "date": "2020-02-16",
@@ -3993,7 +4149,7 @@
       "thread_key": "po-emails|2020-02-16|2159",
       "thread_label": "2020-02-16 21:59 · Edward Holmes",
       "replied_by": [],
-      "idx": 144,
+      "idx": 149,
       "reply_to": "po-emails|2020-02-16|2006",
       "reply_to_label": "2020-02-16 20:06 · Edward Holmes",
       "link_kind": "inferred (same conversation)"
@@ -4026,7 +4182,7 @@
       "reply_to": "po-emails|2020-02-15|0442",
       "reply_to_label": "2020-02-15 04:42 · Michael",
       "link_kind": "explicit (quoted inline)",
-      "idx": 145
+      "idx": 150
     },
     {
       "date": "2020-02-17",
@@ -4056,7 +4212,7 @@
       "reply_to": "po-emails|2020-02-16|2006",
       "reply_to_label": "2020-02-16 20:06 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 146
+      "idx": 151
     },
     {
       "date": "2020-02-17",
@@ -4078,7 +4234,7 @@
       "thread_key": "po-emails|2020-02-17|0441",
       "thread_label": "2020-02-17 04:41 · Andrew Rambaut",
       "replied_by": [],
-      "idx": 147
+      "idx": 152
     },
     {
       "date": "2020-02-17",
@@ -4106,7 +4262,7 @@
           "label": "2020-02-17 12:09 · Robert Garry"
         }
       ],
-      "idx": 148
+      "idx": 153
     },
     {
       "date": "2020-02-17",
@@ -4117,7 +4273,7 @@
       "sender_raw": "Garry, Robert F ao",
       "sender_how": "inline quote marker (On ... wrote:)",
       "subject": "[NA]",
-      "content": "From: Robert Garry\n\nSubject: [NA]\n\nSent: 17 Feb 2020 4:54 am\n\n----------\n\nMaybe Kristian can sell them on this version?\nOr maybe not.\nDate: Sunday, February 16, 2020 at 8:21 AM\nTo: lan Lipkin «Kristian Andersen Andrew Rambaut\nSubject: Re: Paper\nThey might need a cover. ©\nSeriously though NIH Took some pics that Tony would love to see on the Nature cover:\nhttps://www.flickr.com/photos/niaid/albums/72157712914621487\n<image001.png>\nThis one is actually VERY pertinent to our story BTW — notice that there are several fusing virions.\nWe’ve actually seen the same thing with fusion peptides that activate FluV.\nSARS-CoV-2 is “activated!”\nDate: Sunday, February 16, 2020 at 5:46 AM\nTo: Kristian Andersen (x «Robert Garry < Andrew Rambaut\nSubject: Re: Paper\n[| External Sender. Be aware of links, attachments and requests.\nOur audience includes the general public and policy makers as well as the scientific community. Once the paper is accepted we should ask Nature how it and we can promote broad visibility. At minimum we will need a short, powerful press release that hits the high points: who reviewed the data, what we considered, what we concluded, what needs to be done.\nlan",
+      "content": "From: Robert Garry\n\nSubject: [NA]\n\nSent: 17 Feb 2020 4:54 am\n\n----------\n\nMaybe Kristian can sell them on this version?\nOr maybe not.",
       "signature": null,
       "stamp": "17 Feb 2020 4:54 am",
       "stamp_status": "day-month-year",
@@ -4128,10 +4284,10 @@
       "thread_key": "po-emails|2020-02-17|0754",
       "thread_label": "2020-02-17 07:54 · Robert Garry",
       "replied_by": [],
-      "reply_to": "po-emails|2020-02-16|0858",
-      "reply_to_label": "2020-02-16 08:58 · Andrew Rambaut",
+      "reply_to": "po-emails|2020-02-16|1121",
+      "reply_to_label": "2020-02-16 11:21 · ",
       "link_kind": "explicit (quoted inline)",
-      "idx": 149
+      "idx": 154
     },
     {
       "date": "2020-02-17",
@@ -4142,7 +4298,7 @@
       "sender_raw": "Jeremy Farrar [ne",
       "sender_how": "inline quote marker (On ... wrote:)",
       "subject": "[NA]",
-      "content": "From: Jeremy Farrar\n\nSubject: [NA]\n\nSent: Feb 17, 2020 8:47 AM\n\n----------\n\nAndrew — is this the ‘final’ draft, pending any changes at Nature — with the additional information?\nDate: Monday, 17 February 2020 at 17:08\nTo: Jeremy Farrar , Garry, Robert ' i,\nEdward Holmes , Kristian G. Andersen\" , lan Lipkin\nSubject: Re: Connections COVID-19\nDear all,\n| think this is now the same version as on Virological. First author's name corrected, 'SARs'\ncorrected. Figure updated (and legend corrected).\nAndrew",
+      "content": "From: Jeremy Farrar\n\nSubject: [NA]\n\nSent: Feb 17, 2020 8:47 AM\n\n----------\n\nAndrew — is this the ‘final’ draft, pending any changes at Nature — with the additional information?",
       "signature": null,
       "stamp": "Feb 17, 2020 8:47 AM",
       "stamp_status": "long",
@@ -4158,7 +4314,7 @@
           "label": "2020-02-17 16:52 · Kristian G. Andersen"
         }
       ],
-      "idx": 150
+      "idx": 155
     },
     {
       "date": "2020-02-17",
@@ -4169,7 +4325,7 @@
       "sender_raw": "Jeremy Farrar [ie",
       "sender_how": "inline quote marker (On ... wrote:)",
       "subject": "[NA]",
-      "content": "From: Jeremy Farrar\n\nSubject: [NA]\n\nSent: Feb 17, 2020 9:02 AM\n\n----------\n\nSorry to micro-manage/microedit!\nBut would you be willing to change one sentence?\nFrom\nIt is unlikely that SARS-CoV-2 emerged through laboratory manipulation of an existing\nSARS-related coronavirus.\nIt is improbable that SARS-CoV-2 emerged through laboratory manipulation of an existing\nSARS-related coronavirus.\nDate: Monday, 17 February 2020 at 17:56\nTo: \"Kristian G. Andersen\"\nCc: Jeremy Farrar , Garry, Robert F\" ,\nEdward Holmes , lan Lipkin\nSubject: Re: Connections COVID-19\nSorry. This is the final version (v2.2).\nSent from my phone. Apologies for brevity or illiteracy.",
+      "content": "From: Jeremy Farrar\n\nSubject: [NA]\n\nSent: Feb 17, 2020 9:02 AM\n\n----------\n\nSorry to micro-manage/microedit!\nBut would you be willing to change one sentence?\nFrom\nIt is unlikely that SARS-CoV-2 emerged through laboratory manipulation of an existing\nSARS-related coronavirus.\nIt is improbable that SARS-CoV-2 emerged through laboratory manipulation of an existing\nSARS-related coronavirus.",
       "signature": null,
       "stamp": "Feb 17, 2020 9:02 AM",
       "stamp_status": "long",
@@ -4185,7 +4341,7 @@
           "label": "2020-02-17 18:11 · Kristian G. Andersen"
         }
       ],
-      "idx": 151
+      "idx": 156
     },
     {
       "date": "2020-02-17",
@@ -4212,7 +4368,39 @@
           "label": "2020-02-17 18:30 · Kristian G. Andersen"
         }
       ],
-      "idx": 152
+      "idx": 157
+    },
+    {
+      "date": "2020-02-17",
+      "time": "0945",
+      "kind": "email",
+      "raw_date": "09:45 ET · Re: Connections COVID-19",
+      "sender": "Edward Holmes",
+      "sender_raw": "PROFESSOR EDWARD C. HOLMES FAA FRS",
+      "sender_how": "signature block (From: lost in scan)",
+      "subject": "Re: Connections COVID-19",
+      "content": "To: Garry, Robert F\n\nCc: Kristian G. Andersen ; Andrew Rambaut\n\nSubject: Re: Connections COVID-19\n\nSent: Monday, February 17, 2020 9:45 AM\n\n----------\n\n| External Sender. Be aware of links, attachments and requests.\nBob, if you or someone else wants to add a sentence now that’s ok (refs.\nwill need to change as well), but we must get it out today. Things are moving/changing so rapidly that we are always going to be out of date. We need to draw a line somewhere.\n\n----------\n\nPROFESSOR EDWARD C. HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia\nyTTT",
+      "signature": "PROFESSOR EDWARD C. HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia\nyTTT",
+      "stamp": "Monday, February 17, 2020 9:45 AM",
+      "stamp_status": "long",
+      "zone_assumed": "W. Ian Lipkin's own mailbox export (Columbia University; page-owner code LIP)",
+      "stamp_line": "09:45 ET",
+      "recovered_inline": false,
+      "source": "po-emails",
+      "merged_pages": 1,
+      "thread_key": "po-emails|2020-02-17|0945",
+      "thread_label": "2020-02-17 09:45 · Edward Holmes",
+      "replied_by": [
+        {
+          "key": "po-emails|2020-02-17|2047",
+          "label": "2020-02-17 20:47 · Robert Garry"
+        },
+        {
+          "key": "po-emails|2020-02-17|0949",
+          "label": "2020-02-17 09:49 · Edward Holmes"
+        }
+      ],
+      "idx": 158
     },
     {
       "date": "2020-02-17",
@@ -4231,6 +4419,7 @@
       "stamp_line": "09:49 ET",
       "recovered_inline": false,
       "source": "po-emails",
+      "merged_pages": 1,
       "thread_key": "po-emails|2020-02-17|0949",
       "thread_label": "2020-02-17 09:49 · Edward Holmes",
       "replied_by": [
@@ -4239,7 +4428,10 @@
           "label": "2020-02-17 10:02 · Robert Garry"
         }
       ],
-      "idx": 153
+      "idx": 159,
+      "reply_to": "po-emails|2020-02-17|0945",
+      "reply_to_label": "2020-02-17 09:45 · Edward Holmes",
+      "link_kind": "inferred (same conversation)"
     },
     {
       "date": "2020-02-17",
@@ -4250,7 +4442,7 @@
       "sender_raw": "Garry, Robert a, 00tt~<‘CisSCSSY",
       "sender_how": "From: line",
       "subject": "Re: Connections COVID-19",
-      "content": "From: Robert Garry\n\nTo: Edward Holmes\n\nCc: Kristian G. Andersen ; Andrew Rambaut\n\nSubject: Re: Connections COVID-19\n\nSent: Monday, February 17, 2020 10:02 AM\n\n----------\n\nput the \"While these\" back\n| External Sender. Be aware of links, attachments and requests.\nOk. Pass a draft to me and Ill give it a quick read through.\nNo way I can stay up to your levels...\n\n----------\n\nPROFESSOR EDWARD C. HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia",
+      "content": "From: Robert Garry\n\nTo: Edward Holmes\n\nCc: Kristian G. Andersen ; Andrew Rambaut\n\nSubject: Re: Connections COVID-19\n\nSent: Monday, February 17, 2020 10:02 AM\n\n----------\n\nput the \"While these\" back",
       "signature": null,
       "stamp": "Monday, February 17, 2020 10:02 AM",
       "stamp_status": "long",
@@ -4267,7 +4459,7 @@
           "label": "2020-02-17 10:20 · Robert Garry"
         }
       ],
-      "idx": 154,
+      "idx": 160,
       "reply_to": "po-emails|2020-02-17|0949",
       "reply_to_label": "2020-02-17 09:49 · Edward Holmes",
       "link_kind": "inferred (same conversation)"
@@ -4302,7 +4494,7 @@
       "reply_to": "po-emails|2020-02-17|1002",
       "reply_to_label": "2020-02-17 10:02 · Robert Garry",
       "link_kind": "explicit (quoted inline)",
-      "idx": 155
+      "idx": 161
     },
     {
       "date": "2020-02-17",
@@ -4337,7 +4529,7 @@
       "reply_to": "po-emails|2020-02-17|1020",
       "reply_to_label": "2020-02-17 10:20 · Robert Garry",
       "link_kind": "explicit (quoted inline)",
-      "idx": 156
+      "idx": 162
     },
     {
       "date": "2020-02-17",
@@ -4364,7 +4556,7 @@
           "label": "2020-02-17 16:41 · Lipkin"
         }
       ],
-      "idx": 157
+      "idx": 163
     },
     {
       "date": "2020-02-17",
@@ -4387,11 +4579,11 @@
       "thread_label": "2020-02-17 10:42 · Jeremy Farrar",
       "replied_by": [
         {
-          "key": "po-emails|2020-02-17|1237",
-          "label": "2020-02-17 12:37 · Robert Garry"
+          "key": "po-emails|2020-02-17|1135",
+          "label": "2020-02-17 11:35 · "
         }
       ],
-      "idx": 158,
+      "idx": 164,
       "reply_to": "po-emails|2020-02-17|1023",
       "reply_to_label": "2020-02-17 10:23 · Andrew Rambaut",
       "link_kind": "inferred (same conversation)"
@@ -4405,7 +4597,7 @@
       "sender_raw": "Garry, Robert F ae =",
       "sender_how": "inline quote marker (On ... wrote:)",
       "subject": "[NA]",
-      "content": "From: Robert Garry\n\nSubject: [NA]\n\nSent: 17 Feb 2020 7:57 am\n\n----------\n\nThanks Eddie!\nYes the NAID pics are nice.\nThe fusing SARS-CoV-2 pic is maybe not the prettiest one, but for me a clear indication that the polybasic site is functional.\nYou can observe this with flu v if you concentrate and treat with trypsin or some proper peptides. The virions fuse with each other.\nLooks to me like SARS-CoV-2 gets at least partly activated coming out of the cells.\nDate: Sunday, February 16, 2020 at 2:50 PM\nTo: Robert Garry\nCe: lan Lipkin Kristian Andersen Po Andrew Rambaut\nSubject: Re: Paper\n|) External Sender. Be aware of links, attachments and requests.\nGreat pics. Let’s see what Nature say. | will get the paper out the door today.\nCheers,",
+      "content": "From: Robert Garry\n\nSubject: [NA]\n\nSent: 17 Feb 2020 7:57 am\n\n----------\n\nThanks Eddie!\nYes the NAID pics are nice.\nThe fusing SARS-CoV-2 pic is maybe not the prettiest one, but for me a clear indication that the polybasic site is functional.\nYou can observe this with flu v if you concentrate and treat with trypsin or some proper peptides. The virions fuse with each other.\nLooks to me like SARS-CoV-2 gets at least partly activated coming out of the cells.",
       "signature": null,
       "stamp": "17 Feb 2020 7:57 am",
       "stamp_status": "day-month-year",
@@ -4420,7 +4612,37 @@
       "reply_to": "po-emails|2020-02-16|1750",
       "reply_to_label": "2020-02-16 17:50 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 159
+      "idx": 165
+    },
+    {
+      "date": "2020-02-17",
+      "time": "1135",
+      "kind": "email",
+      "raw_date": "11:35 ET · Re: Connections COVID-19",
+      "sender": "",
+      "sender_raw": "",
+      "sender_how": "",
+      "subject": "Re: Connections COVID-19",
+      "content": "To: Kristian Andersen\n\nCc: Andrew Rambaut , Robert Garry , Eddie Holmes , lan Lipkin\n\nSubject: Re: Connections COVID-19\n\nDate: Monday, February 17, 2020 at 11:35 AM\n\n----------\n\nI External Sender. Be aware of links, attachments and requests.\nReason | ask about when to post is to coordinate press briefings etc etc ....to make sure the key messages are reasonably reported...",
+      "signature": null,
+      "stamp": "Monday, February 17, 2020 at 11:35 AM",
+      "stamp_status": "long",
+      "zone_assumed": "W. Ian Lipkin's own mailbox export (Columbia University; page-owner code LIP)",
+      "stamp_line": "11:35 ET",
+      "recovered_inline": false,
+      "source": "po-emails",
+      "thread_key": "po-emails|2020-02-17|1135",
+      "thread_label": "2020-02-17 11:35 · ",
+      "replied_by": [
+        {
+          "key": "po-emails|2020-02-17|1237",
+          "label": "2020-02-17 12:37 · Robert Garry"
+        }
+      ],
+      "idx": 166,
+      "reply_to": "po-emails|2020-02-17|1042",
+      "reply_to_label": "2020-02-17 10:42 · Jeremy Farrar",
+      "link_kind": "inferred (same conversation)"
     },
     {
       "date": "2020-02-17",
@@ -4446,7 +4668,7 @@
       "reply_to": "po-emails|2020-02-16|1904",
       "reply_to_label": "2020-02-16 19:04 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 160
+      "idx": 167
     },
     {
       "date": "2020-02-17",
@@ -4477,7 +4699,7 @@
       "reply_to": "po-emails|2020-02-17|0451",
       "reply_to_label": "2020-02-17 04:51 · Andrew Rambaut",
       "link_kind": "explicit (quoted inline)",
-      "idx": 161
+      "idx": 168
     },
     {
       "date": "2020-02-17",
@@ -4507,7 +4729,7 @@
       "reply_to": "po-emails|2020-02-17|0045",
       "reply_to_label": "2020-02-17 00:45 · Kristian G. Andersen",
       "link_kind": "explicit (quoted inline)",
-      "idx": 162
+      "idx": 169
     },
     {
       "date": "2020-02-17",
@@ -4537,7 +4759,7 @@
       "reply_to": "po-emails|2020-02-17|1217",
       "reply_to_label": "2020-02-17 12:17 · Michael Farzan",
       "link_kind": "explicit (quoted inline)",
-      "idx": 163
+      "idx": 170
     },
     {
       "date": "2020-02-17",
@@ -4548,7 +4770,7 @@
       "sender_raw": "Garry, Robert F",
       "sender_how": "From: line",
       "subject": "Re: Connections COVID-19",
-      "content": "From: Robert Garry\n\nTo: Jeremy Farrar; Kristian G. Andersen\n\nCc: Andrew Rambaut; Eddie Holmes; lan Lipkin\n\nSubject: Re: Connections COVID-19\n\nSent: Monday, February 17, 2020 12:37 PM EST\n\nDate: Monday, February 17, 2020 at 11:35 AM\n\n----------\n\nI External Sender. Be aware of links, attachments and requests.\nReason | ask about when to post is to coordinate press briefings etc etc ....to make sure the key messages are reasonably reported...\nDate: Monday, 17 February 2020 at 18:32\nTo: \"Kristian G. Andersen\"\nCc: \"a.rambaut@ed.ac.uk\" , Garry, Robert F\" ,\nEdward Holmes lan Lipkin\nSubject: Re: Connections COVID-19\nNo preference — whatever you all think best.\nWhen do you plan to post?",
+      "content": "From: Robert Garry\n\nTo: Jeremy Farrar; Kristian G. Andersen\n\nCc: Andrew Rambaut; Eddie Holmes; lan Lipkin\n\nSubject: Re: Connections COVID-19\n\nSent: Monday, February 17, 2020 12:37 PM EST\n\n----------\n\nlan suggested a press release — it’s very appropriate under the circumstances. Who will draft?",
       "signature": null,
       "stamp": "Monday, February 17, 2020 12:37 PM EST",
       "stamp_status": "long",
@@ -4559,9 +4781,9 @@
       "thread_key": "po-emails|2020-02-17|1237",
       "thread_label": "2020-02-17 12:37 · Robert Garry",
       "replied_by": [],
-      "idx": 164,
-      "reply_to": "po-emails|2020-02-17|1042",
-      "reply_to_label": "2020-02-17 10:42 · Jeremy Farrar",
+      "idx": 171,
+      "reply_to": "po-emails|2020-02-17|1135",
+      "reply_to_label": "2020-02-17 11:35 · ",
       "link_kind": "inferred (same conversation)"
     },
     {
@@ -4573,7 +4795,7 @@
       "sender_raw": "Garry, Robert F P",
       "sender_how": "inline quote marker (On ... wrote:)",
       "subject": "[NA]",
-      "content": "From: Robert Garry\n\nSubject: [NA]\n\nSent: 17 Feb 2020 9:52 am\n\n----------\n\nImportant to get this out.\nhttps://www.washingtonpost.com/politics/2020/02/16/tom-cotton-coronavirus-conspiracy/\nDate: Sunday, February 16, 2020 at 4:14 PM\nTo: Robert Garry\nCc: lan Lipkin i , Kristian Andersen Po Andrew Rambaut\nSubject: Re: Paper wy External Sender. Be aware of links, attachments and requests.\nI'll quickly check with Magda first.\n\n----------\n\nProfessor Edward C. Holmes FAA FRS\nThe University of Sydney",
+      "content": "From: Robert Garry\n\nSubject: [NA]\n\nSent: 17 Feb 2020 9:52 am\n\n----------\n\nImportant to get this out.\nhttps://www.washingtonpost.com/politics/2020/02/16/tom-cotton-coronavirus-conspiracy/",
       "signature": null,
       "stamp": "17 Feb 2020 9:52 am",
       "stamp_status": "day-month-year",
@@ -4588,7 +4810,7 @@
       "reply_to": "po-emails|2020-02-16|1914",
       "reply_to_label": "2020-02-16 19:14 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 165
+      "idx": 172
     },
     {
       "date": "2020-02-17",
@@ -4613,7 +4835,7 @@
       "reply_to": "po-emails|2020-02-17|0212",
       "reply_to_label": "2020-02-17 02:12 · Robert Garry",
       "link_kind": "explicit (quoted inline)",
-      "idx": 166
+      "idx": 173
     },
     {
       "date": "2020-02-17",
@@ -4634,11 +4856,16 @@
       "source": "po-emails",
       "thread_key": "po-emails|2020-02-17|1528",
       "thread_label": "2020-02-17 15:28 · Jeremy Farrar",
-      "replied_by": [],
+      "replied_by": [
+        {
+          "key": "po-emails|2020-02-17|1708",
+          "label": "2020-02-17 17:08 · "
+        }
+      ],
       "reply_to": "po-emails|2020-02-17|1209",
       "reply_to_label": "2020-02-17 12:09 · Robert Garry",
       "link_kind": "explicit (quoted inline)",
-      "idx": 167
+      "idx": 174
     },
     {
       "date": "2020-02-17",
@@ -4663,7 +4890,7 @@
       "reply_to": "po-emails|2020-02-16|1935",
       "reply_to_label": "2020-02-16 19:35 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 168
+      "idx": 175
     },
     {
       "date": "2020-02-17",
@@ -4689,7 +4916,7 @@
       "reply_to": "po-emails|2020-02-17|1028",
       "reply_to_label": "2020-02-17 10:28 · Jeremy",
       "link_kind": "explicit (quoted inline)",
-      "idx": 169
+      "idx": 176
     },
     {
       "date": "2020-02-17",
@@ -4710,11 +4937,16 @@
       "source": "po-emails",
       "thread_key": "po-emails|2020-02-17|1652",
       "thread_label": "2020-02-17 16:52 · Kristian G. Andersen",
-      "replied_by": [],
+      "replied_by": [
+        {
+          "key": "po-emails|2020-02-17|1756",
+          "label": "2020-02-17 17:56 · "
+        }
+      ],
       "reply_to": "po-emails|2020-02-17|0847",
       "reply_to_label": "2020-02-17 08:47 · Jeremy Farrar",
       "link_kind": "explicit (quoted inline)",
-      "idx": 170
+      "idx": 177
     },
     {
       "date": "2020-02-17",
@@ -4739,7 +4971,57 @@
       "reply_to": "po-emails|2020-02-16|2148",
       "reply_to_label": "2020-02-16 21:48 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 171
+      "idx": 178
+    },
+    {
+      "date": "2020-02-17",
+      "time": "1708",
+      "kind": "email",
+      "raw_date": "17:08 ET · Re: Connections COVID-19",
+      "sender": "",
+      "sender_raw": "",
+      "sender_how": "",
+      "subject": "Re: Connections COVID-19",
+      "content": "To: Jeremy Farrar , Garry, Robert ' i, Edward Holmes , Kristian G. Andersen\" , lan Lipkin\n\nSubject: Re: Connections COVID-19\n\nDate: Monday, 17 February 2020 at 17:08\n\n----------\n\nDear all,\n| think this is now the same version as on Virological. First author's name corrected, 'SARs'\ncorrected. Figure updated (and legend corrected).\nAndrew",
+      "signature": null,
+      "stamp": "Monday, 17 February 2020 at 17:08",
+      "stamp_status": "day-month-year",
+      "zone_assumed": "W. Ian Lipkin's own mailbox export (Columbia University; page-owner code LIP)",
+      "stamp_line": "17:08 ET",
+      "recovered_inline": false,
+      "source": "po-emails",
+      "thread_key": "po-emails|2020-02-17|1708",
+      "thread_label": "2020-02-17 17:08 · ",
+      "replied_by": [],
+      "reply_to": "po-emails|2020-02-17|1528",
+      "reply_to_label": "2020-02-17 15:28 · Jeremy Farrar",
+      "link_kind": "explicit (quoted inline)",
+      "idx": 179
+    },
+    {
+      "date": "2020-02-17",
+      "time": "1756",
+      "kind": "email",
+      "raw_date": "17:56 ET · Re: Connections COVID-19",
+      "sender": "",
+      "sender_raw": "",
+      "sender_how": "",
+      "subject": "Re: Connections COVID-19",
+      "content": "To: \"Kristian G. Andersen\"\n\nCc: Jeremy Farrar , Garry, Robert F\" , Edward Holmes , lan Lipkin\n\nSubject: Re: Connections COVID-19\n\nDate: Monday, 17 February 2020 at 17:56\n\n----------\n\nSorry. This is the final version (v2.2).\nSent from my phone. Apologies for brevity or illiteracy.",
+      "signature": null,
+      "stamp": "Monday, 17 February 2020 at 17:56",
+      "stamp_status": "day-month-year",
+      "zone_assumed": "W. Ian Lipkin's own mailbox export (Columbia University; page-owner code LIP)",
+      "stamp_line": "17:56 ET",
+      "recovered_inline": false,
+      "source": "po-emails",
+      "thread_key": "po-emails|2020-02-17|1756",
+      "thread_label": "2020-02-17 17:56 · ",
+      "replied_by": [],
+      "reply_to": "po-emails|2020-02-17|1652",
+      "reply_to_label": "2020-02-17 16:52 · Kristian G. Andersen",
+      "link_kind": "explicit (quoted inline)",
+      "idx": 180
     },
     {
       "date": "2020-02-17",
@@ -4764,7 +5046,7 @@
       "reply_to": "po-emails|2020-02-17|0902",
       "reply_to_label": "2020-02-17 09:02 · Jeremy Farrar",
       "link_kind": "explicit (quoted inline)",
-      "idx": 172
+      "idx": 181
     },
     {
       "date": "2020-02-17",
@@ -4785,11 +5067,41 @@
       "source": "po-emails",
       "thread_key": "po-emails|2020-02-17|1830",
       "thread_label": "2020-02-17 18:30 · Kristian G. Andersen",
-      "replied_by": [],
+      "replied_by": [
+        {
+          "key": "po-emails|2020-02-17|1832",
+          "label": "2020-02-17 18:32 · "
+        }
+      ],
       "reply_to": "po-emails|2020-02-17|0922",
       "reply_to_label": "2020-02-17 09:22 · Jeremy Farrar",
       "link_kind": "explicit (quoted inline)",
-      "idx": 173
+      "idx": 182
+    },
+    {
+      "date": "2020-02-17",
+      "time": "1832",
+      "kind": "email",
+      "raw_date": "18:32 ET · Re: Connections COVID-19",
+      "sender": "",
+      "sender_raw": "",
+      "sender_how": "",
+      "subject": "Re: Connections COVID-19",
+      "content": "To: \"Kristian G. Andersen\"\n\nCc: \"a.rambaut@ed.ac.uk\" , Garry, Robert F\" , Edward Holmes lan Lipkin\n\nSubject: Re: Connections COVID-19\n\nDate: Monday, 17 February 2020 at 18:32\n\n----------\n\nNo preference — whatever you all think best.\nWhen do you plan to post?",
+      "signature": null,
+      "stamp": "Monday, 17 February 2020 at 18:32",
+      "stamp_status": "day-month-year",
+      "zone_assumed": "W. Ian Lipkin's own mailbox export (Columbia University; page-owner code LIP)",
+      "stamp_line": "18:32 ET",
+      "recovered_inline": false,
+      "source": "po-emails",
+      "thread_key": "po-emails|2020-02-17|1832",
+      "thread_label": "2020-02-17 18:32 · ",
+      "replied_by": [],
+      "idx": 183,
+      "reply_to": "po-emails|2020-02-17|1830",
+      "reply_to_label": "2020-02-17 18:30 · Kristian G. Andersen",
+      "link_kind": "inferred (same conversation)"
     },
     {
       "date": "2020-02-17",
@@ -4817,7 +5129,7 @@
           "label": "2020-02-17 20:39 · Robert Garry"
         }
       ],
-      "idx": 174
+      "idx": 184
     },
     {
       "date": "2020-02-17",
@@ -4839,16 +5151,11 @@
       "merged_pages": 1,
       "thread_key": "po-emails|2020-02-17|2039",
       "thread_label": "2020-02-17 20:39 · Robert Garry",
-      "replied_by": [
-        {
-          "key": "po-emails|2020-02-17|2047",
-          "label": "2020-02-17 20:47 · Robert Garry"
-        }
-      ],
+      "replied_by": [],
       "reply_to": "po-emails|2020-02-17|1907",
       "reply_to_label": "2020-02-17 19:07 · ",
       "link_kind": "explicit (quoted inline)",
-      "idx": 175
+      "idx": 185
     },
     {
       "date": "2020-02-17",
@@ -4859,8 +5166,8 @@
       "sender_raw": "Garry, Robert hii",
       "sender_how": "inline quote marker (On ... wrote:)",
       "subject": "[NA]",
-      "content": "From: Robert Garry\n\nSubject: [NA]\n\nSent: 17 Feb 2020 8:47 pm\n\n----------\n\nagreed - i'm up - who needs to sleep will take very quick swing at it now - yes a sentence or two will likely do\n15 minutes i'll be back\nSent: Monday, February 17, 2020 9:45 AM\nTo: Garry, Robert F\nCc: Kristian G. Andersen ; Andrew Rambaut\nSubject: Re: Connections COVID-19\n| External Sender. Be aware of links, attachments and requests.\nBob, if you or someone else wants to add a sentence now that’s ok (refs.\nwill need to change as well), but we must get it out today. Things are moving/changing so rapidly that we are always going to be out of date. We need to draw a line somewhere.\n\n----------\n\nPROFESSOR EDWARD C. HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia\nyTTT",
-      "signature": "PROFESSOR EDWARD C. HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia\nyTTT",
+      "content": "From: Robert Garry\n\nSubject: [NA]\n\nSent: 17 Feb 2020 8:47 pm\n\n----------\n\nagreed - i'm up - who needs to sleep will take very quick swing at it now - yes a sentence or two will likely do\n15 minutes i'll be back",
+      "signature": null,
       "stamp": "17 Feb 2020 8:47 pm",
       "stamp_status": "day-month-year",
       "zone_assumed": "W. Ian Lipkin's own mailbox export (Columbia University; page-owner code LIP)",
@@ -4871,10 +5178,10 @@
       "thread_key": "po-emails|2020-02-17|2047",
       "thread_label": "2020-02-17 20:47 · Robert Garry",
       "replied_by": [],
-      "reply_to": "po-emails|2020-02-17|2039",
-      "reply_to_label": "2020-02-17 20:39 · Robert Garry",
+      "reply_to": "po-emails|2020-02-17|0945",
+      "reply_to_label": "2020-02-17 09:45 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 176
+      "idx": 186
     },
     {
       "date": "2020-02-17",
@@ -4900,7 +5207,7 @@
       "reply_to": "po-emails|2020-02-17|1023",
       "reply_to_label": "2020-02-17 10:23 · Andrew Rambaut",
       "link_kind": "explicit (quoted inline)",
-      "idx": 177
+      "idx": 187
     },
     {
       "date": "2020-02-19",
@@ -4927,7 +5234,7 @@
           "label": "2020-02-19 18:30 · Shabman, Reed"
         }
       ],
-      "idx": 178
+      "idx": 188
     },
     {
       "date": "2020-02-19",
@@ -4949,7 +5256,7 @@
       "thread_key": "po-emails|2020-02-19|1830",
       "thread_label": "2020-02-19 18:30 · Shabman, Reed",
       "replied_by": [],
-      "idx": 179,
+      "idx": 189,
       "reply_to": "po-emails|2020-02-19|1621",
       "reply_to_label": "2020-02-19 16:21 · Coleman",
       "link_kind": "inferred (same conversation)"
@@ -4979,7 +5286,7 @@
           "label": "2020-02-20 20:48 · Kristian G. Andersen"
         }
       ],
-      "idx": 180
+      "idx": 190
     },
     {
       "date": "2020-02-20",
@@ -5007,7 +5314,7 @@
           "label": "2020-02-20 12:56 · Kristian G. Andersen"
         }
       ],
-      "idx": 181
+      "idx": 191
     },
     {
       "date": "2020-02-20",
@@ -5038,7 +5345,7 @@
       "reply_to": "po-emails|2020-02-20|1254",
       "reply_to_label": "2020-02-20 12:54 · Clare Thomas",
       "link_kind": "explicit (quoted inline)",
-      "idx": 182
+      "idx": 192
     },
     {
       "date": "2020-02-20",
@@ -5068,7 +5375,7 @@
       "reply_to": "po-emails|2020-02-20|1152",
       "reply_to_label": "2020-02-20 11:52 · (iS",
       "link_kind": "explicit (quoted inline)",
-      "idx": 183
+      "idx": 193
     },
     {
       "date": "2020-02-27",
@@ -5095,7 +5402,7 @@
           "label": "2020-02-28 00:17 · Kristian G. Andersen"
         }
       ],
-      "idx": 184
+      "idx": 194
     },
     {
       "date": "2020-02-27",
@@ -5117,7 +5424,7 @@
       "thread_key": "po-emails|2020-02-27|2234",
       "thread_label": "2020-02-27 22:34 · Kristian G. Andersen",
       "replied_by": [],
-      "idx": 185
+      "idx": 195
     },
     {
       "date": "2020-02-28",
@@ -5147,7 +5454,7 @@
       "reply_to": "po-emails|2020-02-27|1500",
       "reply_to_label": "2020-02-27 15:00 · Joao",
       "link_kind": "explicit (quoted inline)",
-      "idx": 186
+      "idx": 196
     },
     {
       "date": "2020-02-29",
@@ -5177,7 +5484,7 @@
       "reply_to": "po-emails|2020-02-28|0017",
       "reply_to_label": "2020-02-28 00:17 · Kristian G. Andersen",
       "link_kind": "explicit (quoted inline)",
-      "idx": 187
+      "idx": 197
     },
     {
       "date": "2020-03-03",
@@ -5207,7 +5514,7 @@
       "reply_to": "po-emails|2020-02-29|2222",
       "reply_to_label": "2020-02-29 22:22 · Kristian",
       "link_kind": "explicit (quoted inline)",
-      "idx": 188
+      "idx": 198
     },
     {
       "date": "2020-03-03",
@@ -5237,7 +5544,7 @@
       "reply_to": "po-emails|2020-03-03|1402",
       "reply_to_label": "2020-03-03 14:02 · Joao",
       "link_kind": "explicit (quoted inline)",
-      "idx": 189
+      "idx": 199
     },
     {
       "date": "2020-03-04",
@@ -5264,7 +5571,7 @@
           "label": "2020-03-04 19:33 · Kristian G. Andersen"
         }
       ],
-      "idx": 190
+      "idx": 200
     },
     {
       "date": "2020-03-04",
@@ -5294,7 +5601,7 @@
       "reply_to": "po-emails|2020-03-04|1832",
       "reply_to_label": "2020-03-04 18:32 · Kristian G. Andersen",
       "link_kind": "explicit (quoted inline)",
-      "idx": 191
+      "idx": 201
     },
     {
       "date": "2020-03-04",
@@ -5324,7 +5631,7 @@
       "reply_to": "po-emails|2020-03-03|2027",
       "reply_to_label": "2020-03-03 20:27 · Kristian G. Andersen",
       "link_kind": "explicit (quoted inline)",
-      "idx": 192
+      "idx": 202
     },
     {
       "date": "2020-03-04",
@@ -5351,7 +5658,7 @@
           "label": "2020-03-04 21:59 · Kristian G. Andersen"
         }
       ],
-      "idx": 193
+      "idx": 203
     },
     {
       "date": "2020-03-04",
@@ -5381,7 +5688,7 @@
       "reply_to": "po-emails|2020-03-04|2157",
       "reply_to_label": "2020-03-04 21:57 · Joao",
       "link_kind": "explicit (quoted inline)",
-      "idx": 194
+      "idx": 204
     },
     {
       "date": "2020-03-04",
@@ -5411,7 +5718,7 @@
       "reply_to": "po-emails|2020-03-04|2159",
       "reply_to_label": "2020-03-04 21:59 · Kristian G. Andersen",
       "link_kind": "explicit (quoted inline)",
-      "idx": 195
+      "idx": 205
     },
     {
       "date": "2020-03-04",
@@ -5441,7 +5748,7 @@
       "reply_to": "po-emails|2020-03-04|2201",
       "reply_to_label": "2020-03-04 22:01 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 196
+      "idx": 206
     },
     {
       "date": "2020-03-04",
@@ -5471,7 +5778,7 @@
       "reply_to": "po-emails|2020-03-04|2202",
       "reply_to_label": "2020-03-04 22:02 · Kristian G. Andersen",
       "link_kind": "explicit (quoted inline)",
-      "idx": 197
+      "idx": 207
     },
     {
       "date": "2020-03-05",
@@ -5496,7 +5803,7 @@
       "reply_to": "po-emails|2020-03-04|1933",
       "reply_to_label": "2020-03-04 19:33 · Kristian G. Andersen",
       "link_kind": "explicit (quoted inline)",
-      "idx": 198
+      "idx": 208
     },
     {
       "date": "2020-03-05",
@@ -5518,7 +5825,7 @@
       "thread_key": "po-emails|2020-03-05|0244",
       "thread_label": "2020-03-05 02:44 · Clare Thomas",
       "replied_by": [],
-      "idx": 199,
+      "idx": 209,
       "reply_to": "po-emails|2020-02-20|2048",
       "reply_to_label": "2020-02-20 20:48 · Kristian G. Andersen",
       "link_kind": "inferred (same conversation)"
@@ -5548,7 +5855,7 @@
           "label": "2020-03-05 20:24 · Edward Holmes"
         }
       ],
-      "idx": 200
+      "idx": 210
     },
     {
       "date": "2020-03-05",
@@ -5579,7 +5886,7 @@
       "reply_to": "po-emails|2020-02-20|1256",
       "reply_to_label": "2020-02-20 12:56 · Kristian G. Andersen",
       "link_kind": "explicit (quoted inline)",
-      "idx": 201
+      "idx": 211
     },
     {
       "date": "2020-03-05",
@@ -5601,7 +5908,7 @@
       "thread_key": "po-emails|2020-03-05|1045",
       "thread_label": "2020-03-05 10:45 · Clare Thomas",
       "replied_by": [],
-      "idx": 202,
+      "idx": 212,
       "reply_to": "po-emails|2020-03-05|0506",
       "reply_to_label": "2020-03-05 05:06 · Kristian G. Andersen",
       "link_kind": "inferred (same conversation)"
@@ -5626,7 +5933,7 @@
       "thread_key": "po-emails|2020-03-05|1317",
       "thread_label": "2020-03-05 13:17 · Joao",
       "replied_by": [],
-      "idx": 203,
+      "idx": 213,
       "reply_to": "po-emails|2020-03-04|2056",
       "reply_to_label": "2020-03-04 20:56 · Kristian G. Andersen",
       "link_kind": "inferred (same conversation)"
@@ -5654,7 +5961,7 @@
       "reply_to": "po-emails|2020-03-04|2204",
       "reply_to_label": "2020-03-04 22:04 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 204
+      "idx": 214
     },
     {
       "date": "2020-03-05",
@@ -5676,7 +5983,7 @@
       "thread_key": "po-emails|2020-03-05|1603",
       "thread_label": "2020-03-05 16:03 · medicine@us.nature.com",
       "replied_by": [],
-      "idx": 205
+      "idx": 215
     },
     {
       "date": "2020-03-05",
@@ -5701,7 +6008,7 @@
       "reply_to": "po-emails|2020-03-05|0245",
       "reply_to_label": "2020-03-05 02:45 · Clare Thomas",
       "link_kind": "explicit (quoted inline)",
-      "idx": 206
+      "idx": 216
     },
     {
       "date": "2020-03-17",
@@ -5728,7 +6035,7 @@
           "label": "2020-03-17 16:21 · Chris"
         }
       ],
-      "idx": 207
+      "idx": 217
     },
     {
       "date": "2020-03-17",
@@ -5755,7 +6062,7 @@
           "label": "2020-03-17 18:01 · Shabman, Reed"
         }
       ],
-      "idx": 208,
+      "idx": 218,
       "reply_to": "po-emails|2020-03-17|1615",
       "reply_to_label": "2020-03-17 16:15 · \"Coleman, Amanda (NIH/NIAID) [C",
       "link_kind": "inferred (same conversation)"
@@ -5780,7 +6087,7 @@
       "thread_key": "po-emails|2020-03-17|1801",
       "thread_label": "2020-03-17 18:01 · Shabman, Reed",
       "replied_by": [],
-      "idx": 209,
+      "idx": 219,
       "reply_to": "po-emails|2020-03-17|1621",
       "reply_to_label": "2020-03-17 16:21 · Chris",
       "link_kind": "inferred (same conversation)"
@@ -5808,7 +6115,7 @@
       "reply_to": "po-emails|2020-02-17|1226",
       "reply_to_label": "2020-02-17 12:26 · Kristian G. Andersen",
       "link_kind": "explicit (quoted inline)",
-      "idx": 210
+      "idx": 220
     },
     {
       "date": "2020-07-25",
@@ -5835,7 +6142,7 @@
           "label": "2020-07-27 18:02 · "
         }
       ],
-      "idx": 211
+      "idx": 221
     },
     {
       "date": "2020-07-27",
@@ -5869,7 +6176,7 @@
       "reply_to": "po-emails|2020-07-25|1022",
       "reply_to_label": "2020-07-25 10:22 · ofu",
       "link_kind": "explicit (quoted inline)",
-      "idx": 212
+      "idx": 222
     },
     {
       "date": "2020-07-27",
@@ -5880,8 +6187,8 @@
       "sender_raw": "Edward Holmes I",
       "sender_how": "inline quote marker (On ... wrote:)",
       "subject": "[NA]",
-      "content": "From: Edward Holmes\n\nSubject: [NA]\n\nSent: Jul 27, 2020 7:47 PM\n\n----------\n\nRon thought it was useful at the time.\n\n----------\n\nPROFESSOR EDWARD C. HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia\nBegin forwarded message:\nSubject: Re: Teleconference\nDate: 2 February 2020 at 7:30:12 pm AEDT\nTo: Jeremy Farrar i \"Fauci, Anthony (NIH/NIAID) [E]\"\nMEE, Patrick Vallance\nCc: \"Drosten, Christian\" = as \"| PG Koopmans\"\nee ward Holmes :\n“spoehimann| , Andrew Rambaut < , \"Kristian\nG. Andersen\" Paul Schreier |\n“rigarry| , \"Ferguson, Mike\"\nFrancis Comins <Comlinst( , lawrence.tabak Josie\nGolding\nDear Jeremy and others,\nThis was a very useful teleconference. Given the evidence presented and the discussions around it, | would conclude\nthat a follow-up discussion on the possible origin of 2019-nCoV would be of much interest. However, | doubt if it needs\nto be done on very short term, given the importance of other activities of the scientific community, WHO and other\nstakeholders at present. It is my opinion that a non-natural origin of 2019-nCoV is highly unlikely at present. Any\nconspiracy theory can be approached with factual information. | have written down some of the counter-arguments. It\nis a bit long (below) but wanted to share it with you anyway.\nThanks for organizing this on such short notice,",
-      "signature": "PROFESSOR EDWARD C. HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia\nBegin forwarded message:\nSubject: Re: Teleconference\nDate: 2 February 2020 at 7:30:12 pm AEDT\nTo: Jeremy Farrar i \"Fauci, Anthony (NIH/NIAID) [E]\"\nMEE, Patrick Vallance\nCc: \"Drosten, Christian\" = as \"| PG Koopmans\"\nee ward Holmes :\n“spoehimann| , Andrew Rambaut < , \"Kristian\nG. Andersen\" Paul Schreier |\n“rigarry| , \"Ferguson, Mike\"\nFrancis Comins <Comlinst( , lawrence.tabak Josie\nGolding\nDear Jeremy and others,\nThis was a very useful teleconference. Given the evidence presented and the discussions around it, | would conclude\nthat a follow-up discussion on the possible origin of 2019-nCoV would be of much interest. However, | doubt if it needs\nto be done on very short term, given the importance of other activities of the scientific community, WHO and other\nstakeholders at present. It is my opinion that a non-natural origin of 2019-nCoV is highly unlikely at present. Any\nconspiracy theory can be approached with factual information. | have written down some of the counter-arguments. It\nis a bit long (below) but wanted to share it with you anyway.\nThanks for organizing this on such short notice,",
+      "content": "From: Edward Holmes\n\nSubject: [NA]\n\nSent: Jul 27, 2020 7:47 PM\n\n----------\n\nRon thought it was useful at the time.\n\n----------\n\nPROFESSOR EDWARD C. HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia\nBegin forwarded message:\nSubject: Re: Teleconference",
+      "signature": "PROFESSOR EDWARD C. HOLMES FAA FRS\nARC Australian Laureate Fellow\nTHE UNIVERSITY OF SYDNEY\nMarie Bashir Institute for Infectious Diseases & Biosecurity,\nSchool of Life & Environmental Sciences and School of Medical Sciences,\nThe University of Sydney | Sydney | NSW | 2006 | Australia\nBegin forwarded message:\nSubject: Re: Teleconference",
       "stamp": "Jul 27, 2020 7:47 PM",
       "stamp_status": "long",
       "zone_assumed": "Robert Garry's own mailbox export (page-owner code GARRY)",
@@ -5896,10 +6203,10 @@
           "label": "2020-07-28 13:54 · Kristian G. Andersen"
         }
       ],
-      "reply_to": "po-emails|2020-02-01|1634",
-      "reply_to_label": "2020-02-01 16:34 · Jeremy Farrar",
+      "reply_to": "po-emails|2020-02-02|2030",
+      "reply_to_label": "2020-02-02 20:30 · ",
       "link_kind": "explicit (quoted inline)",
-      "idx": 213
+      "idx": 223
     },
     {
       "date": "2020-07-28",
@@ -5921,7 +6228,7 @@
       "thread_key": "po-emails|2020-07-28|0336",
       "thread_label": "2020-07-28 03:36 · Jeremy Farrar",
       "replied_by": [],
-      "idx": 214,
+      "idx": 224,
       "reply_to": "po-emails|2020-07-27|1802",
       "reply_to_label": "2020-07-27 18:02 · ",
       "link_kind": "inferred (same conversation)"
@@ -5951,7 +6258,7 @@
           "label": "2020-07-28 19:21 · Andrew Rambaut"
         }
       ],
-      "idx": 215
+      "idx": 225
     },
     {
       "date": "2020-07-28",
@@ -5981,7 +6288,7 @@
       "reply_to": "po-emails|2020-07-27|1802",
       "reply_to_label": "2020-07-27 18:02 · ",
       "link_kind": "explicit (quoted inline)",
-      "idx": 216
+      "idx": 226
     },
     {
       "date": "2020-07-28",
@@ -6003,7 +6310,29 @@
       "thread_key": "po-emails|2020-07-28|0523",
       "thread_label": "2020-07-28 05:23 · Edward Holmes",
       "replied_by": [],
-      "idx": 217
+      "idx": 227
+    },
+    {
+      "date": "2020-07-28",
+      "time": "1130",
+      "kind": "email",
+      "raw_date": "11:30 ET · Re: The authors who wrote the paper saying that SARS-CoV-2 is not human engineered first tried",
+      "sender": "",
+      "sender_raw": "",
+      "sender_how": "",
+      "subject": "Re: The authors who wrote the paper saying that SARS-CoV-2 is not human engineered first tried",
+      "content": "To: Jeremy Farrar\n\nCc: \"Kristian G. Andersen\" ii \"Fauci, Anthony (NIH/NIAID) \" Po\n\nSubject: Re: The authors who wrote the paper saying that SARS-CoV-2 is not human engineered first tried\n\nDate: Tuesday, 28 July 2020 at 08:30\n\n----------\n\nconvincing Anthony Fauci of the opposite.\nHi Jeremy,\nHere is the exact time-line which | have now checked.\n1. Jan 26. You call me (I was in Switzerland) to talk about some concerns coming out the US that the virus might be a lab escape. Patrick Vallance might have been on that call, | can’t recall. You later forward me an email from Marc Lipsitch and others containing some comments from Richard Ebright. | take a quick look at the sequence and say that | saw no evidence for lab escape in SARS-CoV-2 because it’s pattern of variability was the same as in RaTG13.\n2. Jan 31. Kristian contacts me to say that he has spotted some strange things in the issue - specifically the furin cleavage site and restriction sites - that we was concerned about. Given our conversation earlier that week, | called you and informed you of Kristian’s findings. We then decided to have a broader discussion with key parties on this ASAP. | think Kristian told Tony at this point but he can confirm. You and | then decided that Ron Fouchier, Christian Drosten and Marion Koopmans would be good to include.\nChristian also wanted Stephan Pollmnan involved.\n3. Feb 1 (6 am on Feb 2 for me). We have the conference call and then start an email chain about how we should deal with this. Writing it up for a paper was on the agenda and discussed. | have all the emails on this.\nFor Tony’s benefit a revised draft of the email to Jon is pasted below.\n| can’t for the life of me see what we have done wrong here. | strongly believe we have just tried to get on top of a very vexing question as quickly and openly as possible.\nCheers,",
+      "signature": null,
+      "stamp": "Tuesday, 28 July 2020 at 08:30",
+      "stamp_status": "day-month-year",
+      "zone_assumed": "REV mailbox-stamp owner not identified; empirically US Pacific time (could be off by up to 1 hour)",
+      "stamp_line": "08:30 Los Angeles -> 11:30 ET",
+      "recovered_inline": false,
+      "source": "po-emails",
+      "thread_key": "po-emails|2020-07-28|1130",
+      "thread_label": "2020-07-28 11:30 · ",
+      "replied_by": [],
+      "idx": 228
     },
     {
       "date": "2020-07-28",
@@ -6028,7 +6357,7 @@
       "reply_to": "po-emails|2020-07-27|2047",
       "reply_to_label": "2020-07-27 20:47 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 218
+      "idx": 229
     },
     {
       "date": "2020-07-28",
@@ -6053,7 +6382,7 @@
       "reply_to": "po-emails|2020-07-28|0458",
       "reply_to_label": "2020-07-28 04:58 · Edward Holmes",
       "link_kind": "explicit (quoted inline)",
-      "idx": 219
+      "idx": 230
     },
     {
       "date": "2020-07-28",
@@ -6078,7 +6407,7 @@
       "reply_to": "po-emails|2020-07-28|0507",
       "reply_to_label": "2020-07-28 05:07 · Kristian G. Andersen",
       "link_kind": "explicit (quoted inline)",
-      "idx": 220
+      "idx": 231
     },
     {
       "date": null,
@@ -6097,7 +6426,26 @@
       "thread_key": "po-emails|undated|URGENT: Please review by NOON if at all ",
       "thread_label": "undated  · Pope, Andrew",
       "replied_by": [],
-      "idx": 221
+      "idx": 232
+    },
+    {
+      "date": null,
+      "time": null,
+      "kind": "email",
+      "raw_date": "Interest in commentary/hypothesis on SARS-CoV-2 origins?",
+      "sender": "",
+      "sender_raw": "",
+      "sender_how": "",
+      "subject": "Interest in commentary/hypothesis on SARS-CoV-2 origins?",
+      "content": "To: Clare Thomas\n\nSubject: Interest in commentary/hypothesis on SARS-CoV-2 origins?\n\nSent: 12 February 2020 23:\n\n----------\n\nDear Clare,\nI can only imagine you must be crazy busy at the moment! I wanted to reach out to you to sce if there would be interest in receiving a commentary/hypothesis piece on the evolutionary origins of SARS-CoV-2? There has been a lot of speculation, fear mongering, and conspiracies put forward in this space and we thought that bringing some clarity to this discussion might be of interest to Nature.\nPrompted by Jeremy Farrah, Tony Fauci, and Francis Collins, Eddie Holmes, Andrew Rambaut, Bob Garry, Ian\nLipkin, and myself have been working through much of the (primarily) genetic data to provide agnostic and scientifically informed hypotheses around the origins of the virus. We are not quite finished with the writeup and we still have some loose ends, but I wanted to reach out to you to see if this might potentially be of interest?\nWe see this more as a commentary/hypothesis, as opposed to a more long-form Letter or Article.",
+      "date_note": "no usable timestamp in the release; not plotted",
+      "source": "po-emails",
+      "stamp_status": "unparsed",
+      "recovered_inline": false,
+      "thread_key": "po-emails|undated|Interest in commentary/hypothesis on SAR",
+      "thread_label": "undated  · ",
+      "replied_by": [],
+      "idx": 233
     }
   ]
 }
