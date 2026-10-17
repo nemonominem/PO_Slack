@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - po-sourcees-and-boxes
+      - po-sources-and-boxes
   workflow_dispatch:
 
 permissions:
