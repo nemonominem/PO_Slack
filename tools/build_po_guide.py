@@ -36,7 +36,8 @@ import re
 import sys
 from collections import OrderedDict
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "page_based")
+ANALYSIS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "analysis")
 DEFAULT_ARTICLE_DIR = ("/Users/gillesdemaneuf/Work/Edition/medium_to_md/"
                        "examples/proximal_origin")
 
@@ -665,7 +666,7 @@ def main():
     print("\nWrote %s" % out_json)
     print("  %d sections, %d citations, %d distinct documents, %d drive links"
           % (t["sections"], t["citations"], t["documents"], t["drive_links"]))
-    write_sources_md(guide, os.path.join(HERE, "SOURCES.md"))
+    write_sources_md(guide, os.path.join(HERE, "..", "docs", "SOURCES.md"))
     print("  Wrote SOURCES.md")
 
 

@@ -28,11 +28,12 @@ from collections import defaultdict
 
 from slack_notice import apply_notice_normalization, entry_kind
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-PDF_PATH = os.path.join(HERE, "slack-part2.pdf")
+HERE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "page_based")
+ANALYSIS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "analysis")
+PDF_PATH = os.path.join(HERE, "main_sources", "slack-part2.pdf")
 OUT_JSON = os.path.join(HERE, "part2.json")
 OUT_PAGE_MAP = os.path.join(HERE, "part2_page_map.json")
-OCR_JSON = os.path.join(HERE, "part2_ocr_pages.json")
+OCR_JSON = os.path.join(HERE, "..", "source_ocr", "part2_ocr_pages.json")
 SOURCE_PDF = "slack-part2.pdf"
 
 MONTHS = [

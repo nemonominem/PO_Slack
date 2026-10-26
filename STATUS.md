@@ -314,7 +314,7 @@ Prioritised by how much of the argument they carry:
   pairs entries to messages by position after the chronological sort — pages
   ride on the entries, giving 103/103 coverage. The release's duplicate prints
   (REV batch + LIP/GARRY batch) merge without doubling their bodies.)
-- **Testing.** A real browser suite now exists: `page_based/test_browser.mjs`
+- **Testing.** A real browser suite now exists: `tools/tests/test_browser.mjs`
   drives Chrome for Testing (from the Playwright cache — the MCP browser server
   looks for a Google Chrome install that is not present on this machine) and
   checks what the other two suites cannot: that the bookmarks rail really is a

@@ -36,7 +36,8 @@ import re
 
 from foia_parser import Profile, run_release
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "page_based")
+ANALYSIS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "analysis")
 
 # ── time zones ──────────────────────────────────────────────────────────────
 # Most top-level stamps in this release carry an explicit UTC offset ("Sent:
@@ -269,7 +270,7 @@ PROFILE = Profile(
     source_id="farrar-fauci",
     source_file="farrar-fauci-comms.pdf",
     title="Farrar-Fauci-Collins emails (FOI release)",
-    ocr_txt=os.path.join(HERE, "farrar-fauci-comms_ocr.txt"),
+    ocr_txt=os.path.join(HERE, "..", "source_ocr", "farrar-fauci-comms_ocr.txt"),
     out_json=os.path.join(HERE, "farrar-fauci.json"),
     out_map=os.path.join(HERE, "farrar-fauci_page_map.json"),
     sender_roster=SENDER_ROSTER,

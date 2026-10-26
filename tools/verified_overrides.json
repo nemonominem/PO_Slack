@@ -1,0 +1,23 @@
+[
+  {
+    "release": "po-emails.json",
+    "thread_key": "po-emails|2020-01-31|1500",
+    "stamp": "Friday, January 31, 2020 5:57 PM",
+    "zone": "America/New_York",
+    "evidence": "po-emails.pdf PDF page 2 prints 5:57 PM (OCR had dropped the time). It is Farrar's message quoted inside Fauci's reply, so it is frozen on Fauci's Eastern clock. farrar-fauci-comms.pdf p.154 prints the same stamp for the same message."
+  },
+  {
+    "release": "po-emails.json",
+    "thread_key": "po-emails|2020-01-31|1500|1",
+    "stamp": "Friday, January 31, 2020 5:23 PM",
+    "zone": "America/New_York",
+    "evidence": "po-emails.pdf PDF page 3 prints 5:23 PM (OCR had dropped the time and the body). Farrar's text says 'It is 10pm now UK', so the printed 5:23 PM is Eastern (22:23 UK)."
+  },
+  {
+    "release": "farrar-fauci.json",
+    "thread_key": "farrar-fauci|2020-01-31|1257",
+    "stamp": "Friday, January 31, 2020 5:57 PM",
+    "zone": "America/New_York",
+    "evidence": "farrar-fauci-comms.pdf PDF page 154 prints 5:57 PM inside Fauci's reply (stamped Sat 1 Feb 00:38:35 +0000), so it is frozen on Fauci's Eastern clock. Same message as PO 0."
+  }
+]

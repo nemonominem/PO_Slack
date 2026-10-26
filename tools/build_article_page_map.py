@@ -22,7 +22,8 @@ import sys
 
 import pypdf
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "page_based")
+ANALYSIS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "analysis")
 sys.path.insert(0, HERE)
 import build_po_guide as guide_mod
 

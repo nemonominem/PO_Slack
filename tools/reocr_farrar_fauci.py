@@ -24,8 +24,8 @@ import subprocess
 import sys
 import tempfile
 
-PDF = "farrar-fauci-comms.pdf"
-OUT_TXT = "farrar-fauci-comms_ocr.txt"
+PDF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "page_based", "other_sources", "farrar-fauci-comms.pdf")
+OUT_TXT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "source_ocr", "farrar-fauci-comms_ocr.txt")
 DPI = 300
 
 

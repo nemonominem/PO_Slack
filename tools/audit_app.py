@@ -16,7 +16,8 @@ import re
 import sys
 from collections import Counter
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "page_based")
+ANALYSIS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "analysis")
 HTML = os.path.join(HERE, "index.html")
 
 with open(HTML, encoding="utf-8") as f:

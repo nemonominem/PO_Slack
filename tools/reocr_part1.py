@@ -14,10 +14,11 @@ import os
 import subprocess
 import sys
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-PDF_PATH = os.path.join(HERE, "slack-part1.pdf")
+HERE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "page_based")
+ANALYSIS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "analysis")
+PDF_PATH = os.path.join(HERE, "main_sources", "slack-part1.pdf")
 PAGES_DIR = "/tmp/slack_ocr_pages"
-OUT_TXT = os.path.join(HERE, "slack-part1_ocr.txt")
+OUT_TXT = os.path.join(HERE, "..", "source_ocr", "slack-part1_ocr.txt")
 
 
 def render_pages():

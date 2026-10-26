@@ -33,7 +33,8 @@ import re
 
 from foia_parser import Profile, run_release
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "page_based")
+ANALYSIS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "analysis")
 
 # ── time zones ──────────────────────────────────────────────────────────────
 # The senders in this release sit in five countries, and a stamp with no zone
@@ -232,7 +233,7 @@ PROFILE = Profile(
     source_id="po-emails",
     source_file="po-emails.pdf",
     title="P.O. emails (FOI release)",
-    ocr_txt=os.path.join(HERE, "po-emails_ocr.txt"),
+    ocr_txt=os.path.join(HERE, "..", "source_ocr", "po-emails_ocr.txt"),
     out_json=os.path.join(HERE, "po-emails.json"),
     out_map=os.path.join(HERE, "po-emails_page_map.json"),
     sender_roster=SENDER_ROSTER,
@@ -252,6 +253,10 @@ PROFILE = Profile(
     # is kept much smaller so an ordinary short message still re-triggers the
     # "Date:/Sent: with no From: above it" recovery for the message after it.
     max_header_lines=80,
+    # A stamp that names its zone is explicit: it outranks every other rule.
+    named_zone_offsets={"AEDT": 11, "AEST": 10, "EST": -5, "EDT": -4,
+                        "CST": -6, "CDT": -5, "PST": -8, "PDT": -7,
+                        "GMT": 0, "BST": 1, "CET": 1, "CEST": 2},
     reopen_min_distance=16,
     page_owner_re=PAGE_OWNER_RE,
     page_owners=PAGE_OWNERS,

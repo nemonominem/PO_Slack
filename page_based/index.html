@@ -1111,6 +1111,29 @@ mark.hit-current {
   cursor: pointer; outline: none;
 }
 .theme-picker select:hover, .theme-picker select:focus { border-color: var(--accent); }
+/* P.O. Chapter: the button on a box the Tragicomedy cites, and the picker */
+.chapter-btn {
+  background: var(--panel-2); color: var(--accent); border: 1px solid var(--border-2);
+  border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 600; cursor: pointer;
+  white-space: nowrap; margin-left: 6px;
+}
+.chapter-btn:hover { border-color: var(--accent); }
+.chapter-pop {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1100;
+  display: flex; align-items: center; justify-content: center;
+}
+.chapter-pop-box {
+  background: var(--panel); border: 2px solid var(--border-2); border-radius: 10px;
+  padding: 18px 22px; width: min(460px, 92vw); max-height: 80vh; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.chapter-pop-box h3 { color: var(--accent); font-size: 15px; margin-bottom: 4px; }
+.chapter-pop-box button {
+  text-align: left; background: var(--panel-2); color: var(--text); border: 1px solid var(--border-2);
+  border-radius: 6px; padding: 8px 10px; font-size: 13px; cursor: pointer;
+}
+.chapter-pop-box button:hover { border-color: var(--accent); }
+.chapter-pop-box .chapter-pop-close { color: var(--muted); text-align: center; }
 </style>
 <script>
 function themeColor(name, fallback) {
@@ -1346,7 +1369,7 @@ const SOURCES = {
   part1: {
     json: 'part1.json',
     pageMap: 'part1_page_map.json',
-    pdf: 'slack-part1.pdf',
+    pdf: 'main_sources/slack-part1.pdf',
     label: 'Slack Part 1: Feb–Apr 2020',
     badge: '💬 Slack P1',
     release: 'Rand Paul · Slack P1',
@@ -1355,7 +1378,7 @@ const SOURCES = {
   part2: {
     json: 'part2.json',
     pageMap: 'part2_page_map.json',
-    pdf: 'slack-part2.pdf',
+    pdf: 'main_sources/slack-part2.pdf',
     label: 'Slack Part 2: Apr 2020–Jun 2023',
     badge: '💬 Slack P2',
     release: 'Rand Paul · Slack P2',
@@ -1364,7 +1387,7 @@ const SOURCES = {
   sscp: {
     json: 'sscp-drafts.json',
     pageMap: 'sscp_page_map.json',
-    pdf: 'sscp-drafts.pdf',
+    pdf: 'main_sources/sscp-drafts.pdf',
     label: 'P.O. manuscript drafts: Feb–Mar 2020',
     badge: '📝 drafts',
     release: 'FOIA · Manuscript drafts',
@@ -1373,7 +1396,7 @@ const SOURCES = {
   'po-emails': {
     json: 'po-emails.json',
     pageMap: 'po-emails_page_map.json',
-    pdf: 'po-emails.pdf',
+    pdf: 'main_sources/po-emails.pdf',
     label: 'P.O. emails (FOI): Jan–Jul 2020',
     badge: '✉ emails',
     release: 'FOIA · P.O. emails',
@@ -1382,7 +1405,7 @@ const SOURCES = {
   'farrar-fauci': {
     json: 'farrar-fauci.json',
     pageMap: 'farrar-fauci_page_map.json',
-    pdf: 'farrar-fauci-comms.pdf',
+    pdf: 'other_sources/farrar-fauci-comms.pdf',
     label: 'Farrar–Fauci–Collins emails: Jan–Jul 2020',
     badge: '✉ Farrar-Fauci',
     release: 'FOIA · Farrar-Fauci-Collins',
@@ -2041,6 +2064,7 @@ function threadMsgHtml(e, opts) {
     '" title="Open this message’s scanned page in the Main Docs tab">📄 Open in Main Docs</button>';
   html += '<button type="button" class="thread-btn" data-thread-content="' + escapeHtml(e.thread_key) +
     '" title="Open this message in the Content panel’s browse list">📄 Open in Content</button>';
+  html += chapterBtnHtml(e);
   html += '</div>';
   // The full header block (From/To/Cc/Bcc/Subject/Sent/Date, whichever were
   // recovered) -- the same fields the main result card shows, not a
@@ -5117,6 +5141,106 @@ function renderGuideList() {
   };
 }
 
+// ── Bookmark keys that moved ────────────────────────────────────────────────
+// A bookmark keeps its entry's key. When a parser fix moves an email to another
+// time, that key changes. bookmark_rekey.json (built by build_bookmark_rekey.py)
+// maps each old key to its current one, so saved bookmarks keep working.
+let bookmarkRekey = {};
+async function loadBookmarkRekey() {
+  try {
+    const resp = await fetch('bookmark_rekey.json');
+    if (resp.ok) bookmarkRekey = await resp.json();
+  } catch (err) {
+    bookmarkRekey = {};
+  }
+  if (rekeyBookmarks(bookmarks)) {
+    bmPersist();
+    renderBookmarks();
+  }
+}
+// Translate old keys in place. Returns true if anything changed. A bookmark
+// whose new key is already bookmarked is dropped, so no entry appears twice.
+function rekeyBookmarks(list) {
+  let changed = false;
+  (list || []).forEach(function(b) {
+    const k = Object.prototype.hasOwnProperty.call(bookmarkRekey, b.key) ? bookmarkRekey[b.key] : null;
+    if (k && k !== b.key) { b.key = k; changed = true; }
+  });
+  const seen = {};
+  const unique = (list || []).filter(function(b) {
+    if (seen[b.key]) { changed = true; return false; }
+    seen[b.key] = true;
+    return true;
+  });
+  if (list && unique.length !== list.length) {
+    list.length = 0;
+    unique.forEach(function(b) { list.push(b); });
+  }
+  return changed;
+}
+
+// ── P.O. Chapter: the Tragicomedy sections that cite a box ────────────────
+// chapter_links.json is built by build_chapter_links.py. A box with no entry
+// gets no button. One section opens it directly; several open a picker.
+let chapterLinks = {};
+async function loadChapterLinks() {
+  try {
+    const resp = await fetch('chapter_links.json');
+    if (resp.ok) chapterLinks = await resp.json();
+  } catch (err) {
+    chapterLinks = {};
+  }
+}
+function chapterBtnHtml(e) {
+  const links = e && e.bm_key && chapterLinks[e.bm_key];
+  if (!links || !links.length) return '';
+  return '<button type="button" class="chapter-btn" data-chapter-key="' + escapeHtml(e.bm_key) +
+    '" title="Sections of the P.O. Tragicomedy that cite this box">📖 P.O. Chapter</button>';
+}
+function openChapter(sectionId) {
+  const rail = document.getElementById('guideRail');
+  if (rail && rail.classList.contains('collapsed')) toggleGuideRail();
+  if (rail && !rail.querySelector('.guide-sec') && guideData) renderGuideList();
+  selectGuideSection(sectionId);
+  const el = document.querySelector('.guide-sec[data-guide-sec="' + sectionId + '"]');
+  if (el) el.scrollIntoView({ block: 'center' });
+}
+function closeChapterChoice() {
+  const old = document.querySelector('.chapter-pop');
+  if (old) old.remove();
+}
+function showChapterChoice(key) {
+  const links = chapterLinks[key] || [];
+  if (links.length === 1) { openChapter(links[0].id); return; }
+  if (!links.length) return;
+  closeChapterChoice();
+  const pop = document.createElement('div');
+  pop.id = 'chapterPop';
+  pop.className = 'chapter-pop';
+  pop.innerHTML = '<div class="chapter-pop-box" role="dialog" aria-label="P.O. Chapter">' +
+    '<h3>Cited in the P.O. Tragicomedy</h3>' +
+    links.map(function(l) {
+      return '<button type="button" data-chapter-pick="' + escapeHtml(l.id) + '">' +
+        escapeHtml((l.number || '') + '  ' + (l.title || '')) + '</button>';
+    }).join('') +
+    '<button type="button" class="chapter-pop-close" data-chapter-close>Cancel</button></div>';
+  pop.addEventListener('click', function(ev) {
+    if (ev.target === pop || ev.target.closest('[data-chapter-close]')) { closeChapterChoice(); return; }
+    const pick = ev.target.closest('[data-chapter-pick]');
+    if (pick) { closeChapterChoice(); openChapter(pick.getAttribute('data-chapter-pick')); }
+  });
+  document.body.appendChild(pop);
+}
+// Capture phase: the button's click is taken before a result or thread card
+// selects itself underneath it.
+document.addEventListener('click', function(ev) {
+  const btn = ev.target.closest && ev.target.closest('[data-chapter-key]');
+  if (!btn) return;
+  ev.preventDefault();
+  ev.stopPropagation();
+  showChapterChoice(btn.getAttribute('data-chapter-key'));
+}, true);
+
 function selectGuideSection(id) {
   activeGuideId = id;
   document.querySelectorAll('.guide-sec').forEach(function(el) {
@@ -5537,6 +5661,7 @@ function loadBookmarksFile(input) {
         sub: b.sub || b.subtitle || '',
       });
     });
+    rekeyBookmarks(bookmarks);
     bmPersist();
     renderBookmarks();
     input.value = '';
@@ -5598,6 +5723,8 @@ function initGuide() {
   const btn = document.getElementById('guideToggleBtn');
   if (btn) { btn.textContent = '◀'; btn.title = 'Collapse guide'; }
   loadGuide();
+  loadChapterLinks();
+  loadBookmarkRekey();
 }
 
 /** The counts line must follow the box types on screen. */
@@ -5684,6 +5811,7 @@ function displayResults(results, query, opts) {
     html += '<span class="result-hits-group">';
     html += '<span class="result-hits">' + r.hits + ' hit' + (r.hits > 1 ? 's' : '') + '</span>';
     // 🔖 keeps a pointer to this box in the bookmarks rail; click again to drop it.
+    html += chapterBtnHtml(e);
     html += '<button type="button" class="bm-toggle" data-bm-toggle="' +
       escapeHtml(e.bm_key || '') + '" title="Bookmark this box">🔖</button>';
     if (e.reply_to || (e.replied_by && e.replied_by.length)) {

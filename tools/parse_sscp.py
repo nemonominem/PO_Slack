@@ -25,8 +25,9 @@ from collections import OrderedDict
 
 import pypdf
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-PDF = os.path.join(HERE, "sscp-drafts.pdf")
+HERE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "page_based")
+ANALYSIS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "analysis")
+PDF = os.path.join(HERE, "main_sources", "sscp-drafts.pdf")
 OUT_JSON = os.path.join(HERE, "sscp-drafts.json")
 OUT_MAP = os.path.join(HERE, "sscp_page_map.json")
 SOURCE_ID = "sscp"

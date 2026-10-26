@@ -30,12 +30,13 @@ import subprocess
 import sys
 import time
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-PDF_PATH = os.path.join(HERE, "po-emails.pdf")
+HERE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "page_based")
+ANALYSIS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "analysis")
+PDF_PATH = os.path.join(HERE, "main_sources", "po-emails.pdf")
 PAGES_DIR = "/tmp/po_emails_ocr_pages"
 TEXT_DIR = "/tmp/po_emails_ocr_text"   # one .txt per page, so the run is resumable
-OUT_TXT = os.path.join(HERE, "po-emails_ocr.txt")
-OUT_META = os.path.join(HERE, "po-emails_ocr_pages.json")
+OUT_TXT = os.path.join(HERE, "..", "source_ocr", "po-emails_ocr.txt")
+OUT_META = os.path.join(HERE, "..", "source_ocr", "po-emails_ocr_pages.json")
 
 EXPECTED_PAGES = 163
 BATCH = 10

@@ -113,16 +113,16 @@ kept from `part2_ocr_pages.json`.
 | File | Purpose |
 |---|---|
 | `page_based/index.html` | Self-contained static search app (forked from Fauci_Diary's page_based app) |
-| `page_based/slack-part1.pdf`, `slack-part2.pdf` | Source PDFs |
+| `page_based/main_sources/slack-part1.pdf`, `slack-part2.pdf` | Source PDFs |
 | `page_based/part1.json`, `part2.json` | Parsed entries |
 | `page_based/part1_page_map.json`, `part2_page_map.json` | Entry &rarr; PDF page lookup for the viewer's jump-to-page feature |
-| `page_based/reocr_part1.py` | Re-OCRs Part 1's 140 pages with Tesseract (run once; writes `slack-part1_ocr.txt`) |
-| `page_based/slack-part1_ocr.txt` | Re-OCR'd text, consumed by `parse_part1.py` |
-| `page_based/parse_part1.py` | Message-level parser for the re-OCR'd Part 1 text (OCR cleanup + attachment markers) |
-| `page_based/parse_part2.py` | Message-level parser for Part 2 (`[timestamp]` then `[sender]` then body) |
-| `page_based/part2_ocr_pages.json` | 48 messages from 6 image-only Part 2 pages (no text layer) |
-| `page_based/build_part2.py` | Thin wrapper that runs `parse_part2.py` |
-| `page_based/slack_notice.py` | Shared Slack-system-notice detection used by both builders |
+| `tools/reocr_part1.py` | Re-OCRs Part 1's 140 pages with Tesseract (run once; writes `source_ocr/slack-part1_ocr.txt`) |
+| `source_ocr/slack-part1_ocr.txt` | Re-OCR'd text, consumed by `parse_part1.py` |
+| `tools/parse_part1.py` | Message-level parser for the re-OCR'd Part 1 text (OCR cleanup + attachment markers) |
+| `tools/parse_part2.py` | Message-level parser for Part 2 (`[timestamp]` then `[sender]` then body) |
+| `source_ocr/part2_ocr_pages.json` | 48 messages from 6 image-only Part 2 pages (no text layer) |
+| `tools/build_part2.py` | Thin wrapper that runs `parse_part2.py` |
+| `tools/slack_notice.py` | Shared Slack-system-notice detection used by both builders |
 
 ## How to use
 

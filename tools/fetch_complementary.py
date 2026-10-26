@@ -32,7 +32,8 @@ import sys
 import requests
 import pypdf
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "page_based")
+ANALYSIS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "analysis")
 OUT_DIR = os.path.join(HERE, "complementary")
 OUT_JSON = os.path.join(HERE, "complementary.json")
 SCRATCH = "/tmp/po_complementary_scratch"

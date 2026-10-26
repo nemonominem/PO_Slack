@@ -48,8 +48,9 @@ import re
 
 from slack_notice import apply_notice_normalization, entry_kind
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-OCR_TEXT_PATH = os.path.join(HERE, "slack-part1_ocr.txt")
+HERE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "page_based")
+ANALYSIS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "analysis")
+OCR_TEXT_PATH = os.path.join(HERE, "..", "source_ocr", "slack-part1_ocr.txt")
 OUT_JSON = os.path.join(HERE, "part1.json")
 OUT_PAGE_MAP = os.path.join(HERE, "part1_page_map.json")
 SOURCE_PDF = "slack-part1.pdf"
