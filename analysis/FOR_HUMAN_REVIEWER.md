@@ -13,8 +13,8 @@ The items are in four parts, matching the analysis file:
 
 | Part | What | Items |
 |---|---|---|
-| 1 | Settled datetimes | S1 to S3: nothing for you to do |
-| 2 | Unsettled datetimes | U1 to U5: your decisions |
+| 1 | Settled datetimes | S1 to S4: nothing for you to do |
+| 2 | Unsettled datetimes | U1 to U4: your decisions |
 | 3 | Issues in your P.O. piece | P1 to P4, in `TRAGICOMEDY_ISSUES.md` (private, git-ignored) |
 | 4 | Issues in the web app | A1 to A8: what I should fix |
 | 5 | Housekeeping | H1 to H3 |
@@ -31,6 +31,9 @@ The items are in four parts, matching the analysis file:
 | `chapter_links_report.txt`, `bookmark_rekey_report.txt` | No | Link and bookmark housekeeping |
 
 ---
+
+**Standard time.** The web app shows every date and time in New York time (ET) first, followed by the local
+time as printed, for emails, Slack and everything else. ET stays the standard while local times are sorted out.
 
 # Part 1. Settled datetimes: nothing for you to do
 
@@ -49,7 +52,12 @@ Arizona on 2026-10-28 and reverted it the same day. The data is identical to bef
 ### S3. Slack Part 2 is Pacific time: found, nothing to decide
 Two Slack messages state the sender's local clock (Holmes, `slack-part2.pdf` p.706, “it's 1 am here”; Garry,
 `slack-part2.pdf` p.1090, “It's 4:15 am in Sydney”) and the sleeping hours of all four authors over 11,000
-messages agree. Details: analysis 1.3. If you disagree, tell me.
+messages agree. **Applied:** Slack Part 2 is now converted to ET in the app, with the printed Pacific time in the
+🕑 chip. Details: analysis 1.3. If you disagree, tell me.
+
+### S4. Slack Part 1 is Eastern time: settled by you (2026-10-28)
+One anchor (`slack-part1.pdf` p.61, Rambaut, printed 21:26, “Jeez it is 2.30 am”) and your own captions agree.
+The app shows Part 1 as printed, labelled ET. Details: analysis 1.4.
 
 ---
 
@@ -148,13 +156,6 @@ messages agree. Details: analysis 1.3. If you disagree, tell me.
 | `farrar-fauci-comms.pdf` p.80 | (no date or time printed or recovered) | Jeremy Farrar | Re: Prevalence of infection and stage of the epidemic in Wuhan |
 | `farrar-fauci-comms.pdf` pp.169-172 | (no date or time printed or recovered) | GPMB | TIME SENSITIVE Message from GPMB Co-Chairs: review of draft GPMB… |
 
-### U5. Slack Part 1: is it Eastern?
-- **Evidence:** one anchor: `slack-part1.pdf` p.61, Rambaut, 22 Feb 2020 printed 21:26, “Jeez it is 2.30 am.
-  Going to bed.” (he is in Edinburgh), which means Eastern. Your own captions treat Part 1 Slack times as
-  Eastern and add 5 hours for UK; 16 of the 67 Slack captions I could check match a stamp to the minute.
-- **Send me:** “Part 1 is Eastern” (I mark it settled), or the zone it really is, or “unknown”.
-- **CSV:** no.
-
 ---
 
 # Part 3. Issues in your P.O. piece
@@ -183,10 +184,10 @@ These are in `TRAGICOMEDY_ISSUES.md` (items P1 to P4). That file is kept out of 
   12:50. Probably OCR errors or misplaced day dividers. Part 2 has none.
 - **Send me:** “list them” (I give you the 83, with page and printed time) or “skip”.
 
-### A4. Slack times carry no zone, and Part 1 and Part 2 are on different clocks
-- The app prints Slack times as given. Part 2 is Pacific, Part 1 probably Eastern (U5). Any comparison of a Slack
-  time with an email time (timeline, chapter links) must convert first.
-- **Send me:** “show the zone”, “convert Slack to Eastern”, or “leave as printed”.
+### A4. Slack times carry no zone: done
+- Slack Part 2 (Pacific) is now shown in ET with the printed Pacific time in the 🕑 chip; Part 1 (Eastern) is
+  labelled ET. 11,293 Part 2 messages changed, 591 of them to another date. Nothing for you to do unless
+  something looks off in the timeline.
 
 ### A5. Chapter link for section 4.11
 - `farrar-fauci-comms.pdf` p.112: your caption “3:59 pm EST” is linked to Fauci's `farrar-fauci-comms.pdf` p.137, “Saturday, 1 February 2020 at 15:50”, Anthony Fauci, “RE: Teleconference”, 9 minutes away. It may
@@ -212,7 +213,7 @@ These are in `TRAGICOMEDY_ISSUES.md` (items P1 to P4). That file is kept out of 
 
 ### H1. Commit and push: when?
 - Everything is committed locally; nothing is pushed.
-  - `PO_Slack` (branch `po-sources-and-boxes`): 15 commits ahead of origin. Pushing redeploys the P.O. site.
+  - `PO_Slack` (branch `po-sources-and-boxes`): the Slack-to-ET change is committed but not pushed. Pushing redeploys the P.O. site.
   - `Edition_Toolkit` (branch `nested-header-split`): 1 commit ahead, with the shared parser changes and the
     skill `foia-datetime-resolution`.
 - **Send me:** “push `PO_Slack`”, “push `Edition_Toolkit`”, “push both”, or “wait”.

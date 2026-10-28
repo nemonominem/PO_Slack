@@ -24,6 +24,7 @@ import json
 import os
 import re
 import subprocess
+from datetime import datetime, timedelta
 from collections import defaultdict
 
 from slack_notice import apply_notice_normalization, entry_kind
@@ -192,11 +193,31 @@ def merge_ocr_messages(parsed, ocr_messages):
     return merged, sum(len(v) for v in ocr_by_page.values())
 
 
+# Standard time for the whole app is New York time (ET). The Part 2 export is on
+# Pacific time (settled: two sender-stated local times and the authors' sleeping
+# hours, see analysis/ZONE_AND_DATE_ANALYSIS.md 1.3). US Pacific and Eastern change
+# clocks at the same instant, so ET is always Pacific + 3 hours.
+PT_TO_ET = timedelta(hours=3)
+ZONE_NOTE = ("Slack Part 2 export is on US Pacific time (settled by two sender-stated local "
+             "times and sleeping hours); shown in New York time (ET) with the printed Pacific time")
+
+
+def to_et(date_part, time_part):
+    """Pacific date/time string -> (ET date 'YYYY-MM-DD', ET time 'HH:MM:SS')."""
+    fmt = "%Y-%m-%d %H:%M:%S" if time_part.count(":") == 2 else "%Y-%m-%d %H:%M"
+    dt = datetime.strptime(date_part + " " + time_part, fmt) + PT_TO_ET
+    return dt.strftime("%Y-%m-%d"), dt.strftime("%H:%M:%S")
+
+
 def to_entry(idx, msg, unresolved_date):
     ts = msg.get("timestamp")
+    local_stamp = None
     if ts:
         date_part = ts.split(" ")[0]
         time_part = ts.split(" ")[1] if " " in ts else None
+        if time_part:
+            local_stamp = "%s %s Pacific" % (date_part, time_part)
+            date_part, time_part = to_et(date_part, time_part)
         y, mo, d = (int(x) for x in date_part.split("-"))
         raw = raw_date_from_iso(y, mo, d)
         unresolved_date = (date_part, raw)
@@ -207,7 +228,11 @@ def to_entry(idx, msg, unresolved_date):
         date_part, raw, time_part = "2020-04-30", "April 30, 2020", None
 
     sender, content = apply_notice_normalization(msg.get("sender"), msg.get("content", ""))
+    extra = {}
+    if local_stamp:
+        extra = {"stamp_line": "%s -> %s ET" % (local_stamp[11:], time_part), "zone_assumed": ZONE_NOTE}
     return {
+        **extra,
         "idx": idx,
         "date": date_part,
         "raw_date": raw,

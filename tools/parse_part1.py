@@ -486,7 +486,16 @@ def finalize_message(sender, time_tokens, content_lines, page, date_key):
 
     final_sender, content = apply_notice_normalization(sender, content)
 
+    # Standard time is New York time (ET). The Part 1 export is already on Eastern
+    # time (settled: one sender-stated local time, and the author's own captions).
+    zone_extra = {}
+    if time_val:
+        zone_extra = {
+            "stamp_line": "%s ET" % time_val,
+            "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
+        }
     return {
+        **zone_extra,
         "date": date_key[0],
         "raw_date": date_key[1],
         "sender": final_sender,

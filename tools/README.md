@@ -4,6 +4,11 @@ Run from this folder. Each script reads and writes `../page_based/` (the data th
 serves) and `../analysis/` (internal reports). The shared parser is `foia_parser`,
 in `Edition/foia_parser` (set `PYTHONPATH` to it).
 
+## Rebuild order (Slack)
+`parse_part1.py`, `parse_part2.py` (needs `slack_notice.py`). Standard time is New York time (ET):
+Part 1 is already Eastern; Part 2 is on Pacific time and is converted to ET (+3 h) here, keeping the
+printed Pacific time in `stamp_line`.
+
 ## Rebuild order (emails)
 1. `parse_po_emails.py`, `parse_farrar_fauci.py`: parse the OCR text into entries.
 2. `anchor_copies.py`: rule 1b (exact copy with an explicit offset).

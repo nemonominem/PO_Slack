@@ -10,6 +10,11 @@ turns the internal entry numbers into this form; `zone_format_audit.csv` has one
 same fields.) "P.O. emails" is `po-emails.pdf`; "Farrar-Fauci" is `farrar-fauci-comms.pdf`; the
 Slack PDFs are `slack-part1.pdf` and `slack-part2.pdf`.
 
+**Standard time.** Every date and time in the web app, whatever the source (emails, Slack, drafts), is shown
+in **New York time (ET)**, followed by the local time as printed. ET is the standard while the local times are
+being sorted out; where a local zone is unknown the entry says so. Slack Part 2 is converted to ET
+(`tools/parse_part2.py`); Slack Part 1 is already Eastern.
+
 The file has five parts:
 1. **Settled datetimes**
 2. **Unsettled datetimes**
@@ -19,7 +24,7 @@ The file has five parts:
 
 ---
 
-# Part 1. Settled datetimes (203 emails, plus Slack Part 2)
+# Part 1. Settled datetimes (203 emails, plus Slack Part 1 and Part 2)
 
 Settled means: fixed by the stamp itself, by an exact copy, by the page image, or by a decision of yours
 backed by evidence. `zone_format_audit.csv` marks each email `Settled`.
@@ -77,10 +82,22 @@ Independent check, from sleeping hours: for each main author the quietest six-ho
 taken as 03:30 local. Over 11,000 Part 2 messages every author gives the same stamp zone, about UTC-8.5:
 Andersen is quiet 00:00-06:00; Holmes (Sydney) 05:00-11:00; Rambaut (UK) 17:00-23:00; Garry (Chicago)
 21:00-03:00. That is Pacific. So Slack Part 2 times are Pacific (settled: two anchors and the histogram).
+**Applied:** `tools/parse_part2.py` now converts Part 2 to ET (Pacific + 3 hours; US Pacific and Eastern change
+clocks at the same instant). The app shows the ET date and time, and the 🕑 chip gives the printed Pacific time
+(“07:58:54 Pacific -> 10:58:54 ET”). 11,293 timed messages changed; 591 moved to another date.
+
+## 1.4 Slack Part 1 is Eastern time
+
+Decided by you on 2026-10-28. Evidence: `slack-part1.pdf` p.61, Rambaut, 22 Feb 2020 printed 21:26, “Jeez it is
+2.30 am. Going to bed.” (Edinburgh, UTC+0): 21:26 Eastern = 02:26 UK. Your own captions treat Part 1 Slack times
+as Eastern and add 5 hours for UK; of 67 Slack captions I could check, 16 match a stamp to the minute and most
+others fall within a few minutes of the nearest timed message (only the first message of a run is timed in Part 1).
+The sleeping-hours method on Part 1 is too noisy (UTC-4 to UTC-7) to add anything. The app shows Part 1 times as
+printed, labelled ET in the 🕑 chip.
 
 ---
 
-# Part 2. Unsettled datetimes (183 emails, plus Slack Part 1)
+# Part 2. Unsettled datetimes (183 emails)
 
 ## 2.1 Supported but not proven (114 emails)
 
@@ -102,16 +119,6 @@ is simply too early; the Farrar message `farrar-fauci-comms.pdf` pp.154-155, “
 | Sender, small groups (list in `FOR_HUMAN_REVIEWER.md`, item U2) | 19 | by sender | Too few linked replies to test (one to four each) |
 | Quoted copy takes the replier's zone | 2 | replier's | Footnote rule, not tested: `farrar-fauci-comms.pdf` p.157, “Jan 30, 2020 7:13 AM”, Jeremy Farrar, “[NA]” and `farrar-fauci-comms.pdf` p.10, “May 12, 2020 12:57 PM”, Jeremy Farrar, “[NA]” |
 | No date or time in the data | 8 | none | Need the page image (list in `FOR_HUMAN_REVIEWER.md`, item U4) |
-
-## 2.3 Slack Part 1: probably Eastern, one anchor
-
-- `slack-part1.pdf` p.61, Rambaut, 2020-02-22 21:26, “Jeez it is 2.30 am. Going to bed.” (Edinburgh, UTC+0):
-  the stamp must be UTC-5 (21:26 = 02:26 UK; 4 minutes from “2.30”).
-- Your own captions treat Part 1 Slack times as Eastern and add 5 hours for UK. Of 67 Slack captions I could
-  check, 16 match a Slack stamp to the minute and most others fall within a few minutes of the nearest timed
-  message (only the first message of a run is timed in Part 1). This supports Eastern.
-- The sleeping-hours method on Part 1 (1,250 messages) is noisy (UTC-4 to UTC-7) and does not confirm it.
-- So: Eastern is likely and your article uses it, but it rests on one anchor. Not settled until you confirm.
 
 ---
 
@@ -137,10 +144,9 @@ working on”, is dated 2 Feb 2020 in the app. It is the evening of 1 Feb (it co
 Timed messages whose time drops by more than an hour inside one date, for example 12:47, then 01:28, then
 12:50. Probably OCR errors or misplaced day dividers. Part 2 has none. Not yet listed or fixed.
 
-## A4. Slack times carry no zone; Part 1 and Part 2 are on different clocks
-The app prints Slack times as given. Part 2 is Pacific (1.3), Part 1 probably Eastern (2.3). Anything that
-compares a Slack time to an email time (the timeline, chapter links between a Slack box and an email box) must
-convert first. Not done.
+## A4. Slack times carry no zone: done
+Slack Part 2 (Pacific) is now converted to ET and Part 1 (Eastern) is labelled ET; both show the printed local
+time in the 🕑 chip. Sorting and the timeline now compare like with like. Related data issues remain in A2 and A3.
 
 ## A5. Chapter link for section 4.11
 The article caption “3:59 pm EST” (Farrar-Fauci p.112) is linked to Fauci's `farrar-fauci-comms.pdf` p.137, “Saturday, 1 February 2020 at 15:50”, Anthony Fauci, “RE: Teleconference”, 9 minutes away. It may
