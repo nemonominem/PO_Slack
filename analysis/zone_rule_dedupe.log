@@ -1,0 +1,4 @@
+Same-instant, same-text copies removed within each release
+file | removed idx | date | time | sender | kept idx | kept sender
+farrar-fauci.json | 40 | 2020-02-01 | 1443 | Marion | 39 | Marion Koopmans
+farrar-fauci.json | 61 | 2020-02-04 | 0201 | Jeremy | 64 | Jeremy Farrar

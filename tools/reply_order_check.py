@@ -22,7 +22,7 @@ def group_of(e, rel):
     z = e.get("zone_assumed") or ""
     if "explicit" in z or z.startswith("anchored") or z.startswith("verified"):
         return "explicit"
-    if "REV mailbox" in z:
+    if "REV export" in z:
         return "PO page REV"
     if "Robert Garry's own" in z:
         return "PO page GARRY"

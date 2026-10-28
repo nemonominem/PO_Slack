@@ -17,6 +17,8 @@ in `Edition/foia_parser` (set `PYTHONPATH` to it).
 
 After a rebuild, check: no dangling or one-sided reply links, no reply before its parent.
 
+- `entry_ref.py`: turns a `PO n` / `FF n` entry number into its PDF pages, printed header and subject (for the analysis docs).
+
 ## Checks (write to `analysis/`)
 - `owner_zone_check.py`: exact-copy pairs for page owners.
 - `reply_order_check.py`: reply-order test by zone group.

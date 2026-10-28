@@ -108,6 +108,14 @@ def main():
                 # map it to the one current entry with the same date, time and sender.
                 same = [e for e in new if o.get("date") and (e.get("date"), e.get("time"), e.get("sender")) ==
                         (o.get("date"), o.get("time"), o.get("sender"))]
+                if not same and instant(o) is not None:
+                    # a zone change can move an entry by a few hours: same sender,
+                    # unique nearest within 3 hours
+                    near = sorted((abs(instant(e) - instant(o)), i) for i, e in enumerate(new)
+                                  if instant(e) is not None and e.get("sender") == o.get("sender")
+                                  and abs(instant(e) - instant(o)) <= 180)
+                    if near and (len(near) == 1 or near[0][0] < near[1][0]):
+                        same = [new[near[0][1]]]
                 if len(same) == 1 and not (ok in new_keys):
                     mapping[ok] = app_key(source, same[0])
                 else:

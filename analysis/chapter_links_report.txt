@@ -1,0 +1,115 @@
+Unlinked citations (strict matching):
+3.13  TIME NOT FOUND  Proximal_Origin_Emails.pdf, p.1, 31 Jan 2020 8:05 pm EST  (ET 2020-01-31 20:05)
+3.14  TIME NOT FOUND  Proximal_Origin_Emails.pdf p. 4, 31 Jan 10:32 pm EST  (ET 2020-01-31 22:32)
+3.14  TIME NOT FOUND  Proximal_Origin_Emails.pdf p. 4–5 31 Jan 10:32 pm EST  (ET 2020-01-31 22:32)
+4.3  NO TIME, not linked  Proximal_Origin_Emails.pdf, p.153, 1 Feb 2020, 4 pm EST
+4.5  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.3, 1 Feb 2020, 1::52 pm EST
+4.6  NO DATE  extract of the presentation for the call (‘Coronavirus sequence comparison[1].pdf’), extracted from farrar-fauci-comms-full.pdf
+4.9  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.4, 1 Feb 2020, during the call
+5.1  NO TIME, not linked  farrar-fauci-comms-full.pdf, p.107, 2 Feb 2020
+5.3  NO TIME, not linked  farrar-fauci-comms-full.pdf, p.112, 2 Feb 2020
+5.4  NO TIME, not linked  farrar-fauci-comms-full.pdf, p.109, 2 Feb 2020
+5.5  NO TIME, not linked  farrar-fauci-comms-full.pdf, p.108, 2 Feb 2020
+5.6  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.5, 1 Feb 2020, 10:42 pm EST  (ET 2020-02-01 22:42)
+5.6  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.5, 2 Feb 2020, 6:42 pm EST  (ET 2020-02-02 18:42)
+6.1  NO TIME, not linked  farrar-fauci-comms-full.pdf, p.107–108, 2 Feb 2020
+6.2  NO TIME, not linked  farrar-fauci-comms-full.pdf, p.106, 2 Feb 2020, ~7am EST
+8.3  NO TIME, not linked  Proximal_Origin_Emails.pdf, p.16, 4 Feb 2020
+8.3  NO TIME, not linked  Proximal_Origin_Emails.pdf, p.32, 4 Feb 2020
+8.4  NO DATE  Proximal_Origin_Slack.pdf, p.25
+9.2  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.5, 2 Feb 2020
+9.3  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.5, 2 Feb 2020
+10.1  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.14, 4 Feb 2020
+10.2  NO TIME, not linked  Proximal_Origin_Emails.pdf, p.26, 4 Feb 2020, around 7 to 8 pm UK
+10.4  TIME NOT FOUND  Proximal_Origin_Emails.pdf, p. 44, 4 Feb 2020, 10:31 am UK  (ET 2020-02-04 05:31)
+10.4  NO TIME, not linked  Proximal_Origin_Emails.pdf, p.43]
+11.4  TIME NOT FOUND  Proximal_Origin_Emails.pdf, p.35, 5 Feb 2020 (7:36 am UK)  (ET 2020-02-05 02:36)
+11.5  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.19, 6 Feb 2020
+11.5  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.20, 6 Feb 2020
+12.3  NO TIME, not linked  farrar-fauci-comms.pdf, p.64, 7 Feb 2020 (US time)
+12.4  NO TIME, not linked  Proximal_Origin_Emails.pdf, p.49–50, 7 Feb 2020
+12.4  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.16, 5–6 Feb 2020
+12.5  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.46, 7 Feb 2020 (UK)
+12.5  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.21, 7 Feb 2020 (UK)
+13.1  TIME NOT FOUND  Proximal_Origin_Emails.pdf, p.57–58, 8 Feb 2020, 9:45 UK  (ET 2020-02-08 04:45)
+13.3  TIME NOT FOUND  Proximal_Origin_Emails.pdf, p.61, 8 Feb 2020, 12:00 pm UK  (ET 2020-02-08 07:00)
+13.3  NO TIME, not linked  Proximal_Origin_Emails.pdf, p.56, 8 Feb 2020, 12 pm UK
+13.5  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.21, 8 Feb 2020
+13.6  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.22, p.22–23, 8 Feb 2020, ~6 pm UK
+13.7  TIME NOT FOUND  Drosten, Proximal_Origin_Emails.pdf, p.53, 8 Feb 2020, 19:52 UK, 20:52 Germany  (ET 2020-02-08 14:52)
+13.8  TIME NOT FOUND  Proximal_Origin_Emails.pdf, p.52, 8 Feb 2020, 8.11 pm UK  (ET 2020-02-08 15:11)
+13.9  NO DATE  Holmes to his co-authors, Proximal_Origin_Emails.pdf, p.28
+13.9  NO DATE  Holmes to the Farrar call group, Proximal_Origin_Emails.pdf, p.52
+13.9  NO DATE  Farrar to the Farrar call group, Proximal_Origin_Emails.pdf, p.52
+13.9  NO DATE  Rambaut to the Farrar call group, Proximal_Origin_Emails.pdf, p.51
+13.9  TIME NOT FOUND  Rambaut to the Farrar call group, Proximal_Origin_Emails.pdf, p.51, 8 Feb 2030, 9:16 pm UK, 4:16 pm EST  (ET 2030-02-08 16:16)
+13.9  NO DATE  Proximal_Origin_Emails.pdf, p.150, draft email to Jon Cohen
+13.10  TIME NOT FOUND  Andersen on Slack, Proximal_Origin_Slack.pdf, p.23, 8 Feb 2020, 8.53 pm UK  (ET 2020-02-08 15:53)
+13.10  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.23, 8 Feb 2020, 8:53 pm UK  (ET 2020-02-08 15:53)
+13.11  TIME NOT FOUND  Proximal_Origin_Emails.pdf, p.144, 8 Feb 2020, 9:16 pm UK  (ET 2020-02-08 16:16)
+13.14  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.24, 8 Feb 2020, 11:42 pm UK  (ET 2020-02-08 18:42)
+14.4  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.23, 8 Feb 2020, 11:10 pm UK  (ET 2020-02-08 18:10)
+15.1  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.24, 8 Feb 2020, 11:33 pm UK  (ET 2020-02-08 18:33)
+15.1  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.28, 9 Feb 2020, 11:18 to 11:43 pm UK  (ET 2020-02-09 11:18)
+15.1  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.28, 9 Feb 2020, 11:46 pm UK  (ET 2020-02-09 18:46)
+15.1  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.28, 10 Feb 2020, 3:31 am UK  (ET 2020-02-09 22:31)
+15.1  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.28, 10 Feb 2020, 3:35 pm UK  (ET 2020-02-10 10:35)
+15.1  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.31, 11 Feb 2020, 4:49 am UK  (ET 2020-02-10 23:49)
+15.1  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.32, 11 Feb 2020, ~9:52 am UK  (ET 2020-02-11 04:52)
+15.1  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.33, 11 Feb 2020, ~7:30 pm UK  (ET 2020-02-11 14:30)
+15.3  TIME NOT FOUND  Proximal_Origin_Emails.pdf, p.69, 9 Feb 2020, 9:26 am UK  (ET 2020-02-09 04:26)
+16.1  TIME NOT FOUND  Proximal_Origin_Emails.pdf, p.66, 10 Feb 2020, 7:11 pm UK  (ET 2020-02-10 14:11)
+16.2  TIME NOT FOUND  Proximal_Origin_Emails.pdf, p.81, 12 Feb 2020, 11:09 pm UK  (ET 2020-02-12 18:09)
+16.2  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p. 41, 13 Feb, 11:40 pm UK  (ET 2020-02-13 18:40)
+18.1  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.44, 15 Feb 2020, 11:13 to 11:59 pm UK  (ET 2020-02-15 11:13)
+18.3  TIME NOT FOUND  Proximal_Origin_Emails.pdf, p.94, 17 Feb, 1.59 am UK  (ET 2020-02-16 20:59)
+18.8  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.46, 17 Feb 2020, 5:41 pm UK  (ET 2020-02-17 12:41)
+18.10  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.46, 17 Feb 2020, ~6 pm UK
+18.11  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.47, 17 Feb 2020, 6:19 pm UK  (ET 2020-02-17 13:19)
+18.13  TIME NOT FOUND  Proximal_Origin_Emails.pdf, p. 108–109, 17 Feb 2020, 6:30 pm UK  (ET 2020-02-17 13:30)
+18.15  NO TIME, not linked  Proximal_Origin_Emails.pdf, p. 140–141, 19 Feb 2020
+19.4  NO TIME, not linked  Holmes, Proximal_Origin_Emails.pdf, 10 Feb 2020.
+19.4  NO TIME, not linked  Garry, Proximal_Origin_Emails.pdf, 10 Feb 2020
+19.4  NO TIME, not linked  Proximal_Origin_Emails.pdf, p. 65–70, 10 Feb 2020 (US Time)
+20.1  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.46, 17 Feb, 5:51 pm UK  (ET 2020-02-17 12:51)
+20.1  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.47, 17 Feb, 9:08 pm UK  (ET 2020-02-17 16:08)
+20.1  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.48, 17 Feb, 11:34 pm UK  (ET 2020-02-17 18:34)
+20.4  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.55, 20 Feb, 2:38 pm UK  (ET 2020-02-20 09:38)
+21.3  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.57, 20 Feb 2020, 6:19 to 6:36 pm UK,  (ET 2020-02-20 06:19)
+21.3  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.57, 20 Feb 2020,
+21.3  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.61, 22 Feb 2020,
+21.3  NO DATE  Proximal_Origin_Emails.pdf, p. 130
+21.4  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.57, 20 Feb 2020, 6:32 to 6:36 pm UK  (ET 2020-02-20 06:32)
+21.4  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.57, 20 Feb 2020, 6:37 pm to 6:58 pm UK  (ET 2020-02-20 18:37)
+22.1  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.59, 21 Feb 2020, 6:37pm to 10:56 pm UK  (ET 2020-02-21 18:37)
+22.2  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.60, 22 Feb 2020, 2:30 pm to 6:56 pm UK  (ET 2020-02-22 14:30)
+22.2  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.60, 22 Feb 2020, 11:33 pm to 23 Feb, 0:44 am UK  (ET 2020-02-22 23:33)
+22.2  NO DATE  Proximal_Origin_Slack.pdf
+22.2  NO TIME, not linked  Proximal_Origin_Emails.pdf, p. 64, 24 Feb 2020
+22.3  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.64–65, 24 Feb 2020, 7:41 pm UK  (ET 2020-02-24 14:41)
+22.5  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.70, 25 Feb 2020, 1 am to 4:35 pm UK  (ET 2020-02-25 11:35)
+22.6  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.68, 25 Feb 2020, 10:00 am UK  (ET 2020-02-25 05:00)
+23.1  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.73, 26 Feb 2020, 6:42 pm to 10:57 pm UK  (ET 2020-02-26 18:42)
+23.3  NO DATE  Monteiro, in Proximal_Origin_Emails.pdf, p.138, Feb 28, 1:53 am UK.
+23.3  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.74, 28 Feb 2020, 0:39 am to 6:56 am UK  (ET 2020-02-28 00:39)
+23.6  TIME NOT FOUND  Proximal_Origin_Slack.pdf, p.105, 19 Mar, 8:28 pm EST  (ET 2020-03-19 20:28)
+23.7  NO TIME, not linked  Proximal_Origin_Emails.pdf, p. 140, 17 Mar 2020
+26.5  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.128, 17 Apr 2020
+26.6  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.129, 17 Apr 2020
+26.6  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.130, 18 Apr 2020
+26.6  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.131, 18 Apr 2020
+26.7  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.140, 30 Apr 2020
+27.3  NO TIME, not linked  Proximal_Origin_Emails.pdf, p. 161, 25 Jul 2020
+27.3  NO TIME, not linked  Proximal_Origin_Emails.pdf, p. 151, 28 Jul 2020
+27.8  NO TIME, not linked  answer back to Cohen, Proximal_Origin_Emails.pdf, p.159, 28 Jul 2020
+28.3  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.32, 11 Feb 2020
+28.4  NO TIME, not linked  Proximal_Origin_Emails.pdf, p.65, 10 Feb 2020
+28.5  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.34, 10 Feb 2020
+28.5  NO TIME, not linked  Proximal_Origin_Slack.pdf, p. 45 and 47, 17 Feb
+28.5  NO TIME, not linked  Proximal_Origin_Emails.pdf, p. 161, 25 Jul 2020
+28.5  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.21, 7 Feb 2020
+28.5  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.39, 12 Feb 2020
+28.5  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.70, 25 Feb 2020
+28.5  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.73, 27 Feb 2020
+28.5  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.87, 4 Mar 2020
+28.5  NO TIME, not linked  Proximal_Origin_Emails.pdf, p. 135, 4 Mar 2020

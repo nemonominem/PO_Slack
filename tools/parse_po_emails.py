@@ -222,8 +222,8 @@ PAGE_OWNER_RE = re.compile(r"\b(REV|GARRY|LIP)-?\d{4,8}\s*$")
 PAGE_OWNERS = {
     "GARRY": ("America/Chicago", "Robert Garry's own mailbox export (page-owner code GARRY)"),
     "REV": ("America/Los_Angeles",
-            "REV mailbox-stamp owner not identified; empirically US Pacific time "
-            "(could be off by up to 1 hour)"),
+            "REV export: US Pacific time (UTC-8 winter / UTC-7 summer); fits Kristian "
+            "Andersen's mailbox (Scripps Research, La Jolla, San Diego)"),
     "LIP": ("America/New_York",
             "W. Ian Lipkin's own mailbox export (Columbia University; page-owner code LIP)"),
 }

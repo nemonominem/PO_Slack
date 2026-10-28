@@ -19,5 +19,12 @@
     "stamp": "Friday, January 31, 2020 5:57 PM",
     "zone": "America/New_York",
     "evidence": "farrar-fauci-comms.pdf PDF page 154 prints 5:57 PM inside Fauci's reply (stamped Sat 1 Feb 00:38:35 +0000), so it is frozen on Fauci's Eastern clock. Same message as PO 0."
+  },
+  {
+    "release": "po-emails.json",
+    "thread_key": "po-emails|2020-02-01|0134",
+    "stamp": "Friday, 31 January 2020 at 22:34",
+    "zone": "Europe/London",
+    "evidence": "Reviewer (Gilles Demaneuf), 2026-10-26: Farrar's 'Phone call' was sent at 22:23 UK ('It is 10pm now UK'), frozen as 5:23 PM on Conrad's East Coast clock when she replied. The reply to her carries Farrar's own UK clock, 22:34, 11 minutes later: 17:34 Eastern. The day-first 24-hour format here is Farrar's own client; this is a decision for this entry, not a general rule."
   }
 ]

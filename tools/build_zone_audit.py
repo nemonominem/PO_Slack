@@ -33,7 +33,7 @@ PDFS = {"po-emails": "po-emails.pdf", "farrar-fauci": "farrar-fauci-comms.pdf"}
 # Notes from checks against the page images. Keyed by thread_key. Kept here so
 # they survive every rebuild.
 NOTES = {
-    "po-emails|2020-01-31|1938": "Checked by owner_zone_check.py: the printed 4:38 PM on this REV page matches a farrar-fauci copy with +0000 (same message, 0.99 similarity), giving UTC-8 (Pacific). One data point only.",
+    "po-emails|2020-01-31|1938": "Anchored to farrar-fauci idx 24 (+0000, 0.99 similarity): Fauci sent it at 00:38 UTC = 7:38 PM Eastern. The block is quoted inside Andersen's own reply (PO 4) and prints 'Jan 31, 2020 4:38 PM', so by the footnote rule it is on Andersen's clock: UTC-8, Pacific. This supports the REV rule (one data point). See ZONE_AND_DATE_ANALYSIS.md 1.d.",
     "po-emails|2020-01-31|1500": "Time corrected to 5:57 PM Eastern from the page image (po-emails.pdf p.2); OCR had dropped it. See tools/verified_overrides.json.",
     "po-emails|2020-01-31|1500|1": "A distinct message (Farrar's original 'Phone call', 5:23 PM Eastern, po-emails.pdf p.3), not a duplicate. Time corrected from the page image; body text still lost by OCR. See tools/verified_overrides.json.",
     "farrar-fauci|2020-01-31|1257": "Time corrected to 5:57 PM Eastern (same message as po-emails|2020-01-31|1500). See tools/verified_overrides.json.",
@@ -44,12 +44,12 @@ RULE_NAMES = [
     (r"^explicit", "1. Zone written in the stamp"),
     (r"^anchored", "1b. Exact copy with an explicit offset"),
     (r"^frozen in", "2. Quoted copy: replier's zone"),
-    (r"REV mailbox", "4. Page owner REV (assumed Pacific)"),
+    (r"REV export", "4. Page owner REV (Pacific)"),
     (r"GARRY|Robert Garry", "4. Page owner GARRY (assumed Chicago)"),
     (r"W\. Ian Lipkin", "4. Page owner LIP (Eastern)"),
     (r"Wellcome|Vallance|Farrar|Golding|Ferguson|Viner|Rambaut|UK government", "3. Sender's institution: London"),
     (r"NIH|NIAID|Bethesda|Fauci|Collins", "3. Sender's institution: New York"),
-    (r"Scripps|Andersen|Farzan", "3. Sender's institution: Los Angeles"),
+    (r"Scripps|Farzan", "3. Sender's institution: Los Angeles"),
     (r"Tulane", "3. Sender's institution: Chicago"),
     (r"Sydney|Holmes", "3. Sender's institution: Sydney"),
     (r"Pasteur|Fouchier", "3. Sender's institution: Paris"),
@@ -75,7 +75,7 @@ STATUS = [
     (r"^verified", "Settled", "verified from the page image (see verified_overrides.json)"),
     (r"^explicit", "Settled", "zone written in the stamp"),
     (r"^anchored", "Settled", "exact copy with an explicit offset"),
-    (r"REV mailbox", "Settled", "accepted: one exact pair (UTC-8). Applies to the page owner's own clock; a quoted block on a REV page can be frozen on another author's clock (see PO 0 and PO 1)"),
+    (r"REV export", "Settled", "accepted by the reviewer: Pacific time (UTC-8 winter / UTC-7 summer); the mailbox fits Andersen (Scripps, San Diego). Applies to the page owner's own clock; a quoted block on a REV page can be frozen on another clock (PO 0, PO 1 and PO 2 were). If a REV time looks an hour out, suspect a quoted block. See ZONE_AND_DATE_ANALYSIS.md 1.d"),
     (r"W\. Ian Lipkin", "Supported", "consistent with reply order; reply order cannot catch a time that is too early"),
     (r"release's convener", "Supported", "consistent with reply order; quoted copies can be frozen on another clock (see FF 22)"),
     (r"NIH, Bethesda", "Supported", "consistent with reply order; reply order cannot catch a time that is too early"),

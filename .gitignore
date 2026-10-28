@@ -4,3 +4,6 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# Private notes about the author's own article (never pushed)
+analysis/TRAGICOMEDY_ISSUES.md

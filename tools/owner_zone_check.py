@@ -69,7 +69,7 @@ def main():
     owners = {}
     for e in po:
         z = e.get("zone_assumed") or ""
-        if "REV mailbox" in z:
+        if "REV export" in z:
             owners[id(e)] = "REV"
         elif "Robert Garry's own" in z:
             owners[id(e)] = "GARRY"
