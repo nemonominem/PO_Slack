@@ -17,6 +17,7 @@ which files (if any) you need to open. Everything else here is evidence or test 
 | `README.md` | This file | To find your way around |
 | `ZONE_AND_DATE_ANALYSIS.md` | The datetime analysis: what is settled, the rules, the evidence | For the evidence behind an open item |
 | `zone_format_audit.csv` | One row per email entry (386), with the rule behind its time | Optional lookup tool for item U1 in `FOR_HUMAN_REVIEWER.md` |
+| `slack_part1_time_check.csv` | Slack Part 1 times that run backwards (80) | Optional, item A3 in `FOR_HUMAN_REVIEWER.md` |
 | `reply_order_check.csv` | Result of the reply-order test, by zone group | Support output; nothing to check |
 | `owner_zone_check.csv` | Exact-copy pairs for the page owners | Support output; nothing to check |
 | `zone_rule_dedupe.log` | Which copies were removed as duplicates | If an entry looks missing |

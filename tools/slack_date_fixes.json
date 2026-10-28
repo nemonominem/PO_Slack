@@ -1,0 +1,11 @@
+[
+  {
+    "part": "part1",
+    "idx": 56,
+    "sender": "Kristian Andersen",
+    "time": "22:42",
+    "wrong_date": "2020-02-02",
+    "date": "2020-02-01",
+    "evidence": "slack-part1.pdf p.4: this 22:42 message comes after the 15:05 Zoom message of 1 Feb and before the 01:00 message of 2 Feb, so it is the evening of 1 Feb; the day divider 'February 2' was applied one message too early. The author's article (5.6a) also dates it 1 Feb, 10:42 pm EST."
+  }
+]

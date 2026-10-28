@@ -1,0 +1,81 @@
+pdf,page_first,page_second,date,first_time,first_sender,first_words,second_time,second_sender,second_words,pattern
+slack-part1.pdf,1,1,2020-02-01,12:47,Andrew Rambaut,MBG What are the coordinates of the RED,01:28,Kristian Andersen,22553 - 23140 in Hu-1 (might be a slight jitter in 3’ - need,other
+slack-part1.pdf,1,1,2020-02-01,19:17,Kristian Andersen,"The RBD is definitely heavily mutated, but I'm not sure that",15:25,Andrew Rambaut,a. Eddie is awake. Send him an invite to this slack. This is,other
+slack-part1.pdf,2,2,2020-02-01,19:26,Kristian Andersen,Just invited Eddie,15:00,Andrew Rambaut,an nCoV vs RaTG13: == ATTACHMENT == imageong —————e 1 Ra eee,other
+slack-part1.pdf,2,2,2020-02-01,15:00,Andrew Rambaut,an nCoV vs RaTG13: == ATTACHMENT == imageong —————e 1 Ra eee,13:00,Kristian Andersen,The two bat ones are about as far away as RaTG13 is from Wuh,other
+slack-part1.pdf,2,2,2020-02-01,19:56,Andrew Rambaut,"- 92.86% identity across spike for nCoV vs Bat, 92.03% for S",13:08,Kristian Andersen,[no OCR text recovered — likely an image or redacted block],other
+slack-part1.pdf,2,2,2020-02-01,19:59,Kristian Andersen,I'm looking at cleavage site right now - lemme share alignme,13:42,Andrew Rambaut,is RaTG13 is identical except for the 4 residue insertion.,other
+slack-part1.pdf,4,4,2020-02-01,13:59,Kristian Andersen,"Yes, call. Cheers",01:55,Andrew Rambaut,"jw Stay on here in case we need to message. fad ""ee rrdenen ",other
+slack-part1.pdf,5,5,2020-02-02,11:14,Kristian Andersen,"Interesting. I'm all for GOF experiments, I think they're re",01:16,Andrew Rambaut,2. Yes my feeling is you have to consider the cost benefit f,other
+slack-part1.pdf,7,7,2020-02-02,19:51,Robert Garry,ae New analysis: Some strains of murine hepatitis viruses ha,12:50,Robert Garry,pe Two pattens seen here {i think there is a third variant a,other
+slack-part1.pdf,9,9,2020-02-03,22:35,Kristian Andersen,‘One thing I find kinda funny here - all of this work gettin,02:10,Andrew Rambaut,jae I was literally going to do this analysis today: https:/,late_to_early
+slack-part1.pdf,11,11,2020-02-03,10:27,Robert Garry,"pe https:/journals.plos.org/plospathogens/article?id= 10,137",01:02,Kristian Andersen,"Yeah, SARS seemed to have a significantly more widespread re",other
+slack-part1.pdf,13,13,2020-02-03,17:46,Kristian Andersen,Baric has this interesting table with the contact residues f,16:11,Robert Garry,a This is what that interaction with sars v rbd looks like. ,other
+slack-part1.pdf,13,13,2020-02-03,19:28,Eddie Holmes,® The wiki into is wrong! believe. According to the official,16:22,Robert Garry,a https:/science.sciencemag.org/content/sci/309/5742/1864.fu,other
+slack-part1.pdf,13,14,2020-02-04,12:40,Robert Garry,aim Not testing the animals is definitely a crime against sc,00:01,Kristian Andersen,"Alright, first attempt at creating the new summary. Please t",other
+slack-part1.pdf,14,14,2020-02-04,04:15,Andrew Rambaut,pH Yes. None since 4th Jan. == ATTACHMENT == Sequencing Date,00:28,Eddie Holmes,® Either George is sitting on all the sequences because the ,other
+slack-part1.pdf,14,14,2020-02-05,15:59,Kristian Andersen,"To be fair, I just bought the man beer, so if he got the mon",02:26,Andrew Rambaut,4. I bet some of them match Ebola!,other
+slack-part1.pdf,16,16,2020-02-06,20:11,Eddie Holmes,B Thanks. I'll get word more info from Tommy shortly - try a,01:00,Kristian Andersen,> See if you can work out what he has done here. I can't fig,late_to_early
+slack-part1.pdf,19,19,2020-02-06,19:44,Robert Garry,® I've known Don for 30 years. First time my work made the f,01:49,Eddie Holmes,Nailedit. Andrew - thanks! Important typo.,late_to_early
+slack-part1.pdf,21,21,2020-02-08,19:11,Eddie Holmes,'® China will HATE it. Tommy reckons he has data that shows ,00:34,Eddie Holmes,Some news from on the ground in China: they have samples fro,late_to_early
+slack-part1.pdf,22,22,2020-02-08,08:52,Andrew Rambaut,ae \have created a copy of the report to turn into something,00:57,Robert Garry,ae Stating the obvious: When the pangolin 99% sequence comes,other
+slack-part1.pdf,23,23,2020-02-08,19:09,Robert Garry,as Weil -1 already sent an answer - not incompatible with wh,13:21,Robert Garry,®@ https: www.bbe.com/news/world-51429400 BBC - actual repor,other
+slack-part1.pdf,23,24,2020-02-08,17:52,Kristian Andersen,"So he agrees? ""I do not understand Andrews argument"" The seq",16:15,Robert Garry,z Engineering would not be detectable by modern methods of c,other
+slack-part1.pdf,24,24,2020-02-08,19:42,Eddie Holmes,® Crazy politics in China They want to publish in a Chinese ,16:57,Robert Garry,® Science by press conference is rerety never as good the hy,other
+slack-part1.pdf,24,24,2020-02-08,21:17,Kristian Andersen,"Guys, one thing that occurs to me that is not currently ment",05:16,Andrew Rambaut,® Swine flu 2009 cid though.,late_to_early
+slack-part1.pdf,26,26,2020-02-09,16:09,Andrew Rambaut,ie I have scen the ‘environmental’ sequences (I hope this is,14:14,Robert Garry,Hmmm - if by identical you mean 100% like a lot of the SARS-,other
+slack-part1.pdf,32,34,2020-02-11,23:51,Eddie Holmes,®@ I've had a bash at the paper version of the text. If peop,15:04,Kristian Andersen,"If we drop some of the earlier assumptions (e.g., market, li",other
+slack-part1.pdf,34,34,2020-02-11,17:13,Robert Garry,® The precedence for a betacoronavirus that does not change ,16:00,Robert Garry,3. https: //www.sciencedirect.com/science/article/pii/S22111,other
+slack-part1.pdf,34,35,2020-02-11,16:00,Robert Garry,3. https: //www.sciencedirect.com/science/article/pii/S22111,10:04,Kristian Andersen,\don't think any of these can be eliminated or confirmed at ,other
+slack-part1.pdf,35,35,2020-02-11,19:04,Robert Garry,a Likewise many many passages in chick embryo cells to gener,16:16,Andrew Rambaut,a. That MERS paper - why do people think MERS is adapted to ,other
+slack-part1.pdf,35,36,2020-02-12,19:45,Kristian Andersen,"Yeah, don't get the MERS stuff - doesn't make sense. 22th 20",01:07,Andrew Rambaut,446 About emails - no problem with lan being on it. His ques,late_to_early
+slack-part1.pdf,36,36,2020-02-12,09:32,Eddie Holmes,® You mean for the doc?,05:09,Andrew Rambaut,Just that he still thinks it is important to get a matter-of,other
+slack-part1.pdf,36,37,2020-02-12,09:36,Eddie Holmes,"® Yes, let’s just finish it Muchas I think it is dumb, we ne",05:14,Andrew Rambaut,The amino acid dlignment insets could include a few more bat,other
+slack-part1.pdf,39,39,2020-02-12,19:10,Kristian Andersen,I think lan might be responsible... looking at the version h,16:20,Robert Garry,@iq@ Change change to generic mdent with question mark == AT,other
+slack-part1.pdf,39,39,2020-02-13,22:26,Eddie Holmes,& Get some rest!,04:24,Andrew Rambaut,Il be able to get on it today.,late_to_early
+slack-part1.pdf,40,40,2020-02-13,10:27,Robert Garry,® That's good news.,01:19,Kristian Andersen,A couple of guidelines for the Perspective format - it's sim,other
+slack-part1.pdf,41,41,2020-02-14,18:40,Eddie Holmes,'@ Jeremy has spoken to Magda. She gets it.,15:44,Robert Garry,a: Useful - perhaps for the supplemental file? == ATTACHMENT,other
+slack-part1.pdf,43,43,2020-02-15,13:40,Robert Garry,"Also I was going to say put in $1 and $2, but you're fast!",12:00,Andrew Rambaut,BB Are you happy with the other labels?,other
+slack-part1.pdf,43,43,2020-02-15,19:57,Andrew Rambaut,[no OCR text recovered — likely an image or redacted block],14:00,Robert Garry,2. Looking great - might put “spike” in the top line but I d,other
+slack-part1.pdf,43,43,2020-02-13,14:17,Robert Garry,pa Looks clean and to the point to me - excellent work!,10:58,Eddie Holmes,"Right, let's only make minimal changes to this now. I'll get",other
+slack-part1.pdf,45,45,2020-02-17,08:49,Robert Garry,ae That's the trimer so yes - right on the outside.,05:49,Andrew Rambaut,Cool.,other
+slack-part1.pdf,45,45,2020-02-17,05:49,Andrew Rambaut,Cool.,00:52,Robert Garry,2. It's “only” a 3.5 angstrom structure which is good for cr,other
+slack-part1.pdf,49,49,2020-02-17,17:45,Andrew Rambaut,2 ® We have our first citation in the Lancet: https://www..t,01:00,Robert Garry,a Must have been added in proof I guess.,other
+slack-part1.pdf,49,49,2020-02-18,19:52,Robert Garry,"® I signed it too, but I'm fearful I'm going to start gettin",16:55,Andrew Rambaut,4. Pango?? (if that is what it is) doesn’t have the furin si,other
+slack-part1.pdf,50,50,2020-02-18,19:09,Kristian Andersen,Recombinants can be anything really - could be bat and pango,17:10,Andrew Rambaut,Ves. But both the pangolin and the SARS2 lineage will have d,other
+slack-part1.pdf,52,55,2020-02-19,05:05,Robert Garry,& The Guangdong Wildlife Rescue Center received 21 live Mala,02:16,Eddie Holmes,Thanks for that. However this outbreak/epidemic/pandemic goe,other
+slack-part1.pdf,55,55,2020-02-19,05:59,Andrew Rambaut,ie \ thought I better share an email that I think is really ,04:27,Robert Garry,“It looks like the SARS spike protein was possibly under pos,other
+slack-part1.pdf,55,55,2020-02-20,09:06,Andrew Rambaut,p Basically a collaborator has found this deletion in about ,07:29,Robert Garry,iS Interesting - Happy to weigh in as needed!,other
+slack-part1.pdf,57,57,2020-02-20,19:25,Robert Garry,a “Also state clearly that this site is only predicted so fa,15:27,Andrew Rambaut,p » Could ask Clare to reconsider,other
+slack-part1.pdf,57,57,2020-02-20,15:09,Andrew Rambaut,"® But more importantly this reviewer feels, and we agree, th",13:29,Robert Garry,ae Agreeing with Andrew that NatMed would take it . None of ,other
+slack-part1.pdf,57,57,2020-02-20,15:00,Robert Garry,a Good Idea - let Jeremy know and give him the rationale why,12:27,Robert Garry,a Yes - Gonna have to do that anyway.,other
+slack-part1.pdf,57,57,2020-02-20,13:40,Robert Garry,® Yeah good plan - should not actually take long...,01:58,Eddie Holmes,'B I forwarded to Jeremy. Reviewer #2 is clearly of the Fouc,other
+slack-part1.pdf,60,60,2020-02-22,21:05,Kristian Andersen,Just in case people think it's difficult to make a CoV rever,04:15,Andrew Rambaut,4. I think VR's piece is supposed to be a summary of our pap,late_to_early
+slack-part1.pdf,61,62,2020-02-23,22:01,Robert Garry,"® yes, many thanks!",09:05,Robert Garry,"® I can’t contribute much here, but one consistent observati",other
+slack-part1.pdf,63,64,2020-02-24,19:58,Robert Garry,® Nature seems to be getting some bad advice - did reviewer ,10:51,Robert Garry,<8 Very possible. Would really like to get some site directe,other
+slack-part1.pdf,64,65,2020-02-24,10:59,Robert Garry,They are just contributing to the conspiracy theories that W,01:44,Kristian Andersen,"No polybasic site, HOWEVER, this provides a mechanism. This ",other
+slack-part1.pdf,65,65,2020-02-24,15:19,Kristian Andersen,"None of this disproves accidental lab infection, however, it",01:52,Robert Garry,BTW - what is labeled the external subdomain is the variable,other
+slack-part1.pdf,66,66,2020-02-24,15:42,Robert Garry,"Nice job onthe PR - however, you could have more actively bo",14:02,Robert Garry,® “it needs to be as clear and solid as possible from the ge,other
+slack-part1.pdf,67,69,2020-02-25,09:45,Andrew Rambaut,2. @ Here is my spike recombination diagram. Clearly shows h,05:56,Robert Garry,[no OCR text recovered — likely an image or redacted block],other
+slack-part1.pdf,69,69,2020-02-25,06:19,Andrew Rambaut,a Yes. We just need to come up with a good response. Somethi,04:21,Robert Garry,ps YES!,other
+slack-part1.pdf,77,77,2020-02-29,15:27,Robert Garry,2. Decent job on this manuscript. Still think Nature is miss,01:50,Robert Garry,“So you're telling me there's a chance” https: /www.bing.com,other
+slack-part1.pdf,101,101,2020-03-18,17:57,Eddie Holmes,® |had an image of Roy Anderson sitting in his garden at hom,02:42,Kristian Andersen,"Okay, == ATTACHMENT(2) == Screen Shot 2020-03-17 at 11.41.44",other
+slack-part1.pdf,101,101,2020-03-18,05:05,Andrew Rambaut,@§ip See that Nature!,03:07,Andrew Rambaut,2. Mainly the Spanish (bored and on lock-down): I image png ,other
+slack-part1.pdf,102,102,2020-03-18,06:36,Andrew Rambaut,2. I can see aliens in that picture.,01:19,Eddie Holmes,® Priceless: https://twitter.com/CARRENEAN ¥ twitter.com LEO,other
+slack-part1.pdf,102,103,2020-03-19,16:41,Kristian Andersen,I don't know man - he might be on to something. https;//twit,01:34,Eddie Holmes,® Nature Nature missed a trick with that paper...l hope they,other
+slack-part1.pdf,103,103,2020-03-19,03:29,Andrew Rambaut,Ea https://www.altmetric.com/top100/2019/ O Altmetric The Al,02:20,Kristian Andersen,"Yeah, we're well above that",other
+slack-part1.pdf,103,103,2020-03-19,09:31,Kristian Andersen,"Ehm, well above already.. https:// www.altmetric.com/details",02:52,Andrew Rambaut,4. And previous years are all much lower. So yes! Top! Fuck ,other
+slack-part1.pdf,104,104,2020-03-19,05:40,Andrew Rambaut,And that is retracted!,00:51,Kristian Andersen,Yay! We beat a paper that was retracted!!! Look at us. Wow.,other
+slack-part1.pdf,104,104,2020-03-19,12:19,Robert Garry,pH I wrote a review of Contagion - I might have had a little,10:09,Eddie Holmes,"Good job Bob! I blocked Ebright as weil. , 0",other
+slack-part1.pdf,115,115,2020-04-02,19:18,Kristian Andersen,"BBC - ""Just to be clear, I read the research and other piece",13:09,Kristian Andersen,This one is actually pretty interesting! == EMBEDDED DOC == ,other
+slack-part1.pdf,115,116,2020-04-02,19:21,Eddie Holmes,There are alot of actual very mad people. (edited),13:35,Kristian Andersen,This whole furin site boing messed with in T/C has me second,other
+slack-part1.pdf,121,121,2020-04-10,19:57,Kristian Andersen,Still trying to work through this... Here's the readme image,01:50,Kristian Andersen,"Very sow going, but at least now we know that it's legit (bu",late_to_early
+slack-part1.pdf,126,126,2020-04-16,10:39,Robert Garry,ABC - national news -so a start. - Hi Dr. Garry! I hope you',01:20,Andrew Rambaut,"a Up another 120. Keep it up =,",other
+slack-part1.pdf,130,132,2020-04-18,22:48,Robert Garry,"I pretty sure that ""a proper paper on the origins and spread",16:18,Robert Garry,"£. I'm a little disappointed my smackdown of Montagnier, who",other
+slack-part1.pdf,132,132,2020-04-19,10:59,Eddie Holmes,Itis so like HIV though. A bunch of conspiracy theories over,04:20,Andrew Rambaut,a Also like HIV there will be those that just continue to sp,other
+slack-part1.pdf,132,132,2020-04-20,17:22,Eddie Holmes,"® Keep rooting Bob because it is working: now at 31,175. Wha",13:15,Kristian Andersen,I really want to know who's #1 too... Gotta be quite a wacky,other
+slack-part1.pdf,134,134,2020-04-20,18:30,Eddie Holmes,®@ Catching up. The bats are not special is a new paper by D,01:36,Eddie Holmes,'B I've spent most of my waking hours over the last week try,late_to_early
+slack-part1.pdf,134,134,2020-04-21,23:56,Kristian Andersen,"Ah, yeah, didn’t think of that - could be him",03:02,Andrew Rambaut,Someone uploaded this document and then deleted it again (Gi,late_to_early
+slack-part1.pdf,134,134,2020-04-21,11:59,Robert Garry,Za. NIH might consider some 2-factor authentication for Blas,01:49,Eddie Holmes,2-factor authentication for Blast is a great idea. I also pr,other
+slack-part1.pdf,134,134,2020-04-21,19:51,Kristian Andersen,I think 3-factor authentication might be better - 1. Passwor,02:32,Eddie Holmes,'® I was just about to send that to you! He's got a point th,late_to_early
+slack-part1.pdf,139,139,2020-04-30,16:19,Robert Garry,4. Yes - Paul Sonne. Tricky to stay in the science lane and ,10:25,Kristian Andersen,"Indeed, In fact, I blew up the call with the White House pan",other

@@ -26,6 +26,7 @@ The items are in four parts, matching the analysis file:
 | File | Use it? | For |
 |---|---|---|
 | `zone_format_audit.csv` | Optional, for U1 only | One row per email, with the rule and status. Filter `rule` = “4. Page owner GARRY” to see the 40 GARRY entries |
+| `slack_part1_time_check.csv` | Optional, for A3 only | The 80 places where Slack Part 1 times run backwards; the 12 `late_to_early` rows are the useful ones |
 | `reply_order_check.csv`, `owner_zone_check.csv` | No | My test output. Nothing to check |
 | `zone_rule_dedupe.log` | Only if an email looks missing | Which copies I removed as duplicates |
 | `chapter_links_report.txt`, `bookmark_rekey_report.txt` | No | Link and bookmark housekeeping |
@@ -173,16 +174,19 @@ These are in `TRAGICOMEDY_ISSUES.md` (items P1 to P4). That file is kept out of 
   **20:43 Eastern**.
 - **Send me:** “apply” (I add a verified correction with this evidence) or “no”.
 
-### A2. A Slack message is on the wrong day
+### A2. A Slack message was on the wrong day: fixed
 - `slack-part1.pdf` p.4, Andersen, 22:42, “@Eddie Holmes and @Andrew Rambaut - here's a document I have been
-  working on” is dated **2 Feb 2020** in the app. It is the evening of **1 Feb** (it comes before the 01:00 message
-  of 2 Feb, and your article, 5.6a, has 1 Feb).
-- **Send me:** “apply” or “no”.
+  working on” was dated 2 Feb 2020. It is the evening of **1 Feb** (after the 15:05 Zoom message, before the 01:00
+  message of 2 Feb; your article, 5.6a, agrees). Corrected, with the evidence in `tools/slack_date_fixes.json`.
+  Nothing for you to do.
 
-### A3. Slack Part 1: times run backwards in 83 places
-- Timed messages whose time drops by more than an hour inside one date, for example 12:47, then 01:28, then
-  12:50. Probably OCR errors or misplaced day dividers. Part 2 has none.
-- **Send me:** “list them” (I give you the 83, with page and printed time) or “skip”.
+### A3. Slack Part 1: times run backwards in 80 places (listed)
+- Listed in `slack_part1_time_check.csv` (page, printed times, senders, first words). Example: 12:47, then 01:28,
+  then 12:50. 12 of them (evening, then small hours, same date) look like day dividers in the wrong place, like A2;
+  the other 68 look like misread digits. Part 2 has none.
+- **Optional CSV:** open it and look at the 12 rows with `pattern` = `late_to_early` against the page images. For
+  each, tell me which message is on the wrong day, and I add it to `slack_date_fixes.json`. The 68 others can wait.
+- **Send me:** the rows you want fixed, or “skip”.
 
 ### A4. Slack times carry no zone: done
 - Slack Part 2 (Pacific) is now shown in ET with the printed Pacific time in the 🕑 chip; Part 1 (Eastern) is

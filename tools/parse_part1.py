@@ -572,10 +572,32 @@ def build_page_map(entries):
     return page_map
 
 
+def apply_date_fixes(entries):
+    """Hand-checked day corrections (slack_date_fixes.json), each with its evidence.
+    Applied only if the entry still matches the sender, time and wrong date."""
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "slack_date_fixes.json")
+    if not os.path.exists(path):
+        return
+    months = ["January", "February", "March", "April", "May", "June", "July",
+              "August", "September", "October", "November", "December"]
+    for fix in json.load(open(path, encoding="utf-8")):
+        if fix["part"] != "part1":
+            continue
+        e = entries[fix["idx"]]
+        if (e["date"], e["time"]) == (fix["wrong_date"], fix["time"]) and fix["sender"] in (e["sender"] or ""):
+            y, m, d = (int(x) for x in fix["date"].split("-"))
+            e["date"] = fix["date"]
+            e["raw_date"] = "%s %d, %d" % (months[m - 1], d, y)
+            print("date fix: part1 idx %d -> %s" % (fix["idx"], fix["date"]))
+        else:
+            print("date fix NOT applied (entry changed): part1 idx %d" % fix["idx"])
+
+
 def main():
     entries = parse()
     for idx, e in enumerate(entries):
         e["idx"] = idx
+    apply_date_fixes(entries)
 
     page_map = build_page_map(entries)
 

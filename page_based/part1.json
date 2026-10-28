@@ -752,8 +752,8 @@
     {
       "stamp_line": "22:42 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
-      "date": "2020-02-02",
-      "raw_date": "February 2, 2020",
+      "date": "2020-02-01",
+      "raw_date": "February 1, 2020",
       "sender": "Kristian Andersen",
       "time": "22:42",
       "kind": "slack",

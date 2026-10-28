@@ -135,14 +135,19 @@ These are in `TRAGICOMEDY_ISSUES.md` (private, git-ignored, not pushed). Nothing
 Eastern clock. The REV rule gives it Pacific = 23:43 Eastern, later than the forward that quotes it. Proposed
 fix: add it as a verified correction to `tools/verified_overrides.json`, with this evidence.
 
-## A2. A Slack message is on the wrong day
+## A2. A Slack message was on the wrong day: fixed
 `slack-part1.pdf` p.4, Andersen, 22:42, “@Eddie Holmes and @Andrew Rambaut - here's a document I have been
-working on”, is dated 2 Feb 2020 in the app. It is the evening of 1 Feb (it comes before the 01:00 message of
-2 Feb; your article, 5.6a, has 1 Feb). Cause: the day divider “February 2” is applied to the line above it.
+working on” was dated 2 Feb 2020 in the app. It is the evening of 1 Feb (it comes after the 15:05 Zoom message of
+1 Feb and before the 01:00 message of 2 Feb; your article, 5.6a, has 1 Feb). The day divider “February 2” had been
+applied one message too early. Corrected through `tools/slack_date_fixes.json` (with the evidence), applied by
+`tools/parse_part1.py`. The chapter 5.6 button now also appears on this message.
 
-## A3. Slack Part 1: times run backwards in 83 places
-Timed messages whose time drops by more than an hour inside one date, for example 12:47, then 01:28, then
-12:50. Probably OCR errors or misplaced day dividers. Part 2 has none. Not yet listed or fixed.
+## A3. Slack Part 1: times run backwards in 80 places (listed)
+Timed messages whose time drops by more than an hour inside one date, for example 12:47, then 01:28, then 12:50.
+Part 1 has no AM/PM and times only the first message of a run, so these are OCR slips or misplaced day dividers.
+Part 2 has none. The 80 are in `slack_part1_time_check.csv` (page, printed times, senders, first words; made by
+`tools/slack_time_check.py`). 12 follow the evening-then-small-hours pattern of a misplaced day divider (the same
+pattern as A2) and need the page image to place; the other 68 look like misread digits. Not fixed.
 
 ## A4. Slack times carry no zone: done
 Slack Part 2 (Pacific) is now converted to ET and Part 1 (Eastern) is labelled ET; both show the printed local
