@@ -128,7 +128,9 @@ The app shows Part 1 as printed, labelled ET. Details: analysis 1.4.
   Jeremy Farrar, “[NA]” and p.10, “May 12, 2020 12:57 PM”, Jeremy Farrar, “[NA]”) are among them.
 - **If you want to check:** filter `rule` = “2. Quoted block” in `zone_format_audit.csv`.
 
-### U4. Eight emails with no date or time: what are they?
+### U4. Seven emails with no date or time: what are they?
+- **Done 2026-10-30:** `po-emails.pdf` pp.17-18, Pope, “Sent: Tuesday, February 4, 2020 9:11 AM”, read from the page
+  image by you. Same message as the p.19 copy (9:10:35 AM, UTC-05:00); it is now 09:11 ET on 4 Feb, a verified correction.
 - **Problem:** the data has no date or time for them, so they sit outside the timeline. Look at the pages and
   read the header.
 - **Send me:** “page, subject, date, time” for each, or “skip”. Some may copy dated emails (the Farrar forward
@@ -138,7 +140,6 @@ The app shows Part 1 as printed, labelled ET. Details: analysis 1.4.
 
 | Where | Header as printed | Sender | Subject |
 |---|---|---|---|
-| `po-emails.pdf` pp.17-19 | (no date or time printed or recovered) | Pope, Andrew | URGENT: Please review by NOON if at all possible... |
 | `po-emails.pdf` pp.78-80 | (no date or time printed or recovered) | (unknown sender) | Interest in commentary/hypothesis on SARS-CoV-2 origins? |
 | `farrar-fauci-comms.pdf` pp.43-44 | (no date or time printed or recovered) | Marja Esveld | RE: URGENT - GPMB COVID-19 FUNDING NOTE |
 | `farrar-fauci-comms.pdf` pp.44-47 | (no date or time printed or recovered) | Alex Harris | URGENT - GPMB COVID-19 FUNDING NOTE |

@@ -24,7 +24,7 @@ The file has five parts:
 
 ---
 
-# Part 1. Settled datetimes (108 emails, plus Slack Part 1 and Part 2)
+# Part 1. Settled datetimes (109 emails, plus Slack Part 1 and Part 2)
 
 Settled means: fixed by the stamp itself, by an exact copy, by the page image, or by a decision of yours
 backed by evidence. `zone_format_audit.csv` marks each email `Settled`.
@@ -112,12 +112,12 @@ is simply too early; the Farrar message `farrar-fauci-comms.pdf` pp.154-155, “
 | Page owner **LIP**, top-level (P.O. emails) | 13 | Eastern |
 | Page owner **GARRY**, top-level (P.O. emails) | 11 | Chicago (Central): Garry works at Tulane University School of Medicine, New Orleans (Central time), per the reviewer, 2026-10-29. Reply order excludes Pacific. No exact copy proves it; a trip away from Central would not show. |
 
-## 2.2 Not settled (22 emails)
+## 2.2 Not settled (21 emails)
 
 | Zone source | Emails | Zone used | Why open |
 |---|---|---|---|
 | Sender, small groups (list in `FOR_HUMAN_REVIEWER.md`, item U2) | 14 | by sender | Too few linked replies to test (one to four each) |
-| No date or time in the data | 8 | none | Need the page image (list in `FOR_HUMAN_REVIEWER.md`, item U4) |
+| No date or time in the data | 7 | none | Need the page image (list in `FOR_HUMAN_REVIEWER.md`, item U4) |
 
 ---
 
@@ -164,7 +164,7 @@ be a different message.
 reply link (the old link, to Andersen, ran backwards and was dropped).
 
 ## A8. Undated and mis-grouped entries
-Eight emails have no date or time (item U4). The sender-institution groups were mislabelled by hand in an
+Seven emails have no date or time (item U4; the Pope one, pp.17-18, was read from the page image on 2026-10-30). The sender-institution groups were mislabelled by hand in an
 earlier version of the review file; they are now generated from the audit file.
 
 ---

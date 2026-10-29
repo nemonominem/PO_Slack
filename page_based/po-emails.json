@@ -6567,10 +6567,10 @@
    "idx": 231
   },
   {
-   "date": null,
-   "time": null,
+   "date": "2020-02-04",
+   "time": "0911",
    "kind": "email",
-   "raw_date": "URGENT: Please review by NOON if at all possible...",
+   "raw_date": "09:11 ET · URGENT: Please review by NOON if at all possible...",
    "sender": "Pope, Andrew",
    "sender_raw": "Pope, Anco a",
    "sender_how": "From: line",
@@ -6578,12 +6578,16 @@
    "content": "From: Pope, Andrew\n\nTo: 'Chakravarti, Aravinda'; Kristian Andersen Ralph Baric Trevor Bedford Peter Daszak; Gigi Gronvall; Tom InglesDy anley c: Shore, Carolyn; Chao, Samantha\n\nSubject: URGENT: Please review by NOON if at all possible...\n\nSent: Tuesday, Febr ; :\n\nImportance: High\n\n----------\n\nMany thanks again for your thoughtful participation yesterday. The plans have changed in terms of our product. Instead of a “Based on Science” web posting, we are now developing a letter that will be signed by the 3 Presidents of our 3 Academies (NAS, Marcia McNutt; NAM, Victor Dzau;\nNAE, John Anderson), in response to a letter from OSTP. We think this will be more appropriate and expeditious.\nHIGHLY CONFIDENTIAL AND PROPRIETARY WB -0000009\nThus, given the urgency of the request from OSTP and HHS we ask that you please review the attached DRAFT CONFIDENTIAL letter, and let us know if you have any concerns or suggested edits. In particular, we would like to ask if there might be some additional detail added to the data needs that are identified. We think it would be helpful to be a bit more specific, but don’t want to go into too much detail either. Your help there would be most helpful.\nMany sincere thanks again for your continued engagement on this important activity!\nAndy\nAndrew M. Pope, Ph.D.\n\n----------\n\nDirector\nBoard on Health Sciences Policy\nHealth and Medicine Division\nThe National Academies of Sciences,\nEngineering, and Medicine\nas die:\na otic:\nFind us at nationalacademies.org/HMD\nThe National Academies of\nSCIENCES » ENGINEERING * MEDICINE\nHIGHLY CONFIDENTIAL AND PROPRIETARY Mi -0000010\nTo: ‘Chakravari, Aravinda’ Kristian Andersen\nBaric, Ralph S Trevor Bedford\nPeter Daszak Gigi\nTom Inglesby tanley Perlman imi\nCe: Shore, Caroly Chao, Samantha ii",
    "date_note": "no usable timestamp in the release; not plotted",
    "source": "po-emails",
-   "stamp_status": "unparsed",
+   "stamp_status": "long",
    "recovered_inline": false,
    "thread_key": "po-emails|undated|URGENT: Please review by NOON if at all ",
    "thread_label": "undated  · Pope, Andrew",
    "replied_by": [],
-   "idx": 232
+   "idx": 232,
+   "stamp": "Tuesday, February 4, 2020 9:11 AM",
+   "zone_assumed": "verified from the page image: Reviewer (Gilles Demaneuf), 2026-10-30, from the page image: po-emails.pdf pp.17-18 print 'Sent: Tuesday, February 4, 2020 9:11 AM' (OCR cou",
+   "stamp_line": "Tuesday, February 4, 2020 9:11 AM -> 09:11 ET (verified override)",
+   "verified_override": "Reviewer (Gilles Demaneuf), 2026-10-30, from the page image: po-emails.pdf pp.17-18 print 'Sent: Tuesday, February 4, 2020 9:11 AM' (OCR could not read it). Same message as the copy on p.19 'Tue 2/4/2020 9:10:35 AM (UTC-05:00)': the minute is the seconds rounded, so the clock is Eastern."
   },
   {
    "date": null,
