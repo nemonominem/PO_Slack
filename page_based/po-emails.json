@@ -6590,10 +6590,10 @@
    "verified_override": "Reviewer (Gilles Demaneuf), 2026-10-30, from the page image: po-emails.pdf pp.17-18 print 'Sent: Tuesday, February 4, 2020 9:11 AM' (OCR could not read it). Same message as the copy on p.19 'Tue 2/4/2020 9:10:35 AM (UTC-05:00)': the minute is the seconds rounded, so the clock is Eastern."
   },
   {
-   "date": null,
-   "time": null,
+   "date": "2020-02-13",
+   "time": "0209",
    "kind": "email",
-   "raw_date": "Interest in commentary/hypothesis on SARS-CoV-2 origins?",
+   "raw_date": "02:09 ET · Interest in commentary/hypothesis on SARS-CoV-2 origins?",
    "sender": "",
    "sender_raw": "",
    "sender_how": "",
@@ -6601,12 +6601,16 @@
    "content": "To: Clare Thomas\n\nSubject: Interest in commentary/hypothesis on SARS-CoV-2 origins?\n\nSent: 12 February 2020 23:\n\n----------\n\nDear Clare,\nI can only imagine you must be crazy busy at the moment! I wanted to reach out to you to sce if there would be interest in receiving a commentary/hypothesis piece on the evolutionary origins of SARS-CoV-2? There has been a lot of speculation, fear mongering, and conspiracies put forward in this space and we thought that bringing some clarity to this discussion might be of interest to Nature.\nPrompted by Jeremy Farrah, Tony Fauci, and Francis Collins, Eddie Holmes, Andrew Rambaut, Bob Garry, Ian\nLipkin, and myself have been working through much of the (primarily) genetic data to provide agnostic and scientifically informed hypotheses around the origins of the virus. We are not quite finished with the writeup and we still have some loose ends, but I wanted to reach out to you to see if this might potentially be of interest?\nWe see this more as a commentary/hypothesis, as opposed to a more long-form Letter or Article.",
    "date_note": "no usable timestamp in the release; not plotted",
    "source": "po-emails",
-   "stamp_status": "unparsed",
+   "stamp_status": "long",
    "recovered_inline": false,
    "thread_key": "po-emails|undated|Interest in commentary/hypothesis on SAR",
    "thread_label": "undated  · ",
    "replied_by": [],
-   "idx": 233
+   "idx": 233,
+   "stamp": "Wednesday, February 12, 2020 11:09 PM",
+   "zone_assumed": "verified from the page image: Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. po-emails.pdf p.7",
+   "stamp_line": "Wednesday, February 12, 2020 11:09 PM -> 02:09 ET (verified override)",
+   "verified_override": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. po-emails.pdf p.78 prints 'From: Kristian G. Andersen / Sent: 12 February 2020 23:09 / To: Clare Thomas' (the old OCR cut it at '23:'). Same text as the copy on p.80 (entry 116), so it is the same message on the same clock (Pacific, the REV mailbox). Zone by that equality, not proven."
   }
  ]
 }

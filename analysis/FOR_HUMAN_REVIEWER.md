@@ -14,7 +14,7 @@ The items are in four parts, matching the analysis file:
 | Part | What | Items |
 |---|---|---|
 | 1 | Settled datetimes | S1 to S4: nothing for you to do |
-| 2 | Unsettled datetimes | U1, U2 and U4: your decisions (U3 is now done in the code) |
+| 2 | Unsettled datetimes | U1, U2 and U4 (one email left): your decisions (U3 is now done in the code) |
 | 3 | Issues in your P.O. piece | P1 to P4, in `TRAGICOMEDY_ISSUES.md` (private, git-ignored) |
 | 4 | Issues in the web app | A1 to A8: what I should fix |
 | 5 | Housekeeping | H1 to H3 |
@@ -128,18 +128,32 @@ The app shows Part 1 as printed, labelled ET. Details: analysis 1.4.
   Jeremy Farrar, “[NA]” and p.10, “May 12, 2020 12:57 PM”, Jeremy Farrar, “[NA]”) are among them.
 - **If you want to check:** filter `rule` = “2. Quoted block” in `zone_format_audit.csv`.
 
-### U4. Seven emails with no date or time: what are they?
-- **Done 2026-10-30:** `po-emails.pdf` pp.17-18, Pope, “Sent: Tuesday, February 4, 2020 9:11 AM”, read from the page
-  image by you. Same message as the p.19 copy (9:10:35 AM, UTC-05:00); it is now 09:11 ET on 4 Feb, a verified correction.
-- **Problem:** the data has no date or time for them, so they sit outside the timeline. Look at the pages and
-  read the header.
-- **Send me:** “page, subject, date, time” for each, or “skip”. Some may copy dated emails (the Farrar forward
-  on pp.59-60 looks like the 8 Feb forward; the Farrar reply on p.80 looks like the 4 Feb message on that page).
-  Not checked.
-- **CSV:** no.
+### U4. One email still undated (GPMB); the other seven are read
+- **Done 2026-10-30 (your reading, plus a 400 dpi OCR pass of the headers):**
 
-| Where | Header as printed | Sender | Subject |
+| Where | Header as printed | Now (ET) | Clock used |
 |---|---|---|---|
+| `po-emails.pdf` pp.17-18, Pope | Sent: Tuesday, February 4, 2020 9:11 AM | 4 Feb 09:11 | Eastern (copy on p.19: 9:10:35 AM UTC-05:00) |
+| `po-emails.pdf` p.78, Andersen | Sent: 12 February 2020 23:09 (the old OCR cut it at “23:”) | 13 Feb 02:09 | Pacific, because the p.80 copy of the same message prints the same text; assumed, not proven |
+| `farrar-fauci-comms.pdf` pp.43-44, Esveld | Sent: vrijdag 6 maart 2020 09:23 | 6 Mar 03:23 | Amsterdam (Dutch client, her own earlier message quoted in her reply) |
+| `farrar-fauci-comms.pdf` p.44, Harris | Sent: donderdag 5 maart 2020 15:29 | 5 Mar 09:29 | Amsterdam (quoted in Esveld's Dutch client) |
+| `farrar-fauci-comms.pdf` p.57, Farrar | Datum: Samstag, 8. Februar 2020 um 21:21 | 8 Feb 15:21 | Berlin (German client of Drosten, who quotes it); 20:21 UTC is after Drosten's reply (19:52 UTC) |
+| `farrar-fauci-comms.pdf` p.59, Farrar | Datum: Samstag, 8. Februar 2020 um 10:45 | 8 Feb 04:45 | Berlin (same) |
+| `farrar-fauci-comms.pdf` p.80, Farrar | Sent: Tuesday, February 4, 2020 6:08 AM | 4 Feb 06:08 | Eastern (quoted in Collins's 6:12 AM reply); Farrar's “10:58” quote of Collins = 05:58 ET fits |
+
+Each is a verified override with its evidence in `tools/verified_overrides.json`. They show as Settled because the
+page fixes the printed time; the zone of the Dutch, German and Esveld/Andersen ones follows the freeze rule
+(or, for Andersen p.78, equality with the p.80 copy), so check them if you doubt the client.
+
+**Still unsolved (1):**
+
+| Where | Header as printed | Question |
+|---|---|---|
+| `farrar-fauci-comms.pdf` pp.169-172, GPMB Secretariat, “TIME SENSITIVE Message from GPMB Co-Chairs…” | Sent: martes, 28 de enero de 2020 9:09 (Spanish client, quoted in Jeanette Vega Morales's “Dear Gro and As” reply) | The date and time are readable; the zone is not. By the freeze rule it is on Vega Morales's clock. Chile (UTC-3 in January) would give 28 Jan 07:09 ET; Spain (UTC+1) 03:09 ET. **Which is she using?** Until you say, it stays undated. |
+
+- **CSV:** `zone_format_audit.csv` (rule “1c. Verified from the page image”).
+
+---|---|---|---|
 | `po-emails.pdf` pp.78-80 | (no date or time printed or recovered) | (unknown sender) | Interest in commentary/hypothesis on SARS-CoV-2 origins? |
 | `farrar-fauci-comms.pdf` pp.43-44 | (no date or time printed or recovered) | Marja Esveld | RE: URGENT - GPMB COVID-19 FUNDING NOTE |
 | `farrar-fauci-comms.pdf` pp.44-47 | (no date or time printed or recovered) | Alex Harris | URGENT - GPMB COVID-19 FUNDING NOTE |

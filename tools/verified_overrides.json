@@ -33,5 +33,47 @@
     "stamp": "Tuesday, February 4, 2020 9:11 AM",
     "zone": "America/New_York",
     "evidence": "Reviewer (Gilles Demaneuf), 2026-10-30, from the page image: po-emails.pdf pp.17-18 print 'Sent: Tuesday, February 4, 2020 9:11 AM' (OCR could not read it). Same message as the copy on p.19 'Tue 2/4/2020 9:10:35 AM (UTC-05:00)': the minute is the seconds rounded, so the clock is Eastern."
+  },
+  {
+    "release": "po-emails.json",
+    "thread_key": "po-emails|undated|Interest in commentary/hypothesis on SAR",
+    "stamp": "Wednesday, February 12, 2020 11:09 PM",
+    "zone": "America/Los_Angeles",
+    "evidence": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. po-emails.pdf p.78 prints 'From: Kristian G. Andersen / Sent: 12 February 2020 23:09 / To: Clare Thomas' (the old OCR cut it at '23:'). Same text as the copy on p.80 (entry 116), so it is the same message on the same clock (Pacific, the REV mailbox). Zone by that equality, not proven."
+  },
+  {
+    "release": "farrar-fauci.json",
+    "thread_key": "farrar-fauci|undated|RE: URGENT - GPMB COVID-19 FUNDING NOTE",
+    "stamp": "Friday, March 6, 2020 9:23 AM",
+    "zone": "Europe/Amsterdam",
+    "evidence": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. farrar-fauci-comms.pdf pp.43-44 print 'Sent: vrijdag 6 maart 2020 09:23' (Dutch client) for Marja Esveld's own earlier message, quoted in her own reply; frozen on her Dutch clock."
+  },
+  {
+    "release": "farrar-fauci.json",
+    "thread_key": "farrar-fauci|undated|URGENT - GPMB COVID-19 FUNDING NOTE",
+    "stamp": "Thursday, March 5, 2020 3:29 PM",
+    "zone": "Europe/Amsterdam",
+    "evidence": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. farrar-fauci-comms.pdf p.44 prints 'From: Alex Harris / Sent: donderdag 5 maart 2020 15:29' (Dutch client), quoted inside Esveld's Dutch-locale reply, so frozen on her clock (Amsterdam)."
+  },
+  {
+    "release": "farrar-fauci.json",
+    "thread_key": "farrar-fauci|undated|Re: [ext] 2019 N-CoV",
+    "stamp": "Saturday, February 8, 2020 9:21 PM",
+    "zone": "Europe/Berlin",
+    "evidence": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. farrar-fauci-comms.pdf p.57 prints 'Von: Jeremy Farrar / Datum: Samstag, 8. Februar 2020 um 21:21' (German client), Farrar's message quoted by Drosten, so frozen on Berlin's clock. 20:21 UTC is after Drosten's reply (9 Feb 6:52 am Sydney = 19:52 UTC), as it should be."
+  },
+  {
+    "release": "farrar-fauci.json",
+    "thread_key": "farrar-fauci|undated|[ext] FW: 2019 N-CoV",
+    "stamp": "Saturday, February 8, 2020 10:45 AM",
+    "zone": "Europe/Berlin",
+    "evidence": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. farrar-fauci-comms.pdf p.59 prints 'Von: Jeremy Farrar / Datum: Samstag, 8. Februar 2020 um 10:45' (German client), Farrar's first message quoted inside Drosten's reply, so frozen on Berlin's clock (09:45 UTC)."
+  },
+  {
+    "release": "farrar-fauci.json",
+    "thread_key": "farrar-fauci|undated|Re: Prevalence of infection and stage of",
+    "stamp": "Tuesday, February 4, 2020 6:08 AM",
+    "zone": "America/New_York",
+    "evidence": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. farrar-fauci-comms.pdf p.80 prints 'Sent: Tuesday, February 4, 2020 6:08 AM' (From line redacted) for Farrar's reply, quoted in Collins's 6:12 AM reply, so frozen on Collins's Eastern clock. Fits: Collins's earlier message quoted by Farrar as '4 Feb 2020, at 10:58' (London) = 5:58 ET."
   }
 ]
