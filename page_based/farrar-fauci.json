@@ -10,9 +10,9 @@
  "entries": [
   {
    "date": "2020-01-23",
-   "time": "0903",
+   "time": "1403",
    "kind": "email",
-   "raw_date": "09:03 ET · nCo-V",
+   "raw_date": "14:03 ET · nCo-V",
    "sender": "Jeremy Farrar",
    "sender_raw": "Jeremy Farrar)",
    "sender_how": "From: line",
@@ -21,12 +21,12 @@
    "signature": null,
    "stamp": "Thursday, January 23, 2020 2:03 PM",
    "stamp_status": "long",
-   "zone_assumed": "Wellcome Trust (the release's convener)",
-   "stamp_line": "14:03 London -> 09:03 ET",
+   "zone_assumed": "frozen in Anthony Fauci's clock (NIH, Bethesda; quoted in their message)",
+   "stamp_line": "14:03 ET",
    "recovered_inline": false,
    "source": "farrar-fauci",
-   "thread_key": "farrar-fauci|2020-01-23|0903",
-   "thread_label": "2020-01-23 09:03 · Jeremy Farrar",
+   "thread_key": "farrar-fauci|2020-01-23|1403",
+   "thread_label": "2020-01-23 14:03 · Jeremy Farrar",
    "replied_by": [
     {
      "key": "farrar-fauci|2020-01-23|2032",
@@ -60,8 +60,8 @@
      "label": "2020-01-24 01:08 · Jeremy Farrar"
     }
    ],
-   "reply_to": "farrar-fauci|2020-01-23|0903",
-   "reply_to_label": "2020-01-23 09:03 · Jeremy Farrar",
+   "reply_to": "farrar-fauci|2020-01-23|1403",
+   "reply_to_label": "2020-01-23 14:03 · Jeremy Farrar",
    "link_kind": "explicit (quoted inline)",
    "idx": 1
   },
@@ -316,43 +316,13 @@
    "thread_label": "2020-01-29 09:21 · Jeremy Farrar",
    "replied_by": [
     {
-     "key": "farrar-fauci|2020-01-29|0935",
-     "label": "2020-01-29 09:35 · Jeremy Farrar"
+     "key": "farrar-fauci|2020-01-29|1040",
+     "label": "2020-01-29 10:40 · Jeremy Farrar"
     }
    ],
    "idx": 11,
    "reply_to": "farrar-fauci|2020-01-29|0832",
    "reply_to_label": "2020-01-29 08:32 · Jeremy Farrar",
-   "link_kind": "inferred (same conversation)"
-  },
-  {
-   "date": "2020-01-29",
-   "time": "0935",
-   "kind": "email",
-   "raw_date": "09:35 ET · Re: Informal coronavirus teleconference, 29 January, 19.00 CET",
-   "sender": "Jeremy Farrar",
-   "sender_raw": "Jeremy Farrar i",
-   "sender_how": "From: line",
-   "subject": "Re: Informal coronavirus teleconference, 29 January, 19.00 CET",
-   "content": "From: Jeremy Farrar\n\nTo: Fauci, Anthony (NIH/NIAID) yyy oe-\n\nSubject: Re: Informal coronavirus teleconference, 29 January, 19.00 CET\n\nSent: Wednesday, January 29, 2020 2:35 PM\n\n----------\n\nSure\nAnytime - @@\nTonight from 5pm would be fine, but tomorrow also possible...",
-   "signature": null,
-   "stamp": "Wednesday, January 29, 2020 2:35 PM",
-   "stamp_status": "long",
-   "zone_assumed": "Wellcome Trust (the release's convener)",
-   "stamp_line": "14:35 London -> 09:35 ET",
-   "recovered_inline": false,
-   "source": "farrar-fauci",
-   "thread_key": "farrar-fauci|2020-01-29|0935",
-   "thread_label": "2020-01-29 09:35 · Jeremy Farrar",
-   "replied_by": [
-    {
-     "key": "farrar-fauci|2020-01-29|1040",
-     "label": "2020-01-29 10:40 · Jeremy Farrar"
-    }
-   ],
-   "idx": 12,
-   "reply_to": "farrar-fauci|2020-01-29|0921",
-   "reply_to_label": "2020-01-29 09:21 · Jeremy Farrar",
    "link_kind": "inferred (same conversation)"
   },
   {
@@ -376,13 +346,43 @@
    "thread_label": "2020-01-29 10:40 · Jeremy Farrar",
    "replied_by": [
     {
+     "key": "farrar-fauci|2020-01-29|1435",
+     "label": "2020-01-29 14:35 · Jeremy Farrar"
+    }
+   ],
+   "idx": 12,
+   "reply_to": "farrar-fauci|2020-01-29|0921",
+   "reply_to_label": "2020-01-29 09:21 · Jeremy Farrar",
+   "link_kind": "inferred (same conversation)"
+  },
+  {
+   "date": "2020-01-29",
+   "time": "1435",
+   "kind": "email",
+   "raw_date": "14:35 ET · Re: Informal coronavirus teleconference, 29 January, 19.00 CET",
+   "sender": "Jeremy Farrar",
+   "sender_raw": "Jeremy Farrar i",
+   "sender_how": "From: line",
+   "subject": "Re: Informal coronavirus teleconference, 29 January, 19.00 CET",
+   "content": "From: Jeremy Farrar\n\nTo: Fauci, Anthony (NIH/NIAID) yyy oe-\n\nSubject: Re: Informal coronavirus teleconference, 29 January, 19.00 CET\n\nSent: Wednesday, January 29, 2020 2:35 PM\n\n----------\n\nSure\nAnytime - @@\nTonight from 5pm would be fine, but tomorrow also possible...",
+   "signature": null,
+   "stamp": "Wednesday, January 29, 2020 2:35 PM",
+   "stamp_status": "long",
+   "zone_assumed": "frozen in Anthony Fauci's clock (NIH, Bethesda; quoted in their message)",
+   "stamp_line": "14:35 ET",
+   "recovered_inline": false,
+   "source": "farrar-fauci",
+   "thread_key": "farrar-fauci|2020-01-29|1435",
+   "thread_label": "2020-01-29 14:35 · Jeremy Farrar",
+   "replied_by": [
+    {
      "key": "farrar-fauci|2020-01-29|1543",
      "label": "2020-01-29 15:43 · Jeremy Farrar"
     }
    ],
    "idx": 13,
-   "reply_to": "farrar-fauci|2020-01-29|0935",
-   "reply_to_label": "2020-01-29 09:35 · Jeremy Farrar",
+   "reply_to": "farrar-fauci|2020-01-29|1040",
+   "reply_to_label": "2020-01-29 10:40 · Jeremy Farrar",
    "link_kind": "inferred (same conversation)"
   },
   {
@@ -406,8 +406,8 @@
    "thread_label": "2020-01-29 15:43 · Jeremy Farrar",
    "replied_by": [
     {
-     "key": "farrar-fauci|2020-01-30|0213",
-     "label": "2020-01-30 02:13 · Jeremy Farrar"
+     "key": "farrar-fauci|2020-01-30|0713",
+     "label": "2020-01-30 07:13 · Jeremy Farrar"
     },
     {
      "key": "farrar-fauci|2020-01-29|1644",
@@ -415,8 +415,8 @@
     }
    ],
    "idx": 14,
-   "reply_to": "farrar-fauci|2020-01-29|1040",
-   "reply_to_label": "2020-01-29 10:40 · Jeremy Farrar",
+   "reply_to": "farrar-fauci|2020-01-29|1435",
+   "reply_to_label": "2020-01-29 14:35 · Jeremy Farrar",
    "link_kind": "inferred (same conversation)"
   },
   {
@@ -538,9 +538,9 @@
   },
   {
    "date": "2020-01-30",
-   "time": "0213",
+   "time": "0713",
    "kind": "email",
-   "raw_date": "02:13 ET · [NA]",
+   "raw_date": "07:13 ET · [NA]",
    "sender": "Jeremy Farrar",
    "sender_raw": "Jeremy Farrar 9 yyyO@",
    "sender_how": "inline quote marker (On ... wrote:)",
@@ -549,12 +549,12 @@
    "signature": "Trust Limited, a company registered in England and Wales, no. 2711000 (whose registered office is at 215 Euston\nRoad, London NW! 2BE, UK)",
    "stamp": "Jan 30, 2020 7:13 AM",
    "stamp_status": "long",
-   "zone_assumed": "frozen in Anthony Fauci's zone (quoted in their 2020-01-30 reply)",
-   "stamp_line": "07:13 +0000 -> 02:13 ET",
+   "zone_assumed": "frozen in Anthony Fauci's clock (NIH, Bethesda; quoted in their message)",
+   "stamp_line": "07:13 ET",
    "recovered_inline": true,
    "source": "farrar-fauci",
-   "thread_key": "farrar-fauci|2020-01-30|0213",
-   "thread_label": "2020-01-30 02:13 · Jeremy Farrar",
+   "thread_key": "farrar-fauci|2020-01-30|0713",
+   "thread_label": "2020-01-30 07:13 · Jeremy Farrar",
    "replied_by": [
     {
      "key": "farrar-fauci|2020-01-30|0926",
@@ -586,8 +586,8 @@
    "thread_key": "farrar-fauci|2020-01-30|0926",
    "thread_label": "2020-01-30 09:26 · Anthony Fauci",
    "replied_by": [],
-   "reply_to": "farrar-fauci|2020-01-30|0213",
-   "reply_to_label": "2020-01-30 02:13 · Jeremy Farrar",
+   "reply_to": "farrar-fauci|2020-01-30|0713",
+   "reply_to_label": "2020-01-30 07:13 · Jeremy Farrar",
    "link_kind": "explicit (quoted inline)",
    "idx": 20
   },
@@ -752,8 +752,8 @@
    "thread_label": "2020-02-01 05:34 · Jeremy Farrar",
    "replied_by": [
     {
-     "key": "farrar-fauci|2020-02-01|0956",
-     "label": "2020-02-01 09:56 · Jeremy Farrar"
+     "key": "farrar-fauci|2020-02-01|0934",
+     "label": "2020-02-01 09:34 · Jeremy Farrar"
     }
    ],
    "idx": 26
@@ -813,6 +813,46 @@
   },
   {
    "date": "2020-02-01",
+   "time": "0934",
+   "kind": "email",
+   "raw_date": "09:34 ET · Teleconference",
+   "sender": "Jeremy Farrar",
+   "sender_raw": "Jeremy Farrar ilili",
+   "sender_how": "From: line",
+   "subject": "Teleconference",
+   "content": "From: Jeremy Farrar\n\nTo: \"Fauci, Anthony (NIH/NIAID) \"{7 7 G, Patrick Vallance\n\nCc: \"Drosten, Christian\" yyy marion Koopmans\n\nSubject: Teleconference\n\nDate: Saturday, 1 February 2020 at 15:34\n\n----------\n\n1st February (2nd Feb for Eddie)\nInformation and discussion is shared in total confidence and not to be shared until agreement on next steps.\nDial in details attached.\nPlease mute phones.\nI will be on email throughout — email Paul or I Paul if any problems\nIf you cannot make it, I will phone you afterwards to update.\nOne Hour\n6am Sydney\n8pm CET\n7pm GMT\n2pm EST\n11am PST\n(Hope I have the times right!)\nThank you for the series of calls and for agreeing to join this call.\nAgenda\n• Introduction, focus and desired outcomes - JF\n• Summary — KA\n• Comments — EH\n« Q&A —All\n® Summary and next steps - JF\nKristian Anderson\nBob Garry - I have not been able to contact Bob. Please forward if you can.\nChristian Drosten\nTony Fauci\nMike Ferguson\nRon Fouchier\nEddie Holmes\nMarion Koopmans\nStefan Pohlmann\nI External Sender. Be aware of links, attachments and requests.\n1st February (2nd Feb for Eddie)\nInformation and discussion is shared in total confidence and not to be shared until agreement on next steps.\nDial in details attached.\nPlease mute phones.\nI will be on email throughout — email Paul or I Paul if any problems if you cannot make it, I will phone you afterwards to update.\nOne Hour\n6am Sydney\n8pm CET\n7pm GMT\n2pm EST\n11am PST\n(Hope I have the times right!)\nThank you for the series of calls and for agreeing to join this call.\nAgenda\n• Introduction, focus and desired outcomes - JF\n• Summary — KA\n« Comments — EH\n® Q&A —All\n• Summary and next steps - JF\nKristian Anderson\nBob Garry - I have not been able to contact Bob. Please forward if you can.\nChristian Drosten\nTony Fauci\nMike Ferguson\nRon Fouchier\nEddie Holmes\nMarion Koopmans\nStefan Pohlmann",
+   "signature": null,
+   "stamp": "Saturday, 1 February 2020 at 15:34",
+   "stamp_status": "day-month-year",
+   "zone_assumed": "frozen in R.A.M. Fouchier's clock (Institut Pasteur; quoted in their message)",
+   "stamp_line": "15:34 Paris -> 09:34 ET",
+   "recovered_inline": false,
+   "source": "farrar-fauci",
+   "merged_pages": 2,
+   "dedup_merged": 2,
+   "thread_key": "farrar-fauci|2020-02-01|0934",
+   "thread_label": "2020-02-01 09:34 · Jeremy Farrar",
+   "replied_by": [
+    {
+     "key": "farrar-fauci|2020-02-02|0230",
+     "label": "2020-02-02 02:30 · R.A.M. Fouchier"
+    },
+    {
+     "key": "farrar-fauci|2020-02-01|1149",
+     "label": "2020-02-01 11:49 · Robert Garry"
+    },
+    {
+     "key": "farrar-fauci|2020-02-01|0956",
+     "label": "2020-02-01 09:56 · Jeremy Farrar"
+    }
+   ],
+   "idx": 29,
+   "reply_to": "farrar-fauci|2020-02-01|0534",
+   "reply_to_label": "2020-02-01 05:34 · Jeremy Farrar",
+   "link_kind": "inferred (same conversation)"
+  },
+  {
+   "date": "2020-02-01",
    "time": "0956",
    "kind": "email",
    "raw_date": "09:56 ET · Re: Teleconference",
@@ -834,87 +874,17 @@
    "thread_label": "2020-02-01 09:56 · Jeremy Farrar",
    "replied_by": [
     {
-     "key": "farrar-fauci|2020-02-01|1007",
-     "label": "2020-02-01 10:07 · Jeremy Farrar"
-    },
-    {
-     "key": "farrar-fauci|2020-02-01|1034",
-     "label": "2020-02-01 10:34 · Jeremy Farrar"
-    }
-   ],
-   "idx": 29,
-   "reply_to": "farrar-fauci|2020-02-01|0534",
-   "reply_to_label": "2020-02-01 05:34 · Jeremy Farrar",
-   "link_kind": "inferred (same conversation)"
-  },
-  {
-   "date": "2020-02-01",
-   "time": "1007",
-   "kind": "email",
-   "raw_date": "10:07 ET · [NA]",
-   "sender": "Jeremy Farrar",
-   "sender_raw": "Jeremy Farrar) yyy",
-   "sender_how": "inline quote marker (On ... wrote:)",
-   "subject": "[NA]",
-   "content": "From: Jeremy Farrar\n\nSubject: [NA]\n\nSent: Feb 1, 2020 3:07 PM\n\n----------\n\nI have rejoined so a line is open if any help to rejoin.",
-   "signature": null,
-   "stamp": "Feb 1, 2020 3:07 PM",
-   "stamp_status": "long",
-   "zone_assumed": "Wellcome Trust (the release's convener)",
-   "stamp_line": "15:07 London -> 10:07 ET",
-   "recovered_inline": true,
-   "source": "farrar-fauci",
-   "thread_key": "farrar-fauci|2020-02-01|1007",
-   "thread_label": "2020-02-01 10:07 · Jeremy Farrar",
-   "replied_by": [
-    {
-     "key": "farrar-fauci|2020-02-01|2050",
-     "label": "2020-02-01 20:50 · Francis Collins"
-    }
-   ],
-   "reply_to": "farrar-fauci|2020-02-01|0956",
-   "reply_to_label": "2020-02-01 09:56 · Jeremy Farrar",
-   "link_kind": "explicit (quoted inline)",
-   "idx": 30
-  },
-  {
-   "date": "2020-02-01",
-   "time": "1034",
-   "kind": "email",
-   "raw_date": "10:34 ET · Teleconference",
-   "sender": "Jeremy Farrar",
-   "sender_raw": "Jeremy Farrar ilili",
-   "sender_how": "From: line",
-   "subject": "Teleconference",
-   "content": "From: Jeremy Farrar\n\nTo: \"Fauci, Anthony (NIH/NIAID) \"{7 7 G, Patrick Vallance\n\nCc: \"Drosten, Christian\" yyy marion Koopmans\n\nSubject: Teleconference\n\nDate: Saturday, 1 February 2020 at 15:34\n\n----------\n\n1st February (2nd Feb for Eddie)\nInformation and discussion is shared in total confidence and not to be shared until agreement on next steps.\nDial in details attached.\nPlease mute phones.\nI will be on email throughout — email Paul or I Paul if any problems\nIf you cannot make it, I will phone you afterwards to update.\nOne Hour\n6am Sydney\n8pm CET\n7pm GMT\n2pm EST\n11am PST\n(Hope I have the times right!)\nThank you for the series of calls and for agreeing to join this call.\nAgenda\n• Introduction, focus and desired outcomes - JF\n• Summary — KA\n• Comments — EH\n« Q&A —All\n® Summary and next steps - JF\nKristian Anderson\nBob Garry - I have not been able to contact Bob. Please forward if you can.\nChristian Drosten\nTony Fauci\nMike Ferguson\nRon Fouchier\nEddie Holmes\nMarion Koopmans\nStefan Pohlmann\nI External Sender. Be aware of links, attachments and requests.\n1st February (2nd Feb for Eddie)\nInformation and discussion is shared in total confidence and not to be shared until agreement on next steps.\nDial in details attached.\nPlease mute phones.\nI will be on email throughout — email Paul or I Paul if any problems if you cannot make it, I will phone you afterwards to update.\nOne Hour\n6am Sydney\n8pm CET\n7pm GMT\n2pm EST\n11am PST\n(Hope I have the times right!)\nThank you for the series of calls and for agreeing to join this call.\nAgenda\n• Introduction, focus and desired outcomes - JF\n• Summary — KA\n« Comments — EH\n® Q&A —All\n• Summary and next steps - JF\nKristian Anderson\nBob Garry - I have not been able to contact Bob. Please forward if you can.\nChristian Drosten\nTony Fauci\nMike Ferguson\nRon Fouchier\nEddie Holmes\nMarion Koopmans\nStefan Pohlmann",
-   "signature": null,
-   "stamp": "Saturday, 1 February 2020 at 15:34",
-   "stamp_status": "day-month-year",
-   "zone_assumed": "Wellcome Trust (the release's convener)",
-   "stamp_line": "15:34 London -> 10:34 ET",
-   "recovered_inline": false,
-   "source": "farrar-fauci",
-   "merged_pages": 2,
-   "dedup_merged": 2,
-   "thread_key": "farrar-fauci|2020-02-01|1034",
-   "thread_label": "2020-02-01 10:34 · Jeremy Farrar",
-   "replied_by": [
-    {
-     "key": "farrar-fauci|2020-02-02|0230",
-     "label": "2020-02-02 02:30 · R.A.M. Fouchier"
-    },
-    {
-     "key": "farrar-fauci|2020-02-01|1149",
-     "label": "2020-02-01 11:49 · Robert Garry"
+     "key": "farrar-fauci|2020-02-01|1507",
+     "label": "2020-02-01 15:07 · Jeremy Farrar"
     },
     {
      "key": "farrar-fauci|2020-02-01|1050",
      "label": "2020-02-01 10:50 · Jeremy Farrar"
     }
    ],
-   "idx": 31,
-   "reply_to": "farrar-fauci|2020-02-01|0956",
-   "reply_to_label": "2020-02-01 09:56 · Jeremy Farrar",
+   "idx": 30,
+   "reply_to": "farrar-fauci|2020-02-01|0934",
+   "reply_to_label": "2020-02-01 09:34 · Jeremy Farrar",
    "link_kind": "inferred (same conversation)"
   },
   {
@@ -942,9 +912,9 @@
      "label": "2020-02-01 10:51 · Jeremy Farrar"
     }
    ],
-   "idx": 32,
-   "reply_to": "farrar-fauci|2020-02-01|1034",
-   "reply_to_label": "2020-02-01 10:34 · Jeremy Farrar",
+   "idx": 31,
+   "reply_to": "farrar-fauci|2020-02-01|0956",
+   "reply_to_label": "2020-02-01 09:56 · Jeremy Farrar",
    "link_kind": "inferred (same conversation)"
   },
   {
@@ -972,7 +942,7 @@
      "label": "2020-02-01 11:00 · Jeremy Farrar"
     }
    ],
-   "idx": 33,
+   "idx": 32,
    "reply_to": "farrar-fauci|2020-02-01|1050",
    "reply_to_label": "2020-02-01 10:50 · Jeremy Farrar",
    "link_kind": "inferred (same conversation)"
@@ -1002,7 +972,7 @@
      "label": "2020-02-01 11:12 · Jeremy Farrar"
     }
    ],
-   "idx": 34,
+   "idx": 33,
    "reply_to": "farrar-fauci|2020-02-01|1051",
    "reply_to_label": "2020-02-01 10:51 · Jeremy Farrar",
    "link_kind": "inferred (same conversation)"
@@ -1027,7 +997,7 @@
    "thread_key": "farrar-fauci|2020-02-01|1112",
    "thread_label": "2020-02-01 11:12 · Jeremy Farrar",
    "replied_by": [],
-   "idx": 35,
+   "idx": 34,
    "reply_to": "farrar-fauci|2020-02-01|1100",
    "reply_to_label": "2020-02-01 11:00 · Jeremy Farrar",
    "link_kind": "inferred (same conversation)"
@@ -1057,10 +1027,10 @@
      "label": "2020-02-01 13:12 · Jeremy Farrar"
     }
    ],
-   "reply_to": "farrar-fauci|2020-02-01|1034",
-   "reply_to_label": "2020-02-01 10:34 · Jeremy Farrar",
+   "reply_to": "farrar-fauci|2020-02-01|0934",
+   "reply_to_label": "2020-02-01 09:34 · Jeremy Farrar",
    "link_kind": "explicit (quoted inline)",
-   "idx": 36
+   "idx": 35
   },
   {
    "date": "2020-02-01",
@@ -1096,7 +1066,7 @@
      "label": "2020-02-01 14:09 · Jeremy Farrar"
     }
    ],
-   "idx": 37,
+   "idx": 36,
    "reply_to": "farrar-fauci|2020-02-01|1149",
    "reply_to_label": "2020-02-01 11:49 · Robert Garry",
    "link_kind": "inferred (same conversation)"
@@ -1121,7 +1091,7 @@
    "thread_key": "farrar-fauci|2020-02-01|1409",
    "thread_label": "2020-02-01 14:09 · Jeremy Farrar",
    "replied_by": [],
-   "idx": 38,
+   "idx": 37,
    "reply_to": "farrar-fauci|2020-02-01|1312",
    "reply_to_label": "2020-02-01 13:12 · Jeremy Farrar",
    "link_kind": "inferred (same conversation)"
@@ -1149,7 +1119,7 @@
    "reply_to": "farrar-fauci|2020-02-01|1312",
    "reply_to_label": "2020-02-01 13:12 · Jeremy Farrar",
    "link_kind": "explicit (quoted inline)",
-   "idx": 39
+   "idx": 38
   },
   {
    "date": "2020-02-01",
@@ -1175,7 +1145,7 @@
    "reply_to": "farrar-fauci|2020-02-01|1312",
    "reply_to_label": "2020-02-01 13:12 · Jeremy Farrar",
    "link_kind": "explicit (quoted inline)",
-   "idx": 41
+   "idx": 40
   },
   {
    "date": "2020-02-01",
@@ -1202,10 +1172,40 @@
      "label": "2020-02-01 15:13 · Jeremy Farrar"
     }
    ],
-   "idx": 42,
+   "idx": 41,
    "reply_to": "farrar-fauci|2020-02-01|1443",
    "reply_to_label": "2020-02-01 14:43 · Marion Koopmans",
    "link_kind": "inferred (same conversation)"
+  },
+  {
+   "date": "2020-02-01",
+   "time": "1507",
+   "kind": "email",
+   "raw_date": "15:07 ET · [NA]",
+   "sender": "Jeremy Farrar",
+   "sender_raw": "Jeremy Farrar) yyy",
+   "sender_how": "inline quote marker (On ... wrote:)",
+   "subject": "[NA]",
+   "content": "From: Jeremy Farrar\n\nSubject: [NA]\n\nSent: Feb 1, 2020 3:07 PM\n\n----------\n\nI have rejoined so a line is open if any help to rejoin.",
+   "signature": null,
+   "stamp": "Feb 1, 2020 3:07 PM",
+   "stamp_status": "long",
+   "zone_assumed": "frozen in Francis Collins's clock (NIH, Bethesda; quoted in their message)",
+   "stamp_line": "15:07 ET",
+   "recovered_inline": true,
+   "source": "farrar-fauci",
+   "thread_key": "farrar-fauci|2020-02-01|1507",
+   "thread_label": "2020-02-01 15:07 · Jeremy Farrar",
+   "replied_by": [
+    {
+     "key": "farrar-fauci|2020-02-01|2050",
+     "label": "2020-02-01 20:50 · Francis Collins"
+    }
+   ],
+   "reply_to": "farrar-fauci|2020-02-01|0956",
+   "reply_to_label": "2020-02-01 09:56 · Jeremy Farrar",
+   "link_kind": "explicit (quoted inline)",
+   "idx": 42
   },
   {
    "date": "2020-02-01",
@@ -1377,8 +1377,8 @@
      "label": "2020-02-01 23:48 · Jeremy Farrar"
     }
    ],
-   "reply_to": "farrar-fauci|2020-02-01|1007",
-   "reply_to_label": "2020-02-01 10:07 · Jeremy Farrar",
+   "reply_to": "farrar-fauci|2020-02-01|1507",
+   "reply_to_label": "2020-02-01 15:07 · Jeremy Farrar",
    "link_kind": "explicit (quoted inline)",
    "idx": 48
   },
@@ -1492,8 +1492,8 @@
      "label": "2020-02-02 03:40 · Jeremy Farrar"
     }
    ],
-   "reply_to": "farrar-fauci|2020-02-01|1034",
-   "reply_to_label": "2020-02-01 10:34 · Jeremy Farrar",
+   "reply_to": "farrar-fauci|2020-02-01|0934",
+   "reply_to_label": "2020-02-01 09:34 · Jeremy Farrar",
    "link_kind": "explicit (quoted inline)",
    "idx": 52
   },
@@ -2381,33 +2381,6 @@
   },
   {
    "date": "2020-02-08",
-   "time": "0638",
-   "kind": "email",
-   "raw_date": "06:38 ET · [NA]",
-   "sender": "Christian Drosten",
-   "sender_raw": "Drosten, Christian) 7",
-   "sender_how": "inline quote marker (On ... wrote:)",
-   "subject": "[NA]",
-   "content": "From: Christian Drosten\n\nSubject: [NA]\n\nSent: Feb 8, 2020 12:38 PM\n\n----------\n\nOK, I see. We should then introduce references to these informal sources in the beginning of the text.\nElse it reads a bit funny.",
-   "signature": null,
-   "stamp": "Feb 8, 2020 12:38 PM",
-   "stamp_status": "long",
-   "zone_assumed": "Charite, Berlin",
-   "stamp_line": "12:38 Berlin -> 06:38 ET",
-   "recovered_inline": true,
-   "source": "farrar-fauci",
-   "thread_key": "farrar-fauci|2020-02-08|0638",
-   "thread_label": "2020-02-08 06:38 · Christian Drosten",
-   "replied_by": [
-    {
-     "key": "farrar-fauci|2020-02-09|0115",
-     "label": "2020-02-09 01:15 · Kristian G. Andersen"
-    }
-   ],
-   "idx": 85
-  },
-  {
-   "date": "2020-02-08",
    "time": "0703",
    "kind": "email",
    "raw_date": "07:03 ET · RE: 2019 N-CoV Jeremy Thanks for sharing, and thanks to those involved for a really important piece of work. I think this looks pretty balanced and is useful. I do think it would be helpful to make sure that the sequence data from the pangolins is included and to indicate what that might mean in terms of a potential prolonged period of adaptation in animals. The glycan point is important and could be given further weight against an passage origin. Once complete I think it would be helpful to publish this",
@@ -2426,7 +2399,7 @@
    "thread_key": "farrar-fauci|2020-02-08|0703",
    "thread_label": "2020-02-08 07:03 · Patrick Vallance",
    "replied_by": [],
-   "idx": 86
+   "idx": 85
   },
   {
    "date": "2020-02-08",
@@ -2448,16 +2421,16 @@
    "thread_key": "farrar-fauci|2020-02-08|1236",
    "thread_label": "2020-02-08 12:36 · Anthony Fauci",
    "replied_by": [],
-   "idx": 87,
+   "idx": 86,
    "reply_to": "farrar-fauci|2020-02-08|0513",
    "reply_to_label": "2020-02-08 05:13 · Jeremy Farrar",
    "link_kind": "inferred (same conversation)"
   },
   {
-   "date": "2020-02-09",
-   "time": "0052",
+   "date": "2020-02-08",
+   "time": "1452",
    "kind": "email",
-   "raw_date": "00:52 ET · [NA]",
+   "raw_date": "14:52 ET · [NA]",
    "sender": "Christian Drosten",
    "sender_raw": "Drosten, Christian yyy",
    "sender_how": "inline quote marker (On ... wrote:)",
@@ -2466,13 +2439,40 @@
    "signature": null,
    "stamp": "9 Feb 2020 6:52 am",
    "stamp_status": "day-month-year",
-   "zone_assumed": "Charite, Berlin",
-   "stamp_line": "06:52 Berlin -> 00:52 ET",
+   "zone_assumed": "frozen in Edward Holmes's clock (University of Sydney; quoted in their message)",
+   "stamp_line": "06:52 Sydney -> 14:52 ET",
    "recovered_inline": true,
    "source": "farrar-fauci",
-   "thread_key": "farrar-fauci|2020-02-09|0052",
-   "thread_label": "2020-02-09 00:52 · Christian Drosten",
+   "thread_key": "farrar-fauci|2020-02-08|1452",
+   "thread_label": "2020-02-08 14:52 · Christian Drosten",
    "replied_by": [],
+   "idx": 87
+  },
+  {
+   "date": "2020-02-08",
+   "time": "1538",
+   "kind": "email",
+   "raw_date": "15:38 ET · [NA]",
+   "sender": "Christian Drosten",
+   "sender_raw": "Drosten, Christian) 7",
+   "sender_how": "inline quote marker (On ... wrote:)",
+   "subject": "[NA]",
+   "content": "From: Christian Drosten\n\nSubject: [NA]\n\nSent: Feb 8, 2020 12:38 PM\n\n----------\n\nOK, I see. We should then introduce references to these informal sources in the beginning of the text.\nElse it reads a bit funny.",
+   "signature": null,
+   "stamp": "Feb 8, 2020 12:38 PM",
+   "stamp_status": "long",
+   "zone_assumed": "frozen in Kristian G. Andersen's clock (Scripps Research; quoted in their message)",
+   "stamp_line": "12:38 Los Angeles -> 15:38 ET",
+   "recovered_inline": true,
+   "source": "farrar-fauci",
+   "thread_key": "farrar-fauci|2020-02-08|1538",
+   "thread_label": "2020-02-08 15:38 · Christian Drosten",
+   "replied_by": [
+    {
+     "key": "farrar-fauci|2020-02-09|0115",
+     "label": "2020-02-09 01:15 · Kristian G. Andersen"
+    }
+   ],
    "idx": 88
   },
   {
@@ -2500,8 +2500,8 @@
      "label": "2020-02-09 15:07 · Marion Koopmans"
     }
    ],
-   "reply_to": "farrar-fauci|2020-02-08|0638",
-   "reply_to_label": "2020-02-08 06:38 · Christian Drosten",
+   "reply_to": "farrar-fauci|2020-02-08|1538",
+   "reply_to_label": "2020-02-08 15:38 · Christian Drosten",
    "link_kind": "explicit (quoted inline)",
    "idx": 89
   },
@@ -3178,8 +3178,8 @@
    "thread_label": "2020-04-08 05:56 · Jenny Mun",
    "replied_by": [
     {
-     "key": "farrar-fauci|2020-04-09|0601",
-     "label": "2020-04-09 06:01 · Victor Dzau"
+     "key": "farrar-fauci|2020-04-08|2301",
+     "label": "2020-04-08 23:01 · Victor Dzau"
     }
    ],
    "idx": 114
@@ -3210,10 +3210,10 @@
    "link_kind": "inferred (same conversation)"
   },
   {
-   "date": "2020-04-09",
-   "time": "0601",
+   "date": "2020-04-08",
+   "time": "2301",
    "kind": "email",
-   "raw_date": "06:01 ET · RE: NAS Annual Meeting Session on COVID-19 -- Information regarding your Saturday April 25",
+   "raw_date": "23:01 ET · RE: NAS Annual Meeting Session on COVID-19 -- Information regarding your Saturday April 25",
    "sender": "Victor Dzau",
    "sender_raw": "Dzau, Victor",
    "sender_how": "From: line",
@@ -3222,13 +3222,13 @@
    "signature": null,
    "stamp": "Thursday, April 9, 2020 11:01 AM",
    "stamp_status": "long",
-   "zone_assumed": "Wellcome Trust (the release's convener)",
-   "stamp_line": "11:01 London -> 06:01 ET",
+   "zone_assumed": "frozen in George Gao (Gao Fu)'s clock (China CDC; quoted in their message)",
+   "stamp_line": "11:01 Shanghai -> 23:01 ET",
    "recovered_inline": false,
    "source": "farrar-fauci",
    "merged_pages": 1,
-   "thread_key": "farrar-fauci|2020-04-09|0601",
-   "thread_label": "2020-04-09 06:01 · Victor Dzau",
+   "thread_key": "farrar-fauci|2020-04-08|2301",
+   "thread_label": "2020-04-08 23:01 · Victor Dzau",
    "replied_by": [
     {
      "key": "farrar-fauci|2020-04-25|0122",
@@ -3332,8 +3332,8 @@
      "label": "2020-04-25 10:59 · Victor Dzau"
     }
    ],
-   "reply_to": "farrar-fauci|2020-04-09|0601",
-   "reply_to_label": "2020-04-09 06:01 · Victor Dzau",
+   "reply_to": "farrar-fauci|2020-04-08|2301",
+   "reply_to_label": "2020-04-08 23:01 · Victor Dzau",
    "link_kind": "explicit (quoted inline)",
    "idx": 120
   },
@@ -3702,9 +3702,9 @@
   },
   {
    "date": "2020-05-12",
-   "time": "0857",
+   "time": "1257",
    "kind": "email",
-   "raw_date": "08:57 ET · [NA]",
+   "raw_date": "12:57 ET · [NA]",
    "sender": "Jeremy Farrar",
    "sender_raw": "Jeremy Farrar FOO",
    "sender_how": "inline quote marker (On ... wrote:)",
@@ -3713,12 +3713,12 @@
    "signature": null,
    "stamp": "May 12, 2020 12:57 PM",
    "stamp_status": "long",
-   "zone_assumed": "frozen in Anthony Fauci's zone (quoted in their 2020-05-12 reply)",
-   "stamp_line": "12:57 +0000 -> 08:57 ET",
+   "zone_assumed": "frozen in Anthony Fauci's clock (NIH, Bethesda; quoted in their message)",
+   "stamp_line": "12:57 ET",
    "recovered_inline": true,
    "source": "farrar-fauci",
-   "thread_key": "farrar-fauci|2020-05-12|0857",
-   "thread_label": "2020-05-12 08:57 · Jeremy Farrar",
+   "thread_key": "farrar-fauci|2020-05-12|1257",
+   "thread_label": "2020-05-12 12:57 · Jeremy Farrar",
    "replied_by": [
     {
      "key": "farrar-fauci|2020-05-12|1449",
@@ -3826,8 +3826,8 @@
    "thread_key": "farrar-fauci|2020-05-12|1449",
    "thread_label": "2020-05-12 14:49 · Anthony Fauci",
    "replied_by": [],
-   "reply_to": "farrar-fauci|2020-05-12|0857",
-   "reply_to_label": "2020-05-12 08:57 · Jeremy Farrar",
+   "reply_to": "farrar-fauci|2020-05-12|1257",
+   "reply_to_label": "2020-05-12 12:57 · Jeremy Farrar",
    "link_kind": "explicit (quoted inline)",
    "idx": 138
   },

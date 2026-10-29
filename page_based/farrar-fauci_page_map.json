@@ -1,5 +1,5 @@
 {
- "farrar-fauci|2020-01-23|0903": {
+ "farrar-fauci|2020-01-23|1403": {
   "start": 174,
   "end": 174,
   "breaks": []
@@ -59,14 +59,14 @@
   "end": 160,
   "breaks": []
  },
- "farrar-fauci|2020-01-29|0935": {
-  "start": 159,
-  "end": 159,
-  "breaks": []
- },
  "farrar-fauci|2020-01-29|1040": {
   "start": 158,
   "end": 158,
+  "breaks": []
+ },
+ "farrar-fauci|2020-01-29|1435": {
+  "start": 159,
+  "end": 159,
   "breaks": []
  },
  "farrar-fauci|2020-01-29|1543": {
@@ -94,7 +94,7 @@
   "end": 159,
   "breaks": []
  },
- "farrar-fauci|2020-01-30|0213": {
+ "farrar-fauci|2020-01-30|0713": {
   "start": 157,
   "end": 157,
   "breaks": []
@@ -144,19 +144,14 @@
   "end": 142,
   "breaks": []
  },
+ "farrar-fauci|2020-02-01|0934": {
+  "start": 113,
+  "end": 139,
+  "breaks": []
+ },
  "farrar-fauci|2020-02-01|0956": {
   "start": 115,
   "end": 122,
-  "breaks": []
- },
- "farrar-fauci|2020-02-01|1007": {
-  "start": 115,
-  "end": 115,
-  "breaks": []
- },
- "farrar-fauci|2020-02-01|1034": {
-  "start": 113,
-  "end": 139,
   "breaks": []
  },
  "farrar-fauci|2020-02-01|1050": {
@@ -207,6 +202,11 @@
  "farrar-fauci|2020-02-01|1503": {
   "start": 122,
   "end": 122,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-01|1507": {
+  "start": 115,
+  "end": 115,
   "breaks": []
  },
  "farrar-fauci|2020-02-01|1513": {
@@ -414,11 +414,6 @@
   "end": 61,
   "breaks": []
  },
- "farrar-fauci|2020-02-08|0638": {
-  "start": 56,
-  "end": 57,
-  "breaks": []
- },
  "farrar-fauci|2020-02-08|0703": {
   "start": 61,
   "end": 62,
@@ -429,9 +424,14 @@
   "end": 61,
   "breaks": []
  },
- "farrar-fauci|2020-02-09|0052": {
+ "farrar-fauci|2020-02-08|1452": {
   "start": 59,
   "end": 59,
+  "breaks": []
+ },
+ "farrar-fauci|2020-02-08|1538": {
+  "start": 56,
+  "end": 57,
   "breaks": []
  },
  "farrar-fauci|2020-02-09|0115": {
@@ -569,7 +569,7 @@
   "end": 37,
   "breaks": []
  },
- "farrar-fauci|2020-04-09|0601": {
+ "farrar-fauci|2020-04-08|2301": {
   "start": 24,
   "end": 32,
   "breaks": []
@@ -659,7 +659,7 @@
   "end": 13,
   "breaks": []
  },
- "farrar-fauci|2020-05-12|0857": {
+ "farrar-fauci|2020-05-12|1257": {
   "start": 10,
   "end": 10,
   "breaks": []

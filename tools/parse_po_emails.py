@@ -58,6 +58,7 @@ ZONE_BY_AFFILIATION = [
                 re.I), "America/New_York", "NIH / NIAID, Bethesda"),
     (re.compile(r"scripps|andersen|farzan", re.I), "America/Los_Angeles", "Scripps Research"),
     (re.compile(r"tulane|garry", re.I), "America/Chicago", "Tulane University"),
+    (re.compile(r"lipkin|columbia", re.I), "America/New_York", "Columbia University"),
     (re.compile(r"sydney|holmes|university of sydney", re.I), "Australia/Sydney",
      "University of Sydney"),
     (re.compile(r"pasteur|fouchier|paris|institut", re.I), "Europe/Paris", "Institut Pasteur"),

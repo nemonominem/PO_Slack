@@ -14,7 +14,7 @@ The items are in four parts, matching the analysis file:
 | Part | What | Items |
 |---|---|---|
 | 1 | Settled datetimes | S1 to S4: nothing for you to do |
-| 2 | Unsettled datetimes | U1 to U4: your decisions |
+| 2 | Unsettled datetimes | U1, U2 and U4: your decisions (U3 is now done in the code) |
 | 3 | Issues in your P.O. piece | P1 to P4, in `TRAGICOMEDY_ISSUES.md` (private, git-ignored) |
 | 4 | Issues in the web app | A1 to A8: what I should fix |
 | 5 | Housekeeping | H1 to H3 |
@@ -25,7 +25,7 @@ The items are in four parts, matching the analysis file:
 
 | File | Use it? | For |
 |---|---|---|
-| `zone_format_audit.csv` | Optional, for U1 only | One row per email, with the rule and status. Filter `rule` = “4. Page owner GARRY” to see the 40 GARRY entries |
+| `zone_format_audit.csv` | Optional, not needed now | One row per email, with the rule and status. Filter `rule` = “4. Page owner GARRY” to see the Garry-page entries (now Supported) |
 | `slack_part1_time_check.csv` | Optional, for A3 only | The 80 places where Slack Part 1 times run backwards; the 12 `late_to_early` rows are the useful ones |
 | `reply_order_check.csv`, `owner_zone_check.csv` | No | My test output. Nothing to check |
 | `zone_rule_dedupe.log` | Only if an email looks missing | Which copies I removed as duplicates |
@@ -64,14 +64,15 @@ The app shows Part 1 as printed, labelled ET. Details: analysis 1.4.
 
 # Part 2. Unsettled datetimes: your decisions
 
-### U1. GARRY pages (40 emails): Chicago or Eastern?
-- **Problem:** reply order rules out Pacific, but cannot choose between Chicago and Eastern.
-- **Look for:** one email on a GARRY page that also appears elsewhere with an explicit offset (such as `+0000`
-  or `UTC-05:00`), for example in the Farrar-Fauci release.
-- **Send me:** both page references, or “accept Chicago”.
-- **CSV:** yes, to find the 40 entries: filter `rule` = “4. Page owner GARRY”.
+### U1. GARRY pages (11 top-level emails; the quoted ones now follow the quote rule): Chicago or Eastern? — mostly answered
+- **Answer received:** Garry works at Tulane University School of Medicine, New Orleans, so his mailbox is on
+  Central time. The app already uses Chicago (Central), so no time changes. The 40 emails move from
+  “Not settled” to “Supported”.
+- **Still open (optional):** no exact copy with an explicit offset proves it, and a trip away from Central
+  would not show. If you find one on a GARRY page, send both page references.
+- **CSV:** no.
 
-### U2. Small sender groups (19 emails): accept the sender rule?
+### U2. Small sender groups (14 emails): accept the sender rule?
 - **Problem:** each email's zone comes from the sender's institution. Each group has too few linked replies to
   test. The Sydney group (Holmes) is the most doubtful.
 - **Send me:** “accept” for all or for named groups, or one exact copy with an explicit offset per group.
@@ -83,13 +84,6 @@ The app shows Part 1 as printed, labelled ET. Details: analysis 1.4.
 |---|---|---|---|
 | `farrar-fauci-comms.pdf` pp.23-31 | Apr 25, 2020 1:22 PM | George Gao (Gao Fu) | [NA] |
 
-**Berlin** (2)
-
-| Where | Header as printed | Sender | Subject |
-|---|---|---|---|
-| `farrar-fauci-comms.pdf` pp.56-57 | Feb 8, 2020 12:38 PM | Christian Drosten | [NA] |
-| `farrar-fauci-comms.pdf` p.59 | 9 Feb 2020 6:52 am | Christian Drosten | [NA] |
-
 **Chicago** (1)
 
 | Where | Header as printed | Sender | Subject |
@@ -100,21 +94,18 @@ The app shows Part 1 as printed, labelled ET. Details: analysis 1.4.
 
 | Where | Header as printed | Sender | Subject |
 |---|---|---|---|
-| `farrar-fauci-comms.pdf` pp.61-62 | Saturday, 8 February 2020 at 12:03 | Patrick Vallance | RE: 2019 N-CoV Jeremy Thanks for sharing, and thanks to those… |
+| `farrar-fauci-comms.pdf` pp.61-62 | Saturday, 8 February 2020 at 12:03 | Patrick Vallance | RE: 2019 N-CoV Jeremy Thanks for sharing, and thanks to those involved for a really important piece of work. I think this looks pretty balanced and is useful. I do think it would be helpful to make sure that the sequence data from the pangolins is included and to indicate what that might mean in terms of a potential prolonged period of adaptation in animals. The glycan point is important and could be given further weight against an passage origin. Once complete I think it would be helpful to publish this |
 | `farrar-fauci-comms.pdf` pp.47-49 | 03 March 2020 23:06 | Alex Harris | RE: GPMB: COVID-19 FUNDING NOTE |
 | `farrar-fauci-comms.pdf` p.43 | 06 March 2020 10:34 | Marja Esveld | RE: URGENT - GPMB COVID-19 FUNDING NOTE |
 | `farrar-fauci-comms.pdf` pp.42-43 | Freitag, 6. Marz 2020 11:56 | Alex Harris | RE: URGENT - GPMB COVID-19 FUNDING NOTE |
 | `farrar-fauci-comms.pdf` pp.7-13 | Tuesday, 12 May 2020 at 13:16 | Russell Viner | confidential - update on Paediatric Multisystem Inflammatory |
-| `farrar-fauci-comms.pdf` pp.6-7 | Tuesday, May 12, 2020 6:12 PM | Russell Viner | Re: confidential - update on Paediatric Multisystem Inflammatory… |
-| `farrar-fauci-comms.pdf` p.5 | Wednesday, 13 May 2020 at 22:22 | Russell Viner | Re: confidential - update on Paediatric Multisystem Inflammatory… |
+| `farrar-fauci-comms.pdf` pp.6-7 | Tuesday, May 12, 2020 6:12 PM | Russell Viner | Re: confidential - update on Paediatric Multisystem Inflammatory Syndrome (PIMS) |
+| `farrar-fauci-comms.pdf` p.5 | Wednesday, 13 May 2020 at 22:22 | Russell Viner | Re: confidential - update on Paediatric Multisystem Inflammatory Syndrome (PIMS) |
 
-**Los Angeles** (5)
+**Los Angeles** (2)
 
 | Where | Header as printed | Sender | Subject |
 |---|---|---|---|
-| `po-emails.pdf` pp.142-143 | Sunday, February 16, 2020 9:45 PM | Kristian G. Andersen | Re: Furin... |
-| `po-emails.pdf` p.142 | Feb 17, 2020 9:17 AM | Michael Farzan | [NA] |
-| `po-emails.pdf` p.142 | Feb 17, 2020 9:26 AM | Kristian G. Andersen | [NA] |
 | `po-emails.pdf` p.142 | 3/31/2020 8:59:49 PM | Kristian G. Andersen | Re: Furin... |
 | `farrar-fauci-comms.pdf` p.56 | 8 Feb 2020 22:15 | Kristian G. Andersen | [NA] |
 
@@ -131,12 +122,11 @@ The app shows Part 1 as printed, labelled ET. Details: analysis 1.4.
 | `farrar-fauci-comms.pdf` pp.76-103 | Tuesday, 4 February 2020 at 06:33 | Edward Holmes | Re: Prevalence of infection and stage of the epidemic in Wuhan |
 | `farrar-fauci-comms.pdf` p.58 | Saturday, 8 February 2020 at 20:11 | Edward Holmes | Re: [ext] 2019 N-CoV |
 
-### U3. Two quoted copies: is the replier's clock right?
-- **Look at:** `farrar-fauci-comms.pdf` p.157, “Jan 30, 2020 7:13 AM”, Jeremy Farrar, “[NA]”.
-- **And at:** `farrar-fauci-comms.pdf` p.10, “May 12, 2020 12:57 PM”, Jeremy Farrar, “[NA]”.
-- **Problem:** each takes the replier's zone under your footnote rule. Nothing tests it.
-- **Send me:** for each, whether the printed stamp matches the replier's clock.
-- **CSV:** no.
+### U3. The quote/forward rule is now in the code: nothing for you to answer
+- The 152 quoted blocks (143 P.O. emails, 9 Farrar-Fauci) now take the clock of the quoting message's author.
+  The two copies that used to be listed here (`farrar-fauci-comms.pdf` p.157, “Jan 30, 2020 7:13 AM”,
+  Jeremy Farrar, “[NA]” and p.10, “May 12, 2020 12:57 PM”, Jeremy Farrar, “[NA]”) are among them.
+- **If you want to check:** filter `rule` = “2. Quoted block” in `zone_format_audit.csv`.
 
 ### U4. Eight emails with no date or time: what are they?
 - **Problem:** the data has no date or time for them, so they sit outside the timeline. Look at the pages and

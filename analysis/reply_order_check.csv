@@ -1,14 +1,13 @@
 zone_group,reply_pairs_touched,allowed_shifts_hours,status
-"Charite, Berlin",1,-8 -7 -6 -5 -4 -3 -2 -1 +0 +1 +2 +3 +4 +5 +6 +7 +8,not decided
 China CDC,2,-8 -7 -6 -5 -4 -3 -2 -1 +0 +1 +2 +3 +4 +5 +6 +7 +8,not decided
 Institut Pasteur,2,-8 -7 -6 -5 -4 -3 -2 -1 +0 +1,not decided
 "NIH, Bethesda",40,+0,only current zone allowed
-PO page GARRY,26,+0 +1 +2 +3 +4 +5 +6 +7 +8,not decided
-PO page LIP,23,+0,only current zone allowed
-PO page REV,110,-3 -2 -1 +0,not decided
-Scripps Research,6,-8 -7 -6 -5 -4 -3 -2 -1 +0 +1 +2 +3 +4 +5 +6 +7 +8,not decided
-Tulane University,2,-1 +0 +1,not decided
-Wellcome Trust (the release's convener),61,+0,only current zone allowed
+PO page GARRY,10,+0,only current zone allowed
+PO page LIP,15,+0,only current zone allowed
+PO page REV,47,+0,only current zone allowed
+Scripps Research,3,-8 -7 -6 -5 -4 -3 -2 -1 +0 +1 +2 +3 +4 +5 +6 +7 +8,not decided
+Tulane University,2,-2 -1 +0 +1,not decided
+Wellcome Trust (the release's convener),53,+0,only current zone allowed
 Wellcome Trust / UK,4,-8 -7 -6 -5 -4 -3 -2 -1 +0 +1 +2,not decided
 explicit,64,+0,only current zone allowed
-quoted copy,3,-8 -7 -6 -5 -4 -3 -2 -1 +0 +1 +2 +3 +4 +5,not decided
+quoted copy,166,+0,only current zone allowed

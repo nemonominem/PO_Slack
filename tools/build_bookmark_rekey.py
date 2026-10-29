@@ -110,10 +110,10 @@ def main():
                         (o.get("date"), o.get("time"), o.get("sender"))]
                 if not same and instant(o) is not None:
                     # a zone change can move an entry by a few hours: same sender,
-                    # unique nearest within 3 hours
+                    # unique nearest within 24 hours (Sydney clocks move an entry by up to 16 hours)
                     near = sorted((abs(instant(e) - instant(o)), i) for i, e in enumerate(new)
                                   if instant(e) is not None and e.get("sender") == o.get("sender")
-                                  and abs(instant(e) - instant(o)) <= 180)
+                                  and abs(instant(e) - instant(o)) <= 24 * 60)
                     if near and (len(near) == 1 or near[0][0] < near[1][0]):
                         same = [new[near[0][1]]]
                 if len(same) == 1 and not (ok in new_keys):

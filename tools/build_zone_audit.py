@@ -43,7 +43,7 @@ RULE_NAMES = [
     (r"^verified", "1c. Verified from the page image"),
     (r"^explicit", "1. Zone written in the stamp"),
     (r"^anchored", "1b. Exact copy with an explicit offset"),
-    (r"^frozen in", "2. Quoted copy: replier's zone"),
+    (r"^frozen in", "2. Quoted block: quoting author's clock (freeze rule)"),
     (r"REV export", "4. Page owner REV (Pacific)"),
     (r"GARRY|Robert Garry", "4. Page owner GARRY (assumed Chicago)"),
     (r"W\. Ian Lipkin", "4. Page owner LIP (Eastern)"),
@@ -79,8 +79,8 @@ STATUS = [
     (r"W\. Ian Lipkin", "Supported", "consistent with reply order; reply order cannot catch a time that is too early"),
     (r"release's convener", "Supported", "consistent with reply order; quoted copies can be frozen on another clock (see FF 22)"),
     (r"NIH, Bethesda", "Supported", "consistent with reply order; reply order cannot catch a time that is too early"),
-    (r"Robert Garry's own", "Not settled", "Chicago or Eastern; no exact copy (reply order excludes Pacific)"),
-    (r"^frozen in", "Not settled", "footnote rule; not tested on web clients"),
+    (r"Robert Garry's own", "Supported", "Garry works at Tulane (New Orleans, Central time) and the mailbox is his own; consistent with reply order, which excludes Pacific; no exact copy with an explicit offset to prove it"),
+    (r"^frozen in", "Supported", "freeze rule (quoted block on the clock of the quoting message's author); every reply pair it touches is in order; the author's clock is the institution's zone"),
     (r"Wellcome Trust / UK", "Not settled", "too few reply pairs"),
     (r"Scripps|Sydney|Charite|Tulane|Pasteur|China CDC", "Not settled", "too few reply pairs"),
 ]
@@ -105,7 +105,7 @@ def check_of(e, rule):
     if rule.startswith("4. Page owner REV") or rule.startswith("4. Page owner GARRY"):
         notes.append("owner zone not yet verified")
     if rule.startswith("2."):
-        notes.append("zone taken from the quoting message")
+        notes.append("zone taken from the quoting message's author")
     if not e.get("sender") and e.get("date"):
         notes.append("sender not in the scan")
     return "; ".join(notes)

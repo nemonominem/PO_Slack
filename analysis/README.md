@@ -51,3 +51,4 @@ Open it in a spreadsheet and filter on `zone_status`.
 Do not edit the generated files by hand. The scripts and their order are in
 `tools/README.md`. Hand-checked corrections go in `tools/verified_overrides.json`, with
 the evidence beside each one.
+- `freeze_bracket_check.csv`: per non-exact P.O. email, the clock that froze the stamp, the offsets bracketing allows, and the time under the freeze rule (from `tools/freeze_bracket_check.py`). Optional.

@@ -1,6 +1,6 @@
 # Zone and date analysis: P.O. Record Search and the email releases
 
-Status as of 2026-10-28. Internal; not published. This file is only about getting the dates and
+Status as of 2026-10-29 (the quote/forward rule is now implemented; see 5.6 and 5.8). Internal; not published. This file is only about getting the dates and
 times right and about what is wrong in the P.O. piece and the web app because of them. Every
 instruction and decision for you is in `FOR_HUMAN_REVIEWER.md`.
 
@@ -24,7 +24,7 @@ The file has five parts:
 
 ---
 
-# Part 1. Settled datetimes (203 emails, plus Slack Part 1 and Part 2)
+# Part 1. Settled datetimes (108 emails, plus Slack Part 1 and Part 2)
 
 Settled means: fixed by the stamp itself, by an exact copy, by the page image, or by a decision of yours
 backed by evidence. `zone_format_audit.csv` marks each email `Settled`.
@@ -34,7 +34,7 @@ backed by evidence. `zone_format_audit.csv` marks each email `Settled`.
 | Zone written in the stamp (`+0000`, `UTC+11:00`, `AEDT`, `EST`) | 53 (45 Farrar-Fauci, 8 P.O. emails) | as written | The stamp |
 | Exact copy with an explicit offset | 1 | from the copy | `po-emails.pdf` pp.1-2, “Jan 31, 2020 4:38 PM”, Fauci, Anthony, “[NA]” equals the Farrar-Fauci copy `farrar-fauci-comms.pdf` p.154, “Sat, 1 Feb 2020 00:38:35 +0000”, Anthony Fauci, “RE: Phone call” |
 | Verified from the page image or the message text | 4 | Eastern or London, per entry | Listed below |
-| Page owner **REV** (P.O. emails) | 145 | Pacific | Section 1.2 |
+| Page owner **REV**, top-level stamps only (P.O. emails) | 50 | Pacific | Section 1.2. The 95 other REV-page entries are quoted blocks, which now take the quoting author's clock (Supported) |
 
 ## 1.1 The four verified corrections
 
@@ -47,7 +47,7 @@ backed by evidence. `zone_format_audit.csv` marks each email `Settled`.
 
 ## 1.2 REV: the P.O. emails' mailbox is on Pacific time
 
-REV pages (145 emails) are on Pacific time (UTC-8 in winter, UTC-7 in summer), which fits Kristian
+REV pages (50 top-level stamps; the quoted blocks on these pages follow the freeze rule) are on Pacific time (UTC-8 in winter, UTC-7 in summer), which fits Kristian
 Andersen's mailbox: he is at Scripps Research in La Jolla, San Diego. (On 2026-10-28 the code was switched
 to Arizona for a few hours and reverted when the evidence below and your correction showed Andersen is in
 San Diego. The data is identical to its state before the switch, except for the Farrar 22:34 message.)
@@ -97,27 +97,26 @@ printed, labelled ET in the 🕑 chip.
 
 ---
 
-# Part 2. Unsettled datetimes (183 emails)
+# Part 2. Unsettled datetimes (278 emails)
 
-## 2.1 Supported but not proven (114 emails)
+## 2.1 Supported but not proven (256 emails)
 
-Consistent with every test (reply order allows only this zone), but reply order cannot catch a copy that
+Consistent with every test (every reply pair it touches is in order), but reply order cannot catch a copy that
 is simply too early; the Farrar message `farrar-fauci-comms.pdf` pp.154-155, “Friday, January 31, 2020 5:57 PM”, Jeremy Farrar, “Re: Phone call” was five hours early and the test passed. Marked `Supported`.
 
 | Zone source | Emails | Zone used |
 |---|---|---|
-| Sender: Wellcome convener (Farrar-Fauci release) | 56 | London |
-| Sender: Wellcome convener (P.O. emails) | 3 | London |
+| Quoted block: clock of the quoting message's author (the freeze rule, 5.6) | 152 (143 P.O. emails, 9 Farrar-Fauci) | the author's institution zone |
+| Sender: Wellcome convener | 53 (51 Farrar-Fauci, 2 P.O. emails) | London |
 | Sender: NIH, Bethesda (Farrar-Fauci release) | 27 | Eastern |
-| Page owner **LIP** (P.O. emails) | 28 | Eastern |
+| Page owner **LIP**, top-level (P.O. emails) | 13 | Eastern |
+| Page owner **GARRY**, top-level (P.O. emails) | 11 | Chicago (Central): Garry works at Tulane University School of Medicine, New Orleans (Central time), per the reviewer, 2026-10-29. Reply order excludes Pacific. No exact copy proves it; a trip away from Central would not show. |
 
-## 2.2 Not settled (69 emails)
+## 2.2 Not settled (22 emails)
 
 | Zone source | Emails | Zone used | Why open |
 |---|---|---|---|
-| Page owner **GARRY** (P.O. emails) | 40 | Chicago | Reply order excludes Pacific; Chicago or Eastern remain. No exact copy. |
-| Sender, small groups (list in `FOR_HUMAN_REVIEWER.md`, item U2) | 19 | by sender | Too few linked replies to test (one to four each) |
-| Quoted copy takes the replier's zone | 2 | replier's | Footnote rule, not tested: `farrar-fauci-comms.pdf` p.157, “Jan 30, 2020 7:13 AM”, Jeremy Farrar, “[NA]” and `farrar-fauci-comms.pdf` p.10, “May 12, 2020 12:57 PM”, Jeremy Farrar, “[NA]” |
+| Sender, small groups (list in `FOR_HUMAN_REVIEWER.md`, item U2) | 14 | by sender | Too few linked replies to test (one to four each) |
 | No date or time in the data | 8 | none | Need the page image (list in `FOR_HUMAN_REVIEWER.md`, item U4) |
 
 ---
@@ -180,7 +179,7 @@ earlier version of the review file; they are now generated from the audit file.
 - **Rule 1c. Verified from the page image or the message text.** Hand-checked, with the evidence in
   `tools/verified_overrides.json`, applied by `tools/apply_verified_overrides.py`. The thread key is unchanged.
 - **Rule 2. Quoted copy takes the replier's zone** (your footnote rule), where the quoting link is known.
-  Not always the replier's own clock.
+  Not always the replier's own clock. Stated in full, with examples, in 5.6.
 - **Rule 3. Unzoned top-level stamp, Farrar-Fauci release:** the sender's institution.
 - **Rule 4. Unzoned top-level stamp, P.O. emails:** the page owner (REV Pacific, GARRY Chicago, LIP Eastern).
 
@@ -223,3 +222,113 @@ sentence could be hidden in the page images; the 386 pages have not all been rea
   `owner_zone_check.csv`, the dedupe and report logs.
 - `tools/`: scripts, `verified_overrides.json`, `entry_ref.py` (see `tools/README.md`).
 - `docs/`: project notes. `source_ocr/`: OCR text. `page_based/`: the published app and its data.
+
+## 5.6 The freeze rule (quote and forward), with examples
+
+**The rule.** An email program stamps a message in the clock of the program that shows it. When someone
+replies to or forwards a message, the program copies the original's header into the new message, and the stamp
+in that copy is frozen on the clock of the person who replied or forwarded. It no longer follows anyone's
+clock. So the time printed on a message depends on where we see it:
+
+1. **A top-level message** (the message itself, not inside another) is on the clock of the mailbox that holds
+   it. In a page-owner export (REV, GARRY, LIP) that is the owner's clock.
+2. **A quoted or forwarded message** is on the clock of the person who quoted or forwarded it, not the
+   clock of its own author.
+3. **Several copies of one message** can therefore print different times. Each copy is right for its own clock.
+4. **The last message of a thread has nothing quoting it**, so rule 2 cannot be applied to it. It is
+   top-level and sits on the clock of the mailbox it was exported from. If we cannot find a quote or forward of
+   a message, we must not invent one. A reply link that the parser only inferred (“same conversation”) does
+   not prove that a quote exists.
+
+**Example (illustrative; Sydney is 11 hours ahead of Edinburgh).** Holmes (Sydney) and Rambaut (Edinburgh)
+reply to each other, one hour apart. In absolute time (UTC) the chain is H1 21:00, R1 22:00, H2 23:00,
+R2 00:00. On their own clocks:
+
+| Message | Holmes's clock (UTC+11) | Rambaut's clock (UTC+0) |
+|---|---|---|
+| H1 Holmes, first | 08:00 | 21:00 |
+| R1 Rambaut replies | 09:00 | 22:00 |
+| H2 Holmes replies | 10:00 | 23:00 |
+| R2 Rambaut replies | 11:00 | 00:00 |
+
+Each reply quotes its parent, so in the final printed thread:
+
+- H1 is quoted by R1 (Rambaut), so it prints on Rambaut's clock: **21:00**.
+- R1 is quoted by H2 (Holmes), so it prints on Holmes's clock: **09:00**.
+- H2 is quoted by R2 (Rambaut), so it prints on Rambaut's clock: **23:00**.
+- R2 is the last message. Nothing quotes it, so it prints on the clock of the mailbox it is shown in, for
+  example Rambaut's own, **00:00**.
+
+The printed order is 21:00, 09:00, 23:00, 00:00. It looks scrambled, yet every stamp is correct for its clock.
+So a reply that prints earlier than the message it answers, or later by many hours, is not by itself an
+error. The check is: convert each stamp to one clock using the clock that froze it, then test the order.
+Whoever is far ahead or behind the others (Holmes, Sydney) makes the largest jumps.
+
+**Using it.** To read a quoted stamp, find who quoted it: the quoting message sits immediately above the
+quote, and its author's clock is the one to use. To read a top-level stamp, use the mailbox owner's clock. The
+quoting link must be explicit (the quote is visible in the page), not just a guessed same-conversation link.
+
+## 5.7 Tricks for fixing a zone
+
+1. **Anchor sentences.** “It's 1 am here”, “it is 10pm now UK” give the sender's clock at that moment (5.4).
+2. **Exact copy with an explicit offset** (rule 1b).
+3. **Reply order under the freeze rule.** Convert with the clock that froze each stamp (5.6), then test the
+   order. A zone that puts a reply before its parent is ruled out. A zone that fits every pair is only
+   supported, not proven.
+4. **Page code continuity.** Every page of a mailbox export carries a code at the bottom right (for example
+   GARRY0000nnn or REV0000nnn). If page n has code N, the natural previous page has code N-1. If the previous
+   PDF page does not carry N-1, the export was spliced there and the two pages are probably not the same
+   conversation. If it does, and the subject continues, the messages belong to one thread, which tells us which
+   mailbox, and so which clock, froze each stamp. Used to decide whether a quote or forward exists across a
+   page break. Not automated; check on the page images.
+5. **Bracketing.** If a person's message sits, in the true reply order, between two messages whose absolute
+   times are exactly known (explicit zone, exact copy or verified), and those two are at most an hour apart,
+   then the middle message was sent inside that hour. Its printed stamp then fixes the offset of the clock
+   that froze it: the offset is the whole number of hours (or half hours) that moves the printed time into the
+   window. Example (illustrative): A is 14:00 UTC and B is 14:40 UTC, both exact. In between, M prints
+   “9:20 AM”. Moving 9:20 into 14:00-14:40 UTC takes +5 hours, so M's clock is UTC-5 (Eastern, winter). The
+   narrower the window, the surer; a window wider than an hour allows two whole-hour answers. It needs the
+   reply order to be right and the stamp's freezing clock to be known (5.6).
+   Not yet run across the data.
+6. **Dangling last message.** Rule 4 of 5.6: the last message of a thread cannot be tested by quote or forward.
+   Use only mailbox-owner evidence for it, and say so.
+
+Order of preference: exact evidence (1, 2) first; then bracketing (5); then reply order (3); page continuity
+(4) decides which of these may be used; the owner and institution defaults only last.
+
+## 5.8 The freeze rule in the code, and the checks (2026-10-29)
+
+**Code change.** In `foia_parser/core.py` (`reconcile_zones`) a quoted block now takes the clock of the AUTHOR of
+the message that quotes it, read from the affiliation table (new profile option `freeze_rule_author_zone`).
+Before, a block on a GARRY, REV or LIP page was given the page owner's clock before the quote rule ran, and
+the rule then skipped it. Where the quoting message was top-level, the rule also used the mailbox clock
+and not the author's. An explicit zone in the stamp is never overridden. Lipkin (Columbia, Eastern) was added to
+the affiliation table. `tools/build_bookmark_rekey.py` now matches within 24 hours (Sydney moves an entry by
+up to 16 hours).
+
+**Effect.** 104 P.O. emails and 9 Farrar-Fauci emails changed time (by up to 16 hours). Explicit quote links that
+survive the parser's "no quote before it was sent" test went from 108 to 144 (P.O. emails): 36 links that the old
+clocks put backwards are now in order. The reply-order test still allows only the current clock for every group.
+The app tests (8) and the app audit (66 checks) pass.
+
+**Checks with `tools/freeze_bracket_check.py`** (changes nothing; writes `freeze_bracket_check.csv`):
+- **Bracketing on REV, a test of the method:** 24 top-level REV stamps are bracketed by exact anchors; the
+  offsets allowed by all of them are exactly -8 and -7 (Pacific winter and summer). Method and rule agree.
+- **Bracketing on GARRY:** 8 top-level Garry-mailbox stamps, 2 bracketed, none narrow. It cannot choose
+  between Chicago and Eastern yet.
+- **Bracketing on LIP:** 9 top-level stamps, 2 bracketed, none narrow.
+- **Two pairs still reversed under the author-home-clock reading** (checked by the script, not applied by the
+  parser, which keeps the link only when the times agree): `po-emails.pdf` pp.22-29, “5 Feb 2020 1:03 pm”, Robert Garry
+  and “2/5/2020 1:23:41 AM”, Edward Holmes; and p.28, “5 Feb 2020 9:04 pm”, Edward Holmes and pp.28-45, “2/5/2020 4:22:24 AM”,
+  Edward Holmes. Page images to read.
+- **Feb 10 chain (pp.65-67):** with the rule, Holmes's “10 Feb 2020 21:11” (quoted by Rambaut, London) is 16:11 ET,
+  Holmes sends the document to Lipkin at 16:33 ET (22 minutes later) and Garry's “2/10/2020 3:51:18 PM” is 16:51 ET
+  under Chicago. Under Eastern it would be 15:51 ET, before the 16:11 ET message about Lipkin's call. This
+  supports Chicago, but it assumes that Garry's message is a reply to that report (his link is only inferred).
+- **11-12 Feb chain (pp.75-77):** the order is now consistent: Lipkin 09:40 ET on 11 Feb, Garry's first reply
+  (“12 Feb 2020 1:00 pm”, read on Holmes's Sydney clock) 21:00 ET, Holmes's forward 02:15 ET on 12 Feb.
+- **Page-code continuity:** Garry runs pp.65-66 (GARRY 263-264), pp.75-77 (272-274) and pp.83-87 (306-310);
+  the neighbouring pages are REV.
+
+GARRY stays **Supported** (Tulane, Central; reply order excludes Pacific; the Feb 10 chain favours Chicago), not Settled.
+

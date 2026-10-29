@@ -1,0 +1,214 @@
+idx,pdf_pages,stamp,sender,subject,shown_ET,clock,shown_offset,freeze_offset,freeze_ET,window_h_strong,allowed_strong,allowed_weak
+3,1,1/31/2020 6:25:48 PM,"Fauci, Anthony",RE: Phone call,2020-01-31 2125,mailbox REV,-8,-8,2020-01-31 21:25,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5
+4,1,"Friday, January 31, 2020 8:05 PM",Kristian G. Andersen,Re: Phone call,2020-01-31 2305,mailbox REV,-8,-8,2020-01-31 23:05,,-12 -11 -10 -9 -8 -7 -6 -5,-12 -11 -10 -9 -8 -7 -6 -5
+5,4-11,"Friday, January 31, 2020 8:43 PM","Folkers, Greg",Science: Mining coronavirus genomes for ,2020-01-31 2343,mailbox REV,-8,-8,2020-01-31 23:43,,no bracket,-9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+6,4,"Friday, January 31, 2020 10:32 PM",Kristian G. Andersen,Re: FW: Science: Mining coronavirus geno,2020-02-01 0132,mailbox REV,-8,-8,2020-02-01 01:32,,no bracket,-12 -11 -10 -9 -8 -7
+8,4,2/1/2020 10:43:31 AM,"Fauci, Anthony",RE: FW: Science: Mining coronavirus geno,2020-02-01 1343,mailbox REV,-8,-8,2020-02-01 13:43,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4
+9,155-157,"Saturday, 1 February 2020 at 15:34",Jeremy Farrar,Teleconterence,2020-02-01 1634,mailbox GARRY,-6,-6,2020-02-01 16:34,,no bracket,no bracket
+11,11-16,2/3/2020 9:04:47 AM,"Pope, Andrew",Today's Call/meeting info,2020-02-03 0404,mailbox,0,,,,no bracket,no bracket
+12,26-33,"Feb 4, 2020 11:31 AM",Robert Garry,[NA],2020-02-03 1931,quoted by Kristian G. Andersen,11,-8,2020-02-04 14:31,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+13,27-35,"Monday, February 3, 2020 at 9:36 PM",Kristian G. Andersen,Summary - Invitation to edit,2020-02-03 2236,mailbox,-6,,,,no bracket,no bracket
+14,16-17,"Feb 4, 2020 9:02 AM","Daszak, Peter",[NA],2020-02-04 0402,mailbox,0,,,,no bracket,no bracket
+16,33,5 Feb 2020 7:03 am,Kristian G. Andersen,[NA],2020-02-04 1503,quoted by Edward Holmes,11,11,2020-02-04 15:03,,no bracket,6 7 8 9 10 11 12 13 14
+17,26-33,"Tuesday, February 4, 2020 at 2:10 PM",Edward Holmes,Re: Summary - Invitation to edit,2020-02-04 1510,quoted by Robert Garry,-6,-6,2020-02-04 15:10,,no bracket,-10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+18,26-33,5 Feb 2020 7:14 am,Robert Garry,[NA],2020-02-04 1514,quoted by Edward Holmes,11,11,2020-02-04 15:14,,no bracket,7 8 9 10 11 12 13 14
+19,25-32,"Feb 4, 2020 12:36 PM",Edward Holmes,[NA],2020-02-04 1536,quoted by Kristian G. Andersen,-8,-8,2020-02-04 15:36,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+20,25-32,"Tuesday, February 4, 2020 at 2:39 PM",Kristian G. Andersen,Re: Summary - Invitation to edit,2020-02-04 1539,quoted by Robert Garry,-6,-6,2020-02-04 15:39,,no bracket,-10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+21,31,"Feb 4, 2020 2:59 PM",Edward Holmes,[NA],2020-02-04 1559,mailbox GARRY,-6,-6,2020-02-04 15:59,,no bracket,no bracket
+22,25-32,5 Feb 2020 8:12 am,Robert Garry,[NA],2020-02-04 1612,quoted by Edward Holmes,11,11,2020-02-04 16:12,,no bracket,no bracket
+23,24-31,"Feb 4, 2020 3:28 PM",Edward Holmes,[NA],2020-02-04 1628,quoted by Robert Garry,-6,-6,2020-02-04 16:28,,no bracket,no bracket
+24,23-30,"Tuesday, February 4, 2020 at 5:56 PM",Robert Garry,Re: Summary - Invitation to edit,2020-02-04 1856,quoted by Robert Garry,-6,-6,2020-02-04 18:56,,no bracket,-7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+25,22-30,"Feb 4, 2020 4:34 PM",Robert Garry,[NA],2020-02-04 1934,quoted by Kristian G. Andersen,-8,-8,2020-02-04 19:34,,no bracket,-8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+26,22-29,"Tuesday, February 4, 2020 at 7:08 PM",Kristian G. Andersen,Re: Summary - Invitation to edit,2020-02-04 2008,quoted by Robert Garry,-6,-6,2020-02-04 20:08,,no bracket,-6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+27,23-31,"Tuesday, February 4, 2020 at 5:08 PM",Kristian G. Andersen,Re: Summary - Invitation to edit,2020-02-04 2008,mailbox REV,-8,-8,2020-02-04 20:08,,no bracket,no bracket
+28,22-29,5 Feb 2020 1:03 pm,Robert Garry,[NA],2020-02-04 2103,quoted by Edward Holmes,11,11,2020-02-04 21:03,,no bracket,no bracket
+29,22-29,2/5/2020 1:23:41 AM,Edward Holmes,Re: Summary - Invitation to edit,2020-02-05 0423,quoted by Andrew Rambaut,-8,0,2020-02-04 20:23,,no bracket,no bracket
+30,28-29,5 Feb 2020 8:44 pm,Andrew Rambaut,[NA],2020-02-05 0444,quoted by Edward Holmes,11,11,2020-02-05 04:44,,no bracket,no bracket
+31,28,5 Feb 2020 9:04 pm,Edward Holmes,[NA],2020-02-05 0504,quoted by Edward Holmes,11,11,2020-02-05 05:04,,no bracket,no bracket
+32,28-45,2/5/2020 4:22:24 AM,Edward Holmes,Re: Summary - Invitation to edit,2020-02-05 0522,quoted by Andrew Rambaut,-6,0,2020-02-04 23:22,,no bracket,no bracket
+33,44,5 Feb 2020 9:25 pm,Andrew Rambaut,[NA],2020-02-05 0525,quoted by Edward Holmes,11,11,2020-02-05 05:25,,no bracket,no bracket
+34,44,5 Feb 2020 10:31,Edward Holmes,[NA],2020-02-05 0531,quoted by Andrew Rambaut,0,0,2020-02-05 05:31,,no bracket,no bracket
+35,43-44,5 Feb 2020 9:34 pm,Andrew Rambaut,[NA],2020-02-05 0534,quoted by Edward Holmes,11,11,2020-02-05 05:34,,no bracket,no bracket
+36,43,5 Feb 2020 10:47,Edward Holmes,[NA],2020-02-05 0547,quoted by Andrew Rambaut,0,0,2020-02-05 05:47,,no bracket,no bracket
+37,43,5 Feb 2020 9:52 pm,Andrew Rambaut,[NA],2020-02-05 0552,quoted by Edward Holmes,11,11,2020-02-05 05:52,,no bracket,no bracket
+38,42-43,"Feb 5, 2020 5:18 AM",Edward Holmes,[NA],2020-02-05 0618,quoted by Robert Garry,-6,-6,2020-02-05 06:18,,no bracket,no bracket
+39,42,"Feb 5, 2020 6:24 AM",Robert Garry,[NA],2020-02-05 0924,quoted by Kristian G. Andersen,-8,-8,2020-02-05 09:24,,no bracket,no bracket
+40,42,"Feb 5, 2020 7:20 AM",Kristian G. Andersen,[NA],2020-02-05 1020,quoted by Kristian G. Andersen,-8,-8,2020-02-05 10:20,,no bracket,no bracket
+41,42,"Wednesday, February 5, 2020 at 9:27 AM",Kristian G. Andersen,Re: Summary - Invitation to edit,2020-02-05 1027,quoted by Robert Garry,-6,-6,2020-02-05 10:27,,no bracket,no bracket
+42,41-42,6 Feb 2020 3:14 am,Kristian G. Andersen,[NA],2020-02-05 1114,quoted by Edward Holmes,11,11,2020-02-05 11:14,,no bracket,no bracket
+43,24-31,5 Feb 2020 9:53 am,Robert Garry,[NA],2020-02-05 1253,mailbox,-8,,,,no bracket,no bracket
+49,41,"Wednesday, February 5, 2020 at 3:13 PM",Edward Holmes,Re: Summary - Invitation to edit,2020-02-05 1613,quoted by Robert Garry,-6,-6,2020-02-05 16:13,,no bracket,no bracket
+50,40-41,5 Feb 2020 21:28,Robert Garry,[NA],2020-02-05 1628,quoted by Andrew Rambaut,0,0,2020-02-05 16:28,,no bracket,no bracket
+51,40,6 Feb 2020 8:36 am,Andrew Rambaut,[NA],2020-02-05 1636,quoted by Edward Holmes,11,11,2020-02-05 16:36,,no bracket,no bracket
+52,40,"Wednesday, February 5, 2020 at 3:43 PM",Edward Holmes,Re: Summary - Invitation to edit,2020-02-05 1643,quoted by Robert Garry,-6,-6,2020-02-05 16:43,,no bracket,no bracket
+53,39,6 Feb 2020 8:55 am,Robert Garry,[NA],2020-02-05 1655,mailbox,11,,,,no bracket,no bracket
+54,39,"Wednesday, February 5, 2020 at 3:58 PM",Kristian G. Andersen,Re: Summary - Invitation to edit,2020-02-05 1658,mailbox,-6,,,,no bracket,no bracket
+55,38,"Wednesday, February 5, 2020 at 4:07 PM",Robert Garry,Re: Summary - Invitation to edit,2020-02-05 1707,quoted by Robert Garry,-6,-6,2020-02-05 17:07,,no bracket,no bracket
+56,38,6 Feb 2020 9:08 am,Robert Garry,[NA],2020-02-05 1708,quoted by Edward Holmes,11,11,2020-02-05 17:08,,no bracket,no bracket
+57,37-38,"Wednesday, February 5, 2020 at 4:12 PM",Edward Holmes,Re: Summary - Invitation to edit,2020-02-05 1712,quoted by Robert Garry,-6,-6,2020-02-05 17:12,,no bracket,no bracket
+58,37,6 Feb 2020 9:24 am,Robert Garry,[NA],2020-02-05 1724,mailbox,11,,,,no bracket,no bracket
+59,36,5 Feb 2020 22:39,Robert Garry,[NA],2020-02-05 1739,quoted by Andrew Rambaut,0,0,2020-02-05 17:39,,no bracket,no bracket
+60,36,6 Feb 2020 9:43 am,Andrew Rambaut,[NA],2020-02-05 1743,quoted by Edward Holmes,11,11,2020-02-05 17:43,,no bracket,no bracket
+61,35-36,"Wednesday, February 5, 2020 at 5:46 PM",Edward Holmes,Re: Summary - Invitation to edit,2020-02-05 1846,mailbox,-6,,,,no bracket,no bracket
+62,38,"Wednesday, February 5, 2020 at 4:01 PM",Kristian G. Andersen,Re: Summary - Invitation to edit,2020-02-05 1901,mailbox REV,-8,-8,2020-02-05 19:01,,no bracket,no bracket
+63,35,6 Feb 2020 11:10 am,Kristian G. Andersen,[NA],2020-02-05 1910,quoted by Edward Holmes,11,11,2020-02-05 19:10,,1 2 3 4 5 6 7 8 9 10 11 12 13 14,1 2 3 4 5 6 7 8 9 10 11 12 13 14
+64,35,2/6/2020 2:36:30 AM,Edward Holmes,Re: Summary - Invitation to edit,2020-02-06 0536,mailbox REV,-8,-8,2020-02-06 05:36,,no bracket,no bracket
+65,45,2/7/2020 1:10:22 PM,Andrew Rambaut,Re: Stuff,2020-02-06 2110,mailbox,11,,,,no bracket,no bracket
+66,50-51,7 Feb 2020 5:26 pm,Jeremy Farrar,[NA],2020-02-07 0126,quoted by Edward Holmes,11,11,2020-02-07 01:26,,3 4 5 6 7 8 9 10 11 12 13 14,3 4 5 6 7 8 9 10 11 12 13 14
+68,143-144,"Thursday, February 6, 2020 11:07 PM",Michael Farzan,RE: Furin...,2020-02-07 0207,quoted by Michael,-8,,,,no bracket,no bracket
+69,48-49,7 Feb 2020 09:36,Edward Holmes,[NA],2020-02-07 0436,quoted by Andrew Rambaut,0,0,2020-02-07 04:36,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3
+70,48,"Feb 7, 2020 3:46 AM",Andrew Rambaut,[NA],2020-02-07 0446,quoted by Robert Garry,-6,-6,2020-02-07 04:46,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3
+71,48,7 Feb 2020 8:55 pm,Robert Garry,[NA],2020-02-07 0455,quoted by Edward Holmes,11,11,2020-02-07 04:55,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+72,47-48,"Feb 7, 2020 4:11 AM",Edward Holmes,[NA],2020-02-07 0511,quoted by Robert Garry,-6,-6,2020-02-07 05:11,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3
+73,47,"Feb 7, 2020 2:41 AM",Robert Garry,[NA],2020-02-07 0541,quoted by Kristian G. Andersen,-8,-8,2020-02-07 05:41,,-12 -11 -10 -9 -8 -7 -6 -5 -4,-12 -11 -10 -9 -8 -7 -6 -5 -4
+74,49,"Friday, 7 February 2020 at 06:29",Edward Holmes,Re: Stuff,2020-02-07 0929,mailbox REV,-8,-8,2020-02-07 09:29,,no bracket,no bracket
+75,46-47,"Friday, February 7, 2020 at 9:29 AM",Kristian G. Andersen,Re: Stuff,2020-02-07 1029,quoted by Robert Garry,-6,-6,2020-02-07 10:29,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2
+76,46,8 Feb 2020 2:46 am,Robert Garry,[NA],2020-02-07 1046,quoted by Edward Holmes,11,11,2020-02-07 10:46,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+77,46,"Friday, February 7, 2020 at 2:18 PM",Edward Holmes,Re: Stuff,2020-02-07 1518,quoted by Robert Garry,-6,-6,2020-02-07 15:18,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7
+78,46,"Feb 7, 2020 12:42 PM",Robert Garry,[NA],2020-02-07 1542,quoted by Kristian G. Andersen,-8,-8,2020-02-07 15:42,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6
+79,46,8 Feb 2020 7:51 am,Kristian G. Andersen,[NA],2020-02-07 1551,quoted by Edward Holmes,11,11,2020-02-07 15:51,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+80,45,7 Feb 2020 20:53,Edward Holmes,[NA],2020-02-07 1553,quoted by Andrew Rambaut,0,0,2020-02-07 15:53,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+81,45,"Feb 7, 2020 12:59 PM",Andrew Rambaut,[NA],2020-02-07 1559,quoted by Kristian G. Andersen,-8,-8,2020-02-07 15:59,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6
+82,45,7 Feb 2020 21:05,Kristian G. Andersen,[NA],2020-02-07 1605,mailbox,0,,,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+83,57-65,08 February 2020 09:45,Jeremy Farrar,FW: 2019 N-CoV,2020-02-08 1245,mailbox REV,-8,-8,2020-02-08 12:45,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+84,55-57,2/8/2020 11:36:30 AM,R.A.M. Fouchier,Re: 2019 N-CoV,2020-02-08 1436,quoted by Christian Drosten,-8,1,2020-02-08 05:36,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7
+85,53-148,9 Feb 2020 6:52 am,Christian Drosten,[NA],2020-02-08 1452,quoted by Edward Holmes,11,11,2020-02-08 14:52,,3 4 5 6 7 8 9 10 11 12 13 14,3 4 5 6 7 8 9 10 11 12 13
+86,52,8 Feb 2020 20:21,Jeremy Farrar,[NA],2020-02-08 1521,quoted by Andrew Rambaut,0,0,2020-02-08 15:21,,-3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+87,70-146,"Feb 8, 2020 12:38 PM",Christian Drosten,[NA],2020-02-08 1538,quoted by Kristian G. Andersen,-8,-8,2020-02-08 15:38,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+88,144,2/8/2020 1:27:14 PM,Jeremy Farrar,Re: [ext] 2019 N-CoV,2020-02-08 1627,mailbox REV,-8,-8,2020-02-08 16:27,,no bracket,-9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+89,51,2/8/2020 2:50:00 PM,R.A.M. Fouchier,Re: [ext] 2019 N-CoV,2020-02-08 1750,mailbox REV,-8,-8,2020-02-08 17:50,,no bracket,-12 -11 -10 -9 -8 -7
+90,51,"Saturday, February 8, 2020 4:16 PM",Andrew Rambaut,Re: [ext] 2019 N-CoV,2020-02-08 1916,mailbox REV,-8,-8,2020-02-08 19:16,,no bracket,no bracket
+91,52-147,"Saturday, 8 February 2020 at 20:11",Edward Holmes,Re: [ext] 2019 N-CoV,2020-02-08 2311,mailbox REV,-8,-8,2020-02-08 23:11,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2
+92,70-145,"Saturday, 8 February 2020 at 21:16",Kristian G. Andersen,Re: [ext] 2019 N-CoV,2020-02-09 0016,quoted by ?,-8,,,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+93,57,2/9/2020 12:00:46 PM,,Re; 2019 N-CoV 7,2020-02-09 1500,mailbox REV,-8,-8,2020-02-09 15:00,,no bracket,no bracket
+94,69,"Sunday, 9 February 2020 at 20:07",,Re: [ext] 2019 N-CoV,2020-02-09 2307,mailbox REV,-8,-8,2020-02-09 23:07,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+95,69,2/10/2020 1:26:57 AM,Jeremy Farrar,Re: [ext] 2019 N-CoV,2020-02-10 0126,quoted by Lipkin,-5,-5,2020-02-10 01:26,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3
+96,68-69,10 Feb 2020 4:47 am,Lipkin,[NA],2020-02-10 0447,quoted by Ian,-5,,,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0
+97,68,10 Feb 2020 9:08 pm,Ian,[NA],2020-02-10 0508,quoted by Edward Holmes,11,11,2020-02-10 05:08,,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+99,65,"Feb 10, 2020 1:27 PM",Edward Holmes,[NA],2020-02-10 1427,mailbox GARRY,-6,-6,2020-02-10 14:27,,no bracket,no bracket
+100,66,11 Feb 2020 7:52 am,Andrew Rambaut,[NA],2020-02-10 1552,quoted by Edward Holmes,11,11,2020-02-10 15:52,,no bracket,no bracket
+101,66,"Feb 10, 2020 12:56 PM",Edward Holmes,[NA],2020-02-10 1556,quoted by Kristian G. Andersen,-8,-8,2020-02-10 15:56,,no bracket,no bracket
+102,66,10 Feb 2020 21:11,Edward Holmes,[NA],2020-02-10 1611,mailbox,0,,,,no bracket,no bracket
+103,65,11 Feb 2020 8:17 am,Kristian G. Andersen,[NA],2020-02-10 1617,mailbox,11,,,,no bracket,no bracket
+104,67-78,"Feb 10, 2020 4:33 PM",Edward Holmes,[NA],2020-02-10 1633,quoted by Ian,-5,,,,-5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12
+105,65,2/10/2020 3:51:18 PM,Robert Garry,Re: More,2020-02-10 1651,mailbox GARRY,-6,-6,2020-02-10 16:51,,no bracket,no bracket
+106,67,11 Feb 2020 9:01 am,Ian,[NA],2020-02-10 1701,quoted by Edward Holmes,11,11,2020-02-10 17:01,,11 12 13 14,11 12 13 14
+109,76,12 Feb 2020 1:00 pm,Robert Garry,[NA],2020-02-11 2100,quoted by Edward Holmes,11,11,2020-02-11 21:00,,no bracket,no bracket
+110,76,"Feb 11, 2020 6:06 PM",Edward Holmes,[NA],2020-02-11 2106,quoted by Kristian G. Andersen,-8,-8,2020-02-11 21:06,,no bracket,no bracket
+111,75,12 Feb 2020 1:47 pm,Robert Garry,[NA],2020-02-11 2147,quoted by Edward Holmes,11,11,2020-02-11 21:47,,no bracket,no bracket
+112,75,2/11/2020 9:16:27 PM,Robert Garry,Re: A few thoughts on the summary,2020-02-11 2216,mailbox GARRY,-6,-6,2020-02-11 22:16,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6
+113,76,"Wednesday, February 12, 2020 1:15 AM",Edward Holmes,Fwd: A few thoughts on the summary,2020-02-12 0215,mailbox,-6,,,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+114,76,"Wednesday, February 12, 2020 2:24 AM",Kristian G. Andersen,Re: A few thoughts on the summary,2020-02-12 0324,mailbox,-6,,,,no bracket,no bracket
+115,75,"Wednesday, February 12, 2020 2:57 AM",Edward Holmes,Re: A few thoughts on the summary,2020-02-12 0357,mailbox GARRY,-6,-6,2020-02-12 03:57,,no bracket,no bracket
+116,80-82,12 February 2020 23:09,Kristian G. Andersen,Interest in commentary/hypothesis on SAR,2020-02-13 0209,mailbox REV,-8,-8,2020-02-13 02:09,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+117,78-80,2/13/2020 2:34:29 AM,Clare Thomas,RE: Interest in commentary/hypothesis on,2020-02-13 0534,quoted by Kristian G. Andersen,-8,-8,2020-02-13 05:34,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5
+118,80,2/13/2020 8:47:54 AM,,RE: Interest in commentary/hypothesis on,2020-02-13 1147,mailbox REV,-8,-8,2020-02-13 11:47,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1
+119,80,13 February 2020 16:33,Kristian G. Andersen,Re: Interest in commentary/hypothesis on,2020-02-13 1933,mailbox REV,-8,-8,2020-02-13 19:33,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9
+120,143,"Feb 15, 2020 9:42 AM",Michael,[NA],2020-02-15 1242,quoted by Kristian G. Andersen,-8,-8,2020-02-15 12:42,,no bracket,no bracket
+121,87-101,16 Feb 2020 00:01,Edward Holmes,[NA],2020-02-15 1901,quoted by Andrew Rambaut,0,0,2020-02-15 19:01,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+122,87-100,16 Feb 2020 11:03 am,Andrew Rambaut,[NA],2020-02-15 1903,quoted by Edward Holmes,11,11,2020-02-15 19:03,,-2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+123,86-87,"Feb 15, 2020 7:15 PM",Edward Holmes,[NA],2020-02-15 1915,quoted by Lipkin,-5,-5,2020-02-15 19:15,,no bracket,no bracket
+124,91-100,"Saturday, February 15, 2020 at 6:15 PM",Edward Holmes,Re: Paper,2020-02-15 1915,quoted by Robert Garry,-6,-6,2020-02-15 19:15,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+125,91-99,16 Feb 2020 00:20,Robert Garry,[NA],2020-02-15 1920,quoted by Andrew Rambaut,0,0,2020-02-15 19:20,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+126,86,16 Feb 2020 11:22 am,Lipkin,[NA],2020-02-15 1922,quoted by Edward Holmes,11,11,2020-02-15 19:22,,no bracket,no bracket
+127,86,"Feb 15, 2020 6:26 PM",Edward Holmes,[NA],2020-02-15 1926,quoted by Robert Garry,-6,-6,2020-02-15 19:26,,no bracket,no bracket
+128,85-86,16 Feb 2020 12:09 pm,Robert Garry,[NA],2020-02-15 2009,quoted by Edward Holmes,11,11,2020-02-15 20:09,,no bracket,no bracket
+129,88,2/16/2020 3:06:49 PM,,Re: Paper,2020-02-15 2306,mailbox,11,,,,no bracket,2 3 4 5 6 7 8 9 10 11 12 13 14
+130,85,"Feb 15, 2020 10:46 PM",Edward Holmes,[NA],2020-02-15 2346,quoted by Robert Garry,-6,-6,2020-02-15 23:46,,no bracket,no bracket
+131,85,16 Feb 2020 5:05 pm,Robert Garry,[NA],2020-02-16 0105,quoted by Edward Holmes,11,11,2020-02-16 01:05,,no bracket,no bracket
+132,84-85,"Feb 16, 2020 12:44 AM",Edward Holmes,[NA],2020-02-16 0144,quoted by Robert Garry,-6,-6,2020-02-16 01:44,,no bracket,no bracket
+133,84,16 Feb 2020 7:14 pm,Robert Garry,[NA],2020-02-16 0314,quoted by Edward Holmes,11,11,2020-02-16 03:14,,no bracket,no bracket
+134,84,"Feb 16, 2020 2:18 AM",Edward Holmes,[NA],2020-02-16 0318,quoted by Robert Garry,-6,-6,2020-02-16 03:18,,no bracket,no bracket
+135,84,16 Feb 2020 7:24 pm,Robert Garry,[NA],2020-02-16 0324,quoted by Edward Holmes,11,11,2020-02-16 03:24,,no bracket,no bracket
+136,83,"Feb 16, 2020 2:29 AM",Edward Holmes,[NA],2020-02-16 0329,quoted by Robert Garry,-6,-6,2020-02-16 03:29,,no bracket,no bracket
+137,83,16 Feb 2020 7:36 pm,Robert Garry,[NA],2020-02-16 0336,quoted by Edward Holmes,11,11,2020-02-16 03:36,,no bracket,no bracket
+138,83,2/16/2020 2:38:46 AM,Edward Holmes,[NA],2020-02-16 0338,mailbox GARRY,-6,-6,2020-02-16 03:38,,no bracket,no bracket
+139,90-99,"Sunday, February 16, 2020 at 5:46 AM",,Re: Paper,2020-02-16 0846,mailbox REV,-8,-8,2020-02-16 08:46,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+140,91-99,"Feb 16, 2020 5:58 AM",Andrew Rambaut,[NA],2020-02-16 0858,mailbox REV,-8,-8,2020-02-16 08:58,,no bracket,no bracket
+141,90-98,"Sunday, February 16, 2020 at 8:21 AM",,Re: Paper,2020-02-16 0921,quoted by Robert Garry,-6,-6,2020-02-16 09:21,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6
+142,90,17 Feb 2020 4:54 am,Robert Garry,[NA],2020-02-16 1254,quoted by Edward Holmes,11,11,2020-02-16 12:54,,2 3 4 5 6 7 8 9 10 11 12 13 14,7 8 9 10 11 12 13 14
+143,89-90,"Sunday, February 16, 2020 at 2:50 PM",Edward Holmes,Re: Paper,2020-02-16 1550,quoted by Robert Garry,-6,-6,2020-02-16 15:50,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-8 -7 -6 -5 -4 -3 -2 -1 0 1
+144,89-97,17 Feb 2020 7:57 am,Robert Garry,[NA],2020-02-16 1557,quoted by Edward Holmes,11,11,2020-02-16 15:57,,5 6 7 8 9 10 11 12 13 14,10 11 12 13 14
+145,89-97,"Sunday, February 16, 2020 at 4:04 PM",Edward Holmes,Re: Paper,2020-02-16 1704,quoted by Robert Garry,-6,-6,2020-02-16 17:04,,-10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-6 -5 -4 -3 -2 -1 0 1 2
+146,89-97,17 Feb 2020 9:06 am,Robert Garry,[NA],2020-02-16 1706,quoted by Edward Holmes,11,11,2020-02-16 17:06,,7 8 9 10 11 12 13 14,11 12 13 14
+147,88-96,"Sunday, February 16, 2020 at 4:14 PM",Edward Holmes,Re: Paper,2020-02-16 1714,quoted by Robert Garry,-6,-6,2020-02-16 17:14,,-10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-6 -5 -4 -3 -2 -1 0 1 2
+148,97-98,"Sunday, February 16, 2020 at 2:50 PM",,Re: Paper,2020-02-16 1750,mailbox REV,-8,-8,2020-02-16 17:50,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1
+149,88-96,17 Feb 2020 9:52 am,Robert Garry,[NA],2020-02-16 1752,quoted by Edward Holmes,11,11,2020-02-16 17:52,,7 8 9 10 11 12 13 14,7 8 9 10 11 12 13 14
+150,95-96,"Sunday, February 16, 2020 at 5:06 PM",Edward Holmes,Re: Paper,2020-02-16 1806,quoted by Robert Garry,-6,-6,2020-02-16 18:06,,-9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3
+151,95,16 Feb 2020 23:12,Robert Garry,[NA],2020-02-16 1812,quoted by Andrew Rambaut,0,0,2020-02-16 18:12,,-3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-3 -2 -1 0 1 2 3 4 5 6 7 8 9
+152,95,17 Feb 2020 11:16 am,Andrew Rambaut,[NA],2020-02-16 1916,quoted by Edward Holmes,11,11,2020-02-16 19:16,,9 10 11 12 13 14,9 10 11 12 13 14
+153,95,"Feb 16, 2020 4:35 PM",Edward Holmes,[NA],2020-02-16 1935,quoted by Kristian,-8,,,,-10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2
+154,95,17 Feb 2020 1:41 pm,Kristian,[NA],2020-02-16 2141,quoted by Edward Holmes,11,11,2020-02-16 21:41,,11 12 13 14,11 12 13 14
+155,94,"Feb 16, 2020 6:48 PM",Edward Holmes,[NA],2020-02-16 2148,quoted by Kristian G. Andersen,-8,-8,2020-02-16 21:48,,-8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5
+156,94,17 Feb 2020 1:53 pm,Kristian G. Andersen,[NA],2020-02-16 2153,quoted by Edward Holmes,11,11,2020-02-16 21:53,,11 12 13 14,11 12 13 14
+157,94,2/16/2020 6:59:20 PM,Edward Holmes,Re: Paper,2020-02-16 2159,mailbox REV,-8,-8,2020-02-16 21:59,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5
+158,142-143,"Sunday, February 16, 2020 9:45 PM",Kristian G. Andersen,Re: Furin...,2020-02-17 0045,quoted by Michael Farzan,-8,-8,2020-02-17 00:45,,no bracket,no bracket
+160,106-115,17 Feb 2020 8:39 pm,Robert Garry,[NA],2020-02-17 0439,quoted by Edward Holmes,11,11,2020-02-17 04:39,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12
+161,111-112,"Feb 17, 2020 4:41 AM",Andrew Rambaut,[NA],2020-02-17 0441,mailbox LIP,-5,-5,2020-02-17 04:41,,no bracket,no bracket
+162,105-114,17 Feb 2020 8:47 pm,Robert Garry,[NA],2020-02-17 0447,quoted by Edward Holmes,11,11,2020-02-17 04:47,,no bracket,6 7 8 9 10 11 12 13 14
+163,104-113,17 Feb 2020 10:20,Robert Garry,[NA],2020-02-17 0520,quoted by Andrew Rambaut,0,0,2020-02-17 05:20,,no bracket,-7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+164,102-111,"Feb 17, 2020 4:51 AM",Andrew Rambaut,[NA],2020-02-17 0551,quoted by Robert Garry,-6,-6,2020-02-17 05:51,,no bracket,no bracket
+165,104-113,"Monday, February 17, 2020 9:49 AM",Edward Holmes,Re: Connections COVID-19,2020-02-17 0949,mailbox LIP,-5,-5,2020-02-17 09:49,,no bracket,-5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+166,102,"Feb 17, 2020 10:28 AM",Jeremy,[NA],2020-02-17 1028,quoted by Lipkin,-5,-5,2020-02-17 10:28,,no bracket,no bracket
+168,105-114,"Monday, February 17, 2020 9:45 AM",Edward Holmes,Re: Connections COVID-19,2020-02-17 1045,mailbox,-6,,,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1
+169,104-113,"Monday, February 17, 2020 10:02 AM",Robert Garry,Re: Connections COVID-19,2020-02-17 1102,mailbox,-6,,,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1
+170,104-112,"Monday, February 17, 2020 10:23 AM",Andrew Rambaut,Re: Connections COVID-19,2020-02-17 1123,quoted by Robert Garry,-6,-6,2020-02-17 11:23,,no bracket,-7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+171,108,"Monday, February 17, 2020 at 11:35 AM",,Re: Connections COVID-19,2020-02-17 1135,mailbox LIP,-5,-5,2020-02-17 11:35,,no bracket,-6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+172,110,"Feb 17, 2020 8:47 AM",Jeremy Farrar,[NA],2020-02-17 1147,quoted by Kristian G. Andersen,-8,-8,2020-02-17 11:47,,no bracket,no bracket
+173,109,"Feb 17, 2020 9:02 AM",Jeremy Farrar,[NA],2020-02-17 1202,quoted by Kristian G. Andersen,-8,-8,2020-02-17 12:02,,no bracket,no bracket
+174,102-111,17 Feb 2020 12:09,Robert Garry,[NA],2020-02-17 1209,quoted by Jeremy Farrar,-5,0,2020-02-17 07:09,,no bracket,no bracket
+175,142,"Feb 17, 2020 9:17 AM",Michael Farzan,[NA],2020-02-17 1217,quoted by Kristian G. Andersen,-8,-8,2020-02-17 12:17,,no bracket,no bracket
+176,109,"Feb 17, 2020 9:22 AM",Jeremy Farrar,[NA],2020-02-17 1222,quoted by Kristian G. Andersen,-8,-8,2020-02-17 12:22,,no bracket,no bracket
+177,142,"Feb 17, 2020 9:26 AM",Kristian G. Andersen,[NA],2020-02-17 1226,quoted by Kristian G. Andersen,-8,-8,2020-02-17 12:26,,no bracket,no bracket
+179,110,17 Feb 2020 15:28,Jeremy Farrar,[NA],2020-02-17 1528,quoted by ?,-5,,,,no bracket,no bracket
+180,102,17 Feb 2020 16:41,Lipkin,[NA],2020-02-17 1641,mailbox LIP,-5,-5,2020-02-17 16:41,,no bracket,no bracket
+181,103-111,17 Feb 2020 9:44 pm,Robert Garry,[NA],2020-02-17 1644,mailbox,0,,,,no bracket,no bracket
+182,110,17 Feb 2020 16:52,Kristian G. Andersen,[NA],2020-02-17 1652,quoted by ?,-5,,,,no bracket,no bracket
+183,110,"Monday, 17 February 2020 at 17:08",,Re: Connections COVID-19,2020-02-17 1708,mailbox LIP,-5,-5,2020-02-17 17:08,,no bracket,no bracket
+184,109-110,"Monday, 17 February 2020 at 17:56",,Re: Connections COVID-19,2020-02-17 1756,mailbox LIP,-5,-5,2020-02-17 17:56,,no bracket,no bracket
+185,109,"Monday, 17 February 2020 at 18:11",Kristian G. Andersen,Re: Connections COVID-19,2020-02-17 1811,mailbox LIP,-5,-5,2020-02-17 18:11,,no bracket,no bracket
+186,108-109,"Monday, 17 February 2020 at 18:30",Kristian G. Andersen,Re: Connections COVID-19,2020-02-17 1830,mailbox LIP,-5,-5,2020-02-17 18:30,,no bracket,no bracket
+187,108,"Monday, 17 February 2020 at 18:32",,Re: Connections COVID-19,2020-02-17 1832,mailbox LIP,-5,-5,2020-02-17 18:32,,no bracket,no bracket
+188,141-142,"Wednesday, February 19, 2020 1:21 PM",Coleman,RE: COVID-19 preprint of interest,2020-02-19 1621,mailbox REV,-8,-8,2020-02-19 16:21,,no bracket,-10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+189,140-141,"Wednesday, February 19, 2020 3:30 PM","Shabman, Reed",RE: COVID-19 preprint of interest,2020-02-19 1830,mailbox REV,-8,-8,2020-02-19 18:30,,no bracket,-12 -11 -10 -9 -8 -7 -6
+190,118-122,"Feb 20, 2020 8:52 AM",(iS,[NA],2020-02-20 1152,quoted by Kristian G. Andersen,-8,-8,2020-02-20 11:52,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+191,118-133,"Feb 20, 2020 9:54 AM",Clare Thomas,[NA],2020-02-20 1254,quoted by Kristian G. Andersen,-8,-8,2020-02-20 12:54,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+192,118-127,"Feb 20, 2020 9:56 AM",Kristian G. Andersen,[NA],2020-02-20 1256,quoted by Kristian G. Andersen,-8,-8,2020-02-20 12:56,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+193,118,20 February 2020 17:48,Kristian G. Andersen,Re: Decision on Nature submission 2020-0,2020-02-20 2048,mailbox REV,-8,-8,2020-02-20 20:48,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+195,138-140,"Feb 27, 2020 7:34 PM",Kristian G. Andersen,[NA],2020-02-27 2234,mailbox REV,-8,-8,2020-02-27 22:34,,no bracket,no bracket
+196,137-138,"Feb 27, 2020 9:17 PM",Kristian G. Andersen,[NA],2020-02-28 0017,quoted by Kristian,-8,,,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+197,137,"Saturday, February 29, 2020 7:22 PM",Kristian,"Re: Interest in ""Proximal Origins of hCo",2020-02-29 2222,quoted by Joao,-8,,,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+198,136-137,"Mar 3, 2020 11:02 AM",Joao,[NA],2020-03-03 1402,quoted by Kristian G. Andersen,-8,-8,2020-03-03 14:02,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+199,136,"Mar 3, 2020 5:27 PM",Kristian G. Andersen,[NA],2020-03-03 2027,quoted by Kristian G. Andersen,-8,-8,2020-03-03 20:27,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+200,135,4 Mar 2020 4:33 pm,Kristian G. Andersen,[NA],2020-03-04 0033,quoted by Edward Holmes,11,11,2020-03-04 00:33,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+201,134,4 Mar 2020 6:59 pm,Kristian G. Andersen,[NA],2020-03-04 0259,quoted by Edward Holmes,11,11,2020-03-04 02:59,,no bracket,no bracket
+202,133,4 Mar 2020 7:02 pm,Kristian G. Andersen,[NA],2020-03-04 0302,quoted by Edward Holmes,11,11,2020-03-04 03:02,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+203,125,"Mar 4, 2020 11:45 PM",Clare Thomas,[NA],2020-03-04 0745,quoted by Edward Holmes,11,11,2020-03-04 07:45,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+204,135-136,"Mar 4, 2020 3:32 PM",Kristian G. Andersen,[NA],2020-03-04 1832,mailbox,-8,,,,no bracket,no bracket
+205,136,"Wednesday, March 04, 2020 5:56 PM",Kristian G. Andersen,"Re: Interest in ""Proximal Origins of hCo",2020-03-04 2056,mailbox,-8,,,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+206,134,"Mar 4, 2020 6:57 PM",Joao,[NA],2020-03-04 2157,mailbox,-8,,,,no bracket,no bracket
+207,133-134,"Mar 4, 2020 7:01 PM",Edward Holmes,[NA],2020-03-04 2201,mailbox,-8,,,,no bracket,no bracket
+208,133,"Mar 4, 2020 7:04 PM",Edward Holmes,[NA],2020-03-04 2204,quoted by Kristian G. Andersen,-8,-8,2020-03-04 22:04,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+209,134,"Mar 4, 2020 9:54 PM",Edward Holmes,[NA],2020-03-05 0054,mailbox REV,-8,-8,2020-03-05 00:54,,no bracket,no bracket
+210,117,3/4/2020 11:44:43 PM,Clare Thomas,RE: Decision on Nature submission 2020-0,2020-03-05 0244,mailbox REV,-8,-8,2020-03-05 02:44,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+211,117-127,05 March 2020 02:06,Kristian G. Andersen,Re: Decision on Nature submission 2020-0,2020-03-05 0506,mailbox REV,-8,-8,2020-03-05 05:06,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+212,125-126,05 March 2020 07:45,Clare Thomas,RE: Decision on Nature submission 2020-0,2020-03-05 1045,mailbox REV,-8,-8,2020-03-05 10:45,,no bracket,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3
+213,133,3/5/2020 10:17:45 AM,Joao,"RE: Interest in ""Proximal Origins of hCo",2020-03-05 1317,mailbox REV,-8,-8,2020-03-05 13:17,,no bracket,no bracket
+214,133,"Thursday, March 05, 2020 12:29 PM",Kristian G. Andersen,"Re: Interest in ""Proximal Origins of hCo",2020-03-05 1529,mailbox REV,-8,-8,2020-03-05 15:29,,no bracket,no bracket
+215,122-125,3/5/2020 1:03:48 PM,medicine@us.nature.com,Decision on Nature Medicine submission N,2020-03-05 1603,mailbox REV,-8,-8,2020-03-05 16:03,,no bracket,no bracket
+216,125,3/5/2020 5:24:59 PM,Edward Holmes,Re: Decision on Nature submission 2020-0,2020-03-05 2024,mailbox REV,-8,-8,2020-03-05 20:24,,no bracket,no bracket
+217,140,"Tuesday, March 17, 2020 at 1:15 PM","""Coleman, Amanda (NIH/NIAID) [C",RE: COVID-19 preprint of interest - now ,2020-03-17 1615,mailbox REV,-7,-7,2020-03-17 16:15,,no bracket,-8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+218,140,3/17/2020 1:21:41 PM,Chris,FW: COVID-19 preprint of interest - now ,2020-03-17 1621,mailbox,-7,,,,no bracket,-8 -7
+219,140,"Tuesday, March 17, 2020 3:01 PM","Shabman, Reed",RE: COVID-19 preprint of interest - now ,2020-03-17 1801,mailbox REV,-7,-7,2020-03-17 18:01,,no bracket,-12 -11 -10 -9 -8 -7 -6
+220,142,3/31/2020 8:59:49 PM,Kristian G. Andersen,Re: Furin...,2020-03-31 2359,mailbox,-7,,,,no bracket,no bracket
+221,160-163,"Jul 25, 2020 7:22 AM",ofu,[NA],2020-07-25 1022,quoted by ?,-7,,,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+222,160,"Mon, Jul 27, 2020 at 3:02 PM",,Re: The authors who wrote the paper sayi,2020-07-27 1802,quoted by Kristian G. Andersen,-7,-7,2020-07-27 18:02,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+223,152,"Jul 27, 2020 7:47 PM",Edward Holmes,[NA],2020-07-27 2247,quoted by Kristian G. Andersen,-7,-7,2020-07-27 22:47,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+224,152,28 Jul 2020 12:54 pm,Kristian G. Andersen,[NA],2020-07-27 2254,quoted by Edward Holmes,10,10,2020-07-27 22:54,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+225,151-152,28 Jul 2020 03:58,Edward Holmes,[NA],2020-07-27 2258,quoted by Andrew Rambaut,1,1,2020-07-27 22:58,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+226,157,7/28/2020 12:36:51 AM,Jeremy Farrar,Re: The authors who wrote the paper sayi,2020-07-28 0336,mailbox REV,-7,-7,2020-07-28 03:36,,no bracket,no bracket
+227,151,28 Jul 2020 6:21 pm,Andrew Rambaut,[NA],2020-07-28 0421,quoted by Edward Holmes,10,10,2020-07-28 04:21,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+228,159-160,28 Jul 2020 02:07,Kristian G. Andersen,[NA],2020-07-28 0507,quoted by Jeremy Farrar,-7,1,2020-07-27 21:07,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+229,149-151,7/28/2020 4:23:46 AM,Edward Holmes,[NA],2020-07-28 0523,mailbox GARRY,-5,-5,2020-07-28 05:23,,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14,-12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+230,157-159,"Tuesday, 28 July 2020 at 08:30",,Re: The authors who wrote the paper sayi,2020-07-28 1130,mailbox REV,-7,-7,2020-07-28 11:30,,no bracket,no bracket
+231,159,28 Jul 2020 4:54 pm,Jeremy Farrar,[NA],2020-07-28 1954,mailbox REV,-7,-7,2020-07-28 19:54,,no bracket,no bracket
