@@ -4191,10 +4191,10 @@
    "verified_override": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. farrar-fauci-comms.pdf p.80 prints 'Sent: Tuesday, February 4, 2020 6:08 AM' (From line redacted) for Farrar's reply, quoted in Collins's 6:12 AM reply, so frozen on Collins's Eastern clock. Fits: Collins's earlier message quoted by Farrar as '4 Feb 2020, at 10:58' (London) = 5:58 ET."
   },
   {
-   "date": null,
-   "time": null,
+   "date": "2020-01-28",
+   "time": "0709",
    "kind": "email",
-   "raw_date": "TIME SENSITIVE Message from GPMB Co-Chairs: review of draft GPMB Statement on 2019-",
+   "raw_date": "07:09 ET · TIME SENSITIVE Message from GPMB Co-Chairs: review of draft GPMB Statement on 2019-",
    "sender": "GPMB",
    "sender_raw": "GPMB Secretariat! yyy woe",
    "sender_how": "From: line",
@@ -4202,12 +4202,16 @@
    "content": "From: GPMB\n\nTo: As Sy Elhadj OG brundtland Gro Harlem PWG dzau Victor (NNN; Chris.cias [NNO Farrar Jeremy\n\nCc: MAHJOUR, Jaouad EG; MINHAS, Raman POG; Toomas Palu\n\nSubject: TIME SENSITIVE Message from GPMB Co-Chairs: review of draft GPMB Statement on 2019-\n\nSent: martes, 28 de enero de 2020 9:09\n\n----------\n\nnovel coronavirus\nImportance: High\nDear Board members,\nThank you to all who participated in yesterday’s teleconference call regarding the novel 2019 Coronavirus outbreak.\nWe received excellent updates from WHO and from Professor Gao.\nThere was consensus for the GPMB to issue a statement supportive of countries’ (espetiaity China) and\nWHO response efforts, and to call for urgent actions to further strengthen global preparedness and response to this outbreak.\nPlease find attached a draft GPMB Statement.\nWe ask that you please send us any feedback (preferably in track change mode) no later than 1700\nWednesday 29 January, Geneva time\nThank you very much.",
    "date_note": "no usable timestamp in the release; not plotted",
    "source": "farrar-fauci",
-   "stamp_status": "unparsed",
+   "stamp_status": "long",
    "recovered_inline": false,
    "thread_key": "farrar-fauci|undated|TIME SENSITIVE Message from GPMB Co-Chai",
    "thread_label": "undated  · GPMB",
    "replied_by": [],
-   "idx": 153
+   "idx": 153,
+   "stamp": "Tuesday, January 28, 2020 9:09 AM",
+   "zone_assumed": "verified from the page image: Reviewer (Gilles Demaneuf), 2026-10-31: Jeanette Vega Morales is based in Santiago de Chile. farrar-fauci-comms.pdf p.169 prints 'From: GPMB",
+   "stamp_line": "Tuesday, January 28, 2020 9:09 AM -> 07:09 ET (verified override)",
+   "verified_override": "Reviewer (Gilles Demaneuf), 2026-10-31: Jeanette Vega Morales is based in Santiago de Chile. farrar-fauci-comms.pdf p.169 prints 'From: GPMB Secretariat / Sent: martes, 28 de enero de 2020 9:09' (Spanish client) inside her 'Dear Gro and As' reply, so it is frozen on her clock: Chile summer time, UTC-3 (13:09 Geneva, after the 27 Jan teleconference the message thanks people for)."
   }
  ]
 }

@@ -1,23 +1,39 @@
 # For the human reviewer: everything you need to do
 
 This is the only file with instructions for you. The evidence is in `ZONE_AND_DATE_ANALYSIS.md`.
+Status as of 2026-10-31. Everything below has been re-read after the last rebuild.
 
-**How to answer:** reply in chat with the item code and your answer, for example “U1: accept Chicago”,
-“U3: both match”, “A1: apply”, “P1: change all”. Any order; skip what you like. Nothing changes until you answer.
+**How to answer:** reply in chat with the item code and your answer, for example “U5: keep London”,
+“A1: apply”, “A3: rows 3 and 7”. Any order; skip what you like. Nothing changes until you answer.
 
 **How entries are named.** Never by number. Each is: PDF file and pages (PDF page numbers), the date and time
 exactly as printed in its header, the sender, and the subject. Slack messages: PDF page, printed time, sender,
 first words.
 
-The items are in four parts, matching the analysis file:
+# REMAINING ISSUES AT A GLANCE
 
-| Part | What | Items |
-|---|---|---|
-| 1 | Settled datetimes | S1 to S4: nothing for you to do |
-| 2 | Unsettled datetimes | U1, U2 and U4 (one email left): your decisions (U3 is now done in the code) |
-| 3 | Issues in your P.O. piece | P1 to P4, in `TRAGICOMEDY_ISSUES.md` (private, git-ignored) |
-| 4 | Issues in the web app | A1 to A8: what I should fix |
-| 5 | Housekeeping | H1 to H3 |
+Every open item is in this table. Nothing else in this file needs an answer.
+
+| Code | What is open | What I need from you | If you say nothing |
+|---|---|---|---|
+| **U1** | Garry's mailbox: Central (Chicago) is used and supported (Tulane, New Orleans), not proven | Optional: one exact copy with an explicit offset on a GARRY page | Stays “Supported”; no time changes |
+| **U2** | 14 emails whose zone comes from the sender's institution only (Beijing 1, Chicago 1, London 7, Los Angeles 2, Paris 1, Sydney 2) | “accept” (all or named groups), or one exact copy per group | Stay “Not settled”; times as now |
+| **U5** | Marja Esveld, `farrar-fauci-comms.pdf` p.43, “06 March 2020 10:34”: London or Amsterdam clock? (up to 1 hour) | “keep London” or “Amsterdam” | London stays |
+| **U6** | Three reply pairs that my separate check flags as backwards (`po-emails.pdf` pp.22-29, p.28, pp.57-65); the app's own data has none | Read the headers and tell me whether the second message answers the first | Times unchanged |
+| **A1** | Folkers' 8:43 PM shows 23:43 ET; should be 20:43 ET | “apply” or “no” | Stays wrong (23:43) |
+| **A3** | 12 Slack Part 1 messages that look to be on the wrong day (and 68 misread times) | Rows from `slack_part1_time_check.csv` to fix, or “skip” | Stay as printed |
+| **A5** | Chapter link for section 4.11 (p.112 “3:59 pm EST” to Fauci p.137, 15:50): same message? | “same” or “different” | Link stays |
+| **A6** | Farrar's “Phone call” (`po-emails.pdf` pp.3-4) has no body text | “re-run OCR”, “I will type it”, or “leave it” | Stays empty |
+| **A7** | The 22:34 Fauci message: sender label and what it replies to | Correct label and parent, or “leave” | Stays as is |
+| **A8** | Quoted message later than its quoter, across the two releases: not yet run | “run it” | Not run |
+| **A9** | 8 old bookmark keys now name a different message and cannot be re-mapped | Nothing, unless you or others bookmarked them (list in A9) | Those bookmarks point at the wrong message |
+| **P1-P4** | Issues in your P.O. piece (`TRAGICOMEDY_ISSUES.md`, private). Times have moved since I last checked them | “re-check them” | Not re-checked |
+| **H2** | Keep `analysis/` in the public repository? | “ignore the folder” or “fine as it is” | Stays public |
+| **H3** | My edits to your `README.md` and `STATUS.md` | “fine” or what to put back | Stays |
+| **H4** | `PO_Slack.code-workspace` is untracked | “commit”, “ignore” or “delete” | Left alone |
+
+**Done since the last version of this file** (nothing to answer): the quote/forward rule is in the code (U3); all
+eight undated emails are dated (U4, last one answered 2026-10-31); both repositories are pushed (H1).
 
 ## Do you need to open any CSV or log?
 
@@ -25,8 +41,9 @@ The items are in four parts, matching the analysis file:
 
 | File | Use it? | For |
 |---|---|---|
-| `zone_format_audit.csv` | Optional, not needed now | One row per email, with the rule and status. Filter `rule` = “4. Page owner GARRY” to see the Garry-page entries (now Supported) |
+| `zone_format_audit.csv` | Optional | One row per email, with the rule and status. Filter `rule` = “4. Page owner GARRY” for the Garry pages |
 | `slack_part1_time_check.csv` | Optional, for A3 only | The 80 places where Slack Part 1 times run backwards; the 12 `late_to_early` rows are the useful ones |
+| `freeze_bracket_check.csv` | Optional, for U6 | Clock and bracketing test per email |
 | `reply_order_check.csv`, `owner_zone_check.csv` | No | My test output. Nothing to check |
 | `zone_rule_dedupe.log` | Only if an email looks missing | Which copies I removed as duplicates |
 | `chapter_links_report.txt`, `bookmark_rekey_report.txt` | No | Link and bookmark housekeeping |
@@ -64,19 +81,18 @@ The app shows Part 1 as printed, labelled ET. Details: analysis 1.4.
 
 # Part 2. Unsettled datetimes: your decisions
 
-### U1. GARRY pages (11 top-level emails; the quoted ones now follow the quote rule): Chicago or Eastern? — mostly answered
-- **Answer received:** Garry works at Tulane University School of Medicine, New Orleans, so his mailbox is on
-  Central time. The app already uses Chicago (Central), so no time changes. The 40 emails move from
-  “Not settled” to “Supported”.
+### U1. GARRY pages (11 top-level emails; the quoted ones follow the quote rule): Chicago or Eastern?
+- **Answer received:** Garry works at Tulane University School of Medicine, New Orleans: Central time. The app
+  uses Chicago (Central), so no time changes. These emails are “Supported”.
 - **Still open (optional):** no exact copy with an explicit offset proves it, and a trip away from Central
-  would not show. If you find one on a GARRY page, send both page references.
-- **CSV:** no.
+  would not show. The 10 Feb chain (pp.65-67) favours Chicago (16:51 ET under Chicago; 15:51 under Eastern would
+  be before the message it answers) but Garry's link to it is only inferred.
+- **Send me (optional):** page references of an exact copy on a GARRY page.
 
 ### U2. Small sender groups (14 emails): accept the sender rule?
 - **Problem:** each email's zone comes from the sender's institution. Each group has too few linked replies to
-  test. The Sydney group (Holmes) is the most doubtful.
+  test. The Sydney group (Holmes) is the most doubtful. The Esveld email in the London table is also U5.
 - **Send me:** “accept” for all or for named groups, or one exact copy with an explicit offset per group.
-- **CSV:** no.
 
 **Beijing** (1)
 
@@ -122,52 +138,61 @@ The app shows Part 1 as printed, labelled ET. Details: analysis 1.4.
 | `farrar-fauci-comms.pdf` pp.76-103 | Tuesday, 4 February 2020 at 06:33 | Edward Holmes | Re: Prevalence of infection and stage of the epidemic in Wuhan |
 | `farrar-fauci-comms.pdf` p.58 | Saturday, 8 February 2020 at 20:11 | Edward Holmes | Re: [ext] 2019 N-CoV |
 
-### U3. The quote/forward rule is now in the code: nothing for you to answer
-- The 152 quoted blocks (143 P.O. emails, 9 Farrar-Fauci) now take the clock of the quoting message's author.
-  The two copies that used to be listed here (`farrar-fauci-comms.pdf` p.157, “Jan 30, 2020 7:13 AM”,
-  Jeremy Farrar, “[NA]” and p.10, “May 12, 2020 12:57 PM”, Jeremy Farrar, “[NA]”) are among them.
-- **If you want to check:** filter `rule` = “2. Quoted block” in `zone_format_audit.csv`.
+### U5. Marja Esveld, `farrar-fauci-comms.pdf` p.43, “06 March 2020 10:34”, RE: URGENT - GPMB COVID-19 FUNDING NOTE
+- **What the data does now:** the parser files Esveld with Alex Harris under “Wellcome Trust / UK” and reads her
+  10:34 as London time (05:34 ET). That label is wrong for her: she writes from the Dutch Ministry of Foreign
+  Affairs (the `minbuza.nl` addresses on p.43-44), not from Wellcome.
+- **Why London may still be right:** this reply is a top-level message, so its stamp is on the clock of the
+  mailbox that shows it, not on her clock. The stamp is English-format (“06 March 2020 10:34”), whereas her own
+  earlier message, quoted below it, prints in Dutch (`vrijdag 6 maart 2020 09:23`, now read as Amsterdam, U4).
+  So the 10:34 comes from an English-language client, not hers, and the Wellcome mailbox is in London.
+- **Why I cannot prove it:** London gives 10:34 UTC, Amsterdam 09:34 UTC. Both fit the thread: her 09:23
+  Amsterdam message is 08:23 UTC; Alex Harris answers at 11:56 (p.42, German-language client); Farrar replies at
+  14:33:45 +0000 (explicit). Reply order cannot choose.
+- **My earlier remark** that the 10:34 was probably one hour out assumed it was on her own clock. For a top-level
+  message that is not what the freeze rule says, so I withdraw it.
+- **Send me:** “keep London” (then I only relabel the reason as “mailbox clock”) or “Amsterdam” (the entry moves
+  one hour earlier, to 04:34 ET).
 
-### U4. One email still undated (GPMB); the other seven are read
-- **Done 2026-10-30 (your reading, plus a 400 dpi OCR pass of the headers):**
+### U6. Three reply pairs that my separate check flags (pipeline itself: none backwards)
+- The app's own data has no reply before its parent. My separate check (`freeze_bracket_check.py`), which reads
+  each stamp on the home clock of whoever quotes it, flags three pairs where the second message comes out earlier
+  than the first:
+  1. `po-emails.pdf` pp.22-29: Garry “5 Feb 2020 1:03 pm”, then Holmes “2/5/2020 1:23:41 AM” (explicit link).
+  2. `po-emails.pdf` p.28 and pp.28-45: Holmes “5 Feb 2020 9:04 pm”, then Holmes “2/5/2020 4:22:24 AM” (explicit link).
+  3. `po-emails.pdf` pp.57-65 and 55-57: Farrar “08 February 2020 09:45”, then Fouchier “2/8/2020 11:36:30 AM”
+     (inferred link only).
+- **Why it matters:** in each pair one stamp is on a clock I have wrong, or the reply link is wrong. If the
+  check's clock is the wrong one, the app is right and nothing changes.
+- **Send me:** for each pair, whether the “From/Sent/To” headers show that the second message really answers the
+  first, and the stamps as you read them, or “skip”.
+
+### U3 and U4: done
+- **U3.** The 152 quoted blocks (143 P.O. emails, 9 Farrar-Fauci) take the clock of the quoting message's author.
+  Check with `rule` = “2. Quoted block” in `zone_format_audit.csv`.
+- **U4.** The eight undated emails are read from the page images (400 dpi OCR pass plus your reading). Each is a verified
+  override with its evidence in `tools/verified_overrides.json`. They show as Settled because the page fixes the
+  printed time; the zone of the Dutch, German, Spanish and Andersen ones follows the freeze rule (and, for
+  Andersen p.78, equality with the p.80 copy).
 
 | Where | Header as printed | Now (ET) | Clock used |
 |---|---|---|---|
 | `po-emails.pdf` pp.17-18, Pope | Sent: Tuesday, February 4, 2020 9:11 AM | 4 Feb 09:11 | Eastern (copy on p.19: 9:10:35 AM UTC-05:00) |
-| `po-emails.pdf` p.78, Andersen | Sent: 12 February 2020 23:09 (the old OCR cut it at “23:”) | 13 Feb 02:09 | Pacific, because the p.80 copy of the same message prints the same text; assumed, not proven |
-| `farrar-fauci-comms.pdf` pp.43-44, Esveld | Sent: vrijdag 6 maart 2020 09:23 | 6 Mar 03:23 | Amsterdam (Dutch client, her own earlier message quoted in her reply) |
+| `po-emails.pdf` p.78, Andersen | Sent: 12 February 2020 23:09 | 13 Feb 02:09 | Pacific (same text as the p.80 copy); assumed |
+| `farrar-fauci-comms.pdf` pp.43-44, Esveld | Sent: vrijdag 6 maart 2020 09:23 | 6 Mar 03:23 | Amsterdam (Dutch client) |
 | `farrar-fauci-comms.pdf` p.44, Harris | Sent: donderdag 5 maart 2020 15:29 | 5 Mar 09:29 | Amsterdam (quoted in Esveld's Dutch client) |
-| `farrar-fauci-comms.pdf` p.57, Farrar | Datum: Samstag, 8. Februar 2020 um 21:21 | 8 Feb 15:21 | Berlin (German client of Drosten, who quotes it); 20:21 UTC is after Drosten's reply (19:52 UTC) |
-| `farrar-fauci-comms.pdf` p.59, Farrar | Datum: Samstag, 8. Februar 2020 um 10:45 | 8 Feb 04:45 | Berlin (same) |
-| `farrar-fauci-comms.pdf` p.80, Farrar | Sent: Tuesday, February 4, 2020 6:08 AM | 4 Feb 06:08 | Eastern (quoted in Collins's 6:12 AM reply); Farrar's “10:58” quote of Collins = 05:58 ET fits |
-
-Each is a verified override with its evidence in `tools/verified_overrides.json`. They show as Settled because the
-page fixes the printed time; the zone of the Dutch, German and Esveld/Andersen ones follows the freeze rule
-(or, for Andersen p.78, equality with the p.80 copy), so check them if you doubt the client.
-
-**Still unsolved (1):**
-
-| Where | Header as printed | Question |
-|---|---|---|
-| `farrar-fauci-comms.pdf` pp.169-172, GPMB Secretariat, “TIME SENSITIVE Message from GPMB Co-Chairs…” | Sent: martes, 28 de enero de 2020 9:09 (Spanish client, quoted in Jeanette Vega Morales's “Dear Gro and As” reply) | The date and time are readable; the zone is not. By the freeze rule it is on Vega Morales's clock. Chile (UTC-3 in January) would give 28 Jan 07:09 ET; Spain (UTC+1) 03:09 ET. **Which is she using?** Until you say, it stays undated. |
-
-- **CSV:** `zone_format_audit.csv` (rule “1c. Verified from the page image”).
-
----|---|---|---|
-| `po-emails.pdf` pp.78-80 | (no date or time printed or recovered) | (unknown sender) | Interest in commentary/hypothesis on SARS-CoV-2 origins? |
-| `farrar-fauci-comms.pdf` pp.43-44 | (no date or time printed or recovered) | Marja Esveld | RE: URGENT - GPMB COVID-19 FUNDING NOTE |
-| `farrar-fauci-comms.pdf` pp.44-47 | (no date or time printed or recovered) | Alex Harris | URGENT - GPMB COVID-19 FUNDING NOTE |
-| `farrar-fauci-comms.pdf` p.57 | (no date or time printed or recovered) | Jeremy Farrar | Re: [ext] 2019 N-CoV |
-| `farrar-fauci-comms.pdf` pp.59-60 | (no date or time printed or recovered) | Jeremy Farrar | [ext] FW: 2019 N-CoV |
-| `farrar-fauci-comms.pdf` p.80 | (no date or time printed or recovered) | Jeremy Farrar | Re: Prevalence of infection and stage of the epidemic in Wuhan |
-| `farrar-fauci-comms.pdf` pp.169-172 | (no date or time printed or recovered) | GPMB | TIME SENSITIVE Message from GPMB Co-Chairs: review of draft GPMB… |
+| `farrar-fauci-comms.pdf` p.57, Farrar | Datum: Samstag, 8. Februar 2020 um 21:21 | 8 Feb 15:21 | Berlin (Drosten's German client) |
+| `farrar-fauci-comms.pdf` p.59, Farrar | Datum: Samstag, 8. Februar 2020 um 10:45 | 8 Feb 04:45 | Berlin |
+| `farrar-fauci-comms.pdf` p.80, Farrar | Sent: Tuesday, February 4, 2020 6:08 AM | 4 Feb 06:08 | Eastern (quoted in Collins's reply) |
+| `farrar-fauci-comms.pdf` pp.169-172, GPMB Secretariat | Sent: martes, 28 de enero de 2020 9:09 | 28 Jan 07:09 | Santiago de Chile, UTC-3 (you confirmed Vega Morales is based there; the Spanish client is hers) |
 
 ---
 
 # Part 3. Issues in your P.O. piece
 
 These are in `TRAGICOMEDY_ISSUES.md` (items P1 to P4). That file is kept out of the repository
-(`.gitignore`), so it is not pushed. Nothing in the article has been changed.
+(`.gitignore`), so it is not pushed. Nothing in the article has been changed. **I have not re-checked them since
+the times moved** (for example the 31 Jan chain in P2).
 
 ---
 
@@ -216,16 +241,20 @@ These are in `TRAGICOMEDY_ISSUES.md` (items P1 to P4). That file is kept out of 
 - A1 was found by a rule not yet automated: a quoted message cannot be later than the message that quotes it,
   even when they sit in different releases. **Send me:** “run it across both releases” and I list every violation.
 
+### A9. Eight old bookmark keys cannot be re-mapped
+- 255 old bookmark keys are re-mapped to the current entries. These eight now name a *different* message, so a
+  re-map would be wrong: `po-emails|2020-01-31|1500`, `po-emails|2020-02-04|2008`, `po-emails|2020-02-05|1500|1`,
+  `po-emails|2020-02-05|1500|2`, `po-emails|2020-02-05|1500|3`, `po-emails|2020-02-16|1750`,
+  `po-emails|2020-02-16|1806`, `po-emails|2020-02-17|1641`.
+- **Send me:** nothing, unless you or someone you know bookmarked emails on these dates and times; then tell me which.
+
 ---
 
 # Part 5. Housekeeping
 
-### H1. Commit and push: when?
-- Everything is committed locally; nothing is pushed.
-  - `PO_Slack` (branch `po-sources-and-boxes`): the Slack-to-ET change is committed but not pushed. Pushing redeploys the P.O. site.
-  - `Edition_Toolkit` (branch `nested-header-split`): 1 commit ahead, with the shared parser changes and the
-    skill `foia-datetime-resolution`.
-- **Send me:** “push `PO_Slack`”, “push `Edition_Toolkit`”, “push both”, or “wait”.
+### H1. Pushed
+- `PO_Slack` (branch `po-sources-and-boxes`) and `Edition_Toolkit` (branch `nested-header-split`) are pushed. The
+  skill file `foia-datetime-resolution/freeze-rule-and-tricks.md` in `Edition_Toolkit` holds the freeze rule and the tricks.
 
 ### H2. Should `analysis/` stay out of the public repository?
 - The repository is public. `analysis/` is pushed, **except `TRAGICOMEDY_ISSUES.md`** (your piece's problems),
@@ -235,3 +264,6 @@ These are in `TRAGICOMEDY_ISSUES.md` (items P1 to P4). That file is kept out of 
 ### H3. Check my edits to your own files
 - `README.md`: six paths changed to the new layout. `STATUS.md`: one path changed (`tools/tests/test_browser.mjs`).
 - **Send me:** “fine”, or what to put back.
+
+### H4. `PO_Slack.code-workspace`
+- A VS Code workspace file that is not tracked. **Send me:** “commit”, “ignore” (add to `.gitignore`) or “delete”.

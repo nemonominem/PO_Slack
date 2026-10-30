@@ -1,6 +1,6 @@
 # Zone and date analysis: P.O. Record Search and the email releases
 
-Status as of 2026-10-29 (the quote/forward rule is now implemented; see 5.6 and 5.8). Internal; not published. This file is only about getting the dates and
+Status as of 2026-10-31 (the quote/forward rule is now implemented; see 5.6 and 5.8). Internal; not published. This file is only about getting the dates and
 times right and about what is wrong in the P.O. piece and the web app because of them. Every
 instruction and decision for you is in `FOR_HUMAN_REVIEWER.md`.
 
@@ -24,7 +24,7 @@ The file has five parts:
 
 ---
 
-# Part 1. Settled datetimes (115 emails, plus Slack Part 1 and Part 2)
+# Part 1. Settled datetimes (116 emails, plus Slack Part 1 and Part 2)
 
 Settled means: fixed by the stamp itself, by an exact copy, by the page image, or by a decision of yours
 backed by evidence. `zone_format_audit.csv` marks each email `Settled`.
@@ -33,7 +33,7 @@ backed by evidence. `zone_format_audit.csv` marks each email `Settled`.
 |---|---|---|---|
 | Zone written in the stamp (`+0000`, `UTC+11:00`, `AEDT`, `EST`) | 53 (45 Farrar-Fauci, 8 P.O. emails) | as written | The stamp |
 | Exact copy with an explicit offset | 1 | from the copy | `po-emails.pdf` pp.1-2, “Jan 31, 2020 4:38 PM”, Fauci, Anthony, “[NA]” equals the Farrar-Fauci copy `farrar-fauci-comms.pdf` p.154, “Sat, 1 Feb 2020 00:38:35 +0000”, Anthony Fauci, “RE: Phone call” |
-| Verified from the page image or the message text | 4 | Eastern or London, per entry | Listed below |
+| Verified from the page image or the message text | 12 | per entry (Eastern, London, Pacific, Amsterdam, Berlin, Santiago) | 4 corrections in 1.1; 8 headers that were undated, read from the page images (FOR_HUMAN_REVIEWER.md, U4) |
 | Page owner **REV**, top-level stamps only (P.O. emails) | 50 | Pacific | Section 1.2. The 95 other REV-page entries are quoted blocks, which now take the quoting author's clock (Supported) |
 
 ## 1.1 The four verified corrections
@@ -112,12 +112,11 @@ is simply too early; the Farrar message `farrar-fauci-comms.pdf` pp.154-155, “
 | Page owner **LIP**, top-level (P.O. emails) | 13 | Eastern |
 | Page owner **GARRY**, top-level (P.O. emails) | 11 | Chicago (Central): Garry works at Tulane University School of Medicine, New Orleans (Central time), per the reviewer, 2026-10-29. Reply order excludes Pacific. No exact copy proves it; a trip away from Central would not show. |
 
-## 2.2 Not settled (15 emails)
+## 2.2 Not settled (14 emails)
 
 | Zone source | Emails | Zone used | Why open |
 |---|---|---|---|
-| Sender, small groups (list in `FOR_HUMAN_REVIEWER.md`, item U2) | 14 | by sender | Too few linked replies to test (one to four each) |
-| No date or time in the data | 1 | none | Date and time readable; needs your answer on Vega Morales's clock (item U4) |
+| Sender, small groups (list in `FOR_HUMAN_REVIEWER.md`, item U2) | 14 | by sender | Too few linked replies to test (one to four each). One of them, Esveld p.43, is a separate question (item U5): London (mailbox clock) or Amsterdam |
 
 ---
 
@@ -164,7 +163,7 @@ be a different message.
 reply link (the old link, to Andersen, ran backwards and was dropped).
 
 ## A8. Undated and mis-grouped entries
-One email has no date or time (item U4, the GPMB Spanish-client message, pp.169-172; the other seven were read from the page images on 2026-10-30). The sender-institution groups were mislabelled by hand in an
+Every email now has a date and time (item U4: the eight undated ones were read from the page images on 2026-10-30/31). The sender-institution groups were mislabelled by hand in an
 earlier version of the review file; they are now generated from the audit file.
 
 ---
