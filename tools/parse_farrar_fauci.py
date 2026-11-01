@@ -51,18 +51,20 @@ ANALYSIS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "analy
 #   Scripps Research                -> Los Angeles (Andersen, Farzan)
 #   Tulane                          -> Chicago     (Garry)
 #   University of Sydney            -> Sydney      (Holmes)
-#   Pasteur Institute               -> Paris       (Fouchier)
+#   Erasmus MC, Netherlands         -> Amsterdam   (Fouchier, Koopmans)
 #   China CDC                       -> Beijing     (Gao)
 ZONE_BY_AFFILIATION = [
     (re.compile(r"wellcome|vallance|golding|ferguson|viner|rambaut|uk government|"
                 r"dphe|harris|esveld", re.I), "Europe/London", "Wellcome Trust / UK"),
+    (re.compile(r"farrar", re.I), "Europe/London", "Jeremy Farrar, Wellcome Trust (London)"),
     (re.compile(r"nih|niaid|nichd|nhlbi|\bod\b|fauci|collins|bianchi|gibbons|"
                 r"shabman|tabak|burke|marston|auchincloss", re.I),
      "America/New_York", "NIH, Bethesda"),
     (re.compile(r"scripps|andersen|farzan", re.I), "America/Los_Angeles", "Scripps Research"),
     (re.compile(r"tulane|garry", re.I), "America/Chicago", "Tulane University"),
     (re.compile(r"sydney|holmes", re.I), "Australia/Sydney", "University of Sydney"),
-    (re.compile(r"pasteur|fouchier|paris|institut", re.I), "Europe/Paris", "Institut Pasteur"),
+    (re.compile(r"koopmans|fouchier|erasmus|rotterdam", re.I), "Europe/Amsterdam", "Erasmus MC, Netherlands"),
+    (re.compile(r"pasteur|paris|institut", re.I), "Europe/Paris", "Institut Pasteur"),
     (re.compile(r"china cdc|\bgao\b|beijing", re.I), "Asia/Shanghai", "China CDC"),
     (re.compile(r"drosten|charit|berlin", re.I), "Europe/Berlin", "Charite, Berlin"),
 ]

@@ -17,7 +17,7 @@ Every open item is in this table. Nothing else in this file needs an answer.
 | Code | What is open | What I need from you | If you say nothing |
 |---|---|---|---|
 | **U1** | Garry's mailbox: Central (Chicago) is used and supported (Tulane, New Orleans), not proven | Optional: one exact copy with an explicit offset on a GARRY page | Stays “Supported”; no time changes |
-| **U2** | 13 emails, no quote rule possible (see the reason table in U2): 6 nothing quotes them, 5 only an inferred link, 2 quoted but my code lacks the quoter's clock (Farrar, Koopmans) | “accept”, “apply C” (the 2 where the code gap is), or an anchor | Stay “Not settled”; times as now |
+| **U2** | 14 emails where no quote rule is possible (see the reason table in U2): 7 nothing quotes them, 7 only an inferred link | “accept” (all or named), or an anchor | Stay “Not settled”; times as now |
 | **U5** | Marja Esveld, `farrar-fauci-comms.pdf` p.43, “06 March 2020 10:34”: London or Amsterdam clock? (up to 1 hour) | “keep London” or “Amsterdam” | London stays |
 | **U6** | Three reply pairs that my separate check flags as backwards (`po-emails.pdf` pp.22-29, p.28, pp.57-65); the app's own data has none | Read the headers and tell me whether the second message answers the first | Times unchanged |
 | **A1** | Folkers' 8:43 PM shows 23:43 ET; should be 20:43 ET | “apply” or “no” | Stays wrong (23:43) |
@@ -26,14 +26,14 @@ Every open item is in this table. Nothing else in this file needs an answer.
 | **A6** | Farrar's “Phone call” (`po-emails.pdf` pp.3-4) has no body text | “re-run OCR”, “I will type it”, or “leave it” | Stays empty |
 | **A7** | The 22:34 Fauci message: sender label and what it replies to | Correct label and parent, or “leave” | Stays as is |
 | **A8** | Quoted message later than its quoter, across the two releases: not yet run | “run it” | Not run |
-| **A9** | 8 old bookmark keys now name a different message and cannot be re-mapped | Nothing, unless you or others bookmarked them (list in A9) | Those bookmarks point at the wrong message |
+| **A9** | 9 old bookmark keys now name a different message and cannot be re-mapped | Nothing, unless you or others bookmarked them (list in A9) | Those bookmarks point at the wrong message |
 | **P1-P4** | Issues in your P.O. piece (`TRAGICOMEDY_ISSUES.md`, private). Times have moved since I last checked them | “re-check them” | Not re-checked |
 | **H2** | Keep `analysis/` in the public repository? | “ignore the folder” or “fine as it is” | Stays public |
 | **H3** | My edits to your `README.md` and `STATUS.md` | “fine” or what to put back | Stays |
 | **H4** | `PO_Slack.code-workspace` is untracked | “commit”, “ignore” or “delete” | Left alone |
 
 **Done and moved to Part 1** (nothing to answer): the quote/forward rule is in the code (S5); all eight undated emails are
-dated (S6); Gao and Dzau on 25 Apr are Eastern (S7); both repositories are pushed (H1).
+dated (S6); Gao and Dzau on 25 Apr are Eastern (S7); Farrar, Koopmans, Fouchier clocks applied (S8); both repositories are pushed (H1).
 
 ## Do you need to open any CSV or log?
 
@@ -53,7 +53,7 @@ dated (S6); Gao and Dzau on 25 Apr are Eastern (S7); both repositories are pushe
 **Standard time.** The web app shows every date and time in New York time (ET) first, followed by the local
 time as printed, for emails, Slack and everything else. ET stays the standard while local times are sorted out.
 
-# Part 1. Settled datetimes: nothing for you to do (S1 to S7)
+# Part 1. Settled datetimes: nothing for you to do (S1 to S8)
 
 ### S1. The Farrar 22:34 reply: done
 `po-emails.pdf` p.3, “Friday, 31 January 2020 at 22:34”, Fauci, Anthony, “RE: Phone call”. You answered on 2026-10-26 that Farrar's “Phone call” went out at 22:23 UK (“It is 10pm now UK”), that
@@ -110,6 +110,12 @@ zone of the session that made the capture, so Part 1 was captured in an Eastern 
   overrides. The freeze rule gives the same answer: Dzau quotes Gao (Dzau's clock) and Fauci's 26 Apr reply quotes Dzau (Fauci's clock; the
   parser had not recorded that link). This removed the Beijing group from U2.
 
+### S8. Farrar, Koopmans, Fouchier, Holmes: where they are (your facts, 2026-11-01)
+- Farrar is in London; Koopmans and Fouchier are in Rotterdam (Erasmus MC, Netherlands time); Holmes is in Sydney. The code now uses
+  these as the quoter's clock for the freeze rule. 15 times moved (8 P.O. emails, 7 Farrar-Fauci), mostly by 1 to 5 hours, one by 9 hours (Andersen,
+  `farrar-fauci-comms.pdf` p.56, 8 Feb 22:15, quoted by Koopmans: now 16:15 ET). Reply order still passes everywhere. These emails are Supported: the clock comes
+  from where the quoter lives, which is a fact you gave, but no stamp proves it.
+
 ---
 
 # Part 2. Unsettled datetimes: your decisions (only what is still open: U1, U2, U5, U6)
@@ -122,7 +128,7 @@ zone of the session that made the capture, so Part 1 was captured in an Eastern 
   be before the message it answers) but Garry's link to it is only inferred.
 - **Send me (optional):** page references of an exact copy on a GARRY page.
 
-### U2. Small sender groups (13 emails): why they are not settled, and what would settle them
+### U2. Small sender groups (14 emails): why they are not settled, and what would settle them
 
 **What the three statuses mean.**
 - **Settled:** something in the documents fixes the clock: a zone written in the stamp, an exact copy with an explicit offset, a calendar or
@@ -132,22 +138,26 @@ zone of the session that made the capture, so Part 1 was captured in an Eastern 
 - **Not settled:** not even that. The quote rule could not be used, so the zone is a guess from where the sender works, and there are too few
   linked replies to test it.
 
-**Why these 13 are in the third group.** They are not quoted blocks that the rule could place, for one of three reasons:
+**Why these 14 are in the third group.** The quote rule cannot place them, for one of two reasons:
 
 | Reason | Emails |
 |---|---|
-| **A. Nothing quotes it** (it is the last message of its thread, or the only one on its page): the quote rule cannot apply, as with a dangling last message | Andersen p.142; Holmes pp.76-103; Holmes p.58; Vallance pp.61-62; Harris pp.47-49; Viner p.5 |
-| **B. Only an inferred link** (“same conversation”) points at it, which does not prove a quote exists | Garry pp.137-138; Esveld p.43; Harris pp.42-43; Viner pp.7-13; Viner pp.6-7 |
-| **C. Quoted explicitly, but my code does not know the quoter's clock.** The quote rule applies in principle; the code has no zone for Farrar or Koopmans | Fouchier pp.110-113 (quoted by Farrar); Andersen p.56 (quoted by Koopmans) |
+| **A. Nothing quotes it** (it is the last message of its thread, or alone on its page): the quote rule cannot apply, as with a dangling last message | Andersen `po-emails.pdf` p.142; Koopmans p.122; Holmes pp.76-103; Holmes p.58; Vallance pp.61-62; Harris pp.47-49; Viner p.5 |
+| **B. Only an inferred link** (“same conversation”) points at it, which does not prove a quote exists | Garry pp.137-138; Koopmans p.116; Koopmans pp.55-56; Esveld p.43; Harris pp.42-43; Viner pp.7-13; Viner pp.6-7 |
 
-Group C is a gap in my code, not in the evidence: if Farrar is London and Koopmans is Rotterdam (Amsterdam time), the rule would move Fouchier
-by 1 hour and Andersen's 8 Feb 22:15 by about 9 hours. I have **not** applied it, because it changes times. Say “apply C” if you want it.
+(The earlier reason C, “quoted explicitly but the code does not know the quoter's clock”, is gone: you gave Farrar, Koopmans and Fouchier, see S8.)
 
-**The 13, with the header as printed**
+**The 14, with the header as printed**
 
 | Where | Header as printed | Sender | Subject | Reason |
 |---|---|---|---|---|
-| `farrar-fauci-comms.pdf` pp.137-138 | Saturday, February 1, 2020 10:49 AM | Robert Garry | Re: Teleconference | B (Chicago assumed) |
+| `po-emails.pdf` p.142 | 3/31/2020 8:59:49 PM | Kristian G. Andersen | Re: Furin... | A (Los Angeles) |
+| `farrar-fauci-comms.pdf` pp.137-138 | Saturday, February 1, 2020 10:49 AM | Robert Garry | Re: Teleconference | B (Chicago) |
+| `farrar-fauci-comms.pdf` p.116 | Saturday, 1 February 2020 at 19:43 | Marion Koopmans | Re: Teleconference | B (Rotterdam) |
+| `farrar-fauci-comms.pdf` p.122 | Saturday, 1 February 2020 at 19:43 | Marion Koopmans | Re: Teleconference Re the pangolin sequences | A (Rotterdam) |
+| `farrar-fauci-comms.pdf` pp.55-56 | Sunday, 9 February 2020 at 20:07 | Marion Koopmans | Re: [ext] 2019 N-CoV | B (Rotterdam) |
+| `farrar-fauci-comms.pdf` pp.76-103 | Tuesday, 4 February 2020 at 06:33 | Edward Holmes | Re: Prevalence of infection and stage of the epidemic in Wuhan | A (Sydney) |
+| `farrar-fauci-comms.pdf` p.58 | Saturday, 8 February 2020 at 20:11 | Edward Holmes | Re: [ext] 2019 N-CoV | A (Sydney) |
 | `farrar-fauci-comms.pdf` pp.61-62 | Saturday, 8 February 2020 at 12:03 | Patrick Vallance | RE: 2019 N-CoV | A (London) |
 | `farrar-fauci-comms.pdf` pp.47-49 | 03 March 2020 23:06 | Alex Harris | RE: GPMB: COVID-19 FUNDING NOTE | A (London) |
 | `farrar-fauci-comms.pdf` p.43 | 06 March 2020 10:34 | Marja Esveld | RE: URGENT - GPMB COVID-19 FUNDING NOTE | B (London); also item U5 |
@@ -155,15 +165,10 @@ by 1 hour and Andersen's 8 Feb 22:15 by about 9 hours. I have **not** applied it
 | `farrar-fauci-comms.pdf` pp.7-13 | Tuesday, 12 May 2020 at 13:16 | Russell Viner | confidential - update on Paediatric Multisystem Inflammatory | B (London) |
 | `farrar-fauci-comms.pdf` pp.6-7 | Tuesday, May 12, 2020 6:12 PM | Russell Viner | Re: confidential - update on Paediatric Multisystem Inflammatory Syndrome (PIMS) | B (London) |
 | `farrar-fauci-comms.pdf` p.5 | Wednesday, 13 May 2020 at 22:22 | Russell Viner | Re: confidential - update on Paediatric Multisystem Inflammatory Syndrome (PIMS) | A (London) |
-| `po-emails.pdf` p.142 | 3/31/2020 8:59:49 PM | Kristian G. Andersen | Re: Furin... | A (Los Angeles) |
-| `farrar-fauci-comms.pdf` p.56 | 8 Feb 2020 22:15 | Kristian G. Andersen | [NA] | C (Los Angeles; quoted by Koopmans) |
-| `farrar-fauci-comms.pdf` pp.110-113 | 2 Feb 2020 08:30 | R.A.M. Fouchier | [NA] | C (Paris; quoted by Farrar) |
-| `farrar-fauci-comms.pdf` pp.76-103 | Tuesday, 4 February 2020 at 06:33 | Edward Holmes | Re: Prevalence of infection and stage of the epidemic in Wuhan | A (Sydney) |
-| `farrar-fauci-comms.pdf` p.58 | Saturday, 8 February 2020 at 20:11 | Edward Holmes | Re: [ext] 2019 N-CoV | A (Sydney) |
 
 - **What settles one:** a time or remark in the message or a neighbour (like the NAS panel for Gao and Dzau, S7), an exact copy with an explicit
-  offset, or a link that proves who quoted it. Group A is mostly “last message of its thread”: your own point, that the quote rule cannot work without a quote.
-- **Send me:** “accept” (all, or named reasons or senders), “apply C”, or an anchor you know for any of them. Esveld p.43 is also U5.
+  offset, or a link that proves who quoted it. Reason A is mostly “last message of its thread”: the quote rule cannot work without a quote.
+- **Send me:** “accept” (all, or named reasons or senders), or an anchor you know for any of them. Esveld p.43 is also U5.
 
 ### U5. Marja Esveld, `farrar-fauci-comms.pdf` p.43, “06 March 2020 10:34”, RE: URGENT - GPMB COVID-19 FUNDING NOTE
 - **What the data does now:** the parser files Esveld with Alex Harris under “Wellcome Trust / UK” and reads her
@@ -249,11 +254,11 @@ the times moved** (for example the 31 Jan chain in P2).
 - A1 was found by a rule not yet automated: a quoted message cannot be later than the message that quotes it,
   even when they sit in different releases. **Send me:** “run it across both releases” and I list every violation.
 
-### A9. Eight old bookmark keys cannot be re-mapped
-- 255 old bookmark keys are re-mapped to the current entries. These eight now name a *different* message, so a
+### A9. Nine old bookmark keys cannot be re-mapped
+- 268 old bookmark keys are re-mapped to the current entries. These eight now name a *different* message, so a
   re-map would be wrong: `po-emails|2020-01-31|1500`, `po-emails|2020-02-04|2008`, `po-emails|2020-02-05|1500|1`,
   `po-emails|2020-02-05|1500|2`, `po-emails|2020-02-05|1500|3`, `po-emails|2020-02-16|1750`,
-  `po-emails|2020-02-16|1806`, `po-emails|2020-02-17|1641`.
+  `po-emails|2020-02-16|1806`, `po-emails|2020-02-17|1641`; and one that has no unique current match, `farrar-fauci|2020-02-01|1443|2` (a Koopmans copy).
 - **Send me:** nothing, unless you or someone you know bookmarked emails on these dates and times; then tell me which.
 
 ---

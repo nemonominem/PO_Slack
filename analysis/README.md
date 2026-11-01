@@ -44,7 +44,7 @@ Open it in a spreadsheet and filter on `zone_status`.
 - **Settled:** fixed by the stamp, an exact copy, the page image, or a decision of yours.
 - **Supported:** consistent with every test, but the tests cannot prove it.
 - **Not settled:** an assumption with no test, or the data cannot decide. These are the
-  rows behind items U1, U2 and S5 to S7 in `FOR_HUMAN_REVIEWER.md`.
+  rows behind items U1, U2 and S5 to S8 in `FOR_HUMAN_REVIEWER.md`.
 
 ## 4. Rebuilding
 

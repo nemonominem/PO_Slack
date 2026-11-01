@@ -2377,6 +2377,28 @@
   },
   {
    "date": "2020-02-08",
+   "time": "0950",
+   "kind": "email",
+   "raw_date": "09:50 ET · Re: [ext] 2019 N-CoV",
+   "sender": "R.A.M. Fouchier",
+   "sender_raw": "R.A.M. Fouchier Po",
+   "sender_how": "From: line",
+   "subject": "Re: [ext] 2019 N-CoV",
+   "content": "From: R.A.M. Fouchier\n\nCc: Eddie Holmes Christian Drosten kga1978| | rfgarry p.vallance1( ; collinsf( Mike Ferguscn [i\n\nSubject: Re: [ext] 2019 N-CoV\n\nSent: 2/8/2020 2:50:00 PM\n\n----------\n\nI do not understand Andrews argument “ The sequence data clearly and unambiguously rules out any form of lab construct or engineering of the virus. “. Molecular biologists like myself can generate perfect copies of viruses without leaving a trace, eg the BamHI site. The arguments for and against passaging and engineering are the same if you ask me.\nRon",
+   "signature": null,
+   "stamp": "2/8/2020 2:50:00 PM",
+   "stamp_status": "outlook-us",
+   "zone_assumed": "frozen in Jeremy Farrar's clock (Jeremy Farrar, Wellcome Trust (London); quoted in their message)",
+   "stamp_line": "14:50 London -> 09:50 ET",
+   "recovered_inline": false,
+   "source": "po-emails",
+   "thread_key": "po-emails|2020-02-08|0950",
+   "thread_label": "2020-02-08 09:50 · R.A.M. Fouchier",
+   "replied_by": [],
+   "idx": 83
+  },
+  {
+   "date": "2020-02-08",
    "time": "1245",
    "kind": "email",
    "raw_date": "12:45 ET · FW: 2019 N-CoV",
@@ -2400,7 +2422,7 @@
      "label": "2020-02-08 14:36 · R.A.M. Fouchier"
     }
    ],
-   "idx": 83
+   "idx": 84
   },
   {
    "date": "2020-02-08",
@@ -2427,7 +2449,7 @@
      "label": "2020-02-08 14:52 · Christian Drosten"
     }
    ],
-   "idx": 84,
+   "idx": 85,
    "reply_to": "po-emails|2020-02-08|1245",
    "reply_to_label": "2020-02-08 12:45 · Jeremy Farrar",
    "link_kind": "inferred (same conversation)"
@@ -2454,14 +2476,53 @@
    "thread_label": "2020-02-08 14:52 · Christian Drosten",
    "replied_by": [
     {
-     "key": "po-emails|2020-02-08|2311",
-     "label": "2020-02-08 23:11 · Edward Holmes"
+     "key": "po-emails|2020-02-08|1511",
+     "label": "2020-02-08 15:11 · Edward Holmes"
     }
    ],
    "reply_to": "po-emails|2020-02-08|1436",
    "reply_to_label": "2020-02-08 14:36 · R.A.M. Fouchier",
    "link_kind": "explicit (quoted inline)",
-   "idx": 85
+   "idx": 86
+  },
+  {
+   "date": "2020-02-08",
+   "time": "1511",
+   "kind": "email",
+   "raw_date": "15:11 ET · Re: [ext] 2019 N-CoV",
+   "sender": "Edward Holmes",
+   "sender_raw": "Edward Holmes iii",
+   "sender_how": "From: line",
+   "subject": "Re: [ext] 2019 N-CoV",
+   "content": "From: Edward Holmes\n\nTo: Christian Drosten\n\nCc: Jeremy Farrar , 'kgai978'\n\nSubject: Re: [ext] 2019 N-CoV\n\nDate: Saturday, 8 February 2020 at 20:11\n\n----------\n\nHi Christian,\n| don’t know where this story came from, but it has nothing whatsoever to do the HIV nonsense. Please don’t associate this with that. This is a broader story.\nEver since this outbreak started there have suggestions that the virus escaped from the Wuhan lab, if only because of the coincidence of where the outbreak occurred and the location of the lab. | do a lot of work in China and | can you that a lot of people there believe this and believe they are being lied to. Things were made worse when Wuhan lab published the bat virus sequence - a bat sampled in a different province for which they have a large collection of samples.\n| believe the aim/question here is whether we, as scientists, should try to write something balanced on the science behind this? There are arguments for and against doing this.\nPersonally, with the pangolin virus possessing 6/6 key sites in the receptor binding domain, | am in favour of the natural evolution theory.",
+   "signature": null,
+   "stamp": "Saturday, 8 February 2020 at 20:11",
+   "stamp_status": "day-month-year",
+   "zone_assumed": "frozen in Jeremy Farrar's clock (Jeremy Farrar, Wellcome Trust (London); quoted in their message)",
+   "stamp_line": "20:11 London -> 15:11 ET",
+   "recovered_inline": false,
+   "source": "po-emails",
+   "merged_pages": 2,
+   "thread_key": "po-emails|2020-02-08|1511",
+   "thread_label": "2020-02-08 15:11 · Edward Holmes",
+   "replied_by": [
+    {
+     "key": "po-emails|2020-02-08|1521",
+     "label": "2020-02-08 15:21 · Jeremy Farrar"
+    },
+    {
+     "key": "po-emails|2020-02-08|1538",
+     "label": "2020-02-08 15:38 · Christian Drosten"
+    },
+    {
+     "key": "po-emails|2020-02-08|1627",
+     "label": "2020-02-08 16:27 · Jeremy Farrar"
+    }
+   ],
+   "reply_to": "po-emails|2020-02-08|1452",
+   "reply_to_label": "2020-02-08 14:52 · Christian Drosten",
+   "link_kind": "explicit (quoted inline)",
+   "idx": 87
   },
   {
    "date": "2020-02-08",
@@ -2488,7 +2549,10 @@
      "label": "2020-02-08 19:16 · Andrew Rambaut"
     }
    ],
-   "idx": 86
+   "reply_to": "po-emails|2020-02-08|1511",
+   "reply_to_label": "2020-02-08 15:11 · Edward Holmes",
+   "link_kind": "explicit (quoted inline)",
+   "idx": 88
   },
   {
    "date": "2020-02-08",
@@ -2516,7 +2580,10 @@
      "label": "2020-02-09 00:16 · Kristian G. Andersen"
     }
    ],
-   "idx": 87
+   "reply_to": "po-emails|2020-02-08|1511",
+   "reply_to_label": "2020-02-08 15:11 · Edward Holmes",
+   "link_kind": "explicit (quoted inline)",
+   "idx": 89
   },
   {
    "date": "2020-02-08",
@@ -2537,37 +2604,10 @@
    "source": "po-emails",
    "thread_key": "po-emails|2020-02-08|1627",
    "thread_label": "2020-02-08 16:27 · Jeremy Farrar",
-   "replied_by": [
-    {
-     "key": "po-emails|2020-02-08|1750",
-     "label": "2020-02-08 17:50 · R.A.M. Fouchier"
-    }
-   ],
-   "idx": 88
-  },
-  {
-   "date": "2020-02-08",
-   "time": "1750",
-   "kind": "email",
-   "raw_date": "17:50 ET · Re: [ext] 2019 N-CoV",
-   "sender": "R.A.M. Fouchier",
-   "sender_raw": "R.A.M. Fouchier Po",
-   "sender_how": "From: line",
-   "subject": "Re: [ext] 2019 N-CoV",
-   "content": "From: R.A.M. Fouchier\n\nCc: Eddie Holmes Christian Drosten kga1978| | rfgarry p.vallance1( ; collinsf( Mike Ferguscn [i\n\nSubject: Re: [ext] 2019 N-CoV\n\nSent: 2/8/2020 2:50:00 PM\n\n----------\n\nI do not understand Andrews argument “ The sequence data clearly and unambiguously rules out any form of lab construct or engineering of the virus. “. Molecular biologists like myself can generate perfect copies of viruses without leaving a trace, eg the BamHI site. The arguments for and against passaging and engineering are the same if you ask me.\nRon",
-   "signature": null,
-   "stamp": "2/8/2020 2:50:00 PM",
-   "stamp_status": "outlook-us",
-   "zone_assumed": "REV export: US Pacific time (UTC-8 winter / UTC-7 summer); fits Kristian Andersen's mailbox (Scripps Research, La Jolla, San Diego)",
-   "stamp_line": "14:50 Los Angeles -> 17:50 ET",
-   "recovered_inline": false,
-   "source": "po-emails",
-   "thread_key": "po-emails|2020-02-08|1750",
-   "thread_label": "2020-02-08 17:50 · R.A.M. Fouchier",
    "replied_by": [],
-   "idx": 89,
-   "reply_to": "po-emails|2020-02-08|1627",
-   "reply_to_label": "2020-02-08 16:27 · Jeremy Farrar",
+   "idx": 90,
+   "reply_to": "po-emails|2020-02-08|1511",
+   "reply_to_label": "2020-02-08 15:11 · Edward Holmes",
    "link_kind": "inferred (same conversation)"
   },
   {
@@ -2592,32 +2632,6 @@
    "replied_by": [],
    "reply_to": "po-emails|2020-02-08|1521",
    "reply_to_label": "2020-02-08 15:21 · Jeremy Farrar",
-   "link_kind": "explicit (quoted inline)",
-   "idx": 90
-  },
-  {
-   "date": "2020-02-08",
-   "time": "2311",
-   "kind": "email",
-   "raw_date": "23:11 ET · Re: [ext] 2019 N-CoV",
-   "sender": "Edward Holmes",
-   "sender_raw": "Edward Holmes iii",
-   "sender_how": "From: line",
-   "subject": "Re: [ext] 2019 N-CoV",
-   "content": "From: Edward Holmes\n\nTo: Christian Drosten\n\nCc: Jeremy Farrar , 'kgai978'\n\nSubject: Re: [ext] 2019 N-CoV\n\nDate: Saturday, 8 February 2020 at 20:11\n\n----------\n\nHi Christian,\n| don’t know where this story came from, but it has nothing whatsoever to do the HIV nonsense. Please don’t associate this with that. This is a broader story.\nEver since this outbreak started there have suggestions that the virus escaped from the Wuhan lab, if only because of the coincidence of where the outbreak occurred and the location of the lab. | do a lot of work in China and | can you that a lot of people there believe this and believe they are being lied to. Things were made worse when Wuhan lab published the bat virus sequence - a bat sampled in a different province for which they have a large collection of samples.\n| believe the aim/question here is whether we, as scientists, should try to write something balanced on the science behind this? There are arguments for and against doing this.\nPersonally, with the pangolin virus possessing 6/6 key sites in the receptor binding domain, | am in favour of the natural evolution theory.",
-   "signature": null,
-   "stamp": "Saturday, 8 February 2020 at 20:11",
-   "stamp_status": "day-month-year",
-   "zone_assumed": "REV export: US Pacific time (UTC-8 winter / UTC-7 summer); fits Kristian Andersen's mailbox (Scripps Research, La Jolla, San Diego)",
-   "stamp_line": "20:11 Los Angeles -> 23:11 ET",
-   "recovered_inline": false,
-   "source": "po-emails",
-   "merged_pages": 2,
-   "thread_key": "po-emails|2020-02-08|2311",
-   "thread_label": "2020-02-08 23:11 · Edward Holmes",
-   "replied_by": [],
-   "reply_to": "po-emails|2020-02-08|1452",
-   "reply_to_label": "2020-02-08 14:52 · Christian Drosten",
    "link_kind": "explicit (quoted inline)",
    "idx": 91
   },
@@ -4725,11 +4739,46 @@
    "thread_label": "2020-02-17 05:51 · Andrew Rambaut",
    "replied_by": [
     {
-     "key": "po-emails|2020-02-17|1209",
-     "label": "2020-02-17 12:09 · Robert Garry"
+     "key": "po-emails|2020-02-17|0709",
+     "label": "2020-02-17 07:09 · Robert Garry"
     }
    ],
    "idx": 164
+  },
+  {
+   "date": "2020-02-17",
+   "time": "0709",
+   "kind": "email",
+   "raw_date": "07:09 ET · [NA]",
+   "sender": "Robert Garry",
+   "sender_raw": "Garry, Robert ii",
+   "sender_how": "inline quote marker (On ... wrote:)",
+   "subject": "[NA]",
+   "content": "From: Robert Garry\n\nSubject: [NA]\n\nSent: 17 Feb 2020 12:09\n\n----------\n\nThis also means less concern about the Baric scenario where another mutation could kick SARS-CoV-2 into another gear. Binding already optimal.\nSent from my iPhone\nThis also means less concern about the Baric scenario where another mutation could kick\nSARS-CoV-2 into another gear. Binding already optimal.\nSent from my iPhone\n| External Sender. Be aware of links, attachments and requests.",
+   "signature": null,
+   "stamp": "17 Feb 2020 12:09",
+   "stamp_status": "day-month-year",
+   "zone_assumed": "frozen in Jeremy Farrar's clock (Jeremy Farrar, Wellcome Trust (London); quoted in their message)",
+   "stamp_line": "12:09 London -> 07:09 ET",
+   "recovered_inline": true,
+   "source": "po-emails",
+   "merged_pages": 1,
+   "thread_key": "po-emails|2020-02-17|0709",
+   "thread_label": "2020-02-17 07:09 · Robert Garry",
+   "replied_by": [
+    {
+     "key": "po-emails|2020-02-17|1028",
+     "label": "2020-02-17 10:28 · Jeremy"
+    },
+    {
+     "key": "po-emails|2020-02-17|1528",
+     "label": "2020-02-17 15:28 · Jeremy Farrar"
+    }
+   ],
+   "reply_to": "po-emails|2020-02-17|0551",
+   "reply_to_label": "2020-02-17 05:51 · Andrew Rambaut",
+   "link_kind": "explicit (quoted inline)",
+   "idx": 165
   },
   {
    "date": "2020-02-17",
@@ -4760,7 +4809,7 @@
    "reply_to": "po-emails|2020-02-17|0447",
    "reply_to_label": "2020-02-17 04:47 · Robert Garry",
    "link_kind": "explicit (quoted inline)",
-   "idx": 165
+   "idx": 166
   },
   {
    "date": "2020-02-17",
@@ -4783,11 +4832,14 @@
    "thread_label": "2020-02-17 10:28 · Jeremy",
    "replied_by": [
     {
-     "key": "po-emails|2020-02-17|1641",
-     "label": "2020-02-17 16:41 · Lipkin"
+     "key": "po-emails|2020-02-17|1141",
+     "label": "2020-02-17 11:41 · Lipkin"
     }
    ],
-   "idx": 166
+   "reply_to": "po-emails|2020-02-17|0709",
+   "reply_to_label": "2020-02-17 07:09 · Robert Garry",
+   "link_kind": "explicit (quoted inline)",
+   "idx": 167
   },
   {
    "date": "2020-02-17",
@@ -4809,7 +4861,7 @@
    "thread_key": "po-emails|2020-02-17|1042",
    "thread_label": "2020-02-17 10:42 · Jeremy Farrar",
    "replied_by": [],
-   "idx": 167,
+   "idx": 168,
    "reply_to": "po-emails|2020-02-17|0949",
    "reply_to_label": "2020-02-17 09:49 · Edward Holmes",
    "link_kind": "inferred (same conversation)"
@@ -4843,7 +4895,7 @@
    "reply_to": "po-emails|2020-02-17|0439",
    "reply_to_label": "2020-02-17 04:39 · Robert Garry",
    "link_kind": "explicit (quoted inline)",
-   "idx": 168
+   "idx": 169
   },
   {
    "date": "2020-02-17",
@@ -4866,7 +4918,7 @@
    "thread_key": "po-emails|2020-02-17|1102",
    "thread_label": "2020-02-17 11:02 · Robert Garry",
    "replied_by": [],
-   "idx": 169,
+   "idx": 170,
    "reply_to": "po-emails|2020-02-17|1045",
    "reply_to_label": "2020-02-17 10:45 · Edward Holmes",
    "link_kind": "inferred (same conversation)"
@@ -4904,7 +4956,7 @@
    "reply_to": "po-emails|2020-02-17|0520",
    "reply_to_label": "2020-02-17 05:20 · Robert Garry",
    "link_kind": "explicit (quoted inline)",
-   "idx": 170
+   "idx": 171
   },
   {
    "date": "2020-02-17",
@@ -4927,14 +4979,39 @@
    "thread_label": "2020-02-17 11:35 · ",
    "replied_by": [
     {
-     "key": "po-emails|2020-02-17|1237",
-     "label": "2020-02-17 12:37 · Robert Garry"
+     "key": "po-emails|2020-02-17|1208",
+     "label": "2020-02-17 12:08 · "
     }
    ],
-   "idx": 171,
+   "idx": 172,
    "reply_to": "po-emails|2020-02-17|1123",
    "reply_to_label": "2020-02-17 11:23 · Andrew Rambaut",
    "link_kind": "inferred (same conversation)"
+  },
+  {
+   "date": "2020-02-17",
+   "time": "1141",
+   "kind": "email",
+   "raw_date": "11:41 ET · [NA]",
+   "sender": "Lipkin",
+   "sender_raw": "lan Lipkin TE",
+   "sender_how": "inline quote marker (On ... wrote:)",
+   "subject": "[NA]",
+   "content": "From: Lipkin\n\nSubject: [NA]\n\nSent: 17 Feb 2020 16:41\n\n----------\n\nJeremy,\nThanks for shepherding this paper. Rumors of bioweaponeering are now circulating in China.\nTan",
+   "signature": null,
+   "stamp": "17 Feb 2020 16:41",
+   "stamp_status": "day-month-year",
+   "zone_assumed": "frozen in Jeremy Farrar's clock (Jeremy Farrar, Wellcome Trust (London); quoted in their message)",
+   "stamp_line": "16:41 London -> 11:41 ET",
+   "recovered_inline": true,
+   "source": "po-emails",
+   "thread_key": "po-emails|2020-02-17|1141",
+   "thread_label": "2020-02-17 11:41 · Lipkin",
+   "replied_by": [],
+   "reply_to": "po-emails|2020-02-17|1028",
+   "reply_to_label": "2020-02-17 10:28 · Jeremy",
+   "link_kind": "explicit (quoted inline)",
+   "idx": 173
   },
   {
    "date": "2020-02-17",
@@ -4961,7 +5038,7 @@
      "label": "2020-02-17 16:52 · Kristian G. Andersen"
     }
    ],
-   "idx": 172
+   "idx": 174
   },
   {
    "date": "2020-02-17",
@@ -4984,42 +5061,41 @@
    "thread_label": "2020-02-17 12:02 · Jeremy Farrar",
    "replied_by": [
     {
-     "key": "po-emails|2020-02-17|1811",
-     "label": "2020-02-17 18:11 · Kristian G. Andersen"
+     "key": "po-emails|2020-02-17|1311",
+     "label": "2020-02-17 13:11 · Kristian G. Andersen"
     }
    ],
-   "idx": 173
+   "idx": 175
   },
   {
    "date": "2020-02-17",
-   "time": "1209",
+   "time": "1208",
    "kind": "email",
-   "raw_date": "12:09 ET · [NA]",
-   "sender": "Robert Garry",
-   "sender_raw": "Garry, Robert ii",
-   "sender_how": "inline quote marker (On ... wrote:)",
-   "subject": "[NA]",
-   "content": "From: Robert Garry\n\nSubject: [NA]\n\nSent: 17 Feb 2020 12:09\n\n----------\n\nThis also means less concern about the Baric scenario where another mutation could kick SARS-CoV-2 into another gear. Binding already optimal.\nSent from my iPhone\nThis also means less concern about the Baric scenario where another mutation could kick\nSARS-CoV-2 into another gear. Binding already optimal.\nSent from my iPhone\n| External Sender. Be aware of links, attachments and requests.",
+   "raw_date": "12:08 ET · Re: Connections COVID-19",
+   "sender": "",
+   "sender_raw": "",
+   "sender_how": "",
+   "subject": "Re: Connections COVID-19",
+   "content": "To: Jeremy Farrar , Garry, Robert ' i, Edward Holmes , Kristian G. Andersen\" , lan Lipkin\n\nSubject: Re: Connections COVID-19\n\nDate: Monday, 17 February 2020 at 17:08\n\n----------\n\nDear all,\n| think this is now the same version as on Virological. First author's name corrected, 'SARs'\ncorrected. Figure updated (and legend corrected).\nAndrew",
    "signature": null,
-   "stamp": "17 Feb 2020 12:09",
+   "stamp": "Monday, 17 February 2020 at 17:08",
    "stamp_status": "day-month-year",
-   "zone_assumed": "W. Ian Lipkin's own mailbox export (Columbia University; page-owner code LIP)",
-   "stamp_line": "12:09 ET",
-   "recovered_inline": true,
+   "zone_assumed": "frozen in Jeremy Farrar's clock (Jeremy Farrar, Wellcome Trust (London); quoted in their message)",
+   "stamp_line": "17:08 London -> 12:08 ET",
+   "recovered_inline": false,
    "source": "po-emails",
-   "merged_pages": 1,
-   "thread_key": "po-emails|2020-02-17|1209",
-   "thread_label": "2020-02-17 12:09 · Robert Garry",
+   "thread_key": "po-emails|2020-02-17|1208",
+   "thread_label": "2020-02-17 12:08 · ",
    "replied_by": [
     {
-     "key": "po-emails|2020-02-17|1528",
-     "label": "2020-02-17 15:28 · Jeremy Farrar"
+     "key": "po-emails|2020-02-17|1237",
+     "label": "2020-02-17 12:37 · Robert Garry"
     }
    ],
-   "reply_to": "po-emails|2020-02-17|0551",
-   "reply_to_label": "2020-02-17 05:51 · Andrew Rambaut",
-   "link_kind": "explicit (quoted inline)",
-   "idx": 174
+   "idx": 176,
+   "reply_to": "po-emails|2020-02-17|1135",
+   "reply_to_label": "2020-02-17 11:35 · ",
+   "link_kind": "inferred (same conversation)"
   },
   {
    "date": "2020-02-17",
@@ -5049,7 +5125,7 @@
    "reply_to": "po-emails|2020-02-17|0045",
    "reply_to_label": "2020-02-17 00:45 · Kristian G. Andersen",
    "link_kind": "explicit (quoted inline)",
-   "idx": 175
+   "idx": 177
   },
   {
    "date": "2020-02-17",
@@ -5076,7 +5152,7 @@
      "label": "2020-02-17 18:30 · Kristian G. Andersen"
     }
    ],
-   "idx": 176
+   "idx": 178
   },
   {
    "date": "2020-02-17",
@@ -5106,7 +5182,7 @@
    "reply_to": "po-emails|2020-02-17|1217",
    "reply_to_label": "2020-02-17 12:17 · Michael Farzan",
    "link_kind": "explicit (quoted inline)",
-   "idx": 177
+   "idx": 179
   },
   {
    "date": "2020-02-17",
@@ -5127,11 +5203,66 @@
    "source": "po-emails",
    "thread_key": "po-emails|2020-02-17|1237",
    "thread_label": "2020-02-17 12:37 · Robert Garry",
-   "replied_by": [],
-   "idx": 178,
-   "reply_to": "po-emails|2020-02-17|1135",
-   "reply_to_label": "2020-02-17 11:35 · ",
+   "replied_by": [
+    {
+     "key": "po-emails|2020-02-17|1256",
+     "label": "2020-02-17 12:56 · "
+    }
+   ],
+   "idx": 180,
+   "reply_to": "po-emails|2020-02-17|1208",
+   "reply_to_label": "2020-02-17 12:08 · ",
    "link_kind": "inferred (same conversation)"
+  },
+  {
+   "date": "2020-02-17",
+   "time": "1256",
+   "kind": "email",
+   "raw_date": "12:56 ET · Re: Connections COVID-19",
+   "sender": "",
+   "sender_raw": "",
+   "sender_how": "",
+   "subject": "Re: Connections COVID-19",
+   "content": "To: \"Kristian G. Andersen\"\n\nCc: Jeremy Farrar , Garry, Robert F\" , Edward Holmes , lan Lipkin\n\nSubject: Re: Connections COVID-19\n\nDate: Monday, 17 February 2020 at 17:56\n\n----------\n\nSorry. This is the final version (v2.2).\nSent from my phone. Apologies for brevity or illiteracy.",
+   "signature": null,
+   "stamp": "Monday, 17 February 2020 at 17:56",
+   "stamp_status": "day-month-year",
+   "zone_assumed": "frozen in Jeremy Farrar's clock (Jeremy Farrar, Wellcome Trust (London); quoted in their message)",
+   "stamp_line": "17:56 London -> 12:56 ET",
+   "recovered_inline": false,
+   "source": "po-emails",
+   "thread_key": "po-emails|2020-02-17|1256",
+   "thread_label": "2020-02-17 12:56 · ",
+   "replied_by": [],
+   "idx": 181,
+   "reply_to": "po-emails|2020-02-17|1237",
+   "reply_to_label": "2020-02-17 12:37 · Robert Garry",
+   "link_kind": "inferred (same conversation)"
+  },
+  {
+   "date": "2020-02-17",
+   "time": "1311",
+   "kind": "email",
+   "raw_date": "13:11 ET · Re: Connections COVID-19",
+   "sender": "Kristian G. Andersen",
+   "sender_raw": "\"Kristian G. Andersen\"",
+   "sender_how": "From: line",
+   "subject": "Re: Connections COVID-19",
+   "content": "From: Kristian G. Andersen\n\nTo: Jeremy Farrar\n\nCc: \"Garry, Robert F\" , Edward Holmes , lan Lipkin\n\nSubject: Re: Connections COVID-19\n\nDate: Monday, 17 February 2020 at 18:11\n\n----------\n\nSure, attached.",
+   "signature": null,
+   "stamp": "Monday, 17 February 2020 at 18:11",
+   "stamp_status": "day-month-year",
+   "zone_assumed": "frozen in Jeremy Farrar's clock (Jeremy Farrar, Wellcome Trust (London); quoted in their message)",
+   "stamp_line": "18:11 London -> 13:11 ET",
+   "recovered_inline": false,
+   "source": "po-emails",
+   "thread_key": "po-emails|2020-02-17|1311",
+   "thread_label": "2020-02-17 13:11 · Kristian G. Andersen",
+   "replied_by": [],
+   "reply_to": "po-emails|2020-02-17|1202",
+   "reply_to_label": "2020-02-17 12:02 · Jeremy Farrar",
+   "link_kind": "explicit (quoted inline)",
+   "idx": 182
   },
   {
    "date": "2020-02-17",
@@ -5152,41 +5283,11 @@
    "source": "po-emails",
    "thread_key": "po-emails|2020-02-17|1528",
    "thread_label": "2020-02-17 15:28 · Jeremy Farrar",
-   "replied_by": [
-    {
-     "key": "po-emails|2020-02-17|1708",
-     "label": "2020-02-17 17:08 · "
-    }
-   ],
-   "reply_to": "po-emails|2020-02-17|1209",
-   "reply_to_label": "2020-02-17 12:09 · Robert Garry",
-   "link_kind": "explicit (quoted inline)",
-   "idx": 179
-  },
-  {
-   "date": "2020-02-17",
-   "time": "1641",
-   "kind": "email",
-   "raw_date": "16:41 ET · [NA]",
-   "sender": "Lipkin",
-   "sender_raw": "lan Lipkin TE",
-   "sender_how": "inline quote marker (On ... wrote:)",
-   "subject": "[NA]",
-   "content": "From: Lipkin\n\nSubject: [NA]\n\nSent: 17 Feb 2020 16:41\n\n----------\n\nJeremy,\nThanks for shepherding this paper. Rumors of bioweaponeering are now circulating in China.\nTan",
-   "signature": null,
-   "stamp": "17 Feb 2020 16:41",
-   "stamp_status": "day-month-year",
-   "zone_assumed": "W. Ian Lipkin's own mailbox export (Columbia University; page-owner code LIP)",
-   "stamp_line": "16:41 ET",
-   "recovered_inline": true,
-   "source": "po-emails",
-   "thread_key": "po-emails|2020-02-17|1641",
-   "thread_label": "2020-02-17 16:41 · Lipkin",
    "replied_by": [],
-   "reply_to": "po-emails|2020-02-17|1028",
-   "reply_to_label": "2020-02-17 10:28 · Jeremy",
+   "reply_to": "po-emails|2020-02-17|0709",
+   "reply_to_label": "2020-02-17 07:09 · Robert Garry",
    "link_kind": "explicit (quoted inline)",
-   "idx": 180
+   "idx": 183
   },
   {
    "date": "2020-02-17",
@@ -5212,7 +5313,7 @@
    "reply_to": "po-emails|2020-02-17|1123",
    "reply_to_label": "2020-02-17 11:23 · Andrew Rambaut",
    "link_kind": "explicit (quoted inline)",
-   "idx": 181
+   "idx": 184
   },
   {
    "date": "2020-02-17",
@@ -5233,89 +5334,9 @@
    "source": "po-emails",
    "thread_key": "po-emails|2020-02-17|1652",
    "thread_label": "2020-02-17 16:52 · Kristian G. Andersen",
-   "replied_by": [
-    {
-     "key": "po-emails|2020-02-17|1756",
-     "label": "2020-02-17 17:56 · "
-    }
-   ],
+   "replied_by": [],
    "reply_to": "po-emails|2020-02-17|1147",
    "reply_to_label": "2020-02-17 11:47 · Jeremy Farrar",
-   "link_kind": "explicit (quoted inline)",
-   "idx": 182
-  },
-  {
-   "date": "2020-02-17",
-   "time": "1708",
-   "kind": "email",
-   "raw_date": "17:08 ET · Re: Connections COVID-19",
-   "sender": "",
-   "sender_raw": "",
-   "sender_how": "",
-   "subject": "Re: Connections COVID-19",
-   "content": "To: Jeremy Farrar , Garry, Robert ' i, Edward Holmes , Kristian G. Andersen\" , lan Lipkin\n\nSubject: Re: Connections COVID-19\n\nDate: Monday, 17 February 2020 at 17:08\n\n----------\n\nDear all,\n| think this is now the same version as on Virological. First author's name corrected, 'SARs'\ncorrected. Figure updated (and legend corrected).\nAndrew",
-   "signature": null,
-   "stamp": "Monday, 17 February 2020 at 17:08",
-   "stamp_status": "day-month-year",
-   "zone_assumed": "W. Ian Lipkin's own mailbox export (Columbia University; page-owner code LIP)",
-   "stamp_line": "17:08 ET",
-   "recovered_inline": false,
-   "source": "po-emails",
-   "thread_key": "po-emails|2020-02-17|1708",
-   "thread_label": "2020-02-17 17:08 · ",
-   "replied_by": [],
-   "reply_to": "po-emails|2020-02-17|1528",
-   "reply_to_label": "2020-02-17 15:28 · Jeremy Farrar",
-   "link_kind": "explicit (quoted inline)",
-   "idx": 183
-  },
-  {
-   "date": "2020-02-17",
-   "time": "1756",
-   "kind": "email",
-   "raw_date": "17:56 ET · Re: Connections COVID-19",
-   "sender": "",
-   "sender_raw": "",
-   "sender_how": "",
-   "subject": "Re: Connections COVID-19",
-   "content": "To: \"Kristian G. Andersen\"\n\nCc: Jeremy Farrar , Garry, Robert F\" , Edward Holmes , lan Lipkin\n\nSubject: Re: Connections COVID-19\n\nDate: Monday, 17 February 2020 at 17:56\n\n----------\n\nSorry. This is the final version (v2.2).\nSent from my phone. Apologies for brevity or illiteracy.",
-   "signature": null,
-   "stamp": "Monday, 17 February 2020 at 17:56",
-   "stamp_status": "day-month-year",
-   "zone_assumed": "W. Ian Lipkin's own mailbox export (Columbia University; page-owner code LIP)",
-   "stamp_line": "17:56 ET",
-   "recovered_inline": false,
-   "source": "po-emails",
-   "thread_key": "po-emails|2020-02-17|1756",
-   "thread_label": "2020-02-17 17:56 · ",
-   "replied_by": [],
-   "reply_to": "po-emails|2020-02-17|1652",
-   "reply_to_label": "2020-02-17 16:52 · Kristian G. Andersen",
-   "link_kind": "explicit (quoted inline)",
-   "idx": 184
-  },
-  {
-   "date": "2020-02-17",
-   "time": "1811",
-   "kind": "email",
-   "raw_date": "18:11 ET · Re: Connections COVID-19",
-   "sender": "Kristian G. Andersen",
-   "sender_raw": "\"Kristian G. Andersen\"",
-   "sender_how": "From: line",
-   "subject": "Re: Connections COVID-19",
-   "content": "From: Kristian G. Andersen\n\nTo: Jeremy Farrar\n\nCc: \"Garry, Robert F\" , Edward Holmes , lan Lipkin\n\nSubject: Re: Connections COVID-19\n\nDate: Monday, 17 February 2020 at 18:11\n\n----------\n\nSure, attached.",
-   "signature": null,
-   "stamp": "Monday, 17 February 2020 at 18:11",
-   "stamp_status": "day-month-year",
-   "zone_assumed": "W. Ian Lipkin's own mailbox export (Columbia University; page-owner code LIP)",
-   "stamp_line": "18:11 ET",
-   "recovered_inline": false,
-   "source": "po-emails",
-   "thread_key": "po-emails|2020-02-17|1811",
-   "thread_label": "2020-02-17 18:11 · Kristian G. Andersen",
-   "replied_by": [],
-   "reply_to": "po-emails|2020-02-17|1202",
-   "reply_to_label": "2020-02-17 12:02 · Jeremy Farrar",
    "link_kind": "explicit (quoted inline)",
    "idx": 185
   },
@@ -6306,8 +6327,8 @@
    "thread_label": "2020-07-27 18:02 · ",
    "replied_by": [
     {
-     "key": "po-emails|2020-07-28|0507",
-     "label": "2020-07-28 05:07 · Kristian G. Andersen"
+     "key": "po-emails|2020-07-27|2107",
+     "label": "2020-07-27 21:07 · Kristian G. Andersen"
     },
     {
      "key": "po-emails|2020-07-28|0336",
@@ -6318,6 +6339,36 @@
    "reply_to_label": "2020-07-25 10:22 · ofu",
    "link_kind": "explicit (quoted inline)",
    "idx": 222
+  },
+  {
+   "date": "2020-07-27",
+   "time": "2107",
+   "kind": "email",
+   "raw_date": "21:07 ET · [NA]",
+   "sender": "Kristian G. Andersen",
+   "sender_raw": "Kristian G. Andersen Po",
+   "sender_how": "inline quote marker (On ... wrote:)",
+   "subject": "[NA]",
+   "content": "From: Kristian G. Andersen\n\nSubject: [NA]\n\nSent: 28 Jul 2020 02:07\n\n----------\n\nDear Tony,\nlam sorry to be contacting you, as | know you have critically important priorities, including developing a vaccine for COVID-19. We just received the email below from Jon Cohen (from Science) about our conversations back in February investigating the origins of SARS-CoV-\n2. As you know, we considered the theory that SARS-CoV-2 could have been a lab escape and therefore did what any good scientist should do - investigate likely hypotheses and let the data decide. As you know, the data strongly suggests that this is a natural virus and clearly this person gets a lot of things wrong about how this all played out.\nWe need to reply back to Jon, which would have to include confirming that this meeting did indeed take place with you and Jeremy present. Please let me know if you have any comments or concerns in this regard.\nAt the very end of this email, | have added a draft email that Eddie put together. | have a few clarifying points that ! will add and then Eddie and | will reply back to Jon.\nAgain, sorry to take up your time - please let me know if you have any comments, questions, or concerns. We are planning to email Jon tomorrow afternoon.",
+   "signature": null,
+   "stamp": "28 Jul 2020 02:07",
+   "stamp_status": "day-month-year",
+   "zone_assumed": "frozen in Jeremy Farrar's clock (Jeremy Farrar, Wellcome Trust (London); quoted in their message)",
+   "stamp_line": "02:07 London -> 21:07 ET",
+   "recovered_inline": true,
+   "source": "po-emails",
+   "thread_key": "po-emails|2020-07-27|2107",
+   "thread_label": "2020-07-27 21:07 · Kristian G. Andersen",
+   "replied_by": [
+    {
+     "key": "po-emails|2020-07-28|1954",
+     "label": "2020-07-28 19:54 · Jeremy Farrar"
+    }
+   ],
+   "reply_to": "po-emails|2020-07-27|1802",
+   "reply_to_label": "2020-07-27 18:02 · ",
+   "link_kind": "explicit (quoted inline)",
+   "idx": 223
   },
   {
    "date": "2020-07-27",
@@ -6347,7 +6398,7 @@
    "reply_to": "po-emails|2020-02-02|0330",
    "reply_to_label": "2020-02-02 03:30 · ",
    "link_kind": "explicit (quoted inline)",
-   "idx": 223
+   "idx": 224
   },
   {
    "date": "2020-07-27",
@@ -6377,7 +6428,7 @@
    "reply_to": "po-emails|2020-07-27|2247",
    "reply_to_label": "2020-07-27 22:47 · Edward Holmes",
    "link_kind": "explicit (quoted inline)",
-   "idx": 224
+   "idx": 225
   },
   {
    "date": "2020-07-27",
@@ -6407,7 +6458,7 @@
    "reply_to": "po-emails|2020-07-27|2254",
    "reply_to_label": "2020-07-27 22:54 · Kristian G. Andersen",
    "link_kind": "explicit (quoted inline)",
-   "idx": 225
+   "idx": 226
   },
   {
    "date": "2020-07-28",
@@ -6429,7 +6480,7 @@
    "thread_key": "po-emails|2020-07-28|0336",
    "thread_label": "2020-07-28 03:36 · Jeremy Farrar",
    "replied_by": [],
-   "idx": 226,
+   "idx": 227,
    "reply_to": "po-emails|2020-07-27|1802",
    "reply_to_label": "2020-07-27 18:02 · ",
    "link_kind": "inferred (same conversation)"
@@ -6461,36 +6512,6 @@
    ],
    "reply_to": "po-emails|2020-07-27|2258",
    "reply_to_label": "2020-07-27 22:58 · Edward Holmes",
-   "link_kind": "explicit (quoted inline)",
-   "idx": 227
-  },
-  {
-   "date": "2020-07-28",
-   "time": "0507",
-   "kind": "email",
-   "raw_date": "05:07 ET · [NA]",
-   "sender": "Kristian G. Andersen",
-   "sender_raw": "Kristian G. Andersen Po",
-   "sender_how": "inline quote marker (On ... wrote:)",
-   "subject": "[NA]",
-   "content": "From: Kristian G. Andersen\n\nSubject: [NA]\n\nSent: 28 Jul 2020 02:07\n\n----------\n\nDear Tony,\nlam sorry to be contacting you, as | know you have critically important priorities, including developing a vaccine for COVID-19. We just received the email below from Jon Cohen (from Science) about our conversations back in February investigating the origins of SARS-CoV-\n2. As you know, we considered the theory that SARS-CoV-2 could have been a lab escape and therefore did what any good scientist should do - investigate likely hypotheses and let the data decide. As you know, the data strongly suggests that this is a natural virus and clearly this person gets a lot of things wrong about how this all played out.\nWe need to reply back to Jon, which would have to include confirming that this meeting did indeed take place with you and Jeremy present. Please let me know if you have any comments or concerns in this regard.\nAt the very end of this email, | have added a draft email that Eddie put together. | have a few clarifying points that ! will add and then Eddie and | will reply back to Jon.\nAgain, sorry to take up your time - please let me know if you have any comments, questions, or concerns. We are planning to email Jon tomorrow afternoon.",
-   "signature": null,
-   "stamp": "28 Jul 2020 02:07",
-   "stamp_status": "day-month-year",
-   "zone_assumed": "REV export: US Pacific time (UTC-8 winter / UTC-7 summer); fits Kristian Andersen's mailbox (Scripps Research, La Jolla, San Diego)",
-   "stamp_line": "02:07 Los Angeles -> 05:07 ET",
-   "recovered_inline": true,
-   "source": "po-emails",
-   "thread_key": "po-emails|2020-07-28|0507",
-   "thread_label": "2020-07-28 05:07 · Kristian G. Andersen",
-   "replied_by": [
-    {
-     "key": "po-emails|2020-07-28|1954",
-     "label": "2020-07-28 19:54 · Jeremy Farrar"
-    }
-   ],
-   "reply_to": "po-emails|2020-07-27|1802",
-   "reply_to_label": "2020-07-27 18:02 · ",
    "link_kind": "explicit (quoted inline)",
    "idx": 228
   },
@@ -6561,8 +6582,8 @@
    "thread_key": "po-emails|2020-07-28|1954",
    "thread_label": "2020-07-28 19:54 · Jeremy Farrar",
    "replied_by": [],
-   "reply_to": "po-emails|2020-07-28|0507",
-   "reply_to_label": "2020-07-28 05:07 · Kristian G. Andersen",
+   "reply_to": "po-emails|2020-07-27|2107",
+   "reply_to_label": "2020-07-27 21:07 · Kristian G. Andersen",
    "link_kind": "explicit (quoted inline)",
    "idx": 231
   },

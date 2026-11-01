@@ -24,7 +24,7 @@ The file has five parts:
 
 ---
 
-# Part 1. Settled datetimes (118 emails, plus Slack Part 1 and Part 2)
+# Part 1. Settled datetimes (115 emails, plus Slack Part 1 and Part 2)
 
 Settled means: fixed by the stamp itself, by an exact copy, by the page image, or by a decision of yours
 backed by evidence. `zone_format_audit.csv` marks each email `Settled`.
@@ -34,7 +34,7 @@ backed by evidence. `zone_format_audit.csv` marks each email `Settled`.
 | Zone written in the stamp (`+0000`, `UTC+11:00`, `AEDT`, `EST`) | 53 (45 Farrar-Fauci, 8 P.O. emails) | as written | The stamp |
 | Exact copy with an explicit offset | 1 | from the copy | `po-emails.pdf` pp.1-2, “Jan 31, 2020 4:38 PM”, Fauci, Anthony, “[NA]” equals the Farrar-Fauci copy `farrar-fauci-comms.pdf` p.154, “Sat, 1 Feb 2020 00:38:35 +0000”, Anthony Fauci, “RE: Phone call” |
 | Verified from the page image or the message text | 14 | per entry (Eastern, London, Pacific, Amsterdam, Berlin, Santiago) | 4 corrections in 1.1; 8 headers that were undated, read from the page images (S6); 2 corrected from the message text: Gao and Dzau, 25 Apr 2020, Eastern (S7) |
-| Page owner **REV**, top-level stamps only (P.O. emails) | 50 | Pacific | Section 1.2. The 95 other REV-page entries are quoted blocks, which now take the quoting author's clock (Supported) |
+| Page owner **REV**, top-level stamps only (P.O. emails) | 47 | Pacific | Section 1.2. The 95 other REV-page entries are quoted blocks, which now take the quoting author's clock (Supported) |
 
 ## 1.1 The four verified corrections
 
@@ -118,24 +118,25 @@ above decide Part 1; the REV numbering does not.
 
 # Part 2. Unsettled datetimes (278 emails)
 
-## 2.1 Supported but not proven (255 emails)
+## 2.1 Supported but not proven (259 emails)
 
 Consistent with every test (every reply pair it touches is in order), but reply order cannot catch a copy that
 is simply too early; the Farrar message `farrar-fauci-comms.pdf` pp.154-155, “Friday, January 31, 2020 5:57 PM”, Jeremy Farrar, “Re: Phone call” was five hours early and the test passed. Marked `Supported`.
 
 | Zone source | Emails | Zone used |
 |---|---|---|
-| Quoted block: clock of the quoting message's author (the freeze rule, 5.6) | 152 (143 P.O. emails, 9 Farrar-Fauci) | the author's institution zone |
-| Sender: Wellcome convener | 52 (50 Farrar-Fauci, 2 P.O. emails) | London |
-| Sender: NIH, Bethesda (Farrar-Fauci release) | 27 | Eastern |
-| Page owner **LIP**, top-level (P.O. emails) | 13 | Eastern |
+| Quoted block: clock of the quoting message's author (the freeze rule, 5.6) | 164 (151 P.O. emails, 13 Farrar-Fauci) | the author's institution zone |
+| Sender: Jeremy Farrar, top-level (Farrar-Fauci release) | 32 | London (he is based in London, reviewer, 2026-11-01) |
+| Sender: Wellcome convener (other unzoned stamps) | 18 (16 Farrar-Fauci, 2 P.O. emails) | London |
+| Sender: NIH, Bethesda (Farrar-Fauci release) | 26 | Eastern |
+| Page owner **LIP**, top-level (P.O. emails) | 8 | Eastern |
 | Page owner **GARRY**, top-level (P.O. emails) | 11 | Chicago (Central): Garry works at Tulane University School of Medicine, New Orleans (Central time), per the reviewer, 2026-10-29. Reply order excludes Pacific. No exact copy proves it; a trip away from Central would not show. |
 
-## 2.2 Not settled (13 emails)
+## 2.2 Not settled (14 emails)
 
 | Zone source | Emails | Zone used | Why open |
 |---|---|---|---|
-| Sender, small groups (list in `FOR_HUMAN_REVIEWER.md`, item U2) | 13 | by sender | No quote rule possible: 6 are not quoted by anything, 5 only by an inferred link, 2 are quoted explicitly but the code has no clock for the quoter (Farrar, Koopmans); each has one to four linked replies to test. One of them, Esveld p.43, is a separate question (item U5): London (mailbox clock) or Amsterdam |
+| Sender, small groups (list in `FOR_HUMAN_REVIEWER.md`, item U2) | 14 | by sender | No quote rule possible: 7 are not quoted by anything, 7 only by an inferred link (which proves no quote); each has one to four linked replies to test. One of them, Esveld p.43, is a separate question (item U5): London (mailbox clock) or Amsterdam |
 
 ---
 
@@ -350,3 +351,14 @@ The app tests (8) and the app audit (66 checks) pass.
 
 GARRY stays **Supported** (Tulane, Central; reply order excludes Pacific; the Feb 10 chain favours Chicago), not Settled.
 
+## 5.9 Whose clock the code assumes for a quoter (2026-11-01)
+
+The freeze rule needs the clock of the person who quoted a block. The documents rarely state it, so the parser
+carries a lookup, name pattern to zone, in `ZONE_BY_AFFILIATION` (`tools/parse_po_emails.py`, `tools/parse_farrar_fauci.py`). It is only the
+code's way of knowing where each person is; when a quoter is missing from it the rule is silently skipped for the blocks that person quoted.
+On 2026-11-01 the reviewer gave three facts, now in the lookup: **Jeremy Farrar: London; Marion Koopmans and Ron Fouchier: Rotterdam (Erasmus MC; the zone is
+`Europe/Amsterdam`, the only Dutch zone); Edward Holmes: Sydney (already there).** Effect: 15 times moved (8 P.O. emails, 7 Farrar-Fauci), most by one to
+five hours (one by 9 hours: Andersen, 8 Feb 22:15, quoted by Koopmans, now 16:15 ET); reply order still allows only the current clock for every group;
+app tests 8 PASS, audit 66/66. Fouchier and Koopmans now have their own group (`Erasmus MC, Netherlands`, 5 linked pairs, only shift 0 allowed) and Farrar his own
+(`Jeremy Farrar, Wellcome Trust (London)`, 41 pairs, only shift 0 allowed), so the small London senders are not given Farrar's pairs as support.
+Dzau is not in the lookup; his two stamps are verified from the message text (S7).

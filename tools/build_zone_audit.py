@@ -47,6 +47,7 @@ RULE_NAMES = [
     (r"REV export", "4. Page owner REV (Pacific)"),
     (r"GARRY|Robert Garry", "4. Page owner GARRY (assumed Chicago)"),
     (r"W\. Ian Lipkin", "4. Page owner LIP (Eastern)"),
+    (r"Erasmus", "3. Sender's institution: Netherlands (Rotterdam)"),
     (r"Wellcome|Vallance|Farrar|Golding|Ferguson|Viner|Rambaut|UK government", "3. Sender's institution: London"),
     (r"NIH|NIAID|Bethesda|Fauci|Collins", "3. Sender's institution: New York"),
     (r"Scripps|Farzan", "3. Sender's institution: Los Angeles"),
@@ -81,6 +82,8 @@ STATUS = [
     (r"NIH, Bethesda", "Supported", "consistent with reply order; reply order cannot catch a time that is too early"),
     (r"Robert Garry's own", "Supported", "Garry works at Tulane (New Orleans, Central time) and the mailbox is his own; consistent with reply order, which excludes Pacific; no exact copy with an explicit offset to prove it"),
     (r"^frozen in", "Supported", "freeze rule (quoted block on the clock of the quoting message's author); every reply pair it touches is in order; the author's clock is the institution's zone"),
+    (r"Jeremy Farrar, Wellcome", "Supported", "Farrar is based in London (reviewer, 2026-11-01); the stamp has no zone, so the London clock is taken from where he works; consistent with reply order"),
+    (r"Erasmus MC", "Not settled", "Fouchier and Koopmans are based in Rotterdam (Erasmus MC; Netherlands time, zone Europe/Amsterdam, reviewer, 2026-11-01); the stamp has no zone and too few reply pairs test it"),
     (r"Wellcome Trust / UK", "Not settled", "too few reply pairs"),
     (r"Scripps|Sydney|Charite|Tulane|Pasteur|China CDC", "Not settled", "too few reply pairs"),
 ]

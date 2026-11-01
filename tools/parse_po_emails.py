@@ -54,6 +54,7 @@ ANALYSIS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "analy
 ZONE_BY_AFFILIATION = [
     (re.compile(r"wellcome|vallance|schreier|ferguson|golding|edinburgh|rambaut|uk "
                 r"government|dphe", re.I), "Europe/London", "Wellcome Trust / UK"),
+    (re.compile(r"jeremy farrar", re.I), "Europe/London", "Jeremy Farrar, Wellcome Trust (London)"),
     (re.compile(r"nih|niaid|fauci|auchincloss|collins|shabman|tabak|burke|bfarrar@nih",
                 re.I), "America/New_York", "NIH / NIAID, Bethesda"),
     (re.compile(r"scripps|andersen|farzan", re.I), "America/Los_Angeles", "Scripps Research"),
@@ -61,7 +62,8 @@ ZONE_BY_AFFILIATION = [
     (re.compile(r"lipkin|columbia", re.I), "America/New_York", "Columbia University"),
     (re.compile(r"sydney|holmes|university of sydney", re.I), "Australia/Sydney",
      "University of Sydney"),
-    (re.compile(r"pasteur|fouchier|paris|institut", re.I), "Europe/Paris", "Institut Pasteur"),
+    (re.compile(r"koopmans|fouchier|erasmus|rotterdam", re.I), "Europe/Amsterdam", "Erasmus MC, Netherlands"),
+    (re.compile(r"pasteur|paris|institut", re.I), "Europe/Paris", "Institut Pasteur"),
 ]
 DEFAULT_ZONE = "Europe/London"      # the Wellcome Trust ran this exercise
 DEFAULT_ZONE_WHY = "Wellcome Trust (the release's convener)"
