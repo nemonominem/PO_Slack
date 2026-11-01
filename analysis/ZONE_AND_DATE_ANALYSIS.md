@@ -33,7 +33,7 @@ backed by evidence. `zone_format_audit.csv` marks each email `Settled`.
 |---|---|---|---|
 | Zone written in the stamp (`+0000`, `UTC+11:00`, `AEDT`, `EST`) | 53 (45 Farrar-Fauci, 8 P.O. emails) | as written | The stamp |
 | Exact copy with an explicit offset | 1 | from the copy | `po-emails.pdf` pp.1-2, “Jan 31, 2020 4:38 PM”, Fauci, Anthony, “[NA]” equals the Farrar-Fauci copy `farrar-fauci-comms.pdf` p.154, “Sat, 1 Feb 2020 00:38:35 +0000”, Anthony Fauci, “RE: Phone call” |
-| Verified from the page image or the message text | 14 | per entry (Eastern, London, Pacific, Amsterdam, Berlin, Santiago) | 4 corrections in 1.1; 8 headers that were undated, read from the page images (U4); 2 corrected from the message text: Gao and Dzau, 25 Apr 2020, Eastern (U7) |
+| Verified from the page image or the message text | 14 | per entry (Eastern, London, Pacific, Amsterdam, Berlin, Santiago) | 4 corrections in 1.1; 8 headers that were undated, read from the page images (S6); 2 corrected from the message text: Gao and Dzau, 25 Apr 2020, Eastern (S7) |
 | Page owner **REV**, top-level stamps only (P.O. emails) | 50 | Pacific | Section 1.2. The 95 other REV-page entries are quoted blocks, which now take the quoting author's clock (Supported) |
 
 ## 1.1 The four verified corrections
@@ -182,7 +182,7 @@ be a different message.
 reply link (the old link, to Andersen, ran backwards and was dropped).
 
 ## A8. Undated and mis-grouped entries
-Every email now has a date and time (item U4: the eight undated ones were read from the page images on 2026-10-30/31). The sender-institution groups were mislabelled by hand in an
+Every email now has a date and time (item S6: the eight undated ones were read from the page images on 2026-10-30/31). The sender-institution groups were mislabelled by hand in an
 earlier version of the review file; they are now generated from the audit file.
 
 ---

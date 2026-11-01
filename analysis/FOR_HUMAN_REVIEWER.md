@@ -32,8 +32,8 @@ Every open item is in this table. Nothing else in this file needs an answer.
 | **H3** | My edits to your `README.md` and `STATUS.md` | “fine” or what to put back | Stays |
 | **H4** | `PO_Slack.code-workspace` is untracked | “commit”, “ignore” or “delete” | Left alone |
 
-**Done since the last version of this file** (nothing to answer): the quote/forward rule is in the code (U3); all
-eight undated emails are dated (U4, last one answered 2026-10-31); both repositories are pushed (H1).
+**Done and moved to Part 1** (nothing to answer): the quote/forward rule is in the code (S5); all eight undated emails are
+dated (S6); Gao and Dzau on 25 Apr are Eastern (S7); both repositories are pushed (H1).
 
 ## Do you need to open any CSV or log?
 
@@ -53,7 +53,7 @@ eight undated emails are dated (U4, last one answered 2026-10-31); both reposito
 **Standard time.** The web app shows every date and time in New York time (ET) first, followed by the local
 time as printed, for emails, Slack and everything else. ET stays the standard while local times are sorted out.
 
-# Part 1. Settled datetimes: nothing for you to do
+# Part 1. Settled datetimes: nothing for you to do (S1 to S7)
 
 ### S1. The Farrar 22:34 reply: done
 `po-emails.pdf` p.3, “Friday, 31 January 2020 at 22:34”, Fauci, Anthony, “RE: Phone call”. You answered on 2026-10-26 that Farrar's “Phone call” went out at 22:23 UK (“It is 10pm now UK”), that
@@ -81,9 +81,38 @@ The app shows Part 1 as printed, labelled ET. Details: analysis 1.4. Part 1 is A
 REV0003038) but prints Eastern, while his emails and Part 2 are Pacific: Slack prints in the viewer's profile or device
 zone of the session that made the capture, so Part 1 was captured in an Eastern session (who or why is unknown; the investigators who acquired it is one possibility). This says nothing about his own clock. The Rambaut anchor decides this, not the REV numbering.
 
+### S5. The quote/forward rule is in the code: done
+- The 152 quoted blocks (143 P.O. emails, 9 Farrar-Fauci) take the clock of the quoting message's author.
+  Check with `rule` = “2. Quoted block” in `zone_format_audit.csv`.
+
+### S6. The eight undated emails: done
+- The eight undated emails are read from the page images (400 dpi OCR pass plus your reading). Each is a verified
+  override with its evidence in `tools/verified_overrides.json`. They show as Settled because the page fixes the
+  printed time; the zone of the Dutch, German, Spanish and Andersen ones follows the freeze rule (and, for
+  Andersen p.78, equality with the p.80 copy).
+
+| Where | Header as printed | Now (ET) | Clock used |
+|---|---|---|---|
+| `po-emails.pdf` pp.17-18, Pope | Sent: Tuesday, February 4, 2020 9:11 AM | 4 Feb 09:11 | Eastern (copy on p.19: 9:10:35 AM UTC-05:00) |
+| `po-emails.pdf` p.78, Andersen | Sent: 12 February 2020 23:09 | 13 Feb 02:09 | Pacific (same text as the p.80 copy); assumed |
+| `farrar-fauci-comms.pdf` pp.43-44, Esveld | Sent: vrijdag 6 maart 2020 09:23 | 6 Mar 03:23 | Amsterdam (Dutch client) |
+| `farrar-fauci-comms.pdf` p.44, Harris | Sent: donderdag 5 maart 2020 15:29 | 5 Mar 09:29 | Amsterdam (quoted in Esveld's Dutch client) |
+| `farrar-fauci-comms.pdf` p.57, Farrar | Datum: Samstag, 8. Februar 2020 um 21:21 | 8 Feb 15:21 | Berlin (Drosten's German client) |
+| `farrar-fauci-comms.pdf` p.59, Farrar | Datum: Samstag, 8. Februar 2020 um 10:45 | 8 Feb 04:45 | Berlin |
+| `farrar-fauci-comms.pdf` p.80, Farrar | Sent: Tuesday, February 4, 2020 6:08 AM | 4 Feb 06:08 | Eastern (quoted in Collins's reply) |
+| `farrar-fauci-comms.pdf` pp.169-172, GPMB Secretariat | Sent: martes, 28 de enero de 2020 9:09 | 28 Jan 07:09 | Santiago de Chile, UTC-3 (you confirmed Vega Morales is based there; the Spanish client is hers) |
+
+### S7. Gao and Dzau, 25 April 2020: done (found 2026-11-01)
+- `farrar-fauci-comms.pdf` pp.23-31, Gao, “Apr 25, 2020 1:22 PM”, was read as Beijing time (01:22 ET) and pp.22-30,
+  Dzau, “Saturday, April 25, 2020 3:59 PM”, as London time (10:59 ET). Both are **Eastern**. Dzau's invitation, quoted on p.23, puts the NAS panel “on
+  Saturday, April 25th at 2:00-3:30 pm ET”. Gao says “I am waiting for being connected” at 1:22 PM (38 minutes before it starts);
+  Dzau says “It was a spectacular session” at 3:59 PM (after it ended). They now read 13:22 ET and 15:59 ET, as verified
+  overrides. The freeze rule gives the same answer: Dzau quotes Gao (Dzau's clock) and Fauci's 26 Apr reply quotes Dzau (Fauci's clock; the
+  parser had not recorded that link). This removed the Beijing group from U2.
+
 ---
 
-# Part 2. Unsettled datetimes: your decisions
+# Part 2. Unsettled datetimes: your decisions (only what is still open: U1, U2, U5, U6)
 
 ### U1. GARRY pages (11 top-level emails; the quoted ones follow the quote rule): Chicago or Eastern?
 - **Answer received:** Garry works at Tulane University School of Medicine, New Orleans: Central time. The app
@@ -132,7 +161,7 @@ by 1 hour and Andersen's 8 Feb 22:15 by about 9 hours. I have **not** applied it
 | `farrar-fauci-comms.pdf` pp.76-103 | Tuesday, 4 February 2020 at 06:33 | Edward Holmes | Re: Prevalence of infection and stage of the epidemic in Wuhan | A (Sydney) |
 | `farrar-fauci-comms.pdf` p.58 | Saturday, 8 February 2020 at 20:11 | Edward Holmes | Re: [ext] 2019 N-CoV | A (Sydney) |
 
-- **What settles one:** a time or remark in the message or a neighbour (like the NAS panel for Gao and Dzau, U7), an exact copy with an explicit
+- **What settles one:** a time or remark in the message or a neighbour (like the NAS panel for Gao and Dzau, S7), an exact copy with an explicit
   offset, or a link that proves who quoted it. Group A is mostly “last message of its thread”: your own point, that the quote rule cannot work without a quote.
 - **Send me:** “accept” (all, or named reasons or senders), “apply C”, or an anchor you know for any of them. Esveld p.43 is also U5.
 
@@ -164,33 +193,6 @@ by 1 hour and Andersen's 8 Feb 22:15 by about 9 hours. I have **not** applied it
   check's clock is the wrong one, the app is right and nothing changes.
 - **Send me:** for each pair, whether the “From/Sent/To” headers show that the second message really answers the
   first, and the stamps as you read them, or “skip”.
-
-### U7. Gao and Dzau, 25 April 2020: done (found 2026-11-01, no answer needed)
-- `farrar-fauci-comms.pdf` pp.23-31, Gao, “Apr 25, 2020 1:22 PM”, was read as Beijing time (01:22 ET) and pp.22-30,
-  Dzau, “Saturday, April 25, 2020 3:59 PM”, as London time (10:59 ET). Both are **Eastern**. Dzau's invitation, quoted on p.23, puts the NAS panel “on
-  Saturday, April 25th at 2:00-3:30 pm ET”. Gao says “I am waiting for being connected” at 1:22 PM (38 minutes before it starts);
-  Dzau says “It was a spectacular session” at 3:59 PM (after it ended). They now read 13:22 ET and 15:59 ET, as verified
-  overrides. The freeze rule gives the same answer: Dzau quotes Gao (Dzau's clock) and Fauci's 26 Apr reply quotes Dzau (Fauci's clock; the
-  parser had not recorded that link). This removes the Beijing group from U2.
-
-### U3 and U4: done
-- **U3.** The 152 quoted blocks (143 P.O. emails, 9 Farrar-Fauci) take the clock of the quoting message's author.
-  Check with `rule` = “2. Quoted block” in `zone_format_audit.csv`.
-- **U4.** The eight undated emails are read from the page images (400 dpi OCR pass plus your reading). Each is a verified
-  override with its evidence in `tools/verified_overrides.json`. They show as Settled because the page fixes the
-  printed time; the zone of the Dutch, German, Spanish and Andersen ones follows the freeze rule (and, for
-  Andersen p.78, equality with the p.80 copy).
-
-| Where | Header as printed | Now (ET) | Clock used |
-|---|---|---|---|
-| `po-emails.pdf` pp.17-18, Pope | Sent: Tuesday, February 4, 2020 9:11 AM | 4 Feb 09:11 | Eastern (copy on p.19: 9:10:35 AM UTC-05:00) |
-| `po-emails.pdf` p.78, Andersen | Sent: 12 February 2020 23:09 | 13 Feb 02:09 | Pacific (same text as the p.80 copy); assumed |
-| `farrar-fauci-comms.pdf` pp.43-44, Esveld | Sent: vrijdag 6 maart 2020 09:23 | 6 Mar 03:23 | Amsterdam (Dutch client) |
-| `farrar-fauci-comms.pdf` p.44, Harris | Sent: donderdag 5 maart 2020 15:29 | 5 Mar 09:29 | Amsterdam (quoted in Esveld's Dutch client) |
-| `farrar-fauci-comms.pdf` p.57, Farrar | Datum: Samstag, 8. Februar 2020 um 21:21 | 8 Feb 15:21 | Berlin (Drosten's German client) |
-| `farrar-fauci-comms.pdf` p.59, Farrar | Datum: Samstag, 8. Februar 2020 um 10:45 | 8 Feb 04:45 | Berlin |
-| `farrar-fauci-comms.pdf` p.80, Farrar | Sent: Tuesday, February 4, 2020 6:08 AM | 4 Feb 06:08 | Eastern (quoted in Collins's reply) |
-| `farrar-fauci-comms.pdf` pp.169-172, GPMB Secretariat | Sent: martes, 28 de enero de 2020 9:09 | 28 Jan 07:09 | Santiago de Chile, UTC-3 (you confirmed Vega Morales is based there; the Spanish client is hers) |
 
 ---
 
