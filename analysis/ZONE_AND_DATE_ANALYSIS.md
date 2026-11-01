@@ -107,11 +107,12 @@ messages typed during the call run from 14:13 (“Just FYI - o-linked glycan als
 call fills exactly 14:00 to 15:00; read as Pacific it would be 17:00 to 18:00 Eastern, outside Fauci's calendar. So
 Part 1 is Eastern on two independent anchors (Rambaut 22 Feb and the 1 Feb call), not one.
 
-**Note (2026-11-01).** Part 1 is Andersen's own export (REV0002899 to REV0003038; the first page says “You
-created this private channel”), yet its times are Eastern while his P.O. emails are Pacific (1.2) and Part 2 is
-Pacific (1.3). That is not a contradiction: Slack prints times in the zone set in the viewer's profile or device,
-so Andersen's Slack showed Eastern when Part 1 was captured and Pacific later. The Rambaut anchor above is what
-fixes Part 1 as Eastern; the REV numbering does not.
+**Note (2026-11-01).** Part 1 is Andersen's own collection (REV0002899 to REV0003038; the first page says “You
+created this private channel”), yet its times are Eastern, while his P.O. emails are Pacific (1.2) and Part 2 is
+Pacific (1.3). Slack prints times in the zone of the session that produced the capture, so Part 1 was captured in an
+Eastern session. Who or why is not known: you suggest the investigators who acquired it; another setting on his
+account is also possible. Either way Part 1's Eastern time says nothing about Andersen's own clock. The two anchors
+above decide Part 1; the REV numbering does not.
 
 ---
 
