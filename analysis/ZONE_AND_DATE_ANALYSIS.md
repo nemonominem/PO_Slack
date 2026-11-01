@@ -99,6 +99,14 @@ others fall within a few minutes of the nearest timed message (only the first me
 The sleeping-hours method on Part 1 is too noisy (UTC-4 to UTC-7) to add anything. The app shows Part 1 times as
 printed, labelled ET in the 🕑 chip.
 
+**Second anchor (2026-11-01, your point).** The 1 Feb 2020 call with Fauci ran 2 to 3 pm Eastern; Fauci's
+calendar shows it, and your article uses it (see the P.O. piece, 3.11). On `slack-part1.pdf` (first pages, 1 Feb 2020)
+Andersen writes “Yes, call.” at 13:59 and Rambaut “Stay on here in case we need to message” at 13:59; the
+messages typed during the call run from 14:13 (“Just FYI - o-linked glycan also present in bat”) to 15:01, and
+“Can we do a zoom?” follows at 15:01, with the Zoom link at 15:05, the “after-call” by your caption. Read as Eastern, the
+call fills exactly 14:00 to 15:00; read as Pacific it would be 17:00 to 18:00 Eastern, outside Fauci's calendar. So
+Part 1 is Eastern on two independent anchors (Rambaut 22 Feb and the 1 Feb call), not one.
+
 **Note (2026-11-01).** Part 1 is Andersen's own export (REV0002899 to REV0003038; the first page says “You
 created this private channel”), yet its times are Eastern while his P.O. emails are Pacific (1.2) and Part 2 is
 Pacific (1.3). That is not a contradiction: Slack prints times in the zone set in the viewer's profile or device,

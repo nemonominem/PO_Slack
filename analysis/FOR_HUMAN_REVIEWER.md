@@ -76,7 +76,7 @@ messages agree. **Applied:** Slack Part 2 is now converted to ET in the app, wit
 🕑 chip. Details: analysis 1.3. If you disagree, tell me.
 
 ### S4. Slack Part 1 is Eastern time: settled by you (2026-10-28)
-One anchor (`slack-part1.pdf` p.61, Rambaut, printed 21:26, “Jeez it is 2.30 am”) and your own captions agree.
+Two anchors and your own captions agree: `slack-part1.pdf` p.61, Rambaut, printed 21:26, “Jeez it is 2.30 am”; and the 1 Feb 2020 call with Fauci (2 to 3 pm Eastern per Fauci's calendar), whose Slack messages run 13:59 to 15:01 with the Zoom link at 15:05 (added 2026-11-01).
 The app shows Part 1 as printed, labelled ET. Details: analysis 1.4. Part 1 is Andersen's own export (REV0002899 to
 REV0003038) but prints Eastern, while his emails and Part 2 are Pacific: Slack prints in the viewer's profile or device
 zone, so his Slack showed Eastern then. The Rambaut anchor decides this, not the REV numbering.
