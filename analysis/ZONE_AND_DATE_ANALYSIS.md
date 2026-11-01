@@ -135,7 +135,7 @@ is simply too early; the Farrar message `farrar-fauci-comms.pdf` pp.154-155, “
 
 | Zone source | Emails | Zone used | Why open |
 |---|---|---|---|
-| Sender, small groups (list in `FOR_HUMAN_REVIEWER.md`, item U2) | 13 | by sender | Too few linked replies to test (one to four each). One of them, Esveld p.43, is a separate question (item U5): London (mailbox clock) or Amsterdam |
+| Sender, small groups (list in `FOR_HUMAN_REVIEWER.md`, item U2) | 13 | by sender | No quote rule possible: 6 are not quoted by anything, 5 only by an inferred link, 2 are quoted explicitly but the code has no clock for the quoter (Farrar, Koopmans); each has one to four linked replies to test. One of them, Esveld p.43, is a separate question (item U5): London (mailbox clock) or Amsterdam |
 
 ---
 

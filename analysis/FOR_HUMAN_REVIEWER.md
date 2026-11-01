@@ -17,7 +17,7 @@ Every open item is in this table. Nothing else in this file needs an answer.
 | Code | What is open | What I need from you | If you say nothing |
 |---|---|---|---|
 | **U1** | Garry's mailbox: Central (Chicago) is used and supported (Tulane, New Orleans), not proven | Optional: one exact copy with an explicit offset on a GARRY page | Stays “Supported”; no time changes |
-| **U2** | 13 emails whose zone comes from the sender's institution only (Chicago 1, London 7, Los Angeles 2, Paris 1, Sydney 2) | “accept” (all or named groups), or one exact copy per group | Stay “Not settled”; times as now |
+| **U2** | 13 emails, no quote rule possible (see the reason table in U2): 6 nothing quotes them, 5 only an inferred link, 2 quoted but my code lacks the quoter's clock (Farrar, Koopmans) | “accept”, “apply C” (the 2 where the code gap is), or an anchor | Stay “Not settled”; times as now |
 | **U5** | Marja Esveld, `farrar-fauci-comms.pdf` p.43, “06 March 2020 10:34”: London or Amsterdam clock? (up to 1 hour) | “keep London” or “Amsterdam” | London stays |
 | **U6** | Three reply pairs that my separate check flags as backwards (`po-emails.pdf` pp.22-29, p.28, pp.57-65); the app's own data has none | Read the headers and tell me whether the second message answers the first | Times unchanged |
 | **A1** | Folkers' 8:43 PM shows 23:43 ET; should be 20:43 ET | “apply” or “no” | Stays wrong (23:43) |
@@ -93,48 +93,48 @@ zone of the session that made the capture, so Part 1 was captured in an Eastern 
   be before the message it answers) but Garry's link to it is only inferred.
 - **Send me (optional):** page references of an exact copy on a GARRY page.
 
-### U2. Small sender groups (13 emails): accept the sender rule?
-- **Problem:** each email's zone comes from the sender's institution. Each group has too few linked replies to
-  test. The Sydney group (Holmes) is the most doubtful. The Esveld email in the London table is also U5.
-- **Send me:** “accept” for all or for named groups, or one exact copy with an explicit offset per group.
+### U2. Small sender groups (13 emails): why they are not settled, and what would settle them
 
-**Chicago** (1)
+**What the three statuses mean.**
+- **Settled:** something in the documents fixes the clock: a zone written in the stamp, an exact copy with an explicit offset, a calendar or
+  a remark in the text (the 2:00-3:30 pm ET panel, “It is 10pm now UK”), or your decision.
+- **Supported:** the quote rule (or a mailbox rule) gives the clock, and every test passes (no reply before its original, no time travel),
+  but nothing in the documents *proves* that clock. Consistency only rules zones out.
+- **Not settled:** not even that. The quote rule could not be used, so the zone is a guess from where the sender works, and there are too few
+  linked replies to test it.
 
-| Where | Header as printed | Sender | Subject |
-|---|---|---|---|
-| `farrar-fauci-comms.pdf` pp.137-138 | Saturday, February 1, 2020 10:49 AM | Robert Garry | Re: Teleconference |
+**Why these 13 are in the third group.** They are not quoted blocks that the rule could place, for one of three reasons:
 
-**London** (7)
+| Reason | Emails |
+|---|---|
+| **A. Nothing quotes it** (it is the last message of its thread, or the only one on its page): the quote rule cannot apply, as with a dangling last message | Andersen p.142; Holmes pp.76-103; Holmes p.58; Vallance pp.61-62; Harris pp.47-49; Viner p.5 |
+| **B. Only an inferred link** (“same conversation”) points at it, which does not prove a quote exists | Garry pp.137-138; Esveld p.43; Harris pp.42-43; Viner pp.7-13; Viner pp.6-7 |
+| **C. Quoted explicitly, but my code does not know the quoter's clock.** The quote rule applies in principle; the code has no zone for Farrar or Koopmans | Fouchier pp.110-113 (quoted by Farrar); Andersen p.56 (quoted by Koopmans) |
 
-| Where | Header as printed | Sender | Subject |
-|---|---|---|---|
-| `farrar-fauci-comms.pdf` pp.61-62 | Saturday, 8 February 2020 at 12:03 | Patrick Vallance | RE: 2019 N-CoV Jeremy Thanks for sharing, and thanks to those involved for a really important piece of work. I think this looks pretty balanced and is useful. I do think it would be helpful to make sure that the sequence data from the pangolins is included and to indicate what that might mean in terms of a potential prolonged period of adaptation in animals. The glycan point is important and could be given further weight against an passage origin. Once complete I think it would be helpful to publish this |
-| `farrar-fauci-comms.pdf` pp.47-49 | 03 March 2020 23:06 | Alex Harris | RE: GPMB: COVID-19 FUNDING NOTE |
-| `farrar-fauci-comms.pdf` p.43 | 06 March 2020 10:34 | Marja Esveld | RE: URGENT - GPMB COVID-19 FUNDING NOTE |
-| `farrar-fauci-comms.pdf` pp.42-43 | Freitag, 6. Marz 2020 11:56 | Alex Harris | RE: URGENT - GPMB COVID-19 FUNDING NOTE |
-| `farrar-fauci-comms.pdf` pp.7-13 | Tuesday, 12 May 2020 at 13:16 | Russell Viner | confidential - update on Paediatric Multisystem Inflammatory |
-| `farrar-fauci-comms.pdf` pp.6-7 | Tuesday, May 12, 2020 6:12 PM | Russell Viner | Re: confidential - update on Paediatric Multisystem Inflammatory Syndrome (PIMS) |
-| `farrar-fauci-comms.pdf` p.5 | Wednesday, 13 May 2020 at 22:22 | Russell Viner | Re: confidential - update on Paediatric Multisystem Inflammatory Syndrome (PIMS) |
+Group C is a gap in my code, not in the evidence: if Farrar is London and Koopmans is Rotterdam (Amsterdam time), the rule would move Fouchier
+by 1 hour and Andersen's 8 Feb 22:15 by about 9 hours. I have **not** applied it, because it changes times. Say “apply C” if you want it.
 
-**Los Angeles** (2)
+**The 13, with the header as printed**
 
-| Where | Header as printed | Sender | Subject |
-|---|---|---|---|
-| `po-emails.pdf` p.142 | 3/31/2020 8:59:49 PM | Kristian G. Andersen | Re: Furin... |
-| `farrar-fauci-comms.pdf` p.56 | 8 Feb 2020 22:15 | Kristian G. Andersen | [NA] |
+| Where | Header as printed | Sender | Subject | Reason |
+|---|---|---|---|---|
+| `farrar-fauci-comms.pdf` pp.137-138 | Saturday, February 1, 2020 10:49 AM | Robert Garry | Re: Teleconference | B (Chicago assumed) |
+| `farrar-fauci-comms.pdf` pp.61-62 | Saturday, 8 February 2020 at 12:03 | Patrick Vallance | RE: 2019 N-CoV | A (London) |
+| `farrar-fauci-comms.pdf` pp.47-49 | 03 March 2020 23:06 | Alex Harris | RE: GPMB: COVID-19 FUNDING NOTE | A (London) |
+| `farrar-fauci-comms.pdf` p.43 | 06 March 2020 10:34 | Marja Esveld | RE: URGENT - GPMB COVID-19 FUNDING NOTE | B (London); also item U5 |
+| `farrar-fauci-comms.pdf` pp.42-43 | Freitag, 6. Marz 2020 11:56 | Alex Harris | RE: URGENT - GPMB COVID-19 FUNDING NOTE | B (London) |
+| `farrar-fauci-comms.pdf` pp.7-13 | Tuesday, 12 May 2020 at 13:16 | Russell Viner | confidential - update on Paediatric Multisystem Inflammatory | B (London) |
+| `farrar-fauci-comms.pdf` pp.6-7 | Tuesday, May 12, 2020 6:12 PM | Russell Viner | Re: confidential - update on Paediatric Multisystem Inflammatory Syndrome (PIMS) | B (London) |
+| `farrar-fauci-comms.pdf` p.5 | Wednesday, 13 May 2020 at 22:22 | Russell Viner | Re: confidential - update on Paediatric Multisystem Inflammatory Syndrome (PIMS) | A (London) |
+| `po-emails.pdf` p.142 | 3/31/2020 8:59:49 PM | Kristian G. Andersen | Re: Furin... | A (Los Angeles) |
+| `farrar-fauci-comms.pdf` p.56 | 8 Feb 2020 22:15 | Kristian G. Andersen | [NA] | C (Los Angeles; quoted by Koopmans) |
+| `farrar-fauci-comms.pdf` pp.110-113 | 2 Feb 2020 08:30 | R.A.M. Fouchier | [NA] | C (Paris; quoted by Farrar) |
+| `farrar-fauci-comms.pdf` pp.76-103 | Tuesday, 4 February 2020 at 06:33 | Edward Holmes | Re: Prevalence of infection and stage of the epidemic in Wuhan | A (Sydney) |
+| `farrar-fauci-comms.pdf` p.58 | Saturday, 8 February 2020 at 20:11 | Edward Holmes | Re: [ext] 2019 N-CoV | A (Sydney) |
 
-**Paris** (1)
-
-| Where | Header as printed | Sender | Subject |
-|---|---|---|---|
-| `farrar-fauci-comms.pdf` pp.110-113 | 2 Feb 2020 08:30 | R.A.M. Fouchier | [NA] |
-
-**Sydney** (2)
-
-| Where | Header as printed | Sender | Subject |
-|---|---|---|---|
-| `farrar-fauci-comms.pdf` pp.76-103 | Tuesday, 4 February 2020 at 06:33 | Edward Holmes | Re: Prevalence of infection and stage of the epidemic in Wuhan |
-| `farrar-fauci-comms.pdf` p.58 | Saturday, 8 February 2020 at 20:11 | Edward Holmes | Re: [ext] 2019 N-CoV |
+- **What settles one:** a time or remark in the message or a neighbour (like the NAS panel for Gao and Dzau, U7), an exact copy with an explicit
+  offset, or a link that proves who quoted it. Group A is mostly “last message of its thread”: your own point, that the quote rule cannot work without a quote.
+- **Send me:** “accept” (all, or named reasons or senders), “apply C”, or an anchor you know for any of them. Esveld p.43 is also U5.
 
 ### U5. Marja Esveld, `farrar-fauci-comms.pdf` p.43, “06 March 2020 10:34”, RE: URGENT - GPMB COVID-19 FUNDING NOTE
 - **What the data does now:** the parser files Esveld with Alex Harris under “Wellcome Trust / UK” and reads her
