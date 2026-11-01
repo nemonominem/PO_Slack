@@ -24,7 +24,7 @@ The file has five parts:
 
 ---
 
-# Part 1. Settled datetimes (116 emails, plus Slack Part 1 and Part 2)
+# Part 1. Settled datetimes (118 emails, plus Slack Part 1 and Part 2)
 
 Settled means: fixed by the stamp itself, by an exact copy, by the page image, or by a decision of yours
 backed by evidence. `zone_format_audit.csv` marks each email `Settled`.
@@ -33,7 +33,7 @@ backed by evidence. `zone_format_audit.csv` marks each email `Settled`.
 |---|---|---|---|
 | Zone written in the stamp (`+0000`, `UTC+11:00`, `AEDT`, `EST`) | 53 (45 Farrar-Fauci, 8 P.O. emails) | as written | The stamp |
 | Exact copy with an explicit offset | 1 | from the copy | `po-emails.pdf` pp.1-2, “Jan 31, 2020 4:38 PM”, Fauci, Anthony, “[NA]” equals the Farrar-Fauci copy `farrar-fauci-comms.pdf` p.154, “Sat, 1 Feb 2020 00:38:35 +0000”, Anthony Fauci, “RE: Phone call” |
-| Verified from the page image or the message text | 12 | per entry (Eastern, London, Pacific, Amsterdam, Berlin, Santiago) | 4 corrections in 1.1; 8 headers that were undated, read from the page images (FOR_HUMAN_REVIEWER.md, U4) |
+| Verified from the page image or the message text | 14 | per entry (Eastern, London, Pacific, Amsterdam, Berlin, Santiago) | 4 corrections in 1.1; 8 headers that were undated, read from the page images (U4); 2 corrected from the message text: Gao and Dzau, 25 Apr 2020, Eastern (U7) |
 | Page owner **REV**, top-level stamps only (P.O. emails) | 50 | Pacific | Section 1.2. The 95 other REV-page entries are quoted blocks, which now take the quoting author's clock (Supported) |
 
 ## 1.1 The four verified corrections
@@ -118,7 +118,7 @@ above decide Part 1; the REV numbering does not.
 
 # Part 2. Unsettled datetimes (278 emails)
 
-## 2.1 Supported but not proven (256 emails)
+## 2.1 Supported but not proven (255 emails)
 
 Consistent with every test (every reply pair it touches is in order), but reply order cannot catch a copy that
 is simply too early; the Farrar message `farrar-fauci-comms.pdf` pp.154-155, “Friday, January 31, 2020 5:57 PM”, Jeremy Farrar, “Re: Phone call” was five hours early and the test passed. Marked `Supported`.
@@ -126,16 +126,16 @@ is simply too early; the Farrar message `farrar-fauci-comms.pdf` pp.154-155, “
 | Zone source | Emails | Zone used |
 |---|---|---|
 | Quoted block: clock of the quoting message's author (the freeze rule, 5.6) | 152 (143 P.O. emails, 9 Farrar-Fauci) | the author's institution zone |
-| Sender: Wellcome convener | 53 (51 Farrar-Fauci, 2 P.O. emails) | London |
+| Sender: Wellcome convener | 52 (50 Farrar-Fauci, 2 P.O. emails) | London |
 | Sender: NIH, Bethesda (Farrar-Fauci release) | 27 | Eastern |
 | Page owner **LIP**, top-level (P.O. emails) | 13 | Eastern |
 | Page owner **GARRY**, top-level (P.O. emails) | 11 | Chicago (Central): Garry works at Tulane University School of Medicine, New Orleans (Central time), per the reviewer, 2026-10-29. Reply order excludes Pacific. No exact copy proves it; a trip away from Central would not show. |
 
-## 2.2 Not settled (14 emails)
+## 2.2 Not settled (13 emails)
 
 | Zone source | Emails | Zone used | Why open |
 |---|---|---|---|
-| Sender, small groups (list in `FOR_HUMAN_REVIEWER.md`, item U2) | 14 | by sender | Too few linked replies to test (one to four each). One of them, Esveld p.43, is a separate question (item U5): London (mailbox clock) or Amsterdam |
+| Sender, small groups (list in `FOR_HUMAN_REVIEWER.md`, item U2) | 13 | by sender | Too few linked replies to test (one to four each). One of them, Esveld p.43, is a separate question (item U5): London (mailbox clock) or Amsterdam |
 
 ---
 

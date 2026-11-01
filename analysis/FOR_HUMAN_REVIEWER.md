@@ -17,7 +17,7 @@ Every open item is in this table. Nothing else in this file needs an answer.
 | Code | What is open | What I need from you | If you say nothing |
 |---|---|---|---|
 | **U1** | Garry's mailbox: Central (Chicago) is used and supported (Tulane, New Orleans), not proven | Optional: one exact copy with an explicit offset on a GARRY page | Stays “Supported”; no time changes |
-| **U2** | 14 emails whose zone comes from the sender's institution only (Beijing 1, Chicago 1, London 7, Los Angeles 2, Paris 1, Sydney 2) | “accept” (all or named groups), or one exact copy per group | Stay “Not settled”; times as now |
+| **U2** | 13 emails whose zone comes from the sender's institution only (Chicago 1, London 7, Los Angeles 2, Paris 1, Sydney 2) | “accept” (all or named groups), or one exact copy per group | Stay “Not settled”; times as now |
 | **U5** | Marja Esveld, `farrar-fauci-comms.pdf` p.43, “06 March 2020 10:34”: London or Amsterdam clock? (up to 1 hour) | “keep London” or “Amsterdam” | London stays |
 | **U6** | Three reply pairs that my separate check flags as backwards (`po-emails.pdf` pp.22-29, p.28, pp.57-65); the app's own data has none | Read the headers and tell me whether the second message answers the first | Times unchanged |
 | **A1** | Folkers' 8:43 PM shows 23:43 ET; should be 20:43 ET | “apply” or “no” | Stays wrong (23:43) |
@@ -93,16 +93,10 @@ zone of the session that made the capture, so Part 1 was captured in an Eastern 
   be before the message it answers) but Garry's link to it is only inferred.
 - **Send me (optional):** page references of an exact copy on a GARRY page.
 
-### U2. Small sender groups (14 emails): accept the sender rule?
+### U2. Small sender groups (13 emails): accept the sender rule?
 - **Problem:** each email's zone comes from the sender's institution. Each group has too few linked replies to
   test. The Sydney group (Holmes) is the most doubtful. The Esveld email in the London table is also U5.
 - **Send me:** “accept” for all or for named groups, or one exact copy with an explicit offset per group.
-
-**Beijing** (1)
-
-| Where | Header as printed | Sender | Subject |
-|---|---|---|---|
-| `farrar-fauci-comms.pdf` pp.23-31 | Apr 25, 2020 1:22 PM | George Gao (Gao Fu) | [NA] |
 
 **Chicago** (1)
 
@@ -170,6 +164,14 @@ zone of the session that made the capture, so Part 1 was captured in an Eastern 
   check's clock is the wrong one, the app is right and nothing changes.
 - **Send me:** for each pair, whether the “From/Sent/To” headers show that the second message really answers the
   first, and the stamps as you read them, or “skip”.
+
+### U7. Gao and Dzau, 25 April 2020: done (found 2026-11-01, no answer needed)
+- `farrar-fauci-comms.pdf` pp.23-31, Gao, “Apr 25, 2020 1:22 PM”, was read as Beijing time (01:22 ET) and pp.22-30,
+  Dzau, “Saturday, April 25, 2020 3:59 PM”, as London time (10:59 ET). Both are **Eastern**. Dzau's invitation, quoted on p.23, puts the NAS panel “on
+  Saturday, April 25th at 2:00-3:30 pm ET”. Gao says “I am waiting for being connected” at 1:22 PM (38 minutes before it starts);
+  Dzau says “It was a spectacular session” at 3:59 PM (after it ended). They now read 13:22 ET and 15:59 ET, as verified
+  overrides. The freeze rule gives the same answer: Dzau quotes Gao (Dzau's clock) and Fauci's 26 Apr reply quotes Dzau (Fauci's clock; the
+  parser had not recorded that link). This removes the Beijing group from U2.
 
 ### U3 and U4: done
 - **U3.** The 152 quoted blocks (143 P.O. emails, 9 Farrar-Fauci) take the clock of the quoting message's author.

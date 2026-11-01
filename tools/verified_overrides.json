@@ -82,5 +82,19 @@
     "stamp": "Tuesday, January 28, 2020 9:09 AM",
     "zone": "America/Santiago",
     "evidence": "Reviewer (Gilles Demaneuf), 2026-10-31: Jeanette Vega Morales is based in Santiago de Chile. farrar-fauci-comms.pdf p.169 prints 'From: GPMB Secretariat / Sent: martes, 28 de enero de 2020 9:09' (Spanish client) inside her 'Dear Gro and As' reply, so it is frozen on her clock: Chile summer time, UTC-3 (13:09 Geneva, after the 27 Jan teleconference the message thanks people for)."
+  },
+  {
+    "release": "farrar-fauci.json",
+    "thread_key": "farrar-fauci|2020-04-25|0122",
+    "stamp": "Saturday, April 25, 2020 1:22 PM",
+    "zone": "America/New_York",
+    "evidence": "Found 2026-11-01 from the message texts (farrar-fauci-comms.pdf pp.22-31). Dzau's invitation, quoted on p.23, says the NAS Annual Meeting panel is 'on Saturday, April 25th at 2:00-3:30 pm ET'. Gao's message, printed 'Apr 25, 2020 1:22 PM', says 'I am waiting for being connected and will use slides': 38 minutes before the panel starts on Eastern time (on Beijing time it would be 01:22 ET, 12 hours before). It is quoted in Dzau's reply, so by the freeze rule it is on Dzau's (Washington) clock."
+  },
+  {
+    "release": "farrar-fauci.json",
+    "thread_key": "farrar-fauci|2020-04-25|1059",
+    "stamp": "Saturday, April 25, 2020 3:59 PM",
+    "zone": "America/New_York",
+    "evidence": "Found 2026-11-01 from the message texts (farrar-fauci-comms.pdf pp.22-31). Dzau's invitation, quoted on p.23, says the NAS Annual Meeting panel is 'on Saturday, April 25th at 2:00-3:30 pm ET'. Dzau's reply, printed 'Saturday, April 25, 2020 3:59 PM', says 'It was a spectacular session': it was sent after the panel ended at 3:30 pm ET, so 3:59 PM is Eastern (on London time it would be 10:59 ET, before the panel began). Fauci's reply of 26 Apr (p.22, 'Saturday April 25 participation') quotes it, which freezes it on Fauci's Eastern clock."
   }
 ]
