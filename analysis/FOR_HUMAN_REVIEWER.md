@@ -65,7 +65,9 @@ Andersen's mailbox, Scripps Research, La Jolla, San Diego: UTC-8 in winter, UTC-
 Arizona on 2026-10-28 and reverted it the same day. The data is identical to before, except S1. Evidence:
 `po-emails.pdf` pp.1-2, “Jan 31, 2020 4:38 PM”, Fauci, Anthony, “[NA]” is an exact copy, sent 00:38 UTC, printed 4:38 PM (UTC-8), quoted inside Andersen's own reply
 `po-emails.pdf` p.1, “Friday, January 31, 2020 8:05 PM”, Kristian G. Andersen, “Re: Phone call”; your article's footnote says REV is “UK -8”; the Slack Part 2 anchors agree. Details:
-`ZONE_AND_DATE_ANALYSIS.md` 1.2.
+`ZONE_AND_DATE_ANALYSIS.md` 1.2. **Added 2026-11-01 (your point):** `slack-part1.pdf` is also REV (pages REV0002899 to
+REV0003038) and its first page says “You created this private channel”, so REV, emails and Slack Part 1, is Kristian Andersen's own
+material and REV time is his timeline.
 
 ### S3. Slack Part 2 is Pacific time: found, nothing to decide
 Two Slack messages state the sender's local clock (Holmes, `slack-part2.pdf` p.706, “it's 1 am here”; Garry,
@@ -75,7 +77,9 @@ messages agree. **Applied:** Slack Part 2 is now converted to ET in the app, wit
 
 ### S4. Slack Part 1 is Eastern time: settled by you (2026-10-28)
 One anchor (`slack-part1.pdf` p.61, Rambaut, printed 21:26, “Jeez it is 2.30 am”) and your own captions agree.
-The app shows Part 1 as printed, labelled ET. Details: analysis 1.4.
+The app shows Part 1 as printed, labelled ET. Details: analysis 1.4. Part 1 is Andersen's own export (REV0002899 to
+REV0003038) but prints Eastern, while his emails and Part 2 are Pacific: Slack prints in the viewer's profile or device
+zone, so his Slack showed Eastern then. The Rambaut anchor decides this, not the REV numbering.
 
 ---
 

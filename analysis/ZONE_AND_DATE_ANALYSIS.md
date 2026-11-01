@@ -61,6 +61,10 @@ The evidence:
 - Slack Part 2 (1.3): a Garry message (16 Feb 2022) fits UTC-8 to the minute; Andersen wrote “it's 85
   degrees in San Diego today” (15 Jan 2021).
 - Reply order allows REV to shift by -3 to 0 hours, so it neither proves nor excludes Pacific alone.
+- **REV is Andersen's collection throughout (your point, 2026-11-01).** `slack-part1.pdf` is itself REV: its 140
+  pages are numbered REV0002899 to REV0003038. Its first page reads “You created this private channel on
+  February 1st, 2020”, so “you” is Kristian Andersen (he is the first to join, 12:11, then Rambaut 12:13). So the
+  REV series, emails and Slack Part 1 alike, is Andersen's own material, and REV time is Andersen's timeline.
 
 Remaining limit: only one exact copy tests the clock, and it is a quote, not one of Andersen's top-level
 stamps. Status stays Settled (your decision) with that test as support.
@@ -94,6 +98,12 @@ as Eastern and add 5 hours for UK; of 67 Slack captions I could check, 16 match 
 others fall within a few minutes of the nearest timed message (only the first message of a run is timed in Part 1).
 The sleeping-hours method on Part 1 is too noisy (UTC-4 to UTC-7) to add anything. The app shows Part 1 times as
 printed, labelled ET in the 🕑 chip.
+
+**Note (2026-11-01).** Part 1 is Andersen's own export (REV0002899 to REV0003038; the first page says “You
+created this private channel”), yet its times are Eastern while his P.O. emails are Pacific (1.2) and Part 2 is
+Pacific (1.3). That is not a contradiction: Slack prints times in the zone set in the viewer's profile or device,
+so Andersen's Slack showed Eastern when Part 1 was captured and Pacific later. The Rambaut anchor above is what
+fixes Part 1 as Eastern; the REV numbering does not.
 
 ---
 
