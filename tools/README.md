@@ -39,4 +39,5 @@ After a rebuild, check: no dangling or one-sided reply links, no reply before it
 - `reocr_*.py`: re-run OCR on pages.
 - `build_po_guide.py`, `build_article_page_map.py`, `fetch_complementary.py`: guide and article data.
 - `audit_app.py`, `slack_notice.py`: utilities; not part of the email rebuild.
+- `cross_release_check.py`: tests that a message quoted in one release is not later than the message that quotes it in the other; writes `analysis/cross_release_check.csv`. Changes no data.
 - `freeze_bracket_check.py`: freeze-rule and bracketing check on the P.O. emails; writes `analysis/freeze_bracket_check.csv` and prints a summary. Changes no data.

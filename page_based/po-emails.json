@@ -10,19 +10,19 @@
  "entries": [
   {
    "date": "2020-01-31",
-   "time": "1723",
+   "time": "1757",
    "kind": "email",
-   "raw_date": "17:23 ET · Re: Phone call",
+   "raw_date": "17:57 ET · Re: Phone call",
    "sender": "Jeremy Farrar",
    "sender_raw": "Jeremy Farrar a",
    "sender_how": "From: line",
    "subject": "Re: Phone call",
-   "content": "From: Jeremy Farrar\n\nTo: Fauci, Anthony (NIH/NIAID)\n\nSubject: Re: Phone call\n\nSent: Friday, January 31, :\n\n----------\n\nCan you phone Kristian Anderson\nHe is expecting your call now.\nThe people involved are:\nKristian Anderson https://www.scripps.edu/faculty/andersen/\nBob Garry https://medicine.tulane.edu/departments/microbiology-immunology-tulane-cancer-center/faculty/robert-f-garry-jr phd\nEddie Holmes https://sydney.edu.au/science/about/our-people/academic-staff/edward-holmes.html",
+   "content": "From: Jeremy Farrar\n\nTo: Fauci, Anthony (NIH/NIAID)\n\nSubject: Re: Phone call\n\nSent: Friday, January 31, 2020 5:57 PM\n\n----------\n\nCan you phone Kristian Anderson\nHe is expecting your call now.\nThe people involved are:\nKristian Anderson https://www.scripps.edu/faculty/andersen/\nBob Garry https://medicine.tulane.edu/departments/microbiology-immunology-tulane-cancer-center/faculty/robert-f-garry-jr phd\nEddie Holmes https://sydney.edu.au/science/about/our-people/academic-staff/edward-holmes.html",
    "signature": null,
-   "stamp": "Friday, January 31, 2020 5:23 PM",
+   "stamp": "Friday, January 31, 2020 5:57 PM",
    "stamp_status": "long",
-   "zone_assumed": "verified from the page image: po-emails.pdf PDF page 3 prints 5:23 PM (OCR had dropped the time and the body). Farrar's text says 'It is 10pm now UK', so the printed 5:23",
-   "stamp_line": "Friday, January 31, 2020 5:23 PM -> 17:23 ET (verified override)",
+   "zone_assumed": "verified from the page image: po-emails.pdf PDF page 2 prints 5:57 PM (OCR had dropped the time). It is Farrar's message quoted inside Fauci's reply, so it is frozen on F",
+   "stamp_line": "Friday, January 31, 2020 5:57 PM -> 17:57 ET (verified override)",
    "recovered_inline": false,
    "source": "po-emails",
    "thread_key": "po-emails|2020-01-31|1200",
@@ -31,30 +31,26 @@
     {
      "key": "po-emails|2020-01-31|1938",
      "label": "2020-01-31 19:38 · Fauci, Anthony"
-    },
-    {
-     "key": "po-emails|2020-01-31|1500",
-     "label": "2020-01-31 15:00 · Jeremy Farrar"
     }
    ],
    "idx": 0,
-   "verified_override": "po-emails.pdf PDF page 3 prints 5:23 PM (OCR had dropped the time and the body). Farrar's text says 'It is 10pm now UK', so the printed 5:23 PM is Eastern (22:23 UK)."
+   "verified_override": "po-emails.pdf PDF page 2 prints 5:57 PM (OCR had dropped the time). It is Farrar's message quoted inside Fauci's reply, so it is frozen on Fauci's Eastern clock. farrar-fauci-comms.pdf p.154 prints the same stamp for the same message."
   },
   {
    "date": "2020-01-31",
-   "time": "1757",
+   "time": "1723",
    "kind": "email",
-   "raw_date": "17:57 ET · Phone call",
+   "raw_date": "17:23 ET · Phone call",
    "sender": "Jeremy Farrar",
    "sender_raw": "Jeremy Farrar esos mmm",
    "sender_how": "From: line",
    "subject": "Phone call",
-   "content": "From: Jeremy Farrar\n\nTo: Fauci, Anthony (NIH/NIAID)\n\nSubject: Phone call\n\nSent: Friday, January 31, g\n\n----------\n\n",
+   "content": "From: Jeremy Farrar\n\nTo: Fauci, Anthony (NIH/NIAID)\n\nSubject: Phone call\n\nSent: Friday, January 31, 2020 5:23 PM\n\n----------\n\nTony\n\nReally would like to speak with you this evening\n\nIt is 10pm now UK\n\nCan you phone me on +44 [redacted]\n\nJeremy",
    "signature": null,
-   "stamp": "Friday, January 31, 2020 5:57 PM",
+   "stamp": "Friday, January 31, 2020 5:23 PM",
    "stamp_status": "long",
-   "zone_assumed": "verified from the page image: po-emails.pdf PDF page 2 prints 5:57 PM (OCR had dropped the time). It is Farrar's message quoted inside Fauci's reply, so it is frozen on F",
-   "stamp_line": "Friday, January 31, 2020 5:57 PM -> 17:57 ET (verified override)",
+   "zone_assumed": "verified from the page image: po-emails.pdf PDF page 3 prints 5:23 PM (OCR had dropped the time and the body). Farrar's text says 'It is 10pm now UK', so the printed 5:23",
+   "stamp_line": "Friday, January 31, 2020 5:23 PM -> 17:23 ET (verified override)",
    "recovered_inline": false,
    "source": "po-emails",
    "thread_key": "po-emails|2020-01-31|1500",
@@ -63,13 +59,14 @@
     {
      "key": "po-emails|2020-01-31|2125",
      "label": "2020-01-31 21:25 · Fauci, Anthony"
+    },
+    {
+     "key": "po-emails|2020-02-01|0134",
+     "label": "2020-02-01 01:34 · Fauci, Anthony"
     }
    ],
    "idx": 1,
-   "reply_to": "po-emails|2020-01-31|1200",
-   "reply_to_label": "2020-01-31 12:00 · Jeremy Farrar",
-   "link_kind": "inferred (same conversation)",
-   "verified_override": "po-emails.pdf PDF page 2 prints 5:57 PM (OCR had dropped the time). It is Farrar's message quoted inside Fauci's reply, so it is frozen on Fauci's Eastern clock. farrar-fauci-comms.pdf p.154 prints the same stamp for the same message."
+   "verified_override": "po-emails.pdf PDF page 3 prints 5:23 PM (OCR had dropped the time and the body). Farrar's text says 'It is 10pm now UK', so the printed 5:23 PM is Eastern (22:23 UK). Body typed from the page image (po-emails.pdf p.3) on 2026-11-01, after OCR had lost it."
   },
   {
    "date": "2020-01-31",
@@ -153,9 +150,9 @@
   },
   {
    "date": "2020-01-31",
-   "time": "2343",
+   "time": "2043",
    "kind": "email",
-   "raw_date": "23:43 ET · Science: Mining coronavirus genomes for clues to the outbreak’s origins",
+   "raw_date": "20:43 ET · Science: Mining coronavirus genomes for clues to the outbreak’s origins",
    "sender": "Folkers, Greg",
    "sender_raw": "Folkers, Greg (NIH/NIAID) (E]",
    "sender_how": "From: line",
@@ -164,8 +161,8 @@
    "signature": null,
    "stamp": "Friday, January 31, 2020 8:43 PM",
    "stamp_status": "long",
-   "zone_assumed": "REV export: US Pacific time (UTC-8 winter / UTC-7 summer); fits Kristian Andersen's mailbox (Scripps Research, La Jolla, San Diego)",
-   "stamp_line": "20:43 Los Angeles -> 23:43 ET",
+   "zone_assumed": "verified from the page image: Folkers' message (po-emails.pdf pp.4-11) is quoted inside Fauci's forward in farrar-fauci-comms.pdf p.147, stamped 'Sat, 1 Feb 2020 02:47:39",
+   "stamp_line": "Friday, January 31, 2020 8:43 PM -> 20:43 ET (verified override)",
    "recovered_inline": false,
    "source": "po-emails",
    "thread_key": "po-emails|2020-01-31|2343",
@@ -176,7 +173,8 @@
      "label": "2020-02-01 01:32 · Kristian G. Andersen"
     }
    ],
-   "idx": 5
+   "idx": 5,
+   "verified_override": "Folkers' message (po-emails.pdf pp.4-11) is quoted inside Fauci's forward in farrar-fauci-comms.pdf p.147, stamped 'Sat, 1 Feb 2020 02:47:39 +0000' = 9:47 PM Eastern, so it is on Fauci's Eastern clock (freeze rule). 8:43 PM Pacific (23:43 ET) would be later than the forward that quotes it. Applied 2026-11-01."
   },
   {
    "date": "2020-02-01",
@@ -213,11 +211,11 @@
    "time": "1734",
    "kind": "email",
    "raw_date": "17:34 ET · RE: Phone call",
-   "sender": "Fauci, Anthony",
+   "sender": "Conrad, Patricia (on behalf of Fauci, Anthony)",
    "sender_raw": "\"Conrad, Patricia (NIH/NIAID) ) ie °° behalf of \"Fauci, Anthony (NIH/NIAID) [E",
    "sender_how": "From: line",
    "subject": "RE: Phone call",
-   "content": "From: Fauci, Anthony\n\nSubject: RE: Phone call\n\nDate: Friday, 31 January 2020 at 22:34\n\n----------\n\nWill call shortly...\nPatricia L. Conrad\nPublic Health Analyst and\nSpecial Assistant to the Director\nThe National Institutes of Health\n\n----------\n\nBethesda, Maryland 20892\nDisclaimer:\nnot the original intended recipient. If you have received this e-mail in error please inform the sender and delete it from your mailbox or any other\nstorage devices. National Institute of Allergy and Infectious Diseases (NIAID) shall not accept liability for any statement made that are sender's own\nand not expressly made on behalf of the NIAID by one of its representatives.",
+   "content": "From: Conrad, Patricia (on behalf of Fauci, Anthony)\n\nSubject: RE: Phone call\n\nSent: Friday, 31 January 2020 at 22:34\n\n----------\n\nWill call shortly...\nPatricia L. Conrad\nPublic Health Analyst and\nSpecial Assistant to the Director\nThe National Institutes of Health\n\n----------\n\nBethesda, Maryland 20892\nDisclaimer:\nnot the original intended recipient. If you have received this e-mail in error please inform the sender and delete it from your mailbox or any other\nstorage devices. National Institute of Allergy and Infectious Diseases (NIAID) shall not accept liability for any statement made that are sender's own\nand not expressly made on behalf of the NIAID by one of its representatives.",
    "signature": "Bethesda, Maryland 20892\nDisclaimer:\nnot the original intended recipient. If you have received this e-mail in error please inform the sender and delete it from your mailbox or any other\nstorage devices. National Institute of Allergy and Infectious Diseases (NIAID) shall not accept liability for any statement made that are sender's own\nand not expressly made on behalf of the NIAID by one of its representatives.",
    "stamp": "Friday, 31 January 2020 at 22:34",
    "stamp_status": "long",
@@ -229,7 +227,10 @@
    "thread_label": "2020-02-01 01:34 · Fauci, Anthony",
    "replied_by": [],
    "idx": 7,
-   "verified_override": "Reviewer (Gilles Demaneuf), 2026-10-26: Farrar's 'Phone call' was sent at 22:23 UK ('It is 10pm now UK'), frozen as 5:23 PM on Conrad's East Coast clock when she replied. The reply to her carries Farrar's own UK clock, 22:34, 11 minutes later: 17:34 Eastern. The day-first 24-hour format here is Farrar's own client; this is a decision for this entry, not a general rule."
+   "reply_to": "po-emails|2020-01-31|1500",
+   "reply_to_label": "2020-01-31 17:23 · Jeremy Farrar",
+   "link_kind": "explicit (quoted inline)",
+   "verified_override": "Reviewer (Gilles Demaneuf), 2026-10-26: Farrar's 'Phone call' was sent at 22:23 UK ('It is 10pm now UK'), frozen as 5:23 PM on Conrad's East Coast clock when she replied. The reply to her carries Farrar's own UK clock, 22:34, 11 minutes later: 17:34 Eastern. The day-first 24-hour format here is Farrar's own client; this is a decision for this entry, not a general rule. Page image po-emails.pdf p.3: 'From: Conrad, Patricia (NIH/NIAID) on behalf of Fauci, Anthony', to Jeremy Farrar, 'RE: Phone call', 'Will call shortly...', signed Patricia L. Conrad; it answers Farrar's 'Phone call' (5:23 PM) quoted below it on the same page. Sender label and reply link corrected 2026-11-01."
   },
   {
    "date": "2020-02-01",
@@ -6596,7 +6597,7 @@
    "sender_raw": "Pope, Anco a",
    "sender_how": "From: line",
    "subject": "URGENT: Please review by NOON if at all possible...",
-   "content": "From: Pope, Andrew\n\nTo: 'Chakravarti, Aravinda'; Kristian Andersen Ralph Baric Trevor Bedford Peter Daszak; Gigi Gronvall; Tom InglesDy anley c: Shore, Carolyn; Chao, Samantha\n\nSubject: URGENT: Please review by NOON if at all possible...\n\nSent: Tuesday, Febr ; :\n\nImportance: High\n\n----------\n\nMany thanks again for your thoughtful participation yesterday. The plans have changed in terms of our product. Instead of a “Based on Science” web posting, we are now developing a letter that will be signed by the 3 Presidents of our 3 Academies (NAS, Marcia McNutt; NAM, Victor Dzau;\nNAE, John Anderson), in response to a letter from OSTP. We think this will be more appropriate and expeditious.\nHIGHLY CONFIDENTIAL AND PROPRIETARY WB -0000009\nThus, given the urgency of the request from OSTP and HHS we ask that you please review the attached DRAFT CONFIDENTIAL letter, and let us know if you have any concerns or suggested edits. In particular, we would like to ask if there might be some additional detail added to the data needs that are identified. We think it would be helpful to be a bit more specific, but don’t want to go into too much detail either. Your help there would be most helpful.\nMany sincere thanks again for your continued engagement on this important activity!\nAndy\nAndrew M. Pope, Ph.D.\n\n----------\n\nDirector\nBoard on Health Sciences Policy\nHealth and Medicine Division\nThe National Academies of Sciences,\nEngineering, and Medicine\nas die:\na otic:\nFind us at nationalacademies.org/HMD\nThe National Academies of\nSCIENCES » ENGINEERING * MEDICINE\nHIGHLY CONFIDENTIAL AND PROPRIETARY Mi -0000010\nTo: ‘Chakravari, Aravinda’ Kristian Andersen\nBaric, Ralph S Trevor Bedford\nPeter Daszak Gigi\nTom Inglesby tanley Perlman imi\nCe: Shore, Caroly Chao, Samantha ii",
+   "content": "From: Pope, Andrew\n\nTo: 'Chakravarti, Aravinda'; Kristian Andersen Ralph Baric Trevor Bedford Peter Daszak; Gigi Gronvall; Tom InglesDy anley c: Shore, Carolyn; Chao, Samantha\n\nSubject: URGENT: Please review by NOON if at all possible...\n\n\n\nImportance: High\n\nSent: Tuesday, February 4, 2020 9:11 AM\n\n----------\n\nMany thanks again for your thoughtful participation yesterday. The plans have changed in terms of our product. Instead of a “Based on Science” web posting, we are now developing a letter that will be signed by the 3 Presidents of our 3 Academies (NAS, Marcia McNutt; NAM, Victor Dzau;\nNAE, John Anderson), in response to a letter from OSTP. We think this will be more appropriate and expeditious.\nHIGHLY CONFIDENTIAL AND PROPRIETARY WB -0000009\nThus, given the urgency of the request from OSTP and HHS we ask that you please review the attached DRAFT CONFIDENTIAL letter, and let us know if you have any concerns or suggested edits. In particular, we would like to ask if there might be some additional detail added to the data needs that are identified. We think it would be helpful to be a bit more specific, but don’t want to go into too much detail either. Your help there would be most helpful.\nMany sincere thanks again for your continued engagement on this important activity!\nAndy\nAndrew M. Pope, Ph.D.\n\n----------\n\nDirector\nBoard on Health Sciences Policy\nHealth and Medicine Division\nThe National Academies of Sciences,\nEngineering, and Medicine\nas die:\na otic:\nFind us at nationalacademies.org/HMD\nThe National Academies of\nSCIENCES » ENGINEERING * MEDICINE\nHIGHLY CONFIDENTIAL AND PROPRIETARY Mi -0000010\nTo: ‘Chakravari, Aravinda’ Kristian Andersen\nBaric, Ralph S Trevor Bedford\nPeter Daszak Gigi\nTom Inglesby tanley Perlman imi\nCe: Shore, Caroly Chao, Samantha ii",
    "date_note": "no usable timestamp in the release; not plotted",
    "source": "po-emails",
    "stamp_status": "long",
@@ -6619,7 +6620,7 @@
    "sender_raw": "",
    "sender_how": "",
    "subject": "Interest in commentary/hypothesis on SARS-CoV-2 origins?",
-   "content": "To: Clare Thomas\n\nSubject: Interest in commentary/hypothesis on SARS-CoV-2 origins?\n\nSent: 12 February 2020 23:\n\n----------\n\nDear Clare,\nI can only imagine you must be crazy busy at the moment! I wanted to reach out to you to sce if there would be interest in receiving a commentary/hypothesis piece on the evolutionary origins of SARS-CoV-2? There has been a lot of speculation, fear mongering, and conspiracies put forward in this space and we thought that bringing some clarity to this discussion might be of interest to Nature.\nPrompted by Jeremy Farrah, Tony Fauci, and Francis Collins, Eddie Holmes, Andrew Rambaut, Bob Garry, Ian\nLipkin, and myself have been working through much of the (primarily) genetic data to provide agnostic and scientifically informed hypotheses around the origins of the virus. We are not quite finished with the writeup and we still have some loose ends, but I wanted to reach out to you to see if this might potentially be of interest?\nWe see this more as a commentary/hypothesis, as opposed to a more long-form Letter or Article.",
+   "content": "To: Clare Thomas\n\nSubject: Interest in commentary/hypothesis on SARS-CoV-2 origins?\n\nSent: Wednesday, February 12, 2020 11:09 PM\n\n----------\n\nDear Clare,\nI can only imagine you must be crazy busy at the moment! I wanted to reach out to you to sce if there would be interest in receiving a commentary/hypothesis piece on the evolutionary origins of SARS-CoV-2? There has been a lot of speculation, fear mongering, and conspiracies put forward in this space and we thought that bringing some clarity to this discussion might be of interest to Nature.\nPrompted by Jeremy Farrah, Tony Fauci, and Francis Collins, Eddie Holmes, Andrew Rambaut, Bob Garry, Ian\nLipkin, and myself have been working through much of the (primarily) genetic data to provide agnostic and scientifically informed hypotheses around the origins of the virus. We are not quite finished with the writeup and we still have some loose ends, but I wanted to reach out to you to see if this might potentially be of interest?\nWe see this more as a commentary/hypothesis, as opposed to a more long-form Letter or Article.",
    "date_note": "no usable timestamp in the release; not plotted",
    "source": "po-emails",
    "stamp_status": "long",

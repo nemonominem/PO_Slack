@@ -63,7 +63,7 @@ ZONE_BY_AFFILIATION = [
     (re.compile(r"scripps|andersen|farzan", re.I), "America/Los_Angeles", "Scripps Research"),
     (re.compile(r"tulane|garry", re.I), "America/Chicago", "Tulane University"),
     (re.compile(r"sydney|holmes", re.I), "Australia/Sydney", "University of Sydney"),
-    (re.compile(r"koopmans|fouchier|erasmus|rotterdam", re.I), "Europe/Amsterdam", "Erasmus MC, Netherlands"),
+    (re.compile(r"koopmans|^marion|fouchier|erasmus|rotterdam", re.I), "Europe/Amsterdam", "Erasmus MC, Netherlands"),
     (re.compile(r"pasteur|paris|institut", re.I), "Europe/Paris", "Institut Pasteur"),
     (re.compile(r"china cdc|\bgao\b|beijing", re.I), "Asia/Shanghai", "China CDC"),
     (re.compile(r"drosten|charit|berlin", re.I), "Europe/Berlin", "Charite, Berlin"),

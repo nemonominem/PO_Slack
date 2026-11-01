@@ -1,2 +1,3 @@
-Keys mapped: 268
-NO MATCH KEY | farrar-fauci/farrar-fauci|2020-02-01|1443|2 | too little text, and no unique current entry with the same date, time and sender
+Keys mapped: 269
+COLLISION | po-emails/po-emails|2020-01-31|1500 | key now names a different message
+NO MATCH KEY | farrar-fauci/farrar-fauci|2020-02-01|1343|1 | too little text, and no unique current entry with the same date, time and sender

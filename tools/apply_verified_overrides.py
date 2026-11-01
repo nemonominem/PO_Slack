@@ -2,7 +2,8 @@
 """Apply hand-verified time corrections (verified_overrides.json).
 
 Each override names an entry by thread_key, gives the printed stamp as read from
-the page image, and the zone it is on, with the evidence. Used only for cases
+the page image, and the zone it is on, with the evidence. Optional fields: body (text
+the OCR lost), sender (corrected label), reply_to (thread_key of the message it answers). Used only for cases
 settled by the page itself (for example OCR dropped a time, and the page or the
 message text fixes the zone). The thread_key is left unchanged: it is an
 identifier, and bookmarks and chapter links use it. Run after anchor_copies.py
@@ -10,6 +11,7 @@ and before dedupe_same_instant.py.
 """
 import json
 import os
+import re
 from zoneinfo import ZoneInfo
 
 import owner_zone_check as o
@@ -70,6 +72,29 @@ def main():
             e["raw_date"] = "%s:%s ET · %s" % (e["time"][:2], e["time"][2:], e.get("subject") or "")
             e["stamp_line"] = "%s -> %s:%s ET (verified override)" % (item["stamp"], e["time"][:2], e["time"][2:])
             e["verified_override"] = item["evidence"]
+            hdr, sep, rest = (e.get("content") or "").partition("----------")
+            if sep:   # the header's Sent/Date line was cut by OCR: write the stamp read from the page
+                hdr = re.sub(r"(?m)^(Sent|Date):.*$", "", hdr).rstrip() + "\n\nSent: " + item["stamp"] + "\n\n"
+                e["content"] = hdr + sep + rest
+            if item.get("body") is not None:   # body text OCR lost, typed from the page image
+                hdr = (e.get("content") or "").partition("----------")[0]
+                e["content"] = hdr + "----------\n\n" + item["body"]
+            if item.get("sender"):
+                e["sender"] = item["sender"]
+                e["content"] = re.sub(r"(?m)^From:.*$", "From: " + item["sender"], e.get("content") or "", count=1)
+            if item.get("reply_to"):
+                parent = by_key.get(item["reply_to"])
+                if parent is not None:
+                    old = by_key.get(e.get("reply_to"))    # leave the old parent's reply list
+                    if old is not None:
+                        old["replied_by"] = [r for r in (old.get("replied_by") or [])
+                                             if (r.get("key") if isinstance(r, dict) else r) != e["thread_key"]]
+                    e["reply_to"] = parent["thread_key"]
+                    e["reply_to_label"] = "%s %s:%s · %s" % (parent["date"], parent["time"][:2], parent["time"][2:], parent.get("sender") or "")
+                    e["link_kind"] = "explicit (quoted inline)"
+                    parent.setdefault("replied_by", [])
+                    if not any((r.get("key") if isinstance(r, dict) else r) == e["thread_key"] for r in parent["replied_by"]):
+                        parent["replied_by"].append({"key": e["thread_key"], "label": "%s %s:%s · %s" % (e["date"], e["time"][:2], e["time"][2:], e.get("sender") or "")})
             print("verified:", name, e.get("idx"), old, "->", (e["date"], e["time"]))
         drop_backwards_inferred_links(entries)
         if isinstance(raw, dict) and "entries" in raw:

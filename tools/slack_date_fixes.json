@@ -7,5 +7,59 @@
     "wrong_date": "2020-02-02",
     "date": "2020-02-01",
     "evidence": "slack-part1.pdf p.4: this 22:42 message comes after the 15:05 Zoom message of 1 Feb and before the 01:00 message of 2 Feb, so it is the evening of 1 Feb; the day divider 'February 2' was applied one message too early. The author's article (5.6a) also dates it 1 Feb, 10:42 pm EST."
+  },
+  {
+    "part": "part1",
+    "idx": 97,
+    "sender": "Kristian ",
+    "time": "22:35",
+    "wrong_date": "2020-02-03",
+    "date": "2020-02-02",
+    "evidence": "slack-part1.pdf: the 22:35 message comes after the last message of 2020-02-02 and before small-hours messages of 2020-02-03, so it is the evening of 2020-02-02; the day divider was applied one message too early (same fault as the 22:42 message of 1 Feb). Checked on the page image for the 22:35 message of 2 Feb (p.9), where the divider sits below it. Applied 2026-11-01."
+  },
+  {
+    "part": "part1",
+    "idx": 178,
+    "sender": "Eddie Hol",
+    "time": "20:11",
+    "wrong_date": "2020-02-06",
+    "date": "2020-02-05",
+    "evidence": "slack-part1.pdf: the 20:11 message comes after the last message of 2020-02-05 and before small-hours messages of 2020-02-06, so it is the evening of 2020-02-05; the day divider was applied one message too early (same fault as the 22:42 message of 1 Feb). Checked on the page image for the 22:35 message of 2 Feb (p.9), where the divider sits below it. Applied 2026-11-01."
+  },
+  {
+    "part": "part1",
+    "idx": 239,
+    "sender": "Eddie Hol",
+    "time": "19:11",
+    "wrong_date": "2020-02-08",
+    "date": "2020-02-07",
+    "evidence": "slack-part1.pdf: the 19:11 message comes after the last message of 2020-02-07 and before small-hours messages of 2020-02-08, so it is the evening of 2020-02-07; the day divider was applied one message too early (same fault as the 22:42 message of 1 Feb). Checked on the page image for the 22:35 message of 2 Feb (p.9), where the divider sits below it. Applied 2026-11-01."
+  },
+  {
+    "part": "part1",
+    "idx": 371,
+    "sender": "Kristian ",
+    "time": "19:45",
+    "wrong_date": "2020-02-12",
+    "date": "2020-02-11",
+    "evidence": "slack-part1.pdf: the 19:45 message comes after the last message of 2020-02-11 and before small-hours messages of 2020-02-12, so it is the evening of 2020-02-11; the day divider was applied one message too early (same fault as the 22:42 message of 1 Feb). Checked on the page image for the 22:35 message of 2 Feb (p.9), where the divider sits below it. Applied 2026-11-01."
+  },
+  {
+    "part": "part1",
+    "idx": 405,
+    "sender": "Eddie Hol",
+    "time": "22:26",
+    "wrong_date": "2020-02-13",
+    "date": "2020-02-12",
+    "evidence": "slack-part1.pdf: the 22:26 message comes after the last message of 2020-02-12 and before small-hours messages of 2020-02-13, so it is the evening of 2020-02-12; the day divider was applied one message too early (same fault as the 22:42 message of 1 Feb). Checked on the page image for the 22:35 message of 2 Feb (p.9), where the divider sits below it. Applied 2026-11-01."
+  },
+  {
+    "part": "part1",
+    "idx": 1212,
+    "sender": "Kristian ",
+    "time": "23:56",
+    "wrong_date": "2020-04-21",
+    "date": "2020-04-20",
+    "evidence": "slack-part1.pdf: the 23:56 message comes after the last message of 2020-04-20 and before small-hours messages of 2020-04-21, so it is the evening of 2020-04-20; the day divider was applied one message too early (same fault as the 22:42 message of 1 Feb). Checked on the page image for the 22:35 message of 2 Feb (p.9), where the divider sits below it. Applied 2026-11-01."
   }
 ]

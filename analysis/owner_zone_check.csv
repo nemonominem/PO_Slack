@@ -1,7 +1,6 @@
 owner,po_idx,date,sender,po_stamp,copy_stamp,similarity,implied_offset_hours,note
 REV,3,2020-01-31,"Fauci, Anthony",1/31/2020 6:25:48 PM,,,,no printed time or text
 REV,4,2020-01-31,Kristian G. Andersen,"Friday, January 31, 2020 8:05 PM",,,,no explicit-offset copy found
-REV,5,2020-01-31,"Folkers, Greg","Friday, January 31, 2020 8:43 PM",,,,no explicit-offset copy found
 REV,6,2020-02-01,Kristian G. Andersen,"Friday, January 31, 2020 10:32 PM",,,,no explicit-offset copy found
 REV,8,2020-02-01,"Fauci, Anthony",2/1/2020 10:43:31 AM,,,,no printed time or text
 GARRY,9,2020-02-01,Jeremy Farrar,"Saturday, 1 February 2020 at 15:34",,,,no explicit-offset copy found

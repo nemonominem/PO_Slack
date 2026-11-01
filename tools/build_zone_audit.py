@@ -34,8 +34,8 @@ PDFS = {"po-emails": "po-emails.pdf", "farrar-fauci": "farrar-fauci-comms.pdf"}
 # they survive every rebuild.
 NOTES = {
     "po-emails|2020-01-31|1938": "Anchored to farrar-fauci idx 24 (+0000, 0.99 similarity): Fauci sent it at 00:38 UTC = 7:38 PM Eastern. The block is quoted inside Andersen's own reply (PO 4) and prints 'Jan 31, 2020 4:38 PM', so by the footnote rule it is on Andersen's clock: UTC-8, Pacific. This supports the REV rule (one data point). See ZONE_AND_DATE_ANALYSIS.md 1.d.",
-    "po-emails|2020-01-31|1500": "Time corrected to 5:57 PM Eastern from the page image (po-emails.pdf p.2); OCR had dropped it. See tools/verified_overrides.json.",
-    "po-emails|2020-01-31|1500|1": "A distinct message (Farrar's original 'Phone call', 5:23 PM Eastern, po-emails.pdf p.3), not a duplicate. Time corrected from the page image; body text still lost by OCR. See tools/verified_overrides.json.",
+    "po-emails|2020-01-31|1200": "Time corrected to 5:57 PM Eastern from the page image (po-emails.pdf p.2); OCR had dropped it. See tools/verified_overrides.json.",
+    "po-emails|2020-01-31|1500": "A distinct message (Farrar's original 'Phone call', 5:23 PM Eastern, po-emails.pdf pp.3-4), not a duplicate. Time and body typed from the page image. See tools/verified_overrides.json.",
     "farrar-fauci|2020-01-31|1257": "Time corrected to 5:57 PM Eastern (same message as po-emails|2020-01-31|1500). See tools/verified_overrides.json.",
 }
 

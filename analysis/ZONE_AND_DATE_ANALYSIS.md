@@ -1,6 +1,6 @@
 # Zone and date analysis: P.O. Record Search and the email releases
 
-Status as of 2026-10-31 (the quote/forward rule is now implemented; see 5.6 and 5.8). Internal; not published. This file is only about getting the dates and
+Status as of 2026-11-01 (the quote/forward rule is now implemented; see 5.6 and 5.8). Internal; not published. This file is only about getting the dates and
 times right and about what is wrong in the P.O. piece and the web app because of them. Every
 instruction and decision for you is in `FOR_HUMAN_REVIEWER.md`.
 
@@ -33,10 +33,10 @@ backed by evidence. `zone_format_audit.csv` marks each email `Settled`.
 |---|---|---|---|
 | Zone written in the stamp (`+0000`, `UTC+11:00`, `AEDT`, `EST`) | 53 (45 Farrar-Fauci, 8 P.O. emails) | as written | The stamp |
 | Exact copy with an explicit offset | 1 | from the copy | `po-emails.pdf` pp.1-2, “Jan 31, 2020 4:38 PM”, Fauci, Anthony, “[NA]” equals the Farrar-Fauci copy `farrar-fauci-comms.pdf` p.154, “Sat, 1 Feb 2020 00:38:35 +0000”, Anthony Fauci, “RE: Phone call” |
-| Verified from the page image or the message text | 14 | per entry (Eastern, London, Pacific, Amsterdam, Berlin, Santiago) | 4 corrections in 1.1; 8 headers that were undated, read from the page images (S6); 2 corrected from the message text: Gao and Dzau, 25 Apr 2020, Eastern (S7) |
-| Page owner **REV**, top-level stamps only (P.O. emails) | 47 | Pacific | Section 1.2. The 95 other REV-page entries are quoted blocks, which now take the quoting author's clock (Supported) |
+| Verified from the page image or the message text | 15 | per entry (Eastern, London, Pacific, Amsterdam, Berlin, Santiago) | 4 corrections in 1.1; 8 headers that were undated, read from the page images; 2 corrected from the message text (Gao and Dzau, 25 Apr 2020); Folkers 8:43 PM; and the 22:34 reply (list in FOR_HUMAN_REVIEWER.md, S3) |
+| Page owner **REV**, top-level stamps only (P.O. emails) | 46 | Pacific | Section 1.2. The 95 other REV-page entries are quoted blocks, which now take the quoting author's clock (Supported) |
 
-## 1.1 The four verified corrections
+## 1.1 The verified corrections (15 emails; first four, then the others in FOR_HUMAN_REVIEWER.md S3)
 
 - `po-emails.pdf` p.2, “Friday, January 31, 2020 5:57 PM”, Jeremy Farrar, “Re: Phone call”: quoted in Fauci's reply, so on Fauci's Eastern clock. The same message appears in the
   Farrar-Fauci release as `farrar-fauci-comms.pdf` pp.154-155, “Friday, January 31, 2020 5:57 PM”, Jeremy Farrar, “Re: Phone call”, inside Fauci's reply stamped `00:38:35 +0000`: also a verified correction.
@@ -116,9 +116,9 @@ above decide Part 1; the REV numbering does not.
 
 ---
 
-# Part 2. Unsettled datetimes (278 emails)
+# Part 2. Not settled and only supported datetimes (272 emails)
 
-## 2.1 Supported but not proven (259 emails)
+## 2.1 Supported but not proven (258 emails)
 
 Consistent with every test (every reply pair it touches is in order), but reply order cannot catch a copy that
 is simply too early; the Farrar message `farrar-fauci-comms.pdf` pp.154-155, “Friday, January 31, 2020 5:57 PM”, Jeremy Farrar, “Re: Phone call” was five hours early and the test passed. Marked `Supported`.
@@ -127,7 +127,7 @@ is simply too early; the Farrar message `farrar-fauci-comms.pdf` pp.154-155, “
 |---|---|---|
 | Quoted block: clock of the quoting message's author (the freeze rule, 5.6) | 164 (151 P.O. emails, 13 Farrar-Fauci) | the author's institution zone |
 | Sender: Jeremy Farrar, top-level (Farrar-Fauci release) | 32 | London (he is based in London, reviewer, 2026-11-01) |
-| Sender: Wellcome convener (other unzoned stamps) | 18 (16 Farrar-Fauci, 2 P.O. emails) | London |
+| Sender: Wellcome convener (other unzoned stamps) | 17 (15 Farrar-Fauci, 2 P.O. emails) | London |
 | Sender: NIH, Bethesda (Farrar-Fauci release) | 26 | Eastern |
 | Page owner **LIP**, top-level (P.O. emails) | 8 | Eastern |
 | Page owner **GARRY**, top-level (P.O. emails) | 11 | Chicago (Central): Garry works at Tulane University School of Medicine, New Orleans (Central time), per the reviewer, 2026-10-29. Reply order excludes Pacific. No exact copy proves it; a trip away from Central would not show. |
@@ -146,45 +146,39 @@ These are in `TRAGICOMEDY_ISSUES.md` (private, git-ignored, not pushed). Nothing
 
 ---
 
-# Part 4. Issues in the web app
+# Part 4. Issues in the web app: what was found and fixed (2026-11-01)
 
-## A1. Folkers' 8:43 PM is on the wrong clock (23:43 Eastern; should be 20:43 Eastern)
-`po-emails.pdf` pp.4-11, “Friday, January 31, 2020 8:43 PM”, Folkers, Greg, “Science: Mining coronavirus genomes for clues to the…” is Folkers' message as quoted inside Fauci's forward (`farrar-fauci-comms.pdf` p.147, “Sat, 1 Feb 2020 02:47:39 +0000”, Anthony Fauci, “FW: Science: Mining coronavirus genomes for clues to the…”, 9:47 PM Eastern), so it is on Fauci's
-Eastern clock. The REV rule gives it Pacific = 23:43 Eastern, later than the forward that quotes it. Proposed
-fix: add it as a verified correction to `tools/verified_overrides.json`, with this evidence.
+Everything that had a known problem and a known answer has been fixed. What is still open is in `FOR_HUMAN_REVIEWER.md`.
 
-## A2. A Slack message was on the wrong day: fixed
-`slack-part1.pdf` p.4, Andersen, 22:42, “@Eddie Holmes and @Andrew Rambaut - here's a document I have been
-working on” was dated 2 Feb 2020 in the app. It is the evening of 1 Feb (it comes after the 15:05 Zoom message of
-1 Feb and before the 01:00 message of 2 Feb; your article, 5.6a, has 1 Feb). The day divider “February 2” had been
-applied one message too early. Corrected through `tools/slack_date_fixes.json` (with the evidence), applied by
-`tools/parse_part1.py`. The chapter 5.6 button now also appears on this message.
+## A1. Folkers' 8:43 PM: fixed
+`po-emails.pdf` pp.4-11, “Friday, January 31, 2020 8:43 PM”, Folkers, Greg, was shown as 23:43 Eastern (REV rule, Pacific), later than the Fauci forward that quotes it (`farrar-fauci-comms.pdf` p.147, stamped `Sat, 1 Feb 2020 02:47:39 +0000` = 21:47 Eastern). It is on Fauci's Eastern clock: **20:43 Eastern**. Now a verified correction.
 
-## A3. Slack Part 1: times run backwards in 80 places (listed)
-Timed messages whose time drops by more than an hour inside one date, for example 12:47, then 01:28, then 12:50.
-Part 1 has no AM/PM and times only the first message of a run, so these are OCR slips or misplaced day dividers.
-Part 2 has none. The 80 are in `slack_part1_time_check.csv` (page, printed times, senders, first words; made by
-`tools/slack_time_check.py`). 12 follow the evening-then-small-hours pattern of a misplaced day divider (the same
-pattern as A2) and need the page image to place; the other 68 look like misread digits. Not fixed.
+## A2. A Slack message on the wrong day: fixed
+`slack-part1.pdf` p.4, Andersen, 22:42, was dated 2 Feb; it is the evening of 1 Feb (the day divider had been applied one message too early). Corrected through `tools/slack_date_fixes.json`.
+
+## A3. Slack Part 1: times run backwards in 80 places: 6 of the 12 evening-then-small-hours cases fixed
+Of the 12 cases where an evening message is followed by a small-hours message on the same date, **6 are the same fault as A2** (a single evening message whose date is one day too late, because the divider was applied one message early). In each, the previous timed message belongs to the previous day with an earlier time, and the next one is a small-hours message of the day. Checked on the page image for `slack-part1.pdf` p.9 (the “February 3rd” divider sits below the 22:35 message). Fixed: p.9 (22:35, 2 Feb), p.16 (20:11, 5 Feb), p.21 (19:11, 7 Feb), p.35 (19:45, 11 Feb), p.39 (22:26, 12 Feb), p.134 (23:56, 20 Apr). The other 6 are not that pattern (the evening run is long and contiguous with the same date, or the dates jump: p.60, 22 Feb vs 24 Feb); on the page image of p.19 the times rise steadily, so the “01:49” is a misread digit. They stay in `slack_part1_time_check.csv`, together with the 68 other backwards times, as probable misread digits.
 
 ## A4. Slack times carry no zone: done
-Slack Part 2 (Pacific) is now converted to ET and Part 1 (Eastern) is labelled ET; both show the printed local
-time in the 🕑 chip. Sorting and the timeline now compare like with like. Related data issues remain in A2 and A3.
+Slack Part 2 (Pacific) is converted to ET, Part 1 (Eastern) is labelled ET; both show the printed local time in the 🕑 chip.
 
-## A5. Chapter link for section 4.11
-The article caption “3:59 pm EST” (Farrar-Fauci p.112) is linked to Fauci's `farrar-fauci-comms.pdf` p.137, “Saturday, 1 February 2020 at 15:50”, Anthony Fauci, “RE: Teleconference”, 9 minutes away. It may
-be a different message.
+## A5. Chapter link for section 4.11: open
+The article caption “Farrar proposes a way out via the WHO (1 Feb, 3:59 pm EST)” is linked to Fauci's `farrar-fauci-comms.pdf` p.137, “Saturday, 1 February 2020 at 15:50”, “RE: Teleconference” (“Please include Francis Collins…”), which is not about the WHO. The Farrar message that proposes WHO contact is `farrar-fauci-comms.pdf` p.108, “Sunday, February 2, 2020 4:48 AM” (now 23:48 ET on 1 Feb). Neither is at 3:59 pm Eastern, so the link is probably wrong and the caption time may be off too. Needs your decision (FOR_HUMAN_REVIEWER.md, O1).
 
-## A6. Farrar's original “Phone call” has no body text
-`po-emails.pdf` pp.3-4, “Friday, January 31, 2020 5:23 PM”, Jeremy Farrar, “Phone call”: OCR kept the header and lost the body; the page image has it.
+## A6. Farrar's original “Phone call” body: fixed
+`po-emails.pdf` pp.3-4, “Friday, January 31, 2020 5:23 PM”: the body (“Tony / Really would like to speak with you this evening / It is 10pm now UK / Can you phone me on +44 … / Jeremy”) is typed from the page image into the override. The header's Sent line, cut by OCR, is also restored.
 
-## A7. The Farrar 22:34 message
-`po-emails.pdf` p.3, “Friday, 31 January 2020 at 22:34”, Fauci, Anthony, “RE: Phone call”: the sender label reads “Fauci, Anthony” (the header says “on behalf of”), and the message now has no
-reply link (the old link, to Andersen, ran backwards and was dropped).
+## A7. The Farrar 22:34 message: fixed
+`po-emails.pdf` p.3: the page image shows “From: Conrad, Patricia (NIH/NIAID) on behalf of Fauci, Anthony”, to Jeremy Farrar, “RE: Phone call”, “Will call shortly…”, signed Patricia L. Conrad. The sender label is now “Conrad, Patricia (on behalf of Fauci, Anthony)”, and it replies (explicit, quoted inline on the same page) to Farrar's 5:23 PM “Phone call”, 11 minutes earlier.
 
-## A8. Undated and mis-grouped entries
-Every email now has a date and time (item S6: the eight undated ones were read from the page images on 2026-10-30/31). The sender-institution groups were mislabelled by hand in an
-earlier version of the review file; they are now generated from the audit file.
+## A8. Cross-release quote check: run, no violation
+`tools/cross_release_check.py` looks for the body of each entry of one release inside an entry of the other release and tests that the quoted message is not later than its quoter. 6 quoted pairs found, 0 violations (the Folkers one, A1, was the case that prompted it). Signature blocks are excluded. Output: `cross_release_check.csv`.
+
+## A9. A bug of mine, found and fixed: two verified overrides were swapped
+After the 2026-10-29 rerun I re-pointed the “Phone call” 5:23 PM override to the wrong key, so the p.2 message (“Re: Phone call”, 5:57 PM) showed 5:23 PM and the pp.3-4 message (“Phone call”, 5:23 PM) showed 5:57 PM. Both are now on the right entries (keys `po-emails|2020-01-31|1200` for p.2, `|1500` for pp.3-4). Lesson: when keys change, re-check every override target by its page, not by its time.
+
+## A10. Bookmarks
+268 old bookmark keys are re-mapped. A few old keys now name a different message and cannot be re-mapped (the old key is still live): `po-emails|2020-01-31|1500` (now the pp.3-4 message), `|2020-02-04|2008`, `|2020-02-05|1500|1`, `|1500|2`, `|1500|3`, `|2020-02-16|1750`, `|2020-02-16|1806`, `|2020-02-17|1641`, and one with no unique match, `farrar-fauci|2020-02-01|1343|1`. Anyone who bookmarked one of those will see the wrong message.
 
 ---
 
@@ -361,4 +355,4 @@ On 2026-11-01 the reviewer gave three facts, now in the lookup: **Jeremy Farrar:
 five hours (one by 9 hours: Andersen, 8 Feb 22:15, quoted by Koopmans, now 16:15 ET); reply order still allows only the current clock for every group;
 app tests 8 PASS, audit 66/66. Fouchier and Koopmans now have their own group (`Erasmus MC, Netherlands`, 5 linked pairs, only shift 0 allowed) and Farrar his own
 (`Jeremy Farrar, Wellcome Trust (London)`, 41 pairs, only shift 0 allowed), so the small London senders are not given Farrar's pairs as support.
-Dzau is not in the lookup; his two stamps are verified from the message text (S7).
+Dzau is not in the lookup; his two stamps are verified from the message text (FOR_HUMAN_REVIEWER.md, S3).

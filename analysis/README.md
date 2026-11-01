@@ -44,11 +44,12 @@ Open it in a spreadsheet and filter on `zone_status`.
 - **Settled:** fixed by the stamp, an exact copy, the page image, or a decision of yours.
 - **Supported:** consistent with every test, but the tests cannot prove it.
 - **Not settled:** an assumption with no test, or the data cannot decide. These are the
-  rows behind items U1, U2 and S5 to S8 in `FOR_HUMAN_REVIEWER.md`.
+  rows behind the S, L and U items in `FOR_HUMAN_REVIEWER.md`.
 
 ## 4. Rebuilding
 
 Do not edit the generated files by hand. The scripts and their order are in
 `tools/README.md`. Hand-checked corrections go in `tools/verified_overrides.json`, with
 the evidence beside each one.
+- `cross_release_check.csv`: quoted-later-than-quoter violations across the two releases (header only when none). Optional.
 - `freeze_bracket_check.csv`: per non-exact P.O. email, the clock that froze the stamp, the offsets bracketing allows, and the time under the freeze rule (from `tools/freeze_bracket_check.py`). Optional.
