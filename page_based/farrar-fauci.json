@@ -2542,27 +2542,27 @@
   },
   {
    "date": "2020-02-26",
-   "time": "0259",
+   "time": "0655",
    "kind": "email",
-   "raw_date": "02:59 ET · RE: Can I give you a ring today",
-   "sender": "Teresa Miller de Vega",
-   "sender_raw": "Teresa Miller de Vega oo",
+   "raw_date": "06:55 ET · Re: Can I give you a ring today",
+   "sender": "Jeremy Farrar",
+   "sender_raw": "Jeremy Farrar ii",
    "sender_how": "From: line",
-   "subject": "RE: Can I give you a ring today",
-   "content": "From: Teresa Miller de Vega\n\nTo: Barasch, Kimberly (NIH/NIAID)\n\nSubject: RE: Can I give you a ring today\n\nSent: Wednesday, February 26, 2020 7:59 AM\n\n----------\n\nHi Kim,\nJeremy will be able to call Tony after 17:30 UK / 13:30 DC time.\nI hope this works.\nThank you,\nTeresa",
+   "subject": "Re: Can I give you a ring today",
+   "content": "From: Jeremy Farrar\n\nTo: Fauci, Anthony (NIH/NIAID) OG; Teresa Miller de Vega\n\nCc: Conrad, Patricia (NIH/NIAID) <c@G,; Barasch, Kimberly (NIH/NIAID)\n\nSubject: Re: Can I give you a ring today\n\nSent: 26 February 2020 12:55\n\n----------\n\n",
    "signature": null,
-   "stamp": "Wednesday, February 26, 2020 7:59 AM",
-   "stamp_status": "long",
-   "zone_assumed": "frozen in Kimberly Barasch's zone (quoted in their 2020-02-26 reply)",
-   "stamp_line": "07:59 London -> 02:59 ET",
+   "stamp": "26 February 2020 12:55",
+   "stamp_status": "day-month-year",
+   "zone_assumed": "frozen in Teresa Miller de Vega's clock (Teresa Miller de Vega, GPMB Secretariat at WHO (Geneva); quoted in their message)",
+   "stamp_line": "12:55 Zurich -> 06:55 ET",
    "recovered_inline": false,
    "source": "farrar-fauci",
-   "thread_key": "farrar-fauci|2020-02-26|0259",
-   "thread_label": "2020-02-26 02:59 · Teresa Miller de Vega",
+   "thread_key": "farrar-fauci|2020-02-26|0655",
+   "thread_label": "2020-02-26 06:55 · Jeremy Farrar",
    "replied_by": [
     {
-     "key": "farrar-fauci|2020-02-26|0803",
-     "label": "2020-02-26 08:03 · Kimberly Barasch"
+     "key": "farrar-fauci|2020-02-26|0759",
+     "label": "2020-02-26 07:59 · Teresa Miller de Vega"
     },
     {
      "key": "farrar-fauci|2020-02-26|0736",
@@ -2597,8 +2597,8 @@
     }
    ],
    "idx": 93,
-   "reply_to": "farrar-fauci|2020-02-26|0259",
-   "reply_to_label": "2020-02-26 02:59 · Teresa Miller de Vega",
+   "reply_to": "farrar-fauci|2020-02-26|0655",
+   "reply_to_label": "2020-02-26 06:55 · Jeremy Farrar",
    "link_kind": "inferred (same conversation)"
   },
   {
@@ -2740,12 +2740,7 @@
    "source": "farrar-fauci",
    "thread_key": "farrar-fauci|2020-02-26|0752",
    "thread_label": "2020-02-26 07:52 · Anthony Fauci",
-   "replied_by": [
-    {
-     "key": "farrar-fauci|2020-02-26|0755",
-     "label": "2020-02-26 07:55 · Jeremy Farrar"
-    }
-   ],
+   "replied_by": [],
    "reply_to": "farrar-fauci|2020-02-26|0747",
    "reply_to_label": "2020-02-26 07:47 · Jeremy Farrar",
    "link_kind": "explicit (quoted inline)",
@@ -2753,26 +2748,31 @@
   },
   {
    "date": "2020-02-26",
-   "time": "0755",
+   "time": "0759",
    "kind": "email",
-   "raw_date": "07:55 ET · Re: Can I give you a ring today",
-   "sender": "Jeremy Farrar",
-   "sender_raw": "Jeremy Farrar ii",
+   "raw_date": "07:59 ET · RE: Can I give you a ring today",
+   "sender": "Teresa Miller de Vega",
+   "sender_raw": "Teresa Miller de Vega oo",
    "sender_how": "From: line",
-   "subject": "Re: Can I give you a ring today",
-   "content": "From: Jeremy Farrar\n\nTo: Fauci, Anthony (NIH/NIAID) OG; Teresa Miller de Vega\n\nCc: Conrad, Patricia (NIH/NIAID) <c@G,; Barasch, Kimberly (NIH/NIAID)\n\nSubject: Re: Can I give you a ring today\n\nSent: 26 February 2020 12:55\n\n----------\n\n",
+   "subject": "RE: Can I give you a ring today",
+   "content": "From: Teresa Miller de Vega\n\nTo: Barasch, Kimberly (NIH/NIAID)\n\nSubject: RE: Can I give you a ring today\n\nSent: Wednesday, February 26, 2020 7:59 AM\n\n----------\n\nHi Kim,\nJeremy will be able to call Tony after 17:30 UK / 13:30 DC time.\nI hope this works.\nThank you,\nTeresa",
    "signature": null,
-   "stamp": "26 February 2020 12:55",
-   "stamp_status": "day-month-year",
-   "zone_assumed": "frozen in Teresa Miller de Vega's zone (quoted in their 2020-02-26 reply)",
-   "stamp_line": "12:55 London -> 07:55 ET",
+   "stamp": "Wednesday, February 26, 2020 7:59 AM",
+   "stamp_status": "long",
+   "zone_assumed": "frozen in Kimberly Barasch's clock (NIH, Bethesda; quoted in their message)",
+   "stamp_line": "07:59 ET",
    "recovered_inline": false,
    "source": "farrar-fauci",
-   "thread_key": "farrar-fauci|2020-02-26|0755",
-   "thread_label": "2020-02-26 07:55 · Jeremy Farrar",
-   "replied_by": [],
-   "reply_to": "farrar-fauci|2020-02-26|0752",
-   "reply_to_label": "2020-02-26 07:52 · Anthony Fauci",
+   "thread_key": "farrar-fauci|2020-02-26|0759",
+   "thread_label": "2020-02-26 07:59 · Teresa Miller de Vega",
+   "replied_by": [
+    {
+     "key": "farrar-fauci|2020-02-26|0803",
+     "label": "2020-02-26 08:03 · Kimberly Barasch"
+    }
+   ],
+   "reply_to": "farrar-fauci|2020-02-26|0655",
+   "reply_to_label": "2020-02-26 06:55 · Jeremy Farrar",
    "link_kind": "explicit (quoted inline)",
    "idx": 99
   },
@@ -2801,8 +2801,8 @@
      "label": "2020-02-26 08:04 · Jeremy Farrar"
     }
    ],
-   "reply_to": "farrar-fauci|2020-02-26|0259",
-   "reply_to_label": "2020-02-26 02:59 · Teresa Miller de Vega",
+   "reply_to": "farrar-fauci|2020-02-26|0759",
+   "reply_to_label": "2020-02-26 07:59 · Teresa Miller de Vega",
    "link_kind": "explicit (quoted inline)",
    "idx": 100
   },
