@@ -5045,15 +5045,26 @@ function applyKindFilter() {
 // An email knows the message it answers and the messages that answered it; a
 // Slack message may carry files. Chips make those relations navigable, and an
 // announced-but-unreleased document is shown dimmed rather than as a dead link.
+// The label of a linked message, always "YYYY-MM-DD HH:MM ET · sender", built from
+// the linked entry itself (the stored label can be stale after a time correction).
+function chipRefLabel(key, fallback, withSubject) {
+  const t = findEntryByThreadKey(key);
+  if (!t || !t.date) return fallback || '';
+  const hm = (t.time && /^\d{4}$/.test(t.time)) ? t.time.slice(0, 2) + ':' + t.time.slice(2) + ' ET' : '(no time)';
+  return t.date + ' ' + hm + (t.sender ? ' · ' + t.sender : '') +
+    (withSubject && t.subject ? ' · ' + t.subject : '');
+}
 function entryChipsHtml(e) {
   const out = [];
   if (e.reply_to && e.reply_to_label) {
     out.push('<span class="chip chip-thread" data-open-entry="' + escapeHtml(e.reply_to) +
-      '" title="The message this one answers">↩ in reply to ' + escapeHtml(e.reply_to_label) + '</span>');
+      '" title="The message this one answers (time in New York time, ET)">↩ in reply to ' +
+      escapeHtml(chipRefLabel(e.reply_to, e.reply_to_label, false)) + '</span>');
   }
   (e.replied_by || []).forEach(function(r) {
     out.push('<span class="chip chip-thread" data-open-entry="' + escapeHtml(r.key) +
-      '" title="A later message in this conversation">↪ answered by ' + escapeHtml(r.label) + '</span>');
+      '" title="A later message in this conversation (time in New York time, ET)">↪ answered by ' +
+      escapeHtml(chipRefLabel(r.key, r.label, true)) + '</span>');
   });
   (e.attachments || []).forEach(function(a) {
     const name = typeof a === 'string' ? a : (a.label || '');
