@@ -137,11 +137,45 @@ Every email now has a rule that gives a clock. Since your decision of 2026-11-02
 
 ### Flagged by my checks (not time errors that I can place)
 
-| Code | What | Why it is unknown |
-|---|---|---|
-| **U15** | Three reply pairs that my separate freeze check flags as backwards: `po-emails.pdf` pp.22-29 (Garry “5 Feb 2020 1:03 pm”, then Holmes “2/5/2020 1:23:41 AM”), p.28 and pp.28-45 (Holmes “5 Feb 2020 9:04 pm”, then Holmes “2/5/2020 4:22:24 AM”), and pp.57-65 and 55-57 (Farrar “08 February 2020 09:45”, then Fouchier “2/8/2020 11:36:30 AM”, inferred link only) | The app's own data has no reply before its parent. In each pair one stamp is on a clock I read wrongly, or the link is wrong. **Send me:** whether the headers show the second message answers the first, and the stamps as you read them, or “skip” |
-| **U16** | Slack Part 1: 6 evening-then-small-hours rows left (p.19 19:44, p.24 21:17, p.60 21:05, p.121 19:57, p.134 18:30 and 19:51) | Not the divider fault (the evening run is long, or the dates jump): probably misread digits. On p.19 the printed times rise steadily, so “01:49” is a misread. Fixing them needs each page image |
-| **U17** | Slack Part 1: the other 68 backwards times | Probably misread digits (Part 1 has no AM/PM and times only the first message of a run). Listed in `slack_part1_time_check.csv`. Part 2 has none |
+These three come from tests that run outside the app. The app's own data has **no reply before the message it answers**; they are about readings that might be wrong.
+
+#### U15. Three reply pairs where a second reading of the clock puts the reply before its parent
+
+`tools/freeze_bracket_check.py` re-reads every message on the clock of whoever quotes it. For three pairs in `po-emails.pdf` that reading puts the reply earlier than the message it answers. The app does not use that reading: in each pair the reply is a top-level message on a page whose owner clock is fixed (REV: Pacific, Settled in S4; GARRY: Chicago, Likely L6), and with that clock it comes after its parent.
+
+| Pair | Parent (as printed; in the app, ET) | Reply (as printed; in the app, ET) | The check's other reading of the reply | Link |
+|---|---|---|---|---|
+| **U15a** pp.22-29 | Garry “5 Feb 2020 1:03 pm”, on Holmes's Sydney clock: 4 Feb 21:03 | Holmes “2/5/2020 1:23:41 AM”, REV top-level, Pacific: 5 Feb 04:23 | Quoted by Rambaut, London clock: 4 Feb 20:23, 40 min **before** the parent | explicit |
+| **U15b** p.28 and pp.28-45 | Holmes “5 Feb 2020 9:04 pm”, Sydney: 5 Feb 05:04 | Holmes “2/5/2020 4:22:24 AM”, GARRY page, Chicago: 5 Feb 05:22 | Quoted by Rambaut, London: 4 Feb 23:22, 5 h 42 min **before** | explicit |
+| **U15c** pp.57-65 and 55-57 | Farrar “08 February 2020 09:45”, REV top-level, Pacific: 8 Feb 12:45 | Fouchier “2/8/2020 11:36:30 AM”, REV top-level, Pacific: 8 Feb 14:36 | Quoted by Drosten, Berlin: 8 Feb 05:36, 7 h 9 min **before** | inferred (same conversation) only |
+
+**Why it is open.** Each reply is one merged entry: a copy of the message is a top-level message on its own page, and another copy is quoted inside a Rambaut or Drosten message. The two copies would print different wall times if they were on different clocks, but only one printed stamp is kept. The app keeps the top-level copy (its clock is the page owner's). The check assumes the quoted copy. U15c also rests on a link the parser only inferred.
+**My reading:** the app's is the better one, because it uses the clock your decision S4 fixes (U15a, U15c) and every pair is in order. I would skip these.
+**What would decide it:** the page images. Is the reply's own header printed at the top of its page (“Message / From: ... Sent: ...”), and does a second copy exist inside another message with a different printed time? **Send me:** “skip”, or the printed times of the second copy.
+
+#### U16. Slack Part 1: six evening-then-small-hours rows that are not the divider fault
+
+Each is an evening message followed on the same printed date by a small-hours message. Six other cases like this were the divider fault (S7) and are fixed; these six are not (the evening run is long, or the dates jump), so they look like **misread digits**.
+
+| Page | Date | Evening message | Next message (small hours) |
+|---|---|---|---|
+| p.19 | 6 Feb 2020 | 19:44 Garry, “I've known Don for 30 years...” | 01:49 Holmes, “Nailedit. Andrew - thanks!...” (the times on this page rise steadily, so 01:49 is most likely a misread of something like 10:49 or 19:49) |
+| p.24 | 8 Feb 2020 | 21:17 Andersen, “Guys, one thing that occurs to me...” | 05:16 Rambaut, “Swine flu 2009 cid though.” |
+| p.60 | 22 Feb 2020 | 21:05 Andersen, “Just in case people think it's difficult...” | 04:15 Rambaut, “4. I think VR's piece is supposed to be...” |
+| p.121 | 10 Apr 2020 | 19:57 Andersen, “Still trying to work through this...” | 01:50 Andersen, “Very sow going...” |
+| p.134 | 20 Apr 2020 | 18:30 Holmes, “Catching up. The bats are not special...” | 01:36 Holmes, “I've spent most of my waking hours...” |
+| p.134 | 21 Apr 2020 | 19:51 Andersen, “I think 3-factor authentication...” | 02:32 Holmes, “I was just about to send that to you!” |
+
+**Why it is open.** Slack Part 1 prints times in a small font with no AM/PM, only on the first message of each run, and my OCR reads digits badly there (see U17). I cannot tell which of the two times is wrong without the page image.
+**What would settle it:** reading each of the six times off the page image (a second OCR pass at 400 dpi of the time labels, as I did for the email headers, would do it). **Send me:** “do the second pass” (my recommendation), or the six times as you read them.
+
+#### U17. Slack Part 1: the other 68 backwards times
+
+Same test, 68 more places where a message prints an earlier time than the one before it (listed in `slack_part1_time_check.csv`, column `pattern` = `other`). Spread: 23 are 1 to 3 hours backwards, 18 are 3 to 6 hours, 33 are more than 6 hours; none is under an hour. The worst pages are p.2 (4), p.57 (4), p.13, p.43 and p.134 (3 each).
+
+**Why I think they are OCR errors, not real order problems.** The first page of the OCR text shows what the digits look like: “12:90” and “15.95” for what are times, “13.7” and “13.42” with a dot, “1595” and “1997” with no colon. A time of that kind cannot be compared with its neighbours. The second cause is reading order: where two columns or a thread sit side by side, the OCR can read a reply before the message above it. Neither is a problem in the PDF itself, and Part 2 (a different, cleaner export) has no such cases.
+**What would settle it:** the same second OCR pass of the time labels (it would also resolve U16), then rerunning the check. Whatever is still backwards after that is a real question about the PDF.
+**Send me:** “do the second pass” (it needs no decision from you) or “skip” (the 74 rows stay as they are; the app shows each Slack message with the time as OCR read it, which can be wrong by a digit).
 
 ---
 
@@ -167,7 +201,7 @@ Found and fixed by me: the physical-nesting rule for the Farrar-Fauci release (a
 | File | Use it? | For |
 |---|---|---|
 | `zone_format_audit.csv` | Optional | One row per email: rule, status (Settled / Supported / Not settled), reason |
-| `slack_part1_time_check.csv` | For U16, U17 | The 74 places where Slack Part 1 times run backwards |
+| `slack_part1_time_check.csv` | For U16, U17 (columns: page, date, first and second time, senders, first words, pattern) | The 74 places where Slack Part 1 times run backwards |
 | `freeze_bracket_check.csv` | For U15 | Clock and bracketing test per email |
 | `cross_release_check.csv` | No | Quoted-later-than-quoter test across the two releases (empty: no violation) |
 | `reply_order_check.csv`, `owner_zone_check.csv` | No | My test output |
