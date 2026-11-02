@@ -2086,7 +2086,7 @@ function threadMsgHtml(e, opts) {
       (e.zone_assumed ? ' · ' + escapeHtml(e.zone_assumed) : '') + '</div>';
   }
   const body = (parts.length > 1 ? parts.slice(1).join('----------') : (e.content || '')).trim();
-  const bodyHtml = kind === 'email' ? addSentenceBreaks(escapeHtml(body)) : escapeHtml(body);
+  const bodyHtml = linkifyUrls(kind === 'email' ? addSentenceBreaks(escapeHtml(body)) : escapeHtml(body));
   html += '<div class="thread-msg-body">' + bodyHtml + '</div>';
   html += '</div>';
   return html;

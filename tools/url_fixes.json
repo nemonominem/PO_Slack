@@ -1,0 +1,23 @@
+[
+ {"broken": "https://abcnews.go.com/Politics/white-house-asks-scientists-investigate-origins coronavirus/story ?id=68807304",
+  "correct": "https://abcnews.com/Politics/white-house-asks-scientists-investigate-origins-coronavirus/story?id=68807304",
+  "how": "reviewer: web search, first result"},
+ {"broken": "https://abcnews.go.com/Politics/white-house-asks-scientists-investigate-origins coronavirus/story",
+  "correct": "https://abcnews.com/Politics/white-house-asks-scientists-investigate-origins-coronavirus/story",
+  "how": "same article, id cut off"},
+ {"broken": "https://www.factcheck.org/2020/02/baseless-conspiracy-theories-claim-new-coronavirus-was bioengineered/",
+  "correct": "https://www.factcheck.org/2020/02/baseless-conspiracy-theories-claim-new-coronavirus-was-bioengineered/",
+  "how": "OCR dropped a hyphen at a line wrap"},
+ {"broken": "https://www.scripps.edu/news-and-events/press room/2020/20200317-andersen-covid-19-coronavirus.html",
+  "correct": "https://www.scripps.edu/news-and-events/press-room/2020/20200317-andersen-covid-19-coronavirus.html",
+  "how": "OCR dropped a hyphen at a line wrap"},
+ {"broken": "https://medicine.tulane.edu/departments/microbiology-immunology-tulane-cancer center/faculty/robert-f-garry-jr-phd",
+  "correct": "https://medicine.tulane.edu/departments/microbiology-immunology-tulane-cancer-center/faculty/robert-f-garry-jr-phd",
+  "how": "hyphen restored as printed in 2020; this page has since moved (now https://medicine.tulane.edu/departments/faculty/robert-garry-jr-phd)"},
+ {"broken": "https://www.-scripps.edu/faculty/andersen/",
+  "correct": "https://www.scripps.edu/faculty/andersen/",
+  "how": "stray hyphen"},
+ {"broken": "http://www.ucdenver.edu/academics/colleges/medicalschool/departments/ImmunologyMicrobiology/faculty/\ndepartmental/Pages/HOLMESK V.aspx",
+  "correct": "http://www.ucdenver.edu/academics/colleges/medicalschool/departments/ImmunologyMicrobiology/faculty/departmental/Pages/HOLMESKV.aspx",
+  "how": "line wrap inside the address"}
+]
