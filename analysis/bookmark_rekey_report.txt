@@ -1,6 +1,1 @@
-Keys mapped: 331
-NOT FOUND | farrar-fauci/farrar-fauci|2020-01-31|2234 | no current copy with the same text and sender
-COLLISION | farrar-fauci/farrar-fauci|2020-02-01|1050 | key now names a different message
-COLLISION | farrar-fauci/farrar-fauci|2020-02-01|1343 | key now names a different message
-NO MATCH KEY | farrar-fauci/farrar-fauci|2020-02-01|1343|2 | too little text, and no unique current entry with the same date, time and sender
-COLLISION | farrar-fauci/farrar-fauci|2020-02-01|1550 | key now names a different message
+Keys mapped: 332

@@ -2266,28 +2266,6 @@
   },
   {
    "date": "2020-02-08",
-   "time": "0411",
-   "kind": "email",
-   "raw_date": "04:11 ET · Re: [ext] 2019 N-CoV",
-   "sender": "Edward Holmes",
-   "sender_raw": "Edward Holmes)",
-   "sender_how": "From: line",
-   "subject": "Re: [ext] 2019 N-CoV",
-   "content": "From: Edward Holmes\n\nTo: Christian Drosten) 0\n\nCc: Jerermy Farrar lls RN SO, Francis collins Se EEN, Josie Golding NNO, Marion Koopmans| 9 9 9 Mike Ferguson\n\nSubject: Re: [ext] 2019 N-CoV\n\nDate: Saturday, 8 February 2020 at 20:11\n\n----------\n\nHi Christian,\nI don’t know where this story came from, but it has nothing whatsoever to do the HIV nonsense. Please don’t associate this with that. This is a broader story.\nEver since this outbreak started there have suggestions that the virus escaped from the Wuhan lab, if only because of the coincidence of where the outbreak occurred and the location of the lab. I do a lot of work in China and I can you that a lot of people there believe this and believe they are being lied to.\nThings were made worse when Wuhan lab published the bat virus sequence - a bat sampled in a different province for which they have a large collection of samples.\nI believe the aim/question here is whether we, as scientists, should try to write something balanced on the science behind this? There are arguments for and against doing this.\nPersonally, with the pangolin virus possessing 6/6 key sites in the receptor binding domain, I am in favour of the natural evolution theory.",
-   "signature": null,
-   "stamp": "Saturday, 8 February 2020 at 20:11",
-   "stamp_status": "day-month-year",
-   "zone_assumed": "University of Sydney",
-   "stamp_line": "20:11 Sydney -> 04:11 ET",
-   "recovered_inline": false,
-   "source": "farrar-fauci",
-   "thread_key": "farrar-fauci|2020-02-08|0411",
-   "thread_label": "2020-02-08 04:11 · Edward Holmes",
-   "replied_by": [],
-   "idx": 82
-  },
-  {
-   "date": "2020-02-08",
    "time": "0446",
    "kind": "email",
    "raw_date": "04:46 ET · FW: 2019 N-CoV",
@@ -2311,7 +2289,7 @@
      "label": "2020-02-08 07:03 · Patrick Vallance"
     }
    ],
-   "idx": 83
+   "idx": 82
   },
   {
    "date": "2020-02-08",
@@ -2341,7 +2319,7 @@
    "reply_to": "farrar-fauci|2020-02-08|0446",
    "reply_to_label": "2020-02-08 04:46 · Jeremy Farrar",
    "link_kind": "explicit (quoted inline)",
-   "idx": 84
+   "idx": 83
   },
   {
    "date": "2020-02-08",
@@ -2371,7 +2349,7 @@
    "reply_to": "farrar-fauci|2020-02-08|0703",
    "reply_to_label": "2020-02-08 07:03 · Patrick Vallance",
    "link_kind": "explicit (quoted inline)",
-   "idx": 85
+   "idx": 84
   },
   {
    "date": "2020-02-08",
@@ -2396,7 +2374,7 @@
    "reply_to": "farrar-fauci|2020-02-08|1013",
    "reply_to_label": "2020-02-08 10:13 · Jeremy Farrar",
    "link_kind": "explicit (quoted inline)",
-   "idx": 86
+   "idx": 85
   },
   {
    "date": "2020-02-08",
@@ -2417,7 +2395,37 @@
    "source": "farrar-fauci",
    "thread_key": "farrar-fauci|2020-02-08|1452",
    "thread_label": "2020-02-08 14:52 · Christian Drosten",
+   "replied_by": [
+    {
+     "key": "farrar-fauci|2020-02-08|1511",
+     "label": "2020-02-08 15:11 · Edward Holmes"
+    }
+   ],
+   "idx": 86
+  },
+  {
+   "date": "2020-02-08",
+   "time": "1511",
+   "kind": "email",
+   "raw_date": "15:11 ET · Re: [ext] 2019 N-CoV",
+   "sender": "Edward Holmes",
+   "sender_raw": "Edward Holmes)",
+   "sender_how": "From: line",
+   "subject": "Re: [ext] 2019 N-CoV",
+   "content": "From: Edward Holmes\n\nTo: Christian Drosten) 0\n\nCc: Jerermy Farrar lls RN SO, Francis collins Se EEN, Josie Golding NNO, Marion Koopmans| 9 9 9 Mike Ferguson\n\nSubject: Re: [ext] 2019 N-CoV\n\nDate: Saturday, 8 February 2020 at 20:11\n\n----------\n\nHi Christian,\nI don’t know where this story came from, but it has nothing whatsoever to do the HIV nonsense. Please don’t associate this with that. This is a broader story.\nEver since this outbreak started there have suggestions that the virus escaped from the Wuhan lab, if only because of the coincidence of where the outbreak occurred and the location of the lab. I do a lot of work in China and I can you that a lot of people there believe this and believe they are being lied to.\nThings were made worse when Wuhan lab published the bat virus sequence - a bat sampled in a different province for which they have a large collection of samples.\nI believe the aim/question here is whether we, as scientists, should try to write something balanced on the science behind this? There are arguments for and against doing this.\nPersonally, with the pangolin virus possessing 6/6 key sites in the receptor binding domain, I am in favour of the natural evolution theory.",
+   "signature": null,
+   "stamp": "Saturday, 8 February 2020 at 20:11",
+   "stamp_status": "day-month-year",
+   "zone_assumed": "frozen in Jeremy Farrar's clock (Jeremy Farrar, Wellcome Trust (London); quoted in their message)",
+   "stamp_line": "20:11 London -> 15:11 ET",
+   "recovered_inline": false,
+   "source": "farrar-fauci",
+   "thread_key": "farrar-fauci|2020-02-08|1511",
+   "thread_label": "2020-02-08 15:11 · Edward Holmes",
    "replied_by": [],
+   "reply_to": "farrar-fauci|2020-02-08|1452",
+   "reply_to_label": "2020-02-08 14:52 · Christian Drosten",
+   "link_kind": "explicit (quoted inline)",
    "idx": 87
   },
   {

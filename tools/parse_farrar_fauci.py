@@ -301,6 +301,9 @@ PROFILE = Profile(
     stamp_bare_offset_re=STAMP_BARE_OFFSET_RE,
     # Top-level messages in this release print "Sent: Sat, 1 Feb 2020 22:06:26 +0000";
     # any other header on the same page as the body above it is a quoted block.
+    # p.58: the page image shows the Holmes block is quoted (no top-level separator above
+    # it) by the last block of p.57 (reviewer, 2026-11-02).
+    nested_page_starts=frozenset({58}),
     top_level_stamp_re=re.compile(r"(Sent|Date):\s*\w{3},\s*\d{1,2}\s+\w{3}\s+\d{4}\s+\d\d:\d\d:\d\d\s+[+-]\d{4}"),
     stamp_de_re=STAMP_DE_RE,
     months_de=MONTHS_DE,
