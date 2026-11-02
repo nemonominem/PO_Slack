@@ -4708,7 +4708,7 @@ function addSentenceBreaks(html) {
 // The OCR routinely leaves the URL readable but imperfect (a parsing-side
 // hardening pass fixes the common, narrow cases -- see foia_parser's
 // harden_urls()); this only wraps whatever text survived, broken or not.
-const RE_BODY_URL = /\bhttps?:\/\/[^\s<>"']+/gi;
+const RE_BODY_URL = /\b(?:https?:\/\/|www\.)[^\s<>"']+/gi;
 function linkifyUrls(html) {
   return html.replace(/(<[^>]+>)|([^<]+)/g, function(m, tag, text) {
     if (tag) return tag;
@@ -4719,7 +4719,8 @@ function linkifyUrls(html) {
       const pm = url.match(/([.,;:!?)\]]+)$/);
       if (pm) { trail = pm[1]; url = url.slice(0, -trail.length); }
       if (!url) return trail;
-      return '<a href="' + url + '" target="_blank" rel="noopener noreferrer" ' +
+      const href = /^www\./i.test(url) ? 'https://' + url : url;
+      return '<a href="' + href + '" target="_blank" rel="noopener noreferrer" ' +
         'class="body-link">' + url + '</a>' + trail;
     });
   });

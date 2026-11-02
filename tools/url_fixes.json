@@ -1,23 +1,257 @@
 [
- {"broken": "https://abcnews.go.com/Politics/white-house-asks-scientists-investigate-origins coronavirus/story ?id=68807304",
+ {
+  "broken": "https://abcnews.go.com/Politics/white-house-asks-scientists-investigate-origins coronavirus/story ?id=68807304",
   "correct": "https://abcnews.com/Politics/white-house-asks-scientists-investigate-origins-coronavirus/story?id=68807304",
-  "how": "reviewer: web search, first result"},
- {"broken": "https://abcnews.go.com/Politics/white-house-asks-scientists-investigate-origins coronavirus/story",
+  "how": "reviewer: web search, first result"
+ },
+ {
+  "broken": "https://abcnews.go.com/Politics/white-house-asks-scientists-investigate-origins coronavirus/story",
   "correct": "https://abcnews.com/Politics/white-house-asks-scientists-investigate-origins-coronavirus/story",
-  "how": "same article, id cut off"},
- {"broken": "https://www.factcheck.org/2020/02/baseless-conspiracy-theories-claim-new-coronavirus-was bioengineered/",
+  "how": "same article, id cut off"
+ },
+ {
+  "broken": "https://www.factcheck.org/2020/02/baseless-conspiracy-theories-claim-new-coronavirus-was bioengineered/",
   "correct": "https://www.factcheck.org/2020/02/baseless-conspiracy-theories-claim-new-coronavirus-was-bioengineered/",
-  "how": "OCR dropped a hyphen at a line wrap"},
- {"broken": "https://www.scripps.edu/news-and-events/press room/2020/20200317-andersen-covid-19-coronavirus.html",
+  "how": "OCR dropped a hyphen at a line wrap"
+ },
+ {
+  "broken": "https://www.scripps.edu/news-and-events/press room/2020/20200317-andersen-covid-19-coronavirus.html",
   "correct": "https://www.scripps.edu/news-and-events/press-room/2020/20200317-andersen-covid-19-coronavirus.html",
-  "how": "OCR dropped a hyphen at a line wrap"},
- {"broken": "https://medicine.tulane.edu/departments/microbiology-immunology-tulane-cancer center/faculty/robert-f-garry-jr-phd",
+  "how": "OCR dropped a hyphen at a line wrap"
+ },
+ {
+  "broken": "https://medicine.tulane.edu/departments/microbiology-immunology-tulane-cancer center/faculty/robert-f-garry-jr-phd",
   "correct": "https://medicine.tulane.edu/departments/microbiology-immunology-tulane-cancer-center/faculty/robert-f-garry-jr-phd",
-  "how": "hyphen restored as printed in 2020; this page has since moved (now https://medicine.tulane.edu/departments/faculty/robert-garry-jr-phd)"},
- {"broken": "https://www.-scripps.edu/faculty/andersen/",
+  "how": "hyphen restored as printed in 2020; this page has since moved (now https://medicine.tulane.edu/departments/faculty/robert-garry-jr-phd)"
+ },
+ {
+  "broken": "https://www.-scripps.edu/faculty/andersen/",
   "correct": "https://www.scripps.edu/faculty/andersen/",
-  "how": "stray hyphen"},
- {"broken": "http://www.ucdenver.edu/academics/colleges/medicalschool/departments/ImmunologyMicrobiology/faculty/\ndepartmental/Pages/HOLMESK V.aspx",
+  "how": "stray hyphen"
+ },
+ {
+  "broken": "http://www.ucdenver.edu/academics/colleges/medicalschool/departments/ImmunologyMicrobiology/faculty/\ndepartmental/Pages/HOLMESK V.aspx",
   "correct": "http://www.ucdenver.edu/academics/colleges/medicalschool/departments/ImmunologyMicrobiology/faculty/departmental/Pages/HOLMESKV.aspx",
-  "how": "line wrap inside the address"}
+  "how": "line wrap inside the address"
+ },
+ {
+  "broken": "https://www.bloralv.org/content/10.1101/2020.01.30.926477v1",
+  "correct": "https://www.biorxiv.org/content/10.1101/2020.01.30.926477v1",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https: /en.wikipedia.org/wiki/Huanan_Seafood_Wholesale_Market",
+  "correct": "https://en.wikipedia.org/wiki/Huanan_Seafood_Wholesale_Market",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://i/www.vox.com/future-perfect/2019/3/20/18260669/deadly-pathogens-escape-lab-smallpox-bird-fl",
+  "correct": "https://www.vox.com/future-perfect/2019/3/20/18260669/deadly-pathogens-escape-lab-smallpox-bird-fl",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://www.nrde.org/experts/olly-pepper/nrde-and-allies-sue-trump-administration-protect-pangolins",
+  "correct": "https://www.nrdc.org/experts/olly-pepper/nrdc-and-allies-sue-trump-administration-protect-pangolins",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://i/jvi.asm.org/content/79/22/14451",
+  "correct": "https://jvi.asm.org/content/79/22/14451",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://i/wwew.ncbi.nlm.nih.gov/pubmed/14752165",
+  "correct": "https://www.ncbi.nlm.nih.gov/pubmed/14752165",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://wwwne.cde.gov/eid/article/22/1/15-1055_article",
+  "correct": "https://wwwnc.cdc.gov/eid/article/22/1/15-1055_article",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://www.biorsiv.org/content/10.1101/2020,02.11.944462v1",
+  "correct": "https://www.biorxiv.org/content/10.1101/2020,02.11.944462v1",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://i/wwew.nature.com/articles/425915a",
+  "correct": "https://www.nature.com/articles/425915a",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://wwwevirology.ws/2020/02/20/pangolins-and-the-origin-of-sars-cov-2",
+  "correct": "https://www.virology.ws/2020/02/20/pangolins-and-the-origin-of-sars-cov-2",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://wwws.nature.com/articles/nature17200/figures/10",
+  "correct": "https://www.nature.com/articles/nature17200/figures/10",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://wwwnce.cde.gov/eid/article/19/7/12-1094_article",
+  "correct": "https://wwwnc.cdc.gov/eid/article/19/7/12-1094_article",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://www.ncbi.nlm.nih.gov/pmc/artcles/PMC2519682/",
+  "correct": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2519682/",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https: /www.bing.com/videos/search",
+  "correct": "https://www.bing.com/videos/search",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://biorxiv.altmetric.com/detalls/74957328",
+  "correct": "https://biorxiv.altmetric.com/details/74957328",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://www.semp.com/news/china/science/article/3077442/coronavirus-pathogen-could-have-been-spreading-humans-decades",
+  "correct": "https://www.scmp.com/news/china/science/article/3077442/coronavirus-pathogen-could-have-been-spreading-humans-decades",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://www.snopes.com/news/2020/04/01/covid-19-bioweapor",
+  "correct": "https://www.snopes.com/news/2020/04/01/covid-19-bioweapon",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://journals.plos.org/plosone/article?id=10.1371/joumal.pone.0052752#pone-0052752-",
+  "correct": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0052752#pone-0052752-",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://waw.cnn.com/2020/04/10/politics/trump-usaid-prevent-program-coronavirus/index.html",
+  "correct": "https://www.cnn.com/2020/04/10/politics/trump-usaid-prevent-program-coronavirus/index.html",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://i/wwew.ncbi.nlm.nih.gov/pubmed/24172901",
+  "correct": "https://www.ncbi.nlm.nih.gov/pubmed/24172901",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://www.theguardian.com/world/live/2020/apr/30/coronavirus-us-live-federal-guidelines-social-distancing-expire-trump-cuomo-latest-news-updates?CMP=share_b",
+  "correct": "https://www.theguardian.com/world/live/2020/apr/30/coronavirus-us-live-federal-guidelines-social-distancing-expire-trump-cuomo-latest-news-updates?CMP=share_b",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://virological.org/t/analysis-of-wuhan-coronavirus-deja-vu/357",
+  "correct": "https://virological.org/t/analysis-of-wuhan-coronavirus-deja-vu/357",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://virological.org/t/phylodynamic-estimation-of-incidence-and-prevalence-of-novel-coronavirus-ncov-infections-through-time/391",
+  "correct": "https://virological.org/t/phylodynamic-estimation-of-incidence-and-prevalence-of-novel-coronavirus-ncov-infections-through-time/391",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://virological.org/t/clock-and-tmrca-based-on-27-genomes/347",
+  "correct": "https://virological.org/t/clock-and-tmrca-based-on-27-genomes/347",
+  "how": "mechanical OCR repair; corrected address answers 200/403 live"
+ },
+ {
+  "broken": "https://www.nature.com/artides/d41586-020-00548-w",
+  "correct": "https://www.nature.com/articles/d41586-020-00548-w",
+  "how": "reviewed: live check of the corrected address; hyphen/space repair"
+ },
+ {
+  "broken": "https://www.ncbi.nlm.nih.gov/pmc/articles/P>MC3397359/",
+  "correct": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3397359/",
+  "how": "reviewed: live check of the corrected address; hyphen/space repair"
+ },
+ {
+  "broken": "https://www.biorxiv.org/content/10.1101/2020.02.13.945485v1.full.pdf",
+  "correct": "https://www.biorxiv.org/content/10.1101/2020.02.13.945485v1.full.pdf",
+  "how": "reviewed: live check of the corrected address; hyphen/space repair"
+ },
+ {
+  "broken": "https://www.biorxiv.org/content/10.1101/2020.02.08.939660v2.full.pdf",
+  "correct": "https://www.biorxiv.org/content/10.1101/2020.02.08.939660v2.full.pdf",
+  "how": "reviewed: live check of the corrected address; hyphen/space repair"
+ },
+ {
+  "broken": "https://www.who.int/news-room/detail/30-01-2020-statement-on-the-second-meeting-of-the-international-health-regulations-(2005)-emergency-committee-regarding-the-outbreak-of-novel-coronavirus-(2019-ncov)",
+  "correct": "https://www.who.int/news-room/detail/30-01-2020-statement-on-the-second-meeting-of-the-international-health-regulations-(2005)-emergency-committee-regarding-the-outbreak-of-novel-coronavirus-(2019-ncov)",
+  "how": "reviewed: live check of the corrected address; hyphen/space repair"
+ },
+ {
+  "broken": "https://www.hsj.co.uk/acute-care/exclusive-national-alert-as-coronavirus-related-condition-may-be emerging-in-children/7027496.article",
+  "correct": "https://www.hsj.co.uk/acute-care/exclusive-national-alert-as-coronavirus-related-condition-may-be-emerging-in-children/7027496.article",
+  "how": "reviewed: live check of the corrected address; hyphen/space repair"
+ },
+ {
+  "broken": "https://www.washingtonpost.com/local/new-dc-hospital-numbers-suggest-kids-do-face-some-risk of-coronavirus-hospitalization/2020/04/25/5e78c268-86fe-11ea-878a-86477a724bdb story.html",
+  "correct": "https://www.washingtonpost.com/local/new-dc-hospital-numbers-suggest-kids-do-face-some-risk-of-coronavirus-hospitalization/2020/04/25/5e78c268-86fe-11ea-878a-86477a724bdb_story.html",
+  "how": "reviewed: live check of the corrected address; hyphen/space repair"
+ },
+ {
+  "broken": "www.nationalreview.com/2020/04/coronavirus-china-trall-leading-back-to-wuhan-labs",
+  "correct": "https://www.nationalreview.com/2020/04/coronavirus-china-trail-leading-back-to-wuhan-labs/",
+  "how": "reviewed: live check of the corrected address; hyphen/space repair"
+ },
+ {
+  "broken": "https://www.businessinsider.com/china-scientists-identify-pangolin-as-possible-coronavirus-host-2020-",
+  "correct": "https://www.businessinsider.com/china-scientists-identify-pangolin-as-possible-coronavirus-host-2020-2",
+  "how": "reviewed: live check of the corrected address; hyphen/space repair"
+ },
+ {
+  "broken": "https://www.scientificamerican.com/article/how-chinas-bat-woman-hunted-down-viruses-from-sars-to-the-now-coronavirus1/",
+  "correct": "https://www.scientificamerican.com/article/how-chinas-bat-woman-hunted-down-viruses-from-sars-to-the-new-coronavirus1/",
+  "how": "reviewed: live check of the corrected address; hyphen/space repair"
+ },
+ {
+  "broken": "https://wwwscmp.com/tech/big-tech/article/3052624/more-60-cent-chinese-companies -still-telecommuting-amid-coronavirus",
+  "correct": "https://www.scmp.com/tech/big-tech/article/3052624/more-60-cent-chinese-companies-still-telecommuting-amid-coronavirus",
+  "how": "reviewed: live check of the corrected address; hyphen/space repair"
+ },
+ {
+  "broken": "https://www.scmp.com/news/china/society/article/3074991/coronavirus-chinas-first-confirmed-covid-19-case-traced-back",
+  "correct": "https://www.scmp.com/news/china/society/article/3074991/coronavirus-chinas-first-confirmed-covid-19-case-traced-back",
+  "how": "reviewed: live check of the corrected address; hyphen/space repair"
+ },
+ {
+  "broken": "https://link.springer.com/chapter!10.1007%2F978-1-4684-1280-2_23",
+  "correct": "https://link.springer.com/chapter/10.1007%2F978-1-4684-1280-2_23",
+  "how": "reviewed: live check of the corrected address; hyphen/space repair"
+ },
+ {
+  "broken": "https://www i.nlm.nih.gov/pubmed/31801868",
+  "correct": "https://www.ncbi.nlm.nih.gov/pubmed/31801868",
+  "how": "reviewed: live check of the corrected address; hyphen/space repair"
+ },
+ {
+  "broken": "https://project-evidence github.io/",
+  "correct": "https://project-evidence.github.io/",
+  "how": "reviewed: live check of the corrected address; hyphen/space repair"
+ },
+ {
+  "broken": "www.springernature.com/editorial-and publishing-jobs",
+  "correct": "https://www.springernature.com/editorial-and-publishing-jobs",
+  "how": "reviewed: live check of the corrected address; hyphen/space repair"
+ },
+ {
+  "broken": "https://edition.cnn.com/2020/04/ 12/asia/china-coronavirus-research-restrictions-int!-hnk/index.htm",
+  "correct": "https://edition.cnn.com/2020/04/12/asia/china-coronavirus-research-restrictions-intl-hnk/index.html",
+  "how": "reviewed: live check of the corrected address; hyphen/space repair"
+ },
+ {
+  "broken": "https://medicine.tulane.edu/departments/microbiology-immunology-tulane-cancer-center/faculty/robert-f-garry-jr-phd",
+  "correct": "https://medicine.tulane.edu/departments/microbiology-immunology-tulane-cancer-center/faculty/robert-f-garry-jr-phd",
+  "how": "reviewed: live check of the corrected address; hyphen/space repair"
+ },
+ {
+  "broken": "https://virological.org/t/ncov-2019-spike-protein-receptor-binding-domain-shares-high-amino-acid-identity-with-a-coronavirus-recovered-from-a-pangolin-viral-metagenomic-dataset/362",
+  "correct": "https://virological.org/t/ncov-2019-spike-protein-receptor-binding-domain-shares-high-amino-acid-identity-with-a-coronavirus-recovered-from-a-pangolin-viral-metagenomic-dataset/362",
+  "how": "address cut by a line wrap or spaced by OCR; corrected form answers 200"
+ },
+ {
+  "broken": "https://www.theguardian.com/world/live/2020/apr/30/coronavirus-us-live-federal-guidelines-social-distancing-expire-trump-cuomo-latest-news-updates",
+  "correct": "https://www.theguardian.com/world/live/2020/apr/30/coronavirus-us-live-federal-guidelines-social-distancing-expire-trump-cuomo-latest-news-updates",
+  "how": "address cut by a line wrap or spaced by OCR; corrected form answers 200"
+ }
 ]
