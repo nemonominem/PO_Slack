@@ -116,16 +116,16 @@ above decide Part 1; the REV numbering does not.
 
 ---
 
-# Part 2. Not settled and only supported datetimes (260 emails)
+# Part 2. Not settled and only supported datetimes (261 emails)
 
-## 2.1 Supported but not proven (256 emails)
+## 2.1 Supported but not proven (257 emails)
 
 Consistent with every test (every reply pair it touches is in order), but reply order cannot catch a copy that
 is simply too early; the Farrar message `farrar-fauci-comms.pdf` pp.154-155, “Friday, January 31, 2020 5:57 PM”, Jeremy Farrar, “Re: Phone call” was five hours early and the test passed. Marked `Supported`.
 
 | Zone source | Emails | Zone used |
 |---|---|---|
-| Quoted block: clock of the quoting message's author (the freeze rule, 5.6) | 227 (151 P.O. emails, 76 Farrar-Fauci; the Farrar-Fauci ones include every block physically nested under another block on the same page, see 5.10) | the author's institution zone |
+| Quoted block: clock of the quoting message's author (the freeze rule, 5.6) | 228 (151 P.O. emails, 77 Farrar-Fauci; the Farrar-Fauci ones include every block physically nested under another block on the same page, see 5.10) | the author's institution zone |
 | Sender: Jeremy Farrar, top-level (Farrar-Fauci release) | 1 | London (he is based in London, reviewer, 2026-11-01) |
 | Sender: Wellcome convener (other unzoned stamps) | 5 (3 Farrar-Fauci, 2 P.O. emails) | London |
 | Sender: NIH, Bethesda (Farrar-Fauci release) | 2 | Eastern |
@@ -133,11 +133,11 @@ is simply too early; the Farrar message `farrar-fauci-comms.pdf` pp.154-155, “
 | Page owner **FARZAN**, top-level (P.O. pp.142-143) | 2 | Eastern: Farzan works at Scripps Research, Jupiter, Florida (reviewer, 2026-11-02); the pages end “HIGHLY CONFIDENTIAL AND PROPRIETARY FARZAN-0000102/103”. Found 2026-11-02; before that these pages were read as Scripps Los Angeles. |
 | Page owner **GARRY**, top-level (P.O. emails) | 11 | Chicago (Central): Garry works at Tulane University School of Medicine, New Orleans (Central time), per the reviewer, 2026-10-29. Reply order excludes Pacific. No exact copy proves it; a trip away from Central would not show. |
 
-## 2.2 Not settled (4 emails)
+## 2.2 Not settled (3 emails)
 
 | Zone source | Emails | Zone used | Why open |
 |---|---|---|---|
-| Sender, small groups (`FOR_HUMAN_REVIEWER.md`, U7, U11, U18, U19) | 4 | by sender | U7 (Holmes p.58) is the first header on its page, so nothing on the page quotes it; U11, U18 and U19 are quoted in messages whose authors the lookup does not know (the OCR gives one as “ee”, the others are Kimberly Barasch and Teresa Miller de Vega) |
+| Sender, small groups (`FOR_HUMAN_REVIEWER.md`, U11, U18, U19) | 3 | by sender | U11, U18 and U19 are quoted in messages whose authors the lookup does not know (the OCR gives one as “ee”, the others are Kimberly Barasch and Teresa Miller de Vega) |
 
 ---|---|---|---|
 | Sender, small groups (list in `FOR_HUMAN_REVIEWER.md`, items U5 to U14) | 10 | by sender | No quote rule possible: 5 are not quoted by anything, 5 only by an inferred link (which proves no quote); each has one to four linked replies to test. One of them, Esveld p.43, is a separate question (item U5): London (mailbox clock) or Amsterdam |
@@ -363,7 +363,7 @@ Dzau is not in the lookup; his two stamps are verified from the message text (FO
 
 ## 5.10 Physical nesting = quote (2026-11-02, reviewer's decision)
 
-In the Farrar-Fauci release every top-level message prints a stamp with an explicit offset (`Sent: Sat, 1 Feb 2020 22:06:26 +0000`). Any other header (`Sent: Saturday, February 1, 2020 4:00 PM`, `Date: Saturday, 1 February 2020 at 20:50`) is therefore a block printed inside the body of the message above it. **A header that sits on the same page as body text of the block above it is quoted by that block**; a header that opens a page is not linked, because a page break may be a different extract. The block above is the quoter, so the freeze rule gives the block the clock of that quoter's author.
+In the Farrar-Fauci release every top-level message prints a stamp with an explicit offset (`Sent: Sat, 1 Feb 2020 22:06:26 +0000`). Any other header (`Sent: Saturday, February 1, 2020 4:00 PM`, `Date: Saturday, 1 February 2020 at 20:50`) is therefore a block printed inside the body of the message above it. **A header that sits on the same page as body text of the block above it is quoted by that block**; a header that opens a page is not linked, because a page break may be a different extract, unless the reviewer has read the page image and declared that page's first header nested (`nested_page_starts`; p.58, Holmes, 2026-11-02: no top-level separator above it). The block above is the quoter, so the freeze rule gives the block the clock of that quoter's author.
 
 Example (pp.115-116, 1 Feb 2020): Fauci `22:06:26 +0000` quotes Farrar `4:00 PM` (Eastern, Fauci's clock) which quotes Collins `20:50` (London, Farrar's clock) which quotes Farrar's `3:07 PM` (Eastern, Collins's iPhone) ... and the 19:56 message with Koopmans's `19:43` under it (London, Farrar's clock). Every time is then in order and the call (2 to 3 pm ET) is bracketed by them.
 

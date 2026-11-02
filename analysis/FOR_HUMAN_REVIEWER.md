@@ -48,8 +48,8 @@ The full text, with examples, is in [`ZONE_AND_DATE_ANALYSIS.md`](ZONE_AND_DATE_
 | Level | Emails | Slack |
 |---|---|---|
 | **Settled** | 123 | Part 1 (1,256 messages): Eastern; Part 2 (11,351): Pacific, converted to ET |
-| **Likely** | 256 | none |
-| **Unknown** | 4 | the 74 backwards times in Part 1 (see U15 to U17) |
+| **Likely** | 257 | none |
+| **Unknown** | 3 | the 74 backwards times in Part 1 (see U15 to U17) |
 
 ---
 
@@ -113,7 +113,7 @@ Each is consistent with every test. What would move one to Settled is in the las
 
 | Code | Emails | Rule and the clock | Why it holds | What would settle it |
 |---|---|---|---|---|
-| **L1** | 227 (151 P.O., 76 Farrar-Fauci) | **Freeze rule**: a quoted block is on the quoter's clock | Every reply pair it touches is in order (250 pairs, only shift 0 allowed). Quoters: Farrar London, Koopmans/Fouchier Rotterdam, Holmes Sydney, Andersen Pacific and the rest by where they work | An exact copy with a zone, or a time/remark in the text |
+| **L1** | 228 (151 P.O., 77 Farrar-Fauci) | **Freeze rule**: a quoted block is on the quoter's clock | Every reply pair it touches is in order (250 pairs, only shift 0 allowed). Quoters: Farrar London, Koopmans/Fouchier Rotterdam, Holmes Sydney, Andersen Pacific and the rest by where they work | An exact copy with a zone, or a time/remark in the text |
 | **L2** | 1 (Farrar-Fauci) | Farrar's last top-level stamp: London (you: he is based in London) | 2 pairs, only shift 0 allowed | An exact copy with a zone |
 | **L3** | 5 (3 FF, 2 P.O.) | Wellcome convener's mailbox: London | 3 pairs, only shift 0 allowed | The same |
 | **L4** | 2 (Farrar-Fauci) | NIH, Bethesda: Eastern | 2 pairs, not decided | The same |
@@ -127,23 +127,22 @@ Filter `zone_format_audit.csv` on `zone_status` = Supported, then on `rule`. Bra
 
 # U. Unknown: the present list
 
-### Emails (4): no rule that gives a clock could be used
+### Emails (3): no rule that gives a clock could be used
 
-Since your decision of 2026-11-02 (**physically nested under a block on the same page = quoted by it**, see rule 2 above; a header that opens a page is not linked), the freeze rule applies to every Farrar-Fauci block except a page's first header and a quoter whose institution the lookup does not know. The old U2 to U14 were cleared this way, except these:
+Since your decision of 2026-11-02 (**physically nested under a block on the same page = quoted by it**, see rule 2 above; a header that opens a page is not linked), the freeze rule applies to every Farrar-Fauci block except a page's first header and a quoter whose institution the lookup does not know. The old U2 to U14 were cleared this way, except these three:
 
 | Code | Where | Header as printed | Sender | Reason | Clock used (guess) |
 |---|---|---|---|---|---|
-| **U7** | `farrar-fauci-comms.pdf` p.58 | Saturday, 8 February 2020 at 20:11 | Edward Holmes | A. First header on its page: nothing on the page quotes it, and the page break may be a different extract | Sydney (his own, 04:11 ET) |
 | **U11** | `farrar-fauci-comms.pdf` pp.42-43 | Freitag, 6. Marz 2020 11:56 | Alex Harris | B. Quoted in a message whose author the lookup does not know (the OCR gives the sender as “ee”) | London |
 | **U18** | `farrar-fauci-comms.pdf` p.51 | Wednesday, February 26, 2020 7:59 AM | Teresa Miller de Vega | B. Quoted in Kimberly Barasch's message; she is not in the lookup | London |
 | **U19** | `farrar-fauci-comms.pdf` pp.51-52 | 26 February 2020 12:55 | Jeremy Farrar | B. Quoted in Teresa Miller de Vega's message; she is not in the lookup | London |
 
-**What would settle one:** where the quoter lives (U11, U18, U19: tell me where Kimberly Barasch, Teresa Miller de Vega and the sender behind “ee” work and I add them to the lookup; the block then becomes Likely), a time or remark in the message or a neighbour, or an exact copy with an explicit offset. For U7: whether the p.58 block continues p.57's email (then it is quoted by Farrar's Berlin-clock block above it, Likely).
+**What would settle one:** where the quoter lives (U11, U18, U19: tell me where Kimberly Barasch, Teresa Miller de Vega and the sender behind “ee” work and I add them to the lookup; the block then becomes Likely), a time or remark in the message or a neighbour, or an exact copy with an explicit offset.
 **Send me:** such an anchor, or “accept” (keep the guess, still Unknown).
 
 **Esveld (old U10) and the others.** Esveld p.43, “06 March 2020 10:34”, is now read as nested under Alex Harris's block, so on Harris's London clock (05:34 ET). Her earlier Dutch-format message below it is already Settled (S3). The old question “London or Netherlands, up to 1 h” remains open in substance: Harris's clock is London only if Harris is in London; **send me:** “Harris is in London” or where Harris is.
 
-**Old U1** (Farzan p.142) is L7. **Old U2 to U4** are S3. **Old U5, U6, U8, U9, U12, U13, U14** are now Likely (L1): Koopmans 9 Feb is London (Farrar's block above), Holmes 4 Feb is London (Farrar's), Vallance 8 Feb London, Harris 3 Mar London, Viner 12 May 13:16 and 13 May 22:22 London (Farrar's), Viner 12 May 6:12 PM Eastern (Collins's).
+**Old U7** (Holmes p.58) is now Likely: your reading of the page image (no top-level separator above it) makes it quoted by Farrar's block at the end of p.57, so London (15:11 ET); the profile lists p.58 in `nested_page_starts`. **Old U1** (Farzan p.142) is L7. **Old U2 to U4** are S3. **Old U5, U6, U8, U9, U12, U13, U14** are now Likely (L1): Koopmans 9 Feb is London (Farrar's block above), Holmes 4 Feb is London (Farrar's), Vallance 8 Feb London, Harris 3 Mar London, Viner 12 May 13:16 and 13 May 22:22 London (Farrar's), Viner 12 May 6:12 PM Eastern (Collins's).
 
 ### Flagged by my checks (not time errors that I can place)
 
