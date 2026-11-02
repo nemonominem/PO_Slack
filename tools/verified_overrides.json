@@ -1,110 +1,187 @@
 [
-  {
-    "release": "po-emails.json",
-    "thread_key": "po-emails|2020-01-31|1200",
-    "stamp": "Friday, January 31, 2020 5:57 PM",
-    "zone": "America/New_York",
-    "evidence": "po-emails.pdf PDF page 2 prints 5:57 PM (OCR had dropped the time). It is Farrar's message quoted inside Fauci's reply, so it is frozen on Fauci's Eastern clock. farrar-fauci-comms.pdf p.154 prints the same stamp for the same message."
-  },
-  {
-    "release": "po-emails.json",
-    "thread_key": "po-emails|2020-01-31|1500",
-    "stamp": "Friday, January 31, 2020 5:23 PM",
-    "zone": "America/New_York",
-    "evidence": "po-emails.pdf PDF page 3 prints 5:23 PM (OCR had dropped the time and the body). Farrar's text says 'It is 10pm now UK', so the printed 5:23 PM is Eastern (22:23 UK). Body typed from the page image (po-emails.pdf p.3) on 2026-11-01, after OCR had lost it.",
-    "body": "Tony\n\nReally would like to speak with you this evening\n\nIt is 10pm now UK\n\nCan you phone me on +44 [redacted]\n\nJeremy"
-  },
-  {
-    "release": "farrar-fauci.json",
-    "thread_key": "farrar-fauci|2020-01-31|1257",
-    "stamp": "Friday, January 31, 2020 5:57 PM",
-    "zone": "America/New_York",
-    "evidence": "farrar-fauci-comms.pdf PDF page 154 prints 5:57 PM inside Fauci's reply (stamped Sat 1 Feb 00:38:35 +0000), so it is frozen on Fauci's Eastern clock. Same message as PO 0."
-  },
-  {
-    "release": "po-emails.json",
-    "thread_key": "po-emails|2020-02-01|0134",
-    "stamp": "Friday, 31 January 2020 at 22:34",
-    "zone": "Europe/London",
-    "evidence": "Reviewer (Gilles Demaneuf), 2026-10-26: Farrar's 'Phone call' was sent at 22:23 UK ('It is 10pm now UK'), frozen as 5:23 PM on Conrad's East Coast clock when she replied. The reply to her carries Farrar's own UK clock, 22:34, 11 minutes later: 17:34 Eastern. The day-first 24-hour format here is Farrar's own client; this is a decision for this entry, not a general rule. Page image po-emails.pdf p.3: 'From: Conrad, Patricia (NIH/NIAID) on behalf of Fauci, Anthony', to Jeremy Farrar, 'RE: Phone call', 'Will call shortly...', signed Patricia L. Conrad; it answers Farrar's 'Phone call' (5:23 PM) quoted below it on the same page. Sender label and reply link corrected 2026-11-01.",
-    "sender": "Conrad, Patricia (on behalf of Fauci, Anthony)",
-    "reply_to": "po-emails|2020-01-31|1500"
-  },
-  {
-    "release": "po-emails.json",
-    "thread_key": "po-emails|undated|URGENT: Please review by NOON if at all ",
-    "stamp": "Tuesday, February 4, 2020 9:11 AM",
-    "zone": "America/New_York",
-    "evidence": "Reviewer (Gilles Demaneuf), 2026-10-30, from the page image: po-emails.pdf pp.17-18 print 'Sent: Tuesday, February 4, 2020 9:11 AM' (OCR could not read it). Same message as the copy on p.19 'Tue 2/4/2020 9:10:35 AM (UTC-05:00)': the minute is the seconds rounded, so the clock is Eastern."
-  },
-  {
-    "release": "po-emails.json",
-    "thread_key": "po-emails|undated|Interest in commentary/hypothesis on SAR",
-    "stamp": "Wednesday, February 12, 2020 11:09 PM",
-    "zone": "America/Los_Angeles",
-    "evidence": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. po-emails.pdf p.78 prints 'From: Kristian G. Andersen / Sent: 12 February 2020 23:09 / To: Clare Thomas' (the old OCR cut it at '23:'). Same text as the copy on p.80 (entry 116), so it is the same message on the same clock (Pacific, the REV mailbox). Zone by that equality, not proven."
-  },
-  {
-    "release": "farrar-fauci.json",
-    "thread_key": "farrar-fauci|undated|RE: URGENT - GPMB COVID-19 FUNDING NOTE",
-    "stamp": "Friday, March 6, 2020 9:23 AM",
-    "zone": "Europe/Amsterdam",
-    "evidence": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. farrar-fauci-comms.pdf pp.43-44 print 'Sent: vrijdag 6 maart 2020 09:23' (Dutch client) for Marja Esveld's own earlier message, quoted in her own reply; frozen on her Dutch clock."
-  },
-  {
-    "release": "farrar-fauci.json",
-    "thread_key": "farrar-fauci|undated|URGENT - GPMB COVID-19 FUNDING NOTE",
-    "stamp": "Thursday, March 5, 2020 3:29 PM",
-    "zone": "Europe/Amsterdam",
-    "evidence": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. farrar-fauci-comms.pdf p.44 prints 'From: Alex Harris / Sent: donderdag 5 maart 2020 15:29' (Dutch client), quoted inside Esveld's Dutch-locale reply, so frozen on her clock (Amsterdam)."
-  },
-  {
-    "release": "farrar-fauci.json",
-    "thread_key": "farrar-fauci|undated|Re: [ext] 2019 N-CoV",
-    "stamp": "Saturday, February 8, 2020 9:21 PM",
-    "zone": "Europe/Berlin",
-    "evidence": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. farrar-fauci-comms.pdf p.57 prints 'Von: Jeremy Farrar / Datum: Samstag, 8. Februar 2020 um 21:21' (German client), Farrar's message quoted by Drosten, so frozen on Berlin's clock. 20:21 UTC is after Drosten's reply (9 Feb 6:52 am Sydney = 19:52 UTC), as it should be."
-  },
-  {
-    "release": "farrar-fauci.json",
-    "thread_key": "farrar-fauci|undated|[ext] FW: 2019 N-CoV",
-    "stamp": "Saturday, February 8, 2020 10:45 AM",
-    "zone": "Europe/Berlin",
-    "evidence": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. farrar-fauci-comms.pdf p.59 prints 'Von: Jeremy Farrar / Datum: Samstag, 8. Februar 2020 um 10:45' (German client), Farrar's first message quoted inside Drosten's reply, so frozen on Berlin's clock (09:45 UTC)."
-  },
-  {
-    "release": "farrar-fauci.json",
-    "thread_key": "farrar-fauci|undated|Re: Prevalence of infection and stage of",
-    "stamp": "Tuesday, February 4, 2020 6:08 AM",
-    "zone": "America/New_York",
-    "evidence": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. farrar-fauci-comms.pdf p.80 prints 'Sent: Tuesday, February 4, 2020 6:08 AM' (From line redacted) for Farrar's reply, quoted in Collins's 6:12 AM reply, so frozen on Collins's Eastern clock. Fits: Collins's earlier message quoted by Farrar as '4 Feb 2020, at 10:58' (London) = 5:58 ET."
-  },
-  {
-    "release": "farrar-fauci.json",
-    "thread_key": "farrar-fauci|undated|TIME SENSITIVE Message from GPMB Co-Chai",
-    "stamp": "Tuesday, January 28, 2020 9:09 AM",
-    "zone": "America/Santiago",
-    "evidence": "Reviewer (Gilles Demaneuf), 2026-10-31: Jeanette Vega Morales is based in Santiago de Chile. farrar-fauci-comms.pdf p.169 prints 'From: GPMB Secretariat / Sent: martes, 28 de enero de 2020 9:09' (Spanish client) inside her 'Dear Gro and As' reply, so it is frozen on her clock: Chile summer time, UTC-3 (13:09 Geneva, after the 27 Jan teleconference the message thanks people for)."
-  },
-  {
-    "release": "farrar-fauci.json",
-    "thread_key": "farrar-fauci|2020-04-25|0122",
-    "stamp": "Saturday, April 25, 2020 1:22 PM",
-    "zone": "America/New_York",
-    "evidence": "Found 2026-11-01 from the message texts (farrar-fauci-comms.pdf pp.22-31). Dzau's invitation, quoted on p.23, says the NAS Annual Meeting panel is 'on Saturday, April 25th at 2:00-3:30 pm ET'. Gao's message, printed 'Apr 25, 2020 1:22 PM', says 'I am waiting for being connected and will use slides': 38 minutes before the panel starts on Eastern time (on Beijing time it would be 01:22 ET, 12 hours before). It is quoted in Dzau's reply, so by the freeze rule it is on Dzau's (Washington) clock."
-  },
-  {
-    "release": "farrar-fauci.json",
-    "thread_key": "farrar-fauci|2020-04-25|1059",
-    "stamp": "Saturday, April 25, 2020 3:59 PM",
-    "zone": "America/New_York",
-    "evidence": "Found 2026-11-01 from the message texts (farrar-fauci-comms.pdf pp.22-31). Dzau's invitation, quoted on p.23, says the NAS Annual Meeting panel is 'on Saturday, April 25th at 2:00-3:30 pm ET'. Dzau's reply, printed 'Saturday, April 25, 2020 3:59 PM', says 'It was a spectacular session': it was sent after the panel ended at 3:30 pm ET, so 3:59 PM is Eastern (on London time it would be 10:59 ET, before the panel began). Fauci's reply of 26 Apr (p.22, 'Saturday April 25 participation') quotes it, which freezes it on Fauci's Eastern clock."
-  },
-  {
-    "release": "po-emails.json",
-    "thread_key": "po-emails|2020-01-31|2343",
-    "stamp": "Friday, January 31, 2020 8:43 PM",
-    "zone": "America/New_York",
-    "evidence": "Folkers' message (po-emails.pdf pp.4-11) is quoted inside Fauci's forward in farrar-fauci-comms.pdf p.147, stamped 'Sat, 1 Feb 2020 02:47:39 +0000' = 9:47 PM Eastern, so it is on Fauci's Eastern clock (freeze rule). 8:43 PM Pacific (23:43 ET) would be later than the forward that quotes it. Applied 2026-11-01."
-  }
+ {
+  "release": "po-emails.json",
+  "thread_key": "po-emails|2020-01-31|1200",
+  "stamp": "Friday, January 31, 2020 5:57 PM",
+  "zone": "America/New_York",
+  "evidence": "po-emails.pdf PDF page 2 prints 5:57 PM (OCR had dropped the time). It is Farrar's message quoted inside Fauci's reply, so it is frozen on Fauci's Eastern clock. farrar-fauci-comms.pdf p.154 prints the same stamp for the same message."
+ },
+ {
+  "release": "po-emails.json",
+  "thread_key": "po-emails|2020-01-31|1500",
+  "stamp": "Friday, January 31, 2020 5:23 PM",
+  "zone": "America/New_York",
+  "evidence": "po-emails.pdf PDF page 3 prints 5:23 PM (OCR had dropped the time and the body). Farrar's text says 'It is 10pm now UK', so the printed 5:23 PM is Eastern (22:23 UK). Body typed from the page image (po-emails.pdf p.3) on 2026-11-01, after OCR had lost it.",
+  "body": "Tony\n\nReally would like to speak with you this evening\n\nIt is 10pm now UK\n\nCan you phone me on +44 [redacted]\n\nJeremy"
+ },
+ {
+  "release": "po-emails.json",
+  "thread_key": "po-emails|2020-02-01|0134",
+  "stamp": "Friday, 31 January 2020 at 22:34",
+  "zone": "Europe/London",
+  "evidence": "Reviewer (Gilles Demaneuf), 2026-10-26: Farrar's 'Phone call' was sent at 22:23 UK ('It is 10pm now UK'), frozen as 5:23 PM on Conrad's East Coast clock when she replied. The reply to her carries Farrar's own UK clock, 22:34, 11 minutes later: 17:34 Eastern. The day-first 24-hour format here is Farrar's own client; this is a decision for this entry, not a general rule. Page image po-emails.pdf p.3: 'From: Conrad, Patricia (NIH/NIAID) on behalf of Fauci, Anthony', to Jeremy Farrar, 'RE: Phone call', 'Will call shortly...', signed Patricia L. Conrad; it answers Farrar's 'Phone call' (5:23 PM) quoted below it on the same page. Sender label and reply link corrected 2026-11-01.",
+  "sender": "Conrad, Patricia (on behalf of Fauci, Anthony)",
+  "reply_to": "po-emails|2020-01-31|1500"
+ },
+ {
+  "release": "po-emails.json",
+  "thread_key": "po-emails|undated|URGENT: Please review by NOON if at all ",
+  "stamp": "Tuesday, February 4, 2020 9:11 AM",
+  "zone": "America/New_York",
+  "evidence": "Reviewer (Gilles Demaneuf), 2026-10-30, from the page image: po-emails.pdf pp.17-18 print 'Sent: Tuesday, February 4, 2020 9:11 AM' (OCR could not read it). Same message as the copy on p.19 'Tue 2/4/2020 9:10:35 AM (UTC-05:00)': the minute is the seconds rounded, so the clock is Eastern."
+ },
+ {
+  "release": "po-emails.json",
+  "thread_key": "po-emails|undated|Interest in commentary/hypothesis on SAR",
+  "stamp": "Wednesday, February 12, 2020 11:09 PM",
+  "zone": "America/Los_Angeles",
+  "evidence": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. po-emails.pdf p.78 prints 'From: Kristian G. Andersen / Sent: 12 February 2020 23:09 / To: Clare Thomas' (the old OCR cut it at '23:'). Same text as the copy on p.80 (entry 116), so it is the same message on the same clock (Pacific, the REV mailbox). Zone by that equality, not proven."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|undated|RE: URGENT - GPMB COVID-19 FUNDING NOTE",
+  "stamp": "Friday, March 6, 2020 9:23 AM",
+  "zone": "Europe/Amsterdam",
+  "evidence": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. farrar-fauci-comms.pdf pp.43-44 print 'Sent: vrijdag 6 maart 2020 09:23' (Dutch client) for Marja Esveld's own earlier message, quoted in her own reply; frozen on her Dutch clock."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|undated|URGENT - GPMB COVID-19 FUNDING NOTE",
+  "stamp": "Thursday, March 5, 2020 3:29 PM",
+  "zone": "Europe/Amsterdam",
+  "evidence": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. farrar-fauci-comms.pdf p.44 prints 'From: Alex Harris / Sent: donderdag 5 maart 2020 15:29' (Dutch client), quoted inside Esveld's Dutch-locale reply, so frozen on her clock (Amsterdam)."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|undated|Re: [ext] 2019 N-CoV",
+  "stamp": "Saturday, February 8, 2020 9:21 PM",
+  "zone": "Europe/Berlin",
+  "evidence": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. farrar-fauci-comms.pdf p.57 prints 'Von: Jeremy Farrar / Datum: Samstag, 8. Februar 2020 um 21:21' (German client), Farrar's message quoted by Drosten, so frozen on Berlin's clock. 20:21 UTC is after Drosten's reply (9 Feb 6:52 am Sydney = 19:52 UTC), as it should be."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|undated|[ext] FW: 2019 N-CoV",
+  "stamp": "Saturday, February 8, 2020 10:45 AM",
+  "zone": "Europe/Berlin",
+  "evidence": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. farrar-fauci-comms.pdf p.59 prints 'Von: Jeremy Farrar / Datum: Samstag, 8. Februar 2020 um 10:45' (German client), Farrar's first message quoted inside Drosten's reply, so frozen on Berlin's clock (09:45 UTC)."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|undated|Re: Prevalence of infection and stage of",
+  "stamp": "Tuesday, February 4, 2020 6:08 AM",
+  "zone": "America/New_York",
+  "evidence": "Reviewer (Gilles Demaneuf) asked for a better OCR pass of the U4 headers, 2026-10-30; read at 400 dpi from the page image. farrar-fauci-comms.pdf p.80 prints 'Sent: Tuesday, February 4, 2020 6:08 AM' (From line redacted) for Farrar's reply, quoted in Collins's 6:12 AM reply, so frozen on Collins's Eastern clock. Fits: Collins's earlier message quoted by Farrar as '4 Feb 2020, at 10:58' (London) = 5:58 ET."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|undated|TIME SENSITIVE Message from GPMB Co-Chai",
+  "stamp": "Tuesday, January 28, 2020 9:09 AM",
+  "zone": "America/Santiago",
+  "evidence": "Reviewer (Gilles Demaneuf), 2026-10-31: Jeanette Vega Morales is based in Santiago de Chile. farrar-fauci-comms.pdf p.169 prints 'From: GPMB Secretariat / Sent: martes, 28 de enero de 2020 9:09' (Spanish client) inside her 'Dear Gro and As' reply, so it is frozen on her clock: Chile summer time, UTC-3 (13:09 Geneva, after the 27 Jan teleconference the message thanks people for)."
+ },
+ {
+  "release": "po-emails.json",
+  "thread_key": "po-emails|2020-01-31|2343",
+  "stamp": "Friday, January 31, 2020 8:43 PM",
+  "zone": "America/New_York",
+  "evidence": "Folkers' message (po-emails.pdf pp.4-11) is quoted inside Fauci's forward in farrar-fauci-comms.pdf p.147, stamped 'Sat, 1 Feb 2020 02:47:39 +0000' = 9:47 PM Eastern, so it is on Fauci's Eastern clock (freeze rule). 8:43 PM Pacific (23:43 ET) would be later than the forward that quotes it. Applied 2026-11-01."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|2020-01-31|1757",
+  "stamp": "Friday, January 31, 2020 5:57 PM",
+  "zone": "America/New_York",
+  "evidence": "farrar-fauci-comms.pdf PDF page 154 prints 5:57 PM inside Fauci's reply (stamped Sat 1 Feb 00:38:35 +0000), so it is frozen on Fauci's Eastern clock. Same message as PO 0."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|2020-04-25|1322",
+  "stamp": "Saturday, April 25, 2020 1:22 PM",
+  "zone": "America/New_York",
+  "evidence": "Found 2026-11-01 from the message texts (farrar-fauci-comms.pdf pp.22-31). Dzau's invitation, quoted on p.23, says the NAS Annual Meeting panel is 'on Saturday, April 25th at 2:00-3:30 pm ET'. Gao's message, printed 'Apr 25, 2020 1:22 PM', says 'I am waiting for being connected and will use slides': 38 minutes before the panel starts on Eastern time (on Beijing time it would be 01:22 ET, 12 hours before). It is quoted in Dzau's reply, so by the freeze rule it is on Dzau's (Washington) clock."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|2020-04-25|1559",
+  "stamp": "Saturday, April 25, 2020 3:59 PM",
+  "zone": "America/New_York",
+  "evidence": "Found 2026-11-01 from the message texts (farrar-fauci-comms.pdf pp.22-31). Dzau's invitation, quoted on p.23, says the NAS Annual Meeting panel is 'on Saturday, April 25th at 2:00-3:30 pm ET'. Dzau's reply, printed 'Saturday, April 25, 2020 3:59 PM', says 'It was a spectacular session': it was sent after the panel ended at 3:30 pm ET, so 3:59 PM is Eastern (on London time it would be 10:59 ET, before the panel began). Fauci's reply of 26 Apr (p.22, 'Saturday April 25 participation') quotes it, which freezes it on Fauci's Eastern clock."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|2020-02-01|1456",
+  "stamp": "Saturday, February 1, 2020 2:56 PM",
+  "zone": "America/New_York",
+  "evidence": "Reviewer (Gilles Demaneuf), 2026-11-02, checked against the page text (farrar-fauci-comms.pdf pp.115-122). Anchors: the call was 2-3 pm ET (Fauci's calendar; Farrar's 'shut down the call and redial' is at 19:56 London = 2:56 PM ET, printed both ways: 19:56 on p.115 in Farrar's own client and 2:56 PM on pp.119 and 122 inside Eastern replies; Fauci replied 'Yes' at 20:03:12 +0000). Farrar's 'Can I suggest we shut down the call' is quoted on p.122 in Fauci's 'Yes' (Sat 1 Feb 20:03:12 +0000) and on p.119 in Collins's 20:12 reply, so the printed 2:56 PM is the quoter's Eastern clock = 19:56 UTC. The same message on p.115 prints 'Date: ... 19:56' in Farrar's London client: the two copies agree to the minute."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|2020-02-01|1600",
+  "stamp": "Saturday, February 1, 2020 4:00 PM",
+  "zone": "America/New_York",
+  "evidence": "Reviewer (Gilles Demaneuf), 2026-11-02, checked against the page text (farrar-fauci-comms.pdf pp.115-122). Anchors: the call was 2-3 pm ET (Fauci's calendar; Farrar's 'shut down the call and redial' is at 19:56 London = 2:56 PM ET, printed both ways: 19:56 on p.115 in Farrar's own client and 2:56 PM on pp.119 and 122 inside Eastern replies; Fauci replied 'Yes' at 20:03:12 +0000). Farrar's 'We are altogether as you know!' is quoted on p.115 inside Fauci's 'Thanks, Jeremy' (Sat 1 Feb 22:06:26 +0000 = 5:06 PM ET), so it is on Fauci's Eastern clock: 4:00 PM ET = 21:00 UTC, 66 minutes before Fauci's reply. On London time it would be 4:00 PM UTC = 11:00 ET, before Collins's message it answers."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|2020-02-01|1550",
+  "stamp": "Saturday, 1 February 2020 at 20:50",
+  "zone": "Europe/London",
+  "evidence": "Reviewer (Gilles Demaneuf), 2026-11-02, checked against the page text (farrar-fauci-comms.pdf pp.115-122). Anchors: the call was 2-3 pm ET (Fauci's calendar; Farrar's 'shut down the call and redial' is at 19:56 London = 2:56 PM ET, printed both ways: 19:56 on p.115 in Farrar's own client and 2:56 PM on pp.119 and 122 inside Eastern replies; Fauci replied 'Yes' at 20:03:12 +0000). Collins's 'I can make myself available at any time 24/7 for the call with Tedros' is quoted on p.115 inside Farrar's 4:00 PM ET reply, so it is on Farrar's London clock: 20:50 UTC = 3:50 PM ET. It answers Farrar's 'I have rejoined' (3:07 PM ET, quoted in Collins's own iPhone line) and comes before Farrar's 4:00 PM ET reply. On Eastern time (20:50 ET = 01:50 UTC on the 2nd) it would come after the reply to it."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|2020-02-01|1512",
+  "stamp": "Saturday, 1 February 2020 at 20:12",
+  "zone": "Europe/London",
+  "evidence": "Reviewer (Gilles Demaneuf), 2026-11-02, checked against the page text (farrar-fauci-comms.pdf pp.115-122). Anchors: the call was 2-3 pm ET (Fauci's calendar; Farrar's 'shut down the call and redial' is at 19:56 London = 2:56 PM ET, printed both ways: 19:56 on p.115 in Farrar's own client and 2:56 PM on pp.119 and 122 inside Eastern replies; Fauci replied 'Yes' at 20:03:12 +0000). Collins's 'Just saw this, still want me to call in?' is quoted on p.119 inside Farrar's 'sure' (Sat 1 Feb 20:13:15 +0000), so it is on Farrar's London clock: 20:12 UTC = 3:12 PM ET, one minute before the reply. On Eastern time (20:12 ET = 01:12 UTC) it would come after the reply."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|2020-02-01|1443",
+  "stamp": "Saturday, 1 February 2020 at 19:43",
+  "zone": "Europe/London",
+  "evidence": "Reviewer (Gilles Demaneuf), 2026-11-02, checked against the page text (farrar-fauci-comms.pdf pp.115-122). Anchors: the call was 2-3 pm ET (Fauci's calendar; Farrar's 'shut down the call and redial' is at 19:56 London = 2:56 PM ET, printed both ways: 19:56 on p.115 in Farrar's own client and 2:56 PM on pp.119 and 122 inside Eastern replies; Fauci replied 'Yes' at 20:03:12 +0000). Koopmans's 'Re the pangolin sequence' is quoted on p.116 inside Farrar's 19:56 London message, so it is on Farrar's London clock: 19:43 UTC = 2:43 PM ET, during the 2-3 pm ET call and 13 minutes before the 'shut down the call' message. Her own quote of Farrar's 18:12:57 +0000 message reads 'at 19:12' on her Rotterdam clock, which confirms that her own client prints Rotterdam time and that this 19:43 is not hers."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|2020-02-01|1343",
+  "stamp": "Saturday, 1 February 2020 at 19:43",
+  "zone": "Europe/London",
+  "evidence": "Reviewer (Gilles Demaneuf), 2026-11-02, checked against the page text (farrar-fauci-comms.pdf pp.115-122). Anchors: the call was 2-3 pm ET (Fauci's calendar; Farrar's 'shut down the call and redial' is at 19:56 London = 2:56 PM ET, printed both ways: 19:56 on p.115 in Farrar's own client and 2:56 PM on pp.119 and 122 inside Eastern replies; Fauci replied 'Yes' at 20:03:12 +0000). Same message as the p.116 copy, here on p.122 inside Farrar's 2:56 PM ET message (itself quoted in Fauci's 20:03:12 +0000 'Yes'): quoted by Farrar, so Farrar's London clock, 19:43 UTC = 2:43 PM ET."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|2020-02-01|1034",
+  "stamp": "Saturday, February 1, 2020 10:34 AM",
+  "zone": "America/New_York",
+  "evidence": "Reviewer (Gilles Demaneuf), 2026-11-02, checked against the page text (farrar-fauci-comms.pdf pp.115-140). Anchors: Farrar's own notice (p.140, p.138) gives the call as '7pm GMT, 2pm EST' = 19:00 UTC; Farrar's notice went out at 15:34 UTC (his own Date line 'at 15:34' London; Garry's iPhone quote 'On Feb 1, 2020, at 9:34 AM' Central; Fauci's quote 'Sent: ... 10:34 AM' Eastern: all the same instant). Farrar's 'Teleconference' notice, printed 'Sent: 10:34 AM' on p.140 inside Fauci's reply (Date 'at 15:48' London, quoted in Farrar's 'excellent' of 15:50:28 +0000): quoted by Fauci, so Eastern: 10:34 ET = 15:34 UTC. As London time (10:34 UTC = 05:34 ET) it would be five hours before the notice's own 15:34 UTC."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|2020-02-01|0934",
+  "stamp": "Saturday, 1 February 2020 at 15:34",
+  "zone": "Europe/London",
+  "evidence": "Reviewer (Gilles Demaneuf), 2026-11-02, checked against the page text (farrar-fauci-comms.pdf pp.115-140). Anchors: Farrar's own notice (p.140, p.138) gives the call as '7pm GMT, 2pm EST' = 19:00 UTC; Farrar's notice went out at 15:34 UTC (his own Date line 'at 15:34' London; Garry's iPhone quote 'On Feb 1, 2020, at 9:34 AM' Central; Fauci's quote 'Sent: ... 10:34 AM' Eastern: all the same instant). The same notice printed 'Date: ... at 15:34' (Farrar's own client, London; the copies on pp.113-139 all print 15:34): 15:34 UTC = 10:34 ET. If it were on Fouchier's Rotterdam clock it would be 14:34 UTC, an hour before Garry's iPhone quote (9:34 AM Central = 15:34 UTC) and Fauci's quote (10:34 AM ET)."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|2020-02-01|1049",
+  "stamp": "Saturday, February 1, 2020 10:49 AM",
+  "zone": "America/New_York",
+  "evidence": "Reviewer (Gilles Demaneuf), 2026-11-02, checked against the page text (farrar-fauci-comms.pdf pp.115-140). Anchors: Farrar's own notice (p.140, p.138) gives the call as '7pm GMT, 2pm EST' = 19:00 UTC; Farrar's notice went out at 15:34 UTC (his own Date line 'at 15:34' London; Garry's iPhone quote 'On Feb 1, 2020, at 9:34 AM' Central; Fauci's quote 'Sent: ... 10:34 AM' Eastern: all the same instant). Garry's 'Thanks Jeremy / I will be on the call', printed 'Sent: 10:49 AM' on p.137 inside Fauci's reply (Date 'at 15:50' London, quoted in Farrar's 15:51:54 +0000): quoted by Fauci, so Eastern: 10:49 ET = 15:49 UTC, one minute before Fauci's reply and 15 minutes after the notice. On Garry's Central clock (11:49 ET = 16:49 UTC) it would come after the reply that quotes it."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|2020-02-01|1048",
+  "stamp": "Saturday, 1 February 2020 at 15:48",
+  "zone": "Europe/London",
+  "evidence": "Reviewer (Gilles Demaneuf), 2026-11-02, checked against the page text (farrar-fauci-comms.pdf pp.115-140). Anchors: Farrar's own notice (p.140, p.138) gives the call as '7pm GMT, 2pm EST' = 19:00 UTC; Farrar's notice went out at 15:34 UTC (his own Date line 'at 15:34' London; Garry's iPhone quote 'On Feb 1, 2020, at 9:34 AM' Central; Fauci's quote 'Sent: ... 10:34 AM' Eastern: all the same instant). Fauci's 'Francis will be on the call', printed 'Date: ... at 15:48', is quoted on p.140 inside Farrar's 'excellent' (Sat 1 Feb 15:50:28 +0000), so it is on Farrar's London clock: 15:48 UTC = 10:48 ET, two minutes before the reply. On Eastern time (15:48 ET = 20:48 UTC) it would come after the reply that quotes it."
+ },
+ {
+  "release": "farrar-fauci.json",
+  "thread_key": "farrar-fauci|2020-02-01|1050",
+  "stamp": "Saturday, 1 February 2020 at 15:50",
+  "zone": "Europe/London",
+  "evidence": "Reviewer (Gilles Demaneuf), 2026-11-02, checked against the page text (farrar-fauci-comms.pdf pp.115-140). Anchors: Farrar's own notice (p.140, p.138) gives the call as '7pm GMT, 2pm EST' = 19:00 UTC; Farrar's notice went out at 15:34 UTC (his own Date line 'at 15:34' London; Garry's iPhone quote 'On Feb 1, 2020, at 9:34 AM' Central; Fauci's quote 'Sent: ... 10:34 AM' Eastern: all the same instant). Fauci's 'Please include Francis Collins' (Date 'at 15:50') is quoted on p.137 inside Farrar's 'Francis / Call me' (Sat 1 Feb 15:51:54 +0000), so it is on Farrar's London clock: 15:50 UTC = 10:50 ET, one minute before the reply."
+ }
 ]

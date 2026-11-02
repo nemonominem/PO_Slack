@@ -37,19 +37,19 @@ The full text, with examples, is in [`ZONE_AND_DATE_ANALYSIS.md`](ZONE_AND_DATE_
 | **1c. Anchor in the page or the message** (page image, “It is 10pm now UK”, a calendar such as the NAS panel 2:00-3:30 pm ET, the 1 Feb call) | **Settles** | The text or a known event fixes the time and its clock. |
 | **Bracketing** (a message lying between two exactly timed ones less than 1 h apart) | **Settles** if one whole-hour offset survives; otherwise narrows | The message was sent inside that hour. |
 | **Your decision** (e.g. REV is Pacific, Slack Part 1 is Eastern) | **Settles** | Recorded with its evidence. |
-| **2. Freeze rule** (a quoted block is on the clock of the person who quoted it) | Likely only | Needs to know where the quoter is: a lookup of where people live, in the parser (5.9). Nothing in the stamp proves it. |
+| **2. Freeze rule** (a quoted block is on the clock of the person who quoted it; **physically nested under a block on the same page counts as quoted**, a header that opens a page does not) | Likely only | Needs to know where the quoter is: a lookup of where people live, in the parser (5.9). Nothing in the stamp proves it. |
 | **3/4. Mailbox rule** (a top-level stamp is on the clock of the mailbox that shows it: REV Pacific, GARRY Chicago, LIP Eastern; the convener's mailbox London) | Likely only | The owner's clock; reply order cannot catch a stamp that is simply too early. |
 | **Sender's institution** (where the sender works) | Likely only if the reply-order test passes with enough pairs; otherwise Unknown | A stand-in for the sender's clock. |
 | **Reply-order test** | Never settles | Rules zones out (a reply cannot precede its parent). |
-| **An unquoted message with no other support** (the last message of a thread, or only an inferred “same conversation” link) | **Nothing works** | The freeze rule needs a quote and an inferred link does not prove one. The time is Unknown until an anchor turns up. |
+| **An unquoted message with no other support** (the last message of a thread, or only an inferred “same conversation” link) | **Nothing works** | The freeze rule needs a quote; a header that opens a page may be a different extract, and an inferred link does not prove a quote. The time is Unknown until an anchor turns up. |
 
 # 3. Where we stand
 
 | Level | Emails | Slack |
 |---|---|---|
-| **Settled** | 115 | Part 1 (1,256 messages): Eastern; Part 2 (11,351): Pacific, converted to ET |
-| **Likely** | 258 | none |
-| **Unknown** | 14 | the 74 backwards times in Part 1 (see U15 to U17) |
+| **Settled** | 123 | Part 1 (1,256 messages): Eastern; Part 2 (11,351): Pacific, converted to ET |
+| **Likely** | 256 | none |
+| **Unknown** | 4 | the 74 backwards times in Part 1 (see U15 to U17) |
 
 ---
 
@@ -61,7 +61,7 @@ The stamp carries the zone. Rule 1.
 ### S2. One exact copy with an explicit offset
 `po-emails.pdf` pp.1-2, “Jan 31, 2020 4:38 PM”, Fauci, Anthony, “[NA]”, equals `farrar-fauci-comms.pdf` p.154, “Sat, 1 Feb 2020 00:38:35 +0000”. Rule 1b. It also anchors REV (S4).
 
-### S3. Verified from the page image, the message text or a calendar (15 emails)
+### S3. Verified from the page image, the message text or a calendar (24 entries; the Koopmans and notice copies count once each below)
 Rule 1c. Each is in `tools/verified_overrides.json` with its evidence.
 
 | Where | Header as printed | Now (ET) | Evidence |
@@ -81,8 +81,16 @@ Rule 1c. Each is in `tools/verified_overrides.json` with its evidence.
 | `farrar-fauci-comms.pdf` pp.59-60, Farrar | Datum: Samstag, 8. Februar 2020 um 10:45 | 8 Feb 04:45 | Read from the page; Berlin |
 | `farrar-fauci-comms.pdf` p.80, Farrar | Sent: Tuesday, February 4, 2020 6:08 AM | 4 Feb 06:08 | Read from the page; quoted in Collins's 6:12 AM reply (Eastern) |
 | `farrar-fauci-comms.pdf` pp.169-172, GPMB Secretariat | Sent: martes, 28 de enero de 2020 9:09 | 28 Jan 07:09 | Read from the page; Vega Morales is based in Santiago de Chile (UTC-3 in January), you confirmed |
+| `farrar-fauci-comms.pdf` pp.115-122, Farrar “shut down the call” | Saturday, February 1, 2020 2:56 PM | 1 Feb 14:56 | Quoted in Fauci's 20:03:12 +0000 reply and Collins's 20:12; the p.115 copy prints 19:56 in Farrar's London client: same minute |
+| `farrar-fauci-comms.pdf` p.115, Farrar “We are altogether” | Saturday, February 1, 2020 4:00 PM | 1 Feb 16:00 | Quoted in Fauci's 22:06:26 +0000 reply, so Eastern; on London time it would come before the message it answers |
+| `farrar-fauci-comms.pdf` p.115, Collins “24/7 for the call with Tedros” | Saturday, 1 February 2020 at 20:50 | 1 Feb 15:50 | Quoted in Farrar's 4:00 PM ET reply, so London; it answers Farrar's “I have rejoined” (3:07 PM ET) |
+| `farrar-fauci-comms.pdf` p.119, Collins “Just saw this” | Saturday, 1 February 2020 at 20:12 | 1 Feb 15:12 | Quoted in Farrar's “sure” (20:13:15 +0000), so London, one minute before it |
+| `farrar-fauci-comms.pdf` pp.116, 119, 122, Koopmans “Re the pangolin sequence” (three copies) | Saturday, 1 February 2020 at 19:43 | 1 Feb 14:43 | Quoted in Farrar's 19:56 London message: 2:43 PM ET, during the 2-3 pm ET call |
+| `farrar-fauci-comms.pdf` p.140, Farrar's “Teleconference” notice (two copies) | Saturday, February 1, 2020 10:34 AM / at 15:34 | 1 Feb 10:34 | Quoted in Fauci's reply (Eastern) and printed 15:34 in Farrar's London client; Garry's iPhone quote 9:34 AM Central: all the same instant |
+| `farrar-fauci-comms.pdf` pp.137-138, Garry “I will be on the call” | Saturday, February 1, 2020 10:49 AM | 1 Feb 10:49 | Quoted in Fauci's 15:50 (London) reply, so Eastern: 15:49 UTC, one minute before it |
+| `farrar-fauci-comms.pdf` pp.137, 140, Fauci “Francis will be on the call” and “Please include Francis Collins” | Saturday, 1 February 2020 at 15:48 and 15:50 | 1 Feb 10:48 and 10:50 | Quoted in Farrar's 15:50:28 and 15:51:54 +0000 replies, so London |
 
-### S4. REV top-level stamps: Pacific (46 emails)
+### S4. REV top-level stamps: Pacific (45 emails)
 Your decision, with evidence: REV is Kristian Andersen's collection (the REV0000nnn numbering also covers `slack-part1.pdf`, REV0002899 to REV0003038, whose first page reads “You created this private channel”).
 He is at Scripps Research, La Jolla, San Diego. Anchors: S2 (4:38 PM = UTC-8), a Garry message (16 Feb 2022) that fits UTC-8 to the minute, “it's 85 degrees in San Diego today”, and 24 bracketed stamps that all allow only -8 and -7.
 Details: analysis 1.2. Quoted blocks on REV pages follow the freeze rule instead (L1).
@@ -105,12 +113,13 @@ Each is consistent with every test. What would move one to Settled is in the las
 
 | Code | Emails | Rule and the clock | Why it holds | What would settle it |
 |---|---|---|---|---|
-| **L1** | 164 (151 P.O., 13 Farrar-Fauci) | **Freeze rule**: a quoted block is on the quoter's clock | Every reply pair it touches is in order (179 pairs, only shift 0 allowed). Quoters: Farrar London, Koopmans/Fouchier Rotterdam, Holmes Sydney, Andersen Pacific and the rest by where they work | An exact copy with a zone, or a time/remark in the text |
-| **L2** | 32 (Farrar-Fauci) | Farrar's top-level stamps: London (you: he is based in London) | 41 pairs, only shift 0 allowed | An exact copy with a zone |
-| **L3** | 17 (15 FF, 2 P.O.) | Wellcome convener's mailbox: London | 13 pairs, only shift 0 allowed | The same |
-| **L4** | 26 (Farrar-Fauci) | NIH, Bethesda: Eastern | 39 pairs, only shift 0 allowed | The same |
+| **L1** | 227 (151 P.O., 76 Farrar-Fauci) | **Freeze rule**: a quoted block is on the quoter's clock | Every reply pair it touches is in order (250 pairs, only shift 0 allowed). Quoters: Farrar London, Koopmans/Fouchier Rotterdam, Holmes Sydney, Andersen Pacific and the rest by where they work | An exact copy with a zone, or a time/remark in the text |
+| **L2** | 1 (Farrar-Fauci) | Farrar's last top-level stamp: London (you: he is based in London) | 2 pairs, only shift 0 allowed | An exact copy with a zone |
+| **L3** | 5 (3 FF, 2 P.O.) | Wellcome convener's mailbox: London | 3 pairs, only shift 0 allowed | The same |
+| **L4** | 2 (Farrar-Fauci) | NIH, Bethesda: Eastern | 2 pairs, not decided | The same |
 | **L5** | 8 (P.O. pages LIP) | Lipkin's mailbox: Eastern (Columbia) | 10 pairs, only shift 0 allowed | The same |
 | **L6** | 11 (P.O. pages GARRY) | Garry's mailbox: Chicago, Central (Tulane, New Orleans; you gave this) | 10 pairs, only shift 0 allowed; the 10 Feb chain favours Chicago (16:51 ET; Eastern would put it before the message it answers) but the link is only inferred | An exact copy on a GARRY page |
+| **L7** | 2 (P.O. pp.142-143, stamp FARZAN) | Farzan's own mailbox: Eastern (Scripps, Jupiter, Florida; you gave this) | Leaf-level: nothing quotes the 31 Mar message, so the freeze rule cannot apply. Eastern gives 20:59 ET for “Re: Furin...” (31 Mar) and 23:07 ET for Farzan's 6 Feb “RE: Furin...”; the 6 Feb one used to sit in the REV run (Pacific, 02:07 ET on 7 Feb) and moved when the FARZAN stamp was found. Andersen's “SoCal” fixes where he wrote, not whose clock the export shows. A third P.O. entry on these pages (Andersen, 16 Feb 21:45) is a block quoted in Farzan's own message, so it takes his Eastern clock too (21:45 ET instead of 00:45 ET on the 17th); it is counted in L1 | An exact copy with a zone, or a remark in the text. If the export were rendered in a fixed zone (as the REV run may be), the 31 Mar time would be 17:59 ET instead |
 
 Filter `zone_format_audit.csv` on `zone_status` = Supported, then on `rule`. Bracketing could not choose between Chicago and Eastern for GARRY or LIP (too few bracketed stamps).
 
@@ -118,35 +127,23 @@ Filter `zone_format_audit.csv` on `zone_status` = Supported, then on `rule`. Bra
 
 # U. Unknown: the present list
 
-### Emails (14): no rule that gives a clock could be used
+### Emails (4): no rule that gives a clock could be used
 
-Why: either **A. nothing quotes it** (the last message of its thread, or alone on its page: the freeze rule cannot apply), or **B. only an inferred “same conversation” link points at it**, which does not prove a quote exists. The time shown is a guess from where the sender works. Not one has an anchor.
+Since your decision of 2026-11-02 (**physically nested under a block on the same page = quoted by it**, see rule 2 above; a header that opens a page is not linked), the freeze rule applies to every Farrar-Fauci block except a page's first header and a quoter whose institution the lookup does not know. The old U2 to U14 were cleared this way, except these:
 
-| Code | Where | Header as printed | Sender | Subject | Reason | Clock used (guess) |
-|---|---|---|---|---|---|---|
-| **U1** | `po-emails.pdf` p.142 | 3/31/2020 8:59:49 PM | Kristian G. Andersen | Re: Furin... | A | Los Angeles |
-| **U2** | `farrar-fauci-comms.pdf` pp.137-138 | Saturday, February 1, 2020 10:49 AM | Robert Garry | Re: Teleconference | B | Chicago |
-| **U3** | `farrar-fauci-comms.pdf` p.116 | Saturday, 1 February 2020 at 19:43 | Marion Koopmans | Re: Teleconference | B | Rotterdam |
-| **U4** | `farrar-fauci-comms.pdf` p.122 | Saturday, 1 February 2020 at 19:43 | Marion Koopmans | Re: Teleconference Re the pangolin sequences | A | Rotterdam |
-| **U5** | `farrar-fauci-comms.pdf` pp.55-56 | Sunday, 9 February 2020 at 20:07 | Marion Koopmans | Re: [ext] 2019 N-CoV | B | Rotterdam |
-| **U6** | `farrar-fauci-comms.pdf` pp.76-103 | Tuesday, 4 February 2020 at 06:33 | Edward Holmes | Re: Prevalence of infection and stage of the epidemic in Wuhan | A | Sydney |
-| **U7** | `farrar-fauci-comms.pdf` p.58 | Saturday, 8 February 2020 at 20:11 | Edward Holmes | Re: [ext] 2019 N-CoV | A | Sydney |
-| **U8** | `farrar-fauci-comms.pdf` pp.61-62 | Saturday, 8 February 2020 at 12:03 | Patrick Vallance | RE: 2019 N-CoV | A | London |
-| **U9** | `farrar-fauci-comms.pdf` pp.47-49 | 03 March 2020 23:06 | Alex Harris | RE: GPMB: COVID-19 FUNDING NOTE | A | London |
-| **U10** | `farrar-fauci-comms.pdf` p.43 | 06 March 2020 10:34 | Marja Esveld | RE: URGENT - GPMB COVID-19 FUNDING NOTE | B | London (see below) |
-| **U11** | `farrar-fauci-comms.pdf` pp.42-43 | Freitag, 6. Marz 2020 11:56 | Alex Harris | RE: URGENT - GPMB COVID-19 FUNDING NOTE | B | London |
-| **U12** | `farrar-fauci-comms.pdf` pp.7-13 | Tuesday, 12 May 2020 at 13:16 | Russell Viner | confidential - update on Paediatric Multisystem Inflammatory | B | London |
-| **U13** | `farrar-fauci-comms.pdf` pp.6-7 | Tuesday, May 12, 2020 6:12 PM | Russell Viner | Re: confidential - update on Paediatric Multisystem Inflammatory Syndrome (PIMS) | B | London |
-| **U14** | `farrar-fauci-comms.pdf` p.5 | Wednesday, 13 May 2020 at 22:22 | Russell Viner | Re: confidential - update on Paediatric Multisystem Inflammatory Syndrome (PIMS) | A | London |
+| Code | Where | Header as printed | Sender | Reason | Clock used (guess) |
+|---|---|---|---|---|---|
+| **U7** | `farrar-fauci-comms.pdf` p.58 | Saturday, 8 February 2020 at 20:11 | Edward Holmes | A. First header on its page: nothing on the page quotes it, and the page break may be a different extract | Sydney (his own, 04:11 ET) |
+| **U11** | `farrar-fauci-comms.pdf` pp.42-43 | Freitag, 6. Marz 2020 11:56 | Alex Harris | B. Quoted in a message whose author the lookup does not know (the OCR gives the sender as “ee”) | London |
+| **U18** | `farrar-fauci-comms.pdf` p.51 | Wednesday, February 26, 2020 7:59 AM | Teresa Miller de Vega | B. Quoted in Kimberly Barasch's message; she is not in the lookup | London |
+| **U19** | `farrar-fauci-comms.pdf` pp.51-52 | 26 February 2020 12:55 | Jeremy Farrar | B. Quoted in Teresa Miller de Vega's message; she is not in the lookup | London |
 
-The Rotterdam group (Koopmans) has 4 reply pairs and the test allows shifts 0 to +8: it cannot decide.
+**What would settle one:** where the quoter lives (U11, U18, U19: tell me where Kimberly Barasch, Teresa Miller de Vega and the sender behind “ee” work and I add them to the lookup; the block then becomes Likely), a time or remark in the message or a neighbour, or an exact copy with an explicit offset. For U7: whether the p.58 block continues p.57's email (then it is quoted by Farrar's Berlin-clock block above it, Likely).
+**Send me:** such an anchor, or “accept” (keep the guess, still Unknown).
 
-**What would settle one:** a time or remark in the message or a neighbour (like the NAS panel for Gao and Dzau), an exact copy with an explicit offset, or a link that proves who quoted it.
-**Send me:** such an anchor for any of them, or “accept” (keep the guess, still Unknown).
+**Esveld (old U10) and the others.** Esveld p.43, “06 March 2020 10:34”, is now read as nested under Alex Harris's block, so on Harris's London clock (05:34 ET). Her earlier Dutch-format message below it is already Settled (S3). The old question “London or Netherlands, up to 1 h” remains open in substance: Harris's clock is London only if Harris is in London; **send me:** “Harris is in London” or where Harris is.
 
-**U10, Esveld p.43, in detail (London or Netherlands time: up to 1 hour).** The parser files her with Alex Harris as “Wellcome Trust / UK” and reads the 10:34 as London (05:34 ET). That label is wrong for her: she writes from the Dutch Ministry of Foreign Affairs.
-London may still be right: this reply is top-level, so its stamp is on the clock of the mailbox that shows it, not hers; it is English-format, while her own earlier message below it prints in Dutch (“vrijdag 6 maart 2020 09:23”), so the 10:34 did not come from her client, and the mailbox (Wellcome) is in London.
-It cannot be proven: London gives 10:34 UTC, the Netherlands 09:34 UTC, and both fit the thread (her 09:23 Dutch message = 08:23 UTC; Harris 11:56; Farrar 14:33:45 +0000). **Send me:** “keep London” or “Netherlands” (the entry moves to 04:34 ET).
+**Old U1** (Farzan p.142) is L7. **Old U2 to U4** are S3. **Old U5, U6, U8, U9, U12, U13, U14** are now Likely (L1): Koopmans 9 Feb is London (Farrar's block above), Holmes 4 Feb is London (Farrar's), Vallance 8 Feb London, Harris 3 Mar London, Viner 12 May 13:16 and 13 May 22:22 London (Farrar's), Viner 12 May 6:12 PM Eastern (Collins's).
 
 ### Flagged by my checks (not time errors that I can place)
 
@@ -173,7 +170,7 @@ It cannot be proven: London gives 10:34 UTC, the Netherlands 09:34 UTC, and both
 
 # Fixed in this rebuild (no action)
 
-Found and fixed by me: Folkers 8:43 PM (S3); the 22:34 message's sender label and reply link and the “Phone call” body (S3); six Slack day errors (S7); a swap of two overrides that I had made after the 29 Oct rerun (analysis A9); Farrar, Koopmans and Fouchier clocks (L1, L2); the cross-release quote check is run, with no violation (analysis A8).
+Found and fixed by me: the physical-nesting rule for the Farrar-Fauci release (about 60 times moved; the Feb 1 chain and the Gao/Dzau chain agree with your hand reading; analysis 5.10); the Farzan mailbox stamp (L7); Folkers 8:43 PM (S3); the 22:34 message's sender label and reply link and the “Phone call” body (S3); six Slack day errors (S7); a swap of two overrides that I had made after the 29 Oct rerun (analysis A9); Farrar, Koopmans and Fouchier clocks (L1, L2); the cross-release quote check is run, with no violation (analysis A8).
 
 # Files
 

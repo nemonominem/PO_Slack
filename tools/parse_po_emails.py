@@ -44,7 +44,7 @@ ANALYSIS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "analy
 #
 #   Wellcome Trust / UK Government  -> London   (Farrar, Vallance, Ferguson)
 #   NIH / NIAID, Bethesda            -> New York (Fauci, Auchincloss, Collins)
-#   Scripps Research                -> Los Angeles (Andersen, Farzan)
+#   Scripps Research                -> Los Angeles (Andersen); New York (Farzan, Jupiter FL)
 #   Tulane                          -> Chicago     (Garry)
 #   University of Sydney            -> Sydney      (Holmes)
 #   Pasteur Institute               -> Paris       (Fouchier)
@@ -57,7 +57,9 @@ ZONE_BY_AFFILIATION = [
     (re.compile(r"jeremy farrar", re.I), "Europe/London", "Jeremy Farrar, Wellcome Trust (London)"),
     (re.compile(r"nih|niaid|fauci|auchincloss|collins|shabman|tabak|burke|bfarrar@nih",
                 re.I), "America/New_York", "NIH / NIAID, Bethesda"),
-    (re.compile(r"scripps|andersen|farzan", re.I), "America/Los_Angeles", "Scripps Research"),
+    (re.compile(r"farzan", re.I), "America/New_York",
+     "Michael Farzan, Scripps Research (Jupiter, Florida)"),
+    (re.compile(r"scripps|andersen", re.I), "America/Los_Angeles", "Scripps Research"),
     (re.compile(r"tulane|garry", re.I), "America/Chicago", "Tulane University"),
     (re.compile(r"lipkin|columbia", re.I), "America/New_York", "Columbia University"),
     (re.compile(r"sydney|holmes|university of sydney", re.I), "Australia/Sydney",
@@ -221,7 +223,7 @@ STRIP_QUOTED_RE = re.compile(
 # ("...MEMBERS AND STAFF ONLY LIP-000472") rather than standing alone the
 # way GARRY/REV do -- hence page_owner_re matching the tail of the line, not
 # the whole of it (see page_owner_map() in core.py).
-PAGE_OWNER_RE = re.compile(r"\b(REV|GARRY|LIP)-?\d{4,8}\s*$")
+PAGE_OWNER_RE = re.compile(r"\b(REV|GARRY|LIP|FARZAN)-?\d{4,8}\s*$")
 PAGE_OWNERS = {
     "GARRY": ("America/Chicago", "Robert Garry's own mailbox export (page-owner code GARRY)"),
     "REV": ("America/Los_Angeles",
@@ -229,6 +231,11 @@ PAGE_OWNERS = {
             "Andersen's mailbox (Scripps Research, La Jolla, San Diego)"),
     "LIP": ("America/New_York",
             "W. Ian Lipkin's own mailbox export (Columbia University; page-owner code LIP)"),
+    # pp.142-143 end "HIGHLY CONFIDENTIAL AND PROPRIETARY FARZAN-0000102/103":
+    # Michael Farzan's own mailbox (Scripps Research, Jupiter, Florida: Eastern).
+    "FARZAN": ("America/New_York",
+               "Michael Farzan's own mailbox export (Scripps Research, Jupiter, Florida; "
+               "page-owner code FARZAN)"),
 }
 
 

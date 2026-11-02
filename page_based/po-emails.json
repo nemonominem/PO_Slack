@@ -81,8 +81,8 @@
    "signature": null,
    "stamp": "Jan 31, 2020 4:38 PM",
    "stamp_status": "long",
-   "zone_assumed": "anchored to an exact copy with an explicit offset (similarity 0.99, copy idx 24)",
-   "stamp_line": "Jan 31, 2020 4:38 PM -> 19:38 ET (same instant as the explicit-offset copy, idx 24)",
+   "zone_assumed": "anchored to an exact copy with an explicit offset (similarity 0.99, copy idx 23)",
+   "stamp_line": "Jan 31, 2020 4:38 PM -> 19:38 ET (same instant as the explicit-offset copy, idx 23)",
    "recovered_inline": true,
    "source": "po-emails",
    "thread_key": "po-emails|2020-01-31|1938",
@@ -1886,6 +1886,33 @@
    "idx": 65
   },
   {
+   "date": "2020-02-06",
+   "time": "2307",
+   "kind": "email",
+   "raw_date": "23:07 ET · RE: Furin...",
+   "sender": "Michael Farzan",
+   "sender_raw": "Michael Farzan",
+   "sender_how": "From: line",
+   "subject": "RE: Furin...",
+   "content": "From: Michael Farzan\n\nTo: Kristian G. Andersen ii\n\nSubject: RE: Furin...\n\nSent: Thursday, February 6, 2020 11:07 PM\n\n----------\n\nHey Kristian,\nIt’s a bit complicated but here is the best I can find.\nThere are two MHV variants AS59 and BHK. BHK is lab adapted and has extended host range, and no longer is cleaved in the producer cell by furin. It also appears to be independent of the murine (or human)\nCEACAM receptor, relying on heparan sulfate.\nThe furin site has not changed in BHK, rather two amino acids immediately downstream account for the phenotype.\nhttps://jvi.asm.org/content/79/22/1445 1 ?ijkey=709aa5da95 13e80f42db103ec19b539ed1cc350b&keytype2=tf ipsecsha\nVirus-Cell Interactions\nHIGHLY CONFIDENTIAL AND PROPRIETARY FARZAN-0000103\nMessage",
+   "signature": null,
+   "stamp": "Thursday, February 6, 2020 11:07 PM",
+   "stamp_status": "long",
+   "zone_assumed": "Michael Farzan's own mailbox export (Scripps Research, Jupiter, Florida; page-owner code FARZAN)",
+   "stamp_line": "23:07 ET",
+   "recovered_inline": false,
+   "source": "po-emails",
+   "thread_key": "po-emails|2020-02-06|2307",
+   "thread_label": "2020-02-06 23:07 · Michael Farzan",
+   "replied_by": [
+    {
+     "key": "po-emails|2020-02-15|1242",
+     "label": "2020-02-15 12:42 · Michael"
+    }
+   ],
+   "idx": 66
+  },
+  {
    "date": "2020-02-07",
    "time": "0126",
    "kind": "email",
@@ -1910,7 +1937,7 @@
      "label": "2020-02-07 09:29 · Edward Holmes"
     }
    ],
-   "idx": 66
+   "idx": 67
   },
   {
    "date": "2020-02-07",
@@ -1935,33 +1962,6 @@
     {
      "key": "po-emails|2020-02-07|0436",
      "label": "2020-02-07 04:36 · Edward Holmes"
-    }
-   ],
-   "idx": 67
-  },
-  {
-   "date": "2020-02-07",
-   "time": "0207",
-   "kind": "email",
-   "raw_date": "02:07 ET · RE: Furin...",
-   "sender": "Michael Farzan",
-   "sender_raw": "Michael Farzan",
-   "sender_how": "From: line",
-   "subject": "RE: Furin...",
-   "content": "From: Michael Farzan\n\nTo: Kristian G. Andersen ii\n\nSubject: RE: Furin...\n\nSent: Thursday, February 6, 2020 11:07 PM\n\n----------\n\nHey Kristian,\nIt’s a bit complicated but here is the best I can find.\nThere are two MHV variants AS59 and BHK. BHK is lab adapted and has extended host range, and no longer is cleaved in the producer cell by furin. It also appears to be independent of the murine (or human)\nCEACAM receptor, relying on heparan sulfate.\nThe furin site has not changed in BHK, rather two amino acids immediately downstream account for the phenotype.\nhttps://jvi.asm.org/content/79/22/1445 1 ?ijkey=709aa5da95 13e80f42db103ec19b539ed1cc350b&keytype2=tf ipsecsha\nVirus-Cell Interactions\nHIGHLY CONFIDENTIAL AND PROPRIETARY FARZAN-0000103\nMessage",
-   "signature": null,
-   "stamp": "Thursday, February 6, 2020 11:07 PM",
-   "stamp_status": "long",
-   "zone_assumed": "REV export: US Pacific time (UTC-8 winter / UTC-7 summer); fits Kristian Andersen's mailbox (Scripps Research, La Jolla, San Diego)",
-   "stamp_line": "23:07 Los Angeles -> 02:07 ET",
-   "recovered_inline": false,
-   "source": "po-emails",
-   "thread_key": "po-emails|2020-02-07|0207",
-   "thread_label": "2020-02-07 02:07 · Michael Farzan",
-   "replied_by": [
-    {
-     "key": "po-emails|2020-02-15|1242",
-     "label": "2020-02-15 12:42 · Michael"
     }
    ],
    "idx": 68
@@ -3429,12 +3429,12 @@
    "thread_label": "2020-02-15 12:42 · Michael",
    "replied_by": [
     {
-     "key": "po-emails|2020-02-17|0045",
-     "label": "2020-02-17 00:45 · Kristian G. Andersen"
+     "key": "po-emails|2020-02-16|2145",
+     "label": "2020-02-16 21:45 · Kristian G. Andersen"
     }
    ],
-   "reply_to": "po-emails|2020-02-07|0207",
-   "reply_to_label": "2020-02-07 02:07 · Michael Farzan",
+   "reply_to": "po-emails|2020-02-06|2307",
+   "reply_to_label": "2020-02-06 23:07 · Michael Farzan",
    "link_kind": "explicit (quoted inline)",
    "idx": 120
   },
@@ -4467,6 +4467,36 @@
   },
   {
    "date": "2020-02-16",
+   "time": "2145",
+   "kind": "email",
+   "raw_date": "21:45 ET · Re: Furin...",
+   "sender": "Kristian G. Andersen",
+   "sender_raw": "Kristian G. Andersen",
+   "sender_how": "From: line",
+   "subject": "Re: Furin...",
+   "content": "From: Kristian G. Andersen\n\nTo: Michael Farzan\n\nSubject: Re: Furin...\n\nSent: Sunday, February 16, 2020 9:45 PM\n\n----------\n\nHIGHLY CONFIDENTIAL AND PROPRIETARY FARZAN-0000102\nHey Mike,\nYup, one of the pangolin sequences have a very similar RBD (the others are more like bat and further from human still). It's not the elusive \"99% pangolin\" though as that sequence was never published nor was a study produced - I think they might have spoken a little too soon. The one that's online and close in the RBD is from merging a couple of metagenomic datasets and is very incomplete, so I'm not quite sure what to make of it. I really hope they'd come up with the 99% sequence - that'd be cool!\nCheers,\nKristian",
+   "signature": null,
+   "stamp": "Sunday, February 16, 2020 9:45 PM",
+   "stamp_status": "long",
+   "zone_assumed": "frozen in Michael Farzan's clock (Michael Farzan, Scripps Research (Jupiter, Florida); quoted in their message)",
+   "stamp_line": "21:45 ET",
+   "recovered_inline": false,
+   "source": "po-emails",
+   "thread_key": "po-emails|2020-02-16|2145",
+   "thread_label": "2020-02-16 21:45 · Kristian G. Andersen",
+   "replied_by": [
+    {
+     "key": "po-emails|2020-02-17|1217",
+     "label": "2020-02-17 12:17 · Michael Farzan"
+    }
+   ],
+   "reply_to": "po-emails|2020-02-15|1242",
+   "reply_to_label": "2020-02-15 12:42 · Michael",
+   "link_kind": "explicit (quoted inline)",
+   "idx": 155
+  },
+  {
+   "date": "2020-02-16",
    "time": "2148",
    "kind": "email",
    "raw_date": "21:48 ET · [NA]",
@@ -4493,7 +4523,7 @@
    "reply_to": "po-emails|2020-02-16|2141",
    "reply_to_label": "2020-02-16 21:41 · Kristian",
    "link_kind": "explicit (quoted inline)",
-   "idx": 155
+   "idx": 156
   },
   {
    "date": "2020-02-16",
@@ -4523,7 +4553,7 @@
    "reply_to": "po-emails|2020-02-16|2148",
    "reply_to_label": "2020-02-16 21:48 · Edward Holmes",
    "link_kind": "explicit (quoted inline)",
-   "idx": 156
+   "idx": 157
   },
   {
    "date": "2020-02-16",
@@ -4547,36 +4577,6 @@
    "replied_by": [],
    "reply_to": "po-emails|2020-02-16|2153",
    "reply_to_label": "2020-02-16 21:53 · Kristian G. Andersen",
-   "link_kind": "explicit (quoted inline)",
-   "idx": 157
-  },
-  {
-   "date": "2020-02-17",
-   "time": "0045",
-   "kind": "email",
-   "raw_date": "00:45 ET · Re: Furin...",
-   "sender": "Kristian G. Andersen",
-   "sender_raw": "Kristian G. Andersen",
-   "sender_how": "From: line",
-   "subject": "Re: Furin...",
-   "content": "From: Kristian G. Andersen\n\nTo: Michael Farzan\n\nSubject: Re: Furin...\n\nSent: Sunday, February 16, 2020 9:45 PM\n\n----------\n\nHIGHLY CONFIDENTIAL AND PROPRIETARY FARZAN-0000102\nHey Mike,\nYup, one of the pangolin sequences have a very similar RBD (the others are more like bat and further from human still). It's not the elusive \"99% pangolin\" though as that sequence was never published nor was a study produced - I think they might have spoken a little too soon. The one that's online and close in the RBD is from merging a couple of metagenomic datasets and is very incomplete, so I'm not quite sure what to make of it. I really hope they'd come up with the 99% sequence - that'd be cool!\nCheers,\nKristian",
-   "signature": null,
-   "stamp": "Sunday, February 16, 2020 9:45 PM",
-   "stamp_status": "long",
-   "zone_assumed": "frozen in Michael Farzan's clock (Scripps Research; quoted in their message)",
-   "stamp_line": "21:45 Los Angeles -> 00:45 ET",
-   "recovered_inline": false,
-   "source": "po-emails",
-   "thread_key": "po-emails|2020-02-17|0045",
-   "thread_label": "2020-02-17 00:45 · Kristian G. Andersen",
-   "replied_by": [
-    {
-     "key": "po-emails|2020-02-17|1217",
-     "label": "2020-02-17 12:17 · Michael Farzan"
-    }
-   ],
-   "reply_to": "po-emails|2020-02-15|1242",
-   "reply_to_label": "2020-02-15 12:42 · Michael",
    "link_kind": "explicit (quoted inline)",
    "idx": 158
   },
@@ -5123,8 +5123,8 @@
      "label": "2020-02-17 12:26 · Kristian G. Andersen"
     }
    ],
-   "reply_to": "po-emails|2020-02-17|0045",
-   "reply_to_label": "2020-02-17 00:45 · Kristian G. Andersen",
+   "reply_to": "po-emails|2020-02-16|2145",
+   "reply_to_label": "2020-02-16 21:45 · Kristian G. Andersen",
    "link_kind": "explicit (quoted inline)",
    "idx": 177
   },
@@ -5176,8 +5176,8 @@
    "thread_label": "2020-02-17 12:26 · Kristian G. Andersen",
    "replied_by": [
     {
-     "key": "po-emails|2020-03-31|2359",
-     "label": "2020-03-31 23:59 · Kristian G. Andersen"
+     "key": "po-emails|2020-03-31|2059",
+     "label": "2020-03-31 20:59 · Kristian G. Andersen"
     }
    ],
    "reply_to": "po-emails|2020-02-17|1217",
@@ -6257,9 +6257,9 @@
   },
   {
    "date": "2020-03-31",
-   "time": "2359",
+   "time": "2059",
    "kind": "email",
-   "raw_date": "23:59 ET · Re: Furin...",
+   "raw_date": "20:59 ET · Re: Furin...",
    "sender": "Kristian G. Andersen",
    "sender_raw": "Kristian G. Andersen Po",
    "sender_how": "From: line",
@@ -6268,12 +6268,12 @@
    "signature": null,
    "stamp": "3/31/2020 8:59:49 PM",
    "stamp_status": "outlook-us",
-   "zone_assumed": "Scripps Research",
-   "stamp_line": "20:59 Los Angeles -> 23:59 ET",
+   "zone_assumed": "Michael Farzan's own mailbox export (Scripps Research, Jupiter, Florida; page-owner code FARZAN)",
+   "stamp_line": "20:59 ET",
    "recovered_inline": false,
    "source": "po-emails",
-   "thread_key": "po-emails|2020-03-31|2359",
-   "thread_label": "2020-03-31 23:59 · Kristian G. Andersen",
+   "thread_key": "po-emails|2020-03-31|2059",
+   "thread_label": "2020-03-31 20:59 · Kristian G. Andersen",
    "replied_by": [],
    "reply_to": "po-emails|2020-02-17|1226",
    "reply_to_label": "2020-02-17 12:26 · Kristian G. Andersen",

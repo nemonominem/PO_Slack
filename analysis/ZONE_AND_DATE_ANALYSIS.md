@@ -24,7 +24,7 @@ The file has five parts:
 
 ---
 
-# Part 1. Settled datetimes (115 emails, plus Slack Part 1 and Part 2)
+# Part 1. Settled datetimes (123 emails, plus Slack Part 1 and Part 2)
 
 Settled means: fixed by the stamp itself, by an exact copy, by the page image, or by a decision of yours
 backed by evidence. `zone_format_audit.csv` marks each email `Settled`.
@@ -33,10 +33,10 @@ backed by evidence. `zone_format_audit.csv` marks each email `Settled`.
 |---|---|---|---|
 | Zone written in the stamp (`+0000`, `UTC+11:00`, `AEDT`, `EST`) | 53 (45 Farrar-Fauci, 8 P.O. emails) | as written | The stamp |
 | Exact copy with an explicit offset | 1 | from the copy | `po-emails.pdf` pp.1-2, “Jan 31, 2020 4:38 PM”, Fauci, Anthony, “[NA]” equals the Farrar-Fauci copy `farrar-fauci-comms.pdf` p.154, “Sat, 1 Feb 2020 00:38:35 +0000”, Anthony Fauci, “RE: Phone call” |
-| Verified from the page image or the message text | 15 | per entry (Eastern, London, Pacific, Amsterdam, Berlin, Santiago) | 4 corrections in 1.1; 8 headers that were undated, read from the page images; 2 corrected from the message text (Gao and Dzau, 25 Apr 2020); Folkers 8:43 PM; and the 22:34 reply (list in FOR_HUMAN_REVIEWER.md, S3) |
-| Page owner **REV**, top-level stamps only (P.O. emails) | 46 | Pacific | Section 1.2. The 95 other REV-page entries are quoted blocks, which now take the quoting author's clock (Supported) |
+| Verified from the page image or the message text | 24 | per entry (Eastern, London, Pacific, Amsterdam, Berlin, Santiago) | 4 corrections in 1.1; 8 headers that were undated, read from the page images; 2 corrected from the message text (Gao and Dzau, 25 Apr 2020); Folkers 8:43 PM; and the 22:34 reply (list in FOR_HUMAN_REVIEWER.md, S3) |
+| Page owner **REV**, top-level stamps only (P.O. emails) | 45 | Pacific | Section 1.2. The 95 other REV-page entries are quoted blocks, which now take the quoting author's clock (Supported) |
 
-## 1.1 The verified corrections (15 emails; first four, then the others in FOR_HUMAN_REVIEWER.md S3)
+## 1.1 The verified corrections (24 entries; first four, then the others in FOR_HUMAN_REVIEWER.md S3)
 
 - `po-emails.pdf` p.2, “Friday, January 31, 2020 5:57 PM”, Jeremy Farrar, “Re: Phone call”: quoted in Fauci's reply, so on Fauci's Eastern clock. The same message appears in the
   Farrar-Fauci release as `farrar-fauci-comms.pdf` pp.154-155, “Friday, January 31, 2020 5:57 PM”, Jeremy Farrar, “Re: Phone call”, inside Fauci's reply stamped `00:38:35 +0000`: also a verified correction.
@@ -116,27 +116,31 @@ above decide Part 1; the REV numbering does not.
 
 ---
 
-# Part 2. Not settled and only supported datetimes (272 emails)
+# Part 2. Not settled and only supported datetimes (260 emails)
 
-## 2.1 Supported but not proven (258 emails)
+## 2.1 Supported but not proven (256 emails)
 
 Consistent with every test (every reply pair it touches is in order), but reply order cannot catch a copy that
 is simply too early; the Farrar message `farrar-fauci-comms.pdf` pp.154-155, “Friday, January 31, 2020 5:57 PM”, Jeremy Farrar, “Re: Phone call” was five hours early and the test passed. Marked `Supported`.
 
 | Zone source | Emails | Zone used |
 |---|---|---|
-| Quoted block: clock of the quoting message's author (the freeze rule, 5.6) | 164 (151 P.O. emails, 13 Farrar-Fauci) | the author's institution zone |
-| Sender: Jeremy Farrar, top-level (Farrar-Fauci release) | 32 | London (he is based in London, reviewer, 2026-11-01) |
-| Sender: Wellcome convener (other unzoned stamps) | 17 (15 Farrar-Fauci, 2 P.O. emails) | London |
-| Sender: NIH, Bethesda (Farrar-Fauci release) | 26 | Eastern |
+| Quoted block: clock of the quoting message's author (the freeze rule, 5.6) | 227 (151 P.O. emails, 76 Farrar-Fauci; the Farrar-Fauci ones include every block physically nested under another block on the same page, see 5.10) | the author's institution zone |
+| Sender: Jeremy Farrar, top-level (Farrar-Fauci release) | 1 | London (he is based in London, reviewer, 2026-11-01) |
+| Sender: Wellcome convener (other unzoned stamps) | 5 (3 Farrar-Fauci, 2 P.O. emails) | London |
+| Sender: NIH, Bethesda (Farrar-Fauci release) | 2 | Eastern |
 | Page owner **LIP**, top-level (P.O. emails) | 8 | Eastern |
+| Page owner **FARZAN**, top-level (P.O. pp.142-143) | 2 | Eastern: Farzan works at Scripps Research, Jupiter, Florida (reviewer, 2026-11-02); the pages end “HIGHLY CONFIDENTIAL AND PROPRIETARY FARZAN-0000102/103”. Found 2026-11-02; before that these pages were read as Scripps Los Angeles. |
 | Page owner **GARRY**, top-level (P.O. emails) | 11 | Chicago (Central): Garry works at Tulane University School of Medicine, New Orleans (Central time), per the reviewer, 2026-10-29. Reply order excludes Pacific. No exact copy proves it; a trip away from Central would not show. |
 
-## 2.2 Not settled (14 emails)
+## 2.2 Not settled (4 emails)
 
 | Zone source | Emails | Zone used | Why open |
 |---|---|---|---|
-| Sender, small groups (list in `FOR_HUMAN_REVIEWER.md`, item U2) | 14 | by sender | No quote rule possible: 7 are not quoted by anything, 7 only by an inferred link (which proves no quote); each has one to four linked replies to test. One of them, Esveld p.43, is a separate question (item U5): London (mailbox clock) or Amsterdam |
+| Sender, small groups (`FOR_HUMAN_REVIEWER.md`, U7, U11, U18, U19) | 4 | by sender | U7 (Holmes p.58) is the first header on its page, so nothing on the page quotes it; U11, U18 and U19 are quoted in messages whose authors the lookup does not know (the OCR gives one as “ee”, the others are Kimberly Barasch and Teresa Miller de Vega) |
+
+---|---|---|---|
+| Sender, small groups (list in `FOR_HUMAN_REVIEWER.md`, items U5 to U14) | 10 | by sender | No quote rule possible: 5 are not quoted by anything, 5 only by an inferred link (which proves no quote); each has one to four linked replies to test. One of them, Esveld p.43, is a separate question (item U5): London (mailbox clock) or Amsterdam |
 
 ---
 
@@ -244,7 +248,7 @@ in that copy is frozen on the clock of the person who replied or forwarded. It n
 clock. So the time printed on a message depends on where we see it:
 
 1. **A top-level message** (the message itself, not inside another) is on the clock of the mailbox that holds
-   it. In a page-owner export (REV, GARRY, LIP) that is the owner's clock.
+   it. In a page-owner export (REV, GARRY, LIP, FARZAN) that is the owner's clock.
 2. **A quoted or forwarded message** is on the clock of the person who quoted or forwarded it, not the
    clock of its own author.
 3. **Several copies of one message** can therefore print different times. Each copy is right for its own clock.
@@ -356,3 +360,13 @@ five hours (one by 9 hours: Andersen, 8 Feb 22:15, quoted by Koopmans, now 16:15
 app tests 8 PASS, audit 66/66. Fouchier and Koopmans now have their own group (`Erasmus MC, Netherlands`, 5 linked pairs, only shift 0 allowed) and Farrar his own
 (`Jeremy Farrar, Wellcome Trust (London)`, 41 pairs, only shift 0 allowed), so the small London senders are not given Farrar's pairs as support.
 Dzau is not in the lookup; his two stamps are verified from the message text (FOR_HUMAN_REVIEWER.md, S3).
+
+## 5.10 Physical nesting = quote (2026-11-02, reviewer's decision)
+
+In the Farrar-Fauci release every top-level message prints a stamp with an explicit offset (`Sent: Sat, 1 Feb 2020 22:06:26 +0000`). Any other header (`Sent: Saturday, February 1, 2020 4:00 PM`, `Date: Saturday, 1 February 2020 at 20:50`) is therefore a block printed inside the body of the message above it. **A header that sits on the same page as body text of the block above it is quoted by that block**; a header that opens a page is not linked, because a page break may be a different extract. The block above is the quoter, so the freeze rule gives the block the clock of that quoter's author.
+
+Example (pp.115-116, 1 Feb 2020): Fauci `22:06:26 +0000` quotes Farrar `4:00 PM` (Eastern, Fauci's clock) which quotes Collins `20:50` (London, Farrar's clock) which quotes Farrar's `3:07 PM` (Eastern, Collins's iPhone) ... and the 19:56 message with Koopmans's `19:43` under it (London, Farrar's clock). Every time is then in order and the call (2 to 3 pm ET) is bracketed by them.
+
+The rule found by itself every correction I had made by hand for that chain (14:56, 16:00, 15:50, 15:12, 14:43, 10:49, 10:48, 10:50), moved about 45 more Farrar-Fauci times by ±5 h (Outlook-style `Sent: ... AM/PM` blocks quoted by Fauci or Collins are Eastern, not London; Apple-style `Date: ... at HH:MM` blocks quoted by Farrar are London, not Eastern), and left the reply-order test clean (250 quoted pairs, only shift 0 allowed). The same release has a fallback: when the quoting author is not in the lookup of where people live, the block takes the quoting message's own reading (a default guess), and is marked Not settled.
+
+It is switched on only where a profile gives a `top_level_stamp_re` (Farrar-Fauci). The P.O. emails do not have one: a top-level message there can carry an attached document, and the Pope/NASEM case showed that physical order alone links unrelated text.

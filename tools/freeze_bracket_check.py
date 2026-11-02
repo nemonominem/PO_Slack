@@ -25,7 +25,7 @@ AN = os.path.join(HERE, "..", "analysis")
 
 NAME_TZ = [  # author's own clock, from where the person works
     (r"holmes", "Australia/Sydney"), (r"rambaut|ian\b.*edinburgh", "Europe/London"),
-    (r"andersen|farzan", "America/Los_Angeles"), (r"garry", "America/Chicago"),
+    (r"andersen", "America/Los_Angeles"), (r"farzan", "America/New_York"), (r"garry", "America/Chicago"),
     (r"lipkin", "America/New_York"), (r"farrar|vallance|golding|ferguson|viner", "Europe/London"),
     (r"fauci|collins|folkers|auchincloss", "America/New_York"), (r"drosten", "Europe/Berlin"),
     (r"fouchier", "Europe/Amsterdam"), (r"daszak", "America/New_York"),

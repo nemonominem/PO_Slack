@@ -48,7 +48,7 @@ ANALYSIS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "analy
 #
 #   Wellcome Trust / UK Government  -> London      (Farrar, Vallance, Viner)
 #   NIH / NIAID / NICHD / NHLBI, Bethesda -> New York (Fauci, Collins, Bianchi, Gibbons)
-#   Scripps Research                -> Los Angeles (Andersen, Farzan)
+#   Scripps Research                -> Los Angeles (Andersen); New York (Farzan, Jupiter FL)
 #   Tulane                          -> Chicago     (Garry)
 #   University of Sydney            -> Sydney      (Holmes)
 #   Erasmus MC, Netherlands         -> Amsterdam   (Fouchier, Koopmans)
@@ -60,7 +60,11 @@ ZONE_BY_AFFILIATION = [
     (re.compile(r"nih|niaid|nichd|nhlbi|\bod\b|fauci|collins|bianchi|gibbons|"
                 r"shabman|tabak|burke|marston|auchincloss", re.I),
      "America/New_York", "NIH, Bethesda"),
-    (re.compile(r"scripps|andersen|farzan", re.I), "America/Los_Angeles", "Scripps Research"),
+    (re.compile(r"farzan", re.I), "America/New_York",
+     "Michael Farzan, Scripps Research (Jupiter, Florida)"),
+    (re.compile(r"scripps|andersen", re.I), "America/Los_Angeles", "Scripps Research"),
+    (re.compile(r"dzau|nas\.edu|national academ", re.I), "America/New_York",
+     "Victor Dzau, National Academy of Medicine (Washington DC)"),
     (re.compile(r"tulane|garry", re.I), "America/Chicago", "Tulane University"),
     (re.compile(r"sydney|holmes", re.I), "Australia/Sydney", "University of Sydney"),
     (re.compile(r"koopmans|^marion|fouchier|erasmus|rotterdam", re.I), "Europe/Amsterdam", "Erasmus MC, Netherlands"),
@@ -295,6 +299,9 @@ PROFILE = Profile(
     strip_quoted_re=STRIP_QUOTED_RE,
     stamp_dmy_re=STAMP_DMY_RE,
     stamp_bare_offset_re=STAMP_BARE_OFFSET_RE,
+    # Top-level messages in this release print "Sent: Sat, 1 Feb 2020 22:06:26 +0000";
+    # any other header on the same page as the body above it is a quoted block.
+    top_level_stamp_re=re.compile(r"(Sent|Date):\s*\w{3},\s*\d{1,2}\s+\w{3}\s+\d{4}\s+\d\d:\d\d:\d\d\s+[+-]\d{4}"),
     stamp_de_re=STAMP_DE_RE,
     months_de=MONTHS_DE,
 )
