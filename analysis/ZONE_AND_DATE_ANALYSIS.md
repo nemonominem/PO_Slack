@@ -118,14 +118,14 @@ above decide Part 1; the REV numbering does not.
 
 # Part 2. Not settled and only supported datetimes (260 emails)
 
-## 2.1 Supported but not proven (259 emails)
+## 2.1 Supported but not proven (260 emails)
 
 Consistent with every test (every reply pair it touches is in order), but reply order cannot catch a copy that
 is simply too early; the Farrar message `farrar-fauci-comms.pdf` pp.154-155, “Friday, January 31, 2020 5:57 PM”, Jeremy Farrar, “Re: Phone call” was five hours early and the test passed. Marked `Supported`.
 
 | Zone source | Emails | Zone used |
 |---|---|---|
-| Quoted block: clock of the quoting message's author (the freeze rule, 5.6) | 230 (151 P.O. emails, 79 Farrar-Fauci; the Farrar-Fauci ones include every block physically nested under another block on the same page, see 5.10) | the author's institution zone |
+| Quoted block: clock of the quoting message's author (the freeze rule, 5.6) | 231 (151 P.O. emails, 80 Farrar-Fauci; the Farrar-Fauci ones include every block physically nested under another block on the same page, see 5.10) | the author's institution zone |
 | Sender: Jeremy Farrar, top-level (Farrar-Fauci release) | 1 | London (he is based in London, reviewer, 2026-11-01) |
 | Sender: Wellcome convener (other unzoned stamps) | 5 (3 Farrar-Fauci, 2 P.O. emails) | London |
 | Sender: NIH, Bethesda (Farrar-Fauci release) | 2 | Eastern |
@@ -133,10 +133,11 @@ is simply too early; the Farrar message `farrar-fauci-comms.pdf` pp.154-155, “
 | Page owner **FARZAN**, top-level (P.O. pp.142-143) | 2 | Eastern: Farzan works at Scripps Research, Jupiter, Florida (reviewer, 2026-11-02); the pages end “HIGHLY CONFIDENTIAL AND PROPRIETARY FARZAN-0000102/103”. Found 2026-11-02; before that these pages were read as Scripps Los Angeles. |
 | Page owner **GARRY**, top-level (P.O. emails) | 11 | Chicago (Central): Garry works at Tulane University School of Medicine, New Orleans (Central time), per the reviewer, 2026-10-29. Reply order excludes Pacific. No exact copy proves it; a trip away from Central would not show. |
 
-## 2.2 Not settled (1 email)
+## 2.2 Not settled (0 emails)
 
-| Zone source | Emails | Zone used | Why open |
-|---|---|---|---|
+None. The last one (Harris pp.42-43) was cleared on 2026-11-02 when the lookup learned who quotes it: Ilona Kickbusch (Geneva), whose name the OCR had read as “ee” (a redaction code).
+
+---|---|---|---|
 | Sender, small groups (`FOR_HUMAN_REVIEWER.md`, U11) | 1 | by sender | Harris `farrar-fauci-comms.pdf` pp.42-43, “Freitag, 6. Marz 2020 11:56”, is quoted in a message whose author the lookup does not know (the OCR gives the name as “ee”) |
 
 ---|---|---|---|

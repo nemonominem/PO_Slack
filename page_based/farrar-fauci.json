@@ -2899,17 +2899,17 @@
    "thread_label": "2020-03-06 05:34 · Marja Esveld",
    "replied_by": [
     {
-     "key": "farrar-fauci|2020-03-06|0656",
-     "label": "2020-03-06 06:56 · Alex Harris"
+     "key": "farrar-fauci|2020-03-06|0556",
+     "label": "2020-03-06 05:56 · Alex Harris"
     }
    ],
    "idx": 104
   },
   {
    "date": "2020-03-06",
-   "time": "0656",
+   "time": "0556",
    "kind": "email",
-   "raw_date": "06:56 ET · RE: URGENT - GPMB COVID-19 FUNDING NOTE",
+   "raw_date": "05:56 ET · RE: URGENT - GPMB COVID-19 FUNDING NOTE",
    "sender": "Alex Harris",
    "sender_raw": "Alex Harris iiiitttititnnOx@",
    "sender_how": "From: line",
@@ -2918,16 +2918,16 @@
    "signature": "Wellcome",
    "stamp": "Freitag, 6. Marz 2020 11:56",
    "stamp_status": "german",
-   "zone_assumed": "frozen in ee's zone (quoted in their 2020-03-06 reply)",
-   "stamp_line": "11:56 London -> 06:56 ET",
+   "zone_assumed": "frozen in Ilona Kickbusch's clock (Ilona Kickbusch, Global Health Centre, Graduate Institute (Geneva); quoted in their message)",
+   "stamp_line": "11:56 Zurich -> 05:56 ET",
    "recovered_inline": false,
    "source": "farrar-fauci",
-   "thread_key": "farrar-fauci|2020-03-06|0656",
-   "thread_label": "2020-03-06 06:56 · Alex Harris",
+   "thread_key": "farrar-fauci|2020-03-06|0556",
+   "thread_label": "2020-03-06 05:56 · Alex Harris",
    "replied_by": [
     {
      "key": "farrar-fauci|2020-03-06|0913",
-     "label": "2020-03-06 09:13 · ee"
+     "label": "2020-03-06 09:13 · Ilona Kickbusch"
     }
    ],
    "reply_to": "farrar-fauci|2020-03-06|0534",
@@ -2940,11 +2940,11 @@
    "time": "0913",
    "kind": "email",
    "raw_date": "09:13 ET · AW: URGENT - GPMB COVID-19 FUNDING NOTE",
-   "sender": "ee",
-   "sender_raw": "ee",
+   "sender": "Ilona Kickbusch",
+   "sender_raw": "Ilona Kickbusch",
    "sender_how": "From: line",
    "subject": "AW: URGENT - GPMB COVID-19 FUNDING NOTE",
-   "content": "From: ee\n\nCc: Bernhard Schwartlander {9 @G@, 'Pate Muhamed’\n\nSubject: AW: URGENT - GPMB COVID-19 FUNDING NOTE\n\nDate: Friday, 6 March 2020 at 14:13\n\n----------\n\nWonderful news llona",
+   "content": "From: Ilona Kickbusch\n\nCc: Bernhard Schwartlander {9 @G@, 'Pate Muhamed’\n\nSubject: AW: URGENT - GPMB COVID-19 FUNDING NOTE\n\nDate: Friday, 6 March 2020 at 14:13\n\n----------\n\nWonderful news llona",
    "signature": null,
    "stamp": "Friday, 6 March 2020 at 14:13",
    "stamp_status": "day-month-year",
@@ -2953,15 +2953,15 @@
    "recovered_inline": false,
    "source": "farrar-fauci",
    "thread_key": "farrar-fauci|2020-03-06|0913",
-   "thread_label": "2020-03-06 09:13 · ee",
+   "thread_label": "2020-03-06 09:13 · Ilona Kickbusch",
    "replied_by": [
     {
      "key": "farrar-fauci|2020-03-06|0933",
      "label": "2020-03-06 09:33 · Jeremy Farrar"
     }
    ],
-   "reply_to": "farrar-fauci|2020-03-06|0656",
-   "reply_to_label": "2020-03-06 06:56 · Alex Harris",
+   "reply_to": "farrar-fauci|2020-03-06|0556",
+   "reply_to_label": "2020-03-06 05:56 · Alex Harris",
    "link_kind": "explicit (quoted inline)",
    "idx": 106
   },
@@ -2986,7 +2986,7 @@
    "thread_label": "2020-03-06 09:33 · Jeremy Farrar",
    "replied_by": [],
    "reply_to": "farrar-fauci|2020-03-06|0913",
-   "reply_to_label": "2020-03-06 09:13 · ee",
+   "reply_to_label": "2020-03-06 09:13 · Ilona Kickbusch",
    "link_kind": "explicit (quoted inline)",
    "idx": 107
   },

@@ -63,6 +63,8 @@ ZONE_BY_AFFILIATION = [
     (re.compile(r"farzan", re.I), "America/New_York",
      "Michael Farzan, Scripps Research (Jupiter, Florida)"),
     (re.compile(r"scripps|andersen", re.I), "America/Los_Angeles", "Scripps Research"),
+    (re.compile(r"kickbusch", re.I), "Europe/Zurich",
+     "Ilona Kickbusch, Global Health Centre, Graduate Institute (Geneva)"),
     (re.compile(r"miller de vega", re.I), "Europe/Zurich",
      "Teresa Miller de Vega, GPMB Secretariat at WHO (Geneva)"),
     (re.compile(r"dzau|nas\.edu|national academ", re.I), "America/New_York",
@@ -106,6 +108,11 @@ GLUED_WORDS_RE = re.compile(r"\b(%s)\b" % "|".join(map(re.escape, GLUED_WORDS)))
 
 
 def clean_line_extra(line):
+    # p.41 prints "From: ee": OCR of the redaction code (b)(6). The message ("Wonderful news Ilona",
+    # quoting Alex Harris) is from Ilona Kickbusch (reviewer, 2026-11-02; GPMB board member, Geneva).
+    # The line occurs once in the OCR.
+    if line.strip() == "From: ee":
+        return "From: Ilona Kickbusch"
     line = STANDALONE_PIPE_RE.sub("I", line)
     line = RE_BULLET_MISREAD.sub("• ", line)
     line = GLUED_WORDS_RE.sub(lambda m: GLUED_WORDS[m.group(1)], line)
