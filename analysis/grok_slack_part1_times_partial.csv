@@ -1,0 +1,420 @@
+page,seq,kind,author,time_hhmm,date_if_divider,first_8_words,confidence,source
+1,1,divider,,,"February 1st, 2020",,high,visual-parent
+1,2,msg,Kristian Andersen,12:11,,"joined paper-2020-nature_medicine-proximal_origin. Also, Andrew Rambaut joined.",high,visual-parent
+1,3,msg,Andrew Rambaut,12:13,,Nice channel title,high,visual-parent
+1,4,msg,Kristian Andersen,12:13,,Super secret too,high,visual-parent
+1,5,divider,,,"February 1st, 2020",,high,visual-parent
+1,6,msg,Kristian Andersen,12:31,,Post,high,visual-parent
+1,7,msg,Andrew Rambaut,12:47,,What are the coordinates of the RBD,high,visual-parent
+1,8,msg,Kristian Andersen,12:48,,22553 - 23140 in Hu-1.,high,visual-parent
+1,9,divider,,,"February 1st, 2020",,high,visual-parent
+1,10,msg,Andrew Rambaut,12:50,,Thanks.,high,visual-parent
+1,11,msg,Kristian Andersen,13:17,,"The RBD is definitely heavily mutated, but I'm",high,visual-parent
+1,12,msg,Andrew Rambaut,13:23,,Eddie is awake. Send him an invite to,high,visual-parent
+2,1,divider,,,"February 1st, 2020",,high,visual-parent
+2,2,msg,Kristian Andersen,13:28,,Just invited Eddie.,high,visual-parent
+2,3,msg,Eddie Holmes,13:30,,joined paper-2020-nature_medicine-proximal_origin.,high,visual-parent
+2,4,msg,Eddie Holmes,13:30,,Morning,high,visual-parent
+2,5,msg,Andrew Rambaut,13:30,,nCoV vs RaTG13:,high,visual-parent
+2,6,divider,,,"February 1st, 2020",,high,visual-parent
+2,7,msg,Kristian Andersen,13:30,,The two bat ones are about as far,high,visual-parent
+2,8,msg,Andrew Rambaut,13:33,,image.png,high,visual-parent
+2,9,msg,Eddie Holmes,13:33,,That's a great comparison!,high,visual-parent
+2,10,divider,,,"February 1st, 2020",,high,visual-parent
+2,11,msg,Andrew Rambaut,13:33,,SARS:,high,visual-parent
+2,12,msg,Kristian Andersen,13:35,,Good! These are very similar. What's the difference,high,visual-parent
+2,13,msg,Andrew Rambaut,13:36,,92.86% identity across spike for nCoV vs,high,visual-parent
+2,14,divider,,,"February 1st, 2020",,high,visual-parent
+2,15,msg,Kristian Andersen,13:37,,Agreed.,high,visual-parent
+2,16,msg,Andrew Rambaut,13:37,,Yes.,high,visual-parent
+2,17,msg,Kristian Andersen,13:38,,[emoji],high,visual-parent
+2,18,msg,Andrew Rambaut,13:38,,So cleavage site and restriction sites. Thoughts?,high,visual-parent
+2,19,msg,Kristian Andersen,13:38,,I'm looking at cleavage site right now -,high,visual-parent
+2,20,msg,Andrew Rambaut,13:42,,RaTG13 is identical except for the 4 residue,high,visual-parent
+4,1,msg,Kristian Andersen,13:59,,"Yes, call.",high,a1-sheet
+4,2,msg,Andrew Rambaut,13:59,,Stay on here in case we need to,high,a1-sheet
+4,3,msg,Kristian Andersen,14:01,,Yup,high,a1-sheet
+4,4,msg,Kristian Andersen,14:13,,Just FYI - o-linked glycan also present in,high,a1-sheet
+4,5,msg,Kristian Andersen,14:19,,"Crap, don't know the context around S that",high,a1-sheet
+4,6,msg,Eddie Holmes,14:39,,Big ask!,high,a1-sheet
+4,7,msg,Kristian Andersen,14:39,,Destroy the world based on sequence data. Yay,high,a1-sheet
+4,8,msg,Kristian Andersen,14:52,,Let's hop on a call between the three,high,a1-sheet
+4,9,msg,Eddie Holmes,14:57,,Sure thing.,high,a1-sheet
+4,10,divider,,,"February 1st, 2020",,high,a1-sheet
+4,11,msg,Kristian Andersen,14:58,,I propose San Diego.,high,a1-sheet
+4,12,msg,Andrew Rambaut,15:01,,Yes.,high,a1-sheet
+4,13,msg,Kristian Andersen,15:01,,No,high,a1-sheet
+4,14,msg,Eddie Holmes,15:01,,Can we do a zoom?,high,a1-sheet
+4,15,msg,Kristian Andersen,15:02,,You too Andrew!,high,a1-sheet
+4,16,msg,Kristian Andersen,15:05,,https://zoom.us/j/9673242666,high,a1-sheet
+4,17,msg,Kristian Andersen,22:42,,@Eddie Holmes and @Andrew Rambaut - here's a,high,a1-sheet
+4,18,divider,,,"February 2nd, 2020",,high,a1-sheet
+4,19,msg,Kristian Andersen,01:00,,Dumping this here as I need to think,high,a1-sheet
+5,1,divider,,,"February 2nd, 2020",,high,a1-sheet
+5,2,msg,Andrew Rambaut,04:55,,"Hi Kristian, I missed this this morning otherwise",high,a1-sheet
+5,3,msg,Kristian Andersen,09:44,,"Yeah, no worries Andrew - I think your",high,a1-sheet
+5,4,msg,Andrew Rambaut,10:29,,I just had a phone call from Mark,high,a1-sheet
+5,5,msg,Kristian Andersen,10:40,,Tony Fauchi called me yesterday afternoon with the,high,a1-sheet
+5,6,msg,Andrew Rambaut,11:10,,Ron had me clocked as an anti-GOF fanatic,high,a1-sheet
+5,7,divider,,,"February 2nd, 2020",,high,a1-sheet
+5,8,msg,Kristian Andersen,11:14,,"Interesting. I'm all for GOF experiments, I think",high,a1-sheet
+5,9,msg,Kristian Andersen,11:15,,"@Andrew Rambaut to this comment - ""I think",high,a1-sheet
+5,10,msg,Andrew Rambaut,11:16,,Yes my feeling is you have to consider,high,a1-sheet
+5,11,divider,,,"February 2nd, 2020",,high,a1-sheet
+5,12,msg,Kristian Andersen,11:47,,Reading through Ron's comments again I agree on,high,a1-sheet
+5,13,msg,Andrew Rambaut,11:53,,Given the shit show that would happen if,high,a1-sheet
+5,14,msg,Kristian Andersen,11:56,,"Yup, I totally agree that that's a very",high,a1-sheet
+14,1,divider,,,"February 4th, 2020",,high,a1-sheet
+14,2,msg,Kristian Andersen,00:01,,"Alright, first attempt at creating the new summary.",high,a1-sheet
+14,3,msg,Andrew Rambaut,02:50,,I agree. Excellent. Should we add something about,high,a1-sheet
+14,4,msg,Eddie Holmes,03:57,,"Yes, you could potentially add a line saying",high,a1-sheet
+14,5,msg,Andrew Rambaut,04:15,,Yes. None since 4th Jan.,high,a1-sheet
+14,6,divider,,,"February 4th, 2020",,high,a1-sheet
+14,7,msg,Eddie Holmes,04:28,,Either George is sitting on all the sequences,high,a1-sheet
+14,8,msg,Andrew Rambaut,04:59,,Agreed. Interestingly Guangdong is happily sequencing away but,high,a1-sheet
+14,9,msg,Andrew Rambaut,07:48,,Hi all. I did a bit more editing,high,a1-sheet
+14,10,msg,Kristian Andersen,10:12,,Excellent. Will go through again this morning.,high,a1-sheet
+14,11,msg,Andrew Rambaut,11:26,,Everyone is talking about this but quite frankly,high,a1-sheet
+14,12,msg,Kristian Andersen,11:51,,Beer and pizza for the long nights in,high,a1-sheet
+14,13,msg,Eddie Holmes,15:37,,Just think of how many spurious BLAST analyses,high,a1-sheet
+14,14,msg,Kristian Andersen,15:59,,"To be fair, I just bought the man",high,a1-sheet
+14,15,divider,,,"February 5th, 2020",,high,a1-sheet
+14,16,msg,Andrew Rambaut,02:28,,I bet some of them match Ebola!,high,a1-sheet
+14,17,msg,Kristian Andersen,12:15,,Hi @channel - had a look at the,high,a1-sheet
+22,1,divider,,,"February 8th, 2020",,high,a1-sheet
+22,2,msg,Andrew Rambaut,08:51,,I have created a copy of the report,high,a1-sheet
+22,3,divider,,,"February 8th, 2020",,high,a1-sheet
+22,4,msg,Andrew Rambaut,09:04,,That will do. Not implying anything about nefarious,high,a1-sheet
+22,5,msg,Andrew Rambaut,09:32,,Estimates of the date of common ancestor of,high,a1-sheet
+22,6,msg,Andrew Rambaut,09:43,,@Robert Garry - I forwarded your reply about,high,a1-sheet
+23,1,divider,,,"February 8th, 2020",,high,a1-sheet
+23,2,msg,Andrew Rambaut,12:55,,I guess the simple answer is no -,high,a1-sheet
+23,3,msg,Eddie Holmes,15:32,,Crap comments...basically just saying it can't be true.,high,a1-sheet
+23,4,msg,Andrew Rambaut,15:43,,Yes. Conflating the absence of evidence (passaging) with,high,a1-sheet
+23,5,divider,,,"February 8th, 2020",,high,a1-sheet
+23,6,msg,Kristian Andersen,15:53,,Super frustrating comments. To Ron's 'As far as,high,a1-sheet
+23,7,msg,Kristian Andersen,16:04,,The furin link keeps bugging me too -,high,a1-sheet
+23,8,divider,,,"February 8th, 2020",,high,a1-sheet
+23,9,msg,Andrew Rambaut,16:19,,@Kristian With respect to this -,high,a1-sheet
+23,10,divider,,,"February 8th, 2020",,high,a1-sheet
+23,11,divider,,,"February 8th, 2020",,high,a1-sheet
+23,12,msg,Kristian Andersen,16:21,,"We should all just stay on Slack, that's",high,a1-sheet
+23,13,msg,Kristian Andersen,16:40,,NASEM is useless - they'll have exactly zero...,high,a1-sheet
+23,14,msg,Kristian Andersen,17:52,,"So he agrees? ""I do not understand Andrews",high,a1-sheet
+24,1,msg,Eddie Holmes,18:33,,Things are moving so quickly that I'm having,high,a1-sheet
+24,2,msg,Eddie Holmes,18:42,,Crazy politics in China. They want to publish,high,a1-sheet
+24,3,msg,Andrew Rambaut,18:46,,Up to 99% is no good. There is,high,a1-sheet
+24,4,divider,,,"February 8th, 2020",,high,a1-sheet
+24,5,msg,Kristian Andersen,21:17,,"Guys, one thing that occurs to me that",high,a1-sheet
+24,6,divider,,,"February 9th, 2020",,high,a1-sheet
+24,7,msg,Andrew Rambaut,05:16,,Swine flu 2009 did though.,high,a1-sheet
+24,8,msg,Andrew Rambaut,06:13,,I thought you might be amused by my,high,a1-sheet
+24,9,divider,,,"February 9th, 2020",,high,a1-sheet
+24,10,msg,Gif Keyboard,09:47,,@Kristian: /gifs owned (120 kB),high,a1-sheet
+24,11,msg,Kristian Andersen,09:50,,They really should get somebody with phylogenetic knowledge,high,a1-sheet
+---,a1-sheet
+Same-day times that do not increase (equal minutes only; no same-day time goes backwards):,a1-sheet
+- page 4 seq 1 Kristian Andersen 13:59 -> seq 2 Andrew Rambaut 13:59 (equal),a1-sheet
+- page 4 seq 6 Eddie Holmes 14:39 -> seq 7 Kristian Andersen 14:39 (equal),a1-sheet
+- page 4 seq 12 Andrew Rambaut 15:01 -> seq 13 Kristian Andersen 15:01 (equal),a1-sheet
+- page 4 seq 13 Kristian Andersen 15:01 -> seq 14 Eddie Holmes 15:01 (equal),a1-sheet
+No strictly decreasing pair on the same day on pages 4, 5, 14, 22, 23, or 24.,a1-sheet
+Suspect pairs as printed (old ocr was wrong): p4 Andrew is 13:59 not 01:55; p5 Andrew is 11:16 not 01:16 (Kristian 11:15 sits between 11:14 and 11:16); p14 Eddie is 04:28 not 00:28; p22 has no Robert message (Andrew 08:51, 09:04, 09:32, 09:43); p23 has no Robert message (last is Kristian 17:52); p24 Eddie is 18:42 not 19:42 and there is no Robert 16:57.,a1-sheet
+Clock drops that are NOT same-day, because a divider sits between them:,a1-sheet
+- page 4 Kristian 22:42 then February 2nd, 2020 then Kristian 01:00,a1-sheet
+- page 14 Kristian 15:59 then February 5th, 2020 then Andrew 02:28,a1-sheet
+- page 24 Kristian 21:17 then February 9th, 2020 then Andrew 05:16,a1-sheet
+Dividers that sit between two messages:,a1-sheet
+- page 4 seq 10 February 1st, 2020 between Eddie Holmes 14:57 (y=737) and Kristian Andersen 14:58 (y=791),a1-sheet
+- page 4 seq 18 February 2nd, 2020 between Kristian Andersen 22:42 (y=1569) and Kristian Andersen 01:00 (y=1822),a1-sheet
+- page 5 seq 7 February 2nd, 2020 between Andrew Rambaut 11:10 (y=743) and Kristian Andersen 11:14 (y=799),a1-sheet
+- page 5 seq 11 February 2nd, 2020 between Andrew Rambaut 11:16 (y=1100) and Kristian Andersen 11:47 (y=1161),a1-sheet
+- page 14 seq 6 February 4th, 2020 between Andrew Rambaut 04:15 (y=529) and Eddie Holmes 04:28 (y=902),a1-sheet
+- page 14 seq 15 February 5th, 2020 between Kristian Andersen 15:59 (y=1343) and Andrew Rambaut 02:28 (y=1464),a1-sheet
+- page 22 seq 3 February 8th, 2020 between Andrew Rambaut 08:51 (y=511) and Andrew Rambaut 09:04 (y=1075),a1-sheet
+- page 23 seq 5 February 8th, 2020 between Andrew Rambaut 15:43 (y=752) and Kristian Andersen 15:53 (y=892),a1-sheet
+- page 23 seq 8 February 8th, 2020 between Kristian Andersen 16:04 (y=992) and Andrew Rambaut 16:19 (y=1413),a1-sheet
+- page 23 seq 10 February 8th, 2020 (y=1557) and seq 11 February 8th, 2020 (y=1572), both between Andrew Rambaut 16:19 (y=1413) and Kristian Andersen 16:21 (y=1605); the two tiles are 15px apart and may be one pill cropped twice,a1-sheet
+- page 24 seq 4 February 8th, 2020 between Andrew Rambaut 18:46 (y=609) and Kristian Andersen 21:17 (y=787),a1-sheet
+- page 24 seq 6 February 9th, 2020 between Kristian Andersen 21:17 (y=787) and Andrew Rambaut 05:16 (y=939),a1-sheet
+- page 24 seq 9 February 9th, 2020 between Andrew Rambaut 06:13 (y=993) and Gif Keyboard 09:47 (y=1723),a1-sheet
+Date tiles above the first message (not between two messages): page 5 February 2nd, 2020 (y=228); page 14 February 4th, 2020 (y=231); page 22 February 8th, 2020 (y=232); page 23 February 8th, 2020 (y=230).,a1-sheet
+Skipped non-dates: p4 pill y=697 Latest messages; p5 pill y=722 (name fragment, not a date); p22 pill y=1186 message fragment; p22 pill y=1948 Latest messages; p23 pill y=724 Latest messages; p24 pills y=1168 and y=1639 Latest messages.,a1-sheet
+7,1,divider,,,"February 2nd, 2020",,high,visual-glyph
+7,2,msg,Robert Garry,13:51,,New analysis: Some strains of murine hepatitis,high,visual-glyph
+7,3,divider,,,"February 2nd, 2020",,high,visual-glyph
+7,4,divider,,,"February 2nd, 2020",,high,visual-glyph
+7,5,msg,Robert Garry,13:50,,Two pattens seen here {i think there is,high,visual-glyph
+7,6,msg,Robert Garry,14:07,,Bottom line on all this analysis mechanisms,high,visual-glyph
+7,7,msg,Robert Garry,14:16/14:14,,still don't know if the nCoV was the,low,visual-glyph
+7,8,msg,Robert Garry,14:58,,It would be important IMO get estimate on,high,visual-glyph
+7,9,msg,Kristian Andersen,15:04,,these are really good points. Can you please,high,visual-glyph
+7,10,msg,Robert Garry,15:20,,HKU-1,high,visual-glyph
+11,1,msg,Robert Garry,10:27,,https://journals.plos.org/plospathogens/article,high,visual-glyph
+11,2,msg,Robert Garry,10:40,,I'm pretty sure they think I'm a complete,high,visual-glyph
+11,3,msg,Robert Garry,10:50,,Transmitting bat virus like RatG13 in HeLa cells,high,visual-glyph
+11,4,msg,Robert Garry,10:58,,For proving natural evolution of the furin,high,visual-glyph
+11,5,msg,Kristian Andersen,11:51,,"Yeah, agreed",high,visual-glyph
+13,1,msg,Andrew Rambaut,17:39,,,high,visual-glyph
+13,2,msg,Robert Garry,17:40,,,high,visual-glyph
+13,3,msg,Kristian Andersen,17:46,,Baric has this interesting table,high,visual-glyph
+13,4,msg,Robert Garry,18:11,,This is what that interaction with sars,high,visual-glyph
+13,5,msg,Kristian Andersen,18:26,,,high,visual-glyph
+13,6,msg,Eddie Holmes,18:28,,The wiki info is wrong,high,visual-glyph
+13,7,msg,Robert Garry,18:32,,https://science.sciencemag.org/content/sci/309/5742/1864,high,visual-glyph
+23,1,msg,Robert Garry,13:03,,Well - I already sent an answer,high,visual-glyph
+23,2,msg,Robert Garry,16:06,,Kristian NASEM call,high,visual-glyph
+23,3,msg,Robert Garry,16:30,,now have (and we will get more) the pangolin,high,visual-glyph
+23,4,msg,Kristian Andersen,16:40,,NASEM is useless,high,visual-glyph
+23,5,msg,Kristian Andersen,17:52,,So he agrees?,high,visual-glyph
+23,6,msg,Robert Garry,18:10,,passaging and engineering,high,visual-glyph
+24,1,msg,Robert Garry,18:15,,Engineering would not be detectable,high,visual-glyph
+26,1,msg,Robert Garry,15:57,,,high,visual-glyph
+26,2,msg,Robert Garry,16:14,,Hmmm - if by identical you mean 100%,high,visual-glyph
+34,1,msg,Kristian Andersen,15:04,,If we drop earlier assumptions,high,visual-glyph
+34,2,msg,Robert Garry,15:12,,Agree the market could be a red herring,high,visual-glyph
+34,3,msg,Kristian Andersen,15:13/15:15,,the other way,low,visual-glyph
+34,4,msg,Robert Garry,15:15,,Something I'm glad you said,high,visual-glyph
+34,5,msg,Robert Garry,15:33,,how does this fit the big TMRCA,high,visual-glyph
+34,6,msg,Kristian Andersen,15:42,,"Hmmm, yeah",high,visual-glyph
+34,7,msg,Robert Garry,15:57,,Thumbs up,high,visual-glyph
+34,8,msg,Robert Garry,16:15,,Need to work 1-5 above into the paper,high,visual-glyph
+34,9,msg,Robert Garry,16:21,,Also need to include assumptions,high,visual-glyph
+34,10,msg,Robert Garry,16:30,,But SARS-CoV-1 did adapt,high,visual-glyph
+34,11,msg,Robert Garry,16:40,,,high,visual-glyph
+34,12,msg,Kristian Andersen,17:07,,Furin acquisition hypothesis,high,visual-glyph
+34,13,msg,Robert Garry,17:13,,The thing that does not change much,high,visual-glyph
+34,14,msg,Robert Garry,18:00,,www.sciencedirect.com,high,visual-glyph
+35,1,msg,Robert Garry,18:04,,,high,visual-glyph
+35,2,msg,Andrew Rambaut,18:21,,have heard,high,visual-glyph
+11,6,msg,Kristian Andersen,10:31,,"Yeah, SARS seemed to have a significantly more",high,visual-gap
+11,7,divider,,,"February 3rd, 2020",,high,visual-gap
+13,8,msg,Robert Garry,18:40,,Not testing the animals is definitely a crime,high,visual-gap
+23,7,msg,Robert Garry,13:21,,https://www.bbc.com/news/world-51429400,high,visual-gap
+24,2,msg,Robert Garry,18:57,,Science by press conference is rarely never,high,visual-gap
+26,3,msg,Robert Garry,16:05,,3. Accidental release of SARs-CoV-1 happened several,high,visual-gap
+36,1,msg,Eddie Holmes,20:06,,,high,visual-glyph
+36,2,msg,Eddie Holmes,03:24,,,medium,visual-glyph
+36,3,msg,Andrew Rambaut,03:31,,,high,visual-glyph
+36,4,msg,Eddie Holmes,03:36,,,high,visual-glyph
+36,5,msg,Andrew Rambaut,03:47,,,high,visual-glyph
+36,6,msg,Eddie Holmes,03:55,,,high,visual-glyph
+36,7,msg,Andrew Rambaut,04:49,,,high,visual-glyph
+37,1,msg,Eddie Holmes,05:56,,,high,visual-glyph
+37,2,msg,Andrew Rambaut,06:10,,,high,visual-glyph
+37,3,msg,Robert Garry,07:53,,,high,visual-glyph
+37,4,msg,Robert Garry,09:38,,,high,visual-glyph
+39,1,msg,Eddie Holmes,17:58,,,high,visual-glyph
+39,2,msg,Kristian Andersen,18:10,,,high,visual-glyph
+39,3,msg,Robert Garry,18:20,,,high,visual-glyph
+39,4,msg,Robert Garry,18:45,,,high,visual-glyph
+39,5,msg,Robert Garry,19:28,,,high,visual-glyph
+39,6,msg,Robert Garry,20:15,,,high,visual-glyph
+39,7,msg,Eddie Holmes,21:40,,,high,visual-glyph
+39,8,msg,Kristian Andersen,22:23,,,high,visual-glyph
+39,9,msg,Eddie Holmes,22:26,,,high,visual-glyph
+39,10,msg,Andrew Rambaut,04:24,,,medium,visual-glyph
+39,11,msg,Eddie Holmes,04:25,,,high,visual-glyph
+40,1,msg,Kristian Andersen,09:49,,,high,visual-glyph
+40,2,msg,Robert Garry,10:27,,,high,visual-glyph
+40,3,msg,Kristian Andersen,11:31,,,high,visual-glyph
+40,4,msg,Robert Garry,12:29,,,high,visual-glyph
+43,1,msg,Robert Garry,13:40,,,high,visual-glyph
+43,2,msg,Andrew Rambaut,13:40,,,high,visual-glyph
+43,3,msg,Andrew Rambaut,13:56,,,high,visual-glyph
+43,4,msg,Andrew Rambaut,13:57,,,high,visual-glyph
+43,5,msg,Robert Garry,14:00,,,high,visual-glyph
+43,6,msg,Andrew Rambaut,14:08,,,high,visual-glyph
+43,7,msg,Robert Garry,14:17,,,high,visual-glyph
+45,1,msg,Robert Garry,08:46,,,high,visual-glyph
+45,2,msg,Robert Garry,08:49,,,high,visual-glyph
+45,3,msg,Robert Garry,08:52,,,high,visual-glyph
+45,4,msg,Kristian Andersen,09:26,,,high,visual-glyph
+45,5,msg,Kristian Andersen,09:38,,,high,visual-glyph
+45,6,msg,Robert Garry,10:24,,,high,visual-glyph
+45,7,msg,Andrew Rambaut,10:35,,,high,visual-glyph
+45,8,msg,Kristian Andersen,10:40,,,high,visual-glyph
+45,9,msg,Robert Garry,10:40,,,high,visual-glyph
+45,10,msg,Robert Garry,10:46,,,high,visual-glyph
+45,11,msg,Kristian Andersen,10:53,,,high,visual-glyph
+45,12,msg,Andrew Rambaut,11:09,,,high,visual-glyph
+49,1,msg,Kristian Andersen,15:37,,,high,visual-glyph
+49,2,msg,Andrew Rambaut,15:54,,,high,visual-glyph
+49,3,msg,Kristian Andersen,15:57,,,high,visual-glyph
+49,4,msg,Robert Garry,17:14,,,high,visual-glyph
+49,5,msg,Andrew Rambaut,17:45,,,high,visual-glyph
+49,6,msg,Robert Garry,18:09,,,high,visual-glyph
+49,7,msg,Andrew Rambaut,18:11,,,high,visual-glyph
+49,8,msg,Andrew Rambaut,18:52,,,high,visual-glyph
+26,4,msg,Andrew Rambaut,16:09,,I have seen the environmental sequences,high,visual-recheck
+36,8,msg,Andrew Rambaut,03:33,,Just that he still thinks it is important,high,visual-recheck
+37,5,msg,Andrew Rambaut,05:14,,The amino acid alignment insets could include,high,visual-recheck
+43,8,msg,Eddie Holmes,14:58,,"Right, let's only make minimal changes to this",high,visual-recheck
+45,13,msg,Andrew Rambaut,08:49,,Cool.,high,visual-recheck
+49,9,divider,,,"February 18th, 2020",,high,visual-recheck
+49,10,msg,Robert Garry,18:52,,"I signed it too, but I'm fearful",high,visual-recheck
+49,11,msg,Andrew Rambaut,18:53,,Pango?? (if that is what it is),high,visual-recheck
+50,1,msg,Kristian Andersen,18:56,,Recombinants can be anything really,high,visual-finish
+50,2,msg,Andrew Rambaut,19:00,,But both the pangolin and the SARS2,high,visual-finish
+50,3,msg,Kristian Andersen,19:04,,,high,visual-finish
+52,1,msg,Andrew Rambaut,02:08,,,high,visual-finish
+52,2,msg,Kristian Andersen,02:10,,,high,visual-finish
+52,3,msg,Eddie Holmes,03:29,,,high,visual-finish
+52,4,msg,Eddie Holmes,03:36,,,high,visual-finish
+52,5,msg,Andrew Rambaut,04:02,,,high,visual-finish
+52,6,msg,Eddie Holmes,04:05,,,high,visual-finish
+52,7,msg,Eddie Holmes,04:06,,,high,visual-finish
+52,8,msg,Andrew Rambaut,04:06,,,high,visual-finish
+52,9,msg,Eddie Holmes,04:07,,,high,visual-finish
+52,10,msg,Eddie Holmes,04:12,,,high,visual-finish
+52,11,msg,Robert Garry,05:05,,The Guangdong Wildlife Rescue Center received,high,visual-finish
+55,1,msg,Eddie Holmes,02:16,,Thanks for that. However this outbreak,high,visual-finish
+55,2,msg,Andrew Rambaut,05:53,,I thought I better share an email,high,visual-finish
+55,3,msg,Robert Garry,06:27,,It looks like the SARS spike protein,high,visual-finish
+55,4,msg,Robert Garry,06:40,,,high,visual-finish
+55,5,msg,Andrew Rambaut,06:45,,,high,visual-finish
+55,6,msg,Robert Garry,07:06,,,high,visual-finish
+55,7,msg,Robert Garry,07:12,,,high,visual-finish
+55,8,msg,Robert Garry,07:32,,,high,visual-finish
+55,9,msg,Andrew Rambaut,07:59,,,high,visual-finish
+55,10,msg,Andrew Rambaut,09:38,,Basically a collaborator has found this deletion,high,visual-finish
+55,11,msg,Robert Garry,09:39,,Interesting - Happy to weigh in,high,visual-finish
+55,12,msg,Robert Garry,10:00,,,high,visual-finish
+57,1,msg,Andrew Rambaut,13:19,,,high,visual-finish
+57,2,msg,Robert Garry,13:19,,,high,visual-finish
+57,3,msg,Robert Garry,13:25,,Also state clearly that this site is only predicted,high,visual-finish
+57,4,msg,Andrew Rambaut,13:27,,Could ask Clare to reconsider,high,visual-finish
+57,5,msg,Andrew Rambaut,13:29,,But more importantly this reviewer feels,high,visual-finish
+57,6,msg,Robert Garry,13:29,,Agreeing with Andrew that NatMed would take it,high,visual-finish
+57,7,msg,Kristian Andersen,13:32,,,high,visual-finish
+57,8,msg,Robert Garry,13:36,,Good idea - let Jeremy know,high,visual-finish
+57,9,msg,Andrew Rambaut,13:37,,,high,visual-finish
+57,10,msg,Robert Garry,13:37,,Yes - Gonna have to do that anyway,high,visual-finish
+57,11,msg,Kristian Andersen,13:39,,,high,visual-finish
+57,12,msg,Robert Garry,13:40,,Yeah good plan - should not actually take long,high,visual-finish
+57,13,msg,Kristian Andersen,13:44,,,high,visual-finish
+57,14,msg,Eddie Holmes,13:58,,I forwarded to Jeremy,high,visual-finish
+57,15,msg,Eddie Holmes,14:23,,,high,visual-finish
+57,16,msg,Kristian Andersen,14:26,,,high,visual-finish
+57,17,msg,Andrew Rambaut,14:36,,,high,visual-finish
+57,18,msg,Eddie Holmes,15:19,,,high,visual-finish
+57,19,msg,Robert Garry,15:46,,,high,visual-finish
+64,1,msg,Andrew Rambaut,10:13,,@Robert Garry Quick question,high,visual-finish
+64,2,msg,Kristian Andersen,10:27,,I believe they do,high,visual-finish
+64,3,msg,Andrew Rambaut,10:33,,But perhaps not as lung epithelium,high,visual-finish
+64,4,msg,Kristian Andersen,10:37,,Doubt it,high,visual-finish
+64,5,msg,Andrew Rambaut,10:38,,OK,high,visual-finish
+64,6,msg,Kristian Andersen,10:39,,One thing furin usage might do,high,visual-finish
+64,7,msg,Andrew Rambaut,10:47,,That is what we are trying to work out,high,visual-finish
+64,8,msg,Kristian Andersen,10:58,,All very plausible,high,visual-finish
+64,9,msg,Andrew Rambaut,11:11,,Ask them for the panel list,high,visual-finish
+64,10,msg,Eddie Holmes,14:41,,,high,visual-finish
+65,1,msg,Robert Garry,14:44,,"No polybasic site, HOWEVER, this provides a mechanism",high,visual-finish
+65,2,msg,Robert Garry,14:56,,,high,visual-finish
+65,3,msg,Kristian Andersen,15:03,,None of this disproves accidental lab infection,high,visual-finish
+65,4,msg,Robert Garry,15:23,,BTW - what is labeled the external subdomain,high,visual-finish
+66,1,msg,Robert Garry,15:42,,Nice job on the PR,high,visual-finish
+66,2,msg,Robert Garry,16:03,,it needs to be as clear and solid,high,visual-finish
+66,3,msg,Robert Garry,16:12,,,high,visual-finish
+66,4,msg,Andrew Rambaut,16:16,,,high,visual-finish
+66,5,msg,Robert Garry,16:33,,,high,visual-finish
+66,6,msg,Robert Garry,17:31,,,high,visual-finish
+66,7,msg,Andrew Rambaut,17:33,,,high,visual-finish
+67,1,msg,Andrew Rambaut,17:35,,,high,visual-finish
+67,2,msg,Robert Garry,18:07,,,high,visual-finish
+67,3,msg,Andrew Rambaut,18:38,,,high,visual-finish
+67,4,msg,Eddie Holmes,18:46,,,high,visual-finish
+67,5,msg,Andrew Rambaut,19:02,,,high,visual-finish
+67,6,msg,Eddie Holmes,23:05,,,high,visual-finish
+67,7,msg,Eddie Holmes,23:40,,,high,visual-finish
+67,8,msg,Kristian Andersen,00:03,,,high,visual-finish
+67,9,msg,Eddie Holmes,00:53,,,high,visual-finish
+67,10,msg,Eddie Holmes,01:10,,,high,visual-finish
+67,11,msg,Kristian Andersen,01:31,,,high,visual-finish
+67,12,msg,Andrew Rambaut,02:08,,,high,visual-finish
+67,13,msg,Eddie Holmes,03:04,,,high,visual-finish
+67,14,msg,Eddie Holmes,03:30,,,high,visual-finish
+67,15,msg,Andrew Rambaut,03:45,,Here is my spike recombination diagram,high,visual-finish
+69,1,msg,Robert Garry,05:56,,,high,visual-finish
+69,2,msg,Robert Garry,06:10,,,high,visual-finish
+69,3,msg,Andrew Rambaut,06:13,,Yes. We just need to come up with a good response,high,visual-finish
+69,4,msg,Robert Garry,06:17,,YES,high,visual-finish
+77,1,msg,Eddie Holmes,00:16,,I'll read through again shortly,high,visual-finish
+77,2,msg,Kristian Andersen,00:17,,,high,visual-finish
+77,3,msg,Eddie Holmes,00:18,,,high,visual-finish
+77,4,msg,Kristian Andersen,00:20,,,high,visual-finish
+77,5,msg,Andrew Rambaut,03:25,,,high,visual-finish
+77,6,msg,Eddie Holmes,03:57,,,high,visual-finish
+77,7,msg,Kristian Andersen,16:06,,,high,visual-finish
+77,8,msg,Kristian Andersen,16:12,,,high,visual-finish
+101,1,msg,Kristian Andersen,17:48,,,high,visual-finish
+101,2,msg,Eddie Holmes,17:52,,,high,visual-finish
+101,3,msg,Eddie Holmes,17:57,,,high,visual-finish
+101,4,msg,Kristian Andersen,02:42,,,high,visual-finish
+101,5,msg,Andrew Rambaut,03:03,,See that Nature,high,visual-finish
+101,6,msg,Andrew Rambaut,03:09,,Mainly the Spanish,high,visual-finish
+102,1,msg,Eddie Holmes,05:46,,,high,visual-finish
+102,2,msg,Andrew Rambaut,06:36,,I can see aliens in that picture,high,visual-finish
+102,3,divider,,,"March 19th, 2020",,high,visual-finish
+102,4,msg,Kristian Andersen,00:05,,,high,visual-finish
+102,5,msg,Eddie Holmes,01:24,,,high,visual-finish
+103,1,msg,Andrew Rambaut,03:30,,https://www.altmetric.com/top100/2019/,high,visual-finish
+103,2,msg,Kristian Andersen,03:31,,"Yeah, we're well above that",high,visual-finish
+103,3,msg,Kristian Andersen,03:32,,And previous years are all much lower,high,visual-finish
+104,1,msg,Andrew Rambaut,03:40,,And that is retracted!,high,visual-finish
+104,2,msg,Kristian Andersen,03:41,,Yay! We beat a paper that was retracted,high,visual-finish
+104,3,msg,Eddie Holmes,05:31,,,high,visual-finish
+104,4,msg,Kristian Andersen,10:41,,,high,visual-finish
+104,5,msg,Robert Garry,12:19,,I wrote a review of Contagion,high,visual-finish
+104,6,msg,Eddie Holmes,16:09,,Good job Bob! I blocked Ebright,high,visual-finish
+104,7,msg,Andrew Rambaut,19:30,,,high,visual-finish
+115,1,msg,Andrew Rambaut,10:12,,,high,visual-finish
+115,2,msg,Kristian Andersen,10:18,,,high,visual-finish
+115,3,msg,Andrew Rambaut,10:27,,,high,visual-finish
+115,4,msg,Kristian Andersen,11:00,,,high,visual-finish
+115,5,msg,Kristian Andersen,13:18,,"Just to be clear, I read the research",high,visual-finish
+115,6,msg,Kristian Andersen,13:49,,This one is actually pretty interesting,high,visual-finish
+115,7,msg,Kristian Andersen,18:52,,,high,visual-finish
+115,8,msg,Eddie Holmes,19:21,,There are a lot of actual very mad people,high,visual-finish
+116,1,divider,,,"April 3rd, 2020",,high,visual-finish
+116,2,msg,Kristian Andersen,13:35,,This whole furin site being messed with,high,visual-finish
+116,3,msg,Robert Garry,14:09,,,high,visual-finish
+126,1,msg,Andrew Rambaut,09:09,,,high,visual-finish
+126,2,msg,Kristian Andersen,10:04,,,high,visual-finish
+126,3,msg,Andrew Rambaut,10:23,,,high,visual-finish
+126,4,msg,Kristian Andersen,10:25,,,high,visual-finish
+126,5,msg,Andrew Rambaut,10:31,,,high,visual-finish
+126,6,msg,Andrew Rambaut,12:32,,Up another 120. Keep it up,high,visual-finish
+132,1,msg,Robert Garry,17:18,,,high,visual-finish
+132,2,msg,Robert Garry,18:18,,I'm a little disappointed my smackdown of Montagnier,high,visual-finish
+132,3,msg,Eddie Holmes,18:59,,It is so like HIV though,high,visual-finish
+132,4,divider,,,"April 19th, 2020",,high,visual-finish
+132,5,msg,Andrew Rambaut,04:10,,,high,visual-finish
+132,6,msg,Robert Garry,09:02,,,high,visual-finish
+132,7,msg,Andrew Rambaut,11:38,,,high,visual-finish
+132,8,msg,Robert Garry,12:54,,,high,visual-finish
+132,9,msg,Kristian Andersen,13:15,,,high,visual-finish
+132,10,msg,Robert Garry,13:53,,,high,visual-finish
+139,1,msg,Robert Garry,16:19,,Yes - Paul Sonne,high,visual-finish
+139,2,msg,Kristian Andersen,16:25,,"Indeed, I blew up the call with the White House",high,visual-finish
+139,3,msg,Robert Garry,16:43,,,high,visual-finish
+36,9,divider,,,"February 12th, 2020",,high,visual-pass3
+39,12,divider,,,"February 13th, 2020",,high,visual-pass3
+64,11,msg,Robert Garry,10:59,,They are just contributing to the conspiracy theories,high,visual-pass3
+64,12,msg,Robert Garry,11:07,,Old white guy,high,visual-pass3
+67,16,divider,,,"February 25th, 2020",,high,visual-pass3
+77,9,msg,Robert Garry,12:05,,,high,visual-pass3
+77,10,msg,Robert Garry,15:27,,Decent job on this manuscript,high,visual-pass3
+77,11,msg,Robert Garry,15:40,,So you're telling me there's a chance,high,visual-pass3
+77,12,msg,Robert Garry,16:15,,,high,visual-pass3
+101,7,divider,,,"March 18th, 2020",,high,visual-pass3
+126,7,msg,Robert Garry,08:57,,,high,visual-pass3
+126,8,msg,Robert Garry,10:33,,ABC - national news,high,visual-pass3
+52,12,divider,,,"February 19th, 2020",,high,visual-pass4
+52,13,msg,Andrew Rambaut,04:54,,,high,visual-pass4
+69,5,msg,Andrew Rambaut,06:19,,Yes. We just need to come up with a good response,high,visual-pass4
+69,6,msg,Robert Garry,06:21,,YES!,high,visual-pass4
+69,7,msg,Robert Garry,06:29,,,high,visual-pass4
+69,8,msg,Robert Garry,06:43,,,high,visual-pass4
+69,9,msg,Andrew Rambaut,06:53,,,high,visual-pass4
+69,10,msg,Robert Garry,07:03,,,high,visual-pass4

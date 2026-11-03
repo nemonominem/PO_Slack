@@ -90,12 +90,12 @@
       "idx": 5
     },
     {
-      "stamp_line": "01:28 ET",
+      "stamp_line": "12:48 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-01",
       "raw_date": "February 1, 2020",
       "sender": "Kristian Andersen",
-      "time": "01:28",
+      "time": "12:48",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -118,12 +118,12 @@
       "idx": 7
     },
     {
-      "stamp_line": "19:17 ET",
+      "stamp_line": "13:17 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-01",
       "raw_date": "February 1, 2020",
       "sender": "Kristian Andersen",
-      "time": "19:17",
+      "time": "13:17",
       "kind": "slack",
       "thread_id": null,
       "attachments": [
@@ -134,12 +134,12 @@
       "idx": 8
     },
     {
-      "stamp_line": "15:25 ET",
+      "stamp_line": "13:23 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-01",
       "raw_date": "February 1, 2020",
       "sender": "Andrew Rambaut",
-      "time": "15:25",
+      "time": "13:23",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -148,12 +148,12 @@
       "idx": 9
     },
     {
-      "stamp_line": "19:26 ET",
+      "stamp_line": "13:28 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-01",
       "raw_date": "February 1, 2020",
       "sender": "Kristian Andersen",
-      "time": "19:26",
+      "time": "13:28",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -200,12 +200,12 @@
       "idx": 13
     },
     {
-      "stamp_line": "13:00 ET",
+      "stamp_line": "13:30 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-01",
       "raw_date": "February 1, 2020",
       "sender": "Kristian Andersen",
-      "time": "13:00",
+      "time": "13:30",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -266,12 +266,12 @@
       "idx": 18
     },
     {
-      "stamp_line": "19:56 ET",
+      "stamp_line": "13:36 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-01",
       "raw_date": "February 1, 2020",
       "sender": "Andrew Rambaut",
-      "time": "19:56",
+      "time": "13:36",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -332,12 +332,12 @@
       "idx": 23
     },
     {
-      "stamp_line": "19:59 ET",
+      "stamp_line": "13:38 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-01",
       "raw_date": "February 1, 2020",
       "sender": "Kristian Andersen",
-      "time": "19:59",
+      "time": "13:38",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -556,12 +556,12 @@
       "idx": 41
     },
     {
-      "stamp_line": "01:55 ET",
+      "stamp_line": "13:59 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-01",
       "raw_date": "February 1, 2020",
       "sender": "Andrew Rambaut",
-      "time": "01:55",
+      "time": "13:59",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -890,12 +890,12 @@
       "idx": 65
     },
     {
-      "stamp_line": "01:16 ET",
+      "stamp_line": "11:16 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-02",
       "raw_date": "February 2, 2020",
       "sender": "Andrew Rambaut",
-      "time": "01:16",
+      "time": "11:16",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -941,7 +941,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "‘Yup, I totally agree that that's a very reasonable conclusion. Although I hate when politics is injected into science - but K's impossible not to, especially given the circumstances. We should be\nsensitive to that. (plus none of this maiters at the moment)\nSeparately - having all of these discussions is really critical to countering ALL the friggin’ bullshit coming out and at the end of the day, that’s probably the most important things that'll come out of\nthis!\nThe latest being two novel viruses circulating... https://www.biorxiv.org/content/10.1101/2020.01.30.926477v1\n('m starting to think that for outbreak research, the bioRxiv really needs to start screening submissions - it's a slippery slope, but it’s justified at this stage)\nGC? @ paper-2020-nature_medicine-proximal_origin » 2e34 0\nra Cerne aren eee\nEvolution and variation of 2019-novel coronavirus\nBackground: The current outbreak caused by novel coronavirus (2019-nCoV) in China\nhas become a worldwide concern. As of 28 Jaruary 2020, there were 4631\nconfirmed cases and 106 deaths, and 11 countries or regions were affected.\nMethods: We downloaded the genomes of 2019-nCoVs and similar isolates from the\nGlobal Initiative on Sharing Avian Influenza Database (GISAID and nucleotide\ndatabase of the National Center for Biotechnology Information (NCBI). Lasergene 7.0\nand MEGA 6.0 softwares were used to calculate genetic distances of the sequences,\nto construct phylogenetic trees, and to align amino acid sequences. Bayesian\ncoalescent phylogenetic analysis, implemented in the BEAST software package. was\nused to calculate the molecular clock related characteristics such as the nucleotide\nsubstitution rate and the most recent common ancestor ((MRCA) of 2019-nCoVs.\nResults: An isolate numbered EP!\\_ISL\\_403928 showed different phylogenetic trees\nand genetic distances of the whole length genome, the coding sequences (CDS) of\nployprotein (P), spike protein (S), and nucleoprotein (N) from other 2019-nCoVs.\nThere are 22, 4, 2 variations in P, S, and N at the level of amino acid residues. The\nnucleotide substitution rates from high to low are 1.05 = 10-2 (nucleotide\nsubstitutions/site/year, with 95% HPD interval being 6.27 x 10-4 to 2.72 x 10-2) for\n3) for P, 1.65 * 10-3 (4.47 « 10-4, 3.24 x 10-3) for the whole genome, respectively.\nAt this nucleotide substitution rate, the most recent common ancestor (t{MRCA) of\n2019-nCoVs appeared about 0.253-0.594 year before the epidemic. Conclusion: Our\nanalysis suggests that at least two different viral strains of 2019-nCoV are involved in\nthis outbreak that might occura few months earlier before it was officially reported.\nShow less\nJan 20th, 2020",
+      "content": "‘Yup, I totally agree that that's a very reasonable conclusion. Although I hate when politics is injected into science - but K's impossible not to, especially given the circumstances. We should be\nsensitive to that. (plus none of this maiters at the moment)\nSeparately - having all of these discussions is really critical to countering ALL the friggin’ bullshit coming out and at the end of the day, that’s probably the most important things that'll come out of\nthis!\nThe latest being two novel viruses circulating... https://www.bloralv.org/content/10.1101/2020.01.30.926477v1\n('m starting to think that for outbreak research, the bioRxiv really needs to start screening submissions - it's a slippery slope, but it’s justified at this stage)\nGC? @ paper-2020-nature_medicine-proximal_origin » 2e34 0\nra Cerne aren eee\nEvolution and variation of 2019-novel coronavirus\nBackground: The current outbreak caused by novel coronavirus (2019-nCoV) in China\nhas become a worldwide concern. As of 28 Jaruary 2020, there were 4631\nconfirmed cases and 106 deaths, and 11 countries or regions were affected.\nMethods: We downloaded the genomes of 2019-nCoVs and similar isolates from the\nGlobal Initiative on Sharing Avian Influenza Database (GISAID and nucleotide\ndatabase of the National Center for Biotechnology Information (NCBI). Lasergene 7.0\nand MEGA 6.0 softwares were used to calculate genetic distances of the sequences,\nto construct phylogenetic trees, and to align amino acid sequences. Bayesian\ncoalescent phylogenetic analysis, implemented in the BEAST software package. was\nused to calculate the molecular clock related characteristics such as the nucleotide\nsubstitution rate and the most recent common ancestor ((MRCA) of 2019-nCoVs.\nResults: An isolate numbered EP!\\_ISL\\_403928 showed different phylogenetic trees\nand genetic distances of the whole length genome, the coding sequences (CDS) of\nployprotein (P), spike protein (S), and nucleoprotein (N) from other 2019-nCoVs.\nThere are 22, 4, 2 variations in P, S, and N at the level of amino acid residues. The\nnucleotide substitution rates from high to low are 1.05 = 10-2 (nucleotide\nsubstitutions/site/year, with 95% HPD interval being 6.27 x 10-4 to 2.72 x 10-2) for\n3) for P, 1.65 * 10-3 (4.47 « 10-4, 3.24 x 10-3) for the whole genome, respectively.\nAt this nucleotide substitution rate, the most recent common ancestor (t{MRCA) of\n2019-nCoVs appeared about 0.253-0.594 year before the epidemic. Conclusion: Our\nanalysis suggests that at least two different viral strains of 2019-nCoV are involved in\nthis outbreak that might occura few months earlier before it was officially reported.\nShow less\nJan 20th, 2020",
       "redacted": false,
       "idx": 69
     },
@@ -990,12 +990,12 @@
       "idx": 72
     },
     {
-      "stamp_line": "19:51 ET",
+      "stamp_line": "13:51 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-02",
       "raw_date": "February 2, 2020",
       "sender": "Robert Garry",
-      "time": "19:51",
+      "time": "13:51",
       "kind": "slack",
       "thread_id": null,
       "attachments": [
@@ -1006,12 +1006,12 @@
       "idx": 73
     },
     {
-      "stamp_line": "12:50 ET",
+      "stamp_line": "13:50 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-02",
       "raw_date": "February 2, 2020",
       "sender": "Robert Garry",
-      "time": "12:50",
+      "time": "13:50",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -1286,7 +1286,7 @@
         "spike_alignment.fasta",
         "spike_alignment.geneious"
       ],
-      "content": "@Andrew Rambaut and @Robert Garry take a look at this alignment while reading these three papers:\nhttps://jvi.asm.org/content/early/2020/01/23/JVI.00127-20\nhttps://www.nature.com/articles/s41579-018-0118-9 (section on “SARS-CoV mutations that affect human and civet receptor binding’).\nhttps://jvi.asm.org/content/82/5/2274\nThis is very interesting - nCoV is loaded for binding human ACE2 receptor. Compared to the bats, 5/6 of the most critical contact residues are mutated in nCoV. Very interesting.\n(key residues are marked “mutated” in Geneious for lack of a better category...) (edited)\n\n== ATTACHMENT(2) ==\nspike_alignment.fasta\nspike_alignment.geneious",
+      "content": "@Andrew Rambaut and @Robert Garry take a look at this alignment while reading these three papers:\nhttps://jvi.asm.org/content/early/2020/01/23/JVI.00127-20\nhttps://www-.nature.com/articles/s41579-018-0118-9 (section on “SARS-CoV mutations that affect human and civet receptor binding’).\nhttps://jvi.asm.org/content/82/5/2274\nThis is very interesting - nCoV is loaded for binding human ACE2 receptor. Compared to the bats, 5/6 of the most critical contact residues are mutated in nCoV. Very interesting.\n(key residues are marked “mutated” in Geneious for lack of a better category...) (edited)\n\n== ATTACHMENT(2) ==\nspike_alignment.fasta\nspike_alignment.geneious",
       "redacted": false,
       "idx": 94
     },
@@ -1528,7 +1528,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "ae https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6070550/\n® PubMed Central (PMC)\nEvolution of high pathogenicity of H5 avian influenza virus; haemagglutinin cleavage\nsite selection of reverse-genetics mutants during passage in chickens\nLow pathogenicity avian influenza viruses (LPAIVs) are generally asymptomatic in\ntheir natural avian hosts. LPAIVs can evolve into highly pathogenic forms, which can\naffect avian and human populations with devastating consequences. The switch to\nhighly ...\nThe major hangup I have is the polybasic cleavahe site.\nClearly it can arise in Flu v Ha, but it’s not really a “natural” process. H5, which is the one with the insertof the arginines required transmission from waterfowl to commercial poultry. In other words\nit dis not occur in nature but only in a situation where intense transmission.\n“The stability of the short motif suggests that pathogenicity switching may require specific conditions of intense selection pressure (such as with high host density) to boost selection of the initial I\nmid-length HACS forms.”",
+      "content": "ae hittps://www.ncbi.nim.nih.gov/pme/articles/PMC6070550/\n® PubMed Central (PMC)\nEvolution of high pathogenicity of H5 avian influenza virus; haemagglutinin cleavage\nsite selection of reverse-genetics mutants during passage in chickens\nLow pathogenicity avian influenza viruses (LPAIVs) are generally asymptomatic in\ntheir natural avian hosts. LPAIVs can evolve into highly pathogenic forms, which can\naffect avian and human populations with devastating consequences. The switch to\nhighly ...\nThe major hangup I have is the polybasic cleavahe site.\nClearly it can arise in Flu v Ha, but it’s not really a “natural” process. H5, which is the one with the insertof the arginines required transmission from waterfowl to commercial poultry. In other words\nit dis not occur in nature but only in a situation where intense transmission.\n“The stability of the short motif suggests that pathogenicity switching may require specific conditions of intense selection pressure (such as with high host density) to boost selection of the initial I\nmid-length HACS forms.”",
       "redacted": false,
       "idx": 112
     },
@@ -1596,7 +1596,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "Zz The full-length genome sequences had 99.8% homology to the human SCovV, which indicates that the human and animal SCoV-like viruses were closely related.\nhttps://science.sciencemag.org/content/302/5643/276\n~ Science\nIsolation and Characterization of Viruses Related to the SARS Coronavirus from\nAnimals in Southern China\nAnovel coronavirus (SCoV) is the etiological agent of severe acute respiratory\nsyndrome (SARS). SCoV-like viruses were isolated from Himalayan palm civets found\nin a live-animal market in Guangdong, China. Evidence of virus infection was also\ndetected in other animals (including a raccoon dog, Nyctereutes procyonoides ) and\nin humans working at the same market. All the animal isolates retain a 29-nucleotide\nsequence that is not found in most human isolates. The detection of SCoV-like\nviruses in small, live wild mammals in a retail market indicates a route of interspecies\ntransmission, although the natural reservoir is not known.\nOct 10th, 2003 I",
+      "content": "Zz The full-length genome sequences had 99.8% homology to the human SCovV, which indicates that the human and animal SCoV-like viruses were closely related.\nhttps: //science.sciencemag.org/content/302/5643/276\n~ Science\nIsolation and Characterization of Viruses Related to the SARS Coronavirus from\nAnimals in Southern China\nAnovel coronavirus (SCoV) is the etiological agent of severe acute respiratory\nsyndrome (SARS). SCoV-like viruses were isolated from Himalayan palm civets found\nin a live-animal market in Guangdong, China. Evidence of virus infection was also\ndetected in other animals (including a raccoon dog, Nyctereutes procyonoides ) and\nin humans working at the same market. All the animal isolates retain a 29-nucleotide\nsequence that is not found in most human isolates. The detection of SCoV-like\nviruses in small, live wild mammals in a retail market indicates a route of interspecies\ntransmission, although the natural reservoir is not known.\nOct 10th, 2003 I",
       "redacted": false,
       "idx": 117
     },
@@ -1624,17 +1624,17 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "pe https://journals.plos.org/plospathogens/article?id= 10,137 1 journal. ppat.1006698 i think this is the paper you want\n~ journals.plos.org\nDiscovery of arich gene pool of bat SARS-related coronaviruses provides new\ninsights into the origin of SARS coronavirus\nAuthor summary Increasing evidence has been gathered to support the bat origin of\nSARS coronavirus (SARS-CoV) in the past decade. However, none of the currently\nknown bat SARSr-CoVs Is thought to be the direct ancestor of SARS-CoV. Herein, we\nreport the identification of a diverse group of bat SARSr-CoVs in a single cave in\nYunnan, China Importantly, all of the building blocks of SARS-CoV genome, induding\nthe highly variable $ gene, ORFS and ORFS, could be found in the genomes of\ndifferent SARSr-CoV strains from this single location. Based on the analysis of full-\nlength genome sequences of the newly identified bat SARSr-CoVs, we speculate that\nthe direct ancestor of SARS-CoV may have arise... Show more",
+      "content": "pe https:/journals.plos.org/plospathogens/article?id= 10,137 1 journal. ppat.1006698 i think this is the paper you want\n~ journals.plos.org\nDiscovery of arich gene pool of bat SARS-related coronaviruses provides new\ninsights into the origin of SARS coronavirus\nAuthor summary Increasing evidence has been gathered to support the bat origin of\nSARS coronavirus (SARS-CoV) in the past decade. However, none of the currently\nknown bat SARSr-CoVs Is thought to be the direct ancestor of SARS-CoV. Herein, we\nreport the identification of a diverse group of bat SARSr-CoVs in a single cave in\nYunnan, China Importantly, all of the building blocks of SARS-CoV genome, induding\nthe highly variable $ gene, ORFS and ORFS, could be found in the genomes of\ndifferent SARSr-CoV strains from this single location. Based on the analysis of full-\nlength genome sequences of the newly identified bat SARSr-CoVs, we speculate that\nthe direct ancestor of SARS-CoV may have arise... Show more",
       "redacted": false,
       "idx": 119
     },
     {
-      "stamp_line": "01:02 ET",
+      "stamp_line": "10:31 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-03",
       "raw_date": "February 3, 2020",
       "sender": "Kristian Andersen",
-      "time": "01:02",
+      "time": "10:31",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -1708,7 +1708,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "Bf @ https://www.globaltimes.cn/content/1178363.shtml\nB ¢lobaltimes.cn\nNot possible novel coronavirus engineered in lab: experts\nThe claim that the novel coronavirus was engineered in a lab has been refuted\n(350 kB) +\nf = <e) eee 5 7\na fai a\nhttps://www.forbes.com/sites/victor \\alorster/2020/02/02/no-coronayirus-wes-1ot Gi im pieces ofshiveinet/#3c29 ibecSécb I\nhttps://global.chinadaily.com.cn/a/202002/02/WS5c36b2b7a31012821727432chtmI\n2 global.chinadaily.com.cn\nCoronavirus conspiracy debunked by Wuhan researcher - Chinadaily.com.cn\nAscientist from the Wuhan Institute of Virology of the Chinese Academy of Sciences\nhas debunked a recent conspiracy which claimed the novel coronavirus was\nmanufactured and escaped from the institute's most advanced biocontainment facility.",
+      "content": "Bf @ https: www.giobaltimes.cn/content/1178363.shtm!\nB ¢lobaltimes.cn\nNot possible novel coronavirus engineered in lab: experts\nThe claim that the novel coronavirus was engineered in a lab has been refuted\n(350 kB) +\nf = <e) eee 5 7\na fai a\nhttps: www.forbes.com/sites/victor \\alorster/2020/02/02/no-coronayirus-wes-1ot Gi im pieces ofshiveinet/#3c29 ibecSécb I\nhttp://global.chinadaily.com.cn/a/202002/02/WS5c36b2b7a31012821727432chtmI\n2 global.chinadaily.com.cn\nCoronavirus conspiracy debunked by Wuhan researcher - Chinadaily.com.cn\nAscientist from the Wuhan Institute of Virology of the Chinese Academy of Sciences\nhas debunked a recent conspiracy which claimed the novel coronavirus was\nmanufactured and escaped from the institute's most advanced biocontainment facility.",
       "redacted": false,
       "idx": 125
     },
@@ -1856,7 +1856,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "a https://en.wikipedia.org/wiki/Chinese_ferret-badger\nW Wikipedia ee .\nChinese ferret-badger\nThe Chinese ferret-badger (Melogale moschata), also known as the small-toothed\nferret-badger is a member of the Mustelidae, and widely distributed in Southeast\nAsia. It is listed as Least Concern on the IUCN Red List and considered tolerant of\nmodified habitat.The Chinese ferret-badger is densely distributed mainly across areas\nof Central to Southern China.",
+      "content": "a https: //en.wikipedia.org/wiki/Chinese_ferret-badger\nW Wikipedia ee .\nChinese ferret-badger\nThe Chinese ferret-badger (Melogale moschata), also known as the small-toothed\nferret-badger is a member of the Mustelidae, and widely distributed in Southeast\nAsia. It is listed as Least Concern on the IUCN Red List and considered tolerant of\nmodified habitat.The Chinese ferret-badger is densely distributed mainly across areas\nof Central to Southern China.",
       "redacted": false,
       "idx": 136
     },
@@ -1870,7 +1870,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "Z @ https://en.wikipedia.org/wiki/Huanan_Seafood_Wholesale_Market\nW Wikipedia\nHuanan Seafood Wholesale Market\nThe Huanan Seafood Wholesale Market (Chinese: BIN‘?RSRHLA THIF), also known\nas the Huanan Seafood Market, is a live animal and seafood market in Jianghan District,\nWuhan, Hubei province, China. The market gained media attention after the World\nHealth Organization was notified on 31 December 2019 of an outbreak of pneumonia\nin Wuhan. Of the initial 41 people hospitalised with pneumonia who were identified as\nhaving laboratory-confirmed 2019-nCoV infection by 2 January 2020, two-thirds had\nbeen exposed to the market. The market was closed on 1 January 2020 for sanitary\nprocedures and disinfection. 33 out of 585 animal specimens taken from the market\nshowed evidence of 2019-nCoV.",
+      "content": "Z @ https: /en.wikipedia.org/wiki/Huanan_Seafood_Wholesale_Market\nW Wikipedia\nHuanan Seafood Wholesale Market\nThe Huanan Seafood Wholesale Market (Chinese: BIN‘?RSRHLA THIF), also known\nas the Huanan Seafood Market, is a live animal and seafood market in Jianghan District,\nWuhan, Hubei province, China. The market gained media attention after the World\nHealth Organization was notified on 31 December 2019 of an outbreak of pneumonia\nin Wuhan. Of the initial 41 people hospitalised with pneumonia who were identified as\nhaving laboratory-confirmed 2019-nCoV infection by 2 January 2020, two-thirds had\nbeen exposed to the market. The market was closed on 1 January 2020 for sanitary\nprocedures and disinfection. 33 out of 585 animal specimens taken from the market\nshowed evidence of 2019-nCoV.",
       "redacted": false,
       "idx": 137
     },
@@ -1938,7 +1938,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "Could be - ferrets with the flu look \"just* like humans with the flu\nhttps://www.nature.com/articles/425915a’Serological and virological studies have indicated that Chinese ferret badgers (Melogale moschata), masked palm civets (Paguma larvata) and raccoon dogs\n(Nyctereutes procyonoides) can be infected with a virus that is very similar to SCV (ref. 3}. Domestic cats living in the Amoy Gardens apartment block in Hong Kong, where more than 100 residents\ncontracted SARS last year, were also found to be infected with SCV”\n* Nature\nSARS virus infection of cats and ferrets\nThere is now a choice of animal models for testing therapies against the human virus.\n* Nature\nSARS virus infection of cats and ferrets\nThere is now a choice of animal models for testing therapies against the human virus.",
+      "content": "Could be - ferrets with the flu look \"just* like humans with the flu\nhttps: www.nature.com/articles/425915a’Serological and virological studies have indicated that Chinese ferret badgers (Melogale moschata), masked palm civets (Paguma larvata) and raccoon dogs\n(Nyctereutes procyonoides) can be infected with a virus that is very similar to SCV (ref. 3}. Domestic cats living in the Amoy Gardens apartment block in Hong Kong, where more than 100 residents\ncontracted SARS last year, were also found to be infected with SCV”\n* Nature\nSARS virus infection of cats and ferrets\nThere is now a choice of animal models for testing therapies against the human virus.\n* Nature\nSARS virus infection of cats and ferrets\nThere is now a choice of animal models for testing therapies against the human virus.",
       "redacted": false,
       "idx": 142
     },
@@ -1959,12 +1959,12 @@
       "idx": 143
     },
     {
-      "stamp_line": "16:11 ET",
+      "stamp_line": "18:11 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-03",
       "raw_date": "February 3, 2020",
       "sender": "Robert Garry",
-      "time": "16:11",
+      "time": "18:11",
       "kind": "slack",
       "thread_id": null,
       "attachments": [
@@ -1989,12 +1989,12 @@
       "idx": 145
     },
     {
-      "stamp_line": "19:28 ET",
+      "stamp_line": "18:28 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-03",
       "raw_date": "February 3, 2020",
       "sender": "Eddie Holmes",
-      "time": "19:28",
+      "time": "18:28",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -2003,26 +2003,26 @@
       "idx": 146
     },
     {
-      "stamp_line": "16:22 ET",
+      "stamp_line": "18:32 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-03",
       "raw_date": "February 3, 2020",
       "sender": "Robert Garry",
-      "time": "16:22",
+      "time": "18:32",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "a https://science.sciencemag.org/content/sci/309/5742/1864.full.pdf\nThis has another binding table.",
+      "content": "a https:/science.sciencemag.org/content/sci/309/5742/1864.full.pdf\nThis has another binding table.",
       "redacted": false,
       "idx": 147
     },
     {
-      "stamp_line": "12:40 ET",
+      "stamp_line": "18:40 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-03",
       "raw_date": "February 3, 2020",
       "sender": "Robert Garry",
-      "time": "12:40",
+      "time": "18:40",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -2103,12 +2103,12 @@
       "idx": 153
     },
     {
-      "stamp_line": "00:28 ET",
+      "stamp_line": "04:28 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-04",
       "raw_date": "February 4, 2020",
       "sender": "Eddie Holmes",
-      "time": "00:28",
+      "time": "04:28",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -2362,7 +2362,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "This is pretty nifty.\nhttps://cov-glue.cve.glaac.uk/#/replacement\nSome of these mutations are interesting - human adaptive mutations...",
+      "content": "This is pretty nifty.\nhttp: /cov-glue.cve.glaac.uk/#/replacement\nSome of these mutations are interesting - human adaptive mutations...",
       "redacted": false,
       "idx": 172
     },
@@ -3127,7 +3127,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "ie https://www.vox.com/future-perfect/2019/3/20/18260669/deadly-pathogens-escape-lab-smallpox-bird-fl\nWW Vox\nHow deadly pathogens have escaped the lab — over and over again\nResearch into dangerous viruses and bacteria is important, but for the deadlies\npathogens, it’s not dear the benefits are worth the risks.\nAgree that the Gibbs nonsense was just that. But saying it can't ever happen and should be dimissed out of hand is also irresponsible. OMCcN said three times SARSV escaped lab - this article says\nsix times. LLL",
+      "content": "ie https:i/www.vox.com/future-perfect/2019/3/20/18260669/deadly-pathogens-escape-lab-smallpox-bird-fl\nWW Vox\nHow deadly pathogens have escaped the lab — over and over again\nResearch into dangerous viruses and bacteria is important, but for the deadlies\npathogens, it’s not dear the benefits are worth the risks.\nAgree that the Gibbs nonsense was just that. But saying it can't ever happen and should be dimissed out of hand is also irresponsible. OMCcN said three times SARSV escaped lab - this article says\nsix times. LLL",
       "redacted": false,
       "idx": 230
     },
@@ -3139,7 +3139,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "https://virological.org/t/tackiing-rumors-of-a-suspicious-origin-of-ncov2019/384\n© Virological\nTackling Rumors of a Suspicious Origin of nCoVv2019\nI have been privately dealing with rumors and inquiries, focused on the RRAR\npotential furin cleavage site, that nCoV2019 may have a suspicious origin as an\nengneered, laboratory-generated virus either accidentally or deliberately released in\nthe area of the Wuhan seafood and animal market. The publication of the highly\nsimilar RaTG13 sequence about a week ago has fueled this type of speculation. As I\nhave told people privately, I see no evidence at all to support such a claim. In sharp",
+      "content": "hitp:/virological.org/t/tackiing-rumors-of-a-suspicious-origin-of-ncov2019/384\n© Virological\nTackling Rumors of a Suspicious Origin of nCoVv2019\nI have been privately dealing with rumors and inquiries, focused on the RRAR\npotential furin cleavage site, that nCoV2019 may have a suspicious origin as an\nengneered, laboratory-generated virus either accidentally or deliberately released in\nthe area of the Wuhan seafood and animal market. The publication of the highly\nsimilar RaTG13 sequence about a week ago has fueled this type of speculation. As I\nhave told people privately, I see no evidence at all to support such a claim. In sharp",
       "redacted": false,
       "idx": 231
     },
@@ -3163,7 +3163,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "https://www.nrdc.org/experts/olly-pepper/nrdc-and-allies-sue-trump-administration-protect-pangolins\n* NRDC\nNRDC and Allies Sue Trump Administration to Protect Pangolins\nThe illegal wildlife trade is pushing pangolins toward extinction. The administration\nmust use the Endangered Species Act to save them. (221 kB) «\nTwo weeks ago the Trump admin was sued to stop importation of pangolin parts into the US. 6@@Qenenai: I\n09:31 Some good info in this article.\nInterested in which species of pangolin has the 99% virus.\nThe Sunda pangolin apparently carrying two fairly divergent lineages and different lineage from the 99% virus.\nAlso consider that US imports meat and scales, so not infectious.",
+      "content": "https: www.nrde.org/experts/olly-pepper/nrde-and-allies-sue-trump-administration-protect-pangolins\n* NRDC\nNRDC and Allies Sue Trump Administration to Protect Pangolins\nThe illegal wildlife trade is pushing pangolins toward extinction. The administration\nmust use the Endangered Species Act to save them. (221 kB) «\nTwo weeks ago the Trump admin was sued to stop importation of pangolin parts into the US. 6@@Qenenai: I\n09:31 Some good info in this article.\nInterested in which species of pangolin has the 99% virus.\nThe Sunda pangolin apparently carrying two fairly divergent lineages and different lineage from the 99% virus.\nAlso consider that US imports meat and scales, so not infectious.",
       "redacted": false,
       "idx": 233
     },
@@ -3319,16 +3319,16 @@
       "idx": 244
     },
     {
-      "stamp_line": "08:52 ET",
+      "stamp_line": "08:51 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-08",
       "raw_date": "February 8, 2020",
       "sender": "Andrew Rambaut",
-      "time": "08:52",
+      "time": "08:51",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "ae \\have created a copy of the report to turn into something publishable: https://docs.google.com/document/d/14HI2 1tdEyXQSXBBDC2KwHySrkffyMdKWdMZGXxbd278/e Gt © OS Q :\n08:52 We need a carton picture of Peter Daszak to use in all the figures. I\nI don't think we should go anywhere near bioweapons - excluding lab constructs is sufficient.\nIt might be a good idea to nail the Lyons-Weiler stuff without mentioning it explictly - iLe., say there is no evidence of insertions or recombination from other known viruses (including SARS). The\nentire nCoV genome is descended from a putative common ancestor with RaTG13.",
+      "content": "ae \\have created a copy of the report to turn into something publishable: https://docs.gocgle.com/document/d/14HI2 1tdEyXQSXBBDC2KwHySrkffyMdKWdMZGXxbd278/e Gt © OS Q :\n08:52 We need a carton picture of Peter Daszak to use in all the figures. I\nI don't think we should go anywhere near bioweapons - excluding lab constructs is sufficient.\nIt might be a good idea to nail the Lyons-Weiler stuff without mentioning it explictly - iLe., say there is no evidence of insertions or recombination from other known viruses (including SARS). The\nentire nCoV genome is descended from a putative common ancestor with RaTG13.",
       "redacted": false,
       "idx": 245
     },
@@ -3471,12 +3471,12 @@
       "idx": 255
     },
     {
-      "stamp_line": "19:09 ET",
+      "stamp_line": "13:03 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-08",
       "raw_date": "February 8, 2020",
       "sender": "Robert Garry",
-      "time": "19:09",
+      "time": "13:03",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -3494,7 +3494,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "®@ https://www.bbc.com/news/world-51429400\nBBC - actual reporting - at least they usually try - we have very little of that left in the US. I",
+      "content": "®@ https: www.bbe.com/news/world-51429400\nBBC - actual reporting - at least they usually try - we have very little of that left in the US. I",
       "redacted": false,
       "idx": 257
     },
@@ -3574,7 +3574,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "The furin link keeps bugging me too - I can't find any good references on it in the published literature for CoVs. When I asked Mike, he Inked to this paper, which doesn't really describe it either:\nhttps://jvi.asm.org/content/79/22/14451 ?ijkey=709a35da9513e80f42db103ec19b539ed1cc350b&keytype2=tf_ipsecsha\n« jommal ol viecd February &th, 2020\nMurine Coronavirus with an Extended Host Range Uses Hoparan Sulfate as an Entry\nReceptor\nOnly a relatively few mutations in its spike protein allow the murine coronavirus to\nswitch from a murine-restricted tropism to an extended host range by being\npassaged in vitro. One such virus that we studied had acquired two putative heparan\nsulfate-binding sites while preserving another site in the furin-cleavage motif. The\nadaptation of the virus through the use of heparan sulfate as an attachment/ertry\nreceptor was demonstrated by increased heparin binding as well as by inhibition of\ninfection through treatment of cells and the virus with heparinase and heparin,\nrespectively.\nNov 15th, 2005",
+      "content": "The furin link keeps bugging me too - I can't find any good references on it in the published literature for CoVs. When I asked Mike, he Inked to this paper, which doesn't really describe it either:\nhttps:i/jvi.asm.org/content/79/22/14451 ?ijkey=709a35da9513e80f42db103ec19b539ed1cc350b&keytype2=tf_ipsecsha\n« jommal ol viecd February &th, 2020\nMurine Coronavirus with an Extended Host Range Uses Hoparan Sulfate as an Entry\nReceptor\nOnly a relatively few mutations in its spike protein allow the murine coronavirus to\nswitch from a murine-restricted tropism to an extended host range by being\npassaged in vitro. One such virus that we studied had acquired two putative heparan\nsulfate-binding sites while preserving another site in the furin-cleavage motif. The\nadaptation of the virus through the use of heparan sulfate as an attachment/ertry\nreceptor was demonstrated by increased heparin binding as well as by inhibition of\ninfection through treatment of cells and the virus with heparinase and heparin,\nrespectively.\nNov 15th, 2005",
       "redacted": false,
       "idx": 263
     },
@@ -3671,12 +3671,12 @@
       "idx": 270
     },
     {
-      "stamp_line": "16:15 ET",
+      "stamp_line": "18:15 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-08",
       "raw_date": "February 8, 2020",
       "sender": "Robert Garry",
-      "time": "16:15",
+      "time": "18:15",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -3711,12 +3711,12 @@
       "idx": 273
     },
     {
-      "stamp_line": "19:42 ET",
+      "stamp_line": "18:42 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-08",
       "raw_date": "February 8, 2020",
       "sender": "Eddie Holmes",
-      "time": "19:42",
+      "time": "18:42",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -3737,12 +3737,12 @@
       "idx": 275
     },
     {
-      "stamp_line": "16:57 ET",
+      "stamp_line": "18:57 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-08",
       "raw_date": "February 8, 2020",
       "sender": "Robert Garry",
-      "time": "16:57",
+      "time": "18:57",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -3830,7 +3830,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "2@@ https://www.ncbi.nlm.nih.gov/pubmed/26916286\n® ncbi.nlm.nihgov\nMolecular epidemiology and evolutionary histories of human coronavirus OC43 and\nHKU1 among patients with upper respiratory tract infections in Kual... - PubMed -\nNCBI\nVirol J. 2016 Feb 25:13:33. doi: 10.1186/s12985-016-0488-4 Research Support.\n\n== ATTACHMENT ==\nNon-U.S, Gov't (13 kB)\n\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC4476415/ a\n® PubMed Central (PMC)\nGenetic drift of human coronavirus OC43 spike gene during adaptive evolution\nCoronaviruses (CoVs) continuously threaten human health, However, to date, the\nevolutionary mechanisms that govern CoV strain persistence in human populations\nhave not been fully understood, In this study, we characterized the evolution of the\nmajor antigen-spike ...\nhttps://www.ncbi.nlm.nih.gov/pubmed/21849456\nB® ncbi.nim.nih.gov\nMolecular epidemiology of human coronavirus OC43 reveals evolution of different\ngenotypes over time and recent emergence of a novel genotype due to... - PubMod -\nNCBI\nJ Virol, 2011 Nov;85(21):11325-37. doi: 10.1128/JV1.05512-11. Epub 2011 Aug 17.\n\n== ATTACHMENT ==\nResearch Support. Non-U.S. Gov't (13 kB)\n‘ cy ES ~ n 5 J",
+      "content": "2@@ https:/www.ncbi.nlm.nih.gov/pubmed/26916286\n® ncbi.nlm.nihgov\nMolecular epidemiology and evolutionary histories of human coronavirus OC43 and\nHKU1 among patients with upper respiratory tract infections in Kual... - PubMed -\nNCBI\nVirol J. 2016 Feb 25:13:33. doi: 10.1186/s12985-016-0488-4 Research Support.\n\n== ATTACHMENT ==\nNon-U.S, Gov't (13 kB)\n\nhttps:/www.nebi.nim.nih.gov/pme/articles/PMC4476415/ a\n® PubMed Central (PMC)\nGenetic drift of human coronavirus OC43 spike gene during adaptive evolution\nCoronaviruses (CoVs) continuously threaten human health, However, to date, the\nevolutionary mechanisms that govern CoV strain persistence in human populations\nhave not been fully understood, In this study, we characterized the evolution of the\nmajor antigen-spike ...\nhttps:/www.nebi.nlm.nih.gov/pubmed/21849456\nB® ncbi.nim.nih.gov\nMolecular epidemiology of human coronavirus OC43 reveals evolution of different\ngenotypes over time and recent emergence of a novel genotype due to... - PubMod -\nNCBI\nJ Virol, 2011 Nov;85(21):11325-37. doi: 10.1128/JV1.05512-11. Epub 2011 Aug 17.\n\n== ATTACHMENT ==\nResearch Support. Non-U.S. Gov't (13 kB)\n‘ cy ES ~ n 5 J",
       "redacted": false,
       "idx": 282
     },
@@ -3856,7 +3856,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "4. A few new comments on the email chains. Six minutes apart.\nhttps://abcnews.go.com/Politics/white-house-asks-scientists-investigate - origins-coronavirus/story?id=68807304ABC News' Chief Medical Correspondent Dr. Jennifer Ashton asked the director of\nthe National Institute of Allergy and Infectious Disease about concerns that stem from misinformation online that the navel coronavirus could have been engineered or deliberately released\n“There's always that concern,” Or, Anthony Fauci said, ‘And one of the things that people are doing right now is very carefully looking at sequences to see if there’s even any possibility much less\nlikelihood that that's going on. And you could ultimately determine that. So people are looking at it, but right now, the focus is on what are we going to do about what we have”\nABCNews\nWhite House asks scientists to investigate origins of coronavirus\nThe White House asked scientists and medical experts to research the origins of the\n\n== ATTACHMENT ==\nnevel coronavirus, in part to counter misinformation about the outbreak. (89 kB)\nat = - Baer;\nos oa mie\n— -\n- =\n|S\n\nI think Fauci gave the correct answer regarding engineering or deliberate release. You need to look. It follows and makes sense that you also look at accidental release as a possibility (something I\nBTW that happened with SARS-CoV-1 SEVERAL times.\nCall me conspiratorial (OK that horse left the barn), but I think there may be some hallway tak going on at Erasmus.",
+      "content": "4. A few new comments on the email chains. Six minutes apart.\nhttps:W/abcnews.go.com/Politics/white-house-asks-scientists-investigate - origins-coronavirus/story?id=68807304ABC News' Chief Medical Correspondent Dr. Jennifer Ashton asked the director of\nthe National Institute of Allergy and Infectious Disease about concerns that stem from misinformation online that the navel coronavirus could have been engineered or deliberately released\n“There's always that concern,” Or, Anthony Fauci said, ‘And one of the things that people are doing right now is very carefully looking at sequences to see if there’s even any possibility much less\nlikelihood that that's going on. And you could ultimately determine that. So people are looking at it, but right now, the focus is on what are we going to do about what we have”\nABCNews\nWhite House asks scientists to investigate origins of coronavirus\nThe White House asked scientists and medical experts to research the origins of the\n\n== ATTACHMENT ==\nnevel coronavirus, in part to counter misinformation about the outbreak. (89 kB)\nat = - Baer;\nos oa mie\n— -\n- =\n|S\n\nI think Fauci gave the correct answer regarding engineering or deliberate release. You need to look. It follows and makes sense that you also look at accidental release as a possibility (something I\nBTW that happened with SARS-CoV-1 SEVERAL times.\nCall me conspiratorial (OK that horse left the barn), but I think there may be some hallway tak going on at Erasmus.",
       "redacted": false,
       "idx": 284
     },
@@ -3925,12 +3925,12 @@
       "idx": 289
     },
     {
-      "stamp_line": "14:14 ET",
+      "stamp_line": "16:14 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-09",
       "raw_date": "February 9, 2020",
       "sender": "Robert Garry",
-      "time": "14:14",
+      "time": "16:14",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -3948,7 +3948,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "4a. https://wwwnc.cdc.gov/eid/article/11/12/04-1293_article\nSARS-CoV Infection in a Restaurant from Palm Civet\nEpidemiologic investigations showed that 2 of 4 patients with severe acute respiratory\n\n== ATTACHMENT ==\nsyndrome (SARS) identified in the winter of 2003-2004 were a wa... (132 kB)\n\nA Peer-Reviewed Jowrnel Tracking ond Anahyzing Disease Trends I\nhttps://www.ncbi.nlm.nih.gov/pubmed/15980414\nB® ncbi.nim.nih.gov\nIdentification of two critical amino acid residues of the severe acute respiratory\nsyndrome coronavirus spike protein for its variation in zoonotic... - PubMed - NCBI\nJ Biol Chem. 2005 Aug 19;280(33):29588-95. Epub 2005 Jun 24. Research Support.\n\n== ATTACHMENT ==\nNon-U.S. Gov't (13 kB)\n\nhttps://www.ncbi.nlm.nih.gov/pubmed/15695582 I\nB) nebi.nim.nih.gov\nCross-host evolution of severe acute respiratory syndrome coronavirus in palm civet\nand human. - PubMed - NCBI\nProc Natl Acad Sci US A. 2005 Feb 15;102{7):2430-5. Epub 2005 Feb 4. Research\n\n== ATTACHMENT ==\nSupport, Non-U.S. Gov't; Research Support, U.S. Gov't. P.H.S. (13 kB)\n\nhttps://www.ncbi.nlm.nih.gov/pubmed/ 15347429 This one interesting! fl\nB® ncbi.nim.nih.gov\nMutational dynamics of the SARS coronavirus in ceil culture and human populations\nisolated in 2003. - PubMed - NCBI\nBMC Infect Dis. 2004 Sep 6;4:32. Research Support. Non-U.S. Gov't (13 kB) =",
+      "content": "4a. https://wwwnc.cdc.gov/eid/article/11/12/04-1293_article\nSARS-CoV Infection in a Restaurant from Palm Civet\nEpidemiologic investigations showed that 2 of 4 patients with severe acute respiratory\n\n== ATTACHMENT ==\nsyndrome (SARS) identified in the winter of 2003-2004 were a wa... (132 kB)\n\nA Peer-Reviewed Jowrnel Tracking ond Anahyzing Disease Trends I\nhttps: www.ncbi.nlm.nih.gov/pubmed/15980414\nB® ncbi.nim.nih.gov\nIdentification of two critical amino acid residues of the severe acute respiratory\nsyndrome coronavirus spike protein for its variation in zoonotic... - PubMed - NCBI\nJ Biol Chem. 2005 Aug 19;280(33):29588-95. Epub 2005 Jun 24. Research Support.\n\n== ATTACHMENT ==\nNon-U.S. Gov't (13 kB)\n\nhttps: // www.ncbi.nim.nih.gov/pubmed/15695582 I\nB) nebi.nim.nih.gov\nCross-host evolution of severe acute respiratory syndrome coronavirus in palm civet\nand human. - PubMed - NCBI\nProc Natl Acad Sci US A. 2005 Feb 15;102{7):2430-5. Epub 2005 Feb 4. Research\n\n== ATTACHMENT ==\nSupport, Non-U.S. Gov't; Research Support, U.S. Gov't. P.H.S. (13 kB)\n\nhttps:// www.ncbi.nim.nih.gov/pubmed/ 15347429 This one interesting! fl\nB® ncbi.nim.nih.gov\nMutational dynamics of the SARS coronavirus in ceil culture and human populations\nisolated in 2003. - PubMed - NCBI\nBMC Infect Dis. 2004 Sep 6;4:32. Research Support. Non-U.S. Gov't (13 kB) =",
       "redacted": false,
       "idx": 291
     },
@@ -3962,7 +3962,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "a https://science.sciencemag.org/content/sci/earty/ 2003/09 /04/science. 1087139 full_pdf Identical seems unexpected if from an animal source. Yes indeed would be good to know how the I\nenvironment was sampled.",
+      "content": "a https:/science.scencemag.org/content/sci/earty/ 2003/09 /04/science. 1087139 full_pdf Identical seems unexpected if from an animal source. Yes indeed would be good to know how the I\nenvironment was sampled.",
       "redacted": false,
       "idx": 292
     },
@@ -4151,7 +4151,7 @@
       "attachments": [
         "image.png"
       ],
-      "content": "== ATTACHMENT ==\nimage.png\n\neaaececrcemente eepreespenrnsnysedepectariy eres\nteseheiy som im)\nFebruary 1Uth, 2UzU\nhttps://www.chinadaily.com.cn/a/202002/07/WSSe3didaca310128217275d93.htnn\n0 chinadaily.com.cn\nPangolin could be coronavirus intermediate host: Study - Chinadaily.com.cn\nThe pangotin might be a potential intermediate host of the novel coronavirus, as\ngenome sequences of the disease strain separated from the animals were 99 percent\n\n== ATTACHMENT ==\nidentical to those found in infected people, a study has discovered. (102 kB)\n4\nane e 1\n2 © re ty\nee, sd\n\nFrom another article:\nGUANGZHOU, Feb. 7 (Xinhua) -- The genome sequence of the novel coronavirus strain separated from pangolins was 99 percent identical to that from infected people, indicating pangolins may be\nan intermediate host of the virus, a study has found.\nThe study was led by the South China Agricultural University. According to Liu Yahong, president of the university, the research team analyzed more than 1,000 metagenome samples of wild\nanimals and found pangolins as the most likely intermediate host.\nMolecular biological detection revealed that the positive rate of Betacoronavirus in pangolins was 70 percent. Researchers further isolated the virus and observed its structure with an electron\nmicroscope. They found that the genome sequence of the coronavirus strain was 99 percent identical to those in infected people.\nAssuming this an accurate account the researchers did metagenomic studies of 1000 wild animal samples. Then they assembled genomes,and analyzed them.\nHere's what keep me up last night:\nTHEN the “Researchers further isolated the virus and observed its structure with an electron microscope”\nSo - they grew it in cell culture, Those picture looks to me like growth in cultured cells - probably Vero. You can't get EM pictures out of animal tissues like this. Furthermore the virus is growing\npretty damn well in those cells.",
+      "content": "== ATTACHMENT ==\nimage.png\n\neaaececrcemente eepreespenrnsnysedepectariy eres\nteseheiy som im)\nFebruary 1Uth, 2UzU\nhttp: wwwe.chinadaily.com.cn/a/202002/07/WSSe3didaca310128217275d93.htnn\n0 chinadaily.com.cn\nPangolin could be coronavirus intermediate host: Study - Chinadaily.com.cn\nThe pangotin might be a potential intermediate host of the novel coronavirus, as\ngenome sequences of the disease strain separated from the animals were 99 percent\n\n== ATTACHMENT ==\nidentical to those found in infected people, a study has discovered. (102 kB)\n4\nane e 1\n2 © re ty\nee, sd\n\nFrom another article:\nGUANGZHOU, Feb. 7 (Xinhua) -- The genome sequence of the novel coronavirus strain separated from pangolins was 99 percent identical to that from infected people, indicating pangolins may be\nan intermediate host of the virus, a study has found.\nThe study was led by the South China Agricultural University. According to Liu Yahong, president of the university, the research team analyzed more than 1,000 metagenome samples of wild\nanimals and found pangolins as the most likely intermediate host.\nMolecular biological detection revealed that the positive rate of Betacoronavirus in pangolins was 70 percent. Researchers further isolated the virus and observed its structure with an electron\nmicroscope. They found that the genome sequence of the coronavirus strain was 99 percent identical to those in infected people.\nAssuming this an accurate account the researchers did metagenomic studies of 1000 wild animal samples. Then they assembled genomes,and analyzed them.\nHere's what keep me up last night:\nTHEN the “Researchers further isolated the virus and observed its structure with an electron microscope”\nSo - they grew it in cell culture, Those picture looks to me like growth in cultured cells - probably Vero. You can't get EM pictures out of animal tissues like this. Furthermore the virus is growing\npretty damn well in those cells.",
       "redacted": false,
       "idx": 307
     },
@@ -4203,7 +4203,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6893680/figure/viruses-11-00979-f005/\n® PubMed Central (PMC)\nViral Metagenomics Revealed Sendai Virus and Coronavirus Infection of Malayan\nPangolins (Manis javanica)\nPangolins are endangered animals in urgent need of protection. Identifying and\ncataloguing the viruses carried by pangolins is a logical approach to evaluate the\nrange of potential pathogens and help with conservation. This study provides insight\ninto ...\nTHis one?\nSeems like different group in Guangdong than South China Ag but maybe they came together. if\nFig S kinda a mess The phylogenetic tree of Conronavirus from Malayan pangolina\nThe study design was approved by the ethics committee for animal experiments at the Guangdong Institute of Applied Biological Resources (reference number: GIABR20170720, 20 July 2017) and\nfollowed basic principles outlined by this nmitiec",
+      "content": "https:/wwew.ncbi.nim.nih.gov/pme/articles/PMC6893680/figure/viruses-11-00979-f005/\n® PubMed Central (PMC)\nViral Metagenomics Revealed Sendai Virus and Coronavirus Infection of Malayan\nPangolins (Manis javanica)\nPangolins are endangered animals in urgent need of protection. Identifying and\ncataloguing the viruses carried by pangolins is a logical approach to evaluate the\nrange of potential pathogens and help with conservation. This study provides insight\ninto ...\nTHis one?\nSeems like different group in Guangdong than South China Ag but maybe they came together. if\nFig S kinda a mess The phylogenetic tree of Conronavirus from Malayan pangolina\nThe study design was approved by the ethics committee for animal experiments at the Guangdong Institute of Applied Biological Resources (reference number: GIABR20170720, 20 July 2017) and\nfollowed basic principles outlined by this nmitiec",
       "redacted": false,
       "idx": 311
     },
@@ -4287,7 +4287,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "06 https://www.sciencedirect.com/science/article/pii/S0166354220300528 ?via%3Dihub\nI sciencedirect.com\nThe spike glycoprotein of the new coronavirus 2019-nCeV contains a furin-like\ncleavage site absent in CoV of the same clade\nIn 2019, a new coronavirus (2019-nCaV) infecting Humans has emerged in Wuhan.\nChina, Its genome has been sequenced and the genomic information promptl.\nKoopsman passed this to the email group. Not a great analysis IMO, but i guess this makes it somehow more “rea",
+      "content": "06 https:/wvew.sciencedirect.com/science/article/pii/S0166354220300528 ?via%3Dihub\nI sciencedirect.com\nThe spike glycoprotein of the new coronavirus 2019-nCeV contains a furin-like\ncleavage site absent in CoV of the same clade\nIn 2019, a new coronavirus (2019-nCaV) infecting Humans has emerged in Wuhan.\nChina, Its genome has been sequenced and the genomic information promptl.\nKoopsman passed this to the email group. Not a great analysis IMO, but i guess this makes it somehow more “rea",
       "redacted": false,
       "idx": 318
     },
@@ -4548,7 +4548,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "https://www.sciencedirect.com/science/article/pii/S00653527 18300010?via%3Dihub\nI. sciencedirect.com\nHasts and Sources of Endemic Human Coronaviruses\nThe four endemic human coronaviruses HCoV-229E, -NL63, -OC43, and -HKU1\ncontribute a considerable share of upper and lower respiratory tract infection...\nHere is Christian's thinking of this congealed into a very nice paper.\nOther human pathogenic CoVs circulated before being discovered.\"The emergence of HCoV-OC43 in humans was proposed to be linked to a host-switching event around the year 1890, a time\nthat coincides with a pandemic of respiratory disease recorded in humans (Vijgen et al., 2005, 2006),\nI sciencedirect.com\nHosts and Sources of Endemic Human Coronaviruses\nThe four endemic human coronaviruses HCoV-229E, -NL63, -OC43, and -HKU1\ncontribute a considerable share of upper and lower respiratory tract infection\nI. sciencedirect.com\nHosts and Sources of Endemic Human Coronaviruses\nThe four endemic human coronaviruses HCoV-229E, -NL63, -OC43, and -HKU1\ncontribute a considerable share of upper and lower respiratory tract infection.",
+      "content": "https:/www.sciencedirect.com/science/article/pii/S00653527 18300010?via%3Dihub\nI. sciencedirect.com\nHasts and Sources of Endemic Human Coronaviruses\nThe four endemic human coronaviruses HCoV-229E, -NL63, -OC43, and -HKU1\ncontribute a considerable share of upper and lower respiratory tract infection...\nHere is Christian's thinking of this congealed into a very nice paper.\nOther human pathogenic CoVs circulated before being discovered.\"The emergence of HCoV-OC43 in humans was proposed to be linked to a host-switching event around the year 1890, a time\nthat coincides with a pandemic of respiratory disease recorded in humans (Vijgen et al., 2005, 2006),\nI sciencedirect.com\nHosts and Sources of Endemic Human Coronaviruses\nThe four endemic human coronaviruses HCoV-229E, -NL63, -OC43, and -HKU1\ncontribute a considerable share of upper and lower respiratory tract infection\nI. sciencedirect.com\nHosts and Sources of Endemic Human Coronaviruses\nThe four endemic human coronaviruses HCoV-229E, -NL63, -OC43, and -HKU1\ncontribute a considerable share of upper and lower respiratory tract infection.",
       "redacted": false,
       "idx": 339
     },
@@ -4865,16 +4865,16 @@
       "idx": 363
     },
     {
-      "stamp_line": "16:00 ET",
+      "stamp_line": "18:00 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-11",
       "raw_date": "February 11, 2020",
       "sender": "Robert Garry",
-      "time": "16:00",
+      "time": "18:00",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "3. https://www.sciencedirect.com/science/article/pii/S2211124718311483?via%3Dihub Here one cell culture passage paper - bottom line it took multiple passages to adapt to the receptor.\n[. sciencedirect.com\nAdaptive Evolution of MERS-CoV to Species Variation in DPP4\nMiddle East Respiratory Syndrome Coronavirus (MERS-CoV) likely originated in bats\nand passed to humans through dromedary camels; however, the genetic .. (85 kB) =\nPaee=\nwane ef\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC249560/\nx»  ® PubMed Central (PMC)\nGeneration of seal influenza virus variants pathogenic for chickens, because of\nhemagglutinin cleavage site changes.\nInfluenza virus A/seal/Mass/1/80 (H7N7} was adapted to grow in MDCK cells and\nchicken embryo cells (CEC) in the absence of exogenous protease. The biological\nproperties of the virus variants obtained coincided with intracellular activation of the\nhemagglutinin ...",
+      "content": "3. https: //www.sciencedirect.com/science/article/pii/S2211124718311483?via%3Dihub Here one cell culture passage paper - bottom line it took multiple passages to adapt to the receptor.\n[. sciencedirect.com\nAdaptive Evolution of MERS-CoV to Species Variation in DPP4\nMiddle East Respiratory Syndrome Coronavirus (MERS-CoV) likely originated in bats\nand passed to humans through dromedary camels; however, the genetic .. (85 kB) =\nPaee=\nwane ef\nhttps:/www.ncbi.nim.nih.gov/pmc/articles/PMC249560/\nx»  ® PubMed Central (PMC)\nGeneration of seal influenza virus variants pathogenic for chickens, because of\nhemagglutinin cleavage site changes.\nInfluenza virus A/seal/Mass/1/80 (H7N7} was adapted to grow in MDCK cells and\nchicken embryo cells (CEC) in the absence of exogenous protease. The biological\nproperties of the virus variants obtained coincided with intracellular activation of the\nhemagglutinin ...",
       "redacted": false,
       "idx": 364
     },
@@ -4972,7 +4972,7 @@
       "attachments": [
         "x 20191008_virus_summary.xisx"
       ],
-      "content": "Yeah, don't get the MERS stuff - doesn't make sense. 22th 2020-7\nFor SARS/nCoV I'm specifically Icoking at the spike protein (for now) - comparing SARS early in the outbreak to in the middle of it. For SARS this has been done by others as well\nhttps://www.ncbi.nlm.nih.gov/pubmed/14752165\nB® ncbi.nlm.nih.gov\nMolecular evolution of the SARS coronavirus during the course of the SARS epidemic\nin China. - PubMed - NCBI\n\n== ATTACHMENT ==\nScience. 2004 Mar 12;303(5664):1666-9, Epub 2004 Jan 29. (13 kB)\n\n® Sorry, need to catch up. Had to teach a class! One a year. Yes, MERS isa camel virus. ¢ coco wre wi aan people Say it is a bat virus. Anyway, I have trouble with the human pre-adaptation idea: (i) I\ndon't see why the market is analogous to AlV screening unless Andrew knows something I don't. I think the best surveillance takes place in the hospitals; (ii) the main reason why Ive been to\nWuhan a few times is to take part in this big tung wash study (BAL) study we have going on. We have meta-transcriptomic data of ~600 people reporting to Wuhan Central Hospital with\nrespiratory disease. We have their full meta-transcriptomes but itis taking an age to analyse because the data set is so big. I'm going to attach the raw virus data here (keep to yourself). I think\nthese are from 2018 but I have to check. There are CoVs but nothing new. I need to double-check with my Mang but he is about best in world about this. The cells in yellow are confirmed, the\nothers per lane reflect index-hopping. Obviously, not conclusive, but a representative sample that the virus was not there then. I suppose we need to get this published ASAP?\n\n== ATTACHMENT ==\nx 20191008_virus_summary.xisx\n\nOver ExperivenLtewy Lane Rial readin tturnan Nendamas\nrNugen — SCOAIZHK ONSMIE —LYERO ‘\nTeugen — $0089) OS7HIITE §— LESH66D 2\nIga SORT Obesess2 27 9m244\nATNugen  SOLZTKS O4sasenye = 33386271 r\nMegen  Se12Me oats 12700095 ”\nSue Seazenk Osisense 13005 a\nMugen seriat Oo Meese 2061648 ”\ni Ragen BRODIT Larvee DWI? ”\nbhuger SOOSIDEM 1 45520748 41567527 “\nsnugen S808 IHiM L4u2v774 —_sei6808 2\nBNugen — SCONOKE LMSe372@ © 324117 ro\nHewgen  Seu0mmes Laosears  zazmiaa 2\nLike sel0ke 1 49740322 MSOs",
+      "content": "Yeah, don't get the MERS stuff - doesn't make sense. 22th 2020-7\nFor SARS/nCoV I'm specifically Icoking at the spike protein (for now) - comparing SARS early in the outbreak to in the middle of it. For SARS this has been done by others as well\nhttps:i/wwew.ncbi.nim.nih.gov/pubmed/14752165\nB® ncbi.nlm.nih.gov\nMolecular evolution of the SARS coronavirus during the course of the SARS epidemic\nin China. - PubMed - NCBI\n\n== ATTACHMENT ==\nScience. 2004 Mar 12;303(5664):1666-9, Epub 2004 Jan 29. (13 kB)\n\n® Sorry, need to catch up. Had to teach a class! One a year. Yes, MERS isa camel virus. ¢ coco wre wi aan people Say it is a bat virus. Anyway, I have trouble with the human pre-adaptation idea: (i) I\ndon't see why the market is analogous to AlV screening unless Andrew knows something I don't. I think the best surveillance takes place in the hospitals; (ii) the main reason why Ive been to\nWuhan a few times is to take part in this big tung wash study (BAL) study we have going on. We have meta-transcriptomic data of ~600 people reporting to Wuhan Central Hospital with\nrespiratory disease. We have their full meta-transcriptomes but itis taking an age to analyse because the data set is so big. I'm going to attach the raw virus data here (keep to yourself). I think\nthese are from 2018 but I have to check. There are CoVs but nothing new. I need to double-check with my Mang but he is about best in world about this. The cells in yellow are confirmed, the\nothers per lane reflect index-hopping. Obviously, not conclusive, but a representative sample that the virus was not there then. I suppose we need to get this published ASAP?\n\n== ATTACHMENT ==\nx 20191008_virus_summary.xisx\n\nOver ExperivenLtewy Lane Rial readin tturnan Nendamas\nrNugen — SCOAIZHK ONSMIE —LYERO ‘\nTeugen — $0089) OS7HIITE §— LESH66D 2\nIga SORT Obesess2 27 9m244\nATNugen  SOLZTKS O4sasenye = 33386271 r\nMegen  Se12Me oats 12700095 ”\nSue Seazenk Osisense 13005 a\nMugen seriat Oo Meese 2061648 ”\ni Ragen BRODIT Larvee DWI? ”\nbhuger SOOSIDEM 1 45520748 41567527 “\nsnugen S808 IHiM L4u2v774 —_sei6808 2\nBNugen — SCONOKE LMSe372@ © 324117 ro\nHewgen  Seu0mmes Laosears  zazmiaa 2\nLike sel0ke 1 49740322 MSOs",
       "redacted": false,
       "idx": 371
     },
@@ -5045,12 +5045,12 @@
       "idx": 376
     },
     {
-      "stamp_line": "05:09 ET",
+      "stamp_line": "03:33 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-12",
       "raw_date": "February 12, 2020",
       "sender": "Andrew Rambaut",
-      "time": "05:09",
+      "time": "03:33",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -5146,7 +5146,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "®@ Bloody obvious when you think about it: https://www.express.co.uk/news/world/1240664 /coronavirus-news-latest-china-origin-meteorite-scientists-health-waming-death-toll-latest\nBY Express.co.uk\nCoronavirus came from METEORITE which hit China last year - bombshell scientist\nclaim\nTHE deadly coronavirus which has killed more than 1.000 people globally came from a\nmeteorite which hit China last year, scientists have sensationally claimed.\n\n== ATTACHMENT ==\nFeb {ith 2020 (58 kB)\n. oni _\" = me\na",
+      "content": "®@ Bloody obvious when you think about it: https: //www.express.co.uk/news/world/1240664 /coronavirus-news-latest-china-origin-meteorite-scientists-health-waming-death-toll-latest\nBY Express.co.uk\nCoronavirus came from METEORITE which hit China last year - bombshell scientist\nclaim\nTHE deadly coronavirus which has killed more than 1.000 people globally came from a\nmeteorite which hit China last year, scientists have sensationally claimed.\n\n== ATTACHMENT ==\nFeb {ith 2020 (58 kB)\n. oni _\" = me\na",
       "redacted": false,
       "idx": 384
     },
@@ -5474,7 +5474,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "Z https://www.ncbi.nlm.nih.gov/pubmed/ 17402195\n® ncbi.nim.nih.gov\n[Study on the dynamic prevalence of serum antibody against severe acute respiratory\nsyndrome coronavirus in employees from wild animal market in Gu... - PubMed -\nNCBI\nZhonghua Liu Xing Bing Xue Za Zhi. 2006 Nov:27(11):950-2. English Abstract\n(13 kB) +",
+      "content": "Z https: www.ncb.nim.nih.gov/pubmed/ 17402195\n® ncbi.nim.nih.gov\n[Study on the dynamic prevalence of serum antibody against severe acute respiratory\nsyndrome coronavirus in employees from wild animal market in Gu... - PubMed -\nNCBI\nZhonghua Liu Xing Bing Xue Za Zhi. 2006 Nov:27(11):950-2. English Abstract\n(13 kB) +",
       "redacted": false,
       "idx": 408
     },
@@ -5630,7 +5630,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "a Increase variation is spike was a thing during the spread into Korea - they were worried a neutralization resistant mutant.\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC4696701/\n® PubMed Central (PMC)\nVariations in Spike Glycoprotein Gene of MERS-CoV, South Korea, 2015\nAn outbreak of nosocomial infections with Middle East respiratory syndrome\ncoronavirus occurred in South Korea in May 2015. Spike glycoprotein genes of virus\nstrains from South Korea were closely related to those of strains from Riyadh.\nis13 THis paper may not be very good - you're way better than me to judge, but it seems that changes in spike occur on introduction passage in humans. SaQean:\niid https://wwwnc.cdc.gov/eid/article/22/1/15-1055_article’\n=P Emerging Infectious Diseases journal\nVariations in Spike Glycoprotein Gene of MERS-CoV, South Korea, 2015\nAn outbreak of nosocomial infections with Middle East respiratory syndrome\ncoronavirus occurred in South Korea in May 2015. Spike glycoprotein genes o..\n(132 kB) +\nA Peer-Reviewed Joernel Trocking ond Anahyzing Disecse Trends\nalso on passage in vero cells.\nBe safe in the desert Kristian. Watch out for snakes - can't be too careful with all the re...",
+      "content": "a Increase variation is spike was a thing during the spread into Korea - they were worried a neutralization resistant mutant.\nhttps. www.ncbi.nim.nih.gov/pmc/articles/PMC4696701/\n® PubMed Central (PMC)\nVariations in Spike Glycoprotein Gene of MERS-CoV, South Korea, 2015\nAn outbreak of nosocomial infections with Middle East respiratory syndrome\ncoronavirus occurred in South Korea in May 2015. Spike glycoprotein genes of virus\nstrains from South Korea were closely related to those of strains from Riyadh.\nis13 THis paper may not be very good - you're way better than me to judge, but it seems that changes in spike occur on introduction passage in humans. SaQean:\niid https: wwwne.cde.gov/eid/article/22/1/15-1055_article’\n=P Emerging Infectious Diseases journal\nVariations in Spike Glycoprotein Gene of MERS-CoV, South Korea, 2015\nAn outbreak of nosocomial infections with Middle East respiratory syndrome\ncoronavirus occurred in South Korea in May 2015. Spike glycoprotein genes o..\n(132 kB) +\nA Peer-Reviewed Joernel Trocking ond Anahyzing Disecse Trends\nalso on passage in vero cells.\nBe safe in the desert Kristian. Watch out for snakes - can't be too careful with all the re...",
       "redacted": false,
       "idx": 419
     },
@@ -5939,12 +5939,12 @@
       "idx": 442
     },
     {
-      "stamp_line": "10:58 ET",
+      "stamp_line": "14:58 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-13",
       "raw_date": "February 13, 2020",
       "sender": "Eddie Holmes",
-      "time": "10:58",
+      "time": "14:58",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -6108,7 +6108,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "286 https://www.washingtonpost.com/politics/2020/02/16/tom-cotton-coronavirus-conspiracy,\nwp Washington Post\nTom Cotton keeps repeating a coronavirus conspiracy theory that was already\ndebunked\nExperts say there's no evidence the virus is man-made and it's “highly unlikely” it is the\n\n== ATTACHMENT ==\nresult of an accident at a lab. (127 kB)",
+      "content": "286 https: www.washingtonpost.com/politics/2020/02/16/tom-cotion-coronavirus-conspiracy,\nwp Washington Post\nTom Cotton keeps repeating a coronavirus conspiracy theory that was already\ndebunked\nExperts say there's no evidence the virus is man-made and it's “highly unlikely” it is the\n\n== ATTACHMENT ==\nresult of an accident at a lab. (127 kB)",
       "redacted": false,
       "idx": 456
     },
@@ -6120,7 +6120,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "Some data to show that SARS-CeV-2 does indeed bind stronger to human ACE2 receptor: https://www.biorxiv.org/content/10.1101/2020,02.11.944462v1\nOh, and structure ac ent aes\nbR bioRxiv\nCryo-EM Structure of the 2019-nCoV Spike in the Prefusion Conformation\nThe outbreak of a novel betacoronavirus |(2019-nCov) represents a pandemic threat\nthat has been declared a public health emergency of international concern. The CoV\nspike (S) glycoprotein is a key target for urgently needed vaccines, therapeutic\nantibodies, and diagnostics. To facilitate medical countermeasure (MCM)\ndevelopment we determined a 3.5 A-resolution cryo-EM structure of the 2019-nCoV\nS trimer in the prefusion conformation. The predominant state of the trimer has one\nof the three receptor-binding domains (RBDs) rotated up in a receptor-accessible\nconformation. We also show biophysical and structural evidence that the 2019-nCoV\nS binds ACE2 with higher affinity than SARS-CoV S. Addit.. Show more",
+      "content": "Some data to show that SARS-CeV-2 does indeed bind stronger to human ACE2 receptor: hitps://www_biorsiv.org/content/10.1101/2020,02.11.944462v1\nOh, and structure ac ent aes\nbR bioRxiv\nCryo-EM Structure of the 2019-nCoV Spike in the Prefusion Conformation\nThe outbreak of a novel betacoronavirus |(2019-nCov) represents a pandemic threat\nthat has been declared a public health emergency of international concern. The CoV\nspike (S) glycoprotein is a key target for urgently needed vaccines, therapeutic\nantibodies, and diagnostics. To facilitate medical countermeasure (MCM)\ndevelopment we determined a 3.5 A-resolution cryo-EM structure of the 2019-nCoV\nS trimer in the prefusion conformation. The predominant state of the trimer has one\nof the three receptor-binding domains (RBDs) rotated up in a receptor-accessible\nconformation. We also show biophysical and structural evidence that the 2019-nCoV\nS binds ACE2 with higher affinity than SARS-CoV S. Addit.. Show more",
       "redacted": false,
       "idx": 457
     },
@@ -6165,12 +6165,12 @@
       "idx": 460
     },
     {
-      "stamp_line": "05:49 ET",
+      "stamp_line": "08:49 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-17",
       "raw_date": "February 17, 2020",
       "sender": "Andrew Rambaut",
-      "time": "05:49",
+      "time": "08:49",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -6628,7 +6628,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "@channel Googie Dox is now our master document ~ please use that and not the Word version. No more desert trips for me so I can handle submissions, etc. @Andrew Rambaut left a comment\nfor you in the legend\n* byy\nhttps://docs.google.com/document/d/14HI21tdEyXQSXBBDC2KWHxSrKifyMdkK WoMZGXxbd228 /edir#\ne The Proximal Origin of HCoV-19",
+      "content": "@channel Googie Dox is now our master document ~ please use that and not the Word version. No more desert trips for me so I can handle submissions, etc. @Andrew Rambaut left a comment\nfor you in the legend\n* byy\nhttps:/docs.googie.com/document/d/14HI21tdEyXQSXBBDC2KWHxSrKifyMdkK WoMZGXxbd228 /edir#\ne The Proximal Origin of HCoV-19",
       "redacted": false,
       "idx": 497
     },
@@ -6726,7 +6726,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "https://virological.org/t/the-proximal-origin-of-sars-cov-2/398\nF No content\nSome comments from Dave O'Connor - just FY",
+      "content": "http:/virological.org/t/the-proximal-origin-of-sars-cov-2/398\nF No content\nSome comments from Dave O'Connor - just FY",
       "redacted": false,
       "idx": 505
     },
@@ -6842,7 +6842,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "2 ® We have our first citation in the Lancet: https://www.thelancet.com/pb-assets/Lencet/pdfs/S0140673620304 187. pdf",
+      "content": "2 ® We have our first citation in the Lancet: https://www..thelancet.com/pb-assets/Lencet/pdfs/S0140673620304 187. pdf",
       "redacted": false,
       "idx": 514
     },
@@ -6889,12 +6889,12 @@
       "idx": 517
     },
     {
-      "stamp_line": "19:52 ET",
+      "stamp_line": "18:52 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-18",
       "raw_date": "February 18, 2020",
       "sender": "Robert Garry",
-      "time": "19:52",
+      "time": "18:52",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -6903,12 +6903,12 @@
       "idx": 518
     },
     {
-      "stamp_line": "16:55 ET",
+      "stamp_line": "18:53 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-18",
       "raw_date": "February 18, 2020",
       "sender": "Andrew Rambaut",
-      "time": "16:55",
+      "time": "18:53",
       "kind": "slack",
       "thread_id": null,
       "attachments": [
@@ -7017,12 +7017,12 @@
       "idx": 526
     },
     {
-      "stamp_line": "19:09 ET",
+      "stamp_line": "18:56 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-18",
       "raw_date": "February 18, 2020",
       "sender": "Kristian Andersen",
-      "time": "19:09",
+      "time": "18:56",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -7031,12 +7031,12 @@
       "idx": 527
     },
     {
-      "stamp_line": "17:10 ET",
+      "stamp_line": "19:00 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-18",
       "raw_date": "February 18, 2020",
       "sender": "Andrew Rambaut",
-      "time": "17:10",
+      "time": "19:00",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -7218,7 +7218,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "Here's a tblastx: https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMO=GetGRID*4TBH83NHO14",
+      "content": "Here's a tblastx: https://blast.ncbi.nim.nih.gov/Blast.cgi?CMO=GetGRID*4TBH83NHO14",
       "redacted": false,
       "idx": 541
     },
@@ -7598,7 +7598,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "https://science.sciencemag.org/content/sci/earty/2020/02/19/scence.abb2507. full. pdf",
+      "content": "hittps:/science.sciencemag.org/content/sci/earty/2020/02/19/scence.abb2507. full. pdf",
       "redacted": false,
       "idx": 569
     },
@@ -7610,7 +7610,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "i didnt realize Jeremy signed this\nhttps://www.thelancet.com/journals/lancet/article/PIS0140-6736(20)304 18-9/fulltext#back-bib1\nPretty interesting. Also, coverage in Scence:\nhttps://www.sciencemag.org/news/2020/02/scientists-strongly-condemn-rumors-and-conspiracy-theories-about-origin-coronavirus\n\\ think it's dangerous to separate the origins into cither you [a) believe it's entirely natural, or (b) it's a conspiracy. It's a very fine line.\nScience I AAAS\nScientists ‘strongly condemn’ rumors and conspiracy theories about origin of a\ncoronavirus outbreak\nA statement in The Lancet assails misinformation about the possibility that COVID-19\ncame from a lab in Wuhan, China\n(273 kB) +",
+      "content": "i didnt realize Jeremy signed this\nhttps://www.thelancet.com/journals/lancet/article/PIS0140-6736(20)304 18-9/fulltext#back-bib1\nPretty interesting. Also, coverage in Scence:\nhttps: www.sciencemag.org/news/2020/02/scientists-strongly-condemn-rumors-and-conspiracy-theories-about-origin-coronavirus\n\\ think it's dangerous to separate the origins into cither you [a) believe it's entirely natural, or (b) it's a conspiracy. It's a very fine line.\nScience I AAAS\nScientists ‘strongly condemn’ rumors and conspiracy theories about origin of a\ncoronavirus outbreak\nA statement in The Lancet assails misinformation about the possibility that COVID-19\ncame from a lab in Wuhan, China\n(273 kB) +",
       "redacted": false,
       "idx": 570
     },
@@ -7833,12 +7833,12 @@
       "idx": 588
     },
     {
-      "stamp_line": "05:59 ET",
+      "stamp_line": "05:53 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-19",
       "raw_date": "February 19, 2020",
       "sender": "Andrew Rambaut",
-      "time": "05:59",
+      "time": "05:53",
       "kind": "slack",
       "thread_id": null,
       "attachments": [
@@ -7849,12 +7849,12 @@
       "idx": 589
     },
     {
-      "stamp_line": "04:27 ET",
+      "stamp_line": "06:27 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-19",
       "raw_date": "February 19, 2020",
       "sender": "Robert Garry",
-      "time": "04:27",
+      "time": "06:27",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -7977,12 +7977,12 @@
       "idx": 598
     },
     {
-      "stamp_line": "09:06 ET",
+      "stamp_line": "09:38 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-20",
       "raw_date": "February 20, 2020",
       "sender": "Andrew Rambaut",
-      "time": "09:06",
+      "time": "09:38",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -7991,12 +7991,12 @@
       "idx": 599
     },
     {
-      "stamp_line": "07:29 ET",
+      "stamp_line": "09:39 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-20",
       "raw_date": "February 20, 2020",
       "sender": "Robert Garry",
-      "time": "07:29",
+      "time": "09:39",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -8014,7 +8014,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "& You'd probably get different perhaps opposite results with a rapid forced passage vs a meandering slow passage.\nGrowing virus stocks and avoiding generation of internal deletions aka defective interfering particles is something of an art form. I\nhttps://link.springer.com/chapter/10.1007%2F978-1-4684-1280-2_23\nSpringerLink\nDefective Interfering Particles of Coronavirus\nDefective interfering (DI) particles are viral deletion mutants, which cannot repicate\nby themselves and require homologous standard viruses to provide helper functions\nfor their replication. DI\n\"We have. however, detected the generation of coronavirus DI particles during high-multiplicity passages of the JHM strain of MHV in tissue culture (Makino et al.. 1984a). These DI particles\ncontain a single-stranded RNA genome of roughly 5.2 « 106 molecular weight which is slightly smaller than the genome of the standard virus (M.W. 5.4 x 106). Oligonucleotide fingerprinting\nstudies showed that the RNA of JHM D1 is missing several large RNase T1-resistant oligonucleotides, which represent several different regions on the standard viral genome (Makino et al., 1984a\n1984b). This observation suggests that the coronavirus DI particles are unique since the DI genomes of other viruses usually exhibit more extensive deletions,",
+      "content": "& You'd probably get different perhaps opposite results with a rapid forced passage vs a meandering slow passage.\nGrowing virus stocks and avoiding generation of internal deletions aka defective interfering particles is something of an art form. I\nhttps://link.springer.com/chapter!10.1007%2F978-1-4684-1280-2_23\nSpringerLink\nDefective Interfering Particles of Coronavirus\nDefective interfering (DI) particles are viral deletion mutants, which cannot repicate\nby themselves and require homologous standard viruses to provide helper functions\nfor their replication. DI\n\"We have. however, detected the generation of coronavirus DI particles during high-multiplicity passages of the JHM strain of MHV in tissue culture (Makino et al.. 1984a). These DI particles\ncontain a single-stranded RNA genome of roughly 5.2 « 106 molecular weight which is slightly smaller than the genome of the standard virus (M.W. 5.4 x 106). Oligonucleotide fingerprinting\nstudies showed that the RNA of JHM D1 is missing several large RNase T1-resistant oligonucleotides, which represent several different regions on the standard viral genome (Makino et al., 1984a\n1984b). This observation suggests that the coronavirus DI particles are unique since the DI genomes of other viruses usually exhibit more extensive deletions,",
       "redacted": false,
       "idx": 601
     },
@@ -8141,12 +8141,12 @@
       "idx": 611
     },
     {
-      "stamp_line": "19:25 ET",
+      "stamp_line": "13:25 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-20",
       "raw_date": "February 20, 2020",
       "sender": "Robert Garry",
-      "time": "19:25",
+      "time": "13:25",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -8155,12 +8155,12 @@
       "idx": 612
     },
     {
-      "stamp_line": "15:27 ET",
+      "stamp_line": "13:27 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-20",
       "raw_date": "February 20, 2020",
       "sender": "Andrew Rambaut",
-      "time": "15:27",
+      "time": "13:27",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -8183,12 +8183,12 @@
       "idx": 614
     },
     {
-      "stamp_line": "15:09 ET",
+      "stamp_line": "13:29 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-20",
       "raw_date": "February 20, 2020",
       "sender": "Andrew Rambaut",
-      "time": "15:09",
+      "time": "13:29",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -8225,12 +8225,12 @@
       "idx": 617
     },
     {
-      "stamp_line": "15:00 ET",
+      "stamp_line": "13:36 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-20",
       "raw_date": "February 20, 2020",
       "sender": "Robert Garry",
-      "time": "15:00",
+      "time": "13:36",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -8251,12 +8251,12 @@
       "idx": 619
     },
     {
-      "stamp_line": "12:27 ET",
+      "stamp_line": "13:37 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-20",
       "raw_date": "February 20, 2020",
       "sender": "Robert Garry",
-      "time": "12:27",
+      "time": "13:37",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -8305,12 +8305,12 @@
       "idx": 623
     },
     {
-      "stamp_line": "01:58 ET",
+      "stamp_line": "13:58 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-20",
       "raw_date": "February 20, 2020",
       "sender": "Eddie Holmes",
-      "time": "01:58",
+      "time": "13:58",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -8478,7 +8478,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "Mie Cats were definitely infected with SARS-Cov-1\nTEE,\nhttps://www.nature.com/articles/425915a\nNature\nSARS virus infection of cats and ferrets\nThere is now a choice of animal models for testing therapies against the human virus",
+      "content": "Mie Cats were definitely infected with SARS-Cov-1\nTEE,\nhttps:i/wwew.nature.com/articles/425915a\nNature\nSARS virus infection of cats and ferrets\nThere is now a choice of animal models for testing therapies against the human virus",
       "redacted": false,
       "idx": 637
     },
@@ -8586,7 +8586,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "@i@ https://docs google.com/document/d/14HI21tdEyXQSXBBDC2KwHxSrk ff yMdK WdMZGXxbd228 /edit#\nis this the link to the paper you're using?",
+      "content": "@i@ https: docs google.com/document/d/14HI21tdEyXQSXBBDC2KwHxSrk ff yMdK WdMZGXxbd228 /edit#\nis this the link to the paper you're using?",
       "redacted": false,
       "idx": 646
     },
@@ -8670,7 +8670,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "I suggest we wait a few days. I hear rumblings. Not sure yet. Vince Racaniello basically repeated our paper: https://www.virology.ws/2020/02/20/pangolins-and-the-origin-of-sars-cov-2\ncoronavirus\nvirology.ws\nPangolins and the origin of SARS-CoV-2 coronavirus\nA coronavirus related to SARS-CoV-2 has been isolated from Malayan pangolins\nillegally imported into Guangdong province, but it is not the precursor of SARS-CoV-2",
+      "content": "I suggest we wait a few days. I hear rumblings. Not sure yet. Vince Racaniello basically repeated our paper: http://wwwevirology.ws/2020/02/20/pangolins-and-the-origin-of-sars-cov-2\ncoronavirus\nvirology.ws\nPangolins and the origin of SARS-CoV-2 coronavirus\nA coronavirus related to SARS-CoV-2 has been isolated from Malayan pangolins\nillegally imported into Guangdong province, but it is not the precursor of SARS-CoV-2",
       "redacted": false,
       "idx": 653
     },
@@ -8817,7 +8817,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "2. https://www.politico.com/news/2020/02/21/coronavirus-trump-white-house-116650\nPOLITICO\nWhite House fears coronavirus could shape Trump's 2020 fortunes\nThough Trump in public has downplayed the virus, privately he has voiced his own\n\n== ATTACHMENT ==\nanxieties. (180 kB)\n> ee. I As as\n4 a6 . ay .\n‘ ‘ ad qc, 4\n1.9\n\nReviewer #2 pretty much got it all wrong - Nature should reconsider. Andrew did a great job upgrading the lab origin response.\nA eer 7 amen ave",
+      "content": "2. hittps:/www.politico.com/news/2020/02/21/coronavirus-trump-white-house-116650\nPOLITICO\nWhite House fears coronavirus could shape Trump's 2020 fortunes\nThough Trump in public has downplayed the virus, privately he has voiced his own\n\n== ATTACHMENT ==\nanxieties. (180 kB)\n> ee. I As as\n4 a6 . ay .\n‘ ‘ ad qc, 4\n1.9\n\nReviewer #2 pretty much got it all wrong - Nature should reconsider. Andrew did a great job upgrading the lab origin response.\nA eer 7 amen ave",
       "redacted": false,
       "idx": 664
     },
@@ -8855,7 +8855,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "Just created a document, but no text yet. Also shared the whole Google folder with y'all so it's easier to access these individual documents.\nhttps://docs.google.com/document/d/1TQoMX8u_QiumfeLLwi06TLI-VKPBefsv34tjO8fLE6o/edit\nWaiting to hear from Eddie what's up in China before next steps.\n\n== EMBEDDED DOC ==\nNature rebuttal letter\nas We need to give Clare several reasons to reconsider.\nhttps://www.bbc.com/news/world-asia-51596665\nBBC News\nCoronavirus cases double in one day in South Korea\nThe PM describes the situation as grave as the total number of confirmed infections\n\n== ATTACHMENT ==\nrises to 433. (114 kB)\nYe) 1\n/ ¢ ?\nOG NEWs 4 t ¢\n\nOne reason to reconsider is that this epidemic is looking more and more like a pandemic.",
+      "content": "Just created a document, but no text yet. Also shared the whole Google folder with y'all so it's easier to access these individual documents.\nhttps://docs.google.com/document/d/1TQoMX8u_QiumfeLLwi06TLI-VKPBefsv34tjO8fLE6o/edit\nWaiting to hear from Eddie what's up in China before next steps.\n\n== EMBEDDED DOC ==\nNature rebuttal letter\nas We need to give Clare several reasons to reconsider.\nhttps: //www.bbe.com/news/world-asia-51596665\nBBC News\nCoronavirus cases double in one day in South Korea\nThe PM describes the situation as grave as the total number of confirmed infections\n\n== ATTACHMENT ==\nrises to 433. (114 kB)\nYe) 1\n/ ¢ ?\nOG NEWs 4 t ¢\n\nOne reason to reconsider is that this epidemic is looking more and more like a pandemic.",
       "redacted": false,
       "idx": 667
     },
@@ -9033,7 +9033,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "® I can’t contribute much here, but one consistent observation over the years is that virus fusion proteins use a “modular” approach, swapping in and out various components. If you're splitting the\nspike protein up for comparisons at the nuc and protein levels and if there's not another more rationale way to pick the splits, it might make sense {to me] to do it according to the “modules.” This\nalignment shows the \"modules\" in spike: https://www.nature.com/articles/nature17200/figures/10. The orange “variable loop” is the receptor binding domain for CoVs that have a protein\nreceptor like ACE-2. For CoVs that use sialic acid receptors the binding is in the NTD. MERS CoV might use both classes of receptors (sialic acid and a protein} . For some CoVs like HKU11 (in the\npointed to alignment) there is a “modular” insertion in the variable loop of a proline, serine, threonine rich region aka a mucin-like domain. («",
+      "content": "® I can’t contribute much here, but one consistent observation over the years is that virus fusion proteins use a “modular” approach, swapping in and out various components. If you're splitting the\nspike protein up for comparisons at the nuc and protein levels and if there's not another more rationale way to pick the splits, it might make sense {to me] to do it according to the “modules.” This\nalignment shows the \"modules\" in spike: https://wwws.nature.com/articles/nature17200/figures/10. The orange “variable loop” is the receptor binding domain for CoVs that have a protein\nreceptor like ACE-2. For CoVs that use sialic acid receptors the binding is in the NTD. MERS CoV might use both classes of receptors (sialic acid and a protein} . For some CoVs like HKU11 (in the\npointed to alignment) there is a “modular” insertion in the variable loop of a proline, serine, threonine rich region aka a mucin-like domain. («",
       "redacted": false,
       "idx": 680
     },
@@ -9061,7 +9061,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "Our friend Ralph wrote about it\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC2838128\n® PubMed Central (PMC)\nRecombination, Reservoirs, and the Modular Spike: Mechanisms of Coronavirus\nCross-Species Transmission\nOver the past 30 years, several cross-species transmission events, as well as changes\nin virus tropism, have mediated significant animal and human diseases. Most notable\nis severe acute respiratory syndrome (SARS), a lower respiratory tract disease of",
+      "content": "Our friend Ralph wrote about it\nhttps: //www.ncbi.nim.nih.gov/pmc/articles/PMC2838128\n® PubMed Central (PMC)\nRecombination, Reservoirs, and the Modular Spike: Mechanisms of Coronavirus\nCross-Species Transmission\nOver the past 30 years, several cross-species transmission events, as well as changes\nin virus tropism, have mediated significant animal and human diseases. Most notable\nis severe acute respiratory syndrome (SARS), a lower respiratory tract disease of",
       "redacted": false,
       "idx": 682
     },
@@ -9075,7 +9075,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "https://wwwnc.cdc.gov/eid/article/19/7/12-1094_article I\n= Emerging Infectious Diseases journal\nMutation in Spike Protein Cleavage Site and Pathogenesis of Feline Coronavirus\nFeline coronaviruses (FCoV) exist as 2 biotypes: feline enteric coronavirus (FECV) and\n\n== ATTACHMENT ==\nfeline infectious peritonitis virus (FIPV). FECV causes subclin... (132 kB)\n\nA Peer-Reviewed Jeernal Tracking ond Analyzing Disease Irends\nProbably need to reference this.",
+      "content": "https://wwwnce.cde.gov/eid/article/19/7/12-1094_article I\n= Emerging Infectious Diseases journal\nMutation in Spike Protein Cleavage Site and Pathogenesis of Feline Coronavirus\nFeline coronaviruses (FCoV) exist as 2 biotypes: feline enteric coronavirus (FECV) and\n\n== ATTACHMENT ==\nfeline infectious peritonitis virus (FIPV). FECV causes subclin... (132 kB)\n\nA Peer-Reviewed Jeernal Tracking ond Analyzing Disease Irends\nProbably need to reference this.",
       "redacted": false,
       "idx": 683
     },
@@ -9137,7 +9137,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "I think that’s a distinct possbility. I'd look for a cathepsin cleavage site as well. (edited)\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC2519682/\nB® PubMed Central (PMC)\nCathepsin L Functionally Cleaves the Severe Acute Respiratory Syndrome\nCoronavirus Class I Fusion Protein Upstream of Rather than Adjacent to the Fusion\nPeptide\nUnlike other class I viral fusion proteins, spike proteins on severe acute respiratory\nsydrome coronavirus virions are uncleaved. As we and others have demonstrated.\ninfection by this virus depends on cathepsin proteases present in endosomal\ncompartments ...\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC6226446/ ]\n® PubMed Central (PMC)\nFunctional analysis of potential cleavage sites in the MERS-coronavirus spike\nprotein\nThe Middle East respiratory syndrome-related coronavirus (MERS-CoV) can cause\nsevere disease and has pandemic patential, Therefore, development of antiviral\nstrategies is an important task. The activation of the viral spike protein (S) by host ceil\nproteases ...",
+      "content": "I think that’s a distinct possbility. I'd look for a cathepsin cleavage site as well. (edited)\nhttps: www.ncbi.nimnih.gov/pmc/artcles/PMC2519682/\nB® PubMed Central (PMC)\nCathepsin L Functionally Cleaves the Severe Acute Respiratory Syndrome\nCoronavirus Class I Fusion Protein Upstream of Rather than Adjacent to the Fusion\nPeptide\nUnlike other class I viral fusion proteins, spike proteins on severe acute respiratory\nsydrome coronavirus virions are uncleaved. As we and others have demonstrated.\ninfection by this virus depends on cathepsin proteases present in endosomal\ncompartments ...\nhttps. www.ncbinlm.nih.gov/pmc/articles/PMC6226446/ ]\n® PubMed Central (PMC)\nFunctional analysis of potential cleavage sites in the MERS-coronavirus spike\nprotein\nThe Middle East respiratory syndrome-related coronavirus (MERS-CoV) can cause\nsevere disease and has pandemic patential, Therefore, development of antiviral\nstrategies is an important task. The activation of the viral spike protein (S) by host ceil\nproteases ...",
       "redacted": false,
       "idx": 688
     },
@@ -9205,7 +9205,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "a https://qz.com/1805422/wuhan-virology-lab-unablo-to-quell-china-coronavirus-conspiracies/\n© Quartz\nWhy a Chinese virology lab is unable to quell the coronavirus conspiracy theories\naround it\nThe episode shows how China's public has an decreasing level of trust in the\n\n== ATTACHMENT ==\ngovernment since the outbreak of the coronavirus, say experts. (78 kB)\n&\n—-= me A I\n“eye\n‘\n\\\n\nSome journals, such as Nature, have appended notes to older stories about the Wuhan lab calling the conspiracy theories about the lab “unverified.”\n~ Nature News & Comment\nInside the Chinese lab poised to study world's most dangerous pathogens\nMaximum-security biolab is part of plan to buiki network of BSL-4 facilities across\nChina.\nWow - not sure Nature is correct on this.\n\n== ATTACHMENT ==\nimage.ng\nre I ee <«\n\nInsice the Chinese lab potsed to study worlds most\ndangerous pathogens\nCeamn soem Boles Spat of pur to Pend netmort © BK 4 faces eooes Che\nEiters nome, Jenaary ERD Mery mores eve promutent 48 remtine Memory Our tee Ahr\n(eo cenaams #70 ote FOU © UT Fe eee eerTe! ret sage = Coenme\n2078 Mane weno se tence Pat Pst Nien meet Hah na\ner ena  e o oe rare\nmrunan cna {\nDeere nina 4 208 ya ne mt na rtd Ne",
+      "content": "a https:/qz.com/1805422/wuhan-virology-lab-unablo-to-quell-china-coronavirus-conspiracies/\n© Quartz\nWhy a Chinese virology lab is unable to quell the coronavirus conspiracy theories\naround it\nThe episode shows how China's public has an decreasing level of trust in the\n\n== ATTACHMENT ==\ngovernment since the outbreak of the coronavirus, say experts. (78 kB)\n&\n—-= me A I\n“eye\n‘\n\\\n\nSome journals, such as Nature, have appended notes to older stories about the Wuhan lab calling the conspiracy theories about the lab “unverified.”\n~ Nature News & Comment\nInside the Chinese lab poised to study world's most dangerous pathogens\nMaximum-security biolab is part of plan to buiki network of BSL-4 facilities across\nChina.\nWow - not sure Nature is correct on this.\n\n== ATTACHMENT ==\nimage.ng\nre I ee <«\n\nInsice the Chinese lab potsed to study worlds most\ndangerous pathogens\nCeamn soem Boles Spat of pur to Pend netmort © BK 4 faces eooes Che\nEiters nome, Jenaary ERD Mery mores eve promutent 48 remtine Memory Our tee Ahr\n(eo cenaams #70 ote FOU © UT Fe eee eerTe! ret sage = Coenme\n2078 Mane weno se tence Pat Pst Nien meet Hah na\ner ena  e o oe rare\nmrunan cna {\nDeere nina 4 208 ya ne mt na rtd Ne",
       "redacted": false,
       "idx": 693
     },
@@ -9488,12 +9488,12 @@
       "idx": 715
     },
     {
-      "stamp_line": "15:19 ET",
+      "stamp_line": "15:03 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-24",
       "raw_date": "February 24, 2020",
       "sender": "Kristian Andersen",
-      "time": "15:19",
+      "time": "15:03",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -9502,12 +9502,12 @@
       "idx": 716
     },
     {
-      "stamp_line": "01:52 ET",
+      "stamp_line": "15:23 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-24",
       "raw_date": "February 24, 2020",
       "sender": "Robert Garry",
-      "time": "01:52",
+      "time": "15:23",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -9650,12 +9650,12 @@
       "idx": 727
     },
     {
-      "stamp_line": "14:02 ET",
+      "stamp_line": "16:03 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-24",
       "raw_date": "February 24, 2020",
       "sender": "Robert Garry",
-      "time": "14:02",
+      "time": "16:03",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -9970,12 +9970,12 @@
       "idx": 751
     },
     {
-      "stamp_line": "09:45 ET",
+      "stamp_line": "03:45 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-25",
       "raw_date": "February 25, 2020",
       "sender": "Andrew Rambaut",
-      "time": "09:45",
+      "time": "03:45",
       "kind": "slack",
       "thread_id": null,
       "attachments": [
@@ -10409,7 +10409,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "2. Pangolin cov genome came up on genbank:\nhttps://www.ncbi.nlm.nih.gov/nuccore/MT084071.1\nSeems closely related to the Guangdong/1/2020\nMissing chunks though. Just says this virus was circulating in early 2019 (edited)",
+      "content": "2. Pangolin cov genome came up on genbank:\nhttps: www.nebinim.nih.gov/nuccore/MT084071.1\nSeems closely related to the Guangdong/1/2020\nMissing chunks though. Just says this virus was circulating in early 2019 (edited)",
       "redacted": false,
       "idx": 786
     },
@@ -10599,7 +10599,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "I think we should definitely use it - but yeah, we'd probably need to standardize the two to make it easier to follow. Love this one - it very nicely illustrates the natural scenario explaining the RBD!\nMore ‘credit’ from TWiV.... https://www.microbe.tv/twievo/twievo-52/\n® microbe.ty\nTWIEVO 52: Virus evolution by land and by sea and by CoV I This Week in Evolution\nNels and Vincent examine SARS-CoV-2 from an evolutionary viewpoint, examining\nwhat the spike glycoprotein sequence informs us about the origin of the virus,\nNice little figure they have there",
+      "content": "I think we should definitely use it - but yeah, we'd probably need to standardize the two to make it easier to follow. Love this one - it very nicely illustrates the natural scenario explaining the RBD!\nMore ‘credit’ from TWiV.... http:/www.microbe.tv/twievo/twievo-52/\n® microbe.ty\nTWIEVO 52: Virus evolution by land and by sea and by CoV I This Week in Evolution\nNels and Vincent examine SARS-CoV-2 from an evolutionary viewpoint, examining\nwhat the spike glycoprotein sequence informs us about the origin of the virus,\nNice little figure they have there",
       "redacted": false,
       "idx": 801
     },
@@ -11101,7 +11101,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "https://www.washingtonexaminer.com/washington-secrets/fauci-chinese-cat-feasts-linked-to-viru:\n& Washington Examiner\nFauci: Chinese cat ‘feasts’ linked to virus\nA top U.S. medical official on Thursday said the coronavirus could have spread in China\nthrough cat feasts.\n123 kB} +\nN \"7 ~ h) -",
+      "content": "https: wvew.washingtonexaminer.com/washington-secrets/fauci-chinese-cat-feasts-linked-to-viru:\n& Washington Examiner\nFauci: Chinese cat ‘feasts’ linked to virus\nA top U.S. medical official on Thursday said the coronavirus could have spread in China\nthrough cat feasts.\n123 kB} +\nN \"7 ~ h) -",
       "redacted": false,
       "idx": 842
     },
@@ -11149,7 +11149,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "I'm still stuck in meetings - all fucking week. My last meeting of the week wil end at 4pm and then finally I'll have time. I'll get it done and then bounce over to Nature Medicine tomorrow.\nBTW - Eddie, don't know if you saw this? https://www.scmp.com/tech/big-tech/article/3052624/more-60-cent-chinese-companies-still-telecommuting-amid-coronavirus\n® South China Morning Post\nWorkers at 60 per cent of Chinese firms still telecommuting under lockdown\nMore than 60 per cent of companies in major Chinese cities have not reopened offices\nsince the Lunar New Year holiday. allowing employees to work remotely from home\n(238 kB) +\nSik ee Ae ee ET zi ig\nSie m YS\nhi oe > ie\n© BD) sounctima mornin \"15 EAS ea\nSe Tay T tee I ey . tet\nReference to show that the furin site is functional in hCoV: http www.cell.com/pb-assets/journals/research/cell/Cell_ [0092-8674(20)30262 rdf",
+      "content": "I'm still stuck in meetings - all fucking week. My last meeting of the week wil end at 4pm and then finally I'll have time. I'll get it done and then bounce over to Nature Medicine tomorrow.\nBTW - Eddie, don't know if you saw this? https://wwwscmp.com/tech/big-tech/article/3052624/more-60-cent-chinese-companies -still-telecommuting-amid-coronavirus\n® South China Morning Post\nWorkers at 60 per cent of Chinese firms still telecommuting under lockdown\nMore than 60 per cent of companies in major Chinese cities have not reopened offices\nsince the Lunar New Year holiday. allowing employees to work remotely from home\n(238 kB) +\nSik ee Ae ee ET zi ig\nSie m YS\nhi oe > ie\n© BD) sounctima mornin \"15 EAS ea\nSe Tay T tee I ey . tet\nReference to show that the furin site is functional in hCoV: http www.cell.com/pb-assets/journals/research/cell/Cell_ [0092-8674(20)30262 rdf",
       "redacted": false,
       "idx": 846
     },
@@ -11334,16 +11334,16 @@
       "idx": 860
     },
     {
-      "stamp_line": "01:50 ET",
+      "stamp_line": "15:40 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-29",
       "raw_date": "February 29, 2020",
       "sender": "Robert Garry",
-      "time": "01:50",
+      "time": "15:40",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "“So you're telling me there's a chance”\nhttps://www.bing.com/videos/search?\nq=s0+i%27ve+got+a+chance&&view =detail&mid=7 CEFE6FF44B28BC195A87CEFES6FF44828BC 19 5A8&rvsmid=F30C2A255 7AABBEFESF 1F30C2A255 7AABBEFESF1&FORM=VDQVAP",
+      "content": "“So you're telling me there's a chance”\nhttps: /www.bing.com/videos/search?\nq=s0+i%27ve+got+a+chance&&view =detail&mid=7 CEFE6FF44B28BC195A87CEFES6FF44828BC 19 5A8&rvsmid=F30C2A255 7AABBEFESF 1F30C2A255 7AABBEFESF1&FORM=VDQVAP",
       "redacted": false,
       "idx": 861
     },
@@ -11371,7 +11371,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "Nature (News) publishes this? https://www.nature.com/articles/d41586-020-00548-w.\n* Nature\nMystery deepens over animal source of coronavirus\nPangolins are a prime suspect, but a slew of genetic analyses has yet to find conclusive\n\n== ATTACHMENT ==\nproof. (65 kB)\naz. S\nI f 4 ~ 6\na@ 7 _Ae :\n7 ey\npant F Ge eo ee a .",
+      "content": "Nature (News) publishes this? https://vwww.nature.com/artides/d41586-020-00548-w.\n* Nature\nMystery deepens over animal source of coronavirus\nPangolins are a prime suspect, but a slew of genetic analyses has yet to find conclusive\n\n== ATTACHMENT ==\nproof. (65 kB)\naz. S\nI f 4 ~ 6\na@ 7 _Ae :\n7 ey\npant F Ge eo ee a .",
       "redacted": false,
       "idx": 863
     },
@@ -12529,7 +12529,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "|assume ycu saw this: https://www.scmp.com/news/china/society/article/3074991/coronavirus-chinas-first-confirmed-covid-19-case-traced-back\n= South China Morning Post\nChina's first confirmed Covid-19 case traced back to November 17\nGovernment records suggest first person infected with new disease may have been a\nHubei resident aged 55, but ‘patient zero’ has yet to be confirmed\nI aes Oe",
+      "content": "|assume ycu saw this: https: //wwrw.scmp.com/news/china/society/article/ 307499 1/coronavirus-chinas-first-confirmed-covid-19-case-traced-back\n= South China Morning Post\nChina's first confirmed Covid-19 case traced back to November 17\nGovernment records suggest first person infected with new disease may have been a\nHubei resident aged 55, but ‘patient zero’ has yet to be confirmed\nI aes Oe",
       "redacted": false,
       "idx": 959
     },
@@ -12699,12 +12699,12 @@
       "idx": 972
     },
     {
-      "stamp_line": "05:05 ET",
+      "stamp_line": "03:03 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-03-18",
       "raw_date": "March 18, 2020",
       "sender": "Andrew Rambaut",
-      "time": "05:05",
+      "time": "03:03",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -12713,12 +12713,12 @@
       "idx": 973
     },
     {
-      "stamp_line": "03:07 ET",
+      "stamp_line": "03:09 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-03-18",
       "raw_date": "March 18, 2020",
       "sender": "Andrew Rambaut",
-      "time": "03:07",
+      "time": "03:09",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -12776,7 +12776,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "® Priceless: https://twitter.com/CARRENEAN\n¥ twitter.com\nLEONARD DOBSON (@CARRENEAN) I Twitter\nThe latest Tweets from LEONARD DOBSON (@CARRENEAN): \"There's more to air\ncrash investigation than concluding ‘Pilot Error’ or ‘Mechanical Failure’..........\nhttps://t.co/XuHjiL5pZU\"",
+      "content": "® Priceless: https://twitter.com/CARRENEAN\n¥ twitter.com\nLEONARD DOBSON (@CARRENEAN) I Twitter\nThe latest Tweets from LEONARD DOBSON (@CARRENEAN): \"There's more to air\ncrash investigation than concluding ‘Pilot Error’ or ‘Mechanical Failure’..........\nhttps: //t.co/XuHjiL5pZU\"",
       "redacted": false,
       "idx": 978
     },
@@ -12790,7 +12790,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "I don't know man - he might be on to something. https://twitter.com/CARRENEAN/status/1078041436975755264?s*20",
+      "content": "I don't know man - he might be on to something. https;//twitter.com/CARRENEAN/status/1078041436975755264?s*20",
       "redacted": false,
       "idx": 979
     },
@@ -12957,12 +12957,12 @@
       "idx": 991
     },
     {
-      "stamp_line": "03:29 ET",
+      "stamp_line": "03:30 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-03-19",
       "raw_date": "March 19, 2020",
       "sender": "Andrew Rambaut",
-      "time": "03:29",
+      "time": "03:30",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -12971,12 +12971,12 @@
       "idx": 992
     },
     {
-      "stamp_line": "02:20 ET",
+      "stamp_line": "03:31 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-03-19",
       "raw_date": "March 19, 2020",
       "sender": "Kristian Andersen",
-      "time": "02:20",
+      "time": "03:31",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -13006,7 +13006,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "Ehm, well above already.. https://www.altmetric.com/details/77676422#score\naltmetric.com\nReport for: The proximal origin of SARS-CoV-2\nIn the top 5% of all research outputs scored by Altmetric",
+      "content": "Ehm, well above already.. https:// www.altmetric.com/details/77676422#score\naltmetric.com\nReport for: The proximal origin of SARS-CoV-2\nIn the top 5% of all research outputs scored by Altmetric",
       "redacted": false,
       "idx": 995
     },
@@ -13046,17 +13046,17 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "Importantly. https://biorxiv.altmetric.com/details/74957328\nbiorxiv.altmetric.com\nReport for: Uncanny similarity of unique inserts in the 2019-nCoV spike protein to\nHIV-1 gp120 and Gag j\nIn the top 5% of all research outputs scored by Altmetric",
+      "content": "Importantly. https://biorxiv.altmetric.com/detalls/74957328\nbiorxiv.altmetric.com\nReport for: Uncanny similarity of unique inserts in the 2019-nCoV spike protein to\nHIV-1 gp120 and Gag j\nIn the top 5% of all research outputs scored by Altmetric",
       "redacted": false,
       "idx": 998
     },
     {
-      "stamp_line": "05:40 ET",
+      "stamp_line": "03:40 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-03-19",
       "raw_date": "March 19, 2020",
       "sender": "Andrew Rambaut",
-      "time": "05:40",
+      "time": "03:40",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -13065,12 +13065,12 @@
       "idx": 999
     },
     {
-      "stamp_line": "00:51 ET",
+      "stamp_line": "03:41 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-03-19",
       "raw_date": "March 19, 2020",
       "sender": "Kristian Andersen",
-      "time": "00:51",
+      "time": "03:41",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -13135,12 +13135,12 @@
       "idx": 1004
     },
     {
-      "stamp_line": "10:09 ET",
+      "stamp_line": "16:09 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-03-19",
       "raw_date": "March 19, 2020",
       "sender": "Eddie Holmes",
-      "time": "10:09",
+      "time": "16:09",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -13462,7 +13462,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "It's actually this: https://twitter.cor kpickles/status/1241156502305427455\nSomebody had put me on a list too so it came through via ema",
+      "content": "It's actually this: https: //twitter.cor kpickles/status/1241156502305427455\nSomebody had put me on a list too so it came through via ema",
       "redacted": false,
       "idx": 1031
     },
@@ -13538,7 +13538,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "a Apparently we said it could have been circulating in humans for decades...\nhttps://www.scmp.com/news/china/science/article/3077442/coronavirus-pathogen-could-have-been-spreading-humans-decades\n“© South China Morning Post\nCoronavirus may have been spreading in humans for decades, study says\nVirus may have jumped from animal to humans long before the first detection in\nWuhan, according to research by an international team of scientists.\nMar 20th, 2020 (124 kB}\nne / ; aS\nms I >’ 4. ees\n, = - I hs é :",
+      "content": "a Apparently we said it could have been circulating in humans for decades...\nhttps: www.semp.com/news/china/science/article/3077442/coronavirus-pathogen-could-have-been-spreading-humans-decades\n“© South China Morning Post\nCoronavirus may have been spreading in humans for decades, study says\nVirus may have jumped from animal to humans long before the first detection in\nWuhan, according to research by an international team of scientists.\nMar 20th, 2020 (124 kB}\nne / ; aS\nms I >’ 4. ees\n, = - I hs é :",
       "redacted": false,
       "idx": 1037
     },
@@ -13774,7 +13774,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "Andrew Rambaut - where you previously asked about the deletion, is this the study you were referring to? Pretty interesting: https://virological.org/t/identification-of OMe eletion-in-tt\npike-protein-« ars-Cov-2/451\nD Virological\nIdentification of a common deletion in the spike protein of SARS-CoV-2\nIdentification of a common deletion in the spike protein of SARS-CoV-2 Zhe Liu1,2\nHuanying Zheng2, Runyu Yuani,2, Mingyue Li3, Huifang Lin1,2, Jingju Peng1,2,\nQianlin Xiong1.2, Jiufeng Sun1,2, Baisheng Li2, Jie Wu2, Ruben J.G. Hulswit4.\nThomas A. Bowden4, Andrew Rambaut5, Nick Lomané, Oliver G Pybus4, Changwen\nKe2, Jing Lu1,2 Affiliations: 1 Guangdong Provincial Institution of Public Health,\nGuangzhou, China; 2 Guangdong Provincial Center for Disease Control and\nPrevention, Guangzhou, China.\nReading time Likes\n4mins .@",
+      "content": "Andrew Rambaut - where you previously asked about the deletion, is this the study you were referring to? Pretty interesting: http://virological.org/t/identification-of OMe eletion-in-tt\npike-protein-« ars-Cov-2/451\nD Virological\nIdentification of a common deletion in the spike protein of SARS-CoV-2\nIdentification of a common deletion in the spike protein of SARS-CoV-2 Zhe Liu1,2\nHuanying Zheng2, Runyu Yuani,2, Mingyue Li3, Huifang Lin1,2, Jingju Peng1,2,\nQianlin Xiong1.2, Jiufeng Sun1,2, Baisheng Li2, Jie Wu2, Ruben J.G. Hulswit4.\nThomas A. Bowden4, Andrew Rambaut5, Nick Lomané, Oliver G Pybus4, Changwen\nKe2, Jing Lu1,2 Affiliations: 1 Guangdong Provincial Institution of Public Health,\nGuangzhou, China; 2 Guangdong Provincial Center for Disease Control and\nPrevention, Guangzhou, China.\nReading time Likes\n4mins .@",
       "redacted": false,
       "idx": 1056
     },
@@ -13786,7 +13786,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "aw It was. Also this ... https://www.biorxiv.org/content/10.1101/2020.03.22.002204v1\nbR bioRxiv\nCharacterisation of the transcriptome and proteome of SARS-CoV-2 using direct\nRNA sequencing and tandem mass spectrometry reveals evidence for a cell passage\ninduced in-frame deletion in the spike glycoprotein that removes the furin-like\ncleavage site\nDirect RNA sequencing using an Oxford Nanopore MinlON characterised the\ntranscriptome of SARS-CoV-2 grown in Vero Eé cells. This cell line is being widely\nused to propagate the novel coronavirus. The viral transcriptome was analysed using\na recently developed ORF-centric pipeline. This revealed the pattern of viral\ntranscripts, (i.e. subgenomic mRNAs), generally fitted the predicted replication and\ntranscription model for coronaviruses. A 24 nt in-frame deletion was detected in\nsubgenomic mRNAs encoding the spike (5) glycoprotein. This feature was identified\nin over half of the mapped transcripts and was predicted to remove a proposed furir\ncleavage site from the 5 glycoprotein. This motif d... Show more",
+      "content": "aw It was. Also this ... https: www_biorxiv.org/content/10.1101/2020.03.22.002204v1\nbR bioRxiv\nCharacterisation of the transcriptome and proteome of SARS-CoV-2 using direct\nRNA sequencing and tandem mass spectrometry reveals evidence for a cell passage\ninduced in-frame deletion in the spike glycoprotein that removes the furin-like\ncleavage site\nDirect RNA sequencing using an Oxford Nanopore MinlON characterised the\ntranscriptome of SARS-CoV-2 grown in Vero Eé cells. This cell line is being widely\nused to propagate the novel coronavirus. The viral transcriptome was analysed using\na recently developed ORF-centric pipeline. This revealed the pattern of viral\ntranscripts, (i.e. subgenomic mRNAs), generally fitted the predicted replication and\ntranscription model for coronaviruses. A 24 nt in-frame deletion was detected in\nsubgenomic mRNAs encoding the spike (5) glycoprotein. This feature was identified\nin over half of the mapped transcripts and was predicted to remove a proposed furir\ncleavage site from the 5 glycoprotein. This motif d... Show more",
       "redacted": false,
       "idx": 1057
     },
@@ -13812,7 +13812,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "206 https://www.snopes.com/news/2020/04/01/covid-19-bioweapon\nSnopes.com\nWhy You Shouldn't Fall for the COVID-19 'Bioweapon’ Conspiracy Theory\nThe coronavirus responsible for COVID-19 has deadly adaptations that make it perfect\nfor infecting humans. But this is a testament to natural selection, not bioengineering.\n(195 kB) +\n= ~ eee I",
+      "content": "206 https: www.snopes.com/news/2020/04/01/covid-19-bioweapor\nSnopes.com\nWhy You Shouldn't Fall for the COVID-19 'Bioweapon’ Conspiracy Theory\nThe coronavirus responsible for COVID-19 has deadly adaptations that make it perfect\nfor infecting humans. But this is a testament to natural selection, not bioengineering.\n(195 kB) +\n= ~ eee I",
       "redacted": false,
       "idx": 1059
     },
@@ -13919,12 +13919,12 @@
       "idx": 1067
     },
     {
-      "stamp_line": "19:18 ET",
+      "stamp_line": "13:18 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-04-02",
       "raw_date": "April 2, 2020",
       "sender": "Kristian Andersen",
-      "time": "19:18",
+      "time": "13:18",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -13933,12 +13933,12 @@
       "idx": 1068
     },
     {
-      "stamp_line": "13:09 ET",
+      "stamp_line": "13:49 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-04-02",
       "raw_date": "April 2, 2020",
       "sender": "Kristian Andersen",
-      "time": "13:09",
+      "time": "13:49",
       "kind": "slack",
       "thread_id": null,
       "attachments": [
@@ -14000,7 +14000,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "This whole furin site boing messed with in T/C has me second-guossing myself. Who... ..... somes this whole process, romombor we talked about “passage might make viruses acquire these\nsites\"? We couldn't find a reference, but somebody just posted on Virological, which led me to this: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0052752#pone-0052752-* journals.plos.org\nThe Role of Viral Population Diversity in Adaptation of Bovine Coronavirus to New\nHost Environments\nThe high mutation rate of RNA viruses enables a diverse genetic population of viral\ngenotypes to exist within a single infected host. In-host genetic diversity could better\nposition the virus population to respond and adapt to a diverse array of selective\npressures such as host-switching events. Multiple new coronaviruses, including\nSARS, have been identified in human samples just within the last ten years,\ndemonstrating the potential of coronaviruses as emergent human pathogens. Deep\nsequencing was used to characterize genomic changes in coronavirus quasispecies\nduring simulated host-switching. Three bovine nasal samples infected with bovine\ncoronavirus were used to infect human and bovine... Show more\nSpecifically \"The consensus sequence of many of the passaged samples had a 12 nucleotide insert in the consensus sequence of the spike gene, and multiple point mutations were associated with\nthe presence of the insert” - those insertions being Arg rich, which is exactly what HCeV has.",
+      "content": "This whole furin site boing messed with in T/C has me second-guossing myself. Who... ..... somes this whole process, romombor we talked about “passage might make viruses acquire these\nsites\"? We couldn't find a reference, but somebody just posted on Virological, which led me to this: https://journals.plos.org/plosone/article?id=10.1371/joumal.pone.0052752#pone-0052752-\n* journals.plos.org\nThe Role of Viral Population Diversity in Adaptation of Bovine Coronavirus to New\nHost Environments\nThe high mutation rate of RNA viruses enables a diverse genetic population of viral\ngenotypes to exist within a single infected host. In-host genetic diversity could better\nposition the virus population to respond and adapt to a diverse array of selective\npressures such as host-switching events. Multiple new coronaviruses, including\nSARS, have been identified in human samples just within the last ten years,\ndemonstrating the potential of coronaviruses as emergent human pathogens. Deep\nsequencing was used to characterize genomic changes in coronavirus quasispecies\nduring simulated host-switching. Three bovine nasal samples infected with bovine\ncoronavirus were used to infect human and bovine... Show more\nSpecifically \"The consensus sequence of many of the passaged samples had a 12 nucleotide insert in the consensus sequence of the spike gene, and multiple point mutations were associated with\nthe presence of the insert” - those insertions being Arg rich, which is exactly what HCeV has.",
       "redacted": false,
       "idx": 1073
     },
@@ -14028,7 +14028,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "Yeah, I'd be very interesting in knowing whether an HCoV-19 without the furin site could acquire it again, I haven't fully read that PLOS paper yet, but the similarity is very interesting.\nlalso thought this one was interesting - some talk about lab too: https://www.scientificamerican.com/article/how-chinas-bat-woman-hunted-down-viruses-from-sars-to-the-new-coronavirus1/\nS\\ Scientific American\nHow China&rsquo;s &ldquo;Bat Woman&rdquo; Hunted Down Viruses from SARS to\nthe New Coronavirus\nWuhan-based virologist Shi Zhengli has identified dozens of deadly SARS-like viruses in\n\n== ATTACHMENT ==\nbat caves, and she warns there are more out there (376 kB)\nbo\n\nThe 2013 paper is summarized nicely here: https://virological.org/t/identification-of-a-common-deletion-in-the-spike-protein-of-sars-cov-2/451/6\n® Virological\nIdentification of a common deletion in the spike protein of SARS-CoV-2\nThe presence of inserts or deletions in consensus sequences or as veriants of SARS\nlike coronaviruses is also observed in bovine coronavirus, also a member of\nbetacoronavirus (https://journals.plos.org/plosone/article?\nid=10.1371/journal pone.0052752#pone-0052752-t002) . For example, after\npassing 3 different naturally infected bovine nasal samples in different cell lines we\nobserved the consensus sequences of many viral samples acquired a 12-nucleotide\nInsert encoding 4 amino acids |Ser, Arg, Ar...\nApe Jed, 2020\nEspecially: \"For example, after passing 3 different naturally infected bovine nasal samples in different cell lines we observed the consensus sequences of many viral samples acquired a 12-\nnucleotide insert encoding 4 amino acids (Ser, Arg. Arg, Arg) located at nt 2737 of the spike gene (S2 subunit), whereas none of the unpassaged samples contained this insert at the consensus level”\nIt's not just a single experiment - three different strains all exactly acquired a 12bp furin cleavage site. That's definitely peculiar,\nThis too very interesting as a potential mechanism \"Deep sequencing revealed that the insert genotype was present but very rare in the unpassaged sampics but quickly became consensus after\npassage in cell culture” - so it’s there in their input (presumably directly from cow), i",
+      "content": "Yeah, I'd be very interesting in knowing whether an HCoV-19 without the furin site could acquire it again, I haven't fully read that PLOS paper yet, but the similarity is very interesting.\nlalso thought this one was interesting - some talk about lab too: https://www.scientificamerican.com/article/how-chinas-bat-woman-hunted-down-viruses-from-sars-to-the-now-coronavirus1/\nS\\ Scientific American\nHow China&rsquo;s &ldquo;Bat Woman&rdquo; Hunted Down Viruses from SARS to\nthe New Coronavirus\nWuhan-based virologist Shi Zhengli has identified dozens of deadly SARS-like viruses in\n\n== ATTACHMENT ==\nbat caves, and she warns there are more out there (376 kB)\nbo\n\nThe 2013 paper is summarized nicely here: http:/virologicaLorg/t/identification-of-a-common-deletion-in-the-spke-protein-of-sars-cov-2/451/6\n® Virological\nIdentification of a common deletion in the spike protein of SARS-CoV-2\nThe presence of inserts or deletions in consensus sequences or as veriants of SARS\nlike coronaviruses is also observed in bovine coronavirus, also a member of\nbetacoronavirus (https:/journals.plos.org/plosone/article?\nid=10.1371/journal pone.0052752#pone-0052752-t002) . For example, after\npassing 3 different naturally infected bovine nasal samples in different cell lines we\nobserved the consensus sequences of many viral samples acquired a 12-nucleotide\nInsert encoding 4 amino acids |Ser, Arg, Ar...\nApe Jed, 2020\nEspecially: \"For example, after passing 3 different naturally infected bovine nasal samples in different cell lines we observed the consensus sequences of many viral samples acquired a 12-\nnucleotide insert encoding 4 amino acids (Ser, Arg. Arg, Arg) located at nt 2737 of the spike gene (S2 subunit), whereas none of the unpassaged samples contained this insert at the consensus level”\nIt's not just a single experiment - three different strains all exactly acquired a 12bp furin cleavage site. That's definitely peculiar,\nThis too very interesting as a potential mechanism \"Deep sequencing revealed that the insert genotype was present but very rare in the unpassaged sampics but quickly became consensus after\npassage in cell culture” - so it’s there in their input (presumably directly from cow), i",
       "redacted": false,
       "idx": 1075
     },
@@ -14042,7 +14042,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "2. Mutations,\nincluding point mutations, insertions and deletions, can occur near the $1/S2 junction of\ncoronaviruses 34,40-43 suggesting that the polybasic site could arise by a natural evolutionary process.\nI think this covers us pretty well - yes - there is natural variation adding and subtracting the furin site in several CoVs - also note that Bovine Cov is really a very broad host range virus\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC2395124/\nB® PubMed Central (PMC)\nCleavage of Group 1 Coronavirus Spike Proteins: How Furin Cleavage Is Traded Off\nagainst Heparan Sulfate Binding upon Cell Culture Adaptation\nA longstanding enigmatic feature of the group 1 coronaviruses is the uncleaved\nphenotype of their spike protein, an exceptional property among class I fusion\nproteins. Here, however, we show that some group 1 coronavirus spike proteins carry\na furin enzyme ...",
+      "content": "2. Mutations,\nincluding point mutations, insertions and deletions, can occur near the $1/S2 junction of\ncoronaviruses 34,40-43 suggesting that the polybasic site could arise by a natural evolutionary process.\nI think this covers us pretty well - yes - there is natural variation adding and subtracting the furin site in several CoVs - also note that Bovine Cov is really a very broad host range virus\nhttps: www.ncbLnlm.nin.gov/pme/articles/PMC2395124/\nB® PubMed Central (PMC)\nCleavage of Group 1 Coronavirus Spike Proteins: How Furin Cleavage Is Traded Off\nagainst Heparan Sulfate Binding upon Cell Culture Adaptation\nA longstanding enigmatic feature of the group 1 coronaviruses is the uncleaved\nphenotype of their spike protein, an exceptional property among class I fusion\nproteins. Here, however, we show that some group 1 coronavirus spike proteins carry\na furin enzyme ...",
       "redacted": false,
       "idx": 1076
     },
@@ -14200,7 +14200,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "@channel Been helping out a colleague of Oli’s with alittle paper about deletions that take out the furin cleavage site\nhttps://www.biorxiv.org/content/ 10.1101/2020.03.31.015941v1 full. pdf+htm\nbe bioRxiv\nIdentification of a common deletion in the spike protein of SARS-CoV-2\nAbstract Two notable features have been identified in the SARS-CoV-2 genome: (1)\nthe receptor binding dormain of SARS-CoV-2; (2) a unique insertion of twelve\nnuceotide or four amino acids (PRRA) at the S1 and S2 boundary. For the first\nfeature, the similar RBD identifed in SARs-like virus from pangolin suggests the RBD\nin SARS-CoV-2 may already exist in animal host(s) before it transmitted into human.\nThe left puzzle is the history and function of the insertion at $1/S2 boundary, which\nis uniquely identified in SARS-CoV-2. In this study, we identified two variants from\nthe first Guangdong SARS-CoV-2 cell strain, with deletion mutations on polybasic\ncleavage site (PRRAR) and its flank sites... Show more I\n\\just wanted to run by an idea by you all... What do think about the hypothesis that knocking out the furin site is being selected in cells and in some patients but basically it needs it to successfully\nshed in the lungs and/or infect the next lungs?\nThus without it it is more SARS like in its transmissibility\nSSS\nApril Sth, 2020",
+      "content": "@channel Been helping out a colleague of Oli’s with alittle paper about deletions that take out the furin cleavage site\nhttps://www.bioriv.org/content/ 10.1101/2020.03.31.015941v1 full. pdf+htm\nbe bioRxiv\nIdentification of a common deletion in the spike protein of SARS-CoV-2\nAbstract Two notable features have been identified in the SARS-CoV-2 genome: (1)\nthe receptor binding dormain of SARS-CoV-2; (2) a unique insertion of twelve\nnuceotide or four amino acids (PRRA) at the S1 and S2 boundary. For the first\nfeature, the similar RBD identifed in SARs-like virus from pangolin suggests the RBD\nin SARS-CoV-2 may already exist in animal host(s) before it transmitted into human.\nThe left puzzle is the history and function of the insertion at $1/S2 boundary, which\nis uniquely identified in SARS-CoV-2. In this study, we identified two variants from\nthe first Guangdong SARS-CoV-2 cell strain, with deletion mutations on polybasic\ncleavage site (PRRAR) and its flank sites... Show more I\n\\just wanted to run by an idea by you all... What do think about the hypothesis that knocking out the furin site is being selected in cells and in some patients but basically it needs it to successfully\nshed in the lungs and/or infect the next lungs?\nThus without it it is more SARS like in its transmissibility\nSSS\nApril Sth, 2020",
       "redacted": false,
       "idx": 1089
     },
@@ -14272,7 +14272,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "® And on it goes: https:/'https://www.nationalreview.com/2020/04/coronavirus-china-trail-leading-back-to-wuhan-labs/\nwe National Review\nThe Trail Leading Back to the Wuhan Labs I National Review\nThere's no proof the coronavirus originated in a laboratory, but we can't take the\nChinese government's denials at face value\n‘ - 4 Ps -\nx (os Si > SS\nPSE:",
+      "content": "® And on it goes: https:/'www.nationalreview.com/2020/04/coronavirus-china-trall-leading-back-to-wuhan-labs\nwe National Review\nThe Trail Leading Back to the Wuhan Labs I National Review\nThere's no proof the coronavirus originated in a laboratory, but we can't take the\nChinese government's denials at face value\n‘ - 4 Ps -\nx (os Si > SS\nPSE:",
       "redacted": false,
       "idx": 1095
     },
@@ -14548,7 +14548,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "The link is legit enough and there are fastq files in there...\nhttps://pan.baidu.com/s/1QnUdVJImmByO-MWim7PE4A,\nPass: thvm\nI find it kinda interesting that he emailed y'all separately - could be a Chinese whistleblower... I'll download some of these and runa Kraken screen, because why the heck not. (edited",
+      "content": "The link is legit enough and there are fastq files in there...\nhttps:/pan.baidu.com/s/1QnUdVJImmByO-MWim7PE4A,\nPass: thvm\nI find it kinda interesting that he emailed y'all separately - could be a Chinese whistleblower... I'll download some of these and runa Kraken screen, because why the heck not. (edited",
       "redacted": false,
       "idx": 1118
     },
@@ -14770,7 +14770,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "PREDICT resurrected... https://www.cnn.com/2020/04/10/politics/trump-usaid-prevent-program-coronavirus/index.html\nG CNN\nAs early indications of China's coronavirus outbreak emerged in late December, the\nTrump administration notined Congress it would still follow through with its plan to\nshutter a US Agency for International Development surveillance program tasked with\ndetecting new, potentially dangerous infectious diseases and helping foreign labs\nstop emerging pandemic threats around the vwrorld.",
+      "content": "PREDICT resurrected... https://waw.cnn.com/2020/04/10/politics/trump-usaid-prevent-program-coronavirus/index.html\nG CNN\nAs early indications of China's coronavirus outbreak emerged in late December, the\nTrump administration notined Congress it would still follow through with its plan to\nshutter a US Agency for International Development surveillance program tasked with\ndetecting new, potentially dangerous infectious diseases and helping foreign labs\nstop emerging pandemic threats around the vwrorld.",
       "redacted": false,
       "idx": 1134
     },
@@ -14818,7 +14818,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "B® @channel + Latest messages\nhttps://www.bing.com/search?q«Beijir 20tightens%20grip%200ver%20co: virus%20research%2C%20amid%20US\nChina%20row% 20 20virus%20origin&p: ~sp&ptag=G6CI9IN 10480D0224 19AA6BS4 BB DB4S form=CONBDF &conlogo=CT3210127\nChina has imposed restrictions on the publication of academic research on the origins of the nov ronavirus, according to a central government directive and online notices published by two\nChinese universities, that have since been removed from the web\"\nCNN\nApril 12 coronavirus news - CNN\nThe novel coronavirus has killed more than 102,000 people worldwide. Follow here for\nlive updat\npint avery, evew",
+      "content": "B® @channel + Latest messages\nhttps: www.bing.com/search?q«Beijir 20tightens%20grip%200ver%20co: virus%20research%2C%20amid%20US\nChina%20row% 20 20virus%20origin&p: ~sp&ptag=G6CI9IN 10480D0224 19AA6BS4 BB DB4S form=CONBDF &conlogo=CT3210127\nChina has imposed restrictions on the publication of academic research on the origins of the nov ronavirus, according to a central government directive and online notices published by two\nChinese universities, that have since been removed from the web\"\nCNN\nApril 12 coronavirus news - CNN\nThe novel coronavirus has killed more than 102,000 people worldwide. Follow here for\nlive updat\npint avery, evew",
       "redacted": false,
       "idx": 1138
     },
@@ -14830,7 +14830,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "Yeah... This certainly doesnt help: https://edition.cnn.com/2020/04/12/asia/china-coronavirus-research-restrictions-intl-hnk/index.html\nCNN\nChina imposes restrictions on research into origins of coronavirus\nChina has imposed restrictions on the publication of academic research on the origins\nnotices published by two Chinese universities, that have since been removed from the\n\n== ATTACHMENT ==\nweb. (68 KB)\n/ .\n4\n,\n( t, {, y\n‘am ge\n—",
+      "content": "Yeah... This certainly doesnt help: https://edition.cnn.com/2020/04/ 12/asia/china-coronavirus-research-restrictions-int!-hnk/index.htm\nCNN\nChina imposes restrictions on research into origins of coronavirus\nChina has imposed restrictions on the publication of academic research on the origins\nnotices published by two Chinese universities, that have since been removed from the\n\n== ATTACHMENT ==\nweb. (68 KB)\n/ .\n4\n,\n( t, {, y\n‘am ge\n—",
       "redacted": false,
       "idx": 1139
     },
@@ -14962,7 +14962,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "https://www.9news.com.au/world/united-states-trump-investigating-sor f-coronavir hina/db10f008-9ea0-4434-bf69-748d63f9480¢\nhttps://www.news.com.au/lifestyle/health/health-problems/t ges-china-come-ciean-on-manmade-virus-rumour/news-story/ad1¢75545fb8484d08bded54c06027d5\nhttps://www.ktvu.co! vews/source elieve-covid-19-originated-in-wuhan-lab-as-part-of-chinas-efforts-to-compete-with-t\nBreaking Australian and World News Headlines - 9News\nUnited States investigating source of coronavirus as Pence calls on ‘Chinese\ngovernment to come clean\nUS President Donald Trump says his government is trying to determine whether the\n\n== ATTACHMENT ==\ncoronavirus emanated from ... (49 kB)\nAx y ’\n%\n, b\nif :\nae\n\n@® the Guardian\nTrump fans flames of Chinese lab coronavirus theory during daily briefing 4\nThe president attacked those who favored China, including the WHO, for which he\npreviously announced a hold on funding\nApe .5th, 2020 (80 kB) =\nAN \\A\\ ce\n>) TA 4 a7\n- . The,.\n*., Guardian\n* NewsComAu\nUS urges China: ‘Come clean’ on virus\nThe US is urging China to ‘come clean’ about the origin of COVID-19 as claims circulate\nthat it was manufactured in a Wuhan laboratory.\n\n== ATTACHMENT ==\nApe 16th. 2020 (22 kB)\nApril L6th, 2020\nt f\nj =\nee L\nKTVU FOX2\n\nSources believe COVID-19 originated in Wuhan lab as part of China's efforts to\ncompete with US\nThis may be the “castliest government coverup of all time,” one of the sources said",
+      "content": "hittps://www.9news.com.au/world/united-states-trump-investigating-sor f-coronavir hina/db10f008-9ea0-4434-bf69-748d63f9480¢\nhttps://www.news.com.au/lifestyle/health/health-problems/t ges-china-come-ciean-on-manmade-virus-rumour/news-story/ad1¢75545fb8484d08bded54c06027d5\nhitps:// www.ktvu.co! vews/source elieve-covid-19-originated-in-wuhan-lab-as-part-of-chinas-efforts-to-compete-with-t\nBreaking Australian and World News Headlines - 9News\nUnited States investigating source of coronavirus as Pence calls on ‘Chinese\ngovernment to come clean\nUS President Donald Trump says his government is trying to determine whether the\n\n== ATTACHMENT ==\ncoronavirus emanated from ... (49 kB)\nAx y ’\n%\n, b\nif :\nae\n\n@® the Guardian\nTrump fans flames of Chinese lab coronavirus theory during daily briefing 4\nThe president attacked those who favored China, including the WHO, for which he\npreviously announced a hold on funding\nApe .5th, 2020 (80 kB) =\nAN \\A\\ ce\n>) TA 4 a7\n- . The,.\n*., Guardian\n* NewsComAu\nUS urges China: ‘Come clean’ on virus\nThe US is urging China to ‘come clean’ about the origin of COVID-19 as claims circulate\nthat it was manufactured in a Wuhan laboratory.\n\n== ATTACHMENT ==\nApe 16th. 2020 (22 kB)\nApril L6th, 2020\nt f\nj =\nee L\nKTVU FOX2\n\nSources believe COVID-19 originated in Wuhan lab as part of China's efforts to\ncompete with US\nThis may be the “castliest government coverup of all time,” one of the sources said",
       "redacted": false,
       "idx": 1150
     },
@@ -15051,12 +15051,12 @@
       "idx": 1156
     },
     {
-      "stamp_line": "10:39 ET",
+      "stamp_line": "10:33 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-04-16",
       "raw_date": "April 16, 2020",
       "sender": "Robert Garry",
-      "time": "10:39",
+      "time": "10:33",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -15065,12 +15065,12 @@
       "idx": 1157
     },
     {
-      "stamp_line": "01:20 ET",
+      "stamp_line": "12:32 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-04-16",
       "raw_date": "April 16, 2020",
       "sender": "Andrew Rambaut",
-      "time": "01:20",
+      "time": "12:32",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -15134,7 +15134,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "@@i@ Bravo Andrew! All in - Let me know what would be useful in term of some spike structural pictures, cleavage site - rbd interactions etc\nBy the way just did the French interview - it's possible I was not exceptionally kind to Montagnier.\nhttps://www.researchgate.net/publication/340100582_WUHAN_COVID-19_SYNTHETIC_ORIGINS_ AND EVOLUTION\nHere's the link to the new paper that Montagnier thinks is wonderful - my head started to explode about a page or so in (but go figure I had the same response when I started to read Harry Potter).",
+      "content": "@@i@ Bravo Andrew! All in - Let me know what would be useful in term of some spike structural pictures, cleavage site - rbd interactions etc\nBy the way just did the French interview - it's possible I was not exceptionally kind to Montagnier.\nhttps: //www-.researchgate.net/publication/340100582_WUHAN_COVID-19_SYNTHETIC_ORIGINS_ AND EVOLUTION\nHere's the link to the new paper that Montagnier thinks is wonderful - my head started to explode about a page or so in (but go figure I had the same response when I started to read Harry Potter).",
       "redacted": false,
       "idx": 1163
     },
@@ -15176,7 +15176,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "We are going to do a proper paper on the origins and spread of the virus\n@Andrew Rambaut - please keep us posted - I'd love to be part of this if I can be helpful (or even if I can't... 8.\nOkay, so about the current news. Is there any reason to believe that they might be onto something, or is it all smoke and mirrors? @Eddie Holmes - any insights on the China side? The main things\nfrom my perspective:\n1. Bioweapon and engineered totally off the table\n2. If there is no engineering and no culturing, then it means that somebody magically found a pre-formed pandemic virus, put it in the lab, and then infected themselves. The prior on that vs\nsomebody coming into contact with an animal source infected with the virus is as close to zero as you can get. Humans come into contact all the time with SARS-like CoVs, but the likelihood of\nsomebody finding exactly that pandemic virus and infecting themselves is very very low (make no mistake - if they did find that pandemic virus, then they would get infected if they grew it in\nthe lab - but the likelihood of them finding it in the first place is exceedingly small (or so one would hope - otherwise, good luck World avoiding future pandemic).\n3. But here's the issue - I'm still not fully convinced that no culture was involved. If culture was involved, then the prior completely changes - because this could have happened with any random\nSARS-like CoV, of which there are very many. So are we absolutely certain that no culture could have been involved? What concerns me here are some of the comments by Shi in the SciAm\narticle (\"I had to check the lab\", etc.) and the fact that the furin site is being messed with in vitro. Yes, it loses it, but that could be context dependent. Finally, the paper that was shared with us\nshowing a very similar phenomenon (exactly 12bp insertion) in other CoVs has me concerned: https://journals.plos.org/plosone/article?id= 10,137 1/journal.pone.0052752 - best summarized\nhere: https://virological.org/t/identification-of-a-common-deletion-in-the-spike-protein-of-sars-cov-2/451/6\nI really really want to go out there guns swinging saying “don't be such an idiot believing these dumb theories - the president is deflecting from the real problems”, but I'm worried that we can't fully\ndisprove culture (our argument was mostly based on the presence of the O-linked glycans - but they could likely play a different role: https://www.ncbi.nlm.nih.gov/pubmed/28924042). We also\ncan't fully rule out engineering (for basic research) - yes, no obvious signs of engineering anywhere, but that furin site could still have been inserted via gibson assembly (and clearly creating the\nreverse genetic system isn't hard - the Germans managed to do exactly that for SARS-CoV-2 in less than a month).\n* journals.plos.org\nThe Role of Viral Population Diversity in Adaptation of Bovine Coronavirus to New\nHost Environments\nThe high mutation rate of RNA viruses enables a diverse genetic population of viral\ngenotypes to exist within a single infected host. In-host genetic diversity could better\nposition the virus population to respond and adapt to a diverse array of selective\npressures such as host-switching events. Multiple new coronaviruses, including\nSARS, have been identified in human samples just within the last ten years,\ndemonstrating the potential of coronaviruses as emergent human pathogens. Deep\nsequencing was used to characterize genomic changes in coronavirus quasispecies\nduring simulated host-switching. Three bovine nasal samples infected with bovine\ncoronavirus were used to infect human and bovine... Show more\n© Virological\nIdentification of a common deletion in the spike protein of SARS-CoV-2\nThe presence of inserts or deletions in consensus sequences or as variants of SARS-\nlike coronaviruses is also observed in bovine coronavirus, also a member of\nbetacoronavirus (https://journals.plos.org/plosone/article?\nid= 10.1371/journal.pone,0052752#pone-0052752-t002) . For example, after\npassing 3 different naturally infected bovine nasal samples in different cell lines we\nobserved the consensus sequences of many viral samples acquired a 12-nucleotide\ninsert encoding 4 amino acids (Ser, Arg, Ar...\nAge ied, 2020\n® ncbi.nlm.nih.gov\nAlternative cleavage of the bone morphogenetic protein (BMP), Gbb, produces ligands\nwith distinct developmental functions and receptor preferences. - PubMed - NCBI\nJ Biol Chem. 2017 Nov 24;292(47):19160-19178. doi: 10.1074/jbe.M117.793513.\n\n== ATTACHMENT ==\nEpub 2017 Sep 18. Research Support, N.LH,, Extramural (13 kB)\nPub {Med",
+      "content": "We are going to do a proper paper on the origins and spread of the virus\n@Andrew Rambaut - please keep us posted - I'd love to be part of this if I can be helpful (or even if I can't... 8.\nOkay, so about the current news. Is there any reason to believe that they might be onto something, or is it all smoke and mirrors? @Eddie Holmes - any insights on the China side? The main things\nfrom my perspective:\n1. Bioweapon and engineered totally off the table\n2. If there is no engineering and no culturing, then it means that somebody magically found a pre-formed pandemic virus, put it in the lab, and then infected themselves. The prior on that vs\nsomebody coming into contact with an animal source infected with the virus is as close to zero as you can get. Humans come into contact all the time with SARS-like CoVs, but the likelihood of\nsomebody finding exactly that pandemic virus and infecting themselves is very very low (make no mistake - if they did find that pandemic virus, then they would get infected if they grew it in\nthe lab - but the likelihood of them finding it in the first place is exceedingly small (or so one would hope - otherwise, good luck World avoiding future pandemic).\n3. But here's the issue - I'm still not fully convinced that no culture was involved. If culture was involved, then the prior completely changes - because this could have happened with any random\nSARS-like CoV, of which there are very many. So are we absolutely certain that no culture could have been involved? What concerns me here are some of the comments by Shi in the SciAm\narticle (\"I had to check the lab\", etc.) and the fact that the furin site is being messed with in vitro. Yes, it loses it, but that could be context dependent. Finally, the paper that was shared with us\nshowing a very similar phenomenon (exactly 12bp insertion) in other CoVs has me concerned: https://journals.plos.org/plosone/article?id= 10,137 1/journal.pone.0052752 - best summarized\nhere: http:// virological.org/t/identification-of-a-common-deletion-in-the-spike-protein-of-sars-cov-2/451/6\nI really really want to go out there guns swinging saying “don't be such an idiot believing these dumb theories - the president is deflecting from the real problems”, but I'm worried that we can't fully\ndisprove culture (our argument was mostly based on the presence of the O-linked glycans - but they could likely play a different role: https://www.ncbi.nim.nih.gov/pubmed/28924042). We also\ncan't fully rule out engineering (for basic research) - yes, no obvious signs of engineering anywhere, but that furin site could still have been inserted via gibson assembly (and clearly creating the\nreverse genetic system isn't hard - the Germans managed to do exactly that for SARS-CoV-2 in less than a month).\n* journals.plos.org\nThe Role of Viral Population Diversity in Adaptation of Bovine Coronavirus to New\nHost Environments\nThe high mutation rate of RNA viruses enables a diverse genetic population of viral\ngenotypes to exist within a single infected host. In-host genetic diversity could better\nposition the virus population to respond and adapt to a diverse array of selective\npressures such as host-switching events. Multiple new coronaviruses, including\nSARS, have been identified in human samples just within the last ten years,\ndemonstrating the potential of coronaviruses as emergent human pathogens. Deep\nsequencing was used to characterize genomic changes in coronavirus quasispecies\nduring simulated host-switching. Three bovine nasal samples infected with bovine\ncoronavirus were used to infect human and bovine... Show more\n© Virological\nIdentification of a common deletion in the spike protein of SARS-CoV-2\nThe presence of inserts or deletions in consensus sequences or as variants of SARS-\nlike coronaviruses is also observed in bovine coronavirus, also a member of\nbetacoronavirus (https://journals.plos.org/plosone/article?\nid= 10.1371/journal.pone,0052752#pone-0052752-t002) . For example, after\npassing 3 different naturally infected bovine nasal samples in different cell lines we\nobserved the consensus sequences of many viral samples acquired a 12-nucleotide\ninsert encoding 4 amino acids (Ser, Arg, Ar...\nAge ied, 2020\n® ncbi.nlm.nih.gov\nAlternative cleavage of the bone morphogenetic protein (BMP), Gbb, produces ligands\nwith distinct developmental functions and receptor preferences. - PubMed - NCBI\nJ Biol Chem. 2017 Nov 24;292(47):19160-19178. doi: 10.1074/jbe.M117.793513.\n\n== ATTACHMENT ==\nEpub 2017 Sep 18. Research Support, N.LH,, Extramural (13 kB)\nPub {Med",
       "redacted": false,
       "idx": 1166
     },
@@ -15274,7 +15274,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "Here are just four examples of some of the culturing work that’s concerning:\nhttps://www.ncbi.nlm.nih.gov/pubmed/24172901\nhttps://www.ncbinim.nih.gov/pubmed/ 20567988\nhttps://www.ncbi.nlm.nih.gov/pubmed/29500692\nhttps://www.ncbi.nlm.nih.gov/pubmed/26719272\n® acbi.nim.nih.gov\nIsolation and characterization of a bat SARS-like coronavirus that uses the ACE2\nreceptor. - PubMed - NCBI\nNature. 2013 Nov 28;503(7477):535-8. doi: 10.1038/nature12711. Epub 2013 Oct\n30. Research Support, N.|.H., Extramural; Research Suppert, Non-U.S. Gov't; Research\n\n== ATTACHMENT ==\nSupport, U.S. Gov't, Non-P.H.S. (13 kB)\nPub Med\n® ncbi.nim.nih.gov\n\nAngiotensin-converting enzyme 2 (ACE2) proteins of different bat species confer\nvariable susceptibility to SARS-CoV entry. - PubMed - NCBI\nArch Virol. 2010 Oct;155({10):1563-9. doi: 10.1007/s00705-010-0729-6. Epub 2010\n\n== ATTACHMENT ==\nJun 22. Research Support, Non-US. Gov't (13 kB)\nPub Med I\n\nB® ncbi.nimnih.gov\nLongitudinal Surveillance of Betacoronaviruses in Fruit Bats in Yunnan Province, China\nDuring 2009-2016. - PubMed - NCBI\nVirol Sin. 2018 Feb;33(1):87-95. doi: 10.1007/s12250-018-0017-2. Epub 2018 Mar 2.\n(13 kB) +\nPub Med\nB® ncbi.nimnih.gov\nIsolation and Characterization of a Novel Bat Coronavirus Closely Related to the\nDirect Progenitor of Severe Acute Respiratory Syndrome Coronavirus. - PubMed -\nNCBI\nJ Virol. 2015 Dec 30;90(6):3253-6. doi: 10.1128/JVI.02582-15. Research Support,\n\n== ATTACHMENT ==\nN.1.H., Extramural; Research Support. Non-U.S, Gov't (13 kB)\nPub Med\n\nRmYNO2 has a rearrangement around that site, but it's not this type of insertion. I agree with you that it's evidence for ‘this all occurs naturally’, but it still doesn't put a nail in the coffin of that\ntheory",
+      "content": "Here are just four examples of some of the culturing work that’s concerning:\nhttps:i/wwew.ncbi.nim.nih.gov/pubmed/24172901\nhttps: wwew.ncbinim.nih.gov/pubmed/ 20567988\nhttps: www.ncbi.nim.nih.gov/pubmed/29500692\nhttps: www.ncbi.nim.nih.gov/pubmed/26719272\n® acbi.nim.nih.gov\nIsolation and characterization of a bat SARS-like coronavirus that uses the ACE2\nreceptor. - PubMed - NCBI\nNature. 2013 Nov 28;503(7477):535-8. doi: 10.1038/nature12711. Epub 2013 Oct\n30. Research Support, N.|.H., Extramural; Research Suppert, Non-U.S. Gov't; Research\n\n== ATTACHMENT ==\nSupport, U.S. Gov't, Non-P.H.S. (13 kB)\nPub Med\n® ncbi.nim.nih.gov\n\nAngiotensin-converting enzyme 2 (ACE2) proteins of different bat species confer\nvariable susceptibility to SARS-CoV entry. - PubMed - NCBI\nArch Virol. 2010 Oct;155({10):1563-9. doi: 10.1007/s00705-010-0729-6. Epub 2010\n\n== ATTACHMENT ==\nJun 22. Research Support, Non-US. Gov't (13 kB)\nPub Med I\n\nB® ncbi.nimnih.gov\nLongitudinal Surveillance of Betacoronaviruses in Fruit Bats in Yunnan Province, China\nDuring 2009-2016. - PubMed - NCBI\nVirol Sin. 2018 Feb;33(1):87-95. doi: 10.1007/s12250-018-0017-2. Epub 2018 Mar 2.\n(13 kB) +\nPub Med\nB® ncbi.nimnih.gov\nIsolation and Characterization of a Novel Bat Coronavirus Closely Related to the\nDirect Progenitor of Severe Acute Respiratory Syndrome Coronavirus. - PubMed -\nNCBI\nJ Virol. 2015 Dec 30;90(6):3253-6. doi: 10.1128/JVI.02582-15. Research Support,\n\n== ATTACHMENT ==\nN.1.H., Extramural; Research Support. Non-U.S, Gov't (13 kB)\nPub Med\n\nRmYNO2 has a rearrangement around that site, but it's not this type of insertion. I agree with you that it's evidence for ‘this all occurs naturally’, but it still doesn't put a nail in the coffin of that\ntheory",
       "redacted": false,
       "idx": 1173
     },
@@ -15453,12 +15453,12 @@
       "idx": 1187
     },
     {
-      "stamp_line": "16:18 ET",
+      "stamp_line": "18:18 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-04-18",
       "raw_date": "April 18, 2020",
       "sender": "Robert Garry",
-      "time": "16:18",
+      "time": "18:18",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -15467,12 +15467,12 @@
       "idx": 1188
     },
     {
-      "stamp_line": "10:59 ET",
+      "stamp_line": "18:59 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-04-18",
       "raw_date": "April 18, 2020",
       "sender": "Eddie Holmes",
-      "time": "10:59",
+      "time": "18:59",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -15504,7 +15504,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "a. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4265931/ (edited)\nVery insightful - HIV conspiracies used politically to major effect and very damaging.\nhttps://mbio.asm.org/content/6/4/e01013-15 This paper making the rounds on the conservative underbelly of the Internet - cited as proof of intentional/accidental release of NCoV-19.\n\" mBio\nThe Reemergent 1977 H1N1 Strain and the Gain-of-Function Debate\nThe 1977-1978 influenza epidemic was probably not a natural event, as the genetic\nsequence of the virus was nearly identical to the sequences of decades-old strains.\nWhile there are several hypotheses that could explain its origin, the possibility that\nthe 1977 epidemic resulted from a laboratory accident has recently gained popularity\nin discussions about the biosafety risks of gain-of-function (GOF) influenza virus\nresearch, as an argument for why this research should not be performed. There is\nhow a moratorium in the United States on funding GOF research while the benefits\nand risks, including the potential for accident, are analyzed. Given the importance of\nthis historical epidemic to on... Show more\nSep 1st, 2015",
+      "content": "a. hittps://www.ncbi.nim.nih.gov/pmc/articles/PMC4265931/ (edited)\nVery insightful - HIV conspiracies used politically to major effect and very damaging.\nhttps://mbio.asm.org/content/6/4/e01013-15 This paper making the rounds on the conservative underbelly of the Internet - cited as proof of intentional/accidental release of NCoV-19.\n\" mBio\nThe Reemergent 1977 H1N1 Strain and the Gain-of-Function Debate\nThe 1977-1978 influenza epidemic was probably not a natural event, as the genetic\nsequence of the virus was nearly identical to the sequences of decades-old strains.\nWhile there are several hypotheses that could explain its origin, the possibility that\nthe 1977 epidemic resulted from a laboratory accident has recently gained popularity\nin discussions about the biosafety risks of gain-of-function (GOF) influenza virus\nresearch, as an argument for why this research should not be performed. There is\nhow a moratorium in the United States on funding GOF research while the benefits\nand risks, including the potential for accident, are analyzed. Given the importance of\nthis historical epidemic to on... Show more\nSep 1st, 2015",
       "redacted": false,
       "idx": 1191
     },
@@ -15574,7 +15574,7 @@
       "attachments": [
         "image.png"
       ],
-      "content": "4. Not sure that’s the right word - maybe sometime about the numbers of bat species? Beek 20Ry Aae\n\n== ATTACHMENT ==\nimage.png\n\nfrecoty oe\nSPECIOUS 4 omen\nto eetcennarnsienee mete ticbiyeecintnis\nScoot cergtenme\nI Sapo ee eae ene te et ee\nhares Ce a\n* Science I AAAS bay rica oe\nBats really do harbor more dangerous viruses than other species\nAnew study is set to end a long-running debate among virus ecologists\n\n== ATTACHMENT ==\nJun 24st, 2017 (192 kB)\nef\n\nhttps://www.nature.com/articles/nature22975 i\nNature\nHost and viral traits predict zoonotic spillover from mammals\nZoonotic viruses, many originating in wild mammals, pose a serious threat to global\npublic health, Peter Daszak and colleagues create a comprehensive database of\nmammalian host&#8211;virus relationships, which they analyse to determine\npatterns of virus and zoonotic virus distribution in mammals. They identify various\nfactors that influence the number and diversity of viruses that infect a given species\nas well as factors that predict the proportion of zoonotic viruses per species. In doing\n50, they identify mammalian species and geographic locations where novel zoonoses\nare likely to be found.",
+      "content": "4. Not sure that’s the right word - maybe sometime about the numbers of bat species? Beek 20Ry Aae\n\n== ATTACHMENT ==\nimage.png\n\nfrecoty oe\nSPECIOUS 4 omen\nto eetcennarnsienee mete ticbiyeecintnis\nScoot cergtenme\nI Sapo ee eae ene te et ee\nhares Ce a\n* Science I AAAS bay rica oe\nBats really do harbor more dangerous viruses than other species\nAnew study is set to end a long-running debate among virus ecologists\n\n== ATTACHMENT ==\nJun 24st, 2017 (192 kB)\nef\n\nhittps://wwew.nature.com/articles/nature22975 i\nNature\nHost and viral traits predict zoonotic spillover from mammals\nZoonotic viruses, many originating in wild mammals, pose a serious threat to global\npublic health, Peter Daszak and colleagues create a comprehensive database of\nmammalian host&#8211;virus relationships, which they analyse to determine\npatterns of virus and zoonotic virus distribution in mammals. They identify various\nfactors that influence the number and diversity of viruses that infect a given species\nas well as factors that predict the proportion of zoonotic viruses per species. In doing\n50, they identify mammalian species and geographic locations where novel zoonoses\nare likely to be found.",
       "redacted": false,
       "idx": 1196
     },
@@ -15616,7 +15616,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "® https://wwwnc.cdc.gov/eid/article/11/12/05-0997_article\n= Emerging Infectious Diseases journal\nHost Range and Emerging and Reemerging Pathogens\nAn updated literature survey identified 1,407 recognized species of human pathogen,\n\n== ATTACHMENT ==\n58% of which are zoonotic. Of the total, 177 are regarded as emerg... (132 kB)\n\n‘A Post Reviewed Journal Tracking ond Anahyzing Disease Trends\nMight be paper by this group Woolhouse. (edited)",
+      "content": "® https:/wwwne.cde.gov/eid/article/11/12/05-0997_article\n= Emerging Infectious Diseases journal\nHost Range and Emerging and Reemerging Pathogens\nAn updated literature survey identified 1,407 recognized species of human pathogen,\n\n== ATTACHMENT ==\n58% of which are zoonotic. Of the total, 177 are regarded as emerg... (132 kB)\n\n‘A Post Reviewed Journal Tracking ond Anahyzing Disease Trends\nMight be paper by this group Woolhouse. (edited)",
       "redacted": false,
       "idx": 1199
     },
@@ -15630,7 +15630,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "x https://www.scienceopen.com/search#(‘order'~O_‘context'~(‘collection'~('id'~'d6ba10ea-809d-4f28-96b9-d2ed475ec319'_'kind’-O)_'kind'~11)_'v'~3_‘kind’'~77)\nSo #1 may not be a COVID paper",
+      "content": "x https:// www.scienceopen.com/search#(‘order'~O_‘context'~(‘collection'~('id'~'d6ba10ea-809d-4f28-96b9-d2ed475ec319'_'kind’-O)_'kind'~11)_'v'~3_‘kind’'~77)\nSo #1 may not be a COVID paper",
       "redacted": false,
       "idx": 1200
     },
@@ -15762,7 +15762,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "If you want to go down a rabbit hole: https://project-evidence.github.io/\n[Disclaimer - all concerns they bring up we have already discussed and considered. They also make a number of logical mistakes, but hey].",
+      "content": "If you want to go down a rabbit hole: https://project-evidence github.io/\n[Disclaimer - all concerns they bring up we have already discussed and considered. They also make a number of logical mistakes, but hey].",
       "redacted": false,
       "idx": 1210
     },
@@ -16318,7 +16318,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "'® Coronavirus US live: intelligence report concludes Covid-19 was not ‘manmade or genetically modified\" https://www.theguardian.com/world/live/2020/apr/30/coronavirus-us-live-federal-guidelines-social-distancing-expire-trump-cuomo-latest-news-updates?CMP=share_btn_tw&page=with:block-5eab4 1b68f087 6ffcl 9f175#block-Seab4 1b68fO8F76ffc19f175\nthe Guardian\nCoronavirus US live: intelligence report concludes Covid-19 was not ‘manmade or\ngenetically modified’\nOffice of director of US intelligence releases statement after Trump reportedly asked\nofficials to investigate whether virus was made in Chinese lab\n\n== ATTACHMENT ==\nAge 30th, 2020 (85 kB)\n¥ 2 7 9\n, ,\n‘ .\n4 rhe..\n\nLive Guardian",
+      "content": "'® Coronavirus US live: intelligence report concludes Covid-19 was not ‘manmade or genetically modified\" https://www.theguardian.com/world/live/2020/apr/30/coronavirus-us-live-federal-\nguidelines-social-distancing-expire-trump-cuomo-latest-news-updates?CMP=share_btn_tw&page=with:block-5eab4 1b68f087 6ffcl 9f175#block-Seab4 1b68fO8F76ffc19f175\nthe Guardian\nCoronavirus US live: intelligence report concludes Covid-19 was not ‘manmade or\ngenetically modified’\nOffice of director of US intelligence releases statement after Trump reportedly asked\nofficials to investigate whether virus was made in Chinese lab\n\n== ATTACHMENT ==\nAge 30th, 2020 (85 kB)\n¥ 2 7 9\n, ,\n‘ .\n4 rhe..\n\nLive Guardian",
       "redacted": false,
       "idx": 1253
     },
@@ -16330,7 +16330,7 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "https://www.bbc.com/news/w s-canada-52496098\nBBC News\nUS intelligence debunks manmade coronavirus theory\nUS spies say they are still investigating the virus origins, as Mr Trump suggests it came\n\n== ATTACHMENT ==\nfrom a lab. (74 kB)\n\\ 9\nad\na ee: — 4 ul\nEWS fm\nAAG",
+      "content": "https://www-bbe.com/news/w s-canada-52496098\nBBC News\nUS intelligence debunks manmade coronavirus theory\nUS spies say they are still investigating the virus origins, as Mr Trump suggests it came\n\n== ATTACHMENT ==\nfrom a lab. (74 kB)\n\\ 9\nad\na ee: — 4 ul\nEWS fm\nAAG",
       "redacted": false,
       "idx": 1254
     },
