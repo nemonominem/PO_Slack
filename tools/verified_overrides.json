@@ -183,5 +183,12 @@
   "stamp": "Saturday, 1 February 2020 at 15:50",
   "zone": "Europe/London",
   "evidence": "Reviewer (Gilles Demaneuf), 2026-11-02, checked against the page text (farrar-fauci-comms.pdf pp.115-140). Anchors: Farrar's own notice (p.140, p.138) gives the call as '7pm GMT, 2pm EST' = 19:00 UTC; Farrar's notice went out at 15:34 UTC (his own Date line 'at 15:34' London; Garry's iPhone quote 'On Feb 1, 2020, at 9:34 AM' Central; Fauci's quote 'Sent: ... 10:34 AM' Eastern: all the same instant). Fauci's 'Please include Francis Collins' (Date 'at 15:50') is quoted on p.137 inside Farrar's 'Francis / Call me' (Sat 1 Feb 15:51:54 +0000), so it is on Farrar's London clock: 15:50 UTC = 10:50 ET, one minute before the reply."
+ },
+ {
+  "release": "po-emails.json",
+  "thread_key": "po-emails|2020-02-08|1245",
+  "stamp": "08 February 2020 09:45",
+  "zone": "Europe/London",
+  "evidence": "po-emails.pdf, the block 'From: Jeremy Farrar / Sent: 08 February 2020 09:45 / Subject: FW: 2019 N-CoV' is quoted inside Mike Ferguson's reply (REV0000827 page), so it is on Ferguson's London clock (UK date format, 24 h). Drosten's German client prints the same message at 'Datum: Samstag, 8. Februar 2020 um 10:45' (farrar-fauci-comms.pdf pp.59-60, Berlin = 09:45 UTC = 04:45 ET). Not a REV top-level stamp, so the Pacific page-owner rule does not apply."
  }
 ]

@@ -1447,7 +1447,7 @@
    "sender_raw": "Garry, Robert F P|",
    "sender_how": "inline quote marker (On ... wrote:)",
    "subject": "[NA]",
-   "content": "From: Robert Garry\n\nSubject: [NA]\n\nSent: 5 Feb 2020 21:28\n\n----------\n\nDrosten, Fazan, Fouchier, Baric and Shi Zhengli from WIV — to capture different sides of the various scenarios.\nAb Osterhaus, Linfa Wang, and Peter Diazek to capture the bats.\nGeorge Gao and possibly Steve Harrison for structure.\nSeems like she may be retired but probably has deepest historical perspective on CoV research:\nhttps://www.ucdenver.edu/academics/colleges/medicalschool/departments/ImmunologyMicrobiology/faculty/departmental/Pages/HOLMESKV.aspx\nKathryn V. Holmes, Ph.D.\n12800 E. 19th Ave., RC-1 N 9127\nMail Stop 8333, Aurora, CO 80045",
+   "content": "From: Robert Garry\n\nSubject: [NA]\n\nSent: 5 Feb 2020 21:28\n\n----------\n\nDrosten, Fazan, Fouchier, Baric and Shi Zhengli from WIV — to capture different sides of the various scenarios.\nAb Osterhaus, Linfa Wang, and Peter Diazek to capture the bats.\nGeorge Gao and possibly Steve Harrison for structure.\nSeems like she may be retired but probably has deepest historical perspective on CoV research:\nhttps://www.ucdenver.edu/academics/colleges/medicalschool/departments/ImmunologyMicrobiology/faculty/\ndepartmental/Pages/HOLMESK V.aspx\nKathryn V. Holmes, Ph.D.\n12800 E. 19th Ave., RC-1 N 9127\nMail Stop 8333, Aurora, CO 80045",
    "signature": null,
    "stamp": "5 Feb 2020 21:28",
    "stamp_status": "day-month-year",
@@ -2400,9 +2400,9 @@
   },
   {
    "date": "2020-02-08",
-   "time": "1245",
+   "time": "0445",
    "kind": "email",
-   "raw_date": "12:45 ET · FW: 2019 N-CoV",
+   "raw_date": "04:45 ET · FW: 2019 N-CoV",
    "sender": "Jeremy Farrar",
    "sender_raw": "Jeremy Farrar",
    "sender_how": "From: line",
@@ -2410,9 +2410,9 @@
    "content": "From: Jeremy Farrar\n\nTo: Edward Hols is |\\°21°7 3 i Andrew Rambaut\n\nCc: r.fouchie P.Vallance1(\n\nSubject: FW: 2019 N-CoV\n\nSent: 08 February 2020 09:45\n\n----------\n\nAPOLOGIES WITH ALL CORRECT EMAILS\nKristen, Andrew, Bob, Eddie have reworked the summary and it is attached here.\nWe are pushing to get the sequence data from the reports on the pangolins, but do not have currently, clearly that is very important to incorporate.\nInterested in your views\n® Is this reasonably balanced given the data?\n° Is there anything anyone disagrees with?\n° Is there anything more in relation to what would seem to be the two possibilities\n° Nature, Intermediate host, evolution and passage e Future data you may have\n° Advice on whether KA, AR, RG and EH should publish this.\nThese and other thoughts welcome in confidence.\n== ATTACHMENT: document (not transcribed) ==",
    "signature": null,
    "stamp": "08 February 2020 09:45",
-   "stamp_status": "day-month-year",
-   "zone_assumed": "REV export: US Pacific time (UTC-8 winter / UTC-7 summer); fits Kristian Andersen's mailbox (Scripps Research, La Jolla, San Diego)",
-   "stamp_line": "09:45 Los Angeles -> 12:45 ET",
+   "stamp_status": "long",
+   "zone_assumed": "verified from the page image: po-emails.pdf, the block 'From: Jeremy Farrar / Sent: 08 February 2020 09:45 / Subject: FW: 2019 N-CoV' is quoted inside Mike Ferguson's rep",
+   "stamp_line": "08 February 2020 09:45 -> 04:45 ET (verified override)",
    "recovered_inline": false,
    "source": "po-emails",
    "thread_key": "po-emails|2020-02-08|1245",
@@ -2423,7 +2423,8 @@
      "label": "2020-02-08 14:36 · R.A.M. Fouchier"
     }
    ],
-   "idx": 84
+   "idx": 84,
+   "verified_override": "po-emails.pdf, the block 'From: Jeremy Farrar / Sent: 08 February 2020 09:45 / Subject: FW: 2019 N-CoV' is quoted inside Mike Ferguson's reply (REV0000827 page), so it is on Ferguson's London clock (UK date format, 24 h). Drosten's German client prints the same message at 'Datum: Samstag, 8. Februar 2020 um 10:45' (farrar-fauci-comms.pdf pp.59-60, Berlin = 09:45 UTC = 04:45 ET). Not a REV top-level stamp, so the Pacific page-owner rule does not apply."
   },
   {
    "date": "2020-02-08",

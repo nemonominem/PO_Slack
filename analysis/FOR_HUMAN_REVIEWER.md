@@ -49,7 +49,7 @@ The full text, with examples, is in [`ZONE_AND_DATE_ANALYSIS.md`](ZONE_AND_DATE_
 |---|---|---|
 | **Settled** | 123 | Part 1 (1,256 messages): Eastern; Part 2 (11,351): Pacific, converted to ET |
 | **Likely** | 260 | none |
-| **Unknown** | 0 | the 74 backwards times in Part 1 (see U15 to U17) |
+| **Unknown** | 0 | the 74 backwards times in Part 1 (see U16 and U17) |
 
 ---
 
@@ -61,7 +61,7 @@ The stamp carries the zone. Rule 1.
 ### S2. One exact copy with an explicit offset
 `po-emails.pdf` pp.1-2, “Jan 31, 2020 4:38 PM”, Fauci, Anthony, “[NA]”, equals `farrar-fauci-comms.pdf` p.154, “Sat, 1 Feb 2020 00:38:35 +0000”. Rule 1b. It also anchors REV (S4).
 
-### S3. Verified from the page image, the message text or a calendar (24 entries; the Koopmans and notice copies count once each below)
+### S3. Verified from the page image, the message text or a calendar (25 entries; the Koopmans and notice copies count once each below)
 Rule 1c. Each is in `tools/verified_overrides.json` with its evidence.
 
 | Where | Header as printed | Now (ET) | Evidence |
@@ -79,6 +79,7 @@ Rule 1c. Each is in `tools/verified_overrides.json` with its evidence.
 | `farrar-fauci-comms.pdf` p.44, Harris | donderdag 5 maart 2020 15:29 | 5 Mar 09:29 | Read from the page; quoted in Esveld's Dutch client |
 | `farrar-fauci-comms.pdf` p.57, Farrar | Datum: Samstag, 8. Februar 2020 um 21:21 | 8 Feb 15:21 | Read from the page; Drosten's German client (Berlin); 20:21 UTC is after Drosten's reply |
 | `farrar-fauci-comms.pdf` pp.59-60, Farrar | Datum: Samstag, 8. Februar 2020 um 10:45 | 8 Feb 04:45 | Read from the page; Berlin |
+| `po-emails.pdf` pp.57-65, Farrar “FW: 2019 N-CoV” | Sent: 08 February 2020 09:45 | 8 Feb 04:45 | Quoted inside Ferguson's reply, so London (UK date format, 24 h), not REV Pacific; Drosten's German client prints the same message at 10:45 Berlin (U15c) |
 | `farrar-fauci-comms.pdf` p.80, Farrar | Sent: Tuesday, February 4, 2020 6:08 AM | 4 Feb 06:08 | Read from the page; quoted in Collins's 6:12 AM reply (Eastern) |
 | `farrar-fauci-comms.pdf` pp.169-172, GPMB Secretariat | Sent: martes, 28 de enero de 2020 9:09 | 28 Jan 07:09 | Read from the page; Vega Morales is based in Santiago de Chile (UTC-3 in January), you confirmed |
 | `farrar-fauci-comms.pdf` pp.115-122, Farrar “shut down the call” | Saturday, February 1, 2020 2:56 PM | 1 Feb 14:56 | Quoted in Fauci's 20:03:12 +0000 reply and Collins's 20:12; the p.115 copy prints 19:56 in Farrar's London client: same minute |
@@ -90,7 +91,7 @@ Rule 1c. Each is in `tools/verified_overrides.json` with its evidence.
 | `farrar-fauci-comms.pdf` pp.137-138, Garry “I will be on the call” | Saturday, February 1, 2020 10:49 AM | 1 Feb 10:49 | Quoted in Fauci's 15:50 (London) reply, so Eastern: 15:49 UTC, one minute before it |
 | `farrar-fauci-comms.pdf` pp.137, 140, Fauci “Francis will be on the call” and “Please include Francis Collins” | Saturday, 1 February 2020 at 15:48 and 15:50 | 1 Feb 10:48 and 10:50 | Quoted in Farrar's 15:50:28 and 15:51:54 +0000 replies, so London |
 
-### S4. REV top-level stamps: Pacific (45 emails)
+### S4. REV top-level stamps: Pacific (44 emails)
 Your decision, with evidence: REV is Kristian Andersen's collection (the REV0000nnn numbering also covers `slack-part1.pdf`, REV0002899 to REV0003038, whose first page reads “You created this private channel”).
 He is at Scripps Research, La Jolla, San Diego. Anchors: S2 (4:38 PM = UTC-8), a Garry message (16 Feb 2022) that fits UTC-8 to the minute, “it's 85 degrees in San Diego today”, and 24 bracketed stamps that all allow only -8 and -7.
 Details: analysis 1.2. Quoted blocks on REV pages follow the freeze rule instead (L1).
@@ -137,21 +138,21 @@ Every email now has a rule that gives a clock. Since your decision of 2026-11-02
 
 ### Flagged by my checks (not time errors that I can place)
 
-These three come from tests that run outside the app. The app's own data has **no reply before the message it answers**; they are about readings that might be wrong.
+These come from tests that run outside the app. The app's own data has **no reply before the message it answers**; they are about readings that might be wrong.
 
-#### U15. Three reply pairs where a second reading of the clock puts the reply before its parent
+#### U15. Resolved (2026-11-03): three reply pairs, no conflict; one real fix (U15c)
 
-`tools/freeze_bracket_check.py` re-reads every message on the clock of whoever quotes it. For three pairs in `po-emails.pdf` that reading puts the reply earlier than the message it answers. The app does not use that reading: in each pair the reply is a top-level message on a page whose owner clock is fixed (REV: Pacific, Settled in S4; GARRY: Chicago, Likely L6), and with that clock it comes after its parent.
+`tools/freeze_bracket_check.py` re-reads every message on the clock of whoever quotes it. For three pairs in `po-emails.pdf` that reading put the reply before its parent. The cause was in the check, not in the times: each reply is one merged entry with **one** kept stamp (the top-level copy's), and the check applied the quoter's clock to that stamp instead of to the stamp the quoted copy prints. Reading the quoted copies themselves settles all three.
 
-| Pair | Parent (as printed; in the app, ET) | Reply (as printed; in the app, ET) | The check's other reading of the reply | Link |
-|---|---|---|---|---|
-| **U15a** pp.22-29 | Garry “5 Feb 2020 1:03 pm”, on Holmes's Sydney clock: 4 Feb 21:03 | Holmes “2/5/2020 1:23:41 AM”, REV top-level, Pacific: 5 Feb 04:23 | Quoted by Rambaut, London clock: 4 Feb 20:23, 40 min **before** the parent | explicit |
-| **U15b** p.28 and pp.28-45 | Holmes “5 Feb 2020 9:04 pm”, Sydney: 5 Feb 05:04 | Holmes “2/5/2020 4:22:24 AM”, GARRY page, Chicago: 5 Feb 05:22 | Quoted by Rambaut, London: 4 Feb 23:22, 5 h 42 min **before** | explicit |
-| **U15c** pp.57-65 and 55-57 | Farrar “08 February 2020 09:45”, REV top-level, Pacific: 8 Feb 12:45 | Fouchier “2/8/2020 11:36:30 AM”, REV top-level, Pacific: 8 Feb 14:36 | Quoted by Drosten, Berlin: 8 Feb 05:36, 7 h 9 min **before** | inferred (same conversation) only |
+| Pair | Top-level copy (kept) | The quoted copy, as printed | Same instant? |
+|---|---|---|---|
+| **U15a** Holmes, “Re: Summary - Invitation to edit” (pp.22, 28-29) | REV p.22: “2/5/2020 1:23:41 AM” Pacific = 09:23 UTC = 04:23 ET | Quoted in Rambaut's reply (iPhone, London): “On 5 Feb 2020, at 09:23, Edward Holmes wrote” | **Yes** (Pacific 01:23 = London 09:23, the 8 h gap) |
+| **U15b** Holmes, “Region 6 is the RBD” (pp.28, 45) | GARRY page: “2/5/2020 4:22:24 AM” Chicago = 10:22 UTC = 05:22 ET | Quoted in Rambaut's reply: “On 5 Feb 2020, at 10:22, Edward Holmes wrote” | **Yes** (Chicago 04:22 = London 10:22, the 6 h gap) |
+| **U15c** Farrar, “FW: 2019 N-CoV” (pp.57-65) | none: the only copy in the REV release is the block “From: Jeremy Farrar / Sent: 08 February 2020 09:45” **inside Mike Ferguson's reply** (REV0000827) | Drosten's German client: “Datum: Samstag, 8. Februar 2020 um 10:45” (S3, `farrar-fauci-comms.pdf` pp.59-60) = 09:45 UTC | **Yes**, but the app had read 09:45 as REV Pacific (12:45 ET) |
 
-**Why it is open.** Each reply is one merged entry: a copy of the message is a top-level message on its own page, and another copy is quoted inside a Rambaut or Drosten message. The two copies would print different wall times if they were on different clocks, but only one printed stamp is kept. The app keeps the top-level copy (its clock is the page owner's). The check assumes the quoted copy. U15c also rests on a link the parser only inferred.
-**My reading:** the app's is the better one, because it uses the clock your decision S4 fixes (U15a, U15c) and every pair is in order. I would skip these.
-**What would decide it:** the page images. Is the reply's own header printed at the top of its page (“Message / From: ... Sent: ...”), and does a second copy exist inside another message with a different printed time? **Send me:** “skip”, or the printed times of the second copy.
+**U15a and U15b: nothing to change.** The two pairs give a minute-exact match between two printed clocks that differ by exactly the whole-hour offset we assume (Pacific to London, Chicago to London). That is also the best evidence yet for the REV (Pacific) and GARRY (Chicago) clocks, and for Rambaut's London iPhone. The Holmes “On ... wrote:” attribution lines are Apple Mail's way of writing a quoted header; they carry **no separator line**, unlike Outlook's header block. That changes nothing for the quote rule: what decides the clock is that the block is nested in another message and that the quoting client wrote its date line (the attribution line is written by Holmes's client, so Sydney: “1:03 pm” = 21:03 ET the evening before; Andersen's “Tuesday, February 4, 2020 at 7:08 PM” inside Garry's message is Garry's Outlook, Central = 20:08 ET). The check should read the quoted copy's own stamp. It does not yet; hence these two still show as “newly broken” in `analysis/freeze_bracket_check.csv`.
+**U15c: fixed.** Farrar's block is quoted, not top-level, so it is on Ferguson's London clock: 09:45 London = **04:45 ET** (it was 12:45 ET). It is now a verified override (S3), consistent with the German copy. Reply order: Farrar 04:45, Fouchier (REV top-level, Pacific) 14:36, Drosten's quoted copy of Fouchier 05:36 on the Berlin clock: all in order. The inferred “same conversation” link Farrar to Fouchier stays.
+**Lesson, for anyone who reads P.O. emails:** a header printed in the format “Sent: 08 February 2020 09:45” (day, month name, year, 24 h, no seconds) is a UK client's rendering, so it is **not** a REV export stamp even when the page is a REV page. A true REV top-level stamp has the form “Sent: 2/8/2020 11:36:30 AM” (month/day, seconds, AM/PM) under a “Message” line. The parser's page-owner rule for the P.O. release has no such test (the P.O. release has no `top_level_stamp_re`, because of the attached-document risk, e.g. Pope's “Tue 2/4/2020 9:10:35 AM (UTC-05:00)”); a search for other REV-page entries whose stamp is not in the REV export form is the obvious next check.
 
 #### U16. Slack Part 1: six evening-then-small-hours rows that are not the divider fault
 

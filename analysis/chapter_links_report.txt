@@ -30,7 +30,6 @@ Unlinked citations (strict matching):
 12.4  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.16, 5–6 Feb 2020
 12.5  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.46, 7 Feb 2020 (UK)
 12.5  NO TIME, not linked  Proximal_Origin_Slack.pdf, p.21, 7 Feb 2020 (UK)
-13.1  TIME NOT FOUND  Proximal_Origin_Emails.pdf, p.57–58, 8 Feb 2020, 9:45 UK  (ET 2020-02-08 04:45)
 13.2  TIME NOT FOUND  Proximal_Origin_Emails.pdf, p.55, 8 Feb 2020, 10:36 am UK  (ET 2020-02-08 05:36)
 13.3  TIME NOT FOUND  Proximal_Origin_Emails.pdf, p.61, 8 Feb 2020, 12:00 pm UK  (ET 2020-02-08 07:00)
 13.3  NO TIME, not linked  Proximal_Origin_Emails.pdf, p.56, 8 Feb 2020, 12 pm UK

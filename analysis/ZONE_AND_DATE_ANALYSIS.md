@@ -36,7 +36,7 @@ backed by evidence. `zone_format_audit.csv` marks each email `Settled`.
 | Verified from the page image or the message text | 24 | per entry (Eastern, London, Pacific, Amsterdam, Berlin, Santiago) | 4 corrections in 1.1; 8 headers that were undated, read from the page images; 2 corrected from the message text (Gao and Dzau, 25 Apr 2020); Folkers 8:43 PM; and the 22:34 reply (list in FOR_HUMAN_REVIEWER.md, S3) |
 | Page owner **REV**, top-level stamps only (P.O. emails) | 45 | Pacific | Section 1.2. The 95 other REV-page entries are quoted blocks, which now take the quoting author's clock (Supported) |
 
-## 1.1 The verified corrections (24 entries; first four, then the others in FOR_HUMAN_REVIEWER.md S3)
+## 1.1 The verified corrections (25 entries; first four, then the others in FOR_HUMAN_REVIEWER.md S3)
 
 - `po-emails.pdf` p.2, “Friday, January 31, 2020 5:57 PM”, Jeremy Farrar, “Re: Phone call”: quoted in Fauci's reply, so on Fauci's Eastern clock. The same message appears in the
   Farrar-Fauci release as `farrar-fauci-comms.pdf` pp.154-155, “Friday, January 31, 2020 5:57 PM”, Jeremy Farrar, “Re: Phone call”, inside Fauci's reply stamped `00:38:35 +0000`: also a verified correction.
