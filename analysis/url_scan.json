@@ -1,0 +1,2451 @@
+[
+ {
+  "url": "https://zoom.us/j/9673242666",
+  "where": [
+   [
+    "part1.json",
+    55
+   ]
+  ],
+  "next": "Call",
+  "status": 200
+ },
+ {
+  "url": "https://docs.google.com/document/d/1HOVHVaahY¥",
+  "where": [
+   [
+    "part1.json",
+    56
+   ]
+  ],
+  "next": "",
+  "status": "ERR:UnicodeEncodeError"
+ },
+ {
+  "url": "https://www.biorxiv.org/content/10.1101/2020.01.30.926477v1",
+  "where": [
+   [
+    "part1.json",
+    69
+   ]
+  ],
+  "next": "('m",
+  "status": 200
+ },
+ {
+  "url": "https://jvi.asm.org/content/early/2020/01/23/JVI.00127-20",
+  "where": [
+   [
+    "part1.json",
+    94
+   ],
+   [
+    "sscp-drafts.json",
+    2
+   ]
+  ],
+  "next": "https://www.nature.com/articles/s41579-018-0118-9",
+  "status": 403,
+  "status_joined": 403
+ },
+ {
+  "url": "https://www.nature.com/articles/s41579-018-0118-9",
+  "where": [
+   [
+    "part1.json",
+    94
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://jvi.asm.org/content/82/5/2274",
+  "where": [
+   [
+    "part1.json",
+    94
+   ]
+  ],
+  "next": "This",
+  "status": 403,
+  "status_joined": 403
+ },
+ {
+  "url": "https://twitter.com/trvrb/status/1224207999683547137",
+  "where": [
+   [
+    "part1.json",
+    98
+   ]
+  ],
+  "next": "Thanks",
+  "status": 200
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6070550/",
+  "where": [
+   [
+    "part1.json",
+    112
+   ]
+  ],
+  "next": "®",
+  "status": 200
+ },
+ {
+  "url": "https://twitter.com/trvrb/status/1224208100590096384?s=21",
+  "where": [
+   [
+    "part1.json",
+    116
+   ]
+  ],
+  "next": "But",
+  "status": 200
+ },
+ {
+  "url": "https://science.sciencemag.org/content/302/5643/276",
+  "where": [
+   [
+    "part1.json",
+    117
+   ]
+  ],
+  "next": "~",
+  "status": 403,
+  "status_joined": 403
+ },
+ {
+  "url": "https://journals.plos.org/plospathogens/article?id=",
+  "where": [
+   [
+    "part1.json",
+    119
+   ]
+  ],
+  "next": "",
+  "status": 500
+ },
+ {
+  "url": "https://www.globaltimes.cn/content/1178363.shtml",
+  "where": [
+   [
+    "part1.json",
+    125
+   ]
+  ],
+  "next": "B",
+  "status": 200
+ },
+ {
+  "url": "https://www.forbes.com/sites/victor",
+  "where": [
+   [
+    "part1.json",
+    125
+   ]
+  ],
+  "next": "",
+  "status": 403
+ },
+ {
+  "url": "https://global.chinadaily.com.cn/a/202002/02/WS5c36b2b7a31012821727432chtmI",
+  "where": [
+   [
+    "part1.json",
+    125
+   ]
+  ],
+  "next": "2",
+  "status": 404,
+  "status_joined": 404
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Chinese_ferret-badger",
+  "where": [
+   [
+    "part1.json",
+    136
+   ]
+  ],
+  "next": "W",
+  "status": 200
+ },
+ {
+  "url": "https://en.wikipedia.org/wiki/Huanan_Seafood_Wholesale_Market",
+  "where": [
+   [
+    "part1.json",
+    137
+   ]
+  ],
+  "next": "W",
+  "status": 200
+ },
+ {
+  "url": "https://www.nature.com/articles/425915a’Serological",
+  "where": [
+   [
+    "part1.json",
+    142
+   ]
+  ],
+  "next": "",
+  "status": "ERR:UnicodeEncodeError"
+ },
+ {
+  "url": "https://science.sciencemag.org/content/sci/309/5742/1864.full.pdf",
+  "where": [
+   [
+    "part1.json",
+    147
+   ]
+  ],
+  "next": "This",
+  "status": 403,
+  "status_joined": 403
+ },
+ {
+  "url": "https://mrc.ukri.org/funding/browse/2019-ncov-rapid-response-call/2019-ncov-rapid-response-call/",
+  "where": [
+   [
+    "part1.json",
+    157
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://cov-glue.cve.glaac.uk/#/replacement",
+  "where": [
+   [
+    "part1.json",
+    172
+   ]
+  ],
+  "next": "Some",
+  "status": "ERR:URLError",
+  "status_joined": "ERR:URLError"
+ },
+ {
+  "url": "https://jameslyonsweiler.com/2020/02/02/moderately-strong-confirmation-of-a-laboratory-origin-of-2019-ncow/",
+  "where": [
+   [
+    "part1.json",
+    174
+   ]
+  ],
+  "next": "jamestyonsweiler.com",
+  "status": 404,
+  "status_joined": 404
+ },
+ {
+  "url": "https://www.vox.com/future-perfect/2019/3/20/18260669/deadly-pathogens-escape-lab-smallpox-bird-fl",
+  "where": [
+   [
+    "part1.json",
+    230
+   ]
+  ],
+  "next": "WW",
+  "status": 200
+ },
+ {
+  "url": "https://virological.org/t/tackiing-rumors-of-a-suspicious-origin-of-ncov2019/384",
+  "where": [
+   [
+    "part1.json",
+    231
+   ]
+  ],
+  "next": "©",
+  "status": 200
+ },
+ {
+  "url": "https://www.nrdc.org/experts/olly-pepper/nrdc-and-allies-sue-trump-administration-protect-pangolins",
+  "where": [
+   [
+    "part1.json",
+    233
+   ]
+  ],
+  "next": "*",
+  "status": 403,
+  "status_joined": 403
+ },
+ {
+  "url": "https://docs.google.com/document/d/14HI2",
+  "where": [
+   [
+    "part1.json",
+    245
+   ]
+  ],
+  "next": "",
+  "status": 404
+ },
+ {
+  "url": "https://www.bbc.com/news/world-51429400",
+  "where": [
+   [
+    "part1.json",
+    257
+   ]
+  ],
+  "next": "BBC",
+  "status": 200
+ },
+ {
+  "url": "https://jvi.asm.org/content/79/22/14451",
+  "where": [
+   [
+    "part1.json",
+    263
+   ]
+  ],
+  "next": "",
+  "status": 403
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pubmed/26916286",
+  "where": [
+   [
+    "part1.json",
+    282
+   ]
+  ],
+  "next": "®",
+  "status": 200
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4476415/",
+  "where": [
+   [
+    "part1.json",
+    282
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pubmed/21849456",
+  "where": [
+   [
+    "part1.json",
+    282
+   ]
+  ],
+  "next": "B®",
+  "status": 200
+ },
+ {
+  "url": "https://abcnews.go.com/Politics/white-house-asks-scientists-investigate",
+  "where": [
+   [
+    "part1.json",
+    284
+   ]
+  ],
+  "next": "",
+  "status": 404
+ },
+ {
+  "url": "https://wwwnc.cdc.gov/eid/article/11/12/04-1293_article",
+  "where": [
+   [
+    "part1.json",
+    291
+   ]
+  ],
+  "next": "SARS-CoV",
+  "status": 200
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pubmed/15980414",
+  "where": [
+   [
+    "part1.json",
+    291
+   ]
+  ],
+  "next": "B®",
+  "status": 200
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pubmed/15695582",
+  "where": [
+   [
+    "part1.json",
+    291
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pubmed/",
+  "where": [
+   [
+    "part1.json",
+    291
+   ],
+   [
+    "part1.json",
+    408
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://science.sciencemag.org/content/sci/earty/",
+  "where": [
+   [
+    "part1.json",
+    292
+   ]
+  ],
+  "next": "",
+  "status": 403
+ },
+ {
+  "url": "https://www.chinadaily.com.cn/a/202002/07/WSSe3didaca310128217275d93.htnn",
+  "where": [
+   [
+    "part1.json",
+    307
+   ]
+  ],
+  "next": "0",
+  "status": 200
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6893680/figure/viruses-11-00979-f005/",
+  "where": [
+   [
+    "part1.json",
+    311
+   ]
+  ],
+  "next": "®",
+  "status": 200
+ },
+ {
+  "url": "https://www.sciencedirect.com/science/article/pii/S0166354220300528",
+  "where": [
+   [
+    "part1.json",
+    318
+   ]
+  ],
+  "next": "",
+  "status": 403
+ },
+ {
+  "url": "https://www",
+  "where": [
+   [
+    "part1.json",
+    321
+   ]
+  ],
+  "next": "",
+  "status": "ERR:URLError"
+ },
+ {
+  "url": "https://www.sciencedirect.com/science/article/pii/S00653527",
+  "where": [
+   [
+    "part1.json",
+    339
+   ]
+  ],
+  "next": "",
+  "status": 403
+ },
+ {
+  "url": "https://www.sciencedirect.com/science/article/pii/S2211124718311483?via%3Dihub",
+  "where": [
+   [
+    "part1.json",
+    364
+   ]
+  ],
+  "next": "",
+  "status": 403
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC249560/",
+  "where": [
+   [
+    "part1.json",
+    364
+   ]
+  ],
+  "next": "x»",
+  "status": 200
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pubmed/14752165",
+  "where": [
+   [
+    "part1.json",
+    371
+   ]
+  ],
+  "next": "B®",
+  "status": 200
+ },
+ {
+  "url": "https://www.express.co.uk/news/world/1240664",
+  "where": [
+   [
+    "part1.json",
+    384
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.nature.com/nature/for-",
+  "where": [
+   [
+    "part1.json",
+    413
+   ]
+  ],
+  "next": "authors/other-subs",
+  "status": 303
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4696701/",
+  "where": [
+   [
+    "part1.json",
+    419
+   ]
+  ],
+  "next": "®",
+  "status": 200
+ },
+ {
+  "url": "https://wwwnc.cdc.gov/eid/article/22/1/15-1055_article",
+  "where": [
+   [
+    "part1.json",
+    419
+   ]
+  ],
+  "next": "=P",
+  "status": 200
+ },
+ {
+  "url": "https://www.washingtonpost.com/politics/2020/02/16/tom-cotton-coronavirus-conspiracy",
+  "where": [
+   [
+    "part1.json",
+    456
+   ]
+  ],
+  "next": "wp",
+  "status": "ERR:TimeoutError",
+  "status_joined": "ERR:TimeoutError"
+ },
+ {
+  "url": "https://www.biorxiv.org/content/10.1101/2020,02.11.944462v1",
+  "where": [
+   [
+    "part1.json",
+    457
+   ]
+  ],
+  "next": "Oh,",
+  "status": 200
+ },
+ {
+  "url": "https://docs.google.com/document/d/14HI21tdEyXQSXBBDC2KWHxSrKifyMdkK",
+  "where": [
+   [
+    "part1.json",
+    497
+   ]
+  ],
+  "next": "",
+  "status": 404
+ },
+ {
+  "url": "https://virological.org/t/the-proximal-origin-of-sars-cov-2/398",
+  "where": [
+   [
+    "part1.json",
+    505
+   ]
+  ],
+  "next": "F",
+  "status": 200
+ },
+ {
+  "url": "https://www.thelancet.com/pb-assets/Lencet/pdfs/S0140673620304",
+  "where": [
+   [
+    "part1.json",
+    514
+   ]
+  ],
+  "next": "",
+  "status": 403
+ },
+ {
+  "url": "https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMO=GetGRID*4TBH83NHO14",
+  "where": [
+   [
+    "part1.json",
+    541
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://science.sciencemag.org/content/sci/earty/2020/02/19/scence.abb2507",
+  "where": [
+   [
+    "part1.json",
+    569
+   ]
+  ],
+  "next": "",
+  "status": 403
+ },
+ {
+  "url": "https://www.thelancet.com/journals/lancet/article/PIS0140-6736(20)304",
+  "where": [
+   [
+    "part1.json",
+    570
+   ]
+  ],
+  "next": "",
+  "status": 403
+ },
+ {
+  "url": "https://www.sciencemag.org/news/2020/02/scientists-strongly-condemn-rumors-and-conspiracy-theories-about-origin-coronavirus",
+  "where": [
+   [
+    "part1.json",
+    570
+   ]
+  ],
+  "next": "\\",
+  "status": 403,
+  "status_joined": 403
+ },
+ {
+  "url": "https://link.springer.com/chapter/10.1007%2F978-1-4684-1280-2_23",
+  "where": [
+   [
+    "part1.json",
+    601
+   ]
+  ],
+  "next": "SpringerLink",
+  "status": 200
+ },
+ {
+  "url": "https://docs.google.com/document/d/",
+  "where": [
+   [
+    "part1.json",
+    635
+   ]
+  ],
+  "next": "",
+  "status": 404
+ },
+ {
+  "url": "https://docs.google.com/document/d/14HI21tdEyXQSXBBDC2KwHxSrKffyMdkWdMZGXxbd228",
+  "where": [
+   [
+    "part1.json",
+    635
+   ]
+  ],
+  "next": "",
+  "status": 404
+ },
+ {
+  "url": "https://www.nature.com/articles/425915a",
+  "where": [
+   [
+    "part1.json",
+    637
+   ]
+  ],
+  "next": "Nature",
+  "status": 200
+ },
+ {
+  "url": "https://docs",
+  "where": [
+   [
+    "part1.json",
+    646
+   ]
+  ],
+  "next": "",
+  "status": "ERR:URLError"
+ },
+ {
+  "url": "https://www.virology.ws/2020/02/20/pangolins-and-the-origin-of-sars-cov-2",
+  "where": [
+   [
+    "part1.json",
+    653
+   ]
+  ],
+  "next": "coronavirus",
+  "status": 200
+ },
+ {
+  "url": "https://www.politico.com/news/2020/02/21/coronavirus-trump-white-house-116650",
+  "where": [
+   [
+    "part1.json",
+    664
+   ]
+  ],
+  "next": "POLITICO",
+  "status": 403,
+  "status_joined": 403
+ },
+ {
+  "url": "https://docs.google.com/document/d/1TQoMX8u_QiumfeLLwi06TLI-VKPBefsv34tjO8fLE6o/edit",
+  "where": [
+   [
+    "part1.json",
+    667
+   ]
+  ],
+  "next": "Waiting",
+  "status": 404,
+  "status_joined": 404
+ },
+ {
+  "url": "https://www.bbc.com/news/world-asia-51596665",
+  "where": [
+   [
+    "part1.json",
+    667
+   ]
+  ],
+  "next": "BBC",
+  "status": 200
+ },
+ {
+  "url": "https://www.nature.com/articles/nature17200/figures/10",
+  "where": [
+   [
+    "part1.json",
+    680
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2838128",
+  "where": [
+   [
+    "part1.json",
+    682
+   ]
+  ],
+  "next": "®",
+  "status": 200
+ },
+ {
+  "url": "https://wwwnc.cdc.gov/eid/article/19/7/12-1094_article",
+  "where": [
+   [
+    "part1.json",
+    683
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2519682/",
+  "where": [
+   [
+    "part1.json",
+    688
+   ]
+  ],
+  "next": "B®",
+  "status": 200
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6226446/",
+  "where": [
+   [
+    "part1.json",
+    688
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://qz.com/1805422/wuhan-virology-lab-unablo-to-quell-china-coronavirus-conspiracies/",
+  "where": [
+   [
+    "part1.json",
+    693
+   ]
+  ],
+  "next": "©",
+  "status": 200
+ },
+ {
+  "url": "https://www.nature.com/articles/s41598-018-34859-w",
+  "where": [
+   [
+    "part1.json",
+    697
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/nuccore/MT084071.1",
+  "where": [
+   [
+    "part1.json",
+    786
+   ]
+  ],
+  "next": "Seems",
+  "status": 200
+ },
+ {
+  "url": "www.theguardian.com/environment/2020/feb/25/coronavirus-closures-reveal-vast-scale-of-chinas-secretive-wildlife-farm-industry",
+  "where": [
+   [
+    "part1.json",
+    796
+   ]
+  ],
+  "next": "®",
+  "status": 200
+ },
+ {
+  "url": "https://www.microbe.tv/twievo/twievo-52/",
+  "where": [
+   [
+    "part1.json",
+    801
+   ]
+  ],
+  "next": "®",
+  "status": 200
+ },
+ {
+  "url": "https://www.washingtonexaminer.com/washington-secrets/fauci-chinese-cat-feasts-linked-to-viru",
+  "where": [
+   [
+    "part1.json",
+    842
+   ]
+  ],
+  "next": "&",
+  "status": 404,
+  "status_joined": 404
+ },
+ {
+  "url": "https://www.scmp.com/tech/big-tech/article/3052624/more-60-cent-chinese-companies-still-telecommuting-amid-coronavirus",
+  "where": [
+   [
+    "part1.json",
+    846
+   ]
+  ],
+  "next": "®",
+  "status": 200
+ },
+ {
+  "url": "www.cell.com/pb-assets/journals/research/cell/Cell_",
+  "where": [
+   [
+    "part1.json",
+    846
+   ]
+  ],
+  "next": "",
+  "status": 403
+ },
+ {
+  "url": "https://mp.weixin.qq.com/s/JW_46Zer5U14FLVIS4S",
+  "where": [
+   [
+    "part1.json",
+    853
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.bing.com/videos/search",
+  "where": [
+   [
+    "part1.json",
+    861
+   ]
+  ],
+  "next": "q=s0+i%27ve+got+a+chance&&view",
+  "status": 200
+ },
+ {
+  "url": "https://www.nature.com/articles/d41586-020-00548-w",
+  "where": [
+   [
+    "part1.json",
+    863
+   ]
+  ],
+  "next": "*",
+  "status": 200
+ },
+ {
+  "url": "www",
+  "where": [
+   [
+    "part1.json",
+    891
+   ],
+   [
+    "part1.json",
+    1108
+   ]
+  ],
+  "next": "",
+  "status": "ERR:URLError"
+ },
+ {
+  "url": "https://www.scmp.com/news/china/society/article/3074991/coronavirus-chinas-first-confirmed-covid-19-case-traced-back",
+  "where": [
+   [
+    "part1.json",
+    959
+   ]
+  ],
+  "next": "=",
+  "status": 200
+ },
+ {
+  "url": "https://wwwdeonarddobsonart.co.uk/",
+  "where": [
+   [
+    "part1.json",
+    976
+   ]
+  ],
+  "next": "leonarddobsonart",
+  "status": "ERR:URLError",
+  "status_joined": "ERR:URLError"
+ },
+ {
+  "url": "https://twitter.com/CARRENEAN",
+  "where": [
+   [
+    "part1.json",
+    978
+   ]
+  ],
+  "next": "¥",
+  "status": 200
+ },
+ {
+  "url": "https://t.co/XuHjiL5pZU",
+  "where": [
+   [
+    "part1.json",
+    978
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://twitter.com/CARRENEAN/status/1078041436975755264?s*20",
+  "where": [
+   [
+    "part1.json",
+    979
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://wiley.altmetric.com/details/74354946",
+  "where": [
+   [
+    "part1.json",
+    991
+   ]
+  ],
+  "next": "wiley.altmetric.com",
+  "status": 200
+ },
+ {
+  "url": "https://www.altmetric.com/top100/2019/",
+  "where": [
+   [
+    "part1.json",
+    992
+   ]
+  ],
+  "next": "O",
+  "status": 404,
+  "status_joined": 404
+ },
+ {
+  "url": "https://www.altmetric.com/details/77676422#score",
+  "where": [
+   [
+    "part1.json",
+    995
+   ]
+  ],
+  "next": "altmetric.com",
+  "status": 200
+ },
+ {
+  "url": "https://biorxiv.altmetric.com/details/74957328",
+  "where": [
+   [
+    "part1.json",
+    998
+   ]
+  ],
+  "next": "biorxiv.altmetric.com",
+  "status": 200
+ },
+ {
+  "url": "https://twitter.cor",
+  "where": [
+   [
+    "part1.json",
+    1031
+   ]
+  ],
+  "next": "",
+  "status": "ERR:URLError"
+ },
+ {
+  "url": "https://www.usatoday.col",
+  "where": [
+   [
+    "part1.json",
+    1032
+   ]
+  ],
+  "next": "",
+  "status": "ERR:URLError"
+ },
+ {
+  "url": "https://www.scmp.com/news/china/science/article/3077442/coronavirus-pathogen-could-have-been-spreading-humans-decades",
+  "where": [
+   [
+    "part1.json",
+    1037
+   ]
+  ],
+  "next": "“©",
+  "status": 200
+ },
+ {
+  "url": "https://doi.org/10.1101/2020.03.22.002204",
+  "where": [
+   [
+    "part1.json",
+    1043
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://virological.org/t/identification-of",
+  "where": [
+   [
+    "part1.json",
+    1056
+   ]
+  ],
+  "next": "",
+  "status": 404
+ },
+ {
+  "url": "https://www.biorxiv.org/content/10.1101/2020.03.22.002204v1",
+  "where": [
+   [
+    "part1.json",
+    1057
+   ]
+  ],
+  "next": "bR",
+  "status": 200
+ },
+ {
+  "url": "https://www.snopes.com/news/2020/04/01/covid-19-bioweapon",
+  "where": [
+   [
+    "part1.json",
+    1059
+   ]
+  ],
+  "next": "Snopes.com",
+  "status": 200
+ },
+ {
+  "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0052752#pone-0052752-*",
+  "where": [
+   [
+    "part1.json",
+    1073
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.scientificamerican.com/article/how-chinas-bat-woman-hunted-down-viruses-from-sars-to-the-new-coronavirus1/",
+  "where": [
+   [
+    "part1.json",
+    1075
+   ]
+  ],
+  "next": "S\\",
+  "status": 200
+ },
+ {
+  "url": "https://virological.org/t/identification-of-a-common-deletion-in-the-spike-protein-of-sars-cov-2/451/6",
+  "where": [
+   [
+    "part1.json",
+    1075
+   ],
+   [
+    "part1.json",
+    1166
+   ]
+  ],
+  "next": "®",
+  "status": 200
+ },
+ {
+  "url": "https://journals.plos.org/plosone/article",
+  "where": [
+   [
+    "part1.json",
+    1075
+   ],
+   [
+    "part1.json",
+    1166
+   ]
+  ],
+  "next": "id=10.1371/journal",
+  "status": 404,
+  "status_joined": 404
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2395124/",
+  "where": [
+   [
+    "part1.json",
+    1076
+   ]
+  ],
+  "next": "B®",
+  "status": 200
+ },
+ {
+  "url": "https://www.biorxiv.org/content/",
+  "where": [
+   [
+    "part1.json",
+    1089
+   ]
+  ],
+  "next": "",
+  "status": 429
+ },
+ {
+  "url": "https://www.nationalreview.com/2020/04/coronavirus-china-trail-leading-back-to-wuhan-labs/",
+  "where": [
+   [
+    "part1.json",
+    1095
+   ]
+  ],
+  "next": "we",
+  "status": 200
+ },
+ {
+  "url": "www.grain.org/en/article/6437-new-research-suggests-industrial-livestock-not-wet-markets-might-be-origin-of-covid-19",
+  "where": [
+   [
+    "part1.json",
+    1099
+   ]
+  ],
+  "next": "&",
+  "status": 200
+ },
+ {
+  "url": "https://pan.baidu.com/s/1QnUdVJImmByO-MWim7PE4A",
+  "where": [
+   [
+    "part1.json",
+    1118
+   ]
+  ],
+  "next": "Pass:",
+  "status": 404,
+  "status_joined": 404
+ },
+ {
+  "url": "https://www.cnn.com/2020/04/10/politics/trump-usaid-prevent-program-coronavirus/index.html",
+  "where": [
+   [
+    "part1.json",
+    1134
+   ]
+  ],
+  "next": "G",
+  "status": 200
+ },
+ {
+  "url": "https://www.bing.com/search?q«Beijir",
+  "where": [
+   [
+    "part1.json",
+    1138
+   ]
+  ],
+  "next": "",
+  "status": "ERR:UnicodeEncodeError"
+ },
+ {
+  "url": "https://edition.cnn.com/2020/04/12/asia/china-coronavirus-research-restrictions-intl-hnk/index.html",
+  "where": [
+   [
+    "part1.json",
+    1139
+   ]
+  ],
+  "next": "CNN",
+  "status": 200
+ },
+ {
+  "url": "https://www.npr.org/podcasts/510351/short-wave",
+  "where": [
+   [
+    "part1.json",
+    1142
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.cnn.com/2020/04/15/polit",
+  "where": [
+   [
+    "part1.json",
+    1148
+   ]
+  ],
+  "next": "",
+  "status": 404
+ },
+ {
+  "url": "https://www.9news.com.au/world/united-states-trump-investigating-sor",
+  "where": [
+   [
+    "part1.json",
+    1150
+   ]
+  ],
+  "next": "",
+  "status": 404
+ },
+ {
+  "url": "https://www.news.com.au/lifestyle/health/health-problems/t",
+  "where": [
+   [
+    "part1.json",
+    1150
+   ]
+  ],
+  "next": "",
+  "status": 403
+ },
+ {
+  "url": "https://www.ktvu.co",
+  "where": [
+   [
+    "part1.json",
+    1150
+   ]
+  ],
+  "next": "",
+  "status": "ERR:URLError"
+ },
+ {
+  "url": "https://www.researchgate.net/publication/340100582_WUHAN_COVID-19_SYNTHETIC_ORIGINS_",
+  "where": [
+   [
+    "part1.json",
+    1163
+   ]
+  ],
+  "next": "",
+  "status": 403
+ },
+ {
+  "url": "https://nam03.safelinks.protection.outiook.com/?url=https%3A%2F%2Fwww.foxnews.com%2F",
+  "where": [
+   [
+    "part1.json",
+    1165
+   ]
+  ],
+  "next": "",
+  "status": "ERR:URLError"
+ },
+ {
+  "url": "https://journals.plos.org/plosone/article?id=",
+  "where": [
+   [
+    "part1.json",
+    1166
+   ]
+  ],
+  "next": "",
+  "status": 500
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pubmed/28924042",
+  "where": [
+   [
+    "part1.json",
+    1166
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pubmed/24172901",
+  "where": [
+   [
+    "part1.json",
+    1173
+   ]
+  ],
+  "next": "https://www.ncbinim.nih.gov/pubmed/",
+  "status": 200
+ },
+ {
+  "url": "https://www.ncbinim.nih.gov/pubmed/",
+  "where": [
+   [
+    "part1.json",
+    1173
+   ]
+  ],
+  "next": "",
+  "status": "ERR:URLError"
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pubmed/29500692",
+  "where": [
+   [
+    "part1.json",
+    1173
+   ]
+  ],
+  "next": "https://www.ncbi.nlm.nih.gov/pubmed/26719272",
+  "status": 200
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pubmed/26719272",
+  "where": [
+   [
+    "part1.json",
+    1173
+   ]
+  ],
+  "next": "®",
+  "status": 200
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4265931/",
+  "where": [
+   [
+    "part1.json",
+    1191
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://mbio.asm.org/content/6/4/e01013-15",
+  "where": [
+   [
+    "part1.json",
+    1191
+   ]
+  ],
+  "next": "",
+  "status": 403
+ },
+ {
+  "url": "https://dimensions.altmetric.com/details/77699394#score",
+  "where": [
+   [
+    "part1.json",
+    1192
+   ]
+  ],
+  "next": "dimensions.altmetric.com",
+  "status": 200
+ },
+ {
+  "url": "https://app.dimensions.ai/discover/publication?order=altmetric",
+  "where": [
+   [
+    "part1.json",
+    1192
+   ],
+   [
+    "part1.json",
+    1204
+   ]
+  ],
+  "next": "©",
+  "status": 202
+ },
+ {
+  "url": "https://www.nature.com/articles/nature22975",
+  "where": [
+   [
+    "part1.json",
+    1196
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://wwwnc.cdc.gov/eid/article/11/12/05-0997_article",
+  "where": [
+   [
+    "part1.json",
+    1199
+   ]
+  ],
+  "next": "=",
+  "status": 200
+ },
+ {
+  "url": "https://www.scienceopen.com/search#(‘order'~O_‘context'~(‘collection'~('id'~'d6ba10ea-809d-4f28-96b9-d2ed475ec319'_'kind’-O)_'kind'~11)_'v'~3_‘kind’'~77",
+  "where": [
+   [
+    "part1.json",
+    1200
+   ]
+  ],
+  "next": "So",
+  "status": 403,
+  "status_joined": 403
+ },
+ {
+  "url": "https://www.scienceopen.com/search#content",
+  "where": [
+   [
+    "part1.json",
+    1201
+   ],
+   [
+    "part1.json",
+    1202
+   ]
+  ],
+  "next": "So",
+  "status": 403,
+  "status_joined": 403
+ },
+ {
+  "url": "https://project-evidence.github.io/",
+  "where": [
+   [
+    "part1.json",
+    1210
+   ]
+  ],
+  "next": "[Disclaimer",
+  "status": 200
+ },
+ {
+  "url": "https://pubpeer.com/publications/8319A13E7",
+  "where": [
+   [
+    "part1.json",
+    1214
+   ]
+  ],
+  "next": "",
+  "status": 404
+ },
+ {
+  "url": "https://twitter.com/nextstrain/status/",
+  "where": [
+   [
+    "part1.json",
+    1243
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.nytimes.com/2020/04/30/us/politics/trump-administration-intelligence-coronavirus-china.html",
+  "where": [
+   [
+    "part1.json",
+    1244
+   ]
+  ],
+  "next": "€",
+  "status": 403,
+  "status_joined": "ERR:UnicodeEncodeError"
+ },
+ {
+  "url": "https://www.theguardian.com/world/live/2020/apr/30/coronavirus-us-live-federal-guidelines-social-distancing-expire-trump-cuomo-latest-news-updates?CMP=share_btn_tw&page=with:block-5eab4",
+  "where": [
+   [
+    "part1.json",
+    1253
+   ]
+  ],
+  "next": "",
+  "status": 404
+ },
+ {
+  "url": "https://www.bbc.com/news/w",
+  "where": [
+   [
+    "part1.json",
+    1254
+   ]
+  ],
+  "next": "",
+  "status": 404
+ },
+ {
+  "url": "https://virological.org/t/ncov-2019-spike-protein-receptor-binding-domain-shares-high-amino-acid-identity-with-a-coronavirus-recovered-from-a-pangolin-viral-metagenomic-dataset/362",
+  "where": [
+   [
+    "sscp-drafts.json",
+    5
+   ],
+   [
+    "sscp-drafts.json",
+    5
+   ],
+   [
+    "sscp-drafts.json",
+    6
+   ],
+   [
+    "sscp-drafts.json",
+    6
+   ],
+   [
+    "sscp-drafts.json",
+    7
+   ],
+   [
+    "sscp-drafts.json",
+    8
+   ],
+   [
+    "sscp-drafts.json",
+    9
+   ],
+   [
+    "sscp-drafts.json",
+    10
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://virological.org/t/analysis-of-wuhan-coronavirus-deja-vu/357",
+  "where": [
+   [
+    "sscp-drafts.json",
+    10
+   ],
+   [
+    "sscp-drafts.json",
+    11
+   ],
+   [
+    "sscp-drafts.json",
+    12
+   ],
+   [
+    "sscp-drafts.json",
+    13
+   ],
+   [
+    "sscp-drafts.json",
+    14
+   ],
+   [
+    "sscp-drafts.json",
+    15
+   ],
+   [
+    "sscp-drafts.json",
+    17
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://virological.org/t/phylodynamic-analysis-90-genomes-12-feb-2020/356",
+  "where": [
+   [
+    "sscp-drafts.json",
+    10
+   ],
+   [
+    "sscp-drafts.json",
+    11
+   ],
+   [
+    "sscp-drafts.json",
+    12
+   ],
+   [
+    "sscp-drafts.json",
+    13
+   ],
+   [
+    "sscp-drafts.json",
+    14
+   ],
+   [
+    "sscp-drafts.json",
+    15
+   ],
+   [
+    "sscp-drafts.json",
+    17
+   ],
+   [
+    "sscp-drafts.json",
+    18
+   ],
+   [
+    "sscp-drafts.json",
+    19
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://virological.org/t/phylodynamic-estimation-of-incidence-and-prevalence-of-novel-coronavirus-ncov-infections-through-time/391",
+  "where": [
+   [
+    "sscp-drafts.json",
+    10
+   ],
+   [
+    "sscp-drafts.json",
+    11
+   ],
+   [
+    "sscp-drafts.json",
+    12
+   ],
+   [
+    "sscp-drafts.json",
+    13
+   ],
+   [
+    "sscp-drafts.json",
+    14
+   ],
+   [
+    "sscp-drafts.json",
+    15
+   ],
+   [
+    "sscp-drafts.json",
+    17
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.gisaid.org/",
+  "where": [
+   [
+    "sscp-drafts.json",
+    11
+   ],
+   [
+    "sscp-drafts.json",
+    12
+   ],
+   [
+    "sscp-drafts.json",
+    13
+   ],
+   [
+    "sscp-drafts.json",
+    14
+   ],
+   [
+    "sscp-drafts.json",
+    15
+   ],
+   [
+    "sscp-drafts.json",
+    16
+   ],
+   [
+    "sscp-drafts.json",
+    17
+   ],
+   [
+    "sscp-drafts.json",
+    18
+   ],
+   [
+    "sscp-drafts.json",
+    19
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://virological.org/",
+  "where": [
+   [
+    "sscp-drafts.json",
+    11
+   ],
+   [
+    "sscp-drafts.json",
+    12
+   ],
+   [
+    "sscp-drafts.json",
+    13
+   ],
+   [
+    "sscp-drafts.json",
+    14
+   ],
+   [
+    "sscp-drafts.json",
+    15
+   ],
+   [
+    "sscp-drafts.json",
+    16
+   ],
+   [
+    "sscp-drafts.json",
+    17
+   ],
+   [
+    "sscp-drafts.json",
+    18
+   ],
+   [
+    "sscp-drafts.json",
+    19
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.biorxiv.org/content/10.1101/2020.02.13.945485v1.full.pdf",
+  "where": [
+   [
+    "sscp-drafts.json",
+    12
+   ],
+   [
+    "sscp-drafts.json",
+    12
+   ]
+  ],
+  "next": "https://www.biorxiv.org/content/10.1101/2020.02.08.939660v2.full.pdf)",
+  "status": 200
+ },
+ {
+  "url": "https://www.biorxiv.org/content/10.1101/2020.02.08.939660v2.full.pdf",
+  "where": [
+   [
+    "sscp-drafts.json",
+    12
+   ],
+   [
+    "sscp-drafts.json",
+    12
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://bit.ly/2HMndCi",
+  "where": [
+   [
+    "sscp-drafts.json",
+    13
+   ],
+   [
+    "sscp-drafts.json",
+    14
+   ],
+   [
+    "sscp-drafts.json",
+    16
+   ],
+   [
+    "sscp-drafts.json",
+    17
+   ]
+  ],
+  "next": "",
+  "status": "ERR:TimeoutError"
+ },
+ {
+  "url": "https://www.who.int/news-room/detail/30-01-2020-statement-on-the-second-meeting-of-the-international-health-regulations-(2005)-emergency-committee-regarding-the-outbreak-of-novel-coronavirus-(2019-ncov",
+  "where": [
+   [
+    "sscp-drafts.json",
+    17
+   ]
+  ],
+  "next": "7.",
+  "status": 404,
+  "status_joined": 500
+ },
+ {
+  "url": "https://virological.org/t/clock-and-tmrca-based-on-27-genomes/347",
+  "where": [
+   [
+    "sscp-drafts.json",
+    17
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.scripps.edu/faculty/andersen/",
+  "where": [
+   [
+    "po-emails.json",
+    0
+   ],
+   [
+    "farrar-fauci.json",
+    22
+   ]
+  ],
+  "next": "Bob",
+  "status": 200
+ },
+ {
+  "url": "https://medicine.tulane.edu/departments/microbiology-immunology-tulane-cancer-center/faculty/robert-f-garry-jr-phd",
+  "where": [
+   [
+    "po-emails.json",
+    0
+   ],
+   [
+    "farrar-fauci.json",
+    22
+   ]
+  ],
+  "next": "Eddie",
+  "status": 404,
+  "status_joined": 404
+ },
+ {
+  "url": "https://sydney.edu.au/science/about/our-people/academic-staff/edward-holmes.html",
+  "where": [
+   [
+    "po-emails.json",
+    0
+   ],
+   [
+    "farrar-fauci.json",
+    22
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.scripps.edu/faculty/farzan/",
+  "where": [
+   [
+    "po-emails.json",
+    4
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "www.ecohealthalliance.org",
+  "where": [
+   [
+    "po-emails.json",
+    14
+   ]
+  ],
+  "next": "Twitter:",
+  "status": "ERR:URLError",
+  "status_joined": "ERR:URLError"
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3397359/",
+  "where": [
+   [
+    "po-emails.json",
+    24
+   ],
+   [
+    "farrar-fauci.json",
+    72
+   ]
+  ],
+  "next": "Bottom",
+  "status": 200
+ },
+ {
+  "url": "https://www.statnews.com/2020/02/04/two-scenarios-if-new-coronavirus-isnt-contained/",
+  "where": [
+   [
+    "po-emails.json",
+    28
+   ]
+  ],
+  "next": "To",
+  "status": 200
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pubmed/31996437",
+  "where": [
+   [
+    "po-emails.json",
+    40
+   ]
+  ],
+  "next": "Once",
+  "status": 203
+ },
+ {
+  "url": "https://www.ucdenver.edu/academics/colleges/medicalschool/departments/ImmunologyMicrobiology/faculty/departmental/Pages/HOLMESKV.aspx",
+  "where": [
+   [
+    "po-emails.json",
+    50
+   ]
+  ],
+  "next": "Kathryn",
+  "status": 404,
+  "status_joined": 404
+ },
+ {
+  "url": "https://jvi.asm.org/content/79/22/1445",
+  "where": [
+   [
+    "po-emails.json",
+    66
+   ]
+  ],
+  "next": "",
+  "status": 403
+ },
+ {
+  "url": "https://tree.bio.ed.ac.uk",
+  "where": [
+   [
+    "po-emails.json",
+    67
+   ],
+   [
+    "po-emails.json",
+    86
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.nytimes.com/reuters/2020/02/07/world/asia/07reuters-china-health-pangolins.html",
+  "where": [
+   [
+    "po-emails.json",
+    70
+   ]
+  ],
+  "next": "",
+  "status": 403
+ },
+ {
+  "url": "https://www.businessinsider.com/china-scientists-identify-pangolin-as-possible-coronavirus-host-2020-2",
+  "where": [
+   [
+    "po-emails.json",
+    70
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://virologie-ccm.charite.de/",
+  "where": [
+   [
+    "po-emails.json",
+    86
+   ],
+   [
+    "po-emails.json",
+    86
+   ],
+   [
+    "po-emails.json",
+    86
+   ],
+   [
+    "po-emails.json",
+    89
+   ]
+  ],
+  "next": "https://globalhealth.charite.de/",
+  "status": 200
+ },
+ {
+  "url": "https://globalhealth.charite.de/",
+  "where": [
+   [
+    "po-emails.json",
+    86
+   ],
+   [
+    "po-emails.json",
+    86
+   ],
+   [
+    "po-emails.json",
+    86
+   ],
+   [
+    "po-emails.json",
+    89
+   ]
+  ],
+  "next": "Datum:",
+  "status": 200
+ },
+ {
+  "url": "https://www.factcheck.org/2020/02/baseless-conspiracy-theories-claim-new-coronavirus-was-bioengineered/",
+  "where": [
+   [
+    "po-emails.json",
+    92
+   ]
+  ],
+  "next": "As",
+  "status": 403,
+  "status_joined": 403
+ },
+ {
+  "url": "https://icmm.ku.dk/english/research-groups/clausen-group/",
+  "where": [
+   [
+    "po-emails.json",
+    93
+   ]
+  ],
+  "next": "However,",
+  "status": "ERR:URLError",
+  "status_joined": "ERR:URLError"
+ },
+ {
+  "url": "https://www.tandfonline.com/doi/full/10.1080/20477724.2020.1725339",
+  "where": [
+   [
+    "po-emails.json",
+    134
+   ]
+  ],
+  "next": "PROFESSOREDWARDC.HOLMESFAAFRSssss—s—S",
+  "status": 403,
+  "status_joined": "ERR:UnicodeEncodeError"
+ },
+ {
+  "url": "https://www.flickr.com/photos/niaid/albums/72157712914621487",
+  "where": [
+   [
+    "po-emails.json",
+    141
+   ]
+  ],
+  "next": "<image001.png>",
+  "status": 403,
+  "status_joined": 404
+ },
+ {
+  "url": "https://www.washingtonpost.com/politics/2020/02/16/tom-cotton-coronavirus-conspiracy/",
+  "where": [
+   [
+    "po-emails.json",
+    149
+   ]
+  ],
+  "next": "",
+  "status": "ERR:TimeoutError"
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/pubmed/31652964",
+  "where": [
+   [
+    "po-emails.json",
+    152
+   ]
+  ],
+  "next": "We",
+  "status": 200
+ },
+ {
+  "url": "https://www.biorxiv.org/content/10.1101/2020.02.11.944462v1",
+  "where": [
+   [
+    "po-emails.json",
+    159
+   ]
+  ],
+  "next": "Anyway,",
+  "status": 200
+ },
+ {
+  "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30419",
+  "where": [
+   [
+    "po-emails.json",
+    204
+   ]
+  ],
+  "next": "",
+  "status": 403
+ },
+ {
+  "url": "https://www.nature.com/authors/policies/license.html#terms",
+  "where": [
+   [
+    "po-emails.json",
+    215
+   ]
+  ],
+  "next": "If",
+  "status": 200
+ },
+ {
+  "url": "https://www.nature.com/reprints/author",
+  "where": [
+   [
+    "po-emails.json",
+    215
+   ]
+  ],
+  "next": "",
+  "status": 303
+ },
+ {
+  "url": "www.nature.com/protocolexchange/",
+  "where": [
+   [
+    "po-emails.json",
+    215
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "www.nature.com/protocolexchange/about",
+  "where": [
+   [
+    "po-emails.json",
+    215
+   ]
+  ],
+  "next": "",
+  "status": 303
+ },
+ {
+  "url": "www.nature.com/nm/",
+  "where": [
+   [
+    "po-emails.json",
+    215
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.nature.com/subscriptions/recommend.html#forms",
+  "where": [
+   [
+    "po-emails.json",
+    215
+   ]
+  ],
+  "next": "**",
+  "status": 404,
+  "status_joined": 404
+ },
+ {
+  "url": "https://www.springernature.com/editorial-and-publishing-jobs",
+  "where": [
+   [
+    "po-emails.json",
+    215
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://platformsupport.nature.com",
+  "where": [
+   [
+    "po-emails.json",
+    215
+   ]
+  ],
+  "next": "",
+  "status": "ERR:URLError"
+ },
+ {
+  "url": "https://www.nature.com/authors/policies/confidentiality.html",
+  "where": [
+   [
+    "po-emails.json",
+    215
+   ]
+  ],
+  "next": "Privacy",
+  "status": 200
+ },
+ {
+  "url": "https://www.scripps.edu/news-and-events/press-room/2020/20200317-andersen-covid-19-coronavirus.html",
+  "where": [
+   [
+    "po-emails.json",
+    218
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.nature.com/articles/s41591-020-0820-9#Ack1",
+  "where": [
+   [
+    "po-emails.json",
+    219
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://virological.org/t/identification-of-a~-common-deletion-in-the-spike-protein-of-sars-cov-2/45",
+  "where": [
+   [
+    "po-emails.json",
+    220
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.nature.com/articles/s41591-020-0820-9",
+  "where": [
+   [
+    "po-emails.json",
+    221
+   ]
+  ],
+  "next": "In",
+  "status": 200
+ },
+ {
+  "url": "https://www.zerohedge.com/geopolitical/coronavirus-contains-hiv-insertions-stoking-fears-over",
+  "where": [
+   [
+    "farrar-fauci.json",
+    57
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.ncbi.nlm.nih.gov/research/groups/koonin/",
+  "where": [
+   [
+    "farrar-fauci.json",
+    74
+   ]
+  ],
+  "next": "Wayne",
+  "status": 200
+ },
+ {
+  "url": "https://abcnews.com/Politics/white-house-asks-scientists-investigate-origins-coronavirus/story?id=68807304",
+  "where": [
+   [
+    "farrar-fauci.json",
+    80
+   ]
+  ],
+  "next": "Tony",
+  "status": 200
+ },
+ {
+  "url": "https://www.factcheck.org/2020/02/baseless-conspiracy-theories-claim-new-coronavirus",
+  "where": [
+   [
+    "farrar-fauci.json",
+    89
+   ]
+  ],
+  "next": "",
+  "status": 403
+ },
+ {
+  "url": "https://www.youtube.com/user/theNASciences",
+  "where": [
+   [
+    "farrar-fauci.json",
+    115
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.hsj.co.uk/acute-care/exclusive-national-alert-as-coronavirus-related-condition-may-be-emerging-in-children/7027496.article",
+  "where": [
+   [
+    "farrar-fauci.json",
+    123
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://t.co/Bj6YHU8zi",
+  "where": [
+   [
+    "farrar-fauci.json",
+    123
+   ]
+  ],
+  "next": "",
+  "status": 404
+ },
+ {
+  "url": "https://www.washingtonpost.com/local/new-dc-hospital-numbers-suggest-kids-do-face-some-risk-of-coronavirus-hospitalization/2020/04/25/5e78c268-86fe-11ea-878a-86477a724bdb_story.html",
+  "where": [
+   [
+    "farrar-fauci.json",
+    125
+   ]
+  ],
+  "next": "",
+  "status": "ERR:TimeoutError"
+ },
+ {
+  "url": "https://help.webex.com",
+  "where": [
+   [
+    "farrar-fauci.json",
+    129
+   ]
+  ],
+  "next": "",
+  "status": 200
+ },
+ {
+  "url": "https://www.recoverytrial.net",
+  "where": [
+   [
+    "farrar-fauci.json",
+    138
+   ]
+  ],
+  "next": "",
+  "status": 202
+ },
+ {
+  "url": "https://www.theguardian.com/sport/2020/jul/23/mlb-opening-night-fauci-yankees-nationals",
+  "where": [
+   [
+    "farrar-fauci.json",
+    146
+   ]
+  ],
+  "next": "",
+  "status": 200
+ }
+]

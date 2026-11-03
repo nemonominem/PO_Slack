@@ -20,6 +20,7 @@ printed Pacific time in `stamp_line`.
    image or the message text fixes both the time and its clock.
 4. `dedupe_same_instant.py`: remove duplicates and repoint links; also rebuilds the audit file.
 4b. `apply_url_fixes.py`: repairs web addresses the OCR broke, from `url_fixes.json` (broken form -> real address found by web search). Add a row for each broken link found; idempotent.
+4c. `scan_urls.py analysis/url_scan.json` then `build_url_report.py`: tests every address live and writes `analysis/UNRESOLVED_LINKS.md`.
 5. `build_chapter_links.py`: links boxes to Tragicomedy sections.
 6. `build_bookmark_rekey.py`: maps old bookmark keys to current keys.
 7. `build_zone_audit.py`: `analysis/zone_format_audit.csv` (run by step 4 as well).
