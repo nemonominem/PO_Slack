@@ -63,11 +63,11 @@ MONTH_INDEX = {m: i + 1 for i, m in enumerate(MONTHS)}
 
 # Year may be OCR'd with O/U/Z for 0/0/2 ("2U20", "2O20").
 DATE_RE = re.compile(
-    r"\b(" + "|".join(MONTHS) + r")\s+(\d{1,2}|[iIl](?=st\b))(?:st|nd|rd|th)?\s*,?\s*(2[\dOUZouz]{3})\b"
+    r"\b(" + "|".join(MONTHS) + r")\s+(\d{1,2}|[iIl](?=st\b))(?:st|nd|rd|th)?\s*[,.;]?\s*(2[\dOUZouz]{2,3})\b"
 )
 # Day-divider text sometimes wraps across two OCR lines ("February\n3rd, 2020").
 WRAPPED_DATE_RE = re.compile(
-    r"\b(" + "|".join(MONTHS) + r")\s*\n\s*(\d{1,2}(?:st|nd|rd|th)?\s*,?\s*2[\dOUZouz]{3})",
+    r"\b(" + "|".join(MONTHS) + r")\s*\n\s*(\d{1,2}(?:st|nd|rd|th)?\s*[,.;]?\s*2[\dOUZouz]{2,3})",
     re.IGNORECASE,
 )
 
@@ -381,6 +381,8 @@ def fix_year_ocr_typo(year):
     y = str(year).upper().replace("O", "0").replace("U", "0").replace("Z", "2")
     if not y.isdigit():
         y = re.sub(r"\D", "0", y)
+    if len(y) == 3 and y.startswith("202"):  # year cut off at the right edge ("202")
+        return "2020"
     if y == "2920" or (len(y) == 4 and y[0] == "2" and y.endswith("20")):
         return "2020"
     return y
@@ -521,11 +523,12 @@ def parse():
     cur_time_tokens = []
     cur_lines = []
     cur_page = None
+    cur_msg_date = cur_date_key  # the day in force when the message's header was read
 
     def flush():
         if cur_sender is None:
             return
-        entries.append(finalize_message(cur_sender, cur_time_tokens, cur_lines, cur_page, cur_date_key))
+        entries.append(finalize_message(cur_sender, cur_time_tokens, cur_lines, cur_page, cur_msg_date))
 
     for page_num, page_text in enumerate(pages, start=1):
         if not page_text.strip():
@@ -551,6 +554,7 @@ def parse():
                 cur_time_tokens = [time_tok] if time_tok else []
                 cur_lines = []
                 cur_page = page_num
+                cur_msg_date = cur_date_key
                 continue
 
             if cur_sender is None:
@@ -558,6 +562,7 @@ def parse():
                 cur_sender = "Slack Notice"
                 cur_time_tokens = []
                 cur_page = page_num
+                cur_msg_date = cur_date_key
             cur_lines.append(line)
 
     flush()

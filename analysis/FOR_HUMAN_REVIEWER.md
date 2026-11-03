@@ -49,7 +49,7 @@ The full text, with examples, is in [`ZONE_AND_DATE_ANALYSIS.md`](ZONE_AND_DATE_
 |---|---|---|
 | **Settled** | 123 | Part 1 (1,256 messages): Eastern; Part 2 (11,351): Pacific, converted to ET |
 | **Likely** | 260 | none |
-| **Unknown** | 0 | the 74 backwards times in Part 1 (see U16 and U17) |
+| **Unknown** | 0 | the 63 backwards times in Part 1 (see U16 and U17) |
 
 ---
 
@@ -103,8 +103,8 @@ Part 1 is Andersen's collection but prints Eastern because of the session that c
 ### S6. Slack Part 2 is Pacific
 Anchors: Holmes (“it's 1 am here”), Garry (“It's 4:15 am in Sydney”), and the sleeping hours of all four authors over 11,000 messages. Converted to ET, the printed Pacific time is in the 🕑 chip. Details: analysis 1.3.
 
-### S7. Slack day corrections (7 messages)
-`slack_date_fixes.json`: the 22:42 message of 1 Feb, and six more evening messages that had the next day's date (p.9 22:35, p.16 20:11, p.21 19:11, p.35 19:45, p.39 22:26, p.134 23:56). Same fault each time (the day divider applied one message too early); p.9 checked on the page image.
+### S7. Slack day corrections (67 messages, now by the parser)
+The parser now gives each message the day in force when its header was read (2026-11-03, see U16), which corrects 67 messages whose day divider sat just below them, including the seven below. The hand list `slack_date_fixes.json` is kept as evidence but no longer needed. The seven: the 22:42 message of 1 Feb, and six more evening messages that had the next day's date (p.9 22:35, p.16 20:11, p.21 19:11, p.35 19:45, p.39 22:26, p.134 23:56). Same fault each time (the day divider applied one message too early); p.9 checked on the page image.
 
 ---
 
@@ -154,29 +154,32 @@ These come from tests that run outside the app. The app's own data has **no repl
 **U15c: fixed.** Farrar's block is quoted, not top-level, so it is on Ferguson's London clock: 09:45 London = **04:45 ET** (it was 12:45 ET). It is now a verified override (S3), consistent with the German copy. Reply order: Farrar 04:45, Fouchier (REV top-level, Pacific) 14:36, Drosten's quoted copy of Fouchier 05:36 on the Berlin clock: all in order. The inferred “same conversation” link Farrar to Fouchier stays.
 **Lesson, for anyone who reads P.O. emails:** a header printed in the format “Sent: 08 February 2020 09:45” (day, month name, year, 24 h, no seconds) is a UK client's rendering, so it is **not** a REV export stamp even when the page is a REV page. A true REV top-level stamp has the form “Sent: 2/8/2020 11:36:30 AM” (month/day, seconds, AM/PM) under a “Message” line. The parser's page-owner rule for the P.O. release has no such test (the P.O. release has no `top_level_stamp_re`, because of the attached-document risk, e.g. Pope's “Tue 2/4/2020 9:10:35 AM (UTC-05:00)”); a search for other REV-page entries whose stamp is not in the REV export form is the obvious next check.
 
-#### U16. Slack Part 1: six evening-then-small-hours rows that are not the divider fault
+#### U16. Slack Part 1: evening-then-small-hours rows. Two fixed (missed day divider); four left (digit lost from the time)
 
-Each is an evening message followed on the same printed date by a small-hours message. Six other cases like this were the divider fault (S7) and are fixed; these six are not (the evening run is long, or the dates jump), so they look like **misread digits**.
+Found by you on p.24 (2026-11-03): the “February 9th, 2020” tile sits between Andersen 21:17 and Rambaut 05:16, but the OCR read it as “February 9th. 2020 ~” (a **period** after the day), my divider pattern wanted a comma, so the new day was never seen. Two causes, both fixed in `parse_part1.py` and checked against the OCR:
+1. The divider pattern now accepts `, . ;` after the day and a year cut off at the edge (“202”).
+2. A message took the date in force when it was **finished**, i.e. after the divider printed below it, so the last message of a day moved to the next day (the “one message too early” fault of S7). It now takes the date in force when its header was read. This changed the day of 67 messages (the seven hand corrections of S7 are now produced by the parser, and so are the other sixty).
 
-| Page | Date | Evening message | Next message (small hours) |
+Result: p.24 (21:17 Andersen on 8 Feb, 05:16 Rambaut on 9 Feb) and p.60 are right; U17 went from 68 to 59; the check now lists **63** backwards pairs, down from 74.
+
+The four left are evening messages followed on the same date by a small-hours message whose time label lost its first digit (“Eddie Holmes 1:49” for most likely 21:49; “150”, “1:36”, “232” the same way). The page lines in the OCR show no divider between them.
+
+| Page | Date | Evening message | Next message (small hours, as read) |
 |---|---|---|---|
-| p.19 | 6 Feb 2020 | 19:44 Garry, “I've known Don for 30 years...” | 01:49 Holmes, “Nailedit. Andrew - thanks!...” (the times on this page rise steadily, so 01:49 is most likely a misread of something like 10:49 or 19:49) |
-| p.24 | 8 Feb 2020 | 21:17 Andersen, “Guys, one thing that occurs to me...” | 05:16 Rambaut, “Swine flu 2009 cid though.” |
-| p.60 | 22 Feb 2020 | 21:05 Andersen, “Just in case people think it's difficult...” | 04:15 Rambaut, “4. I think VR's piece is supposed to be...” |
-| p.121 | 10 Apr 2020 | 19:57 Andersen, “Still trying to work through this...” | 01:50 Andersen, “Very sow going...” |
-| p.134 | 20 Apr 2020 | 18:30 Holmes, “Catching up. The bats are not special...” | 01:36 Holmes, “I've spent most of my waking hours...” |
-| p.134 | 21 Apr 2020 | 19:51 Andersen, “I think 3-factor authentication...” | 02:32 Holmes, “I was just about to send that to you!” |
+| p.19 | 6 Feb 2020 | 19:44 Garry, “I've known Don for 30 years...” | 01:49 Holmes, “Nailedit. Andrew - thanks!...” (OCR: “1:49”) |
+| p.121 | 10 Apr 2020 | 19:57 Andersen, “Still trying to work through this...” | 01:50 Andersen, “Very sow going...” (OCR: “150”) |
+| p.134 | 20 Apr 2020 | 18:30 Holmes, “Catching up. The bats are not special...” | 01:36 Holmes, “I've spent most of my waking hours...” (OCR: “1:36”) |
+| p.134 | 21 Apr 2020 | 19:51 Andersen, “I think 3-factor authentication...” | 02:32 Holmes, “I was just about to send that to you!” (OCR: “232”) |
 
-**Why it is open.** Slack Part 1 prints times in a small font with no AM/PM, only on the first message of each run, and my OCR reads digits badly there (see U17). I cannot tell which of the two times is wrong without the page image.
-**What would settle it:** reading each of the six times off the page image (a second OCR pass at 400 dpi of the time labels, as I did for the email headers, would do it). **Send me:** “do the second pass” (my recommendation), or the six times as you read them.
+**What would settle it:** reading these four labels off the page image (the second OCR pass at 400 dpi would also do it). **Send me:** “do the second pass”, or the four times as you read them.
 
-#### U17. Slack Part 1: the other 68 backwards times
+#### U17. Slack Part 1: the other 59 backwards times
 
-Same test, 68 more places where a message prints an earlier time than the one before it (listed in `slack_part1_time_check.csv`, column `pattern` = `other`). Spread: 23 are 1 to 3 hours backwards, 18 are 3 to 6 hours, 33 are more than 6 hours; none is under an hour. The worst pages are p.2 (4), p.57 (4), p.13, p.43 and p.134 (3 each).
+Same test, 59 more places (68 before the divider fixes of U16) where a message prints an earlier time than the one before it (listed in `slack_part1_time_check.csv`, column `pattern` = `other`). Spread: 21 are under 3 hours backwards, 20 are 3 to 6 hours, 18 are more than 6 hours; none is under an hour. The worst pages are p.2 (4), p.57 (4), p.13, p.43 and p.134 (3 each).
 
 **Why I think they are OCR errors, not real order problems.** The first page of the OCR text shows what the digits look like: “12:90” and “15.95” for what are times, “13.7” and “13.42” with a dot, “1595” and “1997” with no colon. A time of that kind cannot be compared with its neighbours. The second cause is reading order: where two columns or a thread sit side by side, the OCR can read a reply before the message above it. Neither is a problem in the PDF itself, and Part 2 (a different, cleaner export) has no such cases.
 **What would settle it:** the same second OCR pass of the time labels (it would also resolve U16), then rerunning the check. Whatever is still backwards after that is a real question about the PDF.
-**Send me:** “do the second pass” (it needs no decision from you) or “skip” (the 74 rows stay as they are; the app shows each Slack message with the time as OCR read it, which can be wrong by a digit).
+**Send me:** “do the second pass” (it needs no decision from you) or “skip” (the 63 rows stay as they are; the app shows each Slack message with the time as OCR read it, which can be wrong by a digit).
 
 ---
 
@@ -202,7 +205,7 @@ Found and fixed by me: the physical-nesting rule for the Farrar-Fauci release (a
 | File | Use it? | For |
 |---|---|---|
 | `zone_format_audit.csv` | Optional | One row per email: rule, status (Settled / Supported / Not settled), reason |
-| `slack_part1_time_check.csv` | For U16, U17 (columns: page, date, first and second time, senders, first words, pattern) | The 74 places where Slack Part 1 times run backwards |
+| `slack_part1_time_check.csv` | For U16, U17 (columns: page, date, first and second time, senders, first words, pattern) | The 63 places where Slack Part 1 times run backwards |
 | `freeze_bracket_check.csv` | For U15 | Clock and bracketing test per email |
 | `cross_release_check.csv` | No | Quoted-later-than-quoter test across the two releases (empty: no violation) |
 | `reply_order_check.csv`, `owner_zone_check.csv` | No | My test output |
