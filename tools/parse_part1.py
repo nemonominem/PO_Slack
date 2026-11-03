@@ -598,11 +598,33 @@ def apply_date_fixes(entries):
             print("date fix NOT applied (entry changed): part1 idx %d" % fix["idx"])
 
 
+def apply_time_fixes(entries):
+    """Hand-read time labels (slack_time_fixes.json), each with its evidence. Applied only if the
+    entry still has the sender and the wrong time the OCR gave."""
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "slack_time_fixes.json")
+    if not os.path.exists(path):
+        return
+    for fix in json.load(open(path, encoding="utf-8")):
+        if fix["part"] != "part1":
+            continue
+        e = entries[fix["idx"]]
+        if e["time"] == fix["wrong_time"] and fix["sender"] in (e["sender"] or ""):
+            e["time"] = fix["time"]
+            e["stamp_line"] = "%s ET" % fix["time"]
+            e.setdefault("zone_assumed", "Slack Part 1 export is on US Eastern time (settled); shown as printed")
+            if fix.get("text"):
+                e["content"] = e["content"].replace(fix["text"][0], fix["text"][1], 1)
+            print("time fix: part1 idx %d -> %s" % (fix["idx"], fix["time"]))
+        else:
+            print("time fix NOT applied (entry changed): part1 idx %d" % fix["idx"])
+
+
 def main():
     entries = parse()
     for idx, e in enumerate(entries):
         e["idx"] = idx
     apply_date_fixes(entries)
+    apply_time_fixes(entries)
 
     page_map = build_page_map(entries)
 

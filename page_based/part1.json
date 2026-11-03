@@ -2978,12 +2978,12 @@
       "idx": 218
     },
     {
-      "stamp_line": "01:49 ET",
+      "stamp_line": "19:49 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-06",
       "raw_date": "February 6, 2020",
       "sender": "Eddie Holmes",
-      "time": "01:49",
+      "time": "19:49",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -14663,18 +14663,18 @@
       "idx": 1126
     },
     {
-      "stamp_line": "01:50 ET",
+      "stamp_line": "15:40 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-04-10",
       "raw_date": "April 10, 2020",
       "sender": "Kristian Andersen",
-      "time": "01:50",
+      "time": "15:40",
       "kind": "slack",
       "thread_id": null,
       "attachments": [
         "Screen Shot 2020-04-10 at 12.40.00.png"
       ],
-      "content": "Very sow going, but at least now we know that it's legit (but could very well be misclassification)\n\n== ATTACHMENT ==\nScreen Shot 2020-04-10 at 12.40.00.png",
+      "content": "Very slow going, but at least now we know that it's legit (but could very well be misclassification)\n\n== ATTACHMENT ==\nScreen Shot 2020-04-10 at 12.40.00.png",
       "redacted": false,
       "idx": 1127
     },
@@ -15727,12 +15727,12 @@
       "idx": 1207
     },
     {
-      "stamp_line": "01:36 ET",
+      "stamp_line": "18:36 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-04-20",
       "raw_date": "April 20, 2020",
       "sender": "Eddie Holmes",
-      "time": "01:36",
+      "time": "18:36",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -15871,12 +15871,12 @@
       "idx": 1218
     },
     {
-      "stamp_line": "19:51 ET",
+      "stamp_line": "18:51 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-04-21",
       "raw_date": "April 21, 2020",
       "sender": "Kristian Andersen",
-      "time": "19:51",
+      "time": "18:51",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -15888,21 +15888,23 @@
       "date": "2020-04-21",
       "raw_date": "April 21, 2020",
       "sender": "Kristian Andersen",
-      "time": null,
+      "time": "22:44",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
       "content": "It's an eel! Eel!!!\nDoh,\n\n== EMBEDDED DOC ==\nSARS-CoV-2 - Horizontal transfer from Asian eel Apr 21st, 2020\nFrom Bradley Porter (No content)",
       "redacted": false,
-      "idx": 1220
+      "idx": 1220,
+      "stamp_line": "22:44 ET",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed"
     },
     {
-      "stamp_line": "02:32 ET",
+      "stamp_line": "23:42 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-04-21",
       "raw_date": "April 21, 2020",
       "sender": "Eddie Holmes",
-      "time": "02:32",
+      "time": "23:42",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
