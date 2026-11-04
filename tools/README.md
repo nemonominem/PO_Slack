@@ -10,7 +10,7 @@ Part 1 is already Eastern; Part 2 is on Pacific time and is converted to ET (+3 
 printed Pacific time in `stamp_line`.
 
 `slack_time_check.py` lists the places where Part 1 times run backwards (`../analysis/slack_part1_time_check.csv`).
-`slack_date_fixes.json` holds hand-checked day corrections for Part 1, each with its evidence; `parse_part1.py` applies them.
+`slack_time_fixes.json` holds hand-read and externally OCR'd time labels (matched by index, sender and wrong time; each with evidence); `parse_part1.py` applies them. `slack_date_fixes.json` holds hand-checked day corrections for Part 1, each with its evidence; `parse_part1.py` applies them.
 
 ## Rebuild order (emails)
 1. `parse_po_emails.py`, `parse_farrar_fauci.py`: parse the OCR text into entries.

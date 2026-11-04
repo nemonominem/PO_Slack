@@ -49,7 +49,7 @@ The full text, with examples, is in [`ZONE_AND_DATE_ANALYSIS.md`](ZONE_AND_DATE_
 |---|---|---|
 | **Settled** | 123 | Part 1 (1,256 messages): Eastern; Part 2 (11,351): Pacific, converted to ET |
 | **Likely** | 260 | none |
-| **Unknown** | 0 | the 60 backwards times in Part 1 (see U17) |
+| **Unknown** | 0 | the 30 backwards times in Part 1 (see U17) |
 
 ---
 
@@ -106,8 +106,8 @@ Anchors: Holmes (“it's 1 am here”), Garry (“It's 4:15 am in Sydney”), an
 ### S7. Slack day corrections (67 messages, now by the parser)
 The parser now gives each message the day in force when its header was read (2026-11-03, see U16), which corrects 67 messages whose day divider sat just below them, including the seven below. The hand list `slack_date_fixes.json` is kept as evidence but no longer needed. The seven: the 22:42 message of 1 Feb, and six more evening messages that had the next day's date (p.9 22:35, p.16 20:11, p.21 19:11, p.35 19:45, p.39 22:26, p.134 23:56). Same fault each time (the day divider applied one message too early); p.9 checked on the page image.
 
-### S8. Slack Part 1 time labels read by you (6 messages)
-`slack_time_fixes.json`: p.19 Holmes 19:49; p.121 Andersen 15:40 and “slow”; p.134 Holmes 18:36, Andersen 18:51, Andersen 22:44, Holmes 23:42. Read from the page images on 2026-11-03.
+### S8. Slack Part 1 time labels (6 read by you, 59 by an external OCR pass)
+On 2026-11-04 a first external OCR pass (`grok_slack_part1_times_partial.csv`, notes in `grok_slack_part1_times_STATUS.md`) was matched to messages by page, sender and first words, and 59 labels were applied (commit a38bcf9); each is in `slack_time_fixes.json` marked as not yet checked by you. Its STATUS file also lists corrections I have not matched yet (e.g. p.64 Garry 14:44, p.69 Garry 06:21, p.40 Andersen 11:31, p.121 13:37). Your six: `slack_time_fixes.json`: p.19 Holmes 19:49; p.121 Andersen 15:40 and “slow”; p.134 Holmes 18:36, Andersen 18:51, Andersen 22:44, Holmes 23:42. Read from the page images on 2026-11-03.
 
 ---
 
@@ -159,15 +159,15 @@ These come from tests that run outside the app. The app's own data has **no repl
 
 #### U16. Resolved (2026-11-03)
 
-Six evening-then-small-hours rows. Two were a missed day divider (p.24 and p.60; the divider “February 9th. 2020” had a period the pattern did not accept, and a message took the day of the divider printed **below** it: now fixed in `parse_part1.py`, 67 messages changed day, see S7). The other four were digits lost from the time label, which you read off the page images and I entered in `tools/slack_time_fixes.json`: p.19 Holmes `19:49` (was 01:49); p.121 Andersen `15:40` and “Very **slow** going” (was 01:50, “sow”); p.134 Holmes `18:36` (was 01:36), Andersen `18:51` (was 19:51), Andersen's “It's an eel! Eel!!!” `22:44` (had no label), Holmes `23:42` (was 02:32), in reply to it. See S8. The check now lists 60 backwards pairs, all in U17.
+Six evening-then-small-hours rows. Two were a missed day divider (p.24 and p.60; the divider “February 9th. 2020” had a period the pattern did not accept, and a message took the day of the divider printed **below** it: now fixed in `parse_part1.py`, 67 messages changed day, see S7). The other four were digits lost from the time label, which you read off the page images and I entered in `tools/slack_time_fixes.json`: p.19 Holmes `19:49` (was 01:49); p.121 Andersen `15:40` and “Very **slow** going” (was 01:50, “sow”); p.134 Holmes `18:36` (was 01:36), Andersen `18:51` (was 19:51), Andersen's “It's an eel! Eel!!!” `22:44` (had no label), Holmes `23:42` (was 02:32), in reply to it. See S8. The check now lists 30 backwards pairs, all in U17.
 
-#### U17. Slack Part 1: the 60 backwards times
+#### U17. Slack Part 1: the 30 backwards times
 
-Same test, 60 places (74 before the divider fixes and your readings in U16; one new, p.121, where the 19:57 label before your 15:40 is itself wrong) where a message prints an earlier time than the one before it (listed in `slack_part1_time_check.csv`, column `pattern` = `other`). Spread: 21 are under 3 hours backwards, 20 are 3 to 6 hours, 18 are more than 6 hours; none is under an hour. The worst pages are p.2 (4), p.57 (4), p.13, p.43 and p.134 (3 each).
+Same test, 30 places (60 before the external OCR pass of 2026-11-04; 74 before the divider fixes and your readings in U16; one new, p.121, where the 19:57 label before your 15:40 is itself wrong) where a message prints an earlier time than the one before it (listed in `slack_part1_time_check.csv`, column `pattern` = `other`). Two (p.7, p.52) the external pass reads as printed backwards, so they may be real. The rest mostly await a match to the STATUS file's corrections or a reading of the remaining pages.
 
 **Why I think they are OCR errors, not real order problems.** The first page of the OCR text shows what the digits look like: “12:90” and “15.95” for what are times, “13.7” and “13.42” with a dot, “1595” and “1997” with no colon. A time of that kind cannot be compared with its neighbours. The second cause is reading order: where two columns or a thread sit side by side, the OCR can read a reply before the message above it. Neither is a problem in the PDF itself, and Part 2 (a different, cleaner export) has no such cases.
 **What would settle it:** the same second OCR pass of the time labels (it would also resolve U16), then rerunning the check. Whatever is still backwards after that is a real question about the PDF.
-**Send me:** the model's readings (prompt: `GROK_PROMPT_SLACK_PART1_TIMES.md`), “do the second pass”, or “skip” (the 60 rows stay as they are; the app shows each Slack message with the time as OCR read it, which can be wrong by a digit).
+**Send me:** the model's readings (prompt: `GROK_PROMPT_SLACK_PART1_TIMES.md`), “do the second pass”, or “skip” (the 30 rows stay as they are; the app shows each Slack message with the time as OCR read it, which can be wrong by a digit).
 
 ---
 
@@ -193,7 +193,7 @@ Found and fixed by me: the physical-nesting rule for the Farrar-Fauci release (a
 | File | Use it? | For |
 |---|---|---|
 | `zone_format_audit.csv` | Optional | One row per email: rule, status (Settled / Supported / Not settled), reason |
-| `slack_part1_time_check.csv` | For U17 (columns: page, date, first and second time, senders, first words, pattern) | The 60 places where Slack Part 1 times run backwards |
+| `slack_part1_time_check.csv` | For U17 (columns: page, date, first and second time, senders, first words, pattern) | The 30 places where Slack Part 1 times run backwards |
 | `freeze_bracket_check.csv` | For U15 | Clock and bracketing test per email |
 | `cross_release_check.csv` | No | Quoted-later-than-quoter test across the two releases (empty: no violation) |
 | `reply_order_check.csv`, `owner_zone_check.csv` | No | My test output |
