@@ -171,7 +171,8 @@ The test: two consecutive timed messages on the same day where the second prints
 1. Divider fix in the parser, and your six readings (U16, S8): 74 → 60.
 2. A first external OCR pass (Grok partial CSV, 2026-11-04) matched to messages by page, sender and first words: 59 labels, 60 → 30 (commit a38bcf9).
 3. A second pass from the corrections in `grok_slack_part1_times_STATUS.md`, matched by page, sender and printed time: 26 labels (table below), 30 → 11.
-4. Your readings of 2026-11-05 on the other 8 pairs (p.35, 36, 43, 49, 57, 102, 104, 115): 11 → 3. p.115 was a missed date chip: “This whole furin site…” and the 11 messages after it, up to the April 4th divider, are 3 April, not 2 April (`slack_date_fixes.json`). One of my inferences needs a check: p.43 Rambaut's “Eddie is colour blind too” is set to 13:56 (it printed 19:56, which would put it after Garry's 13:57). No new visual OCR in this step. A fix applies only if the entry still carries that sender and that exact wrong time. p.102 (a day divider, not a time) is left out, and so are p.7 and p.52, which may be printed backwards.
+(Step 3 used no new visual OCR. A fix applies only if the entry still carries that sender and that exact wrong time.)
+4. Your readings of 2026-11-05 on the other 8 pairs (p.35, 36, 43, 49, 57, 102, 104, 115): 11 → 3. p.115 was a missed date chip: “This whole furin site…” and the 11 messages after it, up to the April 4th divider, are 3 April, not 2 April (`slack_date_fixes.json`). One of my inferences needs a check: p.43 Rambaut's “Eddie is colour blind too” is set to 13:56 (it printed 19:56, which would put it after Garry's 13:57).
 
 All of these are marked in `tools/slack_time_fixes.json` as not checked by you.
 
