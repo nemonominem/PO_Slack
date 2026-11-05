@@ -236,7 +236,7 @@ p.52 may be printed backwards (page 55 opens with Holmes 02:16 under no day tile
 |---|---|---|
 | **O1** | Chapter link for section 4.11 (“Farrar proposes a way out via the WHO (1 Feb, 3:59 pm EST)”): it points at Fauci's `farrar-fauci-comms.pdf` p.137, 15:50 (“Please include Francis Collins…”), which is not about the WHO. The Farrar message that proposes WHO contact is p.108, “Sunday, February 2, 2020 4:48 AM” (now 23:48 ET, 1 Feb); neither is at 3:59 pm | Which message you mean, or whether the caption time is off; then I fix the link |
 | **O2** | A few old bookmark keys now name a different message and cannot be re-mapped (list in analysis A10) | Nothing, unless you or others bookmarked emails on those dates |
-| **O3** | P1 to P4: issues in your P.O. piece, in `TRAGICOMEDY_ISSUES.md` (private, git-ignored). The times have moved since I last checked them | “re-check them” |
+| **O3** | P1 to P4: issues in your P.O. piece, in `TRAGICOMEDY_ISSUES.md` (private, git-ignored). Re-checked 2026-11-05: all still valid; one new real question, 13.2 (Fouchier 10:36 UK in the article against 19:36 UK in the data) | Your reading of that page (see the file, P1.3) |
 | **O4** | Should `analysis/` stay in the public repository? | “ignore the folder” or “fine as it is” |
 | **O5** | My edits to your own `README.md` (six paths) and `STATUS.md` (one path) | “fine” or what to put back |
 | ~~O6~~ | `PO_Slack.code-workspace` | done: added to `.gitignore` (2026-11-02) |
