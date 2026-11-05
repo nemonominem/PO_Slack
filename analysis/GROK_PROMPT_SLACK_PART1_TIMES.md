@@ -22,22 +22,14 @@ For each page of the list below, output one CSV line per message (and one per di
 
 After the CSV, list every place where the time does **not** increase from one message to the next on the same day, and every place where a divider is between two messages.
 
-Pages to read (13): 35,36,43,49,52,55,57,64,65,102,104,115,116
+Pages to read (5): 35,52,55,64,65
 
-The places that are still suspect (11 left; 85 labels from earlier passes are already applied) (page | date | first message time -> next message time as the current OCR has it; the first is later than the next, which is impossible inside one day unless a digit is wrong or a divider is missed):
+The places that are still suspect (3 left; 85 labels from external passes and 16 read by the reviewer are already applied) (page | date | first message time -> next message time as the current OCR has it; the first is later than the next, which is impossible inside one day unless a digit is wrong or a divider is missed):
 
 ```
-p.35 | 2020-02-11 | Andrew Ram 18:21 -> Robert Gar 16:20
-p.36 | 2020-02-12 | Eddie Holm 09:24 -> Eddie Holm 03:32
-p.43 | 2020-02-15 | Robert Gar 19:57 -> Andrew Ram 13:57
-p.49 | 2020-02-17 | Robert Gar 18:09 -> Andrew Ram 16:11
+p.35 | 2020-02-11 | Robert Gar 18:22 -> Andrew Ram 16:21
 p.52 | 2020-02-19 | Robert Gar 05:05 -> Eddie Holm 02:16
-p.57 | 2020-02-20 | Robert Gar 15:29 -> Andrew Ram 13:29
-p.57 | 2020-02-20 | Eddie Holm 13:58 -> Eddie Holm 01:23
 p.64 | 2020-02-24 | Robert Gar 10:59 -> Kristian A 01:44
-p.102 | 2020-03-18 | Andrew Ram 06:36 -> Eddie Holm 01:19
-p.104 | 2020-03-19 | Eddie Holm 16:09 -> Kristian A 10:41
-p.115 | 2020-04-02 | Eddie Holm 19:21 -> Kristian A 13:35
 ```
 
 Already read by hand (do not change; use them to see what a correct reading looks like): p.19 Holmes `19:49`; p.121 Andersen `15:40` ("Very slow going"); p.134 Holmes `18:36`, Andersen `18:51`, Andersen `22:44` ("It's an eel! Eel!!!"), Holmes `23:42`. Also applied 2026-11-04/05: 85 labels from a first external pass (`grok_slack_part1_times_partial.csv`) and its corrections list (`grok_slack_part1_times_STATUS.md`), among them p.121 "Still trying to work through this..." = `13:37`. Do not re-report those; only the pairs listed above are still open.

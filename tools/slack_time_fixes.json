@@ -1,766 +1,842 @@
 [
-  {
-    "part": "part1",
-    "idx": 219,
-    "sender": "Eddie Holmes",
-    "wrong_time": "01:49",
-    "time": "19:49",
-    "evidence": "Reviewer, from the page image of slack-part1.pdf p.19 (2026-11-03): the label reads 19:49, five minutes after Garry's 19:44; the OCR dropped the leading digit."
-  },
-  {
-    "part": "part1",
-    "idx": 1127,
-    "sender": "Kristian Andersen",
-    "wrong_time": "01:50",
-    "time": "15:40",
-    "text": [
-      "Very sow going",
-      "Very slow going"
-    ],
-    "evidence": "Reviewer, from the page image of slack-part1.pdf p.121 (2026-11-03): the label reads 15:40 (OCR: 'Kristian Andersen 150'), and the text is 'Very slow going' (OCR: 'sow'). It sits before Garry's 15:47."
-  },
-  {
-    "part": "part1",
-    "idx": 1208,
-    "sender": "Eddie Holmes",
-    "wrong_time": "01:36",
-    "time": "18:36",
-    "evidence": "Reviewer, from the page image of slack-part1.pdf p.134 (2026-11-03): 18:36, six minutes after Holmes's 18:30; OCR lost the 8."
-  },
-  {
-    "part": "part1",
-    "idx": 1219,
-    "sender": "Kristian Andersen",
-    "wrong_time": "19:51",
-    "time": "18:51",
-    "evidence": "Reviewer, from the page image of slack-part1.pdf p.134 (2026-11-03): 18:51, not 19:51."
-  },
-  {
-    "part": "part1",
-    "idx": 1220,
-    "sender": "Kristian Andersen",
-    "wrong_time": null,
-    "time": "22:44",
-    "evidence": "Reviewer, from the page image of slack-part1.pdf p.134 (2026-11-03): \"It's an eel! Eel!!! Doh\" is at 22:44, after his 18:51 message; it had no time label in the OCR."
-  },
-  {
-    "part": "part1",
-    "idx": 1221,
-    "sender": "Eddie Holmes",
-    "wrong_time": "02:32",
-    "time": "23:42",
-    "evidence": "Reviewer, from the page image of slack-part1.pdf p.134 (2026-11-03): 23:42, in reply to Andersen's 22:44 'It's an eel!'."
-  },
-  {
-    "part": "part1",
-    "idx": 6,
-    "sender": "Kristian Andersen",
-    "wrong_time": "01:28",
-    "time": "12:48",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 8,
-    "sender": "Kristian Andersen",
-    "wrong_time": "19:17",
-    "time": "13:17",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 9,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "15:25",
-    "time": "13:23",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 10,
-    "sender": "Kristian Andersen",
-    "wrong_time": "19:26",
-    "time": "13:28",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 14,
-    "sender": "Kristian Andersen",
-    "wrong_time": "13:00",
-    "time": "13:30",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 19,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "19:56",
-    "time": "13:36",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 24,
-    "sender": "Kristian Andersen",
-    "wrong_time": "19:59",
-    "time": "13:38",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 42,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "01:55",
-    "time": "13:59",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 66,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "01:16",
-    "time": "11:16",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 73,
-    "sender": "Robert Garry",
-    "wrong_time": "19:51",
-    "time": "13:51",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 74,
-    "sender": "Robert Garry",
-    "wrong_time": "12:50",
-    "time": "13:50",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 120,
-    "sender": "Kristian Andersen",
-    "wrong_time": "01:02",
-    "time": "10:31",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 144,
-    "sender": "Robert Garry",
-    "wrong_time": "16:11",
-    "time": "18:11",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 146,
-    "sender": "Eddie Holmes",
-    "wrong_time": "19:28",
-    "time": "18:28",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 147,
-    "sender": "Robert Garry",
-    "wrong_time": "16:22",
-    "time": "18:32",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 148,
-    "sender": "Robert Garry",
-    "wrong_time": "12:40",
-    "time": "18:40",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 154,
-    "sender": "Eddie Holmes",
-    "wrong_time": "00:28",
-    "time": "04:28",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 245,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "08:52",
-    "time": "08:51",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 256,
-    "sender": "Robert Garry",
-    "wrong_time": "19:09",
-    "time": "13:03",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 271,
-    "sender": "Robert Garry",
-    "wrong_time": "16:15",
-    "time": "18:15",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 274,
-    "sender": "Eddie Holmes",
-    "wrong_time": "19:42",
-    "time": "18:42",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 276,
-    "sender": "Robert Garry",
-    "wrong_time": "16:57",
-    "time": "18:57",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 290,
-    "sender": "Robert Garry",
-    "wrong_time": "14:14",
-    "time": "16:14",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 364,
-    "sender": "Robert Garry",
-    "wrong_time": "16:00",
-    "time": "18:00",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 377,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "05:09",
-    "time": "03:33",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 443,
-    "sender": "Eddie Holmes",
-    "wrong_time": "10:58",
-    "time": "14:58",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 461,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "05:49",
-    "time": "08:49",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 518,
-    "sender": "Robert Garry",
-    "wrong_time": "19:52",
-    "time": "18:52",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 519,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "16:55",
-    "time": "18:53",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 527,
-    "sender": "Kristian Andersen",
-    "wrong_time": "19:09",
-    "time": "18:56",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 528,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "17:10",
-    "time": "19:00",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 589,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "05:59",
-    "time": "05:53",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 590,
-    "sender": "Robert Garry",
-    "wrong_time": "04:27",
-    "time": "06:27",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 599,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "09:06",
-    "time": "09:38",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 600,
-    "sender": "Robert Garry",
-    "wrong_time": "07:29",
-    "time": "09:39",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 612,
-    "sender": "Robert Garry",
-    "wrong_time": "19:25",
-    "time": "13:25",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 613,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "15:27",
-    "time": "13:27",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 615,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "15:09",
-    "time": "13:29",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 618,
-    "sender": "Robert Garry",
-    "wrong_time": "15:00",
-    "time": "13:36",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 620,
-    "sender": "Robert Garry",
-    "wrong_time": "12:27",
-    "time": "13:37",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 624,
-    "sender": "Eddie Holmes",
-    "wrong_time": "01:58",
-    "time": "13:58",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 716,
-    "sender": "Kristian Andersen",
-    "wrong_time": "15:19",
-    "time": "15:03",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 717,
-    "sender": "Robert Garry",
-    "wrong_time": "01:52",
-    "time": "15:23",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 728,
-    "sender": "Robert Garry",
-    "wrong_time": "14:02",
-    "time": "16:03",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 752,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "09:45",
-    "time": "03:45",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 861,
-    "sender": "Robert Garry",
-    "wrong_time": "01:50",
-    "time": "15:40",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 973,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "05:05",
-    "time": "03:03",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 974,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "03:07",
-    "time": "03:09",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 992,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "03:29",
-    "time": "03:30",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 993,
-    "sender": "Kristian Andersen",
-    "wrong_time": "02:20",
-    "time": "03:31",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 999,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "05:40",
-    "time": "03:40",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 1000,
-    "sender": "Kristian Andersen",
-    "wrong_time": "00:51",
-    "time": "03:41",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 1005,
-    "sender": "Eddie Holmes",
-    "wrong_time": "10:09",
-    "time": "16:09",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 1068,
-    "sender": "Kristian Andersen",
-    "wrong_time": "19:18",
-    "time": "13:18",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 1069,
-    "sender": "Kristian Andersen",
-    "wrong_time": "13:09",
-    "time": "13:49",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 1157,
-    "sender": "Robert Garry",
-    "wrong_time": "10:39",
-    "time": "10:33",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 1158,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "01:20",
-    "time": "12:32",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 1188,
-    "sender": "Robert Garry",
-    "wrong_time": "16:18",
-    "time": "18:18",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 1189,
-    "sender": "Eddie Holmes",
-    "wrong_time": "10:59",
-    "time": "18:59",
-    "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
-  },
-  {
-    "part": "part1",
-    "idx": 13,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "15:00",
-    "time": "13:30",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 17,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "15:59",
-    "time": "13:33",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 23,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "19:08",
-    "time": "13:38",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 145,
-    "sender": "Kristian Andersen",
-    "wrong_time": "16:26",
-    "time": "18:26",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 246,
-    "sender": "Robert Garry",
-    "wrong_time": "00:57",
-    "time": "08:57",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 366,
-    "sender": "Robert Garry",
-    "wrong_time": "19:04",
-    "time": "18:04",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 367,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "16:16",
-    "time": "18:21",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 376,
-    "sender": "Eddie Holmes",
-    "wrong_time": "09:32",
-    "time": "03:32",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 378,
-    "sender": "Eddie Holmes",
-    "wrong_time": "09:36",
-    "time": "03:36",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 397,
-    "sender": "Kristian Andersen",
-    "wrong_time": "19:10",
-    "time": "18:10",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 398,
-    "sender": "Robert Garry",
-    "wrong_time": "16:20",
-    "time": "18:20",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 413,
-    "sender": "Kristian Andersen",
-    "wrong_time": "01:19",
-    "time": "11:31",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 435,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "12:00",
-    "time": "13:40",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 439,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "19:57",
-    "time": "13:57",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 440,
-    "sender": "Robert Garry",
-    "wrong_time": "14:00",
-    "time": "13:40",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 462,
-    "sender": "Robert Garry",
-    "wrong_time": "00:52",
-    "time": "08:52",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 515,
-    "sender": "Robert Garry",
-    "wrong_time": "01:00",
-    "time": "18:09",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 779,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "06:19",
-    "time": "06:13",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 780,
-    "sender": "Robert Garry",
-    "wrong_time": "04:21",
-    "time": "06:17",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 1001,
-    "sender": "Eddie Holmes",
-    "wrong_time": "01:00",
-    "time": "05:31",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 1007,
-    "sender": "Kristian Andersen",
-    "wrong_time": "10:49",
-    "time": "10:41",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 1126,
-    "sender": "Kristian Andersen",
-    "wrong_time": "19:57",
-    "time": "13:37",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 1218,
-    "sender": "Eddie Holmes",
-    "wrong_time": "01:49",
-    "time": "18:43",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 1248,
-    "sender": "Kristian Andersen",
-    "wrong_time": "10:25",
-    "time": "16:25",
-    "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
-  },
-  {
-    "part": "part1",
-    "idx": 995,
-    "sender": "Kristian Andersen",
-    "wrong_time": "09:31",
-    "time": "03:31",
-    "evidence": "STATUS.md correction (2026-11-04)."
-  },
-  {
-    "part": "part1",
-    "idx": 996,
-    "sender": "Andrew Rambaut",
-    "wrong_time": "02:52",
-    "time": "03:32",
-    "evidence": "STATUS.md correction (2026-11-04)."
-  },
-  {
-    "part": "part1",
-    "idx": 72,
-    "sender": "Robert Garry",
-    "wrong_time": "19:30",
-    "time": "13:30",
-    "evidence": "Reviewer, from page image of slack-part1.pdf p.6 (2026-11-04): label reads 13:30 (OCR 19:30)."
-  },
-  {
-    "part": "part1",
-    "idx": 73,
-    "sender": "Robert Garry",
-    "wrong_time": "13:51",
-    "time": "13:43",
-    "evidence": "Reviewer, from page image of slack-part1.pdf p.7 (2026-11-04): next message in Garry turn reads 13:43 (OCR 13:51)."
-  },
-  {
-    "part": "part1",
-    "idx": 272,
-    "sender": "Robert Garry",
-    "wrong_time": "15:29",
-    "time": "18:29",
-    "evidence": "Reviewer, from page image of slack-part1.pdf p.24 (2026-11-04): label reads 18:29 (OCR 15:29)."
-  },
-  {
-    "part": "part1",
-    "idx": 365,
-    "sender": "Kristian Andersen",
-    "wrong_time": "10:04",
-    "time": "18:04",
-    "evidence": "Reviewer, from page image of slack-part1.pdf p.34-35 (2026-11-04): label reads 18:04 (OCR 10:04)."
-  }
+ {
+  "part": "part1",
+  "idx": 6,
+  "sender": "Kristian Andersen",
+  "wrong_time": "01:28",
+  "time": "12:48",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 8,
+  "sender": "Kristian Andersen",
+  "wrong_time": "19:17",
+  "time": "13:17",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 9,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "15:25",
+  "time": "13:23",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 10,
+  "sender": "Kristian Andersen",
+  "wrong_time": "19:26",
+  "time": "13:28",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 13,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "15:00",
+  "time": "13:30",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 14,
+  "sender": "Kristian Andersen",
+  "wrong_time": "13:00",
+  "time": "13:30",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 17,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "15:59",
+  "time": "13:33",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 19,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "19:56",
+  "time": "13:36",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 23,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "19:08",
+  "time": "13:38",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 24,
+  "sender": "Kristian Andersen",
+  "wrong_time": "19:59",
+  "time": "13:38",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 42,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "01:55",
+  "time": "13:59",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 66,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "01:16",
+  "time": "11:16",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 72,
+  "sender": "Robert Garry",
+  "wrong_time": "19:30",
+  "time": "13:30",
+  "evidence": "Reviewer, from page image of slack-part1.pdf p.6 (2026-11-04): label reads 13:30 (OCR 19:30)."
+ },
+ {
+  "part": "part1",
+  "idx": 73,
+  "sender": "Robert Garry",
+  "wrong_time": "19:51",
+  "time": "13:51",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 73,
+  "sender": "Robert Garry",
+  "wrong_time": "13:51",
+  "time": "13:43",
+  "evidence": "Reviewer, from page image of slack-part1.pdf p.7 (2026-11-04): next message in Garry turn reads 13:43 (OCR 13:51)."
+ },
+ {
+  "part": "part1",
+  "idx": 74,
+  "sender": "Robert Garry",
+  "wrong_time": "12:50",
+  "time": "13:50",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 120,
+  "sender": "Kristian Andersen",
+  "wrong_time": "01:02",
+  "time": "10:31",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 144,
+  "sender": "Robert Garry",
+  "wrong_time": "16:11",
+  "time": "18:11",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 145,
+  "sender": "Kristian Andersen",
+  "wrong_time": "16:26",
+  "time": "18:26",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 146,
+  "sender": "Eddie Holmes",
+  "wrong_time": "19:28",
+  "time": "18:28",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 147,
+  "sender": "Robert Garry",
+  "wrong_time": "16:22",
+  "time": "18:32",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 148,
+  "sender": "Robert Garry",
+  "wrong_time": "12:40",
+  "time": "18:40",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 154,
+  "sender": "Eddie Holmes",
+  "wrong_time": "00:28",
+  "time": "04:28",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 219,
+  "sender": "Eddie Holmes",
+  "wrong_time": "01:49",
+  "time": "19:49",
+  "evidence": "Reviewer, from the page image of slack-part1.pdf p.19 (2026-11-03): the label reads 19:49, five minutes after Garry's 19:44; the OCR dropped the leading digit."
+ },
+ {
+  "part": "part1",
+  "idx": 245,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "08:52",
+  "time": "08:51",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 246,
+  "sender": "Robert Garry",
+  "wrong_time": "00:57",
+  "time": "08:57",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 256,
+  "sender": "Robert Garry",
+  "wrong_time": "19:09",
+  "time": "13:03",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 271,
+  "sender": "Robert Garry",
+  "wrong_time": "16:15",
+  "time": "18:15",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 272,
+  "sender": "Robert Garry",
+  "wrong_time": "15:29",
+  "time": "18:29",
+  "evidence": "Reviewer, from page image of slack-part1.pdf p.24 (2026-11-04): label reads 18:29 (OCR 15:29)."
+ },
+ {
+  "part": "part1",
+  "idx": 274,
+  "sender": "Eddie Holmes",
+  "wrong_time": "19:42",
+  "time": "18:42",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 276,
+  "sender": "Robert Garry",
+  "wrong_time": "16:57",
+  "time": "18:57",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 290,
+  "sender": "Robert Garry",
+  "wrong_time": "14:14",
+  "time": "16:14",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 364,
+  "sender": "Robert Garry",
+  "wrong_time": "16:00",
+  "time": "18:00",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 365,
+  "sender": "Kristian Andersen",
+  "wrong_time": "10:04",
+  "time": "18:04",
+  "evidence": "Reviewer, from page image of slack-part1.pdf p.34-35 (2026-11-04): label reads 18:04 (OCR 10:04)."
+ },
+ {
+  "part": "part1",
+  "idx": 366,
+  "sender": "Robert Garry",
+  "wrong_time": "19:04",
+  "time": "18:04",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 367,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "16:16",
+  "time": "18:21",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 368,
+  "sender": "Robert Garry",
+  "wrong_time": "16:20",
+  "time": "18:22",
+  "evidence": "Reviewer, from the page image of slack-part1.pdf p.35 (2026-11-05): Garry is 18:22, and the text starts \"Agree\", not \"zs Agree\" (the \"zs\" is the avatar).",
+  "text": [
+   "zs Agree",
+   "Agree"
+  ]
+ },
+ {
+  "part": "part1",
+  "idx": 374,
+  "sender": "Eddie Holmes",
+  "wrong_time": "09:24",
+  "time": "03:24",
+  "evidence": "Reviewer, from the page image of slack-part1.pdf p.36 (2026-11-05): Holmes is 03:24."
+ },
+ {
+  "part": "part1",
+  "idx": 376,
+  "sender": "Eddie Holmes",
+  "wrong_time": "09:32",
+  "time": "03:32",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 377,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "05:09",
+  "time": "03:33",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 378,
+  "sender": "Eddie Holmes",
+  "wrong_time": "09:36",
+  "time": "03:36",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 397,
+  "sender": "Kristian Andersen",
+  "wrong_time": "19:10",
+  "time": "18:10",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 398,
+  "sender": "Robert Garry",
+  "wrong_time": "16:20",
+  "time": "18:20",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 413,
+  "sender": "Kristian Andersen",
+  "wrong_time": "01:19",
+  "time": "11:31",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 435,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "12:00",
+  "time": "13:40",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 437,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "19:56",
+  "time": "13:56",
+  "evidence": "Reviewer, from the page image of slack-part1.pdf p.43 (2026-11-05) (inferred, not read): the message just before Garry's reader-confirmed 13:57; 19:56 would put it after it. Please check."
+ },
+ {
+  "part": "part1",
+  "idx": 438,
+  "sender": "Robert Garry",
+  "wrong_time": "19:57",
+  "time": "13:57",
+  "evidence": "Reviewer, from the page image of slack-part1.pdf p.43 (2026-11-05): Garry is 13:57, not 19:57."
+ },
+ {
+  "part": "part1",
+  "idx": 439,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "19:57",
+  "time": "13:57",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 440,
+  "sender": "Robert Garry",
+  "wrong_time": "14:00",
+  "time": "13:40",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 443,
+  "sender": "Eddie Holmes",
+  "wrong_time": "10:58",
+  "time": "14:58",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 461,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "05:49",
+  "time": "08:49",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 462,
+  "sender": "Robert Garry",
+  "wrong_time": "00:52",
+  "time": "08:52",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 515,
+  "sender": "Robert Garry",
+  "wrong_time": "01:00",
+  "time": "18:09",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 516,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "16:11",
+  "time": "18:11",
+  "evidence": "Reviewer, from the page image of slack-part1.pdf p.49 (2026-11-05): Rambaut is 18:11, not 16:11."
+ },
+ {
+  "part": "part1",
+  "idx": 518,
+  "sender": "Robert Garry",
+  "wrong_time": "19:52",
+  "time": "18:52",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 519,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "16:55",
+  "time": "18:53",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 527,
+  "sender": "Kristian Andersen",
+  "wrong_time": "19:09",
+  "time": "18:56",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 528,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "17:10",
+  "time": "19:00",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 589,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "05:59",
+  "time": "05:53",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 590,
+  "sender": "Robert Garry",
+  "wrong_time": "04:27",
+  "time": "06:27",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 599,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "09:06",
+  "time": "09:38",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 600,
+  "sender": "Robert Garry",
+  "wrong_time": "07:29",
+  "time": "09:39",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 612,
+  "sender": "Robert Garry",
+  "wrong_time": "19:25",
+  "time": "13:25",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 613,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "15:27",
+  "time": "13:27",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 614,
+  "sender": "Robert Garry",
+  "wrong_time": "15:29",
+  "time": "13:29",
+  "evidence": "Reviewer, from the page image of slack-part1.pdf p.57 (2026-11-05): Garry is 13:29, not 15:29."
+ },
+ {
+  "part": "part1",
+  "idx": 615,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "15:09",
+  "time": "13:29",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 618,
+  "sender": "Robert Garry",
+  "wrong_time": "15:00",
+  "time": "13:36",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 620,
+  "sender": "Robert Garry",
+  "wrong_time": "12:27",
+  "time": "13:37",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 624,
+  "sender": "Eddie Holmes",
+  "wrong_time": "01:58",
+  "time": "13:58",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 625,
+  "sender": "Eddie Holmes",
+  "wrong_time": "01:23",
+  "time": "14:23",
+  "evidence": "Reviewer, from the page image of slack-part1.pdf p.57 (2026-11-05): Holmes is 14:23, not 01:23."
+ },
+ {
+  "part": "part1",
+  "idx": 716,
+  "sender": "Kristian Andersen",
+  "wrong_time": "15:19",
+  "time": "15:03",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 717,
+  "sender": "Robert Garry",
+  "wrong_time": "01:52",
+  "time": "15:23",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 728,
+  "sender": "Robert Garry",
+  "wrong_time": "14:02",
+  "time": "16:03",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 752,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "09:45",
+  "time": "03:45",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 779,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "06:19",
+  "time": "06:13",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 780,
+  "sender": "Robert Garry",
+  "wrong_time": "04:21",
+  "time": "06:17",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 861,
+  "sender": "Robert Garry",
+  "wrong_time": "01:50",
+  "time": "15:40",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 973,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "05:05",
+  "time": "03:03",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 974,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "03:07",
+  "time": "03:09",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 978,
+  "sender": "Eddie Holmes",
+  "wrong_time": "01:19",
+  "time": "16:19",
+  "evidence": "Reviewer, from the page image of slack-part1.pdf p.102 (2026-11-05): \"Priceless: https://twitter.com/CARRENEAN\" is Holmes 16:19 (image shows Holmes 06:05, Rambaut 06:36, Holmes 16:19)."
+ },
+ {
+  "part": "part1",
+  "idx": 992,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "03:29",
+  "time": "03:30",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 993,
+  "sender": "Kristian Andersen",
+  "wrong_time": "02:20",
+  "time": "03:31",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 995,
+  "sender": "Kristian Andersen",
+  "wrong_time": "09:31",
+  "time": "03:31",
+  "evidence": "STATUS.md correction (2026-11-04)."
+ },
+ {
+  "part": "part1",
+  "idx": 996,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "02:52",
+  "time": "03:32",
+  "evidence": "STATUS.md correction (2026-11-04)."
+ },
+ {
+  "part": "part1",
+  "idx": 999,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "05:40",
+  "time": "03:40",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 1000,
+  "sender": "Kristian Andersen",
+  "wrong_time": "00:51",
+  "time": "03:41",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 1001,
+  "sender": "Eddie Holmes",
+  "wrong_time": "01:00",
+  "time": "05:31",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 1005,
+  "sender": "Eddie Holmes",
+  "wrong_time": "10:09",
+  "time": "16:09",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 1006,
+  "sender": "Andrew Rambaut",
+  "wrong_time": null,
+  "time": "17:58",
+  "evidence": "Reviewer, from the page image of slack-part1.pdf p.104 (2026-11-05): Rambaut is 17:58 (the image.png post, Holmes 16:09 above it)."
+ },
+ {
+  "part": "part1",
+  "idx": 1007,
+  "sender": "Kristian Andersen",
+  "wrong_time": "10:49",
+  "time": "18:49",
+  "evidence": "Reviewer, from the page image of slack-part1.pdf p.104 (2026-11-05): Andersen \"Me neither\" is 18:49."
+ },
+ {
+  "part": "part1",
+  "idx": 1068,
+  "sender": "Kristian Andersen",
+  "wrong_time": "19:18",
+  "time": "13:18",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 1069,
+  "sender": "Kristian Andersen",
+  "wrong_time": "13:09",
+  "time": "13:49",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 1126,
+  "sender": "Kristian Andersen",
+  "wrong_time": "19:57",
+  "time": "13:37",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 1127,
+  "sender": "Kristian Andersen",
+  "wrong_time": "01:50",
+  "time": "15:40",
+  "text": [
+   "Very sow going",
+   "Very slow going"
+  ],
+  "evidence": "Reviewer, from the page image of slack-part1.pdf p.121 (2026-11-03): the label reads 15:40 (OCR: 'Kristian Andersen 150'), and the text is 'Very slow going' (OCR: 'sow'). It sits before Garry's 15:47."
+ },
+ {
+  "part": "part1",
+  "idx": 1157,
+  "sender": "Robert Garry",
+  "wrong_time": "10:39",
+  "time": "10:33",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 1158,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "01:20",
+  "time": "12:32",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 1188,
+  "sender": "Robert Garry",
+  "wrong_time": "16:18",
+  "time": "18:18",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 1189,
+  "sender": "Eddie Holmes",
+  "wrong_time": "10:59",
+  "time": "18:59",
+  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+ },
+ {
+  "part": "part1",
+  "idx": 1208,
+  "sender": "Eddie Holmes",
+  "wrong_time": "01:36",
+  "time": "18:36",
+  "evidence": "Reviewer, from the page image of slack-part1.pdf p.134 (2026-11-03): 18:36, six minutes after Holmes's 18:30; OCR lost the 8."
+ },
+ {
+  "part": "part1",
+  "idx": 1218,
+  "sender": "Eddie Holmes",
+  "wrong_time": "01:49",
+  "time": "18:43",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 1219,
+  "sender": "Kristian Andersen",
+  "wrong_time": "19:51",
+  "time": "18:51",
+  "evidence": "Reviewer, from the page image of slack-part1.pdf p.134 (2026-11-03): 18:51, not 19:51."
+ },
+ {
+  "part": "part1",
+  "idx": 1220,
+  "sender": "Kristian Andersen",
+  "wrong_time": null,
+  "time": "22:44",
+  "evidence": "Reviewer, from the page image of slack-part1.pdf p.134 (2026-11-03): \"It's an eel! Eel!!! Doh\" is at 22:44, after his 18:51 message; it had no time label in the OCR."
+ },
+ {
+  "part": "part1",
+  "idx": 1221,
+  "sender": "Eddie Holmes",
+  "wrong_time": "02:32",
+  "time": "23:42",
+  "evidence": "Reviewer, from the page image of slack-part1.pdf p.134 (2026-11-03): 23:42, in reply to Andersen's 22:44 'It's an eel!'."
+ },
+ {
+  "part": "part1",
+  "idx": 1248,
+  "sender": "Kristian Andersen",
+  "wrong_time": "10:25",
+  "time": "16:25",
+  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ }
 ]

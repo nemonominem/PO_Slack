@@ -61,5 +61,113 @@
     "wrong_date": "2020-04-21",
     "date": "2020-04-20",
     "evidence": "slack-part1.pdf: the 23:56 message comes after the last message of 2020-04-20 and before small-hours messages of 2020-04-21, so it is the evening of 2020-04-20; the day divider was applied one message too early (same fault as the 22:42 message of 1 Feb). Checked on the page image for the 22:35 message of 2 Feb (p.9), where the divider sits below it. Applied 2026-11-01."
+  },
+  {
+    "part": "part1",
+    "idx": 1073,
+    "sender": "Kristian",
+    "time": "13:35",
+    "wrong_date": "2020-04-02",
+    "date": "2020-04-03",
+    "evidence": "Reviewer, from the page image of slack-part1.pdf p.115 (2026-11-05): Andersen 13:35 \"This whole furin site being messed with...\" is under an April 3rd, 2020 date chip (the chip hides the start of the text), so it and the messages after it up to the April 4th divider are April 3, not April 2."
+  },
+  {
+    "part": "part1",
+    "idx": 1074,
+    "sender": "Robert",
+    "time": "13:48",
+    "wrong_date": "2020-04-02",
+    "date": "2020-04-03",
+    "evidence": "Reviewer, from the page image of slack-part1.pdf p.115 (2026-11-05): Andersen 13:35 \"This whole furin site being messed with...\" is under an April 3rd, 2020 date chip (the chip hides the start of the text), so it and the messages after it up to the April 4th divider are April 3, not April 2."
+  },
+  {
+    "part": "part1",
+    "idx": 1075,
+    "sender": "Kristian",
+    "time": "13:50",
+    "wrong_date": "2020-04-02",
+    "date": "2020-04-03",
+    "evidence": "Reviewer, from the page image of slack-part1.pdf p.115 (2026-11-05): Andersen 13:35 \"This whole furin site being messed with...\" is under an April 3rd, 2020 date chip (the chip hides the start of the text), so it and the messages after it up to the April 4th divider are April 3, not April 2."
+  },
+  {
+    "part": "part1",
+    "idx": 1076,
+    "sender": "Robert",
+    "time": "14:09",
+    "wrong_date": "2020-04-02",
+    "date": "2020-04-03",
+    "evidence": "Reviewer, from the page image of slack-part1.pdf p.115 (2026-11-05): Andersen 13:35 \"This whole furin site being messed with...\" is under an April 3rd, 2020 date chip (the chip hides the start of the text), so it and the messages after it up to the April 4th divider are April 3, not April 2."
+  },
+  {
+    "part": "part1",
+    "idx": 1077,
+    "sender": "Kristian",
+    "time": "14:15",
+    "wrong_date": "2020-04-02",
+    "date": "2020-04-03",
+    "evidence": "Reviewer, from the page image of slack-part1.pdf p.115 (2026-11-05): Andersen 13:35 \"This whole furin site being messed with...\" is under an April 3rd, 2020 date chip (the chip hides the start of the text), so it and the messages after it up to the April 4th divider are April 3, not April 2."
+  },
+  {
+    "part": "part1",
+    "idx": 1078,
+    "sender": "Robert",
+    "time": null,
+    "wrong_date": "2020-04-02",
+    "date": "2020-04-03",
+    "evidence": "Reviewer, from the page image of slack-part1.pdf p.115 (2026-11-05): Andersen 13:35 \"This whole furin site being messed with...\" is under an April 3rd, 2020 date chip (the chip hides the start of the text), so it and the messages after it up to the April 4th divider are April 3, not April 2."
+  },
+  {
+    "part": "part1",
+    "idx": 1079,
+    "sender": "Kristian",
+    "time": null,
+    "wrong_date": "2020-04-02",
+    "date": "2020-04-03",
+    "evidence": "Reviewer, from the page image of slack-part1.pdf p.115 (2026-11-05): Andersen 13:35 \"This whole furin site being messed with...\" is under an April 3rd, 2020 date chip (the chip hides the start of the text), so it and the messages after it up to the April 4th divider are April 3, not April 2."
+  },
+  {
+    "part": "part1",
+    "idx": 1080,
+    "sender": "Robert",
+    "time": null,
+    "wrong_date": "2020-04-02",
+    "date": "2020-04-03",
+    "evidence": "Reviewer, from the page image of slack-part1.pdf p.115 (2026-11-05): Andersen 13:35 \"This whole furin site being messed with...\" is under an April 3rd, 2020 date chip (the chip hides the start of the text), so it and the messages after it up to the April 4th divider are April 3, not April 2."
+  },
+  {
+    "part": "part1",
+    "idx": 1081,
+    "sender": "Robert",
+    "time": null,
+    "wrong_date": "2020-04-02",
+    "date": "2020-04-03",
+    "evidence": "Reviewer, from the page image of slack-part1.pdf p.115 (2026-11-05): Andersen 13:35 \"This whole furin site being messed with...\" is under an April 3rd, 2020 date chip (the chip hides the start of the text), so it and the messages after it up to the April 4th divider are April 3, not April 2."
+  },
+  {
+    "part": "part1",
+    "idx": 1082,
+    "sender": "Kristian",
+    "time": null,
+    "wrong_date": "2020-04-02",
+    "date": "2020-04-03",
+    "evidence": "Reviewer, from the page image of slack-part1.pdf p.115 (2026-11-05): Andersen 13:35 \"This whole furin site being messed with...\" is under an April 3rd, 2020 date chip (the chip hides the start of the text), so it and the messages after it up to the April 4th divider are April 3, not April 2."
+  },
+  {
+    "part": "part1",
+    "idx": 1083,
+    "sender": "Kristian",
+    "time": null,
+    "wrong_date": "2020-04-02",
+    "date": "2020-04-03",
+    "evidence": "Reviewer, from the page image of slack-part1.pdf p.115 (2026-11-05): Andersen 13:35 \"This whole furin site being messed with...\" is under an April 3rd, 2020 date chip (the chip hides the start of the text), so it and the messages after it up to the April 4th divider are April 3, not April 2."
+  },
+  {
+    "part": "part1",
+    "idx": 1084,
+    "sender": "Eddie",
+    "time": null,
+    "wrong_date": "2020-04-02",
+    "date": "2020-04-03",
+    "evidence": "Reviewer, from the page image of slack-part1.pdf p.115 (2026-11-05): Andersen 13:35 \"This whole furin site being messed with...\" is under an April 3rd, 2020 date chip (the chip hides the start of the text), so it and the messages after it up to the April 4th divider are April 3, not April 2."
   }
 ]
