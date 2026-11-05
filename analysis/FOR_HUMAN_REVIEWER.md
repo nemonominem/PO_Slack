@@ -1,6 +1,6 @@
 # Where the dates and times stand: what is settled, what is likely, what is unknown
 
-Status 2026-11-01, after the last rebuild. This is the only file with things for you to look at.
+Status 2026-11-05 (emails: last rebuild of 2026-11-01; Slack Part 1 times: 2026-11-05). This is the only file with things for you to look at.
 The evidence and the method are in [`ZONE_AND_DATE_ANALYSIS.md`](ZONE_AND_DATE_ANALYSIS.md).
 
 **How to answer:** reply in chat with the code and your answer (for example “U10: keep London”, “O1: it is p.108”).
@@ -49,7 +49,7 @@ The full text, with examples, is in [`ZONE_AND_DATE_ANALYSIS.md`](ZONE_AND_DATE_
 |---|---|---|
 | **Settled** | 123 | Part 1 (1,256 messages): Eastern; Part 2 (11,351): Pacific, converted to ET |
 | **Likely** | 260 | none |
-| **Unknown** | 0 | the 30 backwards times in Part 1 (see U17) |
+| **Unknown** | 0 | the 11 backwards times in Part 1 (see U17) |
 
 ---
 
@@ -106,8 +106,8 @@ Anchors: Holmes (“it's 1 am here”), Garry (“It's 4:15 am in Sydney”), an
 ### S7. Slack day corrections (67 messages, now by the parser)
 The parser now gives each message the day in force when its header was read (2026-11-03, see U16), which corrects 67 messages whose day divider sat just below them, including the seven below. The hand list `slack_date_fixes.json` is kept as evidence but no longer needed. The seven: the 22:42 message of 1 Feb, and six more evening messages that had the next day's date (p.9 22:35, p.16 20:11, p.21 19:11, p.35 19:45, p.39 22:26, p.134 23:56). Same fault each time (the day divider applied one message too early); p.9 checked on the page image.
 
-### S8. Slack Part 1 time labels (6 read by you, 59 by an external OCR pass)
-On 2026-11-04 a first external OCR pass (`grok_slack_part1_times_partial.csv`, notes in `grok_slack_part1_times_STATUS.md`) was matched to messages by page, sender and first words, and 59 labels were applied (commit a38bcf9); each is in `slack_time_fixes.json` marked as not yet checked by you. Its STATUS file also lists corrections I have not matched yet (e.g. p.64 Garry 14:44, p.69 Garry 06:21, p.40 Andersen 11:31, p.121 13:37). Your six: `slack_time_fixes.json`: p.19 Holmes 19:49; p.121 Andersen 15:40 and “slow”; p.134 Holmes 18:36, Andersen 18:51, Andersen 22:44, Holmes 23:42. Read from the page images on 2026-11-03.
+### S8. Slack Part 1 time labels (6 read by you, 85 by an external OCR pass)
+On 2026-11-04 a first external OCR pass (`grok_slack_part1_times_partial.csv`, notes in `grok_slack_part1_times_STATUS.md`) was matched to messages by page, sender and first words, and 59 labels were applied (commit a38bcf9); each is in `slack_time_fixes.json` marked as not yet checked by you. The corrections in its STATUS file were applied in a second step (U17). Your six: `slack_time_fixes.json`: p.19 Holmes 19:49; p.121 Andersen 15:40 and “slow”; p.134 Holmes 18:36, Andersen 18:51, Andersen 22:44, Holmes 23:42. Read from the page images on 2026-11-03.
 
 ---
 
@@ -133,13 +133,13 @@ Filter `zone_format_audit.csv` on `zone_status` = Supported, then on `rule`. Bra
 
 ### Emails (0): none
 
-Every email now has a rule that gives a clock. Since your decision of 2026-11-02 (**physically nested under a block on the same page = quoted by it**, rule 2 above; a header that opens a page is not linked unless you declared it nested from the page image, as for p.58), the freeze rule applies to every Farrar-Fauci block, and the quoters were added to the lookup of where people live: Barasch (NIAID, Bethesda), Miller de Vega (GPMB Secretariat at WHO, Geneva), Kickbusch (Global Health Centre, Geneva; the “From: ee” on p.41 is the OCR of a redaction code, you identified her) and Dzau (Washington DC). Nothing is Unknown among the emails; the Slack items U15 to U17 below remain.
+Every email now has a rule that gives a clock. Since your decision of 2026-11-02 (**physically nested under a block on the same page = quoted by it**, rule 2 above; a header that opens a page is not linked unless you declared it nested from the page image, as for p.58), the freeze rule applies to every Farrar-Fauci block, and the quoters were added to the lookup of where people live: Barasch (NIAID, Bethesda), Miller de Vega (GPMB Secretariat at WHO, Geneva), Kickbusch (Global Health Centre, Geneva; the “From: ee” on p.41 is the OCR of a redaction code, you identified her) and Dzau (Washington DC). Nothing is Unknown among the emails; the Slack item U17 below is the only open one (U15 and U16 are resolved).
 
 **Esveld (old U10) and the others.** Esveld p.43, “06 March 2020 10:34”, is now read as nested under Alex Harris's block, so on Harris's London clock (05:34 ET). Her earlier Dutch-format message below it is already Settled (S3). The old question “London or Netherlands, up to 1 h” remains open in substance: Harris is Head of Global Policy & Advocacy at Wellcome, London (you confirmed, 2026-11-02), so London is right. Harris's own 11:56 is on Kickbusch's Geneva clock (10:56 UTC), 22 minutes after Esveld's 10:34 UTC.
 
 **Old U7** (Holmes p.58) is now Likely: your reading of the page image (no top-level separator above it) makes it quoted by Farrar's block at the end of p.57, so London (15:11 ET); the profile lists p.58 in `nested_page_starts`. **Old U1** (Farzan p.142) is L7. **Old U2 to U4** are S3. **Old U5, U6, U8, U9, U12, U13, U14** are now Likely (L1): Koopmans 9 Feb is London (Farrar's block above), Holmes 4 Feb is London (Farrar's), Vallance 8 Feb London, Harris 3 Mar London, Viner 12 May 13:16 and 13 May 22:22 London (Farrar's), Viner 12 May 6:12 PM Eastern (Collins's).
 
-### Flagged by my checks (not time errors that I can place)
+### Resolved checks (U15, U16: nothing to do)
 
 These come from tests that run outside the app. The app's own data has **no reply before the message it answers**; they are about readings that might be wrong.
 
@@ -159,15 +159,74 @@ These come from tests that run outside the app. The app's own data has **no repl
 
 #### U16. Resolved (2026-11-03)
 
-Six evening-then-small-hours rows. Two were a missed day divider (p.24 and p.60; the divider “February 9th. 2020” had a period the pattern did not accept, and a message took the day of the divider printed **below** it: now fixed in `parse_part1.py`, 67 messages changed day, see S7). The other four were digits lost from the time label, which you read off the page images and I entered in `tools/slack_time_fixes.json`: p.19 Holmes `19:49` (was 01:49); p.121 Andersen `15:40` and “Very **slow** going” (was 01:50, “sow”); p.134 Holmes `18:36` (was 01:36), Andersen `18:51` (was 19:51), Andersen's “It's an eel! Eel!!!” `22:44` (had no label), Holmes `23:42` (was 02:32), in reply to it. See S8. The check now lists 30 backwards pairs, all in U17.
+Six evening-then-small-hours rows. Two were a missed day divider (p.24 and p.60; the divider “February 9th. 2020” had a period the pattern did not accept, and a message took the day of the divider printed **below** it: now fixed in `parse_part1.py`, 67 messages changed day, see S7). The other four were digits lost from the time label, which you read off the page images and I entered in `tools/slack_time_fixes.json`: p.19 Holmes `19:49` (was 01:49); p.121 Andersen `15:40` and “Very **slow** going” (was 01:50, “sow”); p.134 Holmes `18:36` (was 01:36), Andersen `18:51` (was 19:51), Andersen's “It's an eel! Eel!!!” `22:44` (had no label), Holmes `23:42` (was 02:32), in reply to it. See S8. The check then listed 30 backwards pairs (now 11, U17), all in U17.
 
-#### U17. Slack Part 1: the 30 backwards times
+### Open: the only Unknown left
 
-Same test, 30 places (60 before the external OCR pass of 2026-11-04; 74 before the divider fixes and your readings in U16; one new, p.121, where the 19:57 label before your 15:40 is itself wrong) where a message prints an earlier time than the one before it (listed in `slack_part1_time_check.csv`, column `pattern` = `other`). Two (p.7, p.52) the external pass reads as printed backwards, so they may be real. The rest mostly await a match to the STATUS file's corrections or a reading of the remaining pages.
+#### U17. Slack Part 1: backwards times, 11 left (80 at first)
 
-**Why I think they are OCR errors, not real order problems.** The first page of the OCR text shows what the digits look like: “12:90” and “15.95” for what are times, “13.7” and “13.42” with a dot, “1595” and “1997” with no colon. A time of that kind cannot be compared with its neighbours. The second cause is reading order: where two columns or a thread sit side by side, the OCR can read a reply before the message above it. Neither is a problem in the PDF itself, and Part 2 (a different, cleaner export) has no such cases.
-**What would settle it:** the same second OCR pass of the time labels (it would also resolve U16), then rerunning the check. Whatever is still backwards after that is a real question about the PDF.
-**Send me:** the model's readings (prompt: `GROK_PROMPT_SLACK_PART1_TIMES.md`), “do the second pass”, or “skip” (the 30 rows stay as they are; the app shows each Slack message with the time as OCR read it, which can be wrong by a digit).
+The test: two consecutive timed messages on the same day where the second prints a time more than an hour earlier. Part 1 has no AM/PM and shows a time only for the first message of a run, so these are OCR slips (a dropped or swapped digit) or reading-order slips; Part 2 (a cleaner export) has none. Listed in `slack_part1_time_check.csv`.
+
+**How it came down.**
+1. Divider fix in the parser, and your six readings (U16, S8): 74 → 60.
+2. A first external OCR pass (Grok partial CSV, 2026-11-04) matched to messages by page, sender and first words: 59 labels, 60 → 30 (commit a38bcf9).
+3. A second pass from the corrections in `grok_slack_part1_times_STATUS.md`, matched by page, sender and printed time: 26 labels (table below), 30 → 11. No new visual OCR in this step. A fix applies only if the entry still carries that sender and that exact wrong time. p.102 (a day divider, not a time) is left out, and so are p.7 and p.52, which may be printed backwards.
+
+All of these are marked in `tools/slack_time_fixes.json` as not checked by you.
+
+**The 11 that remain** (they need the page image):
+
+| page | date | first sender, time | second sender, time | second message begins |
+|---|---|---|---|---|
+| p.35 | 2020-02-11 | Andrew Rambaut 18:21 | Robert Garry 16:20 | zs Agree - bad premise, but they tried p |
+| p.36 | 2020-02-12 | Eddie Holmes 09:24 | Eddie Holmes 03:32 | ® You mean for the doc? |
+| p.43 | 2020-02-15 | Robert Garry 19:57 | Andrew Rambaut 13:57 | [no OCR text recovered — likely an image |
+| p.49 | 2020-02-17 | Robert Garry 18:09 | Andrew Rambaut 16:11 | a I signed the petition too, You know th |
+| p.52 | 2020-02-19 | Robert Garry 05:05 | Eddie Holmes 02:16 | Thanks for that. However this outbreak/e |
+| p.57 | 2020-02-20 | Robert Garry 15:29 | Andrew Rambaut 13:29 | ® But more importantly this reviewer fee |
+| p.57 | 2020-02-20 | Eddie Holmes 13:58 | Eddie Holmes 01:23 | ® From Jeremy: I would give them a ring  |
+| p.64 | 2020-02-24 | Robert Garry 10:59 | Kristian Andersen 01:44 | No polybasic site, HOWEVER, this provide |
+| p.102 | 2020-03-18 | Andrew Rambaut 06:36 | Eddie Holmes 01:19 | ® Priceless: https://twitter.com/CARRENE |
+| p.104 | 2020-03-19 | Eddie Holmes 16:09 | Kristian Andersen 10:41 | Me neither == ATTACHMENT == Screen Shot  |
+| p.115 | 2020-04-02 | Eddie Holmes 19:21 | Kristian Andersen 13:35 | This whole furin site boing messed with  |
+
+p.52 may be printed backwards (page 55 opens with Holmes 02:16 under no day tile); p.7 was too, but now passes.
+
+**What would settle the rest:** a visual read of these pages (prompt: `GROK_PROMPT_SLACK_PART1_TIMES.md`), then rerun `slack_time_check.py`. Whatever is still backwards after that is a real question about the PDF.
+**Send me:** the readings, or “skip” (the 11 rows stay; the app shows each time as OCR read it, which can be wrong by a digit).
+
+<details><summary>The 26 labels from the STATUS file (2026-11-04)</summary>
+
+| idx | page | sender | wrong -> corrected | source |
+|---|---|---|---|---|
+| 13 | p.2 | Andrew Rambaut | 15:00 -> 13:30 | Grok partial CSV (cluster 13:28-13:42) |
+| 17 | p.2 | Andrew Rambaut | 15:59 -> 13:33 | Grok partial CSV |
+| 23 | p.2 | Andrew Rambaut | 19:08 -> 13:38 | Grok partial CSV |
+| 145 | p.13 | Kristian Andersen | 16:26 -> 18:26 | STATUS line 54 |
+| 246 | p.22 | Robert Garry | 00:57 -> 08:57 | STATUS line 56 |
+| 366 | p.35 | Robert Garry | 19:04 -> 18:04 | STATUS line 61 |
+| 367 | p.35 | Andrew Rambaut | 16:16 -> 18:21 | STATUS line 61 |
+| 376 | p.36 | Eddie Holmes | 09:32 -> 03:32 | STATUS line 62 |
+| 378 | p.36 | Eddie Holmes | 09:36 -> 03:36 | STATUS line 62 |
+| 397 | p.39 | Kristian Andersen | 19:10 -> 18:10 | STATUS line 64 |
+| 398 | p.39 | Robert Garry | 16:20 -> 18:20 | STATUS line 64 |
+| 413 | p.40 | Kristian Andersen | 01:19 -> 11:31 | STATUS line 65 |
+| 435 | p.43 | Andrew Rambaut | 12:00 -> 13:40 | STATUS line 66 |
+| 439 | p.43 | Andrew Rambaut | 19:57 -> 13:57 | STATUS line 66 |
+| 440 | p.43 | Robert Garry | 14:00 -> 13:40 | STATUS line 66 |
+| 462 | p.45 | Robert Garry | 00:52 -> 08:52 | STATUS line 67 |
+| 515 | p.49 | Robert Garry | 01:00 -> 18:09 | STATUS line 68 |
+| 779 | p.69 | Andrew Rambaut | 06:19 -> 06:13 | STATUS line 35 |
+| 780 | p.69 | Robert Garry | 04:21 -> 06:17 | STATUS line 35 |
+| 995 | p.103 | Kristian Andersen | 09:31 -> 03:31 | STATUS line 38 |
+| 996 | p.103 | Andrew Rambaut | 02:52 -> 03:32 | STATUS line 38 |
+| 1001 | p.104 | Eddie Holmes | 01:00 -> 05:31 | Grok partial CSV |
+| 1007 | p.104 | Kristian Andersen | 10:49 -> 10:41 | Grok partial CSV |
+| 1126 | p.121 | Kristian Andersen | 19:57 -> 13:37 | STATUS line 69 |
+| 1218 | p.134 | Eddie Holmes | 01:49 -> 18:43 | STATUS line 70 |
+| 1248 | p.139 | Kristian Andersen | 10:25 -> 16:25 | STATUS line 42 |
+
+</details>
 
 ---
 
@@ -193,7 +252,7 @@ Found and fixed by me: the physical-nesting rule for the Farrar-Fauci release (a
 | File | Use it? | For |
 |---|---|---|
 | `zone_format_audit.csv` | Optional | One row per email: rule, status (Settled / Supported / Not settled), reason |
-| `slack_part1_time_check.csv` | For U17 (columns: page, date, first and second time, senders, first words, pattern) | The 30 places where Slack Part 1 times run backwards |
+| `slack_part1_time_check.csv` | For U17 (columns: page, date, first and second time, senders, first words, pattern) | The 11 places where Slack Part 1 times run backwards |
 | `freeze_bracket_check.csv` | For U15 | Clock and bracketing test per email |
 | `cross_release_check.csv` | No | Quoted-later-than-quoter test across the two releases (empty: no violation) |
 | `reply_order_check.csv`, `owner_zone_check.csv` | No | My test output |

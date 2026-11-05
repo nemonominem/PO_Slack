@@ -186,12 +186,12 @@
       "idx": 12
     },
     {
-      "stamp_line": "15:00 ET",
+      "stamp_line": "13:30 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-01",
       "raw_date": "February 1, 2020",
       "sender": "Andrew Rambaut",
-      "time": "15:00",
+      "time": "13:30",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -238,12 +238,12 @@
       "idx": 16
     },
     {
-      "stamp_line": "15:59 ET",
+      "stamp_line": "13:33 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-01",
       "raw_date": "February 1, 2020",
       "sender": "Andrew Rambaut",
-      "time": "15:59",
+      "time": "13:33",
       "kind": "slack",
       "thread_id": null,
       "attachments": [
@@ -318,12 +318,12 @@
       "idx": 22
     },
     {
-      "stamp_line": "19:08 ET",
+      "stamp_line": "13:38 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-01",
       "raw_date": "February 1, 2020",
       "sender": "Andrew Rambaut",
-      "time": "19:08",
+      "time": "13:38",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -972,12 +972,12 @@
       "idx": 71
     },
     {
-      "stamp_line": "19:30 ET",
+      "stamp_line": "13:30 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-02",
       "raw_date": "February 2, 2020",
       "sender": "Robert Garry",
-      "time": "19:30",
+      "time": "13:30",
       "kind": "slack",
       "thread_id": null,
       "attachments": [
@@ -990,12 +990,12 @@
       "idx": 72
     },
     {
-      "stamp_line": "13:51 ET",
+      "stamp_line": "13:43 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-02",
       "raw_date": "February 2, 2020",
       "sender": "Robert Garry",
-      "time": "13:51",
+      "time": "13:43",
       "kind": "slack",
       "thread_id": null,
       "attachments": [
@@ -1975,12 +1975,12 @@
       "idx": 144
     },
     {
-      "stamp_line": "16:26 ET",
+      "stamp_line": "18:26 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-03",
       "raw_date": "February 3, 2020",
       "sender": "Kristian Andersen",
-      "time": "16:26",
+      "time": "18:26",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -3333,12 +3333,12 @@
       "idx": 245
     },
     {
-      "stamp_line": "00:57 ET",
+      "stamp_line": "08:57 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-08",
       "raw_date": "February 8, 2020",
       "sender": "Robert Garry",
-      "time": "00:57",
+      "time": "08:57",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -3685,12 +3685,12 @@
       "idx": 271
     },
     {
-      "stamp_line": "15:29 ET",
+      "stamp_line": "18:29 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-08",
       "raw_date": "February 8, 2020",
       "sender": "Robert Garry",
-      "time": "15:29",
+      "time": "18:29",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -4879,12 +4879,12 @@
       "idx": 364
     },
     {
-      "stamp_line": "10:04 ET",
+      "stamp_line": "18:04 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-11",
       "raw_date": "February 11, 2020",
       "sender": "Kristian Andersen",
-      "time": "10:04",
+      "time": "18:04",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -4893,12 +4893,12 @@
       "idx": 365
     },
     {
-      "stamp_line": "19:04 ET",
+      "stamp_line": "18:04 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-11",
       "raw_date": "February 11, 2020",
       "sender": "Robert Garry",
-      "time": "19:04",
+      "time": "18:04",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -4907,12 +4907,12 @@
       "idx": 366
     },
     {
-      "stamp_line": "16:16 ET",
+      "stamp_line": "18:21 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-11",
       "raw_date": "February 11, 2020",
       "sender": "Andrew Rambaut",
-      "time": "16:16",
+      "time": "18:21",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -5031,12 +5031,12 @@
       "idx": 375
     },
     {
-      "stamp_line": "09:32 ET",
+      "stamp_line": "03:32 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-12",
       "raw_date": "February 12, 2020",
       "sender": "Eddie Holmes",
-      "time": "09:32",
+      "time": "03:32",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -5059,12 +5059,12 @@
       "idx": 377
     },
     {
-      "stamp_line": "09:36 ET",
+      "stamp_line": "03:36 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-12",
       "raw_date": "February 12, 2020",
       "sender": "Eddie Holmes",
-      "time": "09:36",
+      "time": "03:36",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -5311,12 +5311,12 @@
       "idx": 396
     },
     {
-      "stamp_line": "19:10 ET",
+      "stamp_line": "18:10 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-12",
       "raw_date": "February 12, 2020",
       "sender": "Kristian Andersen",
-      "time": "19:10",
+      "time": "18:10",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -5325,12 +5325,12 @@
       "idx": 397
     },
     {
-      "stamp_line": "16:20 ET",
+      "stamp_line": "18:20 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-12",
       "raw_date": "February 12, 2020",
       "sender": "Robert Garry",
-      "time": "16:20",
+      "time": "18:20",
       "kind": "slack",
       "thread_id": null,
       "attachments": [
@@ -5535,12 +5535,12 @@
       "idx": 412
     },
     {
-      "stamp_line": "01:19 ET",
+      "stamp_line": "11:31 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-13",
       "raw_date": "February 13, 2020",
       "sender": "Kristian Andersen",
-      "time": "01:19",
+      "time": "11:31",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -5827,12 +5827,12 @@
       "idx": 434
     },
     {
-      "stamp_line": "12:00 ET",
+      "stamp_line": "13:40 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-15",
       "raw_date": "February 15, 2020",
       "sender": "Andrew Rambaut",
-      "time": "12:00",
+      "time": "13:40",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -5883,12 +5883,12 @@
       "idx": 438
     },
     {
-      "stamp_line": "19:57 ET",
+      "stamp_line": "13:57 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-15",
       "raw_date": "February 15, 2020",
       "sender": "Andrew Rambaut",
-      "time": "19:57",
+      "time": "13:57",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -5897,12 +5897,12 @@
       "idx": 439
     },
     {
-      "stamp_line": "14:00 ET",
+      "stamp_line": "13:40 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-15",
       "raw_date": "February 15, 2020",
       "sender": "Robert Garry",
-      "time": "14:00",
+      "time": "13:40",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -6179,12 +6179,12 @@
       "idx": 461
     },
     {
-      "stamp_line": "00:52 ET",
+      "stamp_line": "08:52 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-17",
       "raw_date": "February 17, 2020",
       "sender": "Robert Garry",
-      "time": "00:52",
+      "time": "08:52",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -6847,12 +6847,12 @@
       "idx": 514
     },
     {
-      "stamp_line": "01:00 ET",
+      "stamp_line": "18:09 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-17",
       "raw_date": "February 17, 2020",
       "sender": "Robert Garry",
-      "time": "01:00",
+      "time": "18:09",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -10306,12 +10306,12 @@
       "idx": 778
     },
     {
-      "stamp_line": "06:19 ET",
+      "stamp_line": "06:13 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-25",
       "raw_date": "February 25, 2020",
       "sender": "Andrew Rambaut",
-      "time": "06:19",
+      "time": "06:13",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -10320,12 +10320,12 @@
       "idx": 779
     },
     {
-      "stamp_line": "04:21 ET",
+      "stamp_line": "06:17 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-25",
       "raw_date": "February 25, 2020",
       "sender": "Robert Garry",
-      "time": "04:21",
+      "time": "06:17",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -12997,12 +12997,12 @@
       "idx": 994
     },
     {
-      "stamp_line": "09:31 ET",
+      "stamp_line": "03:31 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-03-19",
       "raw_date": "March 19, 2020",
       "sender": "Kristian Andersen",
-      "time": "09:31",
+      "time": "03:31",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -13011,12 +13011,12 @@
       "idx": 995
     },
     {
-      "stamp_line": "02:52 ET",
+      "stamp_line": "03:32 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-03-19",
       "raw_date": "March 19, 2020",
       "sender": "Andrew Rambaut",
-      "time": "02:52",
+      "time": "03:32",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -13079,12 +13079,12 @@
       "idx": 1000
     },
     {
-      "stamp_line": "01:00 ET",
+      "stamp_line": "05:31 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-03-19",
       "raw_date": "March 19, 2020",
       "sender": "Eddie Holmes",
-      "time": "01:00",
+      "time": "05:31",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -13161,12 +13161,12 @@
       "idx": 1006
     },
     {
-      "stamp_line": "10:49 ET",
+      "stamp_line": "10:41 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-03-19",
       "raw_date": "March 19, 2020",
       "sender": "Kristian Andersen",
-      "time": "10:49",
+      "time": "10:41",
       "kind": "slack",
       "thread_id": null,
       "attachments": [
@@ -14649,12 +14649,12 @@
       "idx": 1125
     },
     {
-      "stamp_line": "19:57 ET",
+      "stamp_line": "13:37 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-04-10",
       "raw_date": "April 10, 2020",
       "sender": "Kristian Andersen",
-      "time": "19:57",
+      "time": "13:37",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -15857,12 +15857,12 @@
       "idx": 1217
     },
     {
-      "stamp_line": "01:49 ET",
+      "stamp_line": "18:43 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-04-21",
       "raw_date": "April 21, 2020",
       "sender": "Eddie Holmes",
-      "time": "01:49",
+      "time": "18:43",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -16239,12 +16239,12 @@
       "idx": 1247
     },
     {
-      "stamp_line": "10:25 ET",
+      "stamp_line": "16:25 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-04-30",
       "raw_date": "April 30, 2020",
       "sender": "Kristian Andersen",
-      "time": "10:25",
+      "time": "16:25",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
