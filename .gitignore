@@ -1,6 +1,7 @@
 
-# OCR intermediates are checked in deliberately (they are the parsed text of
-# the image-only releases); page renders are not.
+# Finalized OCR intermediates are checked in deliberately; temporary OCR work
+# in .ocr_tmp/ is not.
+.ocr_tmp/
 __pycache__/
 *.pyc
 .DS_Store
