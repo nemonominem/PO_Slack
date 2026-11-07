@@ -51,7 +51,7 @@ for m in re.finditer(r"getElementById\(\s*'([^']+)'\s*(\+|,|\))", body):
     if m.group(2) in ("+", ","):     # concatenated -> runtime id
         continue
     used_ids.add(m.group(1))
-missing = sorted(used_ids - set(ids) - {"kindFilterPanel"})  # created by JS
+missing = sorted(used_ids - set(ids) - {"kindFilterPanel", "authorFilterPanel"})  # created by JS
 check(not missing, "every getElementById target exists" +
       (" (missing: %s)" % missing if missing else ""))
 

@@ -12,17 +12,20 @@
 // Run:  node test_app.mjs
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'node:url';
 
-const HERE = '/Users/gillesdemaneuf/Work/Reports/PO_Slack/page_based';
+const HERE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../page_based');
 function mkEl(id) {
-  return {
-    id, innerHTML: '', textContent: '', value: '', hidden: false, style: {}, dataset: {},
+  const el = {
+    innerHTML: '', textContent: '', value: '', hidden: false, style: {}, dataset: {},
     classList: { _s: new Set(), add(c){this._s.add(c)}, remove(c){this._s.delete(c)},
       toggle(c,f){ const has=this._s.has(c); const want=f===undefined?!has:!!f;
         if(want)this._s.add(c); else this._s.delete(c); return want; }, contains(c){return this._s.has(c)} },
     children: [], attrs: {},
     addEventListener(ev,fn){ (this._ev||(this._ev={}))[ev]=fn; },
-    removeEventListener(){}, appendChild(c){ this.children.push(c); return c; }, remove(){},
+    removeEventListener(){}, appendChild(c){ this.children.push(c); c.parentNode=this; return c; },
+    remove(){ if (this.id && els[this.id] === this) delete els[this.id];
+      if (this.parentNode) this.parentNode.children=this.parentNode.children.filter(c=>c!==this); },
     setAttribute(k,v){ this.attrs[k]=v; }, getAttribute(k){ return this.attrs[k]; },
     querySelector(){ return null; }, querySelectorAll(){ return []; },
     closest(){ return null; }, focus(){}, click(){}, scrollIntoView(){},
@@ -35,16 +38,28 @@ function mkEl(id) {
     clientHeight:100, scrollHeight:100, scrollTop:0,
     setPointerCapture(){}, releasePointerCapture(){},
   };
+  let elementId = id;
+  Object.defineProperty(el, 'id', { get(){ return elementId; }, set(value){
+    elementId=value;
+    if (value) els[value]=el;
+  }});
+  if (id) els[id]=el;
+  return el;
 }
 const els = {};
 globalThis.document = {
-  getElementById(id){ return els[id] || (els[id] = mkEl(id)); },
+  getElementById(id){
+    if ((id === 'kindFilterPanel' || id === 'authorFilterPanel') && !els[id]) return null;
+    return els[id] || (els[id] = mkEl(id));
+  },
   createElement(t){ return mkEl('#'+t); },
   querySelector(){ return null; }, querySelectorAll(){ return []; },
   addEventListener(){}, body: mkEl('body'), documentElement: mkEl('html'),
 };
 globalThis.window = { addEventListener(){}, devicePixelRatio:1, innerWidth:1600, innerHeight:900 };
+globalThis.getComputedStyle = () => ({ getPropertyValue(){ return ''; } });
 globalThis.localStorage = { _m:{}, getItem(k){return this._m[k]??null}, setItem(k,v){this._m[k]=v}, removeItem(k){delete this._m[k]} };
+globalThis.getComputedStyle = () => ({ getPropertyValue(){ return ''; } });
 globalThis.location = { protocol:'http:', pathname:'/index.html' };
 globalThis.requestAnimationFrame = (fn)=>{ try{fn()}catch(e){} };
 globalThis.setTimeout = (fn)=>{ try{fn()}catch(e){} return 0; };
@@ -55,7 +70,10 @@ globalThis.fetch = async (url) => {
   return { ok:true, status:200, json: async () => JSON.parse(fs.readFileSync(f,'utf8')) };
 };
 globalThis.pdfjsLib = { GlobalWorkerOptions:{},
-  getDocument: () => ({ promise: Promise.resolve({ numPages:1, getPage: async()=>({}) }) }) };
+  getDocument: () => ({ promise: Promise.resolve({ numPages:1, getPage: async()=>({
+    getViewport: ({scale}) => ({ width:612*scale, height:792*scale }),
+    render: () => ({ promise: Promise.resolve(), cancel(){} }),
+  }) }) }) };
 function Chart(){
   return { data: { datasets: [], labels: [] }, options: {},
     destroy(){}, update(){}, resetZoom(){}, resize(){}, stop(){}, toBase64Image(){ return ''; },
@@ -67,11 +85,16 @@ globalThis.Chart = Chart;
 
 const pageHtml = fs.readFileSync(path.join(HERE,'index.html'),'utf8');
 const scripts = [...pageHtml.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m=>m[1]);
-const code = scripts[scripts.length - 1];
+const code = scripts.join('\n');
 const tail = `
 globalThis.__app = { SOURCES, KIND_DEFS, KIND_ALIASES, entryKind, kindDef,
   availableKinds, kindListed, loadKindFilter, saveKindFilter, loadData, doSearch,
+  availableAuthors, entryAuthor, authorListed, entryVisible, filterEntries,
   displayResults, entryChipsHtml, buildTimelineSeries, entryMapKey, highlightWithHits,
+  rebuildSlackReplyAuthors, slackReplyMarkerInfo, slackReplyChipsHtml, stripSlackReplyChrome,
+  formatEntryTime, setThreadFilter, buildKindFilterPanel, buildAuthorFilterPanel,
+  toggleKindFilterPanel, toggleAuthorFilterPanel,
+  clearSearch,
   openEntryRef, rebuildThreadDownLinks, KIND_HUE, kindColor, guideDocToSource,
   guideCitationLabel,
   toggleBookmark, isBookmarked, removeBookmark, openBookmark, renderBookmarks,
@@ -79,8 +102,13 @@ globalThis.__app = { SOURCES, KIND_DEFS, KIND_ALIASES, entryKind, kindDef,
   get bookmarks(){ return bookmarks; },
   set bookmarks(v){ bookmarks = v; },
   get diaryData(){ return diaryData; },
+  get browseMode(){ return browseMode; },
+  get lastSearchResults(){ return lastSearchResults; },
+  get threadFilter(){ return threadFilter; },
   set kindFilter(v){ kindFilter = v; }, get kindFilter(){ return kindFilter; },
-  get timelineSeries(){ return timelineSeries; } };
+  set authorFilter(v){ authorFilter = v; }, get authorFilter(){ return authorFilter; },
+  get timelineSeries(){ return timelineSeries; },
+  get pageMaps(){ return pageMaps; } };
 `;
 const src = code + tail;
 await import('data:text/javascript;base64,' + Buffer.from(src).toString('base64'));
@@ -93,7 +121,74 @@ const ok = (name, cond, extra='') => { if (cond) { pass++; console.log('  PASS  
 const sec = (t) => console.log('\n' + t);
 
 sec('Data load');
+ok('Part 1 viewer uses the clean independent OCR PDF',
+   /part1:\s*\{[\s\S]*?pdf:\s*'other_sources\/Proximal_Origin_Slack_OCRd\.pdf'/.test(pageHtml));
 ok('entries loaded', app.diaryData && app.diaryData.entries.length > 12000, app.diaryData && app.diaryData.entries.length);
+const searchInput = document.getElementById('searchInput');
+const initialBrowse = window._searchResults || [];
+const initialPanelHtml = document.getElementById('resultsPanel').innerHTML;
+ok('first load browses entries with the default all-content filters',
+   app.browseMode && !app.lastSearchResults && app.kindFilter === null &&
+   app.authorFilter === null && app.threadFilter === null &&
+   app.filterEntries(app.diaryData.entries).length === app.diaryData.entries.length &&
+   initialBrowse.length > 0 && initialBrowse.length < app.diaryData.entries.length &&
+   initialBrowse.every(r => app.entryVisible(r.entry)) &&
+   searchInput.value === '' &&
+   initialPanelHtml.includes('class="result-entry') &&
+   !initialPanelHtml.includes('Search the P.O. record'));
+ok('filter panels start closed and remain closed on background rebuild',
+   !!document.getElementById('kindFilterPanel')?.hidden &&
+   !!document.getElementById('authorFilterPanel')?.hidden);
+app.toggleKindFilterPanel();
+app.toggleAuthorFilterPanel();
+ok('direct toolbar interaction opens both filter panels',
+   !document.getElementById('kindFilterPanel').hidden &&
+   !document.getElementById('authorFilterPanel').hidden);
+app.toggleKindFilterPanel();
+app.toggleAuthorFilterPanel();
+app.buildKindFilterPanel();
+app.buildAuthorFilterPanel();
+ok('timeline-checkbox-style filter rebuild does not open toolbar panels',
+   !!document.getElementById('kindFilterPanel').hidden &&
+   !!document.getElementById('authorFilterPanel').hidden);
+app.toggleKindFilterPanel();
+app.buildKindFilterPanel();
+ok('rebuilding an actively used toolbar filter keeps that dropdown open',
+   !document.getElementById('kindFilterPanel').hidden &&
+   !!document.getElementById('authorFilterPanel').hidden);
+app.toggleKindFilterPanel();
+searchInput.value = 'furin';
+app.doSearch();
+ok('explicit search still shows matching results',
+   !app.browseMode && app.lastSearchResults && app.lastSearchResults.length > 0);
+app.clearSearch();
+ok('clearing search returns to filtered content browsing',
+   app.browseMode && !app.lastSearchResults && window._searchResults.length > 0 &&
+   document.getElementById('resultsPanel').innerHTML.includes('class="result-entry') &&
+   !document.getElementById('resultsPanel').innerHTML.includes('Search the P.O. record'));
+app.kindFilter = ['email'];
+app.authorFilter = ['Jeremy Farrar'];
+app.clearSearch();
+ok('browse results honor non-default source and author filters',
+   window._searchResults.length > 0 &&
+   window._searchResults.every(r => app.entryKind(r.entry) === 'email' &&
+     app.entryAuthor(r.entry) === 'Jeremy Farrar'));
+app.kindFilter = null;
+app.authorFilter = null;
+app.clearSearch();
+const part1 = app.diaryData.entries.filter(e => e.source === 'part1');
+const part1Redactions = part1.filter(e => e.redaction_count);
+ok('all 88 Part 1 rectangles are represented', part1Redactions.reduce((n, e) => n + e.redaction_count, 0) === 88,
+   part1Redactions.reduce((n, e) => n + e.redaction_count, 0) + ' annotations');
+ok('standalone redactions have a synthetic Redacted sender',
+   part1.filter(e => e.sender === 'Redacted' && e.content === '[Redacted]').length === 76);
+ok('embedded redactions remain in their source message text',
+   part1.filter(e => e.sender !== 'Redacted').reduce((n, e) => n + (e.redaction_count || 0), 0) === 12);
+ok('embedded redactions retain source-verified times',
+   part1.filter(e => e.sender !== 'Redacted' && e.redaction_count).every(e => !!e.time));
+const page71Redaction = part1.find(e => (e.redaction_sources || []).some(r => r.page === 71 && r.top === 544));
+ok('page 71 inline redaction is attributed to Robert Garry at 13:37',
+   !!page71Redaction && page71Redaction.sender === 'Robert Garry' && page71Redaction.time === '13:37');
 const byKind = app.availableKinds();
 console.log('        kinds:', JSON.stringify(byKind));
 ok('three kinds present (slack, attachment/note, email)',
@@ -134,6 +229,11 @@ ok('every card has its own scroll box', (html.match(/class="box-scrollbar/g)||[]
 ok('every card has a scroll hint', (html.match(/data-scroll-hint=/g)||[]).length === (html.match(/class="result-entry/g)||[]).length);
 ok('Full text expander present', /data-expand-toggle=/.test(html));
 ok('result content is inside .result-content-wrap', /result-content-wrap/.test(html));
+input.value = 'Redacted';
+app.doSearch();
+const redactionHtml = document.getElementById('resultsPanel').innerHTML;
+ok('redaction chips render in matching message cards', /class="chip chip-redacted"/.test(redactionHtml));
+ok('standalone redaction text is visible', redactionHtml.includes('[Redacted]'));
 
 sec('Emails surface with header block + chips');
 input.value = 'genome looks unusual';
@@ -158,6 +258,36 @@ if (threaded) {
      (chips ? chips.length : 0) + ' chips for "' + word + '"');
 }
 
+sec('Slack reply markers');
+const rambautReplyRoot = app.diaryData.entries.find(e =>
+  e.source === 'part2' && (e.slack_reply_authors || []).includes('Andrew Rambaut'));
+ok('thread metadata resolves Andrew Rambaut as a reply author',
+   !!rambautReplyRoot && app.slackReplyChipsHtml(rambautReplyRoot).includes('Andrew Rambaut'));
+const multiReplyRoot = app.diaryData.entries.find(e =>
+  e.source === 'part2' && (e.slack_reply_authors || []).length > 1);
+ok('multiple reply authors render together in one chip',
+   !!multiReplyRoot && (app.slackReplyChipsHtml(multiReplyRoot).match(/class="chip chip-reply"/g)||[]).length === 1 &&
+   multiReplyRoot.slack_reply_authors.every(name => app.slackReplyChipsHtml(multiReplyRoot).includes(name)));
+const countOnlyRoot = app.diaryData.entries.find(e => e.source === 'part1' &&
+  /\b2\s+replies\b/i.test(e.content||'') &&
+  !(e.side_thread_authors || []).length && !(e.slack_reply_authors || []).length);
+const countOnlyHtml = countOnlyRoot ? app.slackReplyChipsHtml(countOnlyRoot) : '';
+ok('reply count remains visible when author metadata is absent',
+   !!countOnlyRoot && countOnlyHtml.includes('2 replies') && !countOnlyHtml.includes('Andrew Rambaut'));
+ok('relative last-reply age is removed from visible Slack text',
+   !!countOnlyRoot && !/Last reply|years?\s+ago/i.test(app.stripSlackReplyChrome(countOnlyRoot.content)));
+if (countOnlyRoot) {
+  app.displayResults([{
+    entry: countOnlyRoot, idx: countOnlyRoot.idx, hits: 1, hitPositions: [],
+    source: countOnlyRoot.source,
+  }], '', { autoSelect: false });
+  const renderedReply = document.getElementById('resultsPanel').innerHTML;
+  ok('reply chip is appended after the message text',
+     renderedReply.indexOf('slack-reply-markers') > renderedReply.lastIndexOf('</p>'));
+  ok('relative reply age is absent from the rendered card',
+     !/Last reply|3 years ago/i.test(renderedReply));
+}
+
 sec('Box types filter');
 app.kindFilter = ['email'];
 ok('kindListed honours the filter', app.kindListed('email') && !app.kindListed('slack'));
@@ -170,6 +300,220 @@ input.value = 'passaging';
 app.doSearch();
 ok('clearing the filter brings Slack back', /k-slack/.test(document.getElementById('resultsPanel').innerHTML));
 app.kindFilter = ['slack','email','attachment','note'];
+
+sec('Author filter, including redacted records');
+const authorLabels = Object.keys(app.availableAuthors());
+ok('abbreviated and reversed email authors resolve to corpus-supported full names',
+   app.entryAuthor({sender:'Ian'}) === 'Ian Lipkin' &&
+   app.entryAuthor({sender:'Lipkin'}) === 'Ian Lipkin' &&
+   app.entryAuthor({sender:'Kristian'}) === 'Kristian G. Andersen' &&
+   app.entryAuthor({sender:'Joao'}) === 'Joao Monteiro' &&
+   app.entryAuthor({sender:'Chris'}) === 'Chris Emery' &&
+   app.entryAuthor({sender:'"SMITH, lan Michae'}) === 'Ian Michael Smith' &&
+   app.entryAuthor({sender:'Fauci, Anthony'}) === 'Anthony Fauci' &&
+   app.entryAuthor({sender:'Pope, Andrew'}) === 'Andrew Pope' &&
+   app.entryAuthor({sender:'Edward Holmes'}) === 'Edward C. Holmes' &&
+   app.entryAuthor({sender:'R.A.M. Fouchier'}) === 'Ron Fouchier' &&
+   app.entryAuthor({sender:'GPMB'}) === 'Global Preparedness Monitoring Board');
+ok('ambiguous and OCR-corrupted authors are grouped under Redacted',
+   app.entryAuthor({sender:'(iS'}) === 'Redacted' &&
+   app.entryAuthor({sender:'eo'}) === 'Redacted' &&
+   app.entryAuthor({sender:'iN'}) === 'Redacted' &&
+   app.entryAuthor({sender:'ofu'}) === 'Redacted' &&
+   app.entryAuthor({sender:'Jeanette'}) === 'Redacted' &&
+   app.entryAuthor({sender:'SMITH'}) === 'Redacted' &&
+   app.entryAuthor({sender:'medicine@us.nature.com'}) === 'Redacted' &&
+   app.entryAuthor({sender:''}) === 'Redacted');
+ok('author choices omit known malformed aliases',
+   !['Ian','Lipkin','Kristian','Joao','Michael','Jeremy','Coleman','Chris',
+     '(iS','ofu','medicine@us.nature.com','Fauci, Anthony','Pope, Andrew',
+     'Shabman, Reed','Edward Holmes','Eddie Holmes','eo','iN','Jeanette','SMITH',
+     '"SMITH, lan Michae','R.A.M. Fouchier','GPMB'].some(name => authorLabels.includes(name)));
+const redactedSlack = {
+  kind:'slack', source:'part1', sender:'redacted', date:'2020-02-01', time:'1200', raw_date:'',
+  content:'redacted-author-filter-probe', pages:[1], thread_key:'test|redacted-slack'
+};
+const redactedEmail = {
+  kind:'email', source:'po-emails', sender:'', author:'Redacted', date:'2020-02-01', time:'1201', raw_date:'',
+  content:'redacted-author-filter-probe', pages:[1], thread_key:'test|redacted-email'
+};
+const existingRedactedAuthorCount = app.availableAuthors().Redacted || 0;
+app.diaryData.entries.push(redactedSlack, redactedEmail);
+app.kindFilter = null;
+app.authorFilter = ['Redacted'];
+const redactedEntries = app.filterEntries(app.diaryData.entries);
+ok('Redacted author is normalized and selectable from sender/author fields',
+   app.entryAuthor(redactedSlack) === 'Redacted' && app.entryAuthor(redactedEmail) === 'Redacted' &&
+   app.availableAuthors().Redacted === existingRedactedAuthorCount + 2);
+ok('author filter includes existing and probe redacted records',
+   redactedEntries.includes(redactedSlack) && redactedEntries.includes(redactedEmail) &&
+   redactedEntries.every(e => app.entryAuthor(e) === 'Redacted'));
+input.value = 'redacted-author-filter-probe';
+app.doSearch();
+const redactedHtml = document.getElementById('resultsPanel').innerHTML;
+ok('search returns a redacted multi-message block and redacted email',
+   (redactedHtml.match(/class="result-entry/g)||[]).length === 2 &&
+   /Slack P1/.test(redactedHtml) && /k-email/.test(redactedHtml));
+app.diaryData.entries.splice(-2);
+app.authorFilter = null;
+input.value = 'passaging';
+app.kindFilter = ['slack','email','attachment','note'];
+
+sec('Slack side-thread filter and verified Holmes record');
+const holmesGenome = part1.find(e => e.idx === 906);
+const andersonSideThread = part1.find(e => e.idx === 957);
+const followingAndersonMessage = part1.find(e => e.idx === 958);
+const reviewedSideThreads = [
+  [66,5,1,['Andrew Rambaut']],
+  [180,16,2,['Andrew Rambaut','Kristian Andersen']],
+  [344,32,3,['Andrew Rambaut','Kristian Andersen']],
+  [356,34,1,['Andrew Rambaut']],
+  [374,35,1,['Kristian Andersen']],
+  [497,47,5,['Andrew Rambaut','Kristian Andersen']],
+  [530,49,1,['Andrew Rambaut']],
+  [556,51,3,['Kristian Andersen','Eddie Holmes']],
+  [630,57,1,['Andrew Rambaut']],
+  [721,64,2,['Andrew Rambaut','Kristian Andersen']],
+  [778,68,9,['Kristian Andersen','Robert Garry','Andrew Rambaut']],
+  [835,73,3,['Andrew Rambaut','Robert Garry','Kristian Andersen']],
+  [957,89,2,['Andrew Rambaut','Kristian Andersen']],
+  [1128,115,4,['Kristian Andersen','Eddie Holmes']],
+  [1257,131,1,['Andrew Rambaut']],
+];
+const reviewedEntries = reviewedSideThreads.map(([idx]) => part1.find(e => e.idx === idx));
+const part1ThreadRoots = part1.filter(e => app.slackReplyMarkerInfo(e));
+ok('all 15 specified REV pages map to confirmed reply-indicator roots',
+   reviewedSideThreads.every(([idx,page]) =>
+     !!app.pageMaps.part1[String(idx)] && app.pageMaps.part1[String(idx)].start === page) &&
+   reviewedEntries.every(e => !!e && !!app.slackReplyMarkerInfo(e)));
+ok('visible reply-avatar author sets and counts match the 15 source-page indicators',
+   reviewedSideThreads.every(([idx,,count,authors]) => {
+     const e = part1.find(x => x.idx === idx);
+     const info = e && app.slackReplyMarkerInfo(e);
+     return !!info && info.count === count &&
+       authors.every(author => info.authors.includes(app.entryAuthor({sender:author})));
+   }));
+ok('known Part 1 reply-author metadata is canonical; only the unverified page-125 record has no author',
+   part1ThreadRoots.length === 17 &&
+   part1ThreadRoots.filter(e => app.slackReplyMarkerInfo(e).authors.length > 0).length === 16 &&
+   part1ThreadRoots.filter(e => !app.slackReplyMarkerInfo(e).authors.length)
+       .every(e => e.idx === 1218));
+const reactionOnlyMessage = part1.find(e => e.idx === 501);
+ok('reaction-only emoji controls are not classified as side threads',
+   !!reactionOnlyMessage && !app.slackReplyMarkerInfo(reactionOnlyMessage));
+const page89Times = {
+  947:'14:28', 948:'15:41', 949:'16:07', 950:'16:08', 951:'17:09',
+  952:'17:11', 953:'17:16', 954:'17:19', 955:'17:20', 956:'17:22',
+  957:'17:56', 958:'18:07', 960:'19:33',
+};
+ok('printed Part 1 page 89 times populate their corresponding message records',
+   Object.keys(page89Times).every(idx =>
+     part1.find(e => e.idx === Number(idx))?.time === page89Times[idx]));
+ok('Andersen page 89 message stays distinct and carries the visible @ mention',
+   !!andersonSideThread && !!followingAndersonMessage &&
+   andersonSideThread.sender === 'Kristian Andersen' &&
+   andersonSideThread.content.startsWith('@Andrew Rambaut - do you have a tree/alignment') &&
+   !andersonSideThread.content.includes("Alrighty, here's a clean version") &&
+   followingAndersonMessage.content.startsWith("Alrighty, here's a clean version"));
+ok('Andersen page 89 message has two side replies by the source-identified authors',
+   !!andersonSideThread && app.slackReplyMarkerInfo(andersonSideThread).count === 2 &&
+   app.slackReplyMarkerInfo(andersonSideThread).authors.includes('Andrew Rambaut') &&
+   app.slackReplyMarkerInfo(andersonSideThread).authors.includes('Kristian G. Andersen') &&
+   app.slackReplyChipsHtml(andersonSideThread).includes(
+     'side-thread by Andrew Rambaut, Kristian G. Andersen') &&
+   (app.slackReplyChipsHtml(andersonSideThread).match(/class="chip chip-reply"/g)||[]).length === 1);
+ok('Holmes message text and printed time are corrected from Part 1 PDF page 84',
+   !!holmesGenome && holmesGenome.sender === 'Eddie Holmes' && holmesGenome.time === '00:29' &&
+   holmesGenome.content === "Loads more Chinese genomes coming. I'm not quite when, but they are coming.\n1 reply");
+ok('Holmes reply author is shown when source avatar identifies Andrew Rambaut',
+   !!holmesGenome && app.slackReplyMarkerInfo(holmesGenome).count === 1 &&
+   app.slackReplyMarkerInfo(holmesGenome).authors.includes('Andrew Rambaut') &&
+   app.slackReplyChipsHtml(holmesGenome).includes('side-thread by Andrew Rambaut') &&
+   (app.slackReplyChipsHtml(holmesGenome).match(/class="chip chip-reply"/g)||[]).length === 1);
+ok('reply count uses a clear fallback when the author is not identified',
+   !!countOnlyRoot && app.slackReplyChipsHtml(countOnlyRoot).includes('side-thread · 2 replies') &&
+   (app.slackReplyChipsHtml(countOnlyRoot).match(/class="chip chip-reply"/g)||[]).length === 1);
+ok('combined reply author chips retain full names in the overflow title',
+   !!multiReplyRoot && app.slackReplyChipsHtml(multiReplyRoot).includes('title="side-thread by ') &&
+   app.slackReplyChipsHtml(multiReplyRoot).includes(' · '));
+ok('timestamp labels are normalized to ET without inventing missing times',
+   app.formatEntryTime(holmesGenome) === '00:29 ET' &&
+   app.formatEntryTime({source:'po-emails', time:'1256'}) === '12:56 ET' &&
+   app.formatEntryTime({source:'part2', time:'17:56:20'}) === '17:56:20 ET' &&
+   app.formatEntryTime({source:'part1', time:null}) === '');
+const sideThreadRoots = app.filterEntries(app.diaryData.entries.filter(e =>
+  app.slackReplyMarkerInfo(e)));
+app.kindFilter = ['slack'];
+app.authorFilter = null;
+input.value = '';
+app.clearSearch();
+app.setThreadFilter('side');
+const sideFiltered = app.filterEntries(app.diaryData.entries);
+ok('side-thread filter includes roots with reply metadata, including Holmes',
+   sideFiltered.includes(holmesGenome) && sideFiltered.length === sideThreadRoots.length &&
+   reviewedEntries.every(e => sideFiltered.includes(e)) &&
+   sideFiltered.every(e => !!app.slackReplyMarkerInfo(e)));
+const renderedSideThreads = window._searchResults || [];
+ok('side-thread browse renders the full filtered result set, not just its initial 101-entry window',
+   renderedSideThreads.length === sideFiltered.length &&
+   renderedSideThreads.every(r => sideFiltered.includes(r.entry)));
+ok('current corpus has 246 Slack side-thread roots across both releases',
+   renderedSideThreads.length === 246 &&
+   renderedSideThreads.filter(r => r.entry.source === 'part1').length === 17 &&
+   renderedSideThreads.filter(r => r.entry.source === 'part2').length === 229);
+ok('two additional Part 1 reply indicators map to pages 84 and 125',
+   app.pageMaps.part1['906']?.start === 84 &&
+   app.pageMaps.part1['1218']?.start === 125 &&
+   [906,1218].every(idx => renderedSideThreads.some(r =>
+     r.entry.source === 'part1' && r.entry.idx === idx)));
+app.setThreadFilter('all');
+const allMessageBrowse = window._searchResults || [];
+ok('switching Side threads back to All messages restores a bounded ordinary browse window',
+   app.threadFilter === null && app.browseMode &&
+   allMessageBrowse.length > 0 && allMessageBrowse.length < sideFiltered.length &&
+   allMessageBrowse.every(r => app.entryVisible(r.entry)) &&
+   allMessageBrowse.some(r => !app.slackReplyMarkerInfo(r.entry)));
+app.setThreadFilter('side');
+ok('switching back to Side threads restores the complete side-thread set',
+   !app.browseMode && (window._searchResults || []).length === sideFiltered.length &&
+   (window._searchResults || []).every(r => !!app.slackReplyMarkerInfo(r.entry)));
+app.setThreadFilter('all');
+app.kindFilter = null;
+const andersonThreadReply = app.diaryData.entries.find(e =>
+  e.source === 'part2' && e.date === '2020-08-14' && e.time === '17:56:20' &&
+  e.sender === 'Kristian Andersen');
+ok('Andersen 17:56 message remains an ordinary reply in its source thread',
+   !!andersonThreadReply && andersonThreadReply.thread_id === '2020-08-14 14:27:13' &&
+   !app.slackReplyMarkerInfo(andersonThreadReply));
+const andersonThreadRoot = app.diaryData.entries.find(e =>
+  e.source === 'part2' && e.date === '2020-08-14' && e.time === '17:27:13' &&
+  e.sender === 'Eddie Holmes');
+ok('thread authors attach to the source root, not Andersen’s later reply',
+   !!andersonThreadRoot &&
+   andersonThreadRoot.slack_reply_authors.includes('Kristian G. Andersen') &&
+   andersonThreadRoot.slack_reply_authors.includes('Andrew Rambaut') &&
+   app.slackReplyChipsHtml(andersonThreadRoot).includes(
+     'side-thread by Andrew Rambaut, Kristian G. Andersen'));
+const redacted1756Email = emails.find(e => e.idx === 181);
+const anderson1652Email = emails.find(e => e.idx === 185);
+ok('17:56 email sender stays Redacted and is not merged with Andersen’s quoted message',
+   !!redacted1756Email && !!anderson1652Email &&
+   app.entryAuthor(redacted1756Email) === 'Redacted' &&
+   app.formatEntryTime(redacted1756Email) === '12:56 ET' &&
+   redacted1756Email.content.includes('Sorry. This is the final version (v2.2).') &&
+   anderson1652Email.sender === 'Kristian G. Andersen' &&
+   redacted1756Email.thread_key !== anderson1652Email.thread_key);
+if (holmesGenome) {
+  app.displayResults([{
+    entry: holmesGenome, idx: holmesGenome.idx, hits: 1, hitPositions: [],
+    source: holmesGenome.source,
+  }], '', { autoSelect: false });
+  const holmesHtml = document.getElementById('resultsPanel').innerHTML;
+  ok('Holmes result card shows canonical author, time, text, and side-thread shield',
+     holmesHtml.includes('Edward C. Holmes') && holmesHtml.includes('00:29 ET') &&
+     holmesHtml.includes('Loads more Chinese genomes') &&
+     holmesHtml.includes('side-thread by Andrew Rambaut'));
+}
 
 sec('Timeline counts follow the filter');
 app.buildTimelineSeries();
@@ -210,6 +554,20 @@ ok('every cited document is catalogued', docs.length === 32, String(docs.length)
 sec('Stacked timeline (one segment per kind, release sub-totals)');
 app.buildTimelineSeries();
 const ts = app.timelineSeries;
+ok('timeline reset control has a dedicated collapse-state hook',
+   /class="collapse-btn timeline-reset-zoom"/.test(pageHtml));
+ok('collapsed landscape timeline hides the reset control',
+   /body\.layout-landscape \.charts-panel\.collapsed \.timeline-reset-zoom\s*\{\s*display:\s*none;/.test(pageHtml));
+ok('collapsed landscape timeline overrides resized inline width constraints',
+   /body\.layout-landscape \.charts-panel\.collapsed\s*\{\s*width:\s*36px !important;\s*min-width:\s*36px !important;\s*max-width:\s*36px !important;/.test(pageHtml));
+ok('collapsed landscape timeline centers its remaining expand control',
+   /body\.layout-landscape \.charts-panel\.collapsed \.panel-header > div\s*\{\s*width:\s*100%;\s*justify-content:\s*center;/.test(pageHtml));
+ok('collapsed portrait timeline hides the reset control',
+   /body\.layout-portrait \.charts-panel\.collapsed \.timeline-reset-zoom\s*\{\s*display:\s*none;/.test(pageHtml));
+ok('collapsed portrait timeline shrinks to its header',
+   /body\.layout-portrait \.charts-panel\.collapsed\s*\{\s*height:\s*auto !important;\s*max-height:\s*none !important;\s*min-height:\s*0 !important;\s*flex:\s*0 0 auto;/.test(pageHtml));
+ok('collapsed portrait timeline overrides resized inline height',
+   /body\.layout-portrait \.charts-panel\.collapsed\s*\{\s*height:\s*auto !important;\s*max-height:\s*none !important;\s*min-height:\s*0 !important;/.test(pageHtml));
 ok('timeline has one stacked segment per top-level kind', !!ts && Array.isArray(ts.stacks) && ts.stacks.length >= 4,
    ts ? ts.stacks.length + ' segments' : 'none');
 const stackByKind = {};
@@ -360,4 +718,3 @@ ok('scan-width wraps are rejoined (no artificial returns mid-sentence)',
 
 console.log('\n' + pass + ' passed, ' + fail + ' failed');
 process.exit(fail ? 1 : 0);
-

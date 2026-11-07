@@ -27,6 +27,11 @@ whole thread into one entry.
 A new source therefore needs **no UI change**: tag its entries and the badge,
 the Box types filter row and the counts appear by themselves.
 
+The Authors filter uses `sender` (or `author` where that is the record's field
+convention) on Slack and email entries. The author value `Redacted` is kept as
+a selectable author; a combined block of redacted messages remains one filter
+result when represented as one entry.
+
 **Publisher material is not a document.** Slack's own system notices (channel
 created, joined, renamed, archived) are furniture *about* the release, so they
 are `note`, not chat — the same reasoning that gives Rand Paul's analysis its

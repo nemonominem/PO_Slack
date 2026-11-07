@@ -186,6 +186,18 @@ footer{border-top:1px solid var(--border);margin-top:56px;padding-top:18px;color
   <p>The <b>Sources</b> button filters by medium — Slack, Email, Manuscript draft, Release note.
   The filter applies to the results, to the counts on the timeline, and to the totals line at
   once. It is remembered between visits.</p>
+  <h3>Narrowing by author</h3>
+  <p>The <b>Authors</b> button filters Slack messages and emails by their recorded sender/author.
+  Clear aliases are shown under a corpus-supported full name; unresolved or OCR-corrupted names
+  are grouped under <b>Redacted</b>.
+  An author recorded as <b>Redacted</b> can be selected like any other author; if several redacted
+  messages are represented as one combined record, that record appears once. This selection also
+  applies to search results, browse, timeline counts and totals, and is remembered between visits.</p>
+  <h3>Narrowing by thread</h3>
+  <p>The <b>Threads</b> selector filters to Slack messages with a source-visible reply marker or
+  extracted thread replies. Reply authors are shown only when the source identifies them; otherwise
+  the card shows the reply count without guessing an author. The selection applies across search,
+  browse, and timeline counts and is remembered between visits.</p>
   <h3>Jumping to a date</h3>
   <p><b>Jump to date:</b> opens the entries nearest that day (the nearest previous entry when
   the exact day has none). Useful for moving through the record without a search term.</p>
@@ -193,8 +205,10 @@ footer{border-top:1px solid var(--border);margin-top:56px;padding-top:18px;color
 
 <section id="reading">
   <h2>5. Reading a box</h2>
-  <p>Each result is a card: a header line (date, sender, time, source badge, medium badge,
+  <p>Each result is a card: a header line (date, sender, time in Eastern Time when normalized,
+  source badge, medium badge,
   hit count), any chips, the hit navigation bar, and the text itself.</p>
+  <p>A missing source time is left blank rather than inferred.</p>
   <ul>
     <li><b>Click anywhere in a box</b> to make it active and jump the PDF to its page.</li>
     <li><b>◀ Prev / Next ▶</b> step through the individual matches inside one box, moving the

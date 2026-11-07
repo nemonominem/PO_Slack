@@ -24,8 +24,9 @@ Two things this cannot fully recover, given the source:
     one header may really be 2-3 separate messages rather than one. They are
     kept as a single entry (correctly attributed, just coarser-grained than
     part2's true one-row-per-message).
-  - Black-box redactions in the source produce no OCR text at all, so they
-    leave no trace to flag; they are invisible rather than mis-attributed.
+  - Black-box redactions in the source produce no OCR text. The 88 visually
+    reviewed rectangles are therefore maintained separately in
+    slack_part1_redactions.json and applied after OCR parsing.
 
 OCR cleanup applied while assembling each entry:
   - Leading avatar/icon garbage ("@B Nice channel title" → "Nice channel
@@ -53,6 +54,7 @@ ANALYSIS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "analy
 OCR_TEXT_PATH = os.path.join(HERE, "..", "source_ocr", "slack-part1_ocr.txt")
 OUT_JSON = os.path.join(HERE, "part1.json")
 OUT_PAGE_MAP = os.path.join(HERE, "part1_page_map.json")
+REDACTIONS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "slack_part1_redactions.json")
 SOURCE_PDF = "slack-part1.pdf"
 
 MONTHS = [
@@ -619,12 +621,107 @@ def apply_time_fixes(entries):
             print("time fix NOT applied (entry changed): part1 idx %d" % fix["idx"])
 
 
+def apply_redaction_annotations(entries):
+    """Apply the manually reviewed black-box map to the OCR-derived messages.
+
+    The manifest uses indices from the unmodified parser output and PDF page
+    coordinates, so it remains reviewable without rerunning visual detection.
+    """
+    with open(REDACTIONS_PATH, encoding="utf-8") as f:
+        annotations = json.load(f)
+
+    page_by_index = [entry["page"] for entry in entries]
+    insert_after = {}
+    for annotation in annotations:
+        anchor_idx = annotation["after_idx"]
+        if not 0 <= anchor_idx < len(entries):
+            raise ValueError("Invalid redaction anchor index: %s" % anchor_idx)
+
+        source = {
+            "page": annotation["page"],
+            "top": annotation["top"],
+            "bottom": annotation["bottom"],
+        }
+        if annotation["mode"] == "inline":
+            entry = entries[anchor_idx]
+            if annotation.get("sender_override"):
+                entry["sender"] = annotation["sender_override"]
+            if annotation.get("time_override"):
+                entry["time"] = annotation["time_override"]
+                entry["stamp_line"] = "%s ET" % annotation["time_override"]
+                entry["zone_assumed"] = "Slack Part 1 export is on US Eastern time (settled); shown as printed"
+            entry["content"] = entry["content"].rstrip() + "\n[Redacted]"
+            entry["redaction_count"] = entry.get("redaction_count", 0) + 1
+            entry.setdefault("redaction_sources", []).append(source)
+            continue
+        if annotation["mode"] != "standalone":
+            raise ValueError("Unknown redaction mode: %s" % annotation["mode"])
+
+        before = next(
+            (entries[i] for i in range(len(entries) - 1, -1, -1)
+             if page_by_index[i] <= annotation["page"]),
+            None,
+        )
+        after = next(
+            (entries[i] for i in range(len(entries))
+             if page_by_index[i] >= annotation["page"]),
+            None,
+        )
+        anchor = entries[anchor_idx]
+        if anchor["page"] == annotation["page"]:
+            date_entry = anchor
+        elif before and after and before["date"] == after["date"]:
+            date_entry = before
+        elif before and after:
+            date_entry = before if annotation["page"] - before["page"] <= after["page"] - annotation["page"] else after
+        else:
+            date_entry = before or after
+        if date_entry is None:
+            raise ValueError("Cannot determine date for redaction on page %s" % annotation["page"])
+
+        time_value = annotation.get("time")
+        zone_extra = {}
+        if time_value:
+            zone_extra = {
+                "stamp_line": "%s ET" % time_value,
+                "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
+            }
+        redacted_entry = {
+            **zone_extra,
+            "date": date_entry["date"],
+            "raw_date": date_entry["raw_date"],
+            "sender": "Redacted",
+            "time": time_value,
+            "kind": entry_kind("Redacted", []),
+            "thread_id": None,
+            "attachments": [],
+            "content": "[Redacted]",
+            "redacted": True,
+            "redaction_count": 1,
+            "redaction_sources": [source],
+            "page": annotation["page"],
+        }
+        insert_after.setdefault(anchor_idx, []).append(
+            (annotation["page"], annotation["top"], redacted_entry)
+        )
+
+    result = []
+    for idx, entry in enumerate(entries):
+        result.append(entry)
+        for _, _, redacted_entry in sorted(insert_after.get(idx, [])):
+            result.append(redacted_entry)
+    return result
+
+
 def main():
     entries = parse()
     for idx, e in enumerate(entries):
         e["idx"] = idx
     apply_date_fixes(entries)
     apply_time_fixes(entries)
+    entries = apply_redaction_annotations(entries)
+    for idx, e in enumerate(entries):
+        e["idx"] = idx
 
     page_map = build_page_map(entries)
 
@@ -649,6 +746,7 @@ def main():
     print("Date range: %s" % date_range)
     print("Without time: %d" % sum(1 for e in entries if not e["time"]))
     print("Redacted/empty: %d" % sum(1 for e in entries if e["redacted"]))
+    print("Annotated redactions: %d" % sum(e.get("redaction_count", 0) for e in entries))
     print("With attachment marker: %d" % sum(1 for e in entries if "== ATTACHMENT ==" in e["content"]))
     print("With attachments list: %d" % sum(1 for e in entries if e["attachments"]))
     senders = {}

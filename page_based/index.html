@@ -463,9 +463,9 @@ body.layout-landscape .chart-title-main { font-size: 10px; }
 body.layout-landscape .chart-block-stats { font-size: 9px; }
 /* Collapsed = thin vertical rail only (releases width to results) */
 body.layout-landscape .charts-panel.collapsed {
-  width: 36px;
-  min-width: 36px;
-  max-width: 36px;
+  width: 36px !important;
+  min-width: 36px !important;
+  max-width: 36px !important;
 }
 body.layout-landscape .charts-panel.collapsed .panel-header {
   flex-direction: column;
@@ -476,6 +476,13 @@ body.layout-landscape .charts-panel.collapsed .panel-header {
   gap: 14px;
   border-bottom: none;
   border-right: none;
+}
+body.layout-landscape .charts-panel.collapsed .timeline-reset-zoom {
+  display: none;
+}
+body.layout-landscape .charts-panel.collapsed .panel-header > div {
+  width: 100%;
+  justify-content: center;
 }
 body.layout-landscape .charts-panel.collapsed .panel-header h2 {
   writing-mode: vertical-rl;
@@ -525,10 +532,13 @@ body.layout-portrait .chart-title-main { font-size: 10px; min-height: 0; }
 body.layout-portrait .chart-block-stats { font-size: 9px; }
 /* Collapsed = header bar only (releases height to results) */
 body.layout-portrait .charts-panel.collapsed {
-  height: auto;
-  max-height: none;
-  min-height: 0;
+  height: auto !important;
+  max-height: none !important;
+  min-height: 0 !important;
   flex: 0 0 auto;
+}
+body.layout-portrait .charts-panel.collapsed .timeline-reset-zoom {
+  display: none;
 }
 body.layout-portrait .results-panel-wrap {
   flex: 1; border-right: none; border-bottom: none; min-height: 80px;
@@ -809,35 +819,48 @@ body.layout-portrait .pdf-panel {
 .chip.chip-dim:hover { border-color: var(--border-2); color: var(--muted); }
 .chip.chip-cite { color: var(--kind-amber); border-color: rgba(255,212,121,0.4); }
 .chip.chip-thread { color: var(--green); border-color: rgba(78,204,163,0.4); }
+.slack-reply-markers { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+.chip.chip-reply {
+  color: var(--green); border-color: rgba(78,204,163,0.4);
+  max-width: min(100%, 560px); vertical-align: top;
+}
+.chip.chip-redacted { color: var(--orange); border-color: rgba(255,166,87,0.45); cursor: default; }
+.chip.chip-redacted:hover { border-color: rgba(255,166,87,0.45); color: var(--orange); }
 /* Box-type filter: a compact button that opens the list of box types */
-.kind-filter-bar { position: relative; display: inline-flex; align-items: center; gap: 6px; }
-.kind-filter-bar label { font-size: 12px; color: var(--blue); font-weight: 600; }
-.kind-filter-bar > button {
+.kind-filter-bar, .author-filter-bar, .thread-filter-bar { position: relative; display: inline-flex; align-items: center; gap: 6px; }
+.kind-filter-bar label, .author-filter-bar label, .thread-filter-bar label { font-size: 12px; color: var(--blue); font-weight: 600; }
+.kind-filter-bar > button, .author-filter-bar > button {
   background: var(--panel-2); color: var(--text); border: 1px solid var(--border-2);
   padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600;
   max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
-.kind-filter-bar > button:hover { border-color: var(--accent); }
-.kind-filter-panel {
+.kind-filter-bar > button:hover, .author-filter-bar > button:hover { border-color: var(--accent); }
+.thread-filter-bar > select {
+  background: var(--panel-2); color: var(--text); border: 1px solid var(--border-2);
+  padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600;
+}
+.thread-filter-bar > select:hover { border-color: var(--accent); }
+.kind-filter-panel, .author-filter-panel {
   position: absolute; top: calc(100% + 6px); left: 0; z-index: 60; min-width: 230px;
+  max-height: min(70vh, 480px); overflow-y: auto;
   background: var(--panel); border: 1px solid var(--border-2); border-radius: 6px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.5); padding: 8px;
 }
-.kind-filter-panel .kf-row {
+.kind-filter-panel .kf-row, .author-filter-panel .af-row {
   display: flex; align-items: center; gap: 8px; padding: 5px 6px; border-radius: 4px;
   font-size: 13px; cursor: pointer;
 }
-.kind-filter-panel .kf-row:hover { background: var(--panel-2); }
-.kind-filter-panel .kf-row input { cursor: pointer; }
-.kind-filter-panel .kf-count { margin-left: auto; font-size: 11px; color: var(--muted); }
-.kind-filter-panel .kf-actions {
+.kind-filter-panel .kf-row:hover, .author-filter-panel .af-row:hover { background: var(--panel-2); }
+.kind-filter-panel .kf-row input, .author-filter-panel .af-row input { cursor: pointer; }
+.kind-filter-panel .kf-count, .author-filter-panel .af-count { margin-left: auto; font-size: 11px; color: var(--muted); }
+.kind-filter-panel .kf-actions, .author-filter-panel .af-actions {
   display: flex; gap: 6px; border-top: 1px solid var(--border-2); margin-top: 6px; padding-top: 6px;
 }
-.kind-filter-panel .kf-actions button {
+.kind-filter-panel .kf-actions button, .author-filter-panel .af-actions button {
   flex: 1; background: var(--panel-2); color: var(--text); border: 1px solid var(--border-2);
   border-radius: 4px; padding: 4px 6px; font-size: 11px; cursor: pointer;
 }
-.kind-filter-panel .kf-actions button:hover { border-color: var(--accent); }
+.kind-filter-panel .kf-actions button:hover, .author-filter-panel .af-actions button:hover { border-color: var(--accent); }
 /* Global utility: class="hidden" hides an element (used by the guide detail). */
 .hidden { display: none; }
 /* ── The P.O. guide rail ───────────────────────────────────────────────────
@@ -1005,7 +1028,7 @@ mark.hit-current {
 .pdf-view-mode:hover { border-color: var(--muted); }
 
 .pdf-viewer-container {
-  flex: 1; overflow: auto; display: flex; justify-content: center; align-items: flex-start;
+  flex: 1; overflow: auto; display: flex; justify-content: safe center; align-items: flex-start;
   padding: 12px; background: var(--panel);
 }
 .pdf-viewer-container.pdf-mode-continuous {
@@ -1056,7 +1079,7 @@ mark.hit-current {
 }
 .thread-downstream-btn:hover { border-color: var(--green); color: var(--green); }
 .pdf-page-view {
-  display: flex; flex-direction: row; gap: 12px; align-items: flex-start; justify-content: center;
+  display: flex; flex-direction: row; gap: 12px; align-items: flex-start; justify-content: safe center;
   flex-wrap: nowrap;
 }
 .pdf-page-view canvas,
@@ -1213,6 +1236,17 @@ document.addEventListener('DOMContentLoaded', function () {
       <label for="kindFilterBtn">Sources</label>
       <button type="button" id="kindFilterBtn" onclick="toggleKindFilterPanel(event)">All types</button>
     </span>
+    <span class="author-filter-bar" id="authorFilterBar" hidden>
+      <label for="authorFilterBtn">Authors</label>
+      <button type="button" id="authorFilterBtn" onclick="toggleAuthorFilterPanel(event)">All authors</button>
+    </span>
+    <span class="thread-filter-bar" id="threadFilterBar">
+      <label for="threadFilter">Threads</label>
+      <select id="threadFilter" aria-label="Filter side threads" onchange="setThreadFilter(this.value)">
+        <option value="all">All messages</option>
+        <option value="side">Side threads</option>
+      </select>
+    </span>
   </div>
   <span class="instructions" id="toolbarInstructions">Search &rarr; click a result / hit bar for matches. Entry bars open that day&rsquo;s entry + PDF (and clear any search). Jump-to-date opens the nearest entry. Drag to zoom into a stretch; scroll wheel zooms at the cursor; double-click resets.</span>
 </div>
@@ -1270,7 +1304,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="panel-header" onclick="toggleCharts()">
       <h2>📊 Timeline</h2>
       <div style="display:flex;align-items:center;gap:4px">
-        <button class="collapse-btn" onclick="event.stopPropagation();resetTimelineZoom()" title="Reset zoom (or double-click chart)" style="font-size:20px">&#10226;</button>
+        <button class="collapse-btn timeline-reset-zoom" onclick="event.stopPropagation();resetTimelineZoom()" title="Reset zoom (or double-click chart)" style="font-size:20px">&#10226;</button>
         <button class="collapse-btn" id="chartsCollapseBtn" title="Collapse timeline">◀</button>
       </div>
     </div>
@@ -1304,11 +1338,8 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
     <div class="results-panel" id="resultsPanel">
       <div class="placeholder">
-        <h2>Search the P.O. record</h2>
-        <p>Enter a term above to search the Slack messages, the FOI'd emails and the
-        manuscript drafts together (Jan 2020 &ndash; Jun 2023). Results show the
-        matching text highlighted, the source PDF page, and the timeline of
-        entries / hits over time.</p>
+        <h2>Loading the P.O. record</h2>
+        <p>Messages and documents matching the selected filters will appear here.</p>
         <div class="stats" id="entryStats"></div>
       </div>
     </div>
@@ -1369,7 +1400,7 @@ const SOURCES = {
   part1: {
     json: 'part1.json',
     pageMap: 'part1_page_map.json',
-    pdf: 'main_sources/slack-part1.pdf',
+    pdf: 'other_sources/Proximal_Origin_Slack_OCRd.pdf',
     label: 'Slack Part 1: Feb–Apr 2020',
     badge: '💬 Slack P1',
     release: 'Rand Paul · Slack P1',
@@ -1663,6 +1694,7 @@ async function loadData() {
       entries: allEntries,
     };
     rebuildThreadDownLinks();
+    rebuildSlackReplyAuthors();
 
     // entryStats lives inside #resultsPanel, which clearSearch()/doSearch()
     // may have rewritten before the data finished loading — don't crash then.
@@ -1672,27 +1704,23 @@ async function loadData() {
     // The box-type button only exists once there is more than one kind to
     // choose between, and it restores whatever was ticked last time.
     loadKindFilter();
+    loadAuthorFilter();
+    loadThreadFilter();
     loadHiddenSegments();
     buildKindFilterPanel();
+    buildAuthorFilterPanel();
 
     syncJumpDateInputBounds();
     drawTimeline();
 
-    // Run any search the user requested while the data was loading; otherwise
-    // open straight into a browse window of the first boxes, so the results
-    // panel shows real entries on first load instead of an empty placeholder.
+    // Run any search requested while data was loading; otherwise browse from
+    // the first entry allowed by the active filters.
     if (pendingSearch) {
       pendingSearch = false;
       doSearch();
     } else {
       var firstIdx = diaryData.entries.findIndex(entryVisible);
-      if (firstIdx >= 0) {
-        var initialPack = buildBrowseResultsAroundIndex(firstIdx, BROWSE_RADIUS);
-        if (initialPack && initialPack.results.length) {
-          browseMode = true;
-          displayResults(initialPack.results, '', { autoSelect: false });
-        }
-      }
+      showBrowseWindow(firstIdx);
     }
 
     // ── Fetch every page map in parallel ──
@@ -2736,6 +2764,80 @@ function rebuildThreadDownLinks() {
   });
 }
 
+// Part 2 preserves Slack thread timestamps on both the original post and its
+// replies. Resolve authors only when exactly one entry in that group matches
+// the timestamp; Part 1 has no equivalent linkage, so its reply count remains
+// visible without guessing who replied.
+function rebuildSlackReplyAuthors() {
+  if (!diaryData) return;
+  const groups = new Map();
+  diaryData.entries.forEach(function(e) {
+    e.slack_reply_authors = [];
+    e.slack_reply_count = 0;
+    if (e.source !== 'part2' || !e.thread_id) return;
+    if (!groups.has(e.thread_id)) groups.set(e.thread_id, []);
+    groups.get(e.thread_id).push(e);
+  });
+  groups.forEach(function(messages, threadId) {
+    if (messages.length < 2) return;
+    const rootTime = threadId.slice(11);
+    const roots = messages.filter(function(e) {
+      return e.stamp_line && e.stamp_line.indexOf(rootTime) === 0;
+    });
+    if (roots.length !== 1) return;
+    const root = roots[0];
+    const authors = [];
+    messages.forEach(function(e) {
+      const author = entryAuthor(e);
+      if (e === root || author === 'Redacted' || authors.indexOf(author) !== -1) return;
+      authors.push(author);
+    });
+    root.slack_reply_count = messages.length - 1;
+    root.slack_reply_authors = authors;
+  });
+}
+
+function slackReplyMarkerInfo(e) {
+  if (entryKind(e) !== 'slack') return null;
+  const countMatch = (e.content || '').match(/\b(\d+)\s*repl(?:y|ies)\b/i);
+  const rawAuthors = Array.isArray(e.slack_reply_authors) && e.slack_reply_authors.length
+    ? e.slack_reply_authors
+    : (Array.isArray(e.side_thread_authors) ? e.side_thread_authors : []);
+  const authors = rawAuthors.map(function(name) {
+    return entryAuthor({ sender: name });
+  }).filter(function(name, index, list) {
+    return name !== 'Redacted' && list.indexOf(name) === index;
+  });
+  const count = e.slack_reply_count || e.side_thread_count ||
+    (countMatch ? Number(countMatch[1]) : 0);
+  if (!count) return null;
+  return { count: count, authors: authors };
+}
+
+function stripSlackReplyChrome(content) {
+  const lines = String(content || '').split('\n');
+  const replyLabel = /(?:\b\d+\s*repl(?:y|ies)\b|\blast reply\b)/i;
+  const ageLabel = /^\s*\d+\s+y(?:ears?)?\s+ago\s*$/i;
+  while (lines.length && (replyLabel.test(lines[lines.length - 1]) || ageLabel.test(lines[lines.length - 1]))) {
+    lines.pop();
+  }
+  return lines.join('\n').replace(/\s+$/, '');
+}
+
+function slackReplyChipsHtml(e) {
+  const info = slackReplyMarkerInfo(e);
+  if (!info) return '';
+  if (!info.authors.length) {
+    return '<div class="slack-reply-markers"><span class="chip chip-reply" title="Reply authors are not identified in the extracted source">' +
+      'side-thread · ' + info.count + (info.count === 1 ? ' reply' : ' replies') + '</span></div>';
+  }
+  const authors = info.authors.join(', ');
+  const label = 'side-thread by ' + authors;
+  const title = label + ' · ' + info.count + (info.count === 1 ? ' reply' : ' replies');
+  return '<div class="slack-reply-markers"><span class="chip chip-reply" title="' +
+    escapeHtml(title) + '">' + escapeHtml(label) + '</span></div>';
+}
+
 // ============================================================
 // Per-entry scrollable boxes
 //
@@ -3154,9 +3256,8 @@ function doSearch() {
   const results = [];
   for (let i = 0; i < diaryData.entries.length; i++) {
     const entry = diaryData.entries[i];
-    // Box types filter (kind) + timeline legend (source+kind): an unticked
-    // or hidden one is not searched, not hidden after the fact, so the
-    // counts and the timeline agree with what is on screen.
+    // Source, author, and box-type filters all apply before search so counts
+    // and the timeline agree with what is on screen.
     if (!entryVisible(entry)) continue;
     const text = entry.content || '';
     const ev = evalQuery(ast, text, caseSensitive);
@@ -3198,18 +3299,20 @@ function doSearch() {
 
 function clearSearch() {
   document.getElementById('searchInput').value = '';
-  document.getElementById('resultsPanel').innerHTML =
-    '<div class="placeholder"><h2>Search the P.O. record</h2>' +
-    '<p>Enter a search term above to find mentions across all ' +
-    (diaryData ? diaryData.total_entries : 12727) + ' entries (Slack, emails, drafts).</p></div>';
-  lastSearchResults = null;
-  lastSearchQuery = '';
-  window._searchResults = null;
-  currentHitPositions = {};
-  currentHitIdx = {};
-  activeResultIdx = -1;
-  browseMode = false;
-  document.getElementById('chartStats').textContent = 'search to filter';
+  pendingSearch = false;
+  var results = window._searchResults;
+  var current = activeResultIdx >= 0 && results && results[activeResultIdx]
+    ? results[activeResultIdx] : null;
+  var centerIdx = current ? current.idx : -1;
+  if (diaryData) {
+    showBrowseWindow(centerIdx);
+  } else {
+    clearSearchStateForBrowse();
+    var panel = document.getElementById('resultsPanel');
+    if (panel) panel.innerHTML =
+      '<div class="placeholder"><h2>Loading the P.O. record</h2>' +
+      '<p>Messages and documents matching the selected filters will appear here.</p></div>';
+  }
   redrawTimelines();
 }
 
@@ -4179,6 +4282,58 @@ function buildBrowseResultsAroundIndex(centerIdx, radius) {
   return { results: results, focusLocal: focusLocal, from: from, to: to, center: centerIdx };
 }
 
+/** Show a bounded chronological window matching the active filters. */
+function showBrowseWindow(centerIdx) {
+  if (!diaryData) return false;
+  if (threadFilter === 'side') return showAllSideThreadResults();
+  if (!Number.isInteger(centerIdx) || centerIdx < 0 ||
+      !diaryData.entries[centerIdx] || !entryVisible(diaryData.entries[centerIdx])) {
+    centerIdx = diaryData.entries.findIndex(entryVisible);
+  }
+
+  clearSearchStateForBrowse();
+  browseMode = true;
+  if (centerIdx < 0) {
+    displayResults([], '', { autoSelect: false });
+    document.getElementById('resultsPanel').innerHTML =
+      '<div class="placeholder"><h2>No entries match the selected filters</h2>' +
+      '<p>Adjust Sources, Authors, Threads, or timeline visibility to see entries.</p></div>';
+    return true;
+  }
+
+  var pack = buildBrowseResultsAroundIndex(centerIdx, BROWSE_RADIUS);
+  if (!pack || !pack.results.length) {
+    displayResults([], '', { autoSelect: false });
+    return true;
+  }
+  displayResults(pack.results, '', { autoSelect: false });
+  return true;
+}
+
+/** Side-thread filtering is a complete, small result set, not a local window. */
+function showAllSideThreadResults() {
+  if (!diaryData) return false;
+  clearSearchStateForBrowse();
+  browseMode = false;
+  const entries = filterEntries(diaryData.entries);
+  const results = entries.map(function(entry) {
+    return {
+      idx: diaryData.entries.indexOf(entry),
+      entry: entry,
+      hits: 0,
+      hitPositions: [],
+      matchTerms: []
+    };
+  });
+  displayResults(results, '', { autoSelect: false });
+  if (!results.length) {
+    document.getElementById('resultsPanel').innerHTML =
+      '<div class="placeholder"><h2>No side threads match the selected filters</h2>' +
+      '<p>Adjust Sources, Authors, or timeline visibility to see entries.</p></div>';
+  }
+  return true;
+}
+
 /** `preferredSeg` ('source|kind', the exact stack segment a bar click landed
  * in): when a day holds more than one medium -- a day of thousands of Slack
  * messages can still carry one "note" (a channel join/rename) or one email
@@ -4852,6 +5007,10 @@ function openEntryInContent(key) {
 // timeline can be read one source at a time.
 const KIND_FILTER_KEY = 'poSlackKindFilter';
 let kindFilter = null;   // null = every kind listed
+const AUTHOR_FILTER_KEY = 'poSlackAuthorFilter';
+let authorFilter = null; // null = every author listed
+const THREAD_FILTER_KEY = 'poSlackThreadFilter';
+let threadFilter = null; // null = every message, 'side' = messages with replies
 
 // The timeline legend (one swatch per source+kind "stack") used to be purely
 // cosmetic: clicking a swatch called Chart.js's own setDatasetVisibility(),
@@ -4891,11 +5050,78 @@ function kindListed(kind) {
   if (!kindFilter) return true;
   return kindFilter.indexOf(kind) !== -1;
 }
+const AUTHOR_ALIASES = {
+  'andrew pope': 'Andrew Pope',
+  'coleman': 'Amanda Coleman',
+  '"coleman, amanda (nih/niaid) [c': 'Amanda Coleman',
+  'conrad, patricia (on behalf of fauci, anthony)': 'Patricia Conrad (on behalf of Anthony Fauci)',
+  'chris': 'Chris Emery',
+  'daszak, peter': 'Peter Daszak',
+  'edward holmes': 'Edward C. Holmes',
+  'eddie holmes': 'Edward C. Holmes',
+  'fauci, anthony': 'Anthony Fauci',
+  'folkers, greg': 'Greg Folkers',
+  'gpmb': 'Global Preparedness Monitoring Board',
+  'ian': 'Ian Lipkin',
+  '"smith, lan michae': 'Ian Michael Smith',
+  'jeremy': 'Jeremy Farrar',
+  'joao': 'Joao Monteiro',
+  'kristian': 'Kristian G. Andersen',
+  'kristian andersen': 'Kristian G. Andersen',
+  'lipkin': 'Ian Lipkin',
+  'medicine@us.nature.com': 'Redacted',
+  'michael': 'Michael Farzan',
+  '(is': 'Redacted',
+  'eo': 'Redacted',
+  'in': 'Redacted',
+  'jeanette': 'Redacted',
+  'ofu': 'Redacted',
+  'pope, andrew': 'Andrew Pope',
+  'r.a.m. fouchier': 'Ron Fouchier',
+  'shabman, reed': 'Reed Shabman',
+  'smith': 'Redacted',
+};
+function entryAuthor(e) {
+  const raw = typeof e.sender === 'string' && e.sender.trim() ? e.sender : e.author;
+  if (typeof raw !== 'string' || !raw.trim()) return 'Redacted';
+  const name = raw.trim();
+  if (/^redacted$/i.test(name)) return 'Redacted';
+  return AUTHOR_ALIASES[name.toLowerCase()] || name;
+}
+function formatEntryTime(e) {
+  if (!e || e.time == null || String(e.time).trim() === '') return '';
+  let time = String(e.time).trim();
+  if (/^\d{4}$/.test(time)) {
+    const hour = Number(time.slice(0, 2));
+    if (hour < 24) time = time.slice(0, 2) + ':' + time.slice(2);
+  } else {
+    const match = time.match(/^(\d{1,2}):(\d{2})(?::(\d{2}))?$/);
+    if (match) time = match[1].padStart(2, '0') + ':' + match[2] +
+      (match[3] ? ':' + match[3] : '');
+  }
+  return ['part1', 'part2', 'po-emails'].indexOf(e.source) !== -1 ? time + ' ET' : time;
+}
+function availableAuthors() {
+  const counts = {};
+  (diaryData ? diaryData.entries : []).forEach(function(e) {
+    if (entryKind(e) !== 'slack' && entryKind(e) !== 'email') return;
+    const author = entryAuthor(e);
+    if (author) counts[author] = (counts[author] || 0) + 1;
+  });
+  return counts;
+}
+function authorListed(e) {
+  if (!authorFilter) return true;
+  const author = entryAuthor(e);
+  return !!author && authorFilter.indexOf(author) !== -1;
+}
 /** The one check search, the browse window, the timeline series and a
- * timeline click all share: both the Types dropdown (kind-level) AND the
+ * timeline click all share: the Sources dropdown, Authors dropdown, and
  * timeline legend (source+kind-level) have to agree an entry is shown. */
 function entryVisible(e) {
   if (!kindListed(entryKind(e))) return false;
+  if (!authorListed(e)) return false;
+  if (threadFilter === 'side' && !slackReplyMarkerInfo(e)) return false;
   return !hiddenSegments.has(e.source + '|' + entryKind(e));
 }
 function loadKindFilter() {
@@ -4911,8 +5137,36 @@ function saveKindFilter() {
     else localStorage.removeItem(KIND_FILTER_KEY);
   } catch (e) {}
 }
+function loadAuthorFilter() {
+  try {
+    const raw = localStorage.getItem(AUTHOR_FILTER_KEY);
+    authorFilter = raw ? JSON.parse(raw) : null;
+  } catch (e) { authorFilter = null; }
+  if (!Array.isArray(authorFilter)) authorFilter = null;
+}
+function saveAuthorFilter() {
+  try {
+    if (authorFilter) localStorage.setItem(AUTHOR_FILTER_KEY, JSON.stringify(authorFilter));
+    else localStorage.removeItem(AUTHOR_FILTER_KEY);
+  } catch (e) {}
+}
+function loadThreadFilter() {
+  try {
+    threadFilter = localStorage.getItem(THREAD_FILTER_KEY) === 'side' ? 'side' : null;
+  } catch (e) { threadFilter = null; }
+  const select = document.getElementById('threadFilter');
+  if (select) select.value = threadFilter || 'all';
+}
+function setThreadFilter(value) {
+  threadFilter = value === 'side' ? 'side' : null;
+  try {
+    if (threadFilter) localStorage.setItem(THREAD_FILTER_KEY, threadFilter);
+    else localStorage.removeItem(THREAD_FILTER_KEY);
+  } catch (e) {}
+  applyEntryFilters();
+}
 function filterEntries(entries) {
-  if (!kindFilter && !hiddenSegments.size) return entries;
+  if (!kindFilter && !authorFilter && !threadFilter && !hiddenSegments.size) return entries;
   return entries.filter(entryVisible);
 }
 
@@ -4938,10 +5192,12 @@ function buildKindFilterPanel() {
   if (btn) btn.textContent = kindFilterLabel();
 
   let panel = document.getElementById('kindFilterPanel');
+  const wasOpen = !!(panel && !panel.hidden);
   if (panel) panel.remove();
   panel = document.createElement('div');
   panel.className = 'kind-filter-panel';
   panel.id = 'kindFilterPanel';
+  panel.hidden = !wasOpen;
   let rows = '';
   kinds.forEach(function(k) {
     const kd = kindDef(k);
@@ -4989,24 +5245,128 @@ function buildKindFilterPanel() {
 
 function toggleKindFilterPanel(ev) {
   if (ev) ev.stopPropagation();
-  const existing = document.getElementById('kindFilterPanel');
-  if (existing) { existing.remove(); return; }
-  buildKindFilterPanel();
+  let panel = document.getElementById('kindFilterPanel');
+  if (!panel) {
+    buildKindFilterPanel();
+    panel = document.getElementById('kindFilterPanel');
+  }
+  if (panel) panel.hidden = !panel.hidden;
+}
+function authorFilterLabel() {
+  if (!authorFilter) return 'All authors';
+  const counts = availableAuthors();
+  const names = authorFilter.filter(function(name) { return counts[name]; });
+  if (!names.length) return 'No authors';
+  if (names.length === Object.keys(counts).length) return 'All authors';
+  return names.length === 1 ? names[0] : names.length + ' authors';
+}
+function buildAuthorFilterPanel() {
+  const bar = document.getElementById('authorFilterBar');
+  if (!bar) return;
+  const counts = availableAuthors();
+  const authors = Object.keys(counts).sort(function(a, b) {
+    return counts[b] - counts[a] || a.localeCompare(b);
+  });
+  if (!authors.length) return;
+  bar.hidden = false;
+  const btn = document.getElementById('authorFilterBtn');
+  if (btn) btn.textContent = authorFilterLabel();
+
+  let panel = document.getElementById('authorFilterPanel');
+  const wasOpen = !!(panel && !panel.hidden);
+  if (panel) panel.remove();
+  panel = document.createElement('div');
+  panel.className = 'author-filter-panel';
+  panel.id = 'authorFilterPanel';
+  panel.hidden = !wasOpen;
+  let rows = '';
+  authors.forEach(function(author) {
+    const on = !authorFilter || authorFilter.indexOf(author) !== -1;
+    rows += '<label class="af-row"><input type="checkbox" data-author value="' +
+      escapeHtml(author) + '"' + (on ? ' checked' : '') + '><span>' +
+      escapeHtml(author) + '</span><span class="af-count">' + counts[author] + '</span></label>';
+  });
+  panel.innerHTML = rows +
+    '<div class="af-actions">' +
+    '<button type="button" data-author-action="all">All</button>' +
+    '<button type="button" data-author-action="none">None</button>' +
+    '<button type="button" data-author-action="done">Done</button></div>';
+  bar.appendChild(panel);
+
+  panel.addEventListener('click', function(ev) {
+    const act = ev.target.closest('[data-author-action]');
+    if (!act) return;
+    ev.stopPropagation();
+    const what = act.getAttribute('data-author-action');
+    if (what === 'all') authorFilter = null;
+    else if (what === 'none') authorFilter = [];
+    if (what !== 'done') applyAuthorFilter();
+    const open = document.getElementById('authorFilterPanel');
+    if (open) open.remove();
+  });
+  panel.addEventListener('change', function(ev) {
+    const cb = ev.target.closest('input[data-author]');
+    if (!cb) return;
+    const next = Array.from(panel.querySelectorAll('input[data-author]'))
+      .filter(function(box) { return box.checked; })
+      .map(function(box) { return box.value; });
+    authorFilter = next.length === authors.length ? null : next;
+    applyAuthorFilter();
+    const btn2 = document.getElementById('authorFilterBtn');
+    if (btn2) btn2.textContent = authorFilterLabel();
+  });
+}
+function toggleAuthorFilterPanel(ev) {
+  if (ev) ev.stopPropagation();
+  let panel = document.getElementById('authorFilterPanel');
+  if (!panel) {
+    buildAuthorFilterPanel();
+    panel = document.getElementById('authorFilterPanel');
+  }
+  if (panel) panel.hidden = !panel.hidden;
 }
 document.addEventListener('click', function(ev) {
   const panel = document.getElementById('kindFilterPanel');
   if (!panel) return;
   if (!ev.target.closest('#kindFilterBar')) panel.remove();
 });
+document.addEventListener('click', function(ev) {
+  const panel = document.getElementById('authorFilterPanel');
+  if (!panel) return;
+  if (!ev.target.closest('#authorFilterBar')) panel.remove();
+});
 
 /** Re-apply the box-type selection everywhere it is visible. */
 function applyKindFilter() {
   saveKindFilter();
+  applyEntryFilters();
+}
+function applyAuthorFilter() {
+  saveAuthorFilter();
+  applyEntryFilters();
+}
+function applyEntryFilters() {
   timelineSeries = null;          // the day counts depend on the filter
   buildKindFilterPanel();
+  buildAuthorFilterPanel();
   const raw = (document.getElementById('searchInput') || {}).value;
   if (raw && raw.trim() && lastSearchResults && lastSearchResults.length) {
     doSearch();
+  } else if (threadFilter === 'side') {
+    showAllSideThreadResults();
+    redrawTimelines({ preserveZoom: true });
+    updateEntryStatsLine();
+    return;
+  } else if (!threadFilter && window._searchResults &&
+      window._searchResults.length && window._searchResults.every(function(r) {
+        return !!slackReplyMarkerInfo(r.entry);
+      })) {
+    // Leaving the complete side-thread result set must return to chronological
+    // browsing, not keep the stale precomputed side-thread array.
+    showBrowseWindow(-1);
+    redrawTimelines({ preserveZoom: true });
+    updateEntryStatsLine();
+    return;
   } else if (browseMode) {
     // Re-open the browse window around the entry the reader is looking at, so
     // ticking a box type does not leave an empty panel behind.
@@ -5057,6 +5417,9 @@ function chipRefLabel(key, fallback, withSubject) {
 }
 function entryChipsHtml(e) {
   const out = [];
+  for (let i = 0; i < (e.redaction_count || 0); i++) {
+    out.push('<span class="chip chip-redacted" title="This message contains source material redacted in the released PDF">▪ Redacted</span>');
+  }
   if (e.reply_to && e.reply_to_label) {
     out.push('<span class="chip chip-thread" data-open-entry="' + escapeHtml(e.reply_to) +
       '" title="The message this one answers (time in New York time, ET)">↩ in reply to ' +
@@ -5798,13 +6161,15 @@ function displayResults(results, query, opts) {
       kd.icon + ' ' + escapeHtml(kd.label) + '</span>';
     html += '<div class="result-entry is-' + kind + '" id="result-' + i + '" data-result-idx="' + i + '" data-pdf-page="' + pdfPage + '" data-entry-idx="' + r.idx + '" data-entry-source="' + escapeHtml(e.source || '') + '">';
     html += '<div class="result-header">';
-    const isNotice = e.sender === 'Slack Notice';
+    const displayedAuthor = entryAuthor(e);
+    const isNotice = displayedAuthor === 'Slack Notice';
     const isPart2 = e.source === 'part2';
-    const senderHtml = e.sender
-      ? '<span style="font-size:12px;color:' + (isNotice ? 'var(--muted)' : 'var(--green)') + ';font-weight:600;font-style:' + (isNotice ? 'italic' : 'normal') + ';margin-left:8px">' + escapeHtml(e.sender) + '</span>'
+    const senderHtml = displayedAuthor
+      ? '<span style="font-size:12px;color:' + (isNotice ? 'var(--muted)' : 'var(--green)') + ';font-weight:600;font-style:' + (isNotice ? 'italic' : 'normal') + ';margin-left:8px">' + escapeHtml(displayedAuthor) + '</span>'
       : '';
-    const timeHtml = e.time
-      ? '<span class="result-time">' + escapeHtml(e.time) + '</span>'
+    const displayTime = formatEntryTime(e);
+    const timeHtml = displayTime
+      ? '<span class="result-time">' + escapeHtml(displayTime) + '</span>'
       : '';
     // Part 2 export is [timestamp] [sender] content. Part 1 screenshots
     // show the Slack header as name then time — leave that order alone.
@@ -5812,7 +6177,9 @@ function displayResults(results, query, opts) {
       (isPart2 ? (timeHtml + senderHtml) : (senderHtml + timeHtml)) +
       '<span class="result-raw-date">' + escapeHtml(e.raw_date) + '</span>' +
       srcBadge + kindBadge +
-      (e.redacted ? '<span style="font-size:10px;color:var(--orange);margin-left:6px" title="No OCR text recovered for this message — likely an image or a redacted block">▪ redacted</span>' : '');
+      (e.redacted ? '<span style="font-size:10px;color:var(--orange);margin-left:6px" title="' +
+        escapeHtml(e.redaction_count ? 'Source material is redacted in the released PDF' : 'No OCR text recovered for this message — likely an image or a redacted block') +
+        '">▪ redacted</span>' : '');
     if (pageLabel) {
       html += '<span class="result-page-link" title="Open PDF at this entry">📄 ' + pageLabel + '</span>';
     }
@@ -5853,7 +6220,8 @@ function displayResults(results, query, opts) {
     }
 
     // Full content with highlights (paragraphs from cleaned JSON)
-    const highlighted = highlightWithHits(content, query, i);
+    const visibleContent = kind === 'slack' ? stripSlackReplyChrome(content) : content;
+    const highlighted = highlightWithHits(visibleContent, query, i);
     // The email/report parsers put the addressing block before a "----------"
     // rule; render it as a header so From/To/Subject read as addressing.
     const sep = highlighted.indexOf('----------');
@@ -5877,6 +6245,7 @@ function displayResults(results, query, opts) {
         html += '<p>' + (hasMailHead ? addSentenceBreaks(p) : p) + '</p>';
       }
     }
+    if (kind === 'slack') html += slackReplyChipsHtml(e);
     html += '</div>';
     // Always-visible scrollbar for this box: the native one is hidden, and the
     // Up/Down keys belong to the match list.
