@@ -198,6 +198,13 @@ footer{border-top:1px solid var(--border);margin-top:56px;padding-top:18px;color
   extracted thread replies. Reply authors are shown only when the source identifies them; otherwise
   the card shows the reply count without guessing an author. The selection applies across search,
   browse, and timeline counts and is remembered between visits.</p>
+  <h3>Narrowing by redaction</h3>
+  <p>The <b>Redactions</b> selector offers <b>All Messages</b>, <b>Partly Redacted</b>, and
+  <b>Fully Redacted</b>. Partly redacted records retain an identifiable author and date while
+  only part of the message body is redacted. Fully redacted records have no identifiable author;
+  their displayed date or time may only locate the hidden material between surrounding messages.
+  Several consecutive hidden messages may be represented by one record. The selector uses the
+  source redaction annotations and combines with Sources, Authors, Threads, and timeline visibility.</p>
   <h3>Jumping to a date</h3>
   <p><b>Jump to date:</b> opens the entries nearest that day (the nearest previous entry when
   the exact day has none). Useful for moving through the record without a search term.</p>
@@ -208,7 +215,8 @@ footer{border-top:1px solid var(--border);margin-top:56px;padding-top:18px;color
   <p>Each result is a card: a header line (date, sender, time in Eastern Time when normalized,
   source badge, medium badge,
   hit count), any chips, the hit navigation bar, and the text itself.</p>
-  <p>A missing source time is left blank rather than inferred.</p>
+  <p>A missing source time is left blank unless an estimated placement time is available for a
+  fully redacted entry; those times are marked <b>(estimated)</b>.</p>
   <ul>
     <li><b>Click anywhere in a box</b> to make it active and jump the PDF to its page.</li>
     <li><b>◀ Prev / Next ▶</b> step through the individual matches inside one box, moving the

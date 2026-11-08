@@ -90,9 +90,10 @@ const tail = `
 globalThis.__app = { SOURCES, KIND_DEFS, KIND_ALIASES, entryKind, kindDef,
   availableKinds, kindListed, loadKindFilter, saveKindFilter, loadData, doSearch,
   availableAuthors, entryAuthor, authorListed, entryVisible, filterEntries,
-  displayResults, entryChipsHtml, buildTimelineSeries, entryMapKey, highlightWithHits,
+  displayResults, entryChipsHtml, threadMsgHtml, chipRefLabel, buildTimelineSeries, renderTimelineLegend, entryMapKey, highlightWithHits,
   rebuildSlackReplyAuthors, slackReplyMarkerInfo, slackReplyChipsHtml, stripSlackReplyChrome,
-  formatEntryTime, setThreadFilter, buildKindFilterPanel, buildAuthorFilterPanel,
+  formatEntryTime, setThreadFilter, setRedactionFilter, entryRedactionClass,
+  buildKindFilterPanel, buildAuthorFilterPanel,
   toggleKindFilterPanel, toggleAuthorFilterPanel,
   clearSearch,
   openEntryRef, rebuildThreadDownLinks, KIND_HUE, kindColor, guideDocToSource,
@@ -105,6 +106,7 @@ globalThis.__app = { SOURCES, KIND_DEFS, KIND_ALIASES, entryKind, kindDef,
   get browseMode(){ return browseMode; },
   get lastSearchResults(){ return lastSearchResults; },
   get threadFilter(){ return threadFilter; },
+  get redactionFilter(){ return redactionFilter; },
   set kindFilter(v){ kindFilter = v; }, get kindFilter(){ return kindFilter; },
   set authorFilter(v){ authorFilter = v; }, get authorFilter(){ return authorFilter; },
   get timelineSeries(){ return timelineSeries; },
@@ -121,6 +123,15 @@ const ok = (name, cond, extra='') => { if (cond) { pass++; console.log('  PASS  
 const sec = (t) => console.log('\n' + t);
 
 sec('Data load');
+app.renderTimelineLegend();
+const timelineLegendHtml = document.getElementById('timelineLegend').innerHTML;
+const p1SourceChip = timelineLegendHtml.indexOf('Rand Paul - Slack P1, 1,329 items');
+const p2SourceChip = timelineLegendHtml.indexOf('Rand Paul - Slack P2, 11,348 items');
+ok('timeline source chips list Slack P1 before P2 with plain comma-formatted item totals',
+   p1SourceChip >= 0 && p2SourceChip > p1SourceChip &&
+   !/<b>[^<]*items/.test(timelineLegendHtml) &&
+   /Rand Paul - Slack P1, 1,329 items/.test(timelineLegendHtml));
+
 ok('Part 1 viewer uses the clean independent OCR PDF',
    /part1:\s*\{[\s\S]*?pdf:\s*'other_sources\/Proximal_Origin_Slack_OCRd\.pdf'/.test(pageHtml));
 ok('entries loaded', app.diaryData && app.diaryData.entries.length > 12000, app.diaryData && app.diaryData.entries.length);
@@ -129,7 +140,11 @@ const initialBrowse = window._searchResults || [];
 const initialPanelHtml = document.getElementById('resultsPanel').innerHTML;
 ok('first load browses entries with the default all-content filters',
    app.browseMode && !app.lastSearchResults && app.kindFilter === null &&
-   app.authorFilter === null && app.threadFilter === null &&
+   app.authorFilter === null && app.threadFilter === null && app.redactionFilter === null &&
+   document.getElementById('redactionFilter').value === 'all' &&
+   /<option value="all">All Messages<\/option>/.test(pageHtml) &&
+   /<option value="partial">Partly Redacted<\/option>/.test(pageHtml) &&
+   /<option value="full">Fully Redacted<\/option>/.test(pageHtml) &&
    app.filterEntries(app.diaryData.entries).length === app.diaryData.entries.length &&
    initialBrowse.length > 0 && initialBrowse.length < app.diaryData.entries.length &&
    initialBrowse.every(r => app.entryVisible(r.entry)) &&
@@ -178,17 +193,111 @@ app.authorFilter = null;
 app.clearSearch();
 const part1 = app.diaryData.entries.filter(e => e.source === 'part1');
 const part1Redactions = part1.filter(e => e.redaction_count);
-ok('all 88 Part 1 rectangles are represented', part1Redactions.reduce((n, e) => n + e.redaction_count, 0) === 88,
+const fullRedactions = part1Redactions.filter(e => app.entryRedactionClass(e) === 'full');
+const partialRedactions = part1Redactions.filter(e => app.entryRedactionClass(e) === 'partial');
+const estimatedRedactions = fullRedactions.filter(e => e.time);
+const estimatedExample = estimatedRedactions.find(e => e.time === '13:36');
+ok('timed standalone redactions have estimated placement metadata',
+   estimatedRedactions.length === 14 && estimatedRedactions.every(e => e.time_estimated === true) &&
+   fullRedactions.filter(e => !e.time).every(e => !e.time_estimated));
+ok('estimated placement labels appear in card, stamp, thread and hit navigation',
+   !!estimatedExample && app.formatEntryTime(estimatedExample) === '13:36 ET (estimated)' &&
+   app.entryChipsHtml(estimatedExample).includes('13:36 ET (estimated)') &&
+   !app.entryChipsHtml(estimatedExample).includes('Timestamp as printed') &&
+   app.threadMsgHtml({...estimatedExample, thread_key:'test|estimated'}).includes('13:36 ET (estimated)'));
+app.displayResults([{entry:estimatedExample, idx:estimatedExample.idx, hits:1, hitPositions:[]}], '', {autoSelect:false});
+const estimatedCard = document.getElementById('resultsPanel').innerHTML;
+ok('estimated time is visible in both card header and hit label',
+   (estimatedCard.match(/13:36 ET \(estimated\)/g) || []).length === 3);
+ok('estimated stamp is not labelled twice',
+   !app.entryChipsHtml({...estimatedExample, stamp_line:'13:36 ET (estimated)'}).includes('(estimated) (estimated)'));
+ok('source-visible partial redaction times are not estimated',
+   partialRedactions.every(e => !e.time_estimated && !app.formatEntryTime(e).includes('(estimated)') &&
+     !app.entryChipsHtml(e).includes('(estimated)')));
+ok('all 90 Part 1 rectangles are represented', part1Redactions.reduce((n, e) => n + e.redaction_count, 0) === 90,
    part1Redactions.reduce((n, e) => n + e.redaction_count, 0) + ' annotations');
 ok('standalone redactions have a synthetic Redacted sender',
    part1.filter(e => e.sender === 'Redacted' && e.content === '[Redacted]').length === 76);
 ok('embedded redactions remain in their source message text',
-   part1.filter(e => e.sender !== 'Redacted').reduce((n, e) => n + (e.redaction_count || 0), 0) === 12);
+   part1.filter(e => e.sender !== 'Redacted').reduce((n, e) => n + (e.redaction_count || 0), 0) === 14);
 ok('embedded redactions retain source-verified times',
    part1.filter(e => e.sender !== 'Redacted' && e.redaction_count).every(e => !!e.time));
-const page71Redaction = part1.find(e => (e.redaction_sources || []).some(r => r.page === 71 && r.top === 544));
-ok('page 71 inline redaction is attributed to Robert Garry at 13:37',
-   !!page71Redaction && page71Redaction.sender === 'Robert Garry' && page71Redaction.time === '13:37');
+ok('redaction classification uses annotation metadata and author identity, not inferred dates',
+   fullRedactions.length === 76 && partialRedactions.length === 12 &&
+   fullRedactions.every(e => app.entryAuthor(e) === 'Redacted' && !!e.date) &&
+   partialRedactions.every(e => app.entryAuthor(e) !== 'Redacted' && !!e.date) &&
+   app.entryRedactionClass({sender:'Redacted', date:'2020-02-01'}) === null);
+app.kindFilter = ['slack'];
+app.authorFilter = null;
+app.setRedactionFilter('partial');
+const partlyFiltered = app.filterEntries(app.diaryData.entries);
+const partlyRendered = window._searchResults || [];
+ok('Partly Redacted selects only known-author annotated messages',
+   app.redactionFilter === 'partial' && partlyFiltered.length === 12 &&
+   partlyFiltered.every(e => app.entryRedactionClass(e) === 'partial') &&
+   partlyRendered.length === 12 &&
+   partlyRendered.every(r => app.entryRedactionClass(r.entry) === 'partial'));
+app.setRedactionFilter('full');
+const fullyFiltered = app.filterEntries(app.diaryData.entries);
+const fullyRendered = window._searchResults || [];
+ok('Fully Redacted selects synthetic unknown-author annotations despite placement dates',
+   app.redactionFilter === 'full' && fullyFiltered.length === 76 &&
+   fullyFiltered.every(e => app.entryRedactionClass(e) === 'full') &&
+   fullyRendered.length === 76 &&
+   fullyRendered.every(r => app.entryRedactionClass(r.entry) === 'full') &&
+   localStorage.getItem('poSlackRedactionFilter') === 'full');
+app.authorFilter = ['Redacted'];
+ok('Authors=Redacted intersects with Fully Redacted as expected',
+   app.filterEntries(app.diaryData.entries).length === 76);
+app.setThreadFilter('side');
+ok('Authors=Redacted plus Side threads correctly has no matching redaction entries',
+   app.filterEntries(app.diaryData.entries).length === 0);
+app.setThreadFilter('all');
+app.authorFilter = null;
+app.setRedactionFilter('all');
+const allRedactionBrowse = window._searchResults || [];
+ok('All Messages restores ordinary browsing after redaction filtering',
+   app.redactionFilter === null && app.browseMode &&
+   allRedactionBrowse.length > 0 && allRedactionBrowse.length < app.diaryData.entries.length &&
+   allRedactionBrowse.every(r => app.entryVisible(r.entry)) &&
+   allRedactionBrowse.some(r => app.entryRedactionClass(r.entry) !== 'full') &&
+   localStorage.getItem('poSlackRedactionFilter') === null);
+searchInput.value = 'redaction-filter-no-match-probe';
+app.doSearch();
+app.setRedactionFilter('full');
+ok('redaction changes preserve an explicit search with zero matches',
+   searchInput.value === 'redaction-filter-no-match-probe' &&
+   app.lastSearchResults && app.lastSearchResults.length === 0);
+app.clearSearch();
+app.setRedactionFilter('all');
+app.kindFilter = null;
+app.clearSearch();
+const page71Andrew = part1.find(e => e.sender === 'Andrew Rambaut' && e.time === '13:05' &&
+  app.pageMaps.part1[String(e.idx)]?.start === 71);
+const page71Garry = part1.find(e => e.sender === 'Robert Garry' && e.time === '13:37' &&
+  app.pageMaps.part1[String(e.idx)]?.start === 71);
+const page71Holmes = part1.find(e => e.sender === 'Eddie Holmes' && e.time === '15:43' &&
+  app.pageMaps.part1[String(e.idx)]?.start === 71);
+ok('page 71 Andrew Rambaut message is separated and corrected from source text',
+   !!page71Andrew && page71Andrew.content.startsWith('On a visit to Shaoguan, Guangdong province') &&
+   page71Andrew.content.includes('the Guardian and staff from CECGDF') &&
+   page71Andrew.content.includes('https://www.theguardian.com/environment/2020/feb/25/') &&
+   !page71Andrew.content.includes('sampling those animals') &&
+   page71Andrew.stamp_line === '13:05 ET' && !page71Andrew.redaction_count);
+ok('page 71 Robert Garry message is separate, partly redacted above and below its visible line',
+   !!page71Garry && page71Garry.content ===
+     '[Redacted]\nI hope some one is sampling those animals - would be a good place to generate diversity in covs.\n[Redacted]' &&
+   page71Garry.redaction_count === 2 &&
+   page71Garry.redaction_sources.some(r => r.top === 497 && r.bottom === 505) &&
+   page71Garry.redaction_sources.some(r => r.top === 518 && r.bottom === 532) &&
+   app.entryRedactionClass(page71Garry) === 'partial');
+ok('page 71 Eddie Holmes message keeps its visible line and both redacted sections',
+   !!page71Holmes && page71Holmes.content ===
+     '[Redacted]\nI agree that we should use nCoV-19. Will do so from now on.\n[Redacted]' &&
+   page71Holmes.redaction_count === 2 && page71Holmes.time === '15:43' &&
+   page71Holmes.redaction_sources.some(r => r.top === 543 && r.bottom === 570) &&
+   page71Holmes.redaction_sources.some(r => r.top === 584 && r.bottom === 628) &&
+   app.entryRedactionClass(page71Holmes) === 'partial');
 const byKind = app.availableKinds();
 console.log('        kinds:', JSON.stringify(byKind));
 ok('three kinds present (slack, attachment/note, email)',
@@ -360,6 +469,26 @@ input.value = 'passaging';
 app.kindFilter = ['slack','email','attachment','note'];
 
 sec('Slack side-thread filter and verified Holmes record');
+const p2ThreadRoot = app.diaryData.entries.find(e =>
+  e.source === 'part2' && e.idx === 2888);
+const p2ThreadReply = app.diaryData.entries.find(e =>
+  e.source === 'part2' && e.idx === 2890);
+const p2ThreadInfo = p2ThreadRoot && app.slackReplyMarkerInfo(p2ThreadRoot);
+const p2ReplyAuthor = app.entryAuthor({sender:'Eddie Holmes'});
+ok('Part 2 thread-ID timestamp identifies Andrew root and Eddie reply without promoting reply',
+   !!p2ThreadRoot && !!p2ThreadReply &&
+   p2ThreadRoot.thread_id === '2020-12-01 22:49:04' &&
+   p2ThreadRoot.date === '2020-12-02' && p2ThreadRoot.time === '01:49:04' &&
+   p2ThreadRoot.stamp_line.startsWith('22:49:04 Pacific') &&
+   p2ThreadReply.thread_id === p2ThreadRoot.thread_id &&
+   p2ThreadInfo?.count === 1 && p2ThreadInfo.authors.includes(p2ReplyAuthor) &&
+   app.slackReplyChipsHtml(p2ThreadRoot).includes('side-thread by ' + p2ReplyAuthor) &&
+   !app.slackReplyMarkerInfo(p2ThreadReply));
+app.setThreadFilter('side');
+const p2ThreadFiltered = app.filterEntries([p2ThreadRoot, p2ThreadReply]);
+ok('Part 2 thread-ID root is included in Side threads while its ordinary reply is not',
+   p2ThreadFiltered.length === 1 && p2ThreadFiltered[0] === p2ThreadRoot);
+app.setThreadFilter('all');
 const holmesGenome = part1.find(e => e.idx === 906);
 const andersonSideThread = part1.find(e => e.idx === 957);
 const followingAndersonMessage = part1.find(e => e.idx === 958);

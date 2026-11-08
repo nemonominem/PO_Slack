@@ -2,7 +2,7 @@
   "source_file": "slack-part1.pdf",
   "title": "P.O. Slack — Part 1 (paper-2020-nature_medicine-proximal_origin)",
   "released_by": "Chairman Rand Paul",
-  "total_entries": 1332,
+  "total_entries": 1333,
   "date_range": {
     "start": "2020-02-01",
     "end": "2020-04-30"
@@ -2758,7 +2758,8 @@
     },
     {
       "stamp_line": "18:26 ET",
-      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time; placement time estimated",
+      "time_estimated": true,
       "date": "2020-02-06",
       "raw_date": "February 6, 2020",
       "sender": "Redacted",
@@ -4206,7 +4207,8 @@
     },
     {
       "stamp_line": "21:10 ET",
-      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time; placement time estimated",
+      "time_estimated": true,
       "date": "2020-02-09",
       "raw_date": "February 9, 2020",
       "sender": "Redacted",
@@ -4748,7 +4750,8 @@
     },
     {
       "stamp_line": "12:27 ET",
-      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time; placement time estimated",
+      "time_estimated": true,
       "date": "2020-02-11",
       "raw_date": "February 11, 2020",
       "sender": "Redacted",
@@ -5886,7 +5889,8 @@
     },
     {
       "stamp_line": "19:14 ET",
-      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time; placement time estimated",
+      "time_estimated": true,
       "date": "2020-02-15",
       "raw_date": "February 15, 2020",
       "sender": "Redacted",
@@ -6933,7 +6937,8 @@
     },
     {
       "stamp_line": "12:15 ET",
-      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time; placement time estimated",
+      "time_estimated": true,
       "date": "2020-02-17",
       "raw_date": "February 17, 2020",
       "sender": "Redacted",
@@ -8092,7 +8097,8 @@
     },
     {
       "stamp_line": "17:11 ET",
-      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time; placement time estimated",
+      "time_estimated": true,
       "date": "2020-02-19",
       "raw_date": "February 19, 2020",
       "sender": "Redacted",
@@ -8458,7 +8464,8 @@
     },
     {
       "stamp_line": "11:31 ET",
-      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time; placement time estimated",
+      "time_estimated": true,
       "date": "2020-02-20",
       "raw_date": "February 20, 2020",
       "sender": "Redacted",
@@ -10570,7 +10577,8 @@
     },
     {
       "stamp_line": "05:13 ET",
-      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time; placement time estimated",
+      "time_estimated": true,
       "date": "2020-02-25",
       "raw_date": "February 25, 2020",
       "sender": "Redacted",
@@ -11051,22 +11059,41 @@
     {
       "date": "2020-02-25",
       "raw_date": "February 25, 2020",
+      "sender": "Andrew Rambaut",
+      "time": "13:05",
+      "kind": "slack",
+      "thread_id": null,
+      "attachments": [],
+      "content": "On a visit to Shaoguan, Guangdong province, last year, the Guardian and staff from CECGDF saw a caged facility previously used for attempted breeding of the notoriously hard-to-breed pangolin.\nWhile there were no longer pangolin at the site, several locals near the facility confirmed the species had been raised there, along with monkeys and other wildlife\nhttps://www.theguardian.com/environment/2020/feb/25/coronavirus-closures-reveal-vast-scale-of-chinas-secretive-wildlife-farm-industry\nThe Guardian\nCoronavirus closures reveal vast scale of China's secretive wildlife farm industry\nPeacocks, porcupines and pangolins among species bred on almost 20,000 farms\nclosed in wake of virus",
+      "redacted": false,
+      "idx": 816,
+      "stamp_line": "13:05 ET",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed"
+    },
+    {
+      "date": "2020-02-25",
+      "raw_date": "February 25, 2020",
       "sender": "Robert Garry",
       "time": "13:37",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "avisitt aoguan uangdcag . ast yea the Guar¢ian and staff from CECGDF saw a caged fa ity previously used for attempted breeding of the notori sly bard-t reed\nangolin\nWhile there were no longer pangolin at the site, several locals near the facility confirmed the species had been raised there, along with monkeys ani other wildlife\nttps:i/www.theguardian.com/environment/2020/feb/25/coronavirus-closures-reveal-vast-scale-of-chinas-secretive-wildlife-farm-industry\n® the Guardian\nCoronavirus closures reveal vast scale of China's secretive wildlife farm industry\nPeacocks, porcupines and pangolins among species bred on almost 20,000 farms\nclosed in wake of virus\n§ j mad\nan ¢ Per\nRobert a bru ‘ i“\nhope some one is sampling those animals - would be a good place to generate diversity in covs\n[Redacted]",
+      "content": "[Redacted]\nI hope some one is sampling those animals - would be a good place to generate diversity in covs.\n[Redacted]",
       "redacted": false,
-      "idx": 816,
+      "idx": 1332,
       "stamp_line": "13:37 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
-      "redaction_count": 1,
+      "redaction_count": 2,
       "redaction_sources": [
         {
           "page": 71,
-          "top": 544,
-          "bottom": 570
+          "top": 497,
+          "bottom": 505
+        },
+        {
+          "page": 71,
+          "top": 518,
+          "bottom": 532
         }
       ]
     },
@@ -11078,13 +11105,18 @@
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
-      "content": "lagree that we should use nCoV-19. Will do so from now or\n[Redacted]",
+      "content": "[Redacted]\nI agree that we should use nCoV-19. Will do so from now on.\n[Redacted]",
       "redacted": false,
       "idx": 817,
       "stamp_line": "15:43 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
-      "redaction_count": 1,
+      "redaction_count": 2,
       "redaction_sources": [
+        {
+          "page": 71,
+          "top": 543,
+          "bottom": 570
+        },
         {
           "page": 71,
           "top": 584,
@@ -11334,7 +11366,8 @@
     },
     {
       "stamp_line": "12:53 ET",
-      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time; placement time estimated",
+      "time_estimated": true,
       "date": "2020-02-27",
       "raw_date": "February 27, 2020",
       "sender": "Redacted",
@@ -11616,7 +11649,8 @@
     },
     {
       "stamp_line": "20:30 ET",
-      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time; placement time estimated",
+      "time_estimated": true,
       "date": "2020-02-27",
       "raw_date": "February 27, 2020",
       "sender": "Redacted",
@@ -12307,7 +12341,9 @@
       "content": "Loads more Chinese genomes coming. I'm not quite when, but they are coming.\n1 reply",
       "redacted": false,
       "side_thread_count": 1,
-      "side_thread_authors": ["Andrew Rambaut"],
+      "side_thread_authors": [
+        "Andrew Rambaut"
+      ],
       "idx": 906
     },
     {
@@ -12994,7 +13030,10 @@
       "kind": "slack",
       "thread_id": null,
       "side_thread_count": 2,
-      "side_thread_authors": ["Andrew Rambaut", "Kristian Andersen"],
+      "side_thread_authors": [
+        "Andrew Rambaut",
+        "Kristian Andersen"
+      ],
       "attachments": [],
       "content": "@Andrew Rambaut - do you have a tree/alignment with only local cases? I'm trying to get a sense of # clusters in different countries and it’s really hard because all the sequences are mixed\nbetween local and travel. E.g., does South Korea have a bunch of different chains? Or are many of those travel-related?",
       "redacted": false,
@@ -13014,7 +13053,8 @@
     },
     {
       "stamp_line": "17:15 ET",
-      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time; placement time estimated",
+      "time_estimated": true,
       "date": "2020-03-05",
       "raw_date": "March 5, 2020",
       "sender": "Redacted",
@@ -13782,7 +13822,8 @@
     },
     {
       "stamp_line": "13:11 ET",
-      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time; placement time estimated",
+      "time_estimated": true,
       "date": "2020-03-13",
       "raw_date": "March 13, 2020",
       "sender": "Redacted",
@@ -14795,7 +14836,8 @@
     },
     {
       "stamp_line": "03:30 ET",
-      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time; placement time estimated",
+      "time_estimated": true,
       "date": "2020-03-24",
       "raw_date": "March 24, 2020",
       "sender": "Redacted",
@@ -17586,7 +17628,8 @@
     },
     {
       "stamp_line": "13:36 ET",
-      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time; placement time estimated",
+      "time_estimated": true,
       "date": "2020-04-21",
       "raw_date": "April 21, 2020",
       "sender": "Redacted",

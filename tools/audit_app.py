@@ -54,6 +54,12 @@ for m in re.finditer(r"getElementById\(\s*'([^']+)'\s*(\+|,|\))", body):
 missing = sorted(used_ids - set(ids) - {"kindFilterPanel", "authorFilterPanel"})  # created by JS
 check(not missing, "every getElementById target exists" +
       (" (missing: %s)" % missing if missing else ""))
+check(re.search(
+    r'<select id="redactionFilter"[^>]*>[\s\S]*?<option value="all">All Messages</option>'
+    r'[\s\S]*?<option value="partial">Partly Redacted</option>'
+    r'[\s\S]*?<option value="full">Fully Redacted</option>',
+    src),
+    "Redactions selector exposes all three classification choices")
 
 # ids the markup binds through onclick=
 onclick_ids = set(re.findall(r'onclick="([A-Za-z_$][\w$]*)\(', src))

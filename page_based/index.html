@@ -827,19 +827,19 @@ body.layout-portrait .pdf-panel {
 .chip.chip-redacted { color: var(--orange); border-color: rgba(255,166,87,0.45); cursor: default; }
 .chip.chip-redacted:hover { border-color: rgba(255,166,87,0.45); color: var(--orange); }
 /* Box-type filter: a compact button that opens the list of box types */
-.kind-filter-bar, .author-filter-bar, .thread-filter-bar { position: relative; display: inline-flex; align-items: center; gap: 6px; }
-.kind-filter-bar label, .author-filter-bar label, .thread-filter-bar label { font-size: 12px; color: var(--blue); font-weight: 600; }
+.kind-filter-bar, .author-filter-bar, .thread-filter-bar, .redaction-filter-bar { position: relative; display: inline-flex; align-items: center; gap: 6px; }
+.kind-filter-bar label, .author-filter-bar label, .thread-filter-bar label, .redaction-filter-bar label { font-size: 12px; color: var(--blue); font-weight: 600; }
 .kind-filter-bar > button, .author-filter-bar > button {
   background: var(--panel-2); color: var(--text); border: 1px solid var(--border-2);
   padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600;
   max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .kind-filter-bar > button:hover, .author-filter-bar > button:hover { border-color: var(--accent); }
-.thread-filter-bar > select {
+.thread-filter-bar > select, .redaction-filter-bar > select {
   background: var(--panel-2); color: var(--text); border: 1px solid var(--border-2);
   padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600;
 }
-.thread-filter-bar > select:hover { border-color: var(--accent); }
+.thread-filter-bar > select:hover, .redaction-filter-bar > select:hover { border-color: var(--accent); }
 .kind-filter-panel, .author-filter-panel {
   position: absolute; top: calc(100% + 6px); left: 0; z-index: 60; min-width: 230px;
   max-height: min(70vh, 480px); overflow-y: auto;
@@ -1247,6 +1247,14 @@ document.addEventListener('DOMContentLoaded', function () {
         <option value="side">Side threads</option>
       </select>
     </span>
+    <span class="redaction-filter-bar" id="redactionFilterBar">
+      <label for="redactionFilter">Redactions</label>
+      <select id="redactionFilter" aria-label="Filter redacted messages" onchange="setRedactionFilter(this.value)">
+        <option value="all">All Messages</option>
+        <option value="partial">Partly Redacted</option>
+        <option value="full">Fully Redacted</option>
+      </select>
+    </span>
   </div>
   <span class="instructions" id="toolbarInstructions">Search &rarr; click a result / hit bar for matches. Entry bars open that day&rsquo;s entry + PDF (and clear any search). Jump-to-date opens the nearest entry. Drag to zoom into a stretch; scroll wheel zooms at the cursor; double-click resets.</span>
 </div>
@@ -1403,7 +1411,7 @@ const SOURCES = {
     pdf: 'other_sources/Proximal_Origin_Slack_OCRd.pdf',
     label: 'Slack Part 1: Feb–Apr 2020',
     badge: '💬 Slack P1',
-    release: 'Rand Paul · Slack P1',
+    release: 'Rand Paul - Slack P1',
     badgeTitle: 'Slack messages, Part 1 (Feb 1 – Apr 30 2020), released by Chairman Rand Paul',
   },
   part2: {
@@ -1412,7 +1420,7 @@ const SOURCES = {
     pdf: 'main_sources/slack-part2.pdf',
     label: 'Slack Part 2: Apr 2020–Jun 2023',
     badge: '💬 Slack P2',
-    release: 'Rand Paul · Slack P2',
+    release: 'Rand Paul - Slack P2',
     badgeTitle: 'Slack messages, Part 2 (Apr 30 2020 – Jun 28 2023), released by Chairman Rand Paul',
   },
   sscp: {
@@ -1706,6 +1714,7 @@ async function loadData() {
     loadKindFilter();
     loadAuthorFilter();
     loadThreadFilter();
+    loadRedactionFilter();
     loadHiddenSegments();
     buildKindFilterPanel();
     buildAuthorFilterPanel();
@@ -2110,7 +2119,7 @@ function threadMsgHtml(e, opts) {
   // evidence the main card's 🕑 chip shows, so a reader can check the
   // timestamp here rather than trust it blindly.
   if (e.stamp_line) {
-    html += '<div class="thread-msg-stamp">🕑 ' + escapeHtml(e.stamp_line) +
+    html += '<div class="thread-msg-stamp">🕑 ' + escapeHtml(formatEntryStamp(e)) +
       (e.zone_assumed ? ' · ' + escapeHtml(e.zone_assumed) : '') + '</div>';
   }
   const body = (parts.length > 1 ? parts.slice(1).join('----------') : (e.content || '')).trim();
@@ -3242,6 +3251,7 @@ function doSearch() {
   }
 
   browseMode = false; // leaving chronological browse for search hits
+  fullFilteredResultsMode = false;
 
   const caseSensitive = isCaseSensitive();
   let ast = null;
@@ -3761,8 +3771,9 @@ function renderTimelineLegend() {
       '<span class="lg-swatch" style="background:' + kindColor(kind) + '"></span>' +
       escapeHtml(kdef.label) + ' <b>' + kindTotals[kind] + '</b></label>';
 
+    var sourceOrder = Object.keys(SOURCES);
     var sources = Object.keys(kindSourceTotals[kind]).sort(function(a, b) {
-      return kindSourceTotals[kind][b] - kindSourceTotals[kind][a];
+      return sourceOrder.indexOf(a) - sourceOrder.indexOf(b);
     });
     if (sources.length > 1) {
       html += '<div class="lg-subs">';
@@ -3772,7 +3783,9 @@ function renderTimelineLegend() {
         var src = SOURCES[source] || {};
         html += '<label class="lg-sub' + (subOn ? '' : ' off') + '">' +
           '<input type="checkbox" data-lg-sub="' + escapeHtml(segKey) + '"' + (subOn ? ' checked' : '') + '>' +
-          escapeHtml(src.release || src.label || source) + ' <b>' + kindSourceTotals[kind][source] + '</b></label>';
+          escapeHtml(src.release || src.label || source) + ', ' +
+          String(kindSourceTotals[kind][source]).replace(/\B(?=(\d{3})+(?!\d))/g, ',') +
+          ' items</label>';
       });
       html += '</div>';
     }
@@ -4233,6 +4246,7 @@ function snapToNearestCountedDay(idx, counts, maxRadius) {
 // Window is 2*BROWSE_RADIUS+1 ≈ 101 cards; reloads when scrolling near ends.
 var BROWSE_RADIUS = 50;
 var browseMode = false;
+var fullFilteredResultsMode = false;
 var _browseReloading = false;
 var _browseScrollTimer = null;
 
@@ -4247,6 +4261,7 @@ function clearSearchStateForBrowse() {
   currentHitPositions = {};
   currentHitIdx = {};
   activeResultIdx = -1;
+  fullFilteredResultsMode = false;
   var stats = document.getElementById('chartStats');
   if (stats) stats.textContent = 'search to filter';
 }
@@ -4285,7 +4300,7 @@ function buildBrowseResultsAroundIndex(centerIdx, radius) {
 /** Show a bounded chronological window matching the active filters. */
 function showBrowseWindow(centerIdx) {
   if (!diaryData) return false;
-  if (threadFilter === 'side') return showAllSideThreadResults();
+  if (threadFilter === 'side' || redactionFilter) return showAllFilteredResults();
   if (!Number.isInteger(centerIdx) || centerIdx < 0 ||
       !diaryData.entries[centerIdx] || !entryVisible(diaryData.entries[centerIdx])) {
     centerIdx = diaryData.entries.findIndex(entryVisible);
@@ -4310,11 +4325,12 @@ function showBrowseWindow(centerIdx) {
   return true;
 }
 
-/** Side-thread filtering is a complete, small result set, not a local window. */
-function showAllSideThreadResults() {
+/** Thread/redaction filtering shows the complete matching set, not a local window. */
+function showAllFilteredResults() {
   if (!diaryData) return false;
   clearSearchStateForBrowse();
   browseMode = false;
+  fullFilteredResultsMode = true;
   const entries = filterEntries(diaryData.entries);
   const results = entries.map(function(entry) {
     return {
@@ -4328,8 +4344,8 @@ function showAllSideThreadResults() {
   displayResults(results, '', { autoSelect: false });
   if (!results.length) {
     document.getElementById('resultsPanel').innerHTML =
-      '<div class="placeholder"><h2>No side threads match the selected filters</h2>' +
-      '<p>Adjust Sources, Authors, or timeline visibility to see entries.</p></div>';
+      '<div class="placeholder"><h2>No entries match the selected filters</h2>' +
+      '<p>Adjust Sources, Authors, Threads, Redactions, or timeline visibility to see entries.</p></div>';
   }
   return true;
 }
@@ -5011,6 +5027,8 @@ const AUTHOR_FILTER_KEY = 'poSlackAuthorFilter';
 let authorFilter = null; // null = every author listed
 const THREAD_FILTER_KEY = 'poSlackThreadFilter';
 let threadFilter = null; // null = every message, 'side' = messages with replies
+const REDACTION_FILTER_KEY = 'poSlackRedactionFilter';
+let redactionFilter = null; // null = every message, otherwise 'partial' or 'full'
 
 // The timeline legend (one swatch per source+kind "stack") used to be purely
 // cosmetic: clicking a swatch called Chart.js's own setDatasetVisibility(),
@@ -5099,7 +5117,14 @@ function formatEntryTime(e) {
     if (match) time = match[1].padStart(2, '0') + ':' + match[2] +
       (match[3] ? ':' + match[3] : '');
   }
-  return ['part1', 'part2', 'po-emails'].indexOf(e.source) !== -1 ? time + ' ET' : time;
+  const label = ['part1', 'part2', 'po-emails'].indexOf(e.source) !== -1 ? time + ' ET' : time;
+  return estimatedTimeLabel(label, e);
+}
+function estimatedTimeLabel(label, e) {
+  return e.time_estimated && !/\(estimated\)/i.test(label) ? label + ' (estimated)' : label;
+}
+function formatEntryStamp(e) {
+  return estimatedTimeLabel(e.stamp_line, e);
 }
 function availableAuthors() {
   const counts = {};
@@ -5115,13 +5140,20 @@ function authorListed(e) {
   const author = entryAuthor(e);
   return !!author && authorFilter.indexOf(author) !== -1;
 }
+function entryRedactionClass(e) {
+  // A placement date on a standalone redaction may be interpolated; the
+  // annotation plus author identity, not date presence, distinguishes classes.
+  if (!e || !(Number(e.redaction_count) > 0)) return null;
+  return entryAuthor(e) === 'Redacted' ? 'full' : 'partial';
+}
 /** The one check search, the browse window, the timeline series and a
- * timeline click all share: the Sources dropdown, Authors dropdown, and
- * timeline legend (source+kind-level) have to agree an entry is shown. */
+ * timeline click all share: the Sources dropdown, Authors dropdown, Threads,
+ * Redactions, and timeline legend (source+kind-level) must agree an entry is shown. */
 function entryVisible(e) {
   if (!kindListed(entryKind(e))) return false;
   if (!authorListed(e)) return false;
   if (threadFilter === 'side' && !slackReplyMarkerInfo(e)) return false;
+  if (redactionFilter && entryRedactionClass(e) !== redactionFilter) return false;
   return !hiddenSegments.has(e.source + '|' + entryKind(e));
 }
 function loadKindFilter() {
@@ -5157,6 +5189,14 @@ function loadThreadFilter() {
   const select = document.getElementById('threadFilter');
   if (select) select.value = threadFilter || 'all';
 }
+function loadRedactionFilter() {
+  try {
+    const stored = localStorage.getItem(REDACTION_FILTER_KEY);
+    redactionFilter = stored === 'partial' || stored === 'full' ? stored : null;
+  } catch (e) { redactionFilter = null; }
+  const select = document.getElementById('redactionFilter');
+  if (select) select.value = redactionFilter || 'all';
+}
 function setThreadFilter(value) {
   threadFilter = value === 'side' ? 'side' : null;
   try {
@@ -5165,8 +5205,16 @@ function setThreadFilter(value) {
   } catch (e) {}
   applyEntryFilters();
 }
+function setRedactionFilter(value) {
+  redactionFilter = value === 'partial' || value === 'full' ? value : null;
+  try {
+    if (redactionFilter) localStorage.setItem(REDACTION_FILTER_KEY, redactionFilter);
+    else localStorage.removeItem(REDACTION_FILTER_KEY);
+  } catch (e) {}
+  applyEntryFilters();
+}
 function filterEntries(entries) {
-  if (!kindFilter && !authorFilter && !threadFilter && !hiddenSegments.size) return entries;
+  if (!kindFilter && !authorFilter && !threadFilter && !redactionFilter && !hiddenSegments.size) return entries;
   return entries.filter(entryVisible);
 }
 
@@ -5350,19 +5398,16 @@ function applyEntryFilters() {
   buildKindFilterPanel();
   buildAuthorFilterPanel();
   const raw = (document.getElementById('searchInput') || {}).value;
-  if (raw && raw.trim() && lastSearchResults && lastSearchResults.length) {
+  if (raw && raw.trim()) {
     doSearch();
-  } else if (threadFilter === 'side') {
-    showAllSideThreadResults();
+  } else if (threadFilter === 'side' || redactionFilter) {
+    showAllFilteredResults();
     redrawTimelines({ preserveZoom: true });
     updateEntryStatsLine();
     return;
-  } else if (!threadFilter && window._searchResults &&
-      window._searchResults.length && window._searchResults.every(function(r) {
-        return !!slackReplyMarkerInfo(r.entry);
-      })) {
-    // Leaving the complete side-thread result set must return to chronological
-    // browsing, not keep the stale precomputed side-thread array.
+  } else if (fullFilteredResultsMode) {
+    // Leaving a complete thread/redaction result set returns to chronological
+    // browsing, rather than retaining a stale, precomputed filtered array.
     showBrowseWindow(-1);
     redrawTimelines({ preserveZoom: true });
     updateEntryStatsLine();
@@ -5411,7 +5456,7 @@ function applyEntryFilters() {
 function chipRefLabel(key, fallback, withSubject) {
   const t = findEntryByThreadKey(key);
   if (!t || !t.date) return fallback || '';
-  const hm = (t.time && /^\d{4}$/.test(t.time)) ? t.time.slice(0, 2) + ':' + t.time.slice(2) + ' ET' : '(no time)';
+  const hm = formatEntryTime(t) || '(no time)';
   return t.date + ' ' + hm + (t.sender ? ' · ' + t.sender : '') +
     (withSubject && t.subject ? ' · ' + t.subject : '');
 }
@@ -5437,8 +5482,9 @@ function entryChipsHtml(e) {
       escapeHtml(name) + '</span>');
   });
   if (e.stamp_line) {
-    out.push('<span class="chip chip-dim" title="Timestamp as printed, and the zone assumed to read it in">🕑 ' +
-      escapeHtml(e.stamp_line) + (e.zone_assumed ? ' · ' + escapeHtml(e.zone_assumed) : '') + '</span>');
+    const stampTitle = e.time_estimated ? 'Estimated placement time' : 'Timestamp as printed, and the zone assumed to read it in';
+    out.push('<span class="chip chip-dim" title="' + stampTitle + '">🕑 ' +
+      escapeHtml(formatEntryStamp(e)) + (e.zone_assumed ? ' · ' + escapeHtml(e.zone_assumed) : '') + '</span>');
   }
   return out.join('');
 }
@@ -6208,7 +6254,7 @@ function displayResults(results, query, opts) {
     if (chips) html += '<div class="chip-row">' + chips + '</div>';
 
     // Hit navigation bar
-    const hitTime = e.time ? ' · ' + escapeHtml(e.time) : '';
+    const hitTime = displayTime ? ' · ' + escapeHtml(displayTime) : '';
     if (r.hits > 1) {
       html += '<div class="hit-nav">';
       html += '<button type="button" class="hit-nav-btn" data-hit-nav="-1" id="hitprev-' + i + '">◀ Prev</button>';

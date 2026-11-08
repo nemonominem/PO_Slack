@@ -442,6 +442,8 @@ def find_header(line):
     squeezed = re.sub(r"\s+", " ", line.strip())
     if not squeezed:
         return None
+    if squeezed == "Robert a bru ‘ i“":
+        return "Robert Garry", None
     for name in KNOWN_SENDERS:
         idx = squeezed.find(name)
         if 0 <= idx <= 8:
@@ -571,12 +573,83 @@ def parse():
     return entries
 
 
+def correct_page71_messages(entries):
+    """Apply source-verified corrections for the partially redacted page 71 exchange."""
+    page_entries = [e for e in entries if e.get("page") == 71]
+    matches = {
+        sender: [e for e in page_entries if e.get("sender") == sender]
+        for sender in ("Andrew Rambaut", "Robert Garry", "Eddie Holmes")
+    }
+    if any(len(found) != 1 for found in matches.values()):
+        raise ValueError("Expected one Andrew, Garry, and Holmes message on Part 1 page 71")
+
+    zone = "Slack Part 1 export is on US Eastern time (settled); shown as printed"
+    andrew = matches["Andrew Rambaut"][0]
+    andrew["time"] = "13:05"
+    andrew["stamp_line"] = "13:05 ET"
+    andrew["zone_assumed"] = zone
+    andrew["content"] = (
+        "On a visit to Shaoguan, Guangdong province, last year, the Guardian and staff "
+        "from CECGDF saw a caged facility previously used for attempted breeding of the "
+        "notoriously hard-to-breed pangolin.\n"
+        "While there were no longer pangolin at the site, several locals near the facility "
+        "confirmed the species had been raised there, along with monkeys and other wildlife\n"
+        "https://www.theguardian.com/environment/2020/feb/25/"
+        "coronavirus-closures-reveal-vast-scale-of-chinas-secretive-wildlife-farm-industry\n"
+        "The Guardian\n"
+        "Coronavirus closures reveal vast scale of China's secretive wildlife farm industry\n"
+        "Peacocks, porcupines and pangolins among species bred on almost 20,000 farms\n"
+        "closed in wake of virus"
+    )
+
+    garry = matches["Robert Garry"][0]
+    garry["time"] = "13:37"
+    garry["stamp_line"] = "13:37 ET"
+    garry["zone_assumed"] = zone
+    garry["content"] = (
+        "I hope some one is sampling those animals - would be a good place to generate "
+        "diversity in covs."
+    )
+
+    holmes = matches["Eddie Holmes"][0]
+    holmes["time"] = "15:43"
+    holmes["stamp_line"] = "15:43 ET"
+    holmes["zone_assumed"] = zone
+    holmes["content"] = "I agree that we should use nCoV-19. Will do so from now on."
+    return entries
+
+
 def build_page_map(entries):
     page_map = {}
-    for idx, e in enumerate(entries):
+    for e in entries:
         page = e.pop("page")
-        page_map[str(idx)] = {"start": page, "end": page, "breaks": [[0, page]]}
+        page_map[str(e["idx"])] = {"start": page, "end": page, "breaks": [[0, page]]}
     return page_map
+
+
+def preserve_page71_entry_ids(entries):
+    """Keep existing Part 1 IDs stable when splitting the page 71 OCR merge."""
+    roots = [
+        e for e in entries
+        if e.get("page") == 71 and e.get("sender") == "Robert Garry" and e.get("time") == "13:37"
+    ]
+    if len(roots) != 1:
+        raise ValueError("Expected one split Robert Garry message on Part 1 page 71")
+    root = roots[0]
+    original_new_id = root["idx"]
+    root["idx"] = len(entries) - 1
+    for entry in entries:
+        if entry is not root and entry["idx"] > original_new_id:
+            entry["idx"] -= 1
+
+
+def legacy_parser_index(entries, index):
+    """Translate pre-split parser indices past the added page 71 message."""
+    split_index = next(
+        i for i, entry in enumerate(entries)
+        if entry.get("page") == 71 and entry.get("sender") == "Robert Garry"
+    )
+    return index + 1 if index >= split_index else index
 
 
 def apply_date_fixes(entries):
@@ -590,7 +663,7 @@ def apply_date_fixes(entries):
     for fix in json.load(open(path, encoding="utf-8")):
         if fix["part"] != "part1":
             continue
-        e = entries[fix["idx"]]
+        e = entries[legacy_parser_index(entries, fix["idx"])]
         if (e["date"], e["time"]) == (fix["wrong_date"], fix["time"]) and fix["sender"] in (e["sender"] or ""):
             y, m, d = (int(x) for x in fix["date"].split("-"))
             e["date"] = fix["date"]
@@ -609,7 +682,7 @@ def apply_time_fixes(entries):
     for fix in json.load(open(path, encoding="utf-8")):
         if fix["part"] != "part1":
             continue
-        e = entries[fix["idx"]]
+        e = entries[legacy_parser_index(entries, fix["idx"])]
         if e["time"] == fix["wrong_time"] and fix["sender"] in (e["sender"] or ""):
             e["time"] = fix["time"]
             e["stamp_line"] = "%s ET" % fix["time"]
@@ -634,6 +707,8 @@ def apply_redaction_annotations(entries):
     insert_after = {}
     for annotation in annotations:
         anchor_idx = annotation["after_idx"]
+        if annotation["page"] > 71:
+            anchor_idx = legacy_parser_index(entries, anchor_idx)
         if not 0 <= anchor_idx < len(entries):
             raise ValueError("Invalid redaction anchor index: %s" % anchor_idx)
 
@@ -650,7 +725,10 @@ def apply_redaction_annotations(entries):
                 entry["time"] = annotation["time_override"]
                 entry["stamp_line"] = "%s ET" % annotation["time_override"]
                 entry["zone_assumed"] = "Slack Part 1 export is on US Eastern time (settled); shown as printed"
-            entry["content"] = entry["content"].rstrip() + "\n[Redacted]"
+            if annotation.get("position") == "before":
+                entry["content"] = "[Redacted]\n" + entry["content"].lstrip()
+            else:
+                entry["content"] = entry["content"].rstrip() + "\n[Redacted]"
             entry["redaction_count"] = entry.get("redaction_count", 0) + 1
             entry.setdefault("redaction_sources", []).append(source)
             continue
@@ -684,7 +762,8 @@ def apply_redaction_annotations(entries):
         if time_value:
             zone_extra = {
                 "stamp_line": "%s ET" % time_value,
-                "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
+                "zone_assumed": "Slack Part 1 export is on US Eastern time; placement time estimated",
+                "time_estimated": True,
             }
         redacted_entry = {
             **zone_extra,
@@ -714,7 +793,7 @@ def apply_redaction_annotations(entries):
 
 
 def main():
-    entries = parse()
+    entries = correct_page71_messages(parse())
     for idx, e in enumerate(entries):
         e["idx"] = idx
     apply_date_fixes(entries)
@@ -722,6 +801,7 @@ def main():
     entries = apply_redaction_annotations(entries)
     for idx, e in enumerate(entries):
         e["idx"] = idx
+    preserve_page71_entry_ids(entries)
 
     page_map = build_page_map(entries)
 

@@ -9,3 +9,6 @@ __pycache__/
 # Private notes about the author's own article (never pushed)
 analysis/TRAGICOMEDY_ISSUES.md
 PO_Slack.code-workspace
+
+# Local screenshot/test artifact
+/pilltest.png
