@@ -92,7 +92,7 @@ globalThis.__app = { SOURCES, KIND_DEFS, KIND_ALIASES, entryKind, kindDef,
   availableAuthors, entryAuthor, authorListed, entryVisible, filterEntries,
   displayResults, entryChipsHtml, threadMsgHtml, chipRefLabel, buildTimelineSeries, renderTimelineLegend, entryMapKey, highlightWithHits,
   rebuildSlackReplyAuthors, slackReplyMarkerInfo, slackReplyChipsHtml, stripSlackReplyChrome,
-  formatEntryTime, setThreadFilter, setRedactionFilter, entryRedactionClass,
+  formatEntryTime, entryHeaderHtml, syncBoxScrollbar, setThreadFilter, setRedactionFilter, entryRedactionClass,
   buildKindFilterPanel, buildAuthorFilterPanel,
   toggleKindFilterPanel, toggleAuthorFilterPanel,
   clearSearch,
@@ -121,6 +121,35 @@ let pass = 0, fail = 0;
 const ok = (name, cond, extra='') => { if (cond) { pass++; console.log('  PASS  ' + name); }
   else { fail++; console.log('  FAIL  ' + name + (extra ? '  → ' + extra : '')); } };
 const sec = (t) => console.log('\n' + t);
+
+sec('Block header and expansion');
+const headerEntry = {sender:'Author & Co', date:'2020-01-31', time:'0157', source:'po-emails',
+  raw_date:'01:57 ET · Test', subject:'Test <subject>'};
+const header = app.entryHeaderHtml(headerEntry);
+ok('header shows one normalized time and escaped subject', header.includes('Author &amp; Co') &&
+   header.includes('2020-01-31 01:57 ET') && header.includes('Sub: Test &lt;subject&gt;') &&
+   (header.match(/01:57/g) || []).length === 1);
+ok('unknown subjects and time zones are explicit',
+   app.entryHeaderHtml({sender:'A', date:'2020-01-01', time:'1940', source:'sscp'}).
+     includes('2020-01-01 19:40 (timezone unknown) - <span class="entry-header-subject">Sub: NA'));
+ok('missing times are not invented', app.entryHeaderHtml({sender:'A', date:'2020-01-01'}).
+   includes('2020-01-01 NA - '));
+ok('Farrar-Fauci entries show their verified Eastern zone',
+   app.formatEntryTime({source:'farrar-fauci', time:'1403', stamp_line:'14:03 ET'}) === '14:03 ET');
+ok('thread messages use the same normalized header',
+   app.threadMsgHtml({...headerEntry, thread_key:'test|header'}).includes(header));
+const fakeBtn = {hidden:true};
+const fakeHint = {hidden:false};
+const fakeBar = {clientHeight:100, classList:{toggle(){}}, querySelector(){return null;}};
+const fakeCard = {classList:{contains(){return true;}}, querySelector(sel){
+  return sel === '[data-expand-toggle]' ? fakeBtn : fakeHint;
+}};
+const fakeWrap = {querySelector(){return fakeBar;}};
+const fakeBox = {clientHeight:500, scrollHeight:500, scrollTop:0, closest(sel){
+  return sel === '.result-entry' ? fakeCard : fakeWrap;
+}};
+app.syncBoxScrollbar(fakeBox);
+ok('expanded box keeps its collapse control visible when no longer overflowing', !fakeBtn.hidden);
 
 sec('Data load');
 app.renderTimelineLegend();

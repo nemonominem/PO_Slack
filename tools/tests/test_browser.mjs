@@ -13,7 +13,7 @@
 // Run:  node test_browser.mjs
 import { chromium } from '/opt/homebrew/lib/node_modules/openclaw/node_modules/playwright-core/index.mjs';
 
-const EXEC = process.env.HOME +
+const EXEC = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || process.env.HOME +
   '/Library/Caches/ms-playwright/chromium-1243/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing';
 const URL = 'http://localhost:8099/index.html';
 
@@ -30,8 +30,8 @@ page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
 
 await page.goto(URL, { waitUntil: 'load', timeout: 120000 });
 // Wait for the data to land and the app to paint a placeholder/stats.
-await page.waitForFunction(() => document.getElementById('entryStats') &&
-  document.getElementById('entryStats').textContent.length > 0, { timeout: 120000 });
+await page.waitForFunction(() => typeof diaryData !== 'undefined' && diaryData && diaryData.entries.length > 0,
+  null, { timeout: 120000 });
 
 const appErrors = () => errors.filter(e => !/favicon|net::ERR_|Failed to load resource/i.test(e));
 sec('Page load');
@@ -111,8 +111,8 @@ ok('clicking again removes it', afterTwo.n === 0 && afterTwo.on === 0, JSON.stri
 sec('Bookmark persistence');
 await page.locator('.result-entry [data-bm-toggle]').first().click();
 await page.reload({ waitUntil: 'load' });
-await page.waitForFunction(() => document.getElementById('entryStats') &&
-  document.getElementById('entryStats').textContent.length > 0, { timeout: 120000 });
+await page.waitForFunction(() => typeof diaryData !== 'undefined' && diaryData && diaryData.entries.length > 0,
+  null, { timeout: 120000 });
 ok('the bookmark survives a reload',
    await page.locator('.bm-item').count() === 1);
 // The reload landed on a fresh page, so it's collapsed-by-default again --
@@ -169,6 +169,37 @@ ok('a long box scrolls internally', boxScroll && boxScroll.overflowY !== 'visibl
    JSON.stringify(boxScroll));
 ok('the always-visible box scrollbar is shown', boxScroll && boxScroll.barVisible,
    JSON.stringify(boxScroll));
+
+sec('Block controls and header');
+await page.evaluate(() => {
+  const e = diaryData.entries.find(e => chapterLinks[e.bm_key]?.length && (e.content || '').length > 1500);
+  if (!e) throw new Error('No long entry with a chapter link');
+  displayResults([{entry:e, idx:e.idx, hits:1, hitPositions:[]}], '', {autoSelect:false});
+  document.querySelector('.result-entry').style.width = '310px';
+});
+const card = page.locator('.result-entry').first();
+const expand = card.locator('[data-expand-toggle]');
+const chapter = card.locator('[data-chapter-key]');
+ok('chapter and full text controls fit a narrow card', await card.evaluate(c =>
+  [...c.querySelectorAll('[data-chapter-key], [data-expand-toggle]')].every(b => {
+    const r = b.getBoundingClientRect(), p = c.getBoundingClientRect();
+    return r.left >= p.left && r.right <= p.right && r.width > 0;
+  })));
+await expand.click();
+ok('expanded card retains its collapse control', await expand.isVisible() &&
+  (await expand.textContent()).includes('Collapse'));
+await expand.click();
+ok('collapse restores the full text control', await expand.isVisible() &&
+  (await expand.textContent()).includes('Full text'));
+await chapter.click();
+if (await page.locator('.chapter-pop').count()) {
+  await page.locator('[data-chapter-pick]').first().click();
+}
+ok('chapter navigation keeps its button visible', await chapter.isVisible() &&
+  await page.locator('#guideDetail').isVisible());
+const hdr = await card.locator('.entry-header').innerText();
+ok('result header has the normalized author/date/subject format',
+   / @ \d{4}-\d{2}-\d{2} .+ - Sub: .+/.test(hdr), hdr);
 
 sec('Guide: alphabetical + clickable PDFs');
 // Pick a section that actually cites documents -- early sections have none.

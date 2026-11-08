@@ -704,8 +704,12 @@ body.layout-portrait .pdf-panel {
 
 .result-header {
   padding: 8px 14px; background: var(--panel-2); display: flex;
-  justify-content: space-between; align-items: center; cursor: pointer;
+  justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; cursor: pointer;
 }
+.result-header-info { min-width: 0; overflow-wrap: anywhere; }
+.entry-header-author { font-size: 15px; font-weight: 700; color: var(--green); }
+.entry-header-details { font-size: 12px; font-weight: 600; color: var(--muted); }
+.entry-header-subject { color: var(--meta); }
 .result-content mark { cursor: pointer; }
 .result-content mark:hover { outline: 1px solid var(--accent); }
 .body-link { color: var(--link); text-decoration: underline; word-break: break-all; }
@@ -770,7 +774,7 @@ body.layout-portrait .pdf-panel {
 .box-scrollbar.dragging .box-thumb { background: var(--accent); }
 .box-scrollbar.dragging .box-thumb { cursor: grabbing; }
 /* "there is more below" hint + the expander that lifts the height cap */
-.result-hits-group { display: inline-flex; align-items: center; }
+.result-hits-group { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 4px; max-width: 100%; }
 .expand-btn {
   background: var(--panel); color: var(--text); border: 1px solid var(--border-2);
   padding: 2px 8px; border-radius: 4px; cursor: pointer; font-size: 11px; margin-left: 8px;
@@ -2094,7 +2098,7 @@ function threadMsgHtml(e, opts) {
   let html = '<div class="' + cls + '"' +
     (opts.current ? '' : ' data-thread-open="' + escapeHtml(e.thread_key) + '" title="Open this message’s own conversation"') + '>';
   html += '<div class="thread-msg-head">';
-  html += '<span class="thread-msg-sender">' + escapeHtml(e.sender || '(unknown sender)') + '</span>';
+  html += entryHeaderHtml(e);
   html += '<span style="margin-left:auto;font-size:10px;color:var(--muted)">' +
     kd.icon + ' ' + escapeHtml(kd.label) + '</span>';
   html += '<button type="button" class="thread-btn" data-thread-jump="' + escapeHtml(e.thread_key) +
@@ -2884,7 +2888,7 @@ function syncBoxScrollbar(box) {
   const hint = card.querySelector('[data-scroll-hint]');
   if (hint) hint.hidden = !overflows || atEnd || !!expanded;
   const btn = card.querySelector('[data-expand-toggle]');
-  if (btn) btn.hidden = !overflows;
+  if (btn) btn.hidden = !overflows && !expanded;
 }
 function attachBoxScrollbar(box) {
   const wrap = box.closest('.result-content-wrap');
@@ -5117,8 +5121,21 @@ function formatEntryTime(e) {
     if (match) time = match[1].padStart(2, '0') + ':' + match[2] +
       (match[3] ? ':' + match[3] : '');
   }
-  const label = ['part1', 'part2', 'po-emails'].indexOf(e.source) !== -1 ? time + ' ET' : time;
+  const isEastern = ['part1', 'part2', 'po-emails'].indexOf(e.source) !== -1 ||
+    (e.source === 'farrar-fauci' && /\bET\b/i.test(e.stamp_line || ''));
+  const label = isEastern ? time + ' ET' : time;
   return estimatedTimeLabel(label, e);
+}
+function entryHeaderHtml(e) {
+  const time = formatEntryTime(e);
+  const hasZone = ['part1', 'part2', 'po-emails'].indexOf(e.source) !== -1 ||
+    (e.source === 'farrar-fauci' && /\bET\b/i.test(e.stamp_line || ''));
+  const dateTime = (e.date || 'NA') + (time ? ' ' + time + (hasZone ? '' : ' (timezone unknown)') : ' NA');
+  const subject = typeof e.subject === 'string' && e.subject.trim() ? e.subject.trim() : 'NA';
+  return '<span class="entry-header"><span class="entry-header-author">' + escapeHtml(entryAuthor(e)) +
+    '</span><span class="entry-header-details"> @ ' + escapeHtml(dateTime) +
+    ' - <span class="entry-header-subject">Sub: ' + escapeHtml(/^\[NA\]$/i.test(subject) ? 'NA' : subject) +
+    '</span></span></span>';
 }
 function estimatedTimeLabel(label, e) {
   return e.time_estimated && !/\(estimated\)/i.test(label) ? label + ' (estimated)' : label;
@@ -5622,7 +5639,7 @@ function openChapter(sectionId) {
   const rail = document.getElementById('guideRail');
   if (rail && rail.classList.contains('collapsed')) toggleGuideRail();
   if (rail && !rail.querySelector('.guide-sec') && guideData) renderGuideList();
-  selectGuideSection(sectionId);
+  selectGuideSection(sectionId, { preserveResults: true });
   const el = document.querySelector('.guide-sec[data-guide-sec="' + sectionId + '"]');
   if (el) el.scrollIntoView({ block: 'center' });
 }
@@ -5662,7 +5679,7 @@ document.addEventListener('click', function(ev) {
   showChapterChoice(btn.getAttribute('data-chapter-key'));
 }, true);
 
-function selectGuideSection(id) {
+function selectGuideSection(id, opts) {
   activeGuideId = id;
   document.querySelectorAll('.guide-sec').forEach(function(el) {
     el.classList.toggle('active', el.getAttribute('data-guide-sec') === id);
@@ -5756,7 +5773,7 @@ function selectGuideSection(id) {
       openTragicomedySection(trag.getAttribute('data-guide-tragicomedy'), trag.getAttribute('data-guide-part'));
     }
   };
-  if (s.date) openEntryFromRawBar(s.date);
+  if (s.date && !(opts && opts.preserveResults)) openEntryFromRawBar(s.date);
 }
 
 // ============================================================
@@ -6207,21 +6224,8 @@ function displayResults(results, query, opts) {
       kd.icon + ' ' + escapeHtml(kd.label) + '</span>';
     html += '<div class="result-entry is-' + kind + '" id="result-' + i + '" data-result-idx="' + i + '" data-pdf-page="' + pdfPage + '" data-entry-idx="' + r.idx + '" data-entry-source="' + escapeHtml(e.source || '') + '">';
     html += '<div class="result-header">';
-    const displayedAuthor = entryAuthor(e);
-    const isNotice = displayedAuthor === 'Slack Notice';
-    const isPart2 = e.source === 'part2';
-    const senderHtml = displayedAuthor
-      ? '<span style="font-size:12px;color:' + (isNotice ? 'var(--muted)' : 'var(--green)') + ';font-weight:600;font-style:' + (isNotice ? 'italic' : 'normal') + ';margin-left:8px">' + escapeHtml(displayedAuthor) + '</span>'
-      : '';
     const displayTime = formatEntryTime(e);
-    const timeHtml = displayTime
-      ? '<span class="result-time">' + escapeHtml(displayTime) + '</span>'
-      : '';
-    // Part 2 export is [timestamp] [sender] content. Part 1 screenshots
-    // show the Slack header as name then time — leave that order alone.
-    html += '<span><span class="result-date">' + e.date + '</span>' +
-      (isPart2 ? (timeHtml + senderHtml) : (senderHtml + timeHtml)) +
-      '<span class="result-raw-date">' + escapeHtml(e.raw_date) + '</span>' +
+    html += '<span class="result-header-info">' + entryHeaderHtml(e) +
       srcBadge + kindBadge +
       (e.redacted ? '<span style="font-size:10px;color:var(--orange);margin-left:6px" title="' +
         escapeHtml(e.redaction_count ? 'Source material is redacted in the released PDF' : 'No OCR text recovered for this message — likely an image or a redacted block') +
