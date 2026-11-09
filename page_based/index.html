@@ -2671,14 +2671,8 @@ function switchLayout() {
 
   // Time axis swaps X↔Y between layouts — never carry zoom across.
   if (!collapsed) redrawTimelines({ preserveZoom: false });
-  // The bookmarks rail flips orientation with the layout, so its chevron and
-  // scroll arrows have to be re-pointed too.
+  // The bookmarks rail remains vertical in both layouts.
   syncBmScrollBtns();
-  const bmBtn = document.getElementById('bmToggleBtn');
-  const bmRail = document.getElementById('bmRail');
-  if (bmBtn && bmRail && bmRail.classList.contains('collapsed')) {
-    bmBtn.textContent = currentLayout === 'landscape' ? '▶' : '▲';
-  }
   layoutToolbarInstructions();
 }
 

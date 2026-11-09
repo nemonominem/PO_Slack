@@ -3,8 +3,7 @@
 // The other two suites cannot see layout: test_app.mjs runs the app's script
 // against a DOM shim, and audit_app.py only reads the markup. This one drives
 // Chrome and checks the things that only exist once the CSS is applied --
-// where a rail actually sits, whether a box's scrollbar is visible, whether the
-// portrait flip really turns the arrows sideways.
+// where a rail actually sits and whether a box's scrollbar is visible.
 //
 // Chrome for Testing comes from the Playwright cache; the MCP browser server
 // looks for a Google Chrome install that is not present here. Start the app
@@ -124,14 +123,33 @@ sec('Portrait layout');
 await page.click('#layoutToggle');
 await page.waitForTimeout(700);
 const bmP = await page.locator('#bmRail').boundingBox();
-ok('in portrait the rail becomes a wide, short strip',
-   bmP.width > 600 && bmP.height < 260,
+ok('in portrait the bookmarks rail stays a vertical column',
+   bmP.width < 400 && bmP.height > 500,
    Math.round(bmP.width) + 'x' + Math.round(bmP.height));
-ok('the arrows turn horizontal (side by side)', await page.evaluate(() => {
+ok('the portrait scroll arrows remain vertically stacked', await page.evaluate(() => {
   const a = document.getElementById('bmUp').getBoundingClientRect();
   const b = document.getElementById('bmDown').getBoundingClientRect();
-  return b.x > a.x && Math.abs(a.y - b.y) < 3;
+  return b.top > a.top && Math.abs(a.x - b.x) < 2 && (b.top - a.top) < a.height + 4 &&
+    document.getElementById('bmUp').textContent.trim() === '▲' &&
+    document.getElementById('bmDown').textContent.trim() === '▼';
 }));
+ok('the bookmarks rail remains to the left of the guide', bmP.x < (await page.locator('#guideRail').boundingBox()).x);
+await page.click('#bmToggleBtn');
+await page.waitForTimeout(250);
+ok('the collapsed portrait rail uses the right-pointing expand chevron',
+   (await page.locator('#bmToggleBtn').textContent()).trim() === '▶');
+await page.click('#layoutToggle');
+await page.waitForTimeout(700);
+ok('switching layouts while collapsed preserves the expand chevron',
+   (await page.locator('#bmToggleBtn').textContent()).trim() === '▶');
+await page.click('#layoutToggle');
+await page.waitForTimeout(700);
+ok('switching back to portrait preserves the expand chevron',
+   (await page.locator('#bmToggleBtn').textContent()).trim() === '▶');
+await page.click('#bmToggleBtn');
+await page.waitForTimeout(250);
+ok('the portrait rail reopens', (await page.locator('#bmRail').boundingBox()).width > 100 &&
+   (await page.locator('#bmToggleBtn').textContent()).trim() === '◀');
 await page.click('#layoutToggle');
 await page.waitForTimeout(700);
 
