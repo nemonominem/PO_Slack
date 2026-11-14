@@ -2415,8 +2415,8 @@
    "stamp_line": "08 February 2020 09:45 -> 04:45 ET (verified override)",
    "recovered_inline": false,
    "source": "po-emails",
-   "thread_key": "po-emails|2020-02-08|1245",
-   "thread_label": "2020-02-08 12:45 · Jeremy Farrar",
+   "thread_key": "po-emails|2020-02-08|0445",
+   "thread_label": "2020-02-08 04:45 · Jeremy Farrar",
    "replied_by": [
     {
      "key": "po-emails|2020-02-08|1436",
@@ -2424,7 +2424,7 @@
     }
    ],
    "idx": 84,
-   "verified_override": "po-emails.pdf, the block 'From: Jeremy Farrar / Sent: 08 February 2020 09:45 / Subject: FW: 2019 N-CoV' is quoted inside Mike Ferguson's reply (REV0000827 page), so it is on Ferguson's London clock (UK date format, 24 h). Drosten's German client prints the same message at 'Datum: Samstag, 8. Februar 2020 um 10:45' (farrar-fauci-comms.pdf pp.59-60, Berlin = 09:45 UTC = 04:45 ET). Not a REV top-level stamp, so the Pacific page-owner rule does not apply."
+   "verified_override": "po-emails.pdf pp.55-58: the 09:45 UK Farrar forward is quoted in Fouchier's top-level reply on p.55 and in Ferguson's p.57 reply (continuing on p.58). It is 04:45 ET. A near-identical 09:46 UK forward appears in the separate Farrar-Fauci copy; do not infer cross-copy response order."
   },
   {
    "date": "2020-02-08",
@@ -2439,8 +2439,8 @@
    "signature": null,
    "stamp": "2/8/2020 11:36:30 AM",
    "stamp_status": "outlook-us",
-   "zone_assumed": "REV export: US Pacific time (UTC-8 winter / UTC-7 summer); fits Kristian Andersen's mailbox (Scripps Research, La Jolla, San Diego)",
-   "stamp_line": "11:36 Los Angeles -> 14:36 ET",
+   "zone_assumed": "Top-level header on po-emails.pdf p.55 identifies R.A.M. Fouchier and prints 2/8/2020 11:36:30 AM. REV pages are Kristian Andersen's collection (analysis/ZONE_AND_DATE_ANALYSIS.md §1.2), so the page-owner clock is Pacific; the recipient alias is not used to infer the zone.",
+   "stamp_line": "11:36:30 Los Angeles -> 14:36:30 ET -> 19:36:30 UK",
    "recovered_inline": false,
    "source": "po-emails",
    "thread_key": "po-emails|2020-02-08|1436",
@@ -2452,9 +2452,9 @@
     }
    ],
    "idx": 85,
-   "reply_to": "po-emails|2020-02-08|1245",
-   "reply_to_label": "2020-02-08 12:45 · Jeremy Farrar",
-   "link_kind": "inferred (same conversation)"
+   "reply_to": "po-emails|2020-02-08|0445",
+   "reply_to_label": "2020-02-08 04:45 · Jeremy Farrar",
+   "link_kind": "explicit (quoted inline)"
   },
   {
    "date": "2020-02-08",
@@ -2673,22 +2673,23 @@
    "time": "1500",
    "kind": "email",
    "raw_date": "15:00 ET · Re; 2019 N-CoV 7",
-   "sender": "",
-   "sender_raw": "",
-   "sender_how": "",
+   "sender": "Mike Ferguson",
+   "sender_raw": "Mike Ferguson",
+   "sender_how": "From: line (verified from page image)",
    "subject": "Re; 2019 N-CoV 7",
    "content": "To: Jeremy Farrar Edward Holmes kga1978 i Andrew Rambaut rfgarry(\n\nCc: r.fouchier P.Vallancel collins jn afauci Josie Golding\n\nSubject: Re; 2019 N-CoV 7\n\nSent: 2/9/2020 12:00:46 PM\n\nAttachments: Summary.Feb7_MF.pdf\n\n----------\n\nDear Jeremy et al\n| have made some comments and suggestions on the pdf attached.\n| am not an expert on protein O-glycosylation - however, Dr Tabak, who was on the call last weekend, is and if\n| were to consult anyone else on this it would be Henrik Clausen https://icmm.ku.dk/english/research-groups/clausen-group/\nHowever, from what | do know of general glycobiology, | am not sure one can conclude that an immune system would be required to select for O-glycosylation sites. Once an alpha-helix is disturbed by the introduction of a proline, adjacent Ser and Thr residues will be (over-)predicted to have O-glycosylation potential - hard to know the functional consequences/significance without knowing whether the potential O sites are actually occupied.\nRegards\nMike",
    "signature": null,
    "stamp": "2/9/2020 12:00:46 PM",
    "stamp_status": "outlook-us",
-   "zone_assumed": "REV export: US Pacific time (UTC-8 winter / UTC-7 summer); fits Kristian Andersen's mailbox (Scripps Research, La Jolla, San Diego)",
-   "stamp_line": "12:00 Los Angeles -> 15:00 ET",
+   "zone_assumed": "Top-level header on po-emails.pdf p.57 identifies Mike Ferguson and prints 2/9/2020 12:00:46 PM. REV pages are Kristian Andersen's collection (analysis/ZONE_AND_DATE_ANALYSIS.md §1.2), so the page-owner clock is Pacific.",
+   "stamp_line": "12:00:46 Los Angeles -> 15:00:46 ET -> 20:00:46 UK",
    "recovered_inline": false,
    "source": "po-emails",
    "thread_key": "po-emails|2020-02-09|1500",
-   "thread_label": "2020-02-09 15:00 · ",
+   "thread_label": "2020-02-09 15:00 · Mike Ferguson",
    "replied_by": [],
-   "idx": 93
+   "idx": 93,
+   "verified_override": "po-emails.pdf p.57 top-level header identifies Mike Ferguson and prints 2/9/2020 12:00:46 PM. This is Feb. 9 on the REV Pacific clock (15:00:46 ET / 20:00:46 UK); the page does not support a Feb. 8 noon message."
   },
   {
    "date": "2020-02-09",

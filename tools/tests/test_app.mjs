@@ -707,6 +707,52 @@ const evNoKind = guideResp.sections.flatMap(s=>s.evidence).filter(e=>!e.kind);
 ok('every guide citation is classified', evNoKind.length === 0);
 const docs = guideResp.documents ? Object.values(guideResp.documents) : [];
 ok('every cited document is catalogued', docs.length === 32, String(docs.length));
+const poEntry = idx => app.diaryData.entries.find(e => e.source === 'po-emails' && e.idx === idx);
+const chapterLinks = JSON.parse(fs.readFileSync(path.join(HERE, 'chapter_links.json'), 'utf8'));
+const guideSection = id => guideResp.sections.find(s => s.id === id);
+const entry84 = poEntry(84), entry85 = poEntry(85), entry93 = poEntry(93);
+ok('Farrar 09:45 UK forward uses its corrected 04:45 ET key and page span',
+   entry84?.time === '0445' && entry84.thread_key === 'po-emails|2020-02-08|0445' &&
+   app.pageMaps['po-emails']?.[entry84.thread_key]?.start === 57 &&
+   app.pageMaps['po-emails']?.[entry84.thread_key]?.end === 58);
+ok('Fouchier page-55 REV stamp is 14:36 ET / 19:36 UK, with a direct quoted-forward link',
+   entry85?.date === '2020-02-08' && entry85.time === '1436' &&
+   entry85.sender === 'R.A.M. Fouchier' && entry85.stamp === '2/8/2020 11:36:30 AM' &&
+   entry85.stamp_line.includes('14:36:30 ET -> 19:36:30 UK') &&
+   entry85.reply_to === entry84?.thread_key &&
+   entry85.link_kind === 'explicit (quoted inline)' &&
+   app.pageMaps['po-emails']?.[entry85.thread_key]?.start === 55 &&
+   app.pageMaps['po-emails']?.[entry85.thread_key]?.end === 56);
+ok('Ferguson is identified on the Feb. 9 page-57 REV record without shifting its date',
+   entry93?.date === '2020-02-09' && entry93.time === '1500' &&
+   entry93.sender === 'Mike Ferguson' && entry93.stamp === '2/9/2020 12:00:46 PM' &&
+   entry93.stamp_line.includes('20:00:46 UK') &&
+   entry93.verified_override.includes('does not support a Feb. 8 noon message'));
+const section132 = guideSection('p1-13.2');
+const section133 = guideSection('p1-13.3');
+const section134 = guideSection('p1-13.4');
+ok('chapter 13.2 cites Fouchier at the verified 19:36 UK time',
+   section132?.evidence[0]?.pages?.includes('55') &&
+   section132.evidence[0].raw.includes('7:36 pm UK') &&
+   section132.title.includes('7:36 pm UK'));
+ok('chapter 13.3 cites Ferguson on Feb. 9, p.57, without an ordering claim',
+   section133?.date === '2020-02-09' && section133.evidence.length === 1 &&
+   section133.evidence[0].pages?.includes('57') &&
+   section133.evidence[0].raw.includes('9 Feb 2020, 8:00 pm UK'));
+ok('chapter 13.4 cites the complete Vallance email on pp.61-62',
+   section134?.evidence[0]?.doc === 'farrar-fauci-comms.pdf' &&
+   section134.evidence[0].pages?.includes('61-62') &&
+   section134.evidence[0].raw.includes('pp.61-62'));
+ok('chapter buttons target the corrected Feb. 8–9 records',
+   chapterLinks['po-emails/po-emails|2020-02-08|0445']?.some(s => s.id === 'p1-13.1') &&
+   chapterLinks['po-emails/po-emails|2020-02-08|1436']?.some(s => s.id === 'p1-13.2') &&
+   chapterLinks['po-emails/po-emails|2020-02-09|1500']?.some(s => s.id === 'p1-13.3') &&
+   chapterLinks['farrar-fauci/farrar-fauci|2020-02-08|0703']?.some(s => s.id === 'p1-13.4'));
+const section139 = guideSection('p1-13.9');
+const section1310 = guideSection('p1-13.10');
+ok('the clear 2030 citation typo is normalized in guide metadata without changing Rambaut’s clock',
+   section139?.evidence.some(e => e.raw.includes('8 Feb 2020, 9:16 pm UK')) &&
+   section1310?.date === '2020-02-08');
 
 
 sec('Stacked timeline (one segment per kind, release sub-totals)');
