@@ -2185,8 +2185,8 @@
    "id": "p1-13.2",
    "part": "p1",
    "number": "13.2",
-   "title": "Fouchier pushes back on any lab origin (8 Feb, 10.36 am UK)",
-   "heading": "13.2 Fouchier pushes back on any lab origin (8 Feb, 10.36 am UK)",
+   "title": "Fouchier pushes back on any lab origin (8 Feb, 7:36 pm UK)",
+   "heading": "13.2 Fouchier pushes back on any lab origin (8 Feb, 7:36 pm UK)",
    "date": "2020-02-08",
    "date_raw": null,
    "evidence": [
@@ -2199,7 +2199,7 @@
      "date": "2020-02-08",
      "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf, p.55, 8 Feb 2020, 10:36 am UK"
+     "raw": "Proximal_Origin_Emails.pdf, p.55, 8 Feb 2020, 7:36 pm UK"
     }
    ],
    "summary": "Fouchier argues passaging should also be rejected, on the (weak) grounds that nobody is known to have worked on a close viral relative in China — an argument the piece says later shapes his and Daszak's move to torpedo the manuscript at Nature."
@@ -2208,32 +2208,21 @@
    "id": "p1-13.3",
    "part": "p1",
    "number": "13.3",
-   "title": "Ferguson makes some comment and discusses the glycans (8 Feb, 12:00 pm UK)",
-   "heading": "13.3 Ferguson makes some comment and discusses the glycans (8 Feb, 12:00 pm UK)",
-   "date": "2020-02-08",
+   "title": "Ferguson comments on the glycans (9 Feb, 8:00 pm UK)",
+   "heading": "13.3 Ferguson comments on the glycans (9 Feb, 8:00 pm UK)",
+   "date": "2020-02-09",
    "date_raw": null,
    "evidence": [
     {
      "doc": "Proximal_Origin_Emails.pdf",
      "kind": "email",
      "pages": [
-      "61"
+      "57"
      ],
-     "date": "2020-02-08",
+     "date": "2020-02-09",
      "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf, p.61, 8 Feb 2020, 12:00 pm UK"
-    },
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "56"
-     ],
-     "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf, p.56, 8 Feb 2020, 12 pm UK"
+     "raw": "Proximal_Origin_Emails.pdf, p.57, 9 Feb 2020, 8:00 pm UK"
     }
    ],
    "summary": "Ferguson's feedback says the glycan shield isn't incompatible with passaging, and confirms Tabak (a glycoprotein expert) was on the original Farrar call."
@@ -2248,15 +2237,15 @@
    "date_raw": null,
    "evidence": [
     {
-     "doc": "farrar-fauci-comms-full.pdf",
+     "doc": "farrar-fauci-comms.pdf",
      "kind": "email",
      "pages": [
-      "62"
+      "61-62"
      ],
      "date": "2020-02-08",
      "url": "https://drive.google.com/file/d/1l04ZiPQ09bp4_x4SkJ-vCpbzhg35EVWu",
      "source_part": "p1",
-     "raw": "farrar-fauci-comms-full.pdf, p.62, 8 Feb 2020, 12.03 pm UK"
+     "raw": "farrar-fauci-comms.pdf, pp.61-62, 8 Feb 2020, 12:03 pm UK"
     }
    ],
    "summary": "Vallance backs publication, leaning against passaging and wanting the glycans used as further evidence for a natural origin."
@@ -2432,10 +2421,10 @@
      "pages": [
       "51"
      ],
-     "date": "2030-02-08",
+     "date": "2020-02-08",
      "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
-     "raw": "Rambaut to the Farrar call group, Proximal_Origin_Emails.pdf, p.51, 8 Feb 2030, 9:16 pm UK, 4:16 pm EST"
+     "raw": "Rambaut to the Farrar call group, Proximal_Origin_Emails.pdf, p.51, 8 Feb 2020, 9:16 pm UK, 4:16 pm EST"
     },
     {
      "doc": "Proximal_Origin_Emails.pdf",
@@ -2457,7 +2446,7 @@
    "number": "13.10",
    "title": "On Slack: the co-authors discuss Fouchier (8 Feb, 7:47 pm to 8:53 pm UK)",
    "heading": "13.10 On Slack: the co-authors discuss Fouchier (8 Feb, 7:47 pm to 8:53 pm UK)",
-   "date": "2030-02-08",
+   "date": "2020-02-08",
    "date_raw": null,
    "evidence": [
     {
@@ -6142,7 +6131,7 @@
     "2020-03-17",
     "2020-07-25",
     "2020-07-28",
-    "2030-02-08"
+    "2020-02-08"
    ],
    "urls": [
     "http://Proximal_Origin_Emails.pdf,",
