@@ -13,8 +13,10 @@ whitespace, drop punctuation) and find the first page whose normalised text
 starts with the section's normalised heading.
 
 Output: page_based/article_page_map.json -- {section_id: page_number}
-(1-indexed, into the per-part PDF copied into page_based/tragicomedy/).
+(1-indexed into the per-part PDF). Use --pdf-dir to read PDFs from another
+directory; the default is page_based/tragicomedy/.
 """
+import argparse
 import json
 import os
 import re
@@ -43,11 +45,19 @@ def norm(text):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--pdf-dir",
+        default=TRAGICOMEDY_DIR,
+        help="directory containing the article part PDFs (default: %(default)s)",
+    )
+    args = parser.parse_args()
+
     guide = json.load(open(os.path.join(HERE, "po_guide.json"), encoding="utf-8"))
 
     page_texts = {}
     for pid, fname in PART_PDF.items():
-        path = os.path.join(TRAGICOMEDY_DIR, fname)
+        path = os.path.join(args.pdf_dir, fname)
         reader = pypdf.PdfReader(path)
         page_texts[pid] = [norm(p.extract_text() or "") for p in reader.pages]
         print("%s: %d pages" % (pid, len(page_texts[pid])))
