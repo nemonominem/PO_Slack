@@ -1,55 +1,24 @@
-# analysis: the datetime record
+# Internal analyses and generated reports
 
-This folder is the working record for getting the dates and times of the email entries
-right. It is not uploaded to GitHub Pages. The repository is public, so see item H2 in
-`FOR_HUMAN_REVIEWER.md` before pushing.
+This directory contains audit evidence and working reports. It is not served
+by the static app. Current product documentation lives in [`../docs/`](../docs/).
 
-## 1. What you need to do
+## Topics
 
-**Open `FOR_HUMAN_REVIEWER.md`.** It is the only file with instructions for you, and it says
-which files (if any) you need to open. Everything else here is evidence or test output.
-
-## 2. What is in this folder
-
-| File | What it is | When to open it |
-|---|---|---|
-| `FOR_HUMAN_REVIEWER.md` | **Every instruction and decision for you** | First |
-| `README.md` | This file | To find your way around |
-| `ZONE_AND_DATE_ANALYSIS.md` | The datetime analysis: what is settled, the rules, the evidence | For the evidence behind an open item |
-| `zone_format_audit.csv` | One row per email entry (386), with the rule behind its time | Optional lookup tool for item U1 in `FOR_HUMAN_REVIEWER.md` |
-| `slack_part1_time_check.csv` | Slack Part 1 times that run backwards (80) | Optional, item A3 in `FOR_HUMAN_REVIEWER.md` |
-| `reply_order_check.csv` | Result of the reply-order test, by zone group | Support output; nothing to check |
-| `owner_zone_check.csv` | Exact-copy pairs for the page owners | Support output; nothing to check |
-| `zone_rule_dedupe.log` | Which copies were removed as duplicates | If an entry looks missing |
-| `chapter_links_report.txt` | Citations in your article that could not be linked to an entry | When checking chapter buttons |
-| `bookmark_rekey_report.txt` | Old bookmark keys that could not be mapped | Rarely |
-
-## 3. Reading `zone_format_audit.csv`
-
-Open it in a spreadsheet and filter on `zone_status`.
-
-| Column | Meaning |
+| Folder | Contents |
 |---|---|
-| `release`, `idx` | The entry: `po-emails` or `farrar-fauci`, and its number |
-| `thread_key` | The key the app uses (bookmarks and chapter links) |
-| `date`, `time` | The Eastern date and time the app shows |
-| `sender`, `stamp`, `stamp_format` | As parsed: the sender, the printed stamp, and its format |
-| `rule` | The rule that set the time, in plain words |
-| `pdf`, `pdf_pages` | Where to look: the PDF file and the page |
-| `zone_status` | **Settled**, **Supported** or **Not settled** (below) |
-| `status_reason` | Why |
-| `check` | Anything odd about the entry (no time, no sender, ...) |
-| `note` | A note from a check against the page image, where one exists |
+| [`chronology/`](chronology/) | Source-based email/time-zone audit and reviewer index. Start with [`FOR_HUMAN_REVIEWER.md`](chronology/FOR_HUMAN_REVIEWER.md); detailed February 8 findings are in [`ZONE_AND_DATE_ANALYSIS.md`](chronology/ZONE_AND_DATE_ANALYSIS.md). |
+| [`slack-qa/`](slack-qa/) | Preserved OCR review prompts, status notes, and page-specific Slack checks. These are historical work records; consult [`chronology/FOR_HUMAN_REVIEWER.md`](chronology/FOR_HUMAN_REVIEWER.md) for the latest unresolved items. |
+| [`source-links/`](source-links/) | Generated unresolved-link report, plus any supporting scan data. Rebuild the Markdown report with `python3 tools/build_url_report.py`. |
 
-- **Settled:** fixed by the stamp, an exact copy, the page image, or a decision of yours.
-- **Supported:** consistent with every test, but the tests cannot prove it.
-- **Not settled:** an assumption with no test, or the data cannot decide. These are the
-  rows behind the S, L and U items in `FOR_HUMAN_REVIEWER.md`.
+## Generated evidence
 
-## 4. Rebuilding
+The scripts in [`../tools/README.md`](../tools/README.md) write CSV and text
+reports directly here, including the datetime audit, reply-order checks,
+Slack Part 1 time checks, and chapter-link reports. Do not edit generated
+outputs by hand; make evidence-backed changes in the corresponding source
+data, parser, or verified overrides and regenerate them.
 
-Do not edit the generated files by hand. The scripts and their order are in
-`tools/README.md`. Hand-checked corrections go in `tools/verified_overrides.json`, with
-the evidence beside each one.
-- `cross_release_check.csv`: quoted-later-than-quoter violations across the two releases (header only when none). Optional.
-- `freeze_bracket_check.csv`: per non-exact P.O. email, the clock that froze the stamp, the offsets bracketing allows, and the time under the freeze rule (from `tools/freeze_bracket_check.py`). Optional.
+The February 8 article/app audit is scoped to the correspondence chain and
+directly dependent passages. It distinguishes verified source stamps from
+timezone interpretations that remain supported or unresolved.

@@ -76,28 +76,29 @@ Practical rules learned from `po-emails.pdf`:
 
 1. **An explicit UTC offset in the stamp always wins** — trust it, never
    re-zone it. (`Tue 2/4/2020 9:10:35 AM (UTC-05:00)`)
-2. **Otherwise the sender's own institution decides**, because every message in
-   these releases states it in the signature block or address line. Keep the
-   table at the top of the parser, with the evidence in a comment:
-
-   | Institution | Zone | Senders |
-   |---|---|---|
-   | Wellcome Trust / UK Government | Europe/London | Farrar, Vallance, Ferguson, Schreier, Golding |
-   | NIH / NIAID, Bethesda | America/New_York | Fauci, Auchincloss, Collins, Shabman |
-   | Scripps Research | America/Los_Angeles | Andersen, Farzan |
-   | Tulane | America/Chicago | Garry |
-   | University of Sydney | Australia/Sydney | Holmes |
-   | Institut Pasteur | Europe/Paris | Fouchier |
-
-   `ZONE_OVERRIDES` takes precedence, keyed `(date, HH:MM, subject)`, for a
-   stamp that turns out to be ambiguous.
-3. **Normalise to ET for ordering, and keep the local stamp.** `date` / `time`
+2. **Use a verified override** when the page image, exact copy, or message
+   text establishes both the instant and its zone. Each override must record
+   its source evidence.
+3. **A quoted timestamp uses the quoting client's clock** only when physical
+   message nesting on the page establishes that it is quoted. A header at the
+   top of a page is not, by itself, a quote. If the quoter's clock is inferred
+   from their known location rather than an explicit offset, label the result
+   as supported, not settled.
+4. **A top-level timestamp uses the page owner's/export clock** where that
+   clock is supported by evidence (for example REV/Pacific, LIP/Eastern, or
+   GARRY/Central). Do not infer the zone from the sender's institution or the
+   recipient alias alone.
+5. If none of these rules is supported, preserve the printed stamp and mark
+   the normalized time as uncertain; do not silently substitute the sender's
+   work location. Source-specific rules and exceptions are recorded in
+   `analysis/chronology/ZONE_AND_DATE_ANALYSIS.md`.
+6. **Normalise to ET for ordering, and keep the local stamp.** `date` / `time`
    are the ET values (they order the timeline and form the entry key);
    `raw_date` shows local → ET; `stamp_line` is printed on the card, and
    `zone_assumed` names the evidence. Both stamps are always visible, so a
    reader can check the assumption rather than trust it.
-4. Use `zoneinfo`, not fixed offsets, so DST is handled.
-5. **Do not use document order to check chronology.** The email release prints a
+7. Use `zoneinfo`, not fixed offsets, so DST is handled.
+8. **Do not use document order to check chronology.** The email release prints a
    conversation grouped by thread, not in time order — the "Summary - Invitation
    to edit" thread runs 01:23, 19:08, 17:56, 17:08, 14:39. That looks like a
    parsing bug and is not; entries are sorted by their own stamps instead.

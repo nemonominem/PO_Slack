@@ -195,7 +195,7 @@ def merge_ocr_messages(parsed, ocr_messages):
 
 # Standard time for the whole app is New York time (ET). The Part 2 export is on
 # Pacific time (settled: two sender-stated local times and the authors' sleeping
-# hours, see analysis/ZONE_AND_DATE_ANALYSIS.md 1.3). US Pacific and Eastern change
+# hours, see analysis/chronology/ZONE_AND_DATE_ANALYSIS.md 1.3). US Pacific and Eastern change
 # clocks at the same instant, so ET is always Pacific + 3 hours.
 PT_TO_ET = timedelta(hours=3)
 ZONE_NOTE = ("Slack Part 2 export is on US Pacific time (settled by two sender-stated local "

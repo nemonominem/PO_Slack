@@ -1,6 +1,19 @@
 # Where the dates and times stand: what is settled, what is likely, what is unknown
 
-Status 2026-11-05 (emails: last rebuild of 2026-11-01; Slack Part 1 times: 2026-11-05). This is the only file with things for you to look at.
+Baseline status 2026-11-05 for the broader email/Slack audit; February 8 was
+re-audited on 2026-11-12. Correction commit `d311367` is now an ancestor of
+`po-sources-and-boxes` at `c0f6933`; the correction branch reported 160/160
+tests passing. The checked-in data still has residual record and §15.2
+chapter-link defects, so not every app correction is complete. The user
+reports that Part 1 Medium sections 13.1-13.14 were reordered/corrected,
+including the Drosten attribution and Ferguson's 9 Feb 20:00 UK response;
+cross-references and Part 2 §§14.4, 15.2 and 15.3 were still in progress at
+the last report. The live article was not independently verified. See O3 and
+the full evidence in
+[`ZONE_AND_DATE_ANALYSIS.md` Part 3.1](ZONE_AND_DATE_ANALYSIS.md#31-the-february-8-correspondence-evidence-and-chronology).
+Other historical totals and fixed descriptions below are not updated by this
+focused chronology audit. This file is the reviewer's index, not a complete
+status report for every app record.
 The evidence and the method are in [`ZONE_AND_DATE_ANALYSIS.md`](ZONE_AND_DATE_ANALYSIS.md).
 
 **How to answer:** reply in chat with the code and your answer (for example “U10: keep London”, “O1: it is p.108”).
@@ -18,7 +31,7 @@ Slack messages: PDF page, printed time, sender, first words.
 | Level | Code | Meaning |
 |---|---|---|
 | **Settled** | S | Something in the documents, or your decision, fixes the clock. The time is as good as the source. |
-| **Likely** (= *Supported*) | L | A rule gives the clock, and every test passes (no reply before the message it answers, no time travel), but nothing proves it. Consistency only rules zones out. Moves to Settled if an anchor turns up. |
+| **Likely** (= *Supported*) | L | A rule gives the clock and the available tests are consistent, but nothing proves it. The tests cover only identified links, so a pass does not prove all real replies are in order. Moves to Settled if an anchor turns up. |
 | **Unknown** (= *Not settled*, right now) | U | No rule that gives a clock can be used, or the test cannot decide: the time is a guess from where the sender works. |
 
 In `zone_format_audit.csv` the column `zone_status` says Settled, Supported (= Likely) or Not settled (= Unknown).
@@ -79,7 +92,7 @@ Rule 1c. Each is in `tools/verified_overrides.json` with its evidence.
 | `farrar-fauci-comms.pdf` p.44, Harris | donderdag 5 maart 2020 15:29 | 5 Mar 09:29 | Read from the page; quoted in Esveld's Dutch client |
 | `farrar-fauci-comms.pdf` p.57, Farrar | Datum: Samstag, 8. Februar 2020 um 21:21 | 8 Feb 15:21 | Read from the page; Drosten's German client (Berlin); 20:21 UTC is after Drosten's reply |
 | `farrar-fauci-comms.pdf` pp.59-60, Farrar | Datum: Samstag, 8. Februar 2020 um 10:45 | 8 Feb 04:45 | Read from the page; Berlin |
-| `po-emails.pdf` pp.57-65, Farrar “FW: 2019 N-CoV” | Sent: 08 February 2020 09:45 | 8 Feb 04:45 | Quoted inside Ferguson's reply, so London (UK date format, 24 h), not REV Pacific; Drosten's German client prints the same message at 10:45 Berlin (U15c) |
+| `po-emails.pdf` pp.57-58, Farrar “FW: 2019 N-CoV” | Sent: 08 February 2020 09:45 | 8 Feb 04:45 | Quoted inside Ferguson's reply; the separate Dutch and German copies print 10:45, consistent with 09:45 UK. This is not a top-level REV stamp (U15c and Part 3.1). |
 | `farrar-fauci-comms.pdf` p.80, Farrar | Sent: Tuesday, February 4, 2020 6:08 AM | 4 Feb 06:08 | Read from the page; quoted in Collins's 6:12 AM reply (Eastern) |
 | `farrar-fauci-comms.pdf` pp.169-172, GPMB Secretariat | Sent: martes, 28 de enero de 2020 9:09 | 28 Jan 07:09 | Read from the page; Vega Morales is based in Santiago de Chile (UTC-3 in January), you confirmed |
 | `farrar-fauci-comms.pdf` pp.115-122, Farrar “shut down the call” | Saturday, February 1, 2020 2:56 PM | 1 Feb 14:56 | Quoted in Fauci's 20:03:12 +0000 reply and Collins's 20:12; the p.115 copy prints 19:56 in Farrar's London client: same minute |
@@ -107,7 +120,7 @@ Anchors: Holmes (“it's 1 am here”), Garry (“It's 4:15 am in Sydney”), an
 The parser now gives each message the day in force when its header was read (2026-11-03, see U16), which corrects 67 messages whose day divider sat just below them, including the seven below. The hand list `slack_date_fixes.json` is kept as evidence but no longer needed. The seven: the 22:42 message of 1 Feb, and six more evening messages that had the next day's date (p.9 22:35, p.16 20:11, p.21 19:11, p.35 19:45, p.39 22:26, p.134 23:56). Same fault each time (the day divider applied one message too early); p.9 checked on the page image.
 
 ### S8. Slack Part 1 time labels (16 read by you, 85 by an external OCR pass)
-On 2026-11-04 a first external OCR pass (`grok_slack_part1_times_partial.csv`, notes in `grok_slack_part1_times_STATUS.md`) was matched to messages by page, sender and first words, and 59 labels were applied (commit a38bcf9); each is in `slack_time_fixes.json` marked as not yet checked by you. The corrections in its STATUS file were applied in a second step (U17). Your six: `slack_time_fixes.json`: p.19 Holmes 19:49; p.121 Andersen 15:40 and “slow”; p.134 Holmes 18:36, Andersen 18:51, Andersen 22:44, Holmes 23:42. Read from the page images on 2026-11-03.
+On 2026-11-04 a first external OCR pass (`../grok_slack_part1_times_partial.csv`, notes in [`../slack-qa/grok_slack_part1_times_STATUS.md`](../slack-qa/grok_slack_part1_times_STATUS.md)) was matched to messages by page, sender and first words, and 59 labels were applied (commit a38bcf9); each is in `tools/slack_time_fixes.json` with its evidence. The corrections in the STATUS file were applied in a second step (U17). Your six readings are in that same JSON: p.19 Holmes 19:49; p.121 Andersen 15:40 and “slow”; p.134 Holmes 18:36, Andersen 18:51, Andersen 22:44, Holmes 23:42. Read from the page images on 2026-11-03.
 
 ---
 
@@ -131,19 +144,29 @@ Filter `zone_format_audit.csv` on `zone_status` = Supported, then on `rule`. Bra
 
 # U. Unknown: the present list
 
-### Emails (0): none
+### Emails: historical classification and February 8 exceptions
 
-Every email now has a rule that gives a clock. Since your decision of 2026-11-02 (**physically nested under a block on the same page = quoted by it**, rule 2 above; a header that opens a page is not linked unless you declared it nested from the page image, as for p.58), the freeze rule applies to every Farrar-Fauci block, and the quoters were added to the lookup of where people live: Barasch (NIAID, Bethesda), Miller de Vega (GPMB Secretariat at WHO, Geneva), Kickbusch (Global Health Centre, Geneva; the “From: ee” on p.41 is the OCR of a redaction code, you identified her) and Dzau (Washington DC). Nothing is Unknown among the emails; the Slack item U17 below is the only open one (U15 and U16 are resolved).
+The 2026-11-05 classification assigned a clock rule to every email, but
+the February 8 audit exposed incorrect nesting and an unresolved quoted
+Rambaut clock. The resulting app times and labels are not all settled; see
+Part 3.1. The earlier work added Barasch (NIAID, Bethesda), Miller de Vega
+(GPMB Secretariat at WHO, Geneva), Kickbusch (Global Health Centre, Geneva;
+the “From: ee” on p.41 is the OCR of a redaction code, as you identified)
+and Dzau (Washington DC) to the quoter lookup. A rule's presence is not
+proof that it was applied to the correct physical message.
 
 **Esveld (old U10) and the others.** Esveld p.43, “06 March 2020 10:34”, is now read as nested under Alex Harris's block, so on Harris's London clock (05:34 ET). Her earlier Dutch-format message below it is already Settled (S3). The old question “London or Netherlands, up to 1 h” remains open in substance: Harris is Head of Global Policy & Advocacy at Wellcome, London (you confirmed, 2026-11-02), so London is right. Harris's own 11:56 is on Kickbusch's Geneva clock (10:56 UTC), 22 minutes after Esveld's 10:34 UTC.
 
 **Old U7** (Holmes p.58) is now Likely: your reading of the page image (no top-level separator above it) makes it quoted by Farrar's block at the end of p.57, so London (15:11 ET); the profile lists p.58 in `nested_page_starts`. **Old U1** (Farzan p.142) is L7. **Old U2 to U4** are S3. **Old U5, U6, U8, U9, U12, U13, U14** are now Likely (L1): Koopmans 9 Feb is London (Farrar's block above), Holmes 4 Feb is London (Farrar's), Vallance 8 Feb London, Harris 3 Mar London, Viner 12 May 13:16 and 13 May 22:22 London (Farrar's), Viner 12 May 6:12 PM Eastern (Collins's).
 
-### Resolved checks (U15, U16: nothing to do)
+### Historical checks (U15, U16)
 
-These come from tests that run outside the app. The app's own data has **no reply before the message it answers**; they are about readings that might be wrong.
+These are historical tests run outside the app. They checked the links then
+present in the data, not every physical quote. The 2026-11-12 audit found
+misidentified or missing links and a real source-level reply-order conflict;
+see Part 3.1.
 
-#### U15. Resolved (2026-11-03): three reply pairs, no conflict; one real fix (U15c)
+#### U15. Checked 2026-11-03; February 8 follow-up remains open
 
 `tools/freeze_bracket_check.py` re-reads every message on the clock of whoever quotes it. For three pairs in `po-emails.pdf` that reading put the reply before its parent. The cause was in the check, not in the times: each reply is one merged entry with **one** kept stamp (the top-level copy's), and the check applied the quoter's clock to that stamp instead of to the stamp the quoted copy prints. Reading the quoted copies themselves settles all three.
 
@@ -151,43 +174,57 @@ These come from tests that run outside the app. The app's own data has **no repl
 |---|---|---|---|
 | **U15a** Holmes, “Re: Summary - Invitation to edit” (pp.22, 28-29) | REV p.22: “2/5/2020 1:23:41 AM” Pacific = 09:23 UTC = 04:23 ET | Quoted in Rambaut's reply (iPhone, London): “On 5 Feb 2020, at 09:23, Edward Holmes wrote” | **Yes** (Pacific 01:23 = London 09:23, the 8 h gap) |
 | **U15b** Holmes, “Region 6 is the RBD” (pp.28, 45) | GARRY page: “2/5/2020 4:22:24 AM” Chicago = 10:22 UTC = 05:22 ET | Quoted in Rambaut's reply: “On 5 Feb 2020, at 10:22, Edward Holmes wrote” | **Yes** (Chicago 04:22 = London 10:22, the 6 h gap) |
-| **U15c** Farrar, “FW: 2019 N-CoV” (pp.57-65) | none: the only copy in the REV release is the block “From: Jeremy Farrar / Sent: 08 February 2020 09:45” **inside Mike Ferguson's reply** (REV0000827) | Drosten's German client: “Datum: Samstag, 8. Februar 2020 um 10:45” (S3, `farrar-fauci-comms.pdf` pp.59-60) = 09:45 UTC | **Yes**, but the app had read 09:45 as REV Pacific (12:45 ET) |
+| **U15c** Farrar, “FW: 2019 N-CoV” (pp.57-58) | quoted block “From: Jeremy Farrar / Sent: 08 February 2020 09:45” inside Mike Ferguson's top-level reply (REV0000827); Fouchier's p.55 reply also quotes it in Dutch | Drosten's German copy: “Datum: Samstag, 8. Februar 2020 um 10:45” (`farrar-fauci-comms.pdf` pp.59-60) = 09:45 UK on the supported client-clock reading | **Supported**, not a printed UTC offset; the app key and thread label correction is implemented on the chronology-corrections branch. The relationship between the 09:45 and 09:46 copies remains unresolved. |
 
-**U15a and U15b: nothing to change.** The two pairs give a minute-exact match between two printed clocks that differ by exactly the whole-hour offset we assume (Pacific to London, Chicago to London). That is also the best evidence yet for the REV (Pacific) and GARRY (Chicago) clocks, and for Rambaut's London iPhone. The Holmes “On ... wrote:” attribution lines are Apple Mail's way of writing a quoted header; they carry **no separator line**, unlike Outlook's header block. That changes nothing for the quote rule: what decides the clock is that the block is nested in another message and that the quoting client wrote its date line (the attribution line is written by Holmes's client, so Sydney: “1:03 pm” = 21:03 ET the evening before; Andersen's “Tuesday, February 4, 2020 at 7:08 PM” inside Garry's message is Garry's Outlook, Central = 20:08 ET). The check should read the quoted copy's own stamp. It does not yet; hence these two still show as “newly broken” in `analysis/freeze_bracket_check.csv`.
-**U15c: fixed.** Farrar's block is quoted, not top-level, so it is on Ferguson's London clock: 09:45 London = **04:45 ET** (it was 12:45 ET). It is now a verified override (S3), consistent with the German copy. Reply order: Farrar 04:45, Fouchier (REV top-level, Pacific) 14:36, Drosten's quoted copy of Fouchier 05:36 on the Berlin clock: all in order. The inferred “same conversation” link Farrar to Fouchier stays.
-**Lesson, for anyone who reads P.O. emails:** a header printed in the format “Sent: 08 February 2020 09:45” (day, month name, year, 24 h, no seconds) is a UK client's rendering, so it is **not** a REV export stamp even when the page is a REV page. A true REV top-level stamp has the form “Sent: 2/8/2020 11:36:30 AM” (month/day, seconds, AM/PM) under a “Message” line. The parser's page-owner rule for the P.O. release has no such test (the P.O. release has no `top_level_stamp_re`, because of the attached-document risk, e.g. Pope's “Tue 2/4/2020 9:10:35 AM (UTC-05:00)”); a search for other REV-page entries whose stamp is not in the REV export form is the obvious next check.
+**U15a and U15b: nothing to change.** The two pairs give a minute-exact match between two printed clocks that differ by exactly the whole-hour offset we assume (Pacific to London, Chicago to London). That is also the best evidence yet for the REV (Pacific) and GARRY (Chicago) clocks, and for Rambaut's London iPhone. The Holmes “On ... wrote:” attribution lines are Apple Mail's way of writing a quoted header; they carry **no separator line**, unlike Outlook's header block. That changes nothing for the quote rule: what decides the clock is that the block is nested in another message and that the quoting client wrote its date line (the attribution line is written by Holmes's client, so Sydney: “1:03 pm” = 21:03 ET the evening before; Andersen's “Tuesday, February 4, 2020 at 7:08 PM” inside Garry's message is Garry's Outlook, Central = 20:08 ET). The check should read the quoted copy's own stamp. It does not yet; hence these two still show as “newly broken” in `../freeze_bracket_check.csv`.
+**U15c: time supported; source-copy relationship remains open.** Farrar's
+block is quoted, not top-level: its app time is **04:45 ET**, consistent with
+the Dutch and German 10:45 copies under the expected client clocks. This is
+not proof from date format alone. Correction commit `d311367` is merged into
+`po-sources-and-boxes` at `c0f6933`; the source branch reported 160/160 tests
+passing. The current record still lacks Ferguson's reply link, and other
+February 8 residuals are listed in Part 3.1. The 09:45 and 09:46 copies'
+relationship remains unresolved. So does the timezone of Rambaut's nested
+4:16 PM stamp; the Slack pp.21-24 OCR discrepancies remain open. The
+page-image check found that Drosten quotes Farrar's request, **not
+Fouchier's reply**; the earlier claim of a “Drosten quoted copy of Fouchier
+05:36” was wrong. See Part 3.1 for current app defects and source
+uncertainties.
+The PO parser has no `top_level_stamp_re`; the visible `Message` separator,
+physical nesting and the exact printed stamp must be checked together rather
+than treating date format alone as proof of the zone.
 
 #### U16. Resolved (2026-11-03)
 
 Six evening-then-small-hours rows. Two were a missed day divider (p.24 and p.60; the divider “February 9th. 2020” had a period the pattern did not accept, and a message took the day of the divider printed **below** it: now fixed in `parse_part1.py`, 67 messages changed day, see S7). The other four were digits lost from the time label, which you read off the page images and I entered in `tools/slack_time_fixes.json`: p.19 Holmes `19:49` (was 01:49); p.121 Andersen `15:40` and “Very **slow** going” (was 01:50, “sow”); p.134 Holmes `18:36` (was 01:36), Andersen `18:51` (was 19:51), Andersen's “It's an eel! Eel!!!” `22:44` (had no label), Holmes `23:42` (was 02:32), in reply to it. See S8. The check then listed 30 backwards pairs (now 3, U17), all in U17.
 
-### Open: the only Unknown left
+### Slack Part 1: the remaining historical time-check items
 
-#### U17. Slack Part 1: backwards times, 3 left (80 at first)
+#### U17. Slack Part 1: two unresolved page questions; one stale record
 
-The test: two consecutive timed messages on the same day where the second prints a time more than an hour earlier. Part 1 has no AM/PM and shows a time only for the first message of a run, so these are OCR slips (a dropped or swapped digit) or reading-order slips; Part 2 (a cleaner export) has none. Listed in `slack_part1_time_check.csv`.
+The test: two consecutive timed messages on the same day where the second prints a time more than an hour earlier. Part 1 has no AM/PM and shows a time only for the first message of a run, so these are OCR slips (a dropped or swapped digit) or reading-order slips; Part 2 (a cleaner export) has none. The current `slack_part1_time_check.csv` lists three rows, but a later OCR status note reports a likely correction for the p.64→65 row. That correction has not been applied to the data or CSV.
 
 **How it came down.**
 1. Divider fix in the parser, and your six readings (U16, S8): 74 → 60.
 2. A first external OCR pass (Grok partial CSV, 2026-11-04) matched to messages by page, sender and first words: 59 labels, 60 → 30 (commit a38bcf9).
-3. A second pass from the corrections in `grok_slack_part1_times_STATUS.md`, matched by page, sender and printed time: 26 labels (table below), 30 → 11.
+3. A second pass from the corrections in [`../slack-qa/grok_slack_part1_times_STATUS.md`](../slack-qa/grok_slack_part1_times_STATUS.md), matched by page, sender and printed time: 26 labels (table below), 30 → 11.
 (Step 3 used no new visual OCR. A fix applies only if the entry still carries that sender and that exact wrong time.)
 4. Your readings of 2026-11-05 on the other 8 pairs (p.35, 36, 43, 49, 57, 102, 104, 115): 11 → 3. p.115 was a missed date chip: “This whole furin site…” and the 11 messages after it, up to the April 4th divider, are 3 April, not 2 April (`slack_date_fixes.json`). One of my inferences needs a check: p.43 Rambaut's “Eddie is colour blind too” is set to 13:56 (it printed 19:56, which would put it after Garry's 13:57).
 
 All of these are marked in `tools/slack_time_fixes.json` as not checked by you.
 
-**The 3 that remain**, and what I need:
+**Current state:**
 
 | page | pair | what is open |
 |---|---|---|
-| p.35 | Garry 18:22 → Andrew 16:21 (“fair enough I just have heard…”) | Andrew's label is probably 18:2x; please read it |
-| p.52 → p.55 | Garry 05:05 (19 Feb) → Holmes 02:16 (“Thanks for that. However this outbreak…”, first message on p.55) | I cited it as a p.52 pair and you could not find it: it is Garry's last message on p.52 and Holmes's first on p.55 (pp.53-54 are the attached document). Is there a day chip above Holmes on p.55 (then 02:16 is 20 Feb and nothing is wrong)? |
-| p.64 → p.65 | Garry 10:59 (p.64) → “No polybasic site, HOWEVER…” 01:44 (top of p.65, shown as Andersen) | Your p.64 image is in order (10:59, 11:07, 11:11, 11:21, 14:41); the odd one is the p.65 label. The external pass read it as Garry 14:44, after Holmes's 14:41. I did not apply it: is it 14:44, and is the sender Garry? |
+| p.35 | Garry 18:22 → Andrew 16:21 (“fair enough I just have heard…”) | Still backwards in the CSV; the label is probably 18:2x and needs a page read. |
+| p.52 → p.55 | Garry 05:05 (19 Feb) → Holmes 02:16 (“Thanks for that. However this outbreak…”, first message on p.55) | Garry's last message on p.52 and Holmes's first on p.55 are separated by an attached document (pp.53-54). Check whether a day chip above Holmes on p.55 makes the message 20 Feb and removes the apparent reversal. |
+| p.64 → p.65 | Garry 10:59 (p.64) → current CSV labels “No polybasic site, HOWEVER…” as Andersen 01:44 | The OCR status file reports this as Robert Garry 14:44, after Holmes at 14:41. That likely resolves the source reading, but it is not applied: the app/time-check CSV still has 01:44 and the wrong sender. Verify/apply this correction before treating the test as clean. |
 
-**What would settle the rest:** a visual read of these pages (prompt: `GROK_PROMPT_SLACK_PART1_TIMES.md`), then rerun `slack_time_check.py`. Whatever is still backwards after that is a real question about the PDF.
-**Send me:** the readings, or “skip” (the 3 rows stay; the app shows each time as OCR read it, which can be wrong by a digit).
+**What would settle the rest:** visually read p.35 and p.55/day divider, then verify the p.65 14:44 correction on the page image and update the source fix before rerunning `slack_time_check.py`. The CSV's three-row count is not three independent unresolved PDF readings.
 
-<details><summary>The 26 labels from the STATUS file (2026-11-04)</summary>
+<details>
+<summary>The 26 labels from the STATUS file (2026-11-04)</summary>
 
 | idx | page | sender | wrong -> corrected | source |
 |---|---|---|---|---|
@@ -228,7 +265,7 @@ All of these are marked in `tools/slack_time_fixes.json` as not checked by you.
 |---|---|---|
 | **O1** | Chapter link for section 4.11 (“Farrar proposes a way out via the WHO (1 Feb, 3:59 pm EST)”): it points at Fauci's `farrar-fauci-comms.pdf` p.137, 15:50 (“Please include Francis Collins…”), which is not about the WHO. The Farrar message that proposes WHO contact is p.108, “Sunday, February 2, 2020 4:48 AM” (now 23:48 ET, 1 Feb); neither is at 3:59 pm | Which message you mean, or whether the caption time is off; then I fix the link |
 | **O2** | A few old bookmark keys now name a different message and cannot be re-mapped (list in analysis A10) | Nothing, unless you or others bookmarked emails on those dates |
-| **O3** | P1 to P4: issues in your P.O. piece, in `TRAGICOMEDY_ISSUES.md` (private, git-ignored). Re-checked 2026-11-05: all still valid; one new real question, 13.2 (Fouchier 10:36 UK in the article against 19:36 UK in the data) | Your reading of that page (see the file, P1.3) |
+| **O3** | February 8 correspondence: correction commit `d311367` is merged into `po-sources-and-boxes` (present by `c0f6933`); its source branch reported 160/160 tests passing. Idx 84/85, some page maps, guide evidence/dates/summaries, and the 2030→2020 guide typo are corrected. Residuals in current data: idx 83 remains 09:50 ET instead of supported 17:50 ET; idx 91/92 have unresolved or incorrect quoted-clock normalization; idx 93 lacks its reply link; idx 94 has no sender and the wrong zone; idx 95 uses Lipkin's clock instead of the explicit-offset verified REV time; §15.2 still links to Ferguson idx 93 rather than Koopmans idx 94. The user reports Part 1 Medium edits applied and Part 2/cross-reference edits still in progress; live Medium not verified. Vallance 12:03 UK is the earliest feedback documented in checked copies, not necessarily earliest in existence. The 09:45/09:46 relationship, Rambaut's 4:16 PM clock, and Slack pp.21-24 OCR discrepancies remain unresolved. Full evidence: [`ZONE_AND_DATE_ANALYSIS.md` Part 3.1](ZONE_AND_DATE_ANALYSIS.md#31-the-february-8-correspondence-evidence-and-chronology). | Correct app records/§15.2 link and verify the user's remaining article edits when available. |
 | **O4** | Should `analysis/` stay in the public repository? | “ignore the folder” or “fine as it is” |
 | **O5** | My edits to your own `README.md` (six paths) and `STATUS.md` (one path) | “fine” or what to put back |
 | ~~O6~~ | `PO_Slack.code-workspace` | done: added to `.gitignore` (2026-11-02) |
@@ -237,7 +274,13 @@ All of these are marked in `tools/slack_time_fixes.json` as not checked by you.
 
 # Fixed in this rebuild (no action)
 
-Found and fixed by me: the physical-nesting rule for the Farrar-Fauci release (about 60 times moved; the Feb 1 chain and the Gao/Dzau chain agree with your hand reading; analysis 5.10); the Farzan mailbox stamp (L7); Folkers 8:43 PM (S3); the 22:34 message's sender label and reply link and the “Phone call” body (S3); six Slack day errors (S7); a swap of two overrides that I had made after the 29 Oct rerun (analysis A9); Farrar, Koopmans and Fouchier clocks (L1, L2); the cross-release quote check is run, with no violation (analysis A8).
+Historical rebuild fixes: the physical-nesting rule for the Farrar-Fauci
+release (about 60 times moved; analysis 5.10); the Farzan mailbox stamp (L7);
+Folkers 8:43 PM (S3); the 22:34 sender label and reply link and “Phone call”
+body (S3); six Slack day errors (S7); a swap of two overrides (analysis A9);
+and updates to Farrar, Koopmans and Fouchier clock lookups (L1, L2). The
+cross-release check found no violation among its matched pairs (A8), but this
+does not validate the unmatched or incorrectly linked February 8 records.
 
 # Files
 

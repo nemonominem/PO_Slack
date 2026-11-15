@@ -195,7 +195,7 @@ STRIP_QUOTED_RE = re.compile(
 # ── page-owner (mailbox) codes ────────────────────────────────────────────────
 # This release is a mash-up of several mailboxes' own exports, each page
 # carrying its owner's Bates-style stamp as the page's own last line. See
-# THREADING_PLAN.md §2 for the reasoning (a quoted stamp is frozen in the
+# docs/history/THREADING_PLAN.md §2 for the reasoning (a quoted stamp is frozen in the
 # REPLIER's zone, not the original sender's -- the page-owner code is one way
 # to recover whose zone a thread's last, otherwise-unzoned message was read
 # in) and the evidence behind this specific table.

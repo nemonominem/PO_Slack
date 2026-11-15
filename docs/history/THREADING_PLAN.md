@@ -1,4 +1,12 @@
-# Threading, time zones, and dedup — analysis and planned features
+# Threading, time zones, and dedup — implementation history
+
+> **Historical record.** This document preserves the design and implementation
+> reasoning from its original work period. The planned features described here
+> were subsequently implemented, but some counts, status statements, and
+> chronology findings predate the current `po-sources-and-boxes` data. For
+> current behavior, use [`../SPEC.md`](../SPEC.md); for the February 8 source
+> audit and remaining uncertainties, see
+> [`../../analysis/chronology/ZONE_AND_DATE_ANALYSIS.md`](../../analysis/chronology/ZONE_AND_DATE_ANALYSIS.md).
 
 Reference doc for the next phase of work on the email parsers (po-emails,
 farrar-fauci). Written before starting so the reasoning is on record, not just

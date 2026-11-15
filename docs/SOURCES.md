@@ -16,10 +16,11 @@ documents, **18** public Drive links.
 | `farrar-fauci` | `farrar-fauci-comms.pdf` | `farrar-fauci-comms-full.pdf` | 10 |
 | `farrar-fauci` | `farrar-fauci-comms.pdf` | `farrar-fauci-comms.pdf` | 2 |
 
-## Cited but not yet ingested
+## Cited but not represented by timeline entries
 
-TODO — the P.O. piece also leans on these; candidates for the next ingestion
-pass (see STATUS.md).
+These documents are cited by the article but are not parsed into the
+timeline source collections above. Some are available separately in the
+app's Complementary view; that does not make them timeline entries.
 
 | Kind | Document | Citations | Pages cited | Date range | Link |
 |---|---|---|---|---|---|

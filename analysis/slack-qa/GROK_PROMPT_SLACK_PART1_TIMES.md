@@ -22,18 +22,19 @@ For each page of the list below, output one CSV line per message (and one per di
 
 After the CSV, list every place where the time does **not** increase from one message to the next on the same day, and every place where a divider is between two messages.
 
-Pages to read (5): 35,52,55,64,65
+Pages to read (3): 35,52,55
 
-The places that are still suspect (3 left; 85 labels from external passes and 16 read by the reviewer are already applied) (page | date | first message time -> next message time as the current OCR has it; the first is later than the next, which is impossible inside one day unless a digit is wrong or a divider is missed):
+The two unresolved source questions (85 labels from external passes and 16 read by the reviewer are already applied) (page | date | first message time -> next message time as the current OCR has it; the first is later than the next, which is impossible inside one day unless a digit is wrong or a divider is missed):
 
 ```
 p.35 | 2020-02-11 | Robert Gar 18:22 -> Andrew Ram 16:21
 p.52 | 2020-02-19 | Robert Gar 05:05 -> Eddie Holm 02:16
-p.64 | 2020-02-24 | Robert Gar 10:59 -> Kristian A 01:44
 ```
 
-Already read by hand (do not change; use them to see what a correct reading looks like): p.19 Holmes `19:49`; p.121 Andersen `15:40` ("Very slow going"); p.134 Holmes `18:36`, Andersen `18:51`, Andersen `22:44` ("It's an eel! Eel!!!"), Holmes `23:42`. Also applied 2026-11-04/05: 85 labels from a first external pass (`grok_slack_part1_times_partial.csv`) and its corrections list (`grok_slack_part1_times_STATUS.md`), among them p.121 "Still trying to work through this..." = `13:37`. Do not re-report those; only the pairs listed above are still open.
+The previous p.64→65 suspect is excluded from this prompt: the OCR status file reports that “No polybasic site, HOWEVER…” is Robert Garry 14:44, not Andersen 01:44. That correction is not present in the current app/CSV yet; verify it on the page image and update the source fix separately.
+
+Already read by hand (do not change; use them to see what a correct reading looks like): p.19 Holmes `19:49`; p.121 Andersen `15:40` ("Very slow going"); p.134 Holmes `18:36`, Andersen `18:51`, Andersen `22:44` ("It's an eel! Eel!!!"), Holmes `23:42`. Also applied 2026-11-04/05: 85 labels from a first external pass (`../grok_slack_part1_times_partial.csv`) and its corrections list (`grok_slack_part1_times_STATUS.md`), among them p.121 "Still trying to work through this..." = `13:37`. Do not re-report those; only the pairs listed above are still open.
 
 ---
 
-When the answer comes back, Claude: (1) checks each reading against its neighbours (order, divider, and the Zoom/Slack anchors in `analysis/ZONE_AND_DATE_ANALYSIS.md`), (2) adds confirmed ones to `tools/slack_time_fixes.json` with the model named as the source and the page (matching by page, sender and first words), (3) reruns `slack_time_check.py`. Anything the model marks `low` is checked on the page image by you.
+When the answer comes back, Claude: (1) checks each reading against its neighbours (order, divider, and the Zoom/Slack anchors in [`../chronology/ZONE_AND_DATE_ANALYSIS.md`](../chronology/ZONE_AND_DATE_ANALYSIS.md)), (2) adds confirmed ones to `tools/slack_time_fixes.json` with the model named as the source and the page (matching by page, sender and first words), (3) reruns `slack_time_check.py`. Anything the model marks `low` is checked on the page image by you.

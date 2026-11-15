@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write analysis/UNRESOLVED_LINKS.md from analysis/url_scan.json (made by scan_urls.py).
+"""Write analysis/source-links/UNRESOLVED_LINKS.md from analysis/url_scan.json.
 
 Settled   = repaired and the corrected address answers 200 (rows of url_fixes.json)
 Likely    = address now reads sensibly but the site blocks scripts / is paywalled (403, 402, 406),
@@ -9,6 +9,7 @@ Unknown   = still broken: cut off in the screenshot, or the page is gone, or a d
 import json, os, re
 HERE = os.path.dirname(os.path.abspath(__file__))
 AN = os.path.join(HERE, "..", "analysis")
+REPORT_DIR = os.path.join(AN, "source-links")
 PB = os.path.join(HERE, "..", "page_based")
 
 scan = json.load(open(os.path.join(AN, "url_scan.json"), encoding="utf-8"))
@@ -101,5 +102,6 @@ out.append("- **Cut off in the screenshot:** the printed address ends mid-word. 
            "- **Page not found:** try the address in the Wayback Machine (`web.archive.org/web/2020/<address>`); a damaged slug usually shows as the one word that differs from the title under the link.\n"
            "- **Domain does not resolve:** compare with the domain named in the preview card (it is printed on the line below the link and usually OCRs better).\n"
            "- **Could not check:** retry later or open in a browser.\n")
-open(os.path.join(AN, "UNRESOLVED_LINKS.md"), "w", encoding="utf-8").write("\n".join(out) + "\n")
+os.makedirs(REPORT_DIR, exist_ok=True)
+open(os.path.join(REPORT_DIR, "UNRESOLVED_LINKS.md"), "w", encoding="utf-8").write("\n".join(out) + "\n")
 print("Unknown %d, Likely %d, live %d" % (len(rows["U"]), len(rows["L"]), n_live))

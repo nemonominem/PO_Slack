@@ -1,6 +1,6 @@
 # Partial Slack time OCR
 
-Readings are appended to `analysis/grok_slack_part1_times_partial.csv`.
+Readings are appended to `../grok_slack_part1_times_partial.csv`.
 Later rows with source `visual-recheck` supersede an earlier row for the same message.
 Seq numbers are not yet a single reading order. Dividers are not all interleaved.
 This file is a checkpoint, not the final 42-page CSV.

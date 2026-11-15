@@ -1,4 +1,4 @@
-# P.O. Slack Search
+# P.O. Record Search
 
 Searchable web app for the documentary record behind the "Proximal Origin"
 correspondence: the Slack channel between Kristian Andersen, Andrew Rambaut,
@@ -8,15 +8,16 @@ and read alongside Gilles Demaneuf's investigation of how the paper was written.
 
 ## Coverage
 
-Four releases are merged into one searchable timeline.
+Five source collections are merged into one searchable timeline.
 
-| Release | Cited as | Period | Entries | PDF pages | Format |
-|---|---|---|---|---|---|
-| **Slack Part 1** — `paper-2020-nature_medicine-proximal_origin` (screenshots) | `Proximal_Origin_Slack.pdf` | Feb 1 &ndash; Apr 30, 2020 | 1,256 | 140 | OCR'd Slack screenshots |
-| **Slack Part 2** — export continuation | `Proximal_Origin_Slack.pdf` | Apr 30, 2020 &ndash; Jun 28, 2023 | 11,351 | 1,123 | Clean text-layer export |
-| **P.O. emails** — the FOI'd email release | `Proximal_Origin_Emails.pdf` | Jan 31 &ndash; Jul 27, 2020 | 100 | 163 | Scanned images, re-OCR'd, split per message |
-| **Manuscript drafts** | `SSCP-Drafts-of-Proximal-Origin.pdf` | Feb 1 &ndash; Mar 5, 2020 | 20 | 216 | One dated version per entry |
-| **Combined** | | Jan 2020 &ndash; Jun 2023 | **12,727** | 1,642 | |
+| Source | Period | Entries | Format |
+|---|---|---|---|
+| **Slack Part 1** — `paper-2020-nature_medicine-proximal_origin` (screenshots) | Feb 1 &ndash; Apr 30, 2020 | 1,333 | OCR'd Slack messages |
+| **Slack Part 2** — export continuation | Apr 30, 2020 &ndash; Jun 28, 2023 | 11,351 | Clean text-layer export |
+| **P.O. emails** — the FOI'd email release | Jan 31 &ndash; Jul 28, 2020 | 234 | Scanned images, re-OCR'd and parsed |
+| **Farrar-Fauci correspondence** | Jan 23 &ndash; Jul 24, 2020 | 149 | Scanned email release |
+| **Manuscript drafts** | Feb 1 &ndash; Mar 5, 2020 | 20 | One dated version per entry |
+| **Combined timeline** | Jan 2020 &ndash; Jun 2023 | **13,087** | |
 
 The Slack channel is the tip of the story; the emails and the drafts are the
 body of evidence behind it, which is why they sit on the same timeline.
@@ -30,9 +31,10 @@ to the public copy where the article gives one. Selecting a section shows that
 day's messages, so a Slack message can be read against the evidence for the
 claim it supports, and the reverse.
 
-Built by `build_po_guide.py` from the three parts of the article:
-**214 sections, 446 evidence citations, 51 distinct documents, 21 verified
-public Drive links**. `SOURCES.md` is the same inventory as a provenance table.
+Built by `build_po_guide.py` from the three article parts: **221 sections,
+322 evidence citations, 32 distinct documents, and 18 public Drive links**.
+The Complementary view includes 11 locally held, page-trimmed documents.
+[`docs/SOURCES.md`](docs/SOURCES.md) is the generated provenance inventory.
 
 A Drive link is attached only when the article writes the footnote marker
 immediately after the filename; matching on proximity, or on the first marker
@@ -49,7 +51,7 @@ a card links to the message it answers and to the ones that answered it.
 Email timestamps are normalised to ET, with the local stamp and the zone
 assumption shown on the card.
 
-**→ [`page_based/SPEC.md`](page_based/SPEC.md)** is the specification — kinds,
+**→ [`docs/SPEC.md`](docs/SPEC.md)** is the specification — kinds,
 message splitting, the time-zone table, threading, entry shape, page-map key
 discipline, and the recipe for adding a release or a source with no PDF.
 
@@ -112,10 +114,11 @@ kept from `part2_ocr_pages.json`.
 
 | File | Purpose |
 |---|---|
-| `page_based/index.html` | Self-contained static search app (forked from Fauci_Diary's page_based app) |
+| `page_based/index.html` | Self-contained static search app |
 | `page_based/main_sources/slack-part1.pdf`, `slack-part2.pdf` | Source PDFs |
-| `page_based/part1.json`, `part2.json` | Parsed entries |
+| `page_based/part1.json`, `part2.json`, `po-emails.json`, `farrar-fauci.json`, `sscp-drafts.json` | Parsed entries |
 | `page_based/part1_page_map.json`, `part2_page_map.json` | Entry &rarr; PDF page lookup for the viewer's jump-to-page feature |
+| `page_based/po_guide.json`, `chapter_links.json` | Article guide and citation links |
 | `tools/reocr_part1.py` | Re-OCRs Part 1's 140 pages with Tesseract (run once; writes `source_ocr/slack-part1_ocr.txt`) |
 | `source_ocr/slack-part1_ocr.txt` | Re-OCR'd text, consumed by `parse_part1.py` |
 | `tools/parse_part1.py` | Message-level parser for the re-OCR'd Part 1 text (OCR cleanup + attachment markers) |
@@ -138,16 +141,10 @@ Opening `index.html` directly via `file://` will not work — browsers block
 
 ## Tests
 
-```bash
-cd page_based
-node test_app.mjs      # 32 checks: runs index.html's own script on the real data
-python3 audit_app.py   # 19 checks: ids, handlers, CSS classes, tag balance, paths
-```
-
-`test_app.mjs` shims just enough DOM for the app's real code to run unmodified,
-because this machine has no headless browser (see STATUS.md). It covers logic
-and generated markup; `audit_app.py` covers the markup wiring. Layout and CSS
-have not been seen rendered — worth a manual pass in a browser.
+See [`tools/tests/README.md`](tools/tests/README.md) for the current logic,
+static, and optional browser-test commands. The February 8 app corrections
+are merged into `po-sources-and-boxes`; the source audit and remaining
+uncertainties are in [`analysis/chronology/`](analysis/chronology/).
 
 ## Search tips
 
@@ -159,3 +156,12 @@ have not been seen rendered — worth a manual pass in a browser.
 Click **?** in the header for the full help popup. Use HIT Prev/Next to step
 through matches inside an entry. Toggle Landscape / Portrait layout with the
 header button.
+
+## Documentation
+
+- [`docs/`](docs/README.md): current product specification and generated
+  source inventory.
+- [`docs/history/`](docs/history/): preserved development log and completed
+  threading/time-zone implementation plan.
+- [`analysis/`](analysis/README.md): internal source audits, OCR notes, and
+  generated validation reports; these are not part of the published app.
