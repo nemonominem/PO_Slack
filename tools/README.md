@@ -22,7 +22,9 @@ printed Pacific time in `stamp_line`.
 4. `dedupe_same_instant.py`: remove duplicates and repoint links; also rebuilds the audit file.
 4b. `apply_url_fixes.py`: repairs web addresses the OCR broke, from `url_fixes.json` (broken form -> real address found by web search). Add a row for each broken link found; idempotent.
 4c. `scan_urls.py analysis/url_scan.json` then `build_url_report.py`: tests every address live and writes `analysis/source-links/UNRESOLVED_LINKS.md`.
-5. `build_chapter_links.py`: links boxes to Tragicomedy sections.
+5. `build_chapter_links.py`: links boxes to Tragicomedy sections. Use
+   `--section-prefix p1-13.` to refresh only Part 1 §13 links while preserving
+   unrelated chapter links.
 6. `build_bookmark_rekey.py`: maps old bookmark keys to current keys.
 7. `build_zone_audit.py`: `analysis/zone_format_audit.csv` (run by step 4 as well).
 
@@ -41,6 +43,9 @@ After a rebuild, check: no dangling or one-sided reply links, no reply before it
 - `parse_part1.py`, `parse_part2.py`, `parse_sscp.py`: Slack and draft parsers.
 - `reocr_*.py`: re-run OCR on pages.
 - `build_po_guide.py`, `build_article_page_map.py`, `fetch_complementary.py`: guide and article data.
+  `page_based/live_part1_chapter_headings.json` keeps §13 labels aligned with
+  the live Medium ordering when the available markdown export lags; its
+  source-audited citations are retained while those headings are regenerated.
 - `audit_app.py`, `slack_notice.py`: utilities; not part of the email rebuild.
 - `cross_release_check.py`: tests that a message quoted in one release is not later than the message that quotes it in the other; writes `analysis/cross_release_check.csv`. Changes no data.
 - `freeze_bracket_check.py`: freeze-rule and bracketing check on the P.O. emails; writes `analysis/freeze_bracket_check.csv` and prints a summary. Changes no data.

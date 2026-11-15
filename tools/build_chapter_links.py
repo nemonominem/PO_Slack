@@ -24,6 +24,7 @@ Entry keys follow the app: "<source>/<thread_key>" when the entry has one,
 otherwise "<source>/<idx>".
 """
 
+import argparse
 import json
 import os
 import re
@@ -33,6 +34,7 @@ from zoneinfo import ZoneInfo
 
 HERE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "page_based")
 ANALYSIS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "analysis")
+LIVE_HEADINGS = os.path.join(HERE, "live_part1_chapter_headings.json")
 TOLERANCE_MIN = 10
 
 SOURCE_FILES = {
@@ -106,6 +108,13 @@ def bm_key(source, e):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--section-prefix",
+        help="regenerate links only for matching guide section IDs, preserving other links",
+    )
+    args = parser.parse_args()
+
     guide = json.load(open(os.path.join(HERE, "po_guide.json"), encoding="utf-8"))
     entries = {}
     for src, fn in SOURCE_FILES.items():
@@ -113,12 +122,33 @@ def main():
         entries[src] = data["entries"] if isinstance(data, dict) and "entries" in data else data
 
     links = defaultdict(list)
+    links_path = os.path.join(HERE, "chapter_links.json")
+    if args.section_prefix and os.path.exists(links_path):
+        with open(links_path, encoding="utf-8") as f:
+            existing_links = json.load(f)
+        current_sections = {sec["id"]: sec for sec in guide.get("sections", [])}
+        for key, refs in existing_links.items():
+            kept = [ref for ref in refs if not ref["id"].startswith(args.section_prefix)]
+            if kept:
+                for ref in kept:
+                    section = current_sections.get(ref["id"])
+                    if section:
+                        ref["number"] = section.get("number")
+                        ref["title"] = section.get("title")
+                links[key].extend(kept)
     report = []
     counts = defaultdict(int)
 
     for sec in guide.get("sections", []):
+        if args.section_prefix and not sec["id"].startswith(args.section_prefix):
+            continue
         for ev in sec.get("evidence", []):
             raw = ev.get("raw") or ""
+            if ev.get("chapter_link_exclusion"):
+                counts["unresolved: not linked"] += 1
+                report.append("%s  UNRESOLVED, not linked  %s  (%s)" % (
+                    sec.get("number") or sec["id"], raw, ev["chapter_link_exclusion"]))
+                continue
             date = ev.get("date")
             if ev.get("kind") not in ("slack", "email", "draft"):
                 continue
@@ -170,8 +200,31 @@ def main():
                 links[key].append(entry_ref)
             counts["linked"] += 1
 
-    out = os.path.join(HERE, "chapter_links.json")
-    with open(out, "w", encoding="utf-8") as f:
+    if os.path.exists(LIVE_HEADINGS):
+        with open(LIVE_HEADINGS, encoding="utf-8") as f:
+            overrides = json.load(f)
+        sections_by_id = {sec["id"]: sec for sec in guide.get("sections", [])}
+        available_keys = {
+            bm_key(src, entry)
+            for src, pool in entries.items()
+            for entry in pool
+        }
+        for override in overrides.get("chapter_links", []):
+            if args.section_prefix and not override["section"].startswith(args.section_prefix):
+                continue
+            sec = sections_by_id.get(override["section"])
+            if not sec:
+                raise ValueError("chapter link refers to missing section %r" % override["section"])
+            entry_ref = {
+                "id": sec["id"], "number": sec.get("number"), "title": sec.get("title")
+            }
+            for key in override["entries"]:
+                if key not in available_keys:
+                    raise ValueError("chapter link refers to missing app record %r" % key)
+                if entry_ref not in links[key]:
+                    links[key].append(entry_ref)
+
+    with open(links_path, "w", encoding="utf-8") as f:
         json.dump(links, f, ensure_ascii=False, indent=1)
     with open(os.path.join(ANALYSIS, "chapter_links_report.txt"), "w", encoding="utf-8") as f:
         f.write("Unlinked citations (strict matching):\n")

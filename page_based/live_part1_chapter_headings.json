@@ -1,0 +1,107 @@
+{
+  "article_url": "https://medium.com/p/626c72cb05b1",
+  "part": "p1",
+  "chapter": "13",
+  "sections": [
+    {
+      "source_title_contains": "Farrar forwards the latest report",
+      "heading": "13.1 Farrar forwards the latest report to the full call group and discusses going for publication (8 Feb, 9:45 am UK)"
+    },
+    {
+      "source_title_contains": "Vallance supports publishing",
+      "heading": "13.2 Vallance supports publishing once the pangolin sequences are available (8 Feb, 12:03 pm UK)"
+    },
+    {
+      "source_title_contains": "Garry and Rambaut toy with the idea",
+      "heading": "13.3 On Slack: Garry and Rambaut toy with the idea of co-publishing with SCAU to speed up access to the pangolin sequences (8 Feb, 1.09 pm UK, 8.09 am EST)"
+    },
+    {
+      "source_title_contains": "Focus on Passaging",
+      "heading": "13.4 Full Call Group: Focus on Passaging (8 Feb, 12:03 pm — 6:03 pm UK)"
+    },
+    {
+      "source_title_contains": "Fouchier pushes back on any lab origin",
+      "heading": "13.5 Fouchier pushes back on any lab origin (8 Feb, 7.36 pm UK)"
+    },
+    {
+      "source_title_contains": "Drosten wonders what the goal is",
+      "heading": "13.6 Drosten wonders what the goal is (8 Feb, 7.52 pm UK)"
+    },
+    {
+      "source_title_contains": "Holmes answers Drosten",
+      "heading": "13.7 Holmes answers Drosten (8 Feb, 8.11 pm UK, 7.11 am day+1 Sydney)"
+    },
+    {
+      "source_title_contains": "Holmes, Farrar and Rambaut",
+      "heading": "13.8 Holmes, Farrar and Rambaut confirm that they are confident enough in the pangolin claims to go for publication (8:11 pm to 9:16 pm, UK)"
+    },
+    {
+      "source_title_contains": "the co-authors discuss Fouchier",
+      "heading": "13.9 On Slack: the co-authors discuss Fouchier (8 Feb, 7:47 pm to 8:53 pm UK)"
+    },
+    {
+      "source_title_contains": "The Refuznik",
+      "heading": "13.10 The Refuznik: Andersen is not keen on publishing and wants more data (8 Feb, 9:16 pm UK)"
+    },
+    {
+      "source_title_contains": "The Boss",
+      "heading": "13.11 The Boss: Farrar cuts the discussions short and confirms his decision to go for publication (8 Feb, 9:27 pm UK)"
+    },
+    {
+      "source_title_contains": "The Wicked",
+      "heading": "13.12 The Wicked: Fouchier tries again (8 Feb, 10:50 pm UK)"
+    },
+    {
+      "source_title_contains": "99% pangolin claims implode",
+      "heading": "13.13 The 99% pangolin claims implode (8 Feb, 11:42 pm UK)"
+    },
+    {
+      "source_title_contains": "Ferguson",
+      "heading": "13.14 Ferguson makes some comment and discusses the glycans (9 Feb, 8:00 pm UK)"
+    }
+  ],
+  "unlinked_citations": [
+    {
+      "section": "p1-13.8",
+      "document": "Proximal_Origin_Emails.pdf",
+      "page": "51",
+      "contains": "4:16 pm clock",
+      "reason": "Rambaut's nested 4:16 pm clock has no verified time zone; do not link it to Andersen's 16:16 ET email."
+    }
+  ],
+  "chapter_links": [
+    {
+      "section": "p1-13.3",
+      "entries": [
+        "part1/245",
+        "part1/246"
+      ]
+    },
+    {
+      "section": "p1-13.4",
+      "entries": [
+        "farrar-fauci/farrar-fauci|2020-02-08|0703",
+        "farrar-fauci/farrar-fauci|2020-02-08|1013",
+        "farrar-fauci/farrar-fauci|2020-02-08|1236",
+        "part1/246",
+        "part1/247",
+        "part1/257",
+        "part1/258",
+        "part1/259"
+      ]
+    },
+    {
+      "section": "p1-13.8",
+      "entries": [
+        "po-emails/po-emails|2020-02-08|1511",
+        "po-emails/po-emails|2020-02-08|1521"
+      ]
+    },
+    {
+      "section": "p1-13.9",
+      "entries": [
+        "part1/261"
+      ]
+    }
+  ]
+}

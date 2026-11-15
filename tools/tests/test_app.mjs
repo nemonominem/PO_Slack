@@ -702,13 +702,15 @@ ok('every draft has a page', drafts.every(d => d.pages && d.pages.length));
 sec('Guide');
 const guideResp = await (await fetch('po_guide.json')).json();
 ok('guide loads', !!guideResp && guideResp.sections.length > 200);
-ok('guide covers every citation', guideResp.totals.citations === 322, String(guideResp.totals.citations));
+ok('guide covers every citation', guideResp.totals.citations === 321, String(guideResp.totals.citations));
 const evNoKind = guideResp.sections.flatMap(s=>s.evidence).filter(e=>!e.kind);
 ok('every guide citation is classified', evNoKind.length === 0);
 const docs = guideResp.documents ? Object.values(guideResp.documents) : [];
 ok('every cited document is catalogued', docs.length === 32, String(docs.length));
 const poEntry = idx => app.diaryData.entries.find(e => e.source === 'po-emails' && e.idx === idx);
 const chapterLinks = JSON.parse(fs.readFileSync(path.join(HERE, 'chapter_links.json'), 'utf8'));
+const articlePageMap = JSON.parse(fs.readFileSync(path.join(HERE, 'article_page_map.json'), 'utf8'));
+const liveHeadings = JSON.parse(fs.readFileSync(path.join(HERE, 'live_part1_chapter_headings.json'), 'utf8'));
 const guideSection = id => guideResp.sections.find(s => s.id === id);
 const entry83 = poEntry(83), entry84 = poEntry(84), entry85 = poEntry(85);
 const entry86 = poEntry(86), entry91 = poEntry(91), entry92 = poEntry(92);
@@ -782,42 +784,75 @@ ok('Slack p.64 Garry remains 10:59; p.65 is Garry 14:44 then Andersen 14:45',
    !!slackAt(64, 'Robert Garry', '10:59') &&
    !!slackAt(65, 'Robert Garry', '14:44') &&
    !!slackAt(65, 'Kristian Andersen', '14:45'));
+const live13 = guideResp.sections.filter(s => s.part === 'p1' && /^13\.\d+$/.test(s.number || ''));
+ok('Part 1 §13 headings match the current live Medium order',
+   live13.length === liveHeadings.sections.length &&
+   liveHeadings.sections.every((h, i) => live13[i]?.heading === h.heading));
+ok('Part 1 §13 sections map to their live article PDF pages',
+   articlePageMap['p1-13.2'] === 150 &&
+   articlePageMap['p1-13.3'] === 150 &&
+   articlePageMap['p1-13.5'] === 154 &&
+   articlePageMap['p1-13.14'] === 169);
+const hasLink = (key, id) => chapterLinks[key]?.some(s => s.id === id);
+ok('chapter links target the intended records across all live §13 subsections',
+   hasLink('po-emails/po-emails|2020-02-08|0445', 'p1-13.1') &&
+   hasLink('farrar-fauci/farrar-fauci|2020-02-08|0703', 'p1-13.2') &&
+   hasLink('part1/245', 'p1-13.3') && hasLink('part1/246', 'p1-13.3') &&
+   ['0703','1013','1236'].every(t => hasLink(`farrar-fauci/farrar-fauci|2020-02-08|${t}`, 'p1-13.4')) &&
+   [247,257,258,259].every(i => hasLink(`part1/${i}`, 'p1-13.4')) &&
+   hasLink('po-emails/po-emails|2020-02-08|1436', 'p1-13.5') &&
+   hasLink('po-emails/po-emails|2020-02-08|1452', 'p1-13.6') &&
+   hasLink('po-emails/po-emails|2020-02-08|1511', 'p1-13.7') &&
+   hasLink('po-emails/po-emails|2020-02-08|1511', 'p1-13.8') &&
+   hasLink('po-emails/po-emails|2020-02-08|1521', 'p1-13.8') &&
+   hasLink('part1/261', 'p1-13.9') && hasLink('part1/265', 'p1-13.9') &&
+   hasLink('po-emails/po-emails|2020-02-08|1616', 'p1-13.10') &&
+   hasLink('part1/268', 'p1-13.10') &&
+   hasLink('po-emails/po-emails|2020-02-08|1627', 'p1-13.11') &&
+   hasLink('part1/270', 'p1-13.11') &&
+   hasLink('po-emails/po-emails|2020-02-08|1750', 'p1-13.12') &&
+   hasLink('part1/272', 'p1-13.12') &&
+   hasLink('part1/277', 'p1-13.13') &&
+   hasLink('po-emails/po-emails|2020-02-09|1500', 'p1-13.14'));
+ok('§13-linked records retain their audited source PDF page maps',
+   [245,246].every(i => app.pageMaps.part1[String(i)]?.start === 21) &&
+   [247,257].every(i => app.pageMaps.part1[String(i)]?.start === 22) &&
+   [258,259,261,265,268,270,272].every(i =>
+     app.pageMaps.part1[String(i)]?.start === 23) &&
+   app.pageMaps.part1['277']?.start === 24 &&
+   app.pageMaps['farrar-fauci']?.['farrar-fauci|2020-02-08|0703']?.start === 61 &&
+   app.pageMaps['po-emails']?.['po-emails|2020-02-08|1436']?.start === 55 &&
+   app.pageMaps['po-emails']?.['po-emails|2020-02-08|1511']?.start === 52 &&
+   app.pageMaps['po-emails']?.['po-emails|2020-02-08|1521']?.start === 52 &&
+   app.pageMaps['po-emails']?.['po-emails|2020-02-08|1616']?.start === 144 &&
+   app.pageMaps['po-emails']?.['po-emails|2020-02-08|1627']?.start === 144 &&
+   app.pageMaps['po-emails']?.['po-emails|2020-02-08|1750']?.start === 51 &&
+   app.pageMaps['po-emails']?.['po-emails|2020-02-09|1500']?.start === 57);
 const section132 = guideSection('p1-13.2');
-const section133 = guideSection('p1-13.3');
-const section134 = guideSection('p1-13.4');
-ok('chapter 13.2 cites Fouchier at the verified 19:36 UK time',
-   section132?.evidence[0]?.pages?.includes('55') &&
-   section132.evidence[0].raw.includes('7:36 pm UK') &&
-   section132.title.includes('7:36 pm UK'));
-ok('chapter 13.3 cites Ferguson on Feb. 9, p.57, without an ordering claim',
-   section133?.date === '2020-02-09' && section133.evidence.length === 1 &&
-   section133.evidence[0].pages?.includes('57') &&
-   section133.evidence[0].raw.includes('9 Feb 2020, 8:00 pm UK') &&
-   !section133.summary.toLowerCase().includes('first to provide feedback'));
-ok('chapter 13.4 cites the complete Vallance email on pp.61-62',
-   section134?.evidence[0]?.doc === 'farrar-fauci-comms.pdf' &&
-   section134.evidence[0].pages?.includes('61-62') &&
-   section134.evidence[0].raw.includes('pp.61-62') &&
-   section134.summary.includes('earliest feedback documented in checked copies') &&
-   section134.summary.includes('not establish that it was the earliest response overall'));
-ok('chapter buttons target the corrected Feb. 8–9 records',
-   chapterLinks['po-emails/po-emails|2020-02-08|0445']?.some(s => s.id === 'p1-13.1') &&
-   chapterLinks['po-emails/po-emails|2020-02-08|1436']?.some(s => s.id === 'p1-13.2') &&
-   chapterLinks['po-emails/po-emails|2020-02-09|1500']?.some(s => s.id === 'p1-13.3') &&
-   chapterLinks['farrar-fauci/farrar-fauci|2020-02-08|0703']?.some(s => s.id === 'p1-13.4'));
-ok('Part 2 §15.2 links to Koopmans, while Ferguson is linked to §13.3',
+const section135 = guideSection('p1-13.5');
+const section138 = guideSection('p1-13.8');
+const section1314 = guideSection('p1-13.14');
+ok('Vallance’s pp.61-62 reply remains qualified as earliest feedback in checked copies',
+   section132?.evidence[0]?.doc === 'farrar-fauci-comms.pdf' &&
+   section132.evidence[0].pages?.includes('61-62') &&
+   section132.summary.includes('earliest feedback documented in checked copies') &&
+   section132.summary.includes('not necessarily the earliest response overall'));
+ok('Fouchier’s source-corrected time and page 55 evidence stay attached to live §13.5',
+   section135?.evidence[0]?.pages?.includes('55') &&
+   section135.evidence[0].raw.includes('7:36 pm UK'));
+ok('Ferguson remains Feb. 9 and maps to live §13.14',
+   section1314?.date === '2020-02-09' &&
+   section1314.evidence[0]?.pages?.includes('57') &&
+   section1314.evidence[0].raw.includes('9 Feb 2020, 8:00 pm UK'));
+ok('Rambaut’s nested p.51 clock remains unresolved and does not link to Andersen',
+   section138?.evidence.some(e => e.raw.includes('nested 4:16 pm clock, zone unresolved') &&
+     e.chapter_link_exclusion?.includes('no verified time zone')) &&
+   !hasLink('po-emails/po-emails|2020-02-08|1616', 'p1-13.8') &&
+   hasLink('po-emails/po-emails|2020-02-08|1616', 'p1-13.10'));
+ok('Part 2 §15.2 links to Koopmans, while Ferguson is linked to §13.14',
    chapterLinks['po-emails/po-emails|2020-02-09|1507']?.some(s => s.id === 'p2-15.2') &&
    !chapterLinks['po-emails/po-emails|2020-02-09|1500']?.some(s => s.id === 'p2-15.2') &&
-   chapterLinks['po-emails/po-emails|2020-02-09|1500']?.some(s => s.id === 'p1-13.3'));
-const section139 = guideSection('p1-13.9');
-const section1310 = guideSection('p1-13.10');
-ok('Rambaut’s date is correct while the nested 4:16 pm clock remains unresolved',
-   section139?.title.includes('clock unresolved') &&
-   section139.evidence.some(e => e.raw.includes('8 Feb 2020') && e.raw.includes('zone unresolved')) &&
-   section1310?.date === '2020-02-08');
-ok('Rambaut’s nested p.51 clock is not linked to Andersen’s verified 16:16 ET email',
-   !chapterLinks['po-emails/po-emails|2020-02-08|1616']?.some(s => s.id === 'p1-13.9') &&
-   chapterLinks['po-emails/po-emails|2020-02-08|1616']?.some(s => s.id === 'p1-13.11'));
+   chapterLinks['po-emails/po-emails|2020-02-09|1500']?.some(s => s.id === 'p1-13.14'));
 
 
 sec('Stacked timeline (one segment per kind, release sub-totals)');

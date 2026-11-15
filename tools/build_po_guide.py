@@ -539,6 +539,104 @@ def write_sources_md(guide, path):
 
 
 SUMMARIES_PATH = os.path.join(HERE, "guide_summaries.json")
+LIVE_HEADINGS_PATH = os.path.join(HERE, "live_part1_chapter_headings.json")
+
+
+def apply_live_chapter_headings(all_sections):
+    """Apply the current Medium Part 1 chapter 13 numbering and headings.
+
+    The available markdown export can lag behind the live reordered article.
+    Match its stable heading text, then reorder the parsed section objects so
+    summaries and generated chapter links use the live section IDs.
+    """
+    if not os.path.exists(LIVE_HEADINGS_PATH):
+        return
+    with open(LIVE_HEADINGS_PATH, encoding="utf-8") as f:
+        overrides = json.load(f)
+
+    part = overrides["part"]
+    prefix = overrides["chapter"] + "."
+    existing_path = os.path.join(HERE, "po_guide.json")
+    if os.path.exists(existing_path):
+        with open(existing_path, encoding="utf-8") as f:
+            existing = json.load(f)
+        existing_sections = [
+            sec for sec in existing.get("sections", [])
+            if sec.get("part") == part and (sec.get("number") or "").startswith(prefix)
+        ]
+        for override in overrides["sections"]:
+            previous = [
+                sec for sec in existing_sections
+                if override["source_title_contains"].casefold() in sec["title"].casefold()
+            ]
+            if len(previous) != 1:
+                raise ValueError(
+                    "expected one existing guide section containing %r, found %d" % (
+                        override["source_title_contains"], len(previous)))
+            source = next(
+                sec for sec in all_sections
+                if sec["part"] == part
+                and (sec.get("number") or "").startswith(prefix)
+                and override["source_title_contains"].casefold() in sec["title"].casefold()
+            )
+            # Keep source-audited citations and dates while the editable
+            # article export still carries superseded wording or timestamps.
+            for key in ("date", "date_raw", "evidence"):
+                source[key] = previous[0].get(key)
+
+    chapter_sections = [
+        sec for sec in all_sections
+        if sec["part"] == part and (sec.get("number") or "").startswith(prefix)
+    ]
+    if len(chapter_sections) != len(overrides["sections"]):
+        raise ValueError(
+            "live chapter heading config has %d entries but article has %d "
+            "sections in %s" % (
+                len(overrides["sections"]), len(chapter_sections), prefix[:-1]))
+
+    for override in overrides["sections"]:
+        matches = [
+            sec for sec in chapter_sections
+            if override["source_title_contains"].casefold() in sec["title"].casefold()
+        ]
+        if len(matches) != 1:
+            raise ValueError(
+                "expected one source heading containing %r, found %d" % (
+                    override["source_title_contains"], len(matches)))
+        sec = matches[0]
+        heading = override["heading"]
+        number, title = heading.split(" ", 1)
+        sec["number"] = number
+        sec["id"] = "%s-%s" % (part, number)
+        sec["title"] = title
+        sec["heading"] = heading
+
+    numbers = [sec["number"] for sec in chapter_sections]
+    if len(numbers) != len(set(numbers)):
+        raise ValueError("live chapter heading config creates duplicate section numbers")
+
+    chapter_section_ids = {id(sec) for sec in chapter_sections}
+    positions = [i for i, sec in enumerate(all_sections) if id(sec) in chapter_section_ids]
+    ordered = sorted(chapter_sections, key=lambda sec: tuple(map(int, sec["number"].split("."))))
+    for i, sec in zip(positions, ordered):
+        all_sections[i] = sec
+
+    by_id = {sec["id"]: sec for sec in chapter_sections}
+    for exclusion in overrides.get("unlinked_citations", []):
+        sec = by_id.get(exclusion["section"])
+        if not sec:
+            raise ValueError("unlinked citation refers to missing section %r" % exclusion["section"])
+        matches = [
+            ev for ev in sec["evidence"]
+            if ev.get("doc") == exclusion["document"]
+            and exclusion["page"] in ev.get("pages", [])
+            and exclusion["contains"].casefold() in ev.get("raw", "").casefold()
+        ]
+        if len(matches) != 1:
+            raise ValueError(
+                "expected one citation for chapter-link exclusion %r, found %d" % (
+                    exclusion["section"], len(matches)))
+        matches[0]["chapter_link_exclusion"] = exclusion["reason"]
 
 
 def attach_summaries(all_sections):
@@ -601,6 +699,7 @@ def main():
     if missing:
         print("WARNING: missing article files:\n  " + "\n  ".join(missing), file=sys.stderr)
 
+    apply_live_chapter_headings(all_sections)
     attach_summaries(all_sections)
 
     doc_urls = build_doc_urls(all_lines, footnotes)
@@ -638,7 +737,9 @@ def main():
         if ev["source_part"] not in r["parts"]:
             r["parts"].append(ev["source_part"])
     for r in docs.values():
-        r["pages_cited"] = sorted(set(r["pages_cited"]), key=lambda p: int(p.split("-")[0]))
+        r["pages_cited"] = sorted(
+            set(r["pages_cited"]),
+            key=lambda page: tuple(int(part) for part in page.split("-", 1)))
         r["dates"] = sorted(set(r["dates"]))
         r["urls"] = sorted(set(r["urls"]))
     docs = OrderedDict(sorted(docs.items(), key=lambda kv: -kv[1]["cites"]))
