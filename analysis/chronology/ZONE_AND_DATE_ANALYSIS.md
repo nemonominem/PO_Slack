@@ -154,8 +154,8 @@ None. The last one (Harris pp.42-43) was cleared on 2026-11-02 when the lookup l
 
 # Part 3. Issues in your P.O. piece
 
-Other article issues were recorded in `TRAGICOMEDY_ISSUES.md` (private,
-git-ignored; not present in this worktree). This audit covers the 8 February
+Other article issues were recorded in `analysis/_OldStuff/TRAGICOMEDY_ISSUES.md`
+(private and git-ignored; not included in the repository). This audit covers the 8 February
 correspondence and its directly dependent passages. The correction commit
 `d311367` is an ancestor of `po-sources-and-boxes` at `c0f6933`; its 160/160
 test result covered only that earlier change. On 2026-11-15, source images for
