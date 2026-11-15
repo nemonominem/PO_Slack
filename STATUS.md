@@ -18,8 +18,10 @@ separate sends or renderings; the timezone of Rambaut's quoted 4:16 PM stamp;
 OCR/time-label mismatches on Slack Part 1 PDF pp.21-24; and two unresolved
 Slack Part 1 time-check items (pp.35 and 52-55). The p.64-65 item has a likely
 14:44 correction in an OCR status note, but the app and generated time-check
-CSV still contain 01:44 and need reconciliation. These should not be treated
-as settled by the article edits.
+CSV still contain 01:44 and need reconciliation. A fresh app-data check also
+found that PO idx 92's page map spans pp.70-145; its correct page was not
+reverified against the PDF during the documentation pass. These should not be
+treated as settled by the article edits.
 
 See [`README.md`](README.md) for the application overview,
 [`docs/SPEC.md`](docs/SPEC.md) for current data and parser rules, and
