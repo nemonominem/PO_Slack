@@ -2185,8 +2185,54 @@
    "id": "p1-13.2",
    "part": "p1",
    "number": "13.2",
+   "title": "Fouchier pushes back on any lab origin (8 Feb, 7:36 pm UK)",
+   "heading": "13.2 Fouchier pushes back on any lab origin (8 Feb, 7:36 pm UK)",
+   "date": "2020-02-08",
+   "date_raw": null,
+   "evidence": [
+    {
+     "doc": "Proximal_Origin_Emails.pdf",
+     "kind": "email",
+     "pages": [
+      "55"
+     ],
+     "date": "2020-02-08",
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
+     "source_part": "p1",
+     "raw": "Proximal_Origin_Emails.pdf, p.55, 8 Feb 2020, 7:36 pm UK"
+    }
+   ],
+   "summary": "Fouchier argues passaging should also be rejected, on the (weak) grounds that nobody is known to have worked on a close viral relative in China — an argument the piece says later shapes his and Daszak's move to torpedo the manuscript at Nature."
+  },
+  {
+   "id": "p1-13.3",
+   "part": "p1",
+   "number": "13.3",
+   "title": "Ferguson comments on the glycans (9 Feb, 8:00 pm UK)",
+   "heading": "13.3 Ferguson comments on the glycans (9 Feb, 8:00 pm UK)",
+   "date": "2020-02-09",
+   "date_raw": null,
+   "evidence": [
+    {
+     "doc": "Proximal_Origin_Emails.pdf",
+     "kind": "email",
+     "pages": [
+      "57"
+     ],
+     "date": "2020-02-09",
+     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
+     "source_part": "p1",
+     "raw": "Proximal_Origin_Emails.pdf, p.57, 9 Feb 2020, 8:00 pm UK"
+    }
+   ],
+   "summary": "Ferguson’s feedback says the glycan shield is not incompatible with passaging and confirms Tabak, a glycoprotein expert, was on the original Farrar call."
+  },
+  {
+   "id": "p1-13.4",
+   "part": "p1",
+   "number": "13.4",
    "title": "Vallance supports publishing once the pangolin sequences are available (8 Feb, 12:03 pm UK)",
-   "heading": "13.2 Vallance supports publishing once the pangolin sequences are available (8 Feb, 12:03 pm UK)",
+   "heading": "13.4 Vallance supports publishing once the pangolin sequences are available (8 Feb, 12:03 pm UK)",
    "date": "2020-02-08",
    "date_raw": null,
    "evidence": [
@@ -2202,14 +2248,14 @@
      "raw": "farrar-fauci-comms.pdf, pp.61-62, 8 Feb 2020, 12:03 pm UK"
     }
    ],
-   "summary": "Vallance backs publication, leaning against passaging and wanting the glycans used as further evidence for a natural origin."
+   "summary": "Vallance’s direct reply at 12:03 UK is the earliest feedback documented in checked copies. These sources do not establish that it was the earliest response overall. He backs publication, leans against passaging, and wants the glycans used as further evidence for a natural origin."
   },
   {
-   "id": "p1-13.3",
+   "id": "p1-13.5",
    "part": "p1",
-   "number": "13.3",
+   "number": "13.5",
    "title": "On Slack: Garry and Rambaut toy with the idea of co-publishing with SCAU to speed up access to the pangolin sequences (8 Feb, 1.09 pm UK, 8.09 am EST)",
-   "heading": "13.3 On Slack: Garry and Rambaut toy with the idea of co-publishing with SCAU to speed up access to the pangolin sequences (8 Feb, 1.09 pm UK, 8.09 am EST)",
+   "heading": "13.5 On Slack: Garry and Rambaut toy with the idea of co-publishing with SCAU to speed up access to the pangolin sequences (8 Feb, 1.09 pm UK, 8.09 am EST)",
    "date": "2020-02-08",
    "date_raw": null,
    "evidence": [
@@ -2228,11 +2274,11 @@
    "summary": "Garry and Rambaut float offering SCAU a Nature co-publication (even the cover) in exchange for early access to their pangolin sequence."
   },
   {
-   "id": "p1-13.4",
+   "id": "p1-13.6",
    "part": "p1",
-   "number": "13.4",
+   "number": "13.6",
    "title": "Full Call Group: Focus on Passaging (8 Feb, 12:03 pm — 6:03 pm UK)",
-   "heading": "13.4 Full Call Group: Focus on Passaging (8 Feb, 12:03 pm — 6:03 pm UK)",
+   "heading": "13.6 Full Call Group: Focus on Passaging (8 Feb, 12:03 pm — 6:03 pm UK)",
    "date": "2020-02-08",
    "date_raw": null,
    "evidence": [
@@ -2262,34 +2308,11 @@
    "summary": "The group debates whether the spike protein's glycan shield rules out passaging; Garry and Rambaut conclude it doesn't — the same immune-driven signature would appear either way."
   },
   {
-   "id": "p1-13.5",
+   "id": "p1-13.7",
    "part": "p1",
-   "number": "13.5",
-   "title": "Fouchier pushes back on any lab origin (8 Feb, 7.36 pm UK)",
-   "heading": "13.5 Fouchier pushes back on any lab origin (8 Feb, 7.36 pm UK)",
-   "date": "2020-02-08",
-   "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "55"
-     ],
-     "date": "2020-02-08",
-     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf, p.55, 8 Feb 2020, 7:36 pm UK"
-    }
-   ],
-   "summary": "Fouchier argues passaging should also be rejected, on the (weak) grounds that nobody is known to have worked on a close viral relative in China — an argument the piece says later shapes his and Daszak's move to torpedo the manuscript at Nature."
-  },
-  {
-   "id": "p1-13.6",
-   "part": "p1",
-   "number": "13.6",
+   "number": "13.7",
    "title": "Drosten wonders what the goal is (8 Feb, 7.52 pm UK)",
-   "heading": "13.6 Drosten wonders what the goal is (8 Feb, 7.52 pm UK)",
+   "heading": "13.7 Drosten wonders what the goal is (8 Feb, 7.52 pm UK)",
    "date": "2020-02-08",
    "date_raw": null,
    "evidence": [
@@ -2317,11 +2340,11 @@
    "summary": "Drosten, largely absent since the original call, asks bluntly whether they're ‘debunking our own conspiracy theory’ — seemingly unaware the group had already shifted from engineering to the still-live passaging question."
   },
   {
-   "id": "p1-13.7",
+   "id": "p1-13.8",
    "part": "p1",
-   "number": "13.7",
+   "number": "13.8",
    "title": "Holmes answers Drosten (8 Feb, 8.11 pm UK, 7.11 am day+1 Sydney)",
-   "heading": "13.7 Holmes answers Drosten (8 Feb, 8.11 pm UK, 7.11 am day+1 Sydney)",
+   "heading": "13.8 Holmes answers Drosten (8 Feb, 8.11 pm UK, 7.11 am day+1 Sydney)",
    "date": "2020-02-08",
    "date_raw": null,
    "evidence": [
@@ -2340,11 +2363,11 @@
    "summary": "Holmes explains the point was always to also address a credible accidental-escape scenario, not just outlandish bioweapon claims — while the piece notes the group's key counter-argument (no known close relative in Chinese labs) rests on knowledge nobody actually had."
   },
   {
-   "id": "p1-13.8",
+   "id": "p1-13.9",
    "part": "p1",
-   "number": "13.8",
-   "title": "Holmes, Farrar and Rambaut confirm that they are confident enough in the pangolin claims to go for publication (8:11 pm to 9:16 pm, UK)",
-   "heading": "13.8 Holmes, Farrar and Rambaut confirm that they are confident enough in the pangolin claims to go for publication (8:11 pm to 9:16 pm, UK)",
+   "number": "13.9",
+   "title": "Holmes, Farrar and Rambaut discuss publication; Rambaut’s nested clock unresolved (8 Feb 2020)",
+   "heading": "13.9 Holmes, Farrar and Rambaut discuss publication; Rambaut’s nested clock unresolved (8 Feb 2020)",
    "date": "2020-02-08",
    "date_raw": null,
    "evidence": [
@@ -2401,7 +2424,7 @@
      "date": "2020-02-08",
      "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
-     "raw": "Rambaut to the Farrar call group, Proximal_Origin_Emails.pdf, p.51, 8 Feb 2020, 9:16 pm UK, 4:16 pm EST"
+     "raw": "Rambaut to the Farrar call group, Proximal_Origin_Emails.pdf, p.51, 8 Feb 2020; nested 4:16 pm clock, zone unresolved"
     },
     {
      "doc": "Proximal_Origin_Emails.pdf",
@@ -2418,11 +2441,11 @@
    "summary": "Holmes, Farrar and (more hesitantly) Rambaut all say the pangolin data now has them leaning toward a natural origin and support publishing — reasoning the piece calls backwards, arguments assembled to fit a conclusion already reached."
   },
   {
-   "id": "p1-13.9",
+   "id": "p1-13.10",
    "part": "p1",
-   "number": "13.9",
+   "number": "13.10",
    "title": "On Slack: the co-authors discuss Fouchier (8 Feb, 7:47 pm to 8:53 pm UK)",
-   "heading": "13.9 On Slack: the co-authors discuss Fouchier (8 Feb, 7:47 pm to 8:53 pm UK)",
+   "heading": "13.10 On Slack: the co-authors discuss Fouchier (8 Feb, 7:47 pm to 8:53 pm UK)",
    "date": "2020-02-08",
    "date_raw": null,
    "evidence": [
@@ -2452,11 +2475,11 @@
    "summary": "Privately on Slack, Andersen dismisses Fouchier's ‘no lab has passaged a close relative’ argument by noting exactly that kind of work was being done in Wuhan, in BSL-2."
   },
   {
-   "id": "p1-13.10",
+   "id": "p1-13.11",
    "part": "p1",
-   "number": "13.10",
+   "number": "13.11",
    "title": "The Refuznik: Andersen is not keen on publishing and wants more data (8 Feb, 9:16 pm UK)",
-   "heading": "13.10 The Refuznik: Andersen is not keen on publishing and wants more data (8 Feb, 9:16 pm UK)",
+   "heading": "13.11 The Refuznik: Andersen is not keen on publishing and wants more data (8 Feb, 9:16 pm UK)",
    "date": "2020-02-08",
    "date_raw": null,
    "evidence": [
@@ -2486,11 +2509,11 @@
    "summary": "Andersen alone pushes back on publishing now, saying it's premature without seeing the actual pangolin data first."
   },
   {
-   "id": "p1-13.11",
+   "id": "p1-13.12",
    "part": "p1",
-   "number": "13.11",
+   "number": "13.12",
    "title": "The Boss: Farrar cuts the discussions short and confirms his decision to go for publication (8 Feb, 9:27 pm UK)",
-   "heading": "13.11 The Boss: Farrar cuts the discussions short and confirms his decision to go for publication (8 Feb, 9:27 pm UK)",
+   "heading": "13.12 The Boss: Farrar cuts the discussions short and confirms his decision to go for publication (8 Feb, 9:27 pm UK)",
    "date": "2020-02-08",
    "date_raw": null,
    "evidence": [
@@ -2520,11 +2543,11 @@
    "summary": "Farrar firmly overrules Andersen's objection and makes clear he wants a ‘conclusive’ statement that becomes ‘the go-to scientific statement to refer to’ — and the co-authors fall in line."
   },
   {
-   "id": "p1-13.12",
+   "id": "p1-13.13",
    "part": "p1",
-   "number": "13.12",
+   "number": "13.13",
    "title": "The Wicked: Fouchier tries again (8 Feb, 10:50 pm UK)",
-   "heading": "13.12 The Wicked: Fouchier tries again (8 Feb, 10:50 pm UK)",
+   "heading": "13.13 The Wicked: Fouchier tries again (8 Feb, 10:50 pm UK)",
    "date": "2020-02-08",
    "date_raw": null,
    "evidence": [
@@ -2554,11 +2577,11 @@
    "summary": "Fouchier shifts his argument again, inadvertently conceding — as Andersen notes — that the sequence data alone can't actually rule out deliberate engineering either."
   },
   {
-   "id": "p1-13.13",
+   "id": "p1-13.14",
    "part": "p1",
-   "number": "13.13",
+   "number": "13.14",
    "title": "The 99% pangolin claims implode (8 Feb, 11:42 pm UK)",
-   "heading": "13.13 The 99% pangolin claims implode (8 Feb, 11:42 pm UK)",
+   "heading": "13.14 The 99% pangolin claims implode (8 Feb, 11:42 pm UK)",
    "date": "2020-02-08",
    "date_raw": null,
    "evidence": [
@@ -2575,29 +2598,6 @@
     }
    ],
    "summary": "Holmes admits the ‘99%’ pangolin homology was actually ‘up to 99%’ and overstated — news that never reaches the wider call group or visibly changes the drafts, even as Farrar pushes ahead toward publication regardless."
-  },
-  {
-   "id": "p1-13.14",
-   "part": "p1",
-   "number": "13.14",
-   "title": "Ferguson makes some comment and discusses the glycans (9 Feb, 8:00 pm UK)",
-   "heading": "13.14 Ferguson makes some comment and discusses the glycans (9 Feb, 8:00 pm UK)",
-   "date": "2020-02-09",
-   "date_raw": null,
-   "evidence": [
-    {
-     "doc": "Proximal_Origin_Emails.pdf",
-     "kind": "email",
-     "pages": [
-      "57"
-     ],
-     "date": "2020-02-09",
-     "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
-     "source_part": "p1",
-     "raw": "Proximal_Origin_Emails.pdf, p.57, 9 Feb 2020, 8:00 pm UK"
-    }
-   ],
-   "summary": "Ferguson's feedback says the glycan shield isn't incompatible with passaging, and confirms Tabak (a glycoprotein expert) was on the original Farrar call."
   },
   {
    "id": "p2-preamble",

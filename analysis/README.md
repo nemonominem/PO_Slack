@@ -10,6 +10,7 @@ by the static app. Current product documentation lives in [`../docs/`](../docs/)
 | [`chronology/`](chronology/) | Source-based email/time-zone audit and reviewer index. Start with [`FOR_HUMAN_REVIEWER.md`](chronology/FOR_HUMAN_REVIEWER.md); detailed February 8 findings are in [`ZONE_AND_DATE_ANALYSIS.md`](chronology/ZONE_AND_DATE_ANALYSIS.md). |
 | [`slack-qa/`](slack-qa/) | Preserved OCR review prompts, status notes, and page-specific Slack checks. These are historical work records; consult [`chronology/FOR_HUMAN_REVIEWER.md`](chronology/FOR_HUMAN_REVIEWER.md) for the latest unresolved items. |
 | [`source-links/`](source-links/) | Generated unresolved-link report, plus any supporting scan data. Rebuild the Markdown report with `python3 tools/build_url_report.py`. |
+| `_OldStuff/` | Locally archived, git-ignored private notes; not included in the repository. |
 
 ## Generated evidence
 

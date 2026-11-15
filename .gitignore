@@ -7,7 +7,7 @@ __pycache__/
 .DS_Store
 
 # Private notes about the author's own article (never pushed)
-analysis/TRAGICOMEDY_ISSUES.md
+analysis/_OldStuff/TRAGICOMEDY_ISSUES.md
 PO_Slack.code-workspace
 
 # Local screenshot/test artifact

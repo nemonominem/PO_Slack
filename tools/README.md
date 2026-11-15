@@ -16,8 +16,9 @@ printed Pacific time in `stamp_line`.
 1. `parse_po_emails.py`, `parse_farrar_fauci.py`: parse the OCR text into entries.
 2. `anchor_copies.py`: rule 1b (exact copy with an explicit offset).
 3. `apply_verified_overrides.py`: rule 1c. Applies the hand-checked corrections in
-   `verified_overrides.json`, each with its evidence. Add an entry there only when a page
-   image or the message text fixes both the time and its clock.
+   `verified_overrides.json`, each with its evidence. Add an entry there only when the
+   page image or message text supports the correction; nested clocks that cannot be
+   resolved remain explicitly unresolved. Rekeying updates reply references and labels.
 4. `dedupe_same_instant.py`: remove duplicates and repoint links; also rebuilds the audit file.
 4b. `apply_url_fixes.py`: repairs web addresses the OCR broke, from `url_fixes.json` (broken form -> real address found by web search). Add a row for each broken link found; idempotent.
 4c. `scan_urls.py analysis/url_scan.json` then `build_url_report.py`: tests every address live and writes `analysis/source-links/UNRESOLVED_LINKS.md`.

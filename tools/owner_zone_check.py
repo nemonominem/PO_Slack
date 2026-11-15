@@ -35,16 +35,23 @@ def norm_body(e):
 def printed(stamp):
     """(datetime, has_offset_hours) for a stamp with a printed time, else None."""
     s = stamp or ""
-    m = re.search(r"(\d{1,2})\s+([A-Za-z]{3,9})\s+(\d{4})\D+?(\d{1,2}):(\d{2})\s*([ap]\.?m\.?)?", s, re.I)
-    if m:
-        d, mo, y, h, mi, ap = m.groups()
-        mon = MONTHS.get(mo[:3].lower())
+    numeric = re.search(r"\b(\d{1,2})/(\d{1,2})/(\d{4})\D+?(\d{1,2}):(\d{2})(?::(\d{2}))?\s*([ap]\.?m\.?)?", s, re.I)
+    if numeric:
+        mo, d, y, h, mi, second, ap = numeric.groups()
+        mon = int(mo)
     else:
-        m = re.search(r"([A-Za-z]{3,9})\s+(\d{1,2}),?\s+(\d{4})\D+?(\d{1,2}):(\d{2})\s*([ap]\.?m\.?)?", s, re.I)
-        if not m:
-            return None
-        mo, d, y, h, mi, ap = m.groups()
-        mon = MONTHS.get(mo[:3].lower())
+        m = re.search(r"(\d{1,2})\s+([A-Za-z]{3,9})\s+(\d{4})\D+?(\d{1,2}):(\d{2})\s*([ap]\.?m\.?)?", s, re.I)
+        if m:
+            d, mo, y, h, mi, ap = m.groups()
+            mon = MONTHS.get(mo[:3].lower())
+            second = 0
+        else:
+            m = re.search(r"([A-Za-z]{3,9})\s+(\d{1,2}),?\s+(\d{4})\D+?(\d{1,2}):(\d{2})\s*([ap]\.?m\.?)?", s, re.I)
+            if not m:
+                return None
+            mo, d, y, h, mi, ap = m.groups()
+            mon = MONTHS.get(mo[:3].lower())
+            second = 0
     if not mon:
         return None
     h, mi = int(h), int(mi)
@@ -52,7 +59,7 @@ def printed(stamp):
         h += 12
     if ap and ap.lower().startswith("a") and h == 12:
         h = 0
-    return datetime(int(y), mon, int(d), h, mi)
+    return datetime(int(y), mon, int(d), h, mi, int(second or 0))
 
 
 def offset_of(stamp):

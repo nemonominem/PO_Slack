@@ -3356,21 +3356,23 @@
       "date": "2020-02-08",
       "raw_date": "February 8, 2020",
       "sender": "Robert Garry",
-      "time": null,
+      "time": "08:09",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
       "content": ", o they really want to publish first in Chinese?Any change of getting Nature/Jeremy involved with the Southern Ag University woho have the 99% pangolin sequence? Offer them a Nature paper\n(heck. offer them the cover) in exchange for the sequence. We'll review and\"help” them edit. the put thewhite paper up as an editorial. D\nSorry keep hitting return\nDo they really want to publish first in Chinese? Any chance of getting Nature/Jeremy involved with the Southern Ag University with the 99% pangolin sequence? Offer them a Nature paper (hell,\noffer them the cover) in exchange for the sequence. We'll review and\"help” them edit, the put the white paper up as an editorial. I",
       "redacted": false,
-      "idx": 245
+      "idx": 245,
+      "stamp_line": "08:09 ET",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed"
     },
     {
-      "stamp_line": "05:20 ET",
+      "stamp_line": "08:30 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-08",
       "raw_date": "February 8, 2020",
       "sender": "Andrew Rambaut",
-      "time": "05:20",
+      "time": "08:30",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -3382,13 +3384,15 @@
       "date": "2020-02-08",
       "raw_date": "February 8, 2020",
       "sender": "Robert Garry",
-      "time": null,
+      "time": "08:43",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
       "content": "4. Id say the existance of the glycans is pretty strong evidence of evolution in the presence of an immune system. I don’t think it is random chance since the glycans appear in other betacoronaviruses\nthat \"evolve\" a furin site, eg MHV and HKU1. MHV and HKU1 also simultaneously evolve a variable and sometimes large patch of O-linked glycans at the top of the prefusicn (virion) form of the\nspike. Seems pretty clear this is immune based selection all around to me.\nYes serial passage in animals would do the same thing. There are a couple passage of HSN11 in chicken papers - the furin site appears in steps.\nHopefully the pangolin 999 CoV shows up with a furin site » if not as Andrew said passage becomes more likely.\nIf this is going high profile we need to add a few things.\nAdiagram outlining the three scenarios with cartoons of bats and pangolins. Don't make the cell culture passage scientist look asian (but maybe resemble an Ego guy). Could even have a\nbioweapon scenario with a big X.\nMaybe some sort of diagram of the overall spike model - Kristian made a pdb, and so did I so can do this pointingg out the furin site and o glycan if this sounds like a possibility.",
       "redacted": false,
-      "idx": 247
+      "idx": 247,
+      "stamp_line": "08:43 ET",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed"
     },
     {
       "stamp_line": "08:51 ET",
@@ -3574,25 +3578,29 @@
       "date": "2020-02-08",
       "raw_date": "February 8, 2020",
       "sender": "Robert Garry",
-      "time": null,
+      "time": "14:47",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
       "content": "Comments - as predicted - by Ron Fouchier up on the email.",
       "redacted": false,
-      "idx": 261
+      "idx": 261,
+      "stamp_line": "14:47 ET",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed"
     },
     {
       "date": "2020-02-08",
       "raw_date": "February 8, 2020",
       "sender": "Eddie Holmes",
-      "time": null,
+      "time": "15:32",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
       "content": "Crap comments...basically just saying it can't be true. LETTE,",
       "redacted": false,
-      "idx": 262
+      "idx": 262,
+      "stamp_line": "15:32 ET",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed"
     },
     {
       "stamp_line": "15:43 ET",
@@ -3623,12 +3631,12 @@
       "idx": 264
     },
     {
-      "stamp_line": "15:59 ET",
+      "stamp_line": "15:53 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-08",
       "raw_date": "February 8, 2020",
       "sender": "Kristian Andersen",
-      "time": "15:59",
+      "time": "15:53",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -3682,25 +3690,29 @@
       "date": "2020-02-08",
       "raw_date": "February 8, 2020",
       "sender": "Kristian Andersen",
-      "time": null,
+      "time": "16:21",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
       "content": "We should all just stay on Slack, that's what we should do - and not use email 2. Check my other email... I definitely think we should move towards publication and create a separate document\nfocused on that, but I think it’s too early at the moment.\nBtw - very strong comments from A+E here - it's unbelievable how conflicted Ron is,",
       "redacted": false,
-      "idx": 269
+      "idx": 269,
+      "stamp_line": "16:21 ET",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed"
     },
     {
       "date": "2020-02-08",
       "raw_date": "February 8, 2020",
       "sender": "Robert Garry",
-      "time": null,
+      "time": "16:30",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
       "content": "= We now have (and we will get more) the pangolin data (Eddie has! we think we can tie this up even tighter with the next iteration and make SSRGUSiWEStatement Which Willthen be thegoty\nscientific statement to refer to.\nEddie and I have just come off a call with the National Academy of Medicine in the US - who the White House has asked to produce a report on this...\nMovirg fast - don't think we should necessarily wait on the NAM to get something out there if pango99 sec is available.",
       "redacted": false,
-      "idx": 270
+      "idx": 270,
+      "stamp_line": "16:30 ET",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed"
     },
     {
       "stamp_line": "16:40 ET",
@@ -5118,12 +5130,12 @@
       "idx": 375
     },
     {
-      "stamp_line": "18:21 ET",
+      "stamp_line": "18:18 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-11",
       "raw_date": "February 11, 2020",
       "sender": "Andrew Rambaut",
-      "time": "18:21",
+      "time": "18:18",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -5132,12 +5144,12 @@
       "idx": 376
     },
     {
-      "stamp_line": "18:22 ET",
+      "stamp_line": "18:20 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-11",
       "raw_date": "February 11, 2020",
       "sender": "Robert Garry",
-      "time": "18:22",
+      "time": "18:20",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -5146,12 +5158,12 @@
       "idx": 377
     },
     {
-      "stamp_line": "16:21 ET",
+      "stamp_line": "18:21 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-11",
       "raw_date": "February 11, 2020",
       "sender": "Andrew Rambaut",
-      "time": "16:21",
+      "time": "18:21",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -5163,13 +5175,15 @@
       "date": "2020-02-11",
       "raw_date": "February 11, 2020",
       "sender": "Robert Garry",
-      "time": null,
+      "time": "18:22",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
       "content": "a: MERS-CoV another one that should be looked at for dN/dS.",
       "redacted": false,
-      "idx": 379
+      "idx": 379,
+      "stamp_line": "18:22 ET",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed"
     },
     {
       "stamp_line": "19:45 ET",
@@ -9875,13 +9889,15 @@
       "date": "2020-02-24",
       "raw_date": "February 24, 2020",
       "sender": "Robert Garry",
-      "time": null,
+      "time": "14:44",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
       "content": "Holy crap - that’s amazing. j",
       "redacted": false,
-      "idx": 727
+      "idx": 727,
+      "stamp_line": "14:44 ET",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed"
     },
     {
       "stamp_line": "14:45 ET",

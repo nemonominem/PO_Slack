@@ -2,12 +2,11 @@
 """Apply hand-verified time corrections (verified_overrides.json).
 
 Each override names an entry by thread_key, gives the printed stamp as read from
-the page image, and the zone it is on, with the evidence. Optional fields: body (text
-the OCR lost), sender (corrected label), reply_to (thread_key of the message it answers). Used only for cases
-settled by the page itself (for example OCR dropped a time, and the page or the
-message text fixes the zone). The thread_key is left unchanged: it is an
-identifier, and bookmarks and chapter links use it. Run after anchor_copies.py
-and before dedupe_same_instant.py.
+the page image, and the zone it is on, with the evidence. Optional fields include
+body, sender, reply_to, clear_reply_to, time_unresolved, and new_thread_key.
+Rekeying updates reply references; unresolved quoted clocks keep their documented
+date without inventing a normalized time. Run after anchor_copies.py and before
+dedupe_same_instant.py.
 """
 import json
 import os
@@ -44,6 +43,63 @@ def drop_backwards_inferred_links(entries):
                                     if (r.get("key") if isinstance(r, dict) else r) != e.get("thread_key")]
 
 
+def entry_label(entry):
+    time = entry.get("time")
+    when = "%s %s:%s" % (entry.get("date"), time[:2], time[2:]) if time else "%s time unresolved" % entry.get("date")
+    return "%s · %s" % (when, entry.get("sender") or "")
+
+
+def rekey_entry(entries, by_key, entry, new_key):
+    old_key = entry.get("thread_key")
+    if not new_key or new_key == old_key:
+        return
+    if new_key in by_key and by_key[new_key] is not entry:
+        raise ValueError("Duplicate thread key: %s" % new_key)
+    entry["thread_key"] = new_key
+    by_key.pop(old_key, None)
+    by_key[new_key] = entry
+    for candidate in entries:
+        if candidate.get("reply_to") == old_key:
+            candidate["reply_to"] = new_key
+            candidate["reply_to_label"] = entry_label(entry)
+        for reply in candidate.get("replied_by") or []:
+            key = reply.get("key") if isinstance(reply, dict) else reply
+            if key == old_key and isinstance(reply, dict):
+                reply["key"] = new_key
+
+
+def refresh_relationship_labels(entries, changed_entries):
+    by_key = {e.get("thread_key"): e for e in entries}
+    for entry in entries:
+        parent = by_key.get(entry.get("reply_to"))
+        if parent is not None and id(parent) in changed_entries and "reply_to_label" in entry:
+            entry["reply_to_label"] = entry_label(parent)
+        for reply in entry.get("replied_by") or []:
+            key = reply.get("key") if isinstance(reply, dict) else reply
+            child = by_key.get(key)
+            if child is not None and id(child) in changed_entries and isinstance(reply, dict):
+                reply["label"] = entry_label(child)
+
+
+def set_reply_relationship(by_key, entry, parent):
+    parent_key = parent["thread_key"]
+    old_parent_key = entry.get("reply_to")
+    if old_parent_key != parent_key:
+        old_parent = by_key.get(old_parent_key)
+        if old_parent is not None:
+            old_parent["replied_by"] = [
+                r for r in (old_parent.get("replied_by") or [])
+                if (r.get("key") if isinstance(r, dict) else r) != entry["thread_key"]
+            ]
+        entry["reply_to"] = parent_key
+        entry["reply_to_label"] = entry_label(parent)
+    entry["link_kind"] = "explicit (quoted inline)"
+    parent.setdefault("replied_by", [])
+    if not any((r.get("key") if isinstance(r, dict) else r) == entry["thread_key"]
+               for r in parent["replied_by"]):
+        parent["replied_by"].append({"key": entry["thread_key"], "label": entry_label(entry)})
+
+
 def main():
     ov = json.load(open(OVERRIDES, encoding="utf-8"))
     by_file = {}
@@ -54,26 +110,50 @@ def main():
         raw = json.load(open(path, encoding="utf-8"))
         entries = raw["entries"] if isinstance(raw, dict) and "entries" in raw else raw
         by_key = {e.get("thread_key"): e for e in entries}
+        changed_entries = set()
         for item in items:
             e = by_key.get(item["thread_key"])
             if e is None:
+                e = next((by_key.get(key) for key in item.get("lookup_thread_keys", [])
+                          if by_key.get(key) is not None), None)
+            if e is None:
                 print("override target not found:", item["thread_key"])
                 continue
-            p = o.printed(item["stamp"])
-            if p is None:
-                print("cannot read stamp:", item["stamp"])
-                continue
-            et = p.replace(tzinfo=ZoneInfo(item["zone"])).astimezone(ZoneInfo("America/New_York"))
-            old = (e.get("date"), e.get("time"))
-            e["date"], e["time"] = et.strftime("%Y-%m-%d"), et.strftime("%H%M")
-            e["stamp"] = item["stamp"]
-            e["stamp_status"] = "long"
-            e["zone_assumed"] = "verified from the page image: " + item["evidence"][:140]
-            e["raw_date"] = "%s:%s ET · %s" % (e["time"][:2], e["time"][2:], e.get("subject") or "")
-            e["stamp_line"] = "%s -> %s:%s ET (verified override)" % (item["stamp"], e["time"][:2], e["time"][2:])
+            previous_label = entry_label(e)
+            previous_key = e.get("thread_key")
+            previous_time = (e.get("date"), e.get("time"))
+            if item.get("time_unresolved"):
+                e["date"] = item.get("date", e.get("date"))
+                e["time"] = None
+                e["stamp"] = item["stamp"]
+                e["stamp_status"] = "long"
+                e["zone_assumed"] = "UNRESOLVED: " + item["evidence"][:140]
+                e["raw_date"] = item.get("raw_date") or "4:16 PM · time zone unresolved · %s" % (e.get("subject") or "")
+                e["stamp_line"] = item.get("stamp_line") or item["stamp"] + " (time zone unresolved)"
+            elif item.get("stamp"):
+                p = o.printed(item["stamp"])
+                if p is None:
+                    print("cannot read stamp:", item["stamp"])
+                    continue
+                et = p.replace(tzinfo=ZoneInfo(item["zone"])).astimezone(ZoneInfo("America/New_York"))
+                e["date"], e["time"] = et.strftime("%Y-%m-%d"), et.strftime("%H%M")
+                e["stamp"] = item["stamp"]
+                e["stamp_status"] = "long"
+                certainty = item.get("certainty", "verified")
+                prefix = "supported from the page image and matching source copy: " if certainty == "supported" else "verified from the page image: "
+                e["zone_assumed"] = prefix + item["evidence"][:140]
+                e["raw_date"] = "%s:%s ET · %s" % (e["time"][:2], e["time"][2:], e.get("subject") or "")
+                e["stamp_line"] = item.get("stamp_line") or "%s -> %s:%s ET (verified override)" % (item["stamp"], e["time"][:2], e["time"][2:])
             e["verified_override"] = item["evidence"]
+            rekey_entry(entries, by_key, e, item.get("new_thread_key"))
+            if item.get("thread_label"):
+                e["thread_label"] = item["thread_label"]
+            elif e.get("thread_key") != item["thread_key"]:
+                e["thread_label"] = entry_label(e)
             hdr, sep, rest = (e.get("content") or "").partition("----------")
-            if sep:   # the header's Sent/Date line was cut by OCR: write the stamp read from the page
+            if (sep and item.get("stamp") and not item.get("time_unresolved")
+                    and not re.search(r"(?m)^(Sent|Date):", hdr)):
+                # Restore a source stamp only when OCR omitted its header line.
                 hdr = re.sub(r"(?m)^(Sent|Date):.*$", "", hdr).rstrip() + "\n\nSent: " + item["stamp"] + "\n\n"
                 e["content"] = hdr + sep + rest
             if item.get("body") is not None:   # body text OCR lost, typed from the page image
@@ -82,20 +162,27 @@ def main():
             if item.get("sender"):
                 e["sender"] = item["sender"]
                 e["content"] = re.sub(r"(?m)^From:.*$", "From: " + item["sender"], e.get("content") or "", count=1)
+                if e.get("thread_key") != item["thread_key"] and not item.get("thread_label"):
+                    e["thread_label"] = entry_label(e)
+            if item.get("sender_how"):
+                e["sender_how"] = item["sender_how"]
+            if item.get("clear_reply_to") and e.get("reply_to"):
+                old_parent = by_key.get(e["reply_to"])
+                if old_parent is not None:
+                    old_parent["replied_by"] = [r for r in (old_parent.get("replied_by") or [])
+                                                if (r.get("key") if isinstance(r, dict) else r) != e["thread_key"]]
+                for key in ("reply_to", "reply_to_label", "link_kind"):
+                    e.pop(key, None)
             if item.get("reply_to"):
                 parent = by_key.get(item["reply_to"])
                 if parent is not None:
-                    old = by_key.get(e.get("reply_to"))    # leave the old parent's reply list
-                    if old is not None:
-                        old["replied_by"] = [r for r in (old.get("replied_by") or [])
-                                             if (r.get("key") if isinstance(r, dict) else r) != e["thread_key"]]
-                    e["reply_to"] = parent["thread_key"]
-                    e["reply_to_label"] = "%s %s:%s · %s" % (parent["date"], parent["time"][:2], parent["time"][2:], parent.get("sender") or "")
-                    e["link_kind"] = "explicit (quoted inline)"
-                    parent.setdefault("replied_by", [])
-                    if not any((r.get("key") if isinstance(r, dict) else r) == e["thread_key"] for r in parent["replied_by"]):
-                        parent["replied_by"].append({"key": e["thread_key"], "label": "%s %s:%s · %s" % (e["date"], e["time"][:2], e["time"][2:], e.get("sender") or "")})
-            print("verified:", name, e.get("idx"), old, "->", (e["date"], e["time"]))
+                    set_reply_relationship(by_key, e, parent)
+            if item.get("link_kind"):
+                e["link_kind"] = item["link_kind"]
+            if entry_label(e) != previous_label or e.get("thread_key") != previous_key:
+                changed_entries.add(id(e))
+            print("verified:", name, e.get("idx"), previous_time, "->", (e["date"], e["time"]))
+        refresh_relationship_labels(entries, changed_entries)
         drop_backwards_inferred_links(entries)
         if isinstance(raw, dict) and "entries" in raw:
             raw["entries"] = entries
