@@ -6,6 +6,11 @@ The app's current generated-data inventory is 13,087 timeline entries across
 five sources. The guide indexes 221 article sections and 322 citations; the
 Complementary view currently has 11 trimmed PDFs.
 
+The current actionable source questions and open non-datetime items are
+listed in [`analysis/chronology/FOR_HUMAN_REVIEWER.md`](analysis/chronology/FOR_HUMAN_REVIEWER.md);
+the detailed chronology evidence is in
+[`analysis/chronology/ZONE_AND_DATE_ANALYSIS.md`](analysis/chronology/ZONE_AND_DATE_ANALYSIS.md).
+
 The Part 1 Medium article reordering and chronology corrections have been
 applied by the user. Cross-references and Part 2 edits for §§14.4, 15.2 and
 15.3 were still in progress at the last report; the live Medium article has

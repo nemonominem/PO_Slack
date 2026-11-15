@@ -8,7 +8,8 @@ ancestor of `po-sources-and-boxes` at `c0f6933`; the data still has residual
 errors described below.
 Internal; not published. This file is only about getting the dates and
 times right and about what is wrong in the P.O. piece and the web app because of them. Every
-instruction and decision for you is in `FOR_HUMAN_REVIEWER.md`.
+current questions needing review are listed in `FOR_HUMAN_REVIEWER.md`; this
+file preserves the detailed evidence, method, and historical audit context.
 
 **How entries are named.** Use PDF file and pages, the date and time exactly as
 printed in the header, the sender, and the subject; the February 8 audit also
@@ -40,10 +41,10 @@ backed by evidence. `zone_format_audit.csv` marks each email `Settled`.
 |---|---|---|---|
 | Zone written in the stamp (`+0000`, `UTC+11:00`, `AEDT`, `EST`) | 53 (45 Farrar-Fauci, 8 P.O. emails) | as written | The stamp |
 | Exact copy with an explicit offset | 1 | from the copy | `po-emails.pdf` pp.1-2, “Jan 31, 2020 4:38 PM”, Fauci, Anthony, “[NA]” equals the Farrar-Fauci copy `farrar-fauci-comms.pdf` p.154, “Sat, 1 Feb 2020 00:38:35 +0000”, Anthony Fauci, “RE: Phone call” |
-| Verified from the page image or the message text | 24 | per entry (Eastern, London, Pacific, Amsterdam, Berlin, Santiago) | 4 corrections in 1.1; 8 headers that were undated, read from the page images; 2 corrected from the message text (Gao and Dzau, 25 Apr 2020); Folkers 8:43 PM; and the 22:34 reply (list in FOR_HUMAN_REVIEWER.md, S3) |
+| Verified from the page image or the message text | 24 | per entry (Eastern, London, Pacific, Amsterdam, Berlin, Santiago) | 4 corrections in 1.1; 8 headers that were undated, read from the page images; 2 corrected from the message text (Gao and Dzau, 25 Apr 2020); Folkers 8:43 PM; and the 22:34 reply |
 | Page owner **REV**, top-level stamps only (P.O. emails) | 45 | Pacific | Section 1.2. The 95 other REV-page entries are quoted blocks, which now take the quoting author's clock (Supported) |
 
-## 1.1 The verified corrections (25 entries; first four, then the others in FOR_HUMAN_REVIEWER.md S3)
+## 1.1 The verified corrections (25 entries)
 
 - `po-emails.pdf` p.2, “Friday, January 31, 2020 5:57 PM”, Jeremy Farrar, “Re: Phone call”: quoted in Fauci's reply, so on Fauci's Eastern clock. The same message appears in the
   Farrar-Fauci release as `farrar-fauci-comms.pdf` pp.154-155, “Friday, January 31, 2020 5:57 PM”, Jeremy Farrar, “Re: Phone call”, inside Fauci's reply stamped `00:38:35 +0000`: also a verified correction.
@@ -142,13 +143,18 @@ is simply too early; the Farrar message `farrar-fauci-comms.pdf` pp.154-155, “
 
 ## 2.2 Not settled (0 emails)
 
+This count and the table below describe the earlier 2026-11-05 classification,
+not the current set of reviewer questions. The February 8 re-audit later
+identified unresolved source-time questions and app-data defects; see Part 3
+and the current-only list in `FOR_HUMAN_REVIEWER.md`.
+
 None. The last one (Harris pp.42-43) was cleared on 2026-11-02 when the lookup learned who quotes it: Ilona Kickbusch (Geneva), whose name the OCR had read as “ee” (a redaction code).
 
 | Historical category | Emails | Zone used | Notes |
 |---|---|---|---|
-| Sender, small groups (`FOR_HUMAN_REVIEWER.md`, U11) | 1 | by sender | Harris `farrar-fauci-comms.pdf` pp.42-43, “Freitag, 6. Marz 2020 11:56”, is quoted in a message whose author the lookup does not know (the OCR gives the name as “ee”) |
-| Sender, small groups (`FOR_HUMAN_REVIEWER.md`, U11, U18, U19) | 3 | by sender | U11, U18 and U19 are quoted in messages whose authors the lookup does not know (the OCR gives one as “ee”, the others are Kimberly Barasch and Teresa Miller de Vega) |
-| Sender, small groups (list in `FOR_HUMAN_REVIEWER.md`, items U5 to U14) | 10 | by sender | No quote rule possible: 5 are not quoted by anything, 5 only by an inferred link (which proves no quote); each has one to four linked replies to test. One of them, Esveld p.43, is a separate question (item U5): London (mailbox clock) or Amsterdam |
+| Sender, small groups (historical reviewer item U11) | 1 | by sender | Harris `farrar-fauci-comms.pdf` pp.42-43, “Freitag, 6. Marz 2020 11:56”, is quoted in a message whose author the lookup does not know (the OCR gives the name as “ee”); this former-U item was subsequently cleared |
+| Sender, small groups (historical reviewer items U11, U18, U19) | 3 | by sender | These former-U items concerned quoted messages whose authors were unclear in the OCR; the entries are now classified in the broader audit and are not active reviewer questions |
+| Sender, small groups (historical reviewer items U5 to U14) | 10 | by sender | These former-U items concerned unquoted or inferred-link messages; they are retained as historical audit context, not current reviewer questions |
 
 ---
 
@@ -303,13 +309,13 @@ app status is updated in Part 3.1.
 `slack-part1.pdf` p.4, Andersen, 22:42, was dated 2 Feb; it is the evening of 1 Feb (the day divider had been applied one message too early). Corrected through `tools/slack_date_fixes.json`.
 
 ## A3. Slack Part 1: times run backwards (80 at first, 3 after the readings of 2026-11-03/05): 6 of the 12 evening-then-small-hours cases fixed
-Of the 12 cases where an evening message is followed by a small-hours message on the same date, **6 are the same fault as A2** (a single evening message whose date is one day too late, because the divider was applied one message early). In each, the previous timed message belongs to the previous day with an earlier time, and the next one is a small-hours message of the day. Checked on the page image for `slack-part1.pdf` p.9 (the “February 3rd” divider sits below the 22:35 message). Fixed: p.9 (22:35, 2 Feb), p.16 (20:11, 5 Feb), p.21 (19:11, 7 Feb), p.35 (19:45, 11 Feb), p.39 (22:26, 12 Feb), p.134 (23:56, 20 Apr). The other 6 are not that pattern (the evening run is long and contiguous with the same date, or the dates jump: p.60, 22 Feb vs 24 Feb); on the page image of p.19 the times rise steadily, so the “01:49” is a misread digit. They stay in `slack_part1_time_check.csv`, together with the other backwards times, as probable misread digits. Update 2026-11-04: the reviewer's six readings and 59 labels from an external OCR pass (`tools/slack_time_fixes.json`) and 26 more from its STATUS file and 10 more readings by the reviewer (2026-11-05) leave 3 backwards pairs; see FOR_HUMAN_REVIEWER U17.
+Of the 12 cases where an evening message is followed by a small-hours message on the same date, **6 are the same fault as A2** (a single evening message whose date is one day too late, because the divider was applied one message early). In each, the previous timed message belongs to the previous day with an earlier time, and the next one is a small-hours message of the day. Checked on the page image for `slack-part1.pdf` p.9 (the “February 3rd” divider sits below the 22:35 message). Fixed: p.9 (22:35, 2 Feb), p.16 (20:11, 5 Feb), p.21 (19:11, 7 Feb), p.35 (19:45, 11 Feb), p.39 (22:26, 12 Feb), p.134 (23:56, 20 Apr). The other 6 are not that pattern (the evening run is long and contiguous with the same date, or the dates jump: p.60, 22 Feb vs 24 Feb); on the page image of p.19 the times rise steadily, so the “01:49” is a misread digit. They stay in `slack_part1_time_check.csv`, together with the other backwards times, as probable misread digits. Update 2026-11-04: the reviewer's six readings and 59 labels from an external OCR pass (`tools/slack_time_fixes.json`) and 26 more from its STATUS file and 10 more readings by the reviewer (2026-11-05) leave 3 backwards pairs; see current checks in `FOR_HUMAN_REVIEWER.md` U4.
 
 ## A4. Slack times carry no zone: done
 Slack Part 2 (Pacific) is converted to ET, Part 1 (Eastern) is labelled ET; both show the printed local time in the 🕑 chip.
 
 ## A5. Chapter link for section 4.11: open
-The article caption “Farrar proposes a way out via the WHO (1 Feb, 3:59 pm EST)” is linked to Fauci's `farrar-fauci-comms.pdf` p.137, “Saturday, 1 February 2020 at 15:50”, “RE: Teleconference” (“Please include Francis Collins…”), which is not about the WHO. The Farrar message that proposes WHO contact is `farrar-fauci-comms.pdf` p.108, “Sunday, February 2, 2020 4:48 AM” (now 23:48 ET on 1 Feb). Neither is at 3:59 pm Eastern, so the link is probably wrong and the caption time may be off too. Needs your decision (FOR_HUMAN_REVIEWER.md, O1).
+The article caption “Farrar proposes a way out via the WHO (1 Feb, 3:59 pm EST)” is linked to Fauci's `farrar-fauci-comms.pdf` p.137, “Saturday, 1 February 2020 at 15:50”, “RE: Teleconference” (“Please include Francis Collins…”), which is not about the WHO. The Farrar message that proposes WHO contact is `farrar-fauci-comms.pdf` p.108, “Sunday, February 2, 2020 4:48 AM” (now 23:48 ET on 1 Feb). Neither is at 3:59 pm Eastern, so the link is probably wrong and the caption time may be off too. Needs your decision (current reviewer item O1).
 
 ## A6. Farrar's original “Phone call” body: fixed
 `po-emails.pdf` pp.3-4, “Friday, January 31, 2020 5:23 PM”: the body (“Tony / Really would like to speak with you this evening / It is 10pm now UK / Can you phone me on +44 … / Jeremy”) is typed from the page image into the override. The header's Sent line, cut by OCR, is also restored.
@@ -504,7 +510,7 @@ On 2026-11-01 the reviewer gave three facts, now in the lookup: **Jeremy Farrar:
 five hours (one by 9 hours: Andersen, 8 Feb 22:15, quoted by Koopmans, now 16:15 ET); reply order still allows only the current clock for every group;
 app tests 8 PASS, audit 66/66. Fouchier and Koopmans now have their own group (`Erasmus MC, Netherlands`, 5 linked pairs, only shift 0 allowed) and Farrar his own
 (`Jeremy Farrar, Wellcome Trust (London)`, 41 pairs, only shift 0 allowed), so the small London senders are not given Farrar's pairs as support.
-Dzau is not in the lookup; his two stamps are verified from the message text (FOR_HUMAN_REVIEWER.md, S3).
+Dzau is not in the lookup; his two stamps are verified from the message text (see Part 1.1).
 
 ## 5.10 Physical nesting = quote (2026-11-02, reviewer's decision)
 
