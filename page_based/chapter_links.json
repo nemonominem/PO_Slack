@@ -43,14 +43,14 @@
  ],
  "po-emails/po-emails|2020-02-08|1627": [
   {
-   "id": "p2-14.4",
-   "number": "14.4",
-   "title": "Call between Farrar, Holmes and Dzau (8 Feb, 9.27 pm UK)"
-  },
-  {
    "id": "p1-13.11",
    "number": "13.11",
    "title": "The Boss: Farrar cuts the discussions short and confirms his decision to go for publication (8 Feb, 9:27 pm UK)"
+  },
+  {
+   "id": "p2-14.4",
+   "number": "14.4",
+   "title": "Call between Farrar, Holmes and Dzau (8 Feb, around 9 pm UK)"
   }
  ],
  "farrar-fauci/farrar-fauci|2020-02-07|1005": [
@@ -58,13 +58,6 @@
    "id": "p2-14.1",
    "number": "14.1",
    "title": "Farrar contact Dzau (NASEM) to share notes (7 Feb, 3:06 pm UK)"
-  }
- ],
- "part1/271": [
-  {
-   "id": "p2-14.4",
-   "number": "14.4",
-   "title": "Call between Farrar, Holmes and Dzau (8 Feb, 9.27 pm UK)"
   }
  ],
  "part1/272": [
@@ -358,6 +351,13 @@
    "id": "p1-13.9",
    "number": "13.9",
    "title": "On Slack: the co-authors discuss Fouchier (8 Feb, 7:47 pm to 8:53 pm UK)"
+  }
+ ],
+ "part1/271": [
+  {
+   "id": "p2-14.4",
+   "number": "14.4",
+   "title": "Call between Farrar, Holmes and Dzau (8 Feb, around 9 pm UK)"
   }
  ]
 }

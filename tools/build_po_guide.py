@@ -540,6 +540,7 @@ def write_sources_md(guide, path):
 
 SUMMARIES_PATH = os.path.join(HERE, "guide_summaries.json")
 LIVE_HEADINGS_PATH = os.path.join(HERE, "live_part1_chapter_headings.json")
+HEADING_OVERRIDES_PATH = os.path.join(HERE, "guide_heading_overrides.json")
 
 
 def apply_live_chapter_headings(all_sections):
@@ -639,6 +640,22 @@ def apply_live_chapter_headings(all_sections):
         matches[0]["chapter_link_exclusion"] = exclusion["reason"]
 
 
+def apply_guide_heading_overrides(all_sections):
+    if not os.path.exists(HEADING_OVERRIDES_PATH):
+        return
+    with open(HEADING_OVERRIDES_PATH, encoding="utf-8") as f:
+        overrides = json.load(f)
+    for override in overrides.get("sections", []):
+        matches = [sec for sec in all_sections if sec["id"] == override["id"]]
+        if len(matches) != 1:
+            raise ValueError(
+                "expected one section for heading override %r, found %d" % (
+                    override["id"], len(matches)))
+        section = matches[0]
+        section["title"] = override["title"]
+        section["heading"] = "%s %s" % (section["number"], override["title"])
+
+
 def attach_summaries(all_sections):
     """Merge hand-written 1-2 sentence summaries (guide_summaries.json) onto
     their section.
@@ -700,6 +717,7 @@ def main():
         print("WARNING: missing article files:\n  " + "\n  ".join(missing), file=sys.stderr)
 
     apply_live_chapter_headings(all_sections)
+    apply_guide_heading_overrides(all_sections)
     attach_summaries(all_sections)
 
     doc_urls = build_doc_urls(all_lines, footnotes)

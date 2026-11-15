@@ -46,6 +46,9 @@ After a rebuild, check: no dangling or one-sided reply links, no reply before it
   `page_based/live_part1_chapter_headings.json` keeps §13 labels aligned with
   the live Medium ordering when the available markdown export lags; its
   source-audited citations are retained while those headings are regenerated.
+  `page_based/guide_heading_overrides.json` records app-only heading corrections
+  and explicit chapter links when the available article markdown does not
+  reflect verified wording.
 - `audit_app.py`, `slack_notice.py`: utilities; not part of the email rebuild.
 - `cross_release_check.py`: tests that a message quoted in one release is not later than the message that quotes it in the other; writes `analysis/cross_release_check.csv`. Changes no data.
 - `freeze_bracket_check.py`: freeze-rule and bracketing check on the P.O. emails; writes `analysis/freeze_bracket_check.csv` and prints a summary. Changes no data.

@@ -711,6 +711,7 @@ const poEntry = idx => app.diaryData.entries.find(e => e.source === 'po-emails' 
 const chapterLinks = JSON.parse(fs.readFileSync(path.join(HERE, 'chapter_links.json'), 'utf8'));
 const articlePageMap = JSON.parse(fs.readFileSync(path.join(HERE, 'article_page_map.json'), 'utf8'));
 const liveHeadings = JSON.parse(fs.readFileSync(path.join(HERE, 'live_part1_chapter_headings.json'), 'utf8'));
+const guideHeadingOverrides = JSON.parse(fs.readFileSync(path.join(HERE, 'guide_heading_overrides.json'), 'utf8'));
 const guideSection = id => guideResp.sections.find(s => s.id === id);
 const entry83 = poEntry(83), entry84 = poEntry(84), entry85 = poEntry(85);
 const entry86 = poEntry(86), entry91 = poEntry(91), entry92 = poEntry(92);
@@ -788,6 +789,12 @@ const live13 = guideResp.sections.filter(s => s.part === 'p1' && /^13\.\d+$/.tes
 ok('Part 1 §13 headings match the current live Medium order',
    live13.length === liveHeadings.sections.length &&
    liveHeadings.sections.every((h, i) => live13[i]?.heading === h.heading));
+const section144 = guideSection('p2-14.4');
+const section144Override = guideHeadingOverrides.sections.find(s => s.id === 'p2-14.4');
+ok('Part 2 §14.4 uses the qualified call time without changing its source timestamp',
+   section144?.title === section144Override?.title &&
+   section144.heading === `14.4 ${section144Override.title}` &&
+   section144.evidence.some(e => e.raw.includes('9:27 pm UK')));
 ok('Part 1 §13 sections map to their live article PDF pages',
    articlePageMap['p1-13.2'] === 150 &&
    articlePageMap['p1-13.3'] === 150 &&
@@ -853,6 +860,13 @@ ok('Part 2 §15.2 links to Koopmans, while Ferguson is linked to §13.14',
    chapterLinks['po-emails/po-emails|2020-02-09|1507']?.some(s => s.id === 'p2-15.2') &&
    !chapterLinks['po-emails/po-emails|2020-02-09|1500']?.some(s => s.id === 'p2-15.2') &&
    chapterLinks['po-emails/po-emails|2020-02-09|1500']?.some(s => s.id === 'p1-13.14'));
+ok('Part 2 §14.4 chapter links use the qualified title',
+   ['po-emails/po-emails|2020-02-08|1627', 'part1/271'].every(key =>
+     chapterLinks[key]?.some(s => s.id === 'p2-14.4' &&
+       s.title === section144Override?.title)) &&
+   Object.entries(chapterLinks).filter(([, refs]) =>
+     refs.some(s => s.id === 'p2-14.4')).map(([key]) => key).sort().join(',') ===
+     ['part1/271', 'po-emails/po-emails|2020-02-08|1627'].sort().join(','));
 
 
 sec('Stacked timeline (one segment per kind, release sub-totals)');

@@ -35,6 +35,7 @@ from zoneinfo import ZoneInfo
 HERE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "page_based")
 ANALYSIS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "analysis")
 LIVE_HEADINGS = os.path.join(HERE, "live_part1_chapter_headings.json")
+GUIDE_HEADING_OVERRIDES = os.path.join(HERE, "guide_heading_overrides.json")
 TOLERANCE_MIN = 10
 
 SOURCE_FILES = {
@@ -200,21 +201,28 @@ def main():
                 links[key].append(entry_ref)
             counts["linked"] += 1
 
-    if os.path.exists(LIVE_HEADINGS):
-        with open(LIVE_HEADINGS, encoding="utf-8") as f:
+    sections_by_id = {sec["id"]: sec for sec in guide.get("sections", [])}
+    available_keys = {
+        bm_key(src, entry)
+        for src, pool in entries.items()
+        for entry in pool
+    }
+    for overrides_path in (LIVE_HEADINGS, GUIDE_HEADING_OVERRIDES):
+        if not os.path.exists(overrides_path):
+            continue
+        with open(overrides_path, encoding="utf-8") as f:
             overrides = json.load(f)
-        sections_by_id = {sec["id"]: sec for sec in guide.get("sections", [])}
-        available_keys = {
-            bm_key(src, entry)
-            for src, pool in entries.items()
-            for entry in pool
-        }
         for override in overrides.get("chapter_links", []):
             if args.section_prefix and not override["section"].startswith(args.section_prefix):
                 continue
             sec = sections_by_id.get(override["section"])
             if not sec:
                 raise ValueError("chapter link refers to missing section %r" % override["section"])
+            if override.get("replace"):
+                for key in list(links):
+                    links[key] = [ref for ref in links[key] if ref["id"] != sec["id"]]
+                    if not links[key]:
+                        del links[key]
             entry_ref = {
                 "id": sec["id"], "number": sec.get("number"), "title": sec.get("title")
             }
