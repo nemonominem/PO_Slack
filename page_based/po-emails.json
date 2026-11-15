@@ -2378,9 +2378,9 @@
   },
   {
    "date": "2020-02-08",
-   "time": "0950",
+   "time": "1750",
    "kind": "email",
-   "raw_date": "09:50 ET · Re: [ext] 2019 N-CoV",
+   "raw_date": "17:50 ET · Re: [ext] 2019 N-CoV",
    "sender": "R.A.M. Fouchier",
    "sender_raw": "R.A.M. Fouchier Po",
    "sender_how": "From: line",
@@ -2388,15 +2388,19 @@
    "content": "From: R.A.M. Fouchier\n\nCc: Eddie Holmes Christian Drosten kga1978| | rfgarry p.vallance1( ; collinsf( Mike Ferguscn [i\n\nSubject: Re: [ext] 2019 N-CoV\n\nSent: 2/8/2020 2:50:00 PM\n\n----------\n\nI do not understand Andrews argument “ The sequence data clearly and unambiguously rules out any form of lab construct or engineering of the virus. “. Molecular biologists like myself can generate perfect copies of viruses without leaving a trace, eg the BamHI site. The arguments for and against passaging and engineering are the same if you ask me.\nRon",
    "signature": null,
    "stamp": "2/8/2020 2:50:00 PM",
-   "stamp_status": "outlook-us",
-   "zone_assumed": "frozen in Jeremy Farrar's clock (Jeremy Farrar, Wellcome Trust (London); quoted in their message)",
-   "stamp_line": "14:50 London -> 09:50 ET",
+   "stamp_status": "long",
+   "zone_assumed": "supported from the page image and matching source copy: po-emails.pdf p.51 shows the top-level REV stamp '2/8/2020 2:50:00 PM' and identifies R.A.M. Fouchier as sender. The page is in Kristian G. ",
+   "stamp_line": "2/8/2020 2:50:00 PM Pacific -> 17:50 ET -> 22:50 UK",
    "recovered_inline": false,
    "source": "po-emails",
-   "thread_key": "po-emails|2020-02-08|0950",
-   "thread_label": "2020-02-08 09:50 · R.A.M. Fouchier",
+   "thread_key": "po-emails|2020-02-08|1750",
+   "thread_label": "2020-02-08 17:50 · R.A.M. Fouchier",
    "replied_by": [],
-   "idx": 83
+   "idx": 83,
+   "verified_override": "po-emails.pdf p.51 shows the top-level REV stamp '2/8/2020 2:50:00 PM' and identifies R.A.M. Fouchier as sender. The page is in Kristian G. Andersen's Pacific REV collection; the collection/page evidence supports Pacific time, yielding 17:50 ET / 22:50 UK.",
+   "reply_to": "po-emails|2020-02-08|time-unresolved-1916",
+   "reply_to_label": "2020-02-08 time unresolved · Andrew Rambaut",
+   "link_kind": "explicit (quoted inline)"
   },
   {
    "date": "2020-02-08",
@@ -2411,7 +2415,7 @@
    "signature": null,
    "stamp": "08 February 2020 09:45",
    "stamp_status": "long",
-   "zone_assumed": "verified from the page image: po-emails.pdf, the block 'From: Jeremy Farrar / Sent: 08 February 2020 09:45 / Subject: FW: 2019 N-CoV' is quoted inside Mike Ferguson's rep",
+   "zone_assumed": "verified from the page image: po-emails.pdf pp.57-58 show Farrar's 'Sent: 08 February 2020 09:45' forward quoted inside Ferguson's reply; the quoted block is not a top-le",
    "stamp_line": "08 February 2020 09:45 -> 04:45 ET (verified override)",
    "recovered_inline": false,
    "source": "po-emails",
@@ -2421,10 +2425,18 @@
     {
      "key": "po-emails|2020-02-08|1436",
      "label": "2020-02-08 14:36 · R.A.M. Fouchier"
+    },
+    {
+     "key": "po-emails|2020-02-08|1452",
+     "label": "2020-02-08 14:52 · Christian Drosten"
+    },
+    {
+     "key": "po-emails|2020-02-09|1500",
+     "label": "2020-02-09 15:00 · Mike Ferguson"
     }
    ],
    "idx": 84,
-   "verified_override": "po-emails.pdf pp.55-58: the 09:45 UK Farrar forward is quoted in Fouchier's top-level reply on p.55 and in Ferguson's p.57 reply (continuing on p.58). It is 04:45 ET. A near-identical 09:46 UK forward appears in the separate Farrar-Fauci copy; do not infer cross-copy response order."
+   "verified_override": "po-emails.pdf pp.57-58 show Farrar's 'Sent: 08 February 2020 09:45' forward quoted inside Ferguson's reply; the quoted block is not a top-level REV stamp. A Dutch copy inside Fouchier's p.55 reply and Drosten's German copy on farrar-fauci-comms.pdf pp.59-60 print 10:45, consistent with 09:45 UK. Vallance's reply on farrar-fauci-comms.pdf pp.61-62 quotes a near-identical 09:46 UK rendering. The checked copies do not establish whether 09:45 and 09:46 are separate sends or renderings, or their response order."
   },
   {
    "date": "2020-02-08",
@@ -2438,23 +2450,19 @@
    "content": "From: R.A.M. Fouchier\n\nTo: Jeremy Farrar Edward Holmes ; kea1978 i Andrew Rambaut rfgarry\n\nCc: P.Vallancel ; collinsf| afauci ; Josie Golding M.P.G.Koopmans F christian.drosten Mike Ferguson\n\nSubject: Re: 2019 N-CoV\n\nSent: 2/8/2020 11:36:30 AM\n\nAttachments: Summary.Feb7 RF.pdf\n\n----------\n\nlam not in favor of publishing as is. | fail to see how the last of the three discussed scenarios (passaging) does not fall under the category of “laboratory manipulation”. There is no evidence that might hint to this scenario and hence it should be put aside just like the engineering option. As far as | am aware, no laboratory has worked on passaging the pangolin-origin virus, the bat-CoV RaTG13, or another closely related virus or had access to it prior to the outbreak. That nCoV-2019 could originate from a SARS-like virus in Chinese labs can also be excluded. This information could be added after reference 10 in the manuscript, to provide further argument.\nIf we assume passaging as a possible scenario here, we must assume it is also plausible for all outbreaks from the past,\npresent and future. This manuscript would be much stronger if it focused on the likelihood of the first 2 scenarios as compared to intentional or accidental release. That would also limit the chance of new biosafety discussions that would unnecessarily obstruct future attempts of virus culturing for research and diagnostic purposes for any\n(emerging/zoonotic) virus.\n| made some additional comments in the attached pdf, also in line with Andrew’s comments.\nWith kind regards,\nRon\nVan: Jeremy Farrar\nDatum: zaterdag 8 februari 2020 om 10:45\nAan: Edward Holmes \"kgal978\nAndrew Rambaut | , rfgarryé\nCC: \"R.A.M. Fouchier\" < \"P.Vallance1(\n\"collinsfi “afauci\nJosie Golding \"M. Koopmans\" Christian Drosten\nDee Vike Ferguson\nOnderwerp: FW: 2019 N-CoV\nAPOLOGIES WITH ALL CORRECT EMAILS\nKristen, Andrew, Bob, Eddie have reworked the summary and it is attached here.\nWe are pushing to get the sequence data from the reports on the pangolins, but do not have currently, clearly that is very important to incorporate.\nInterested in your views\n- Is this reasonably balanced given the data?\n: Is there anything anyone disagrees with?\n. Is there anything more in relation to what would seem to be the two possibilities fe) Nature, Intermediate host, evolution and passage\n- Future data you may have\n- Advice on whether KA, AR, RG and EH should publish this.\nThese and other thoughts welcome in confidence.\nMessage",
    "signature": null,
    "stamp": "2/8/2020 11:36:30 AM",
-   "stamp_status": "outlook-us",
-   "zone_assumed": "Top-level header on po-emails.pdf p.55 identifies R.A.M. Fouchier and prints 2/8/2020 11:36:30 AM. REV pages are Kristian Andersen's collection (analysis/ZONE_AND_DATE_ANALYSIS.md §1.2), so the page-owner clock is Pacific; the recipient alias is not used to infer the zone.",
-   "stamp_line": "11:36:30 Los Angeles -> 14:36:30 ET -> 19:36:30 UK",
+   "stamp_status": "long",
+   "zone_assumed": "supported from the page image and matching source copy: po-emails.pdf p.55 identifies R.A.M. Fouchier as sender and prints the top-level REV stamp '2/8/2020 11:36:30 AM'. The page is in Kristian G",
+   "stamp_line": "2/8/2020 11:36:30 AM Pacific -> 14:36:30 ET -> 19:36:30 UK",
    "recovered_inline": false,
    "source": "po-emails",
    "thread_key": "po-emails|2020-02-08|1436",
    "thread_label": "2020-02-08 14:36 · R.A.M. Fouchier",
-   "replied_by": [
-    {
-     "key": "po-emails|2020-02-08|1452",
-     "label": "2020-02-08 14:52 · Christian Drosten"
-    }
-   ],
+   "replied_by": [],
    "idx": 85,
    "reply_to": "po-emails|2020-02-08|0445",
    "reply_to_label": "2020-02-08 04:45 · Jeremy Farrar",
-   "link_kind": "explicit (quoted inline)"
+   "link_kind": "explicit (quoted inline)",
+   "verified_override": "po-emails.pdf p.55 identifies R.A.M. Fouchier as sender and prints the top-level REV stamp '2/8/2020 11:36:30 AM'. The page is in Kristian G. Andersen's Pacific REV collection. Its text quotes Rambaut's argument, but the nested 4:16 PM quote clock remains unresolved."
   },
   {
    "date": "2020-02-08",
@@ -2482,10 +2490,11 @@
      "label": "2020-02-08 15:11 · Edward Holmes"
     }
    ],
-   "reply_to": "po-emails|2020-02-08|1436",
-   "reply_to_label": "2020-02-08 14:36 · R.A.M. Fouchier",
+   "reply_to": "po-emails|2020-02-08|0445",
+   "reply_to_label": "2020-02-08 04:45 · Jeremy Farrar",
    "link_kind": "explicit (quoted inline)",
-   "idx": 86
+   "idx": 86,
+   "verified_override": "po-emails.pdf p.53 shows Drosten's message quoting Farrar's forwarded request, with the same request stamped 10:45 in the German client. It quotes the 09:45 UK Farrar request (app idx 84), not Fouchier's later reply (idx 85); correct the app's prior explicit link."
   },
   {
    "date": "2020-02-08",
@@ -2578,8 +2587,8 @@
    "thread_label": "2020-02-08 15:38 · Christian Drosten",
    "replied_by": [
     {
-     "key": "po-emails|2020-02-09|0016",
-     "label": "2020-02-09 00:16 · Kristian G. Andersen"
+     "key": "po-emails|2020-02-08|1616",
+     "label": "2020-02-08 16:16 · Kristian G. Andersen"
     }
    ],
    "reply_to": "po-emails|2020-02-08|1511",
@@ -2614,34 +2623,37 @@
   },
   {
    "date": "2020-02-08",
-   "time": "1916",
+   "time": null,
    "kind": "email",
-   "raw_date": "19:16 ET · Re: [ext] 2019 N-CoV",
+   "raw_date": "4:16 PM · time zone unresolved · Re: [ext] 2019 N-CoV",
    "sender": "Andrew Rambaut",
    "sender_raw": "Andrew Rambaut as",
    "sender_how": "From: line",
    "subject": "Re: [ext] 2019 N-CoV",
    "content": "From: Andrew Rambaut\n\nTo: Jeremy Farrar\n\nCc: Eddie Holmes; Christian Drosten; kga1978 i rfgarry!| rfouchier i\n\nSubject: Re: [ext] 2019 N-CoV\n\nSent: Saturday, February 8, 2020 4:16 PM\n\n----------\n\n[ agree with Eddie, I think someone needs to lay out the science of this before it gets out of hand (and causes more formal investigations).\nI am of the view that the natural selection hypothesis is the most likely (specifically the non-bat reservoir). And as Eddie mentioned this is becoming more likely from day to day with the pangolin story.\nI disagree with Ron that the passaging hypothesis is evidentially equal to the engineering hypothesis. The sequence data clearly and unambiguously rules out any form of lab construct or engineering of the virus. It doesn’t really have anything to say about the relative plausibility of the 3 hypotheses for selection.\nI think we need stronger arguments than an assertion that no lab has done those experiments. We can definitely argue that it has nothing to do with RaTG13 (or SARS or any other published SARSr virus). The argument that we would need to offer this hypothesis for all other outbreaks is not a useful one in this context.\nIs it possible to argue that A) a passaging experiment wouldn’t create the features we see? or B) that there are logical reasons why someone wouldn’t do such an experiment?\nThe pangolin virus that was announced in the press conference might solve this issue if it has the furin cleavage site insertion which would be all but conclusive for the natural scenario.\nAndrew",
    "signature": null,
-   "stamp": "Saturday, February 8, 2020 4:16 PM",
+   "stamp": "Saturday, 8 February 2020 at 4:16 PM",
    "stamp_status": "long",
-   "zone_assumed": "REV export: US Pacific time (UTC-8 winter / UTC-7 summer); fits Kristian Andersen's mailbox (Scripps Research, La Jolla, San Diego)",
-   "stamp_line": "16:16 Los Angeles -> 19:16 ET",
+   "zone_assumed": "UNRESOLVED: po-emails.pdf p.51 shows Andrew Rambaut's 4:16 PM only in a nested quoted block inside Fouchier's top-level REV message. The checked page an",
+   "stamp_line": "4:16 PM appears only in the nested quote on po-emails.pdf p.51; time zone unresolved",
    "recovered_inline": false,
    "source": "po-emails",
-   "thread_key": "po-emails|2020-02-08|1916",
-   "thread_label": "2020-02-08 19:16 · Andrew Rambaut",
-   "replied_by": [],
-   "reply_to": "po-emails|2020-02-08|1521",
-   "reply_to_label": "2020-02-08 15:21 · Jeremy Farrar",
-   "link_kind": "explicit (quoted inline)",
-   "idx": 91
+   "thread_key": "po-emails|2020-02-08|time-unresolved-1916",
+   "thread_label": "2020-02-08 time unresolved · Andrew Rambaut",
+   "replied_by": [
+    {
+     "key": "po-emails|2020-02-08|1750",
+     "label": "2020-02-08 17:50 · R.A.M. Fouchier"
+    }
+   ],
+   "idx": 91,
+   "verified_override": "po-emails.pdf p.51 shows Andrew Rambaut's 4:16 PM only in a nested quoted block inside Fouchier's top-level REV message. The checked page and cross-release copies do not establish which clock the nested quote uses; preserve the date and leave the normalized time unresolved."
   },
   {
-   "date": "2020-02-09",
-   "time": "0016",
+   "date": "2020-02-08",
+   "time": "1616",
    "kind": "email",
-   "raw_date": "00:16 ET · Re: [ext] 2019 N-CoV",
+   "raw_date": "16:16 ET · Re: [ext] 2019 N-CoV",
    "sender": "Kristian G. Andersen",
    "sender_raw": "\"Kristian G. Andersen",
    "sender_how": "From: line",
@@ -2649,24 +2661,25 @@
    "content": "From: Kristian G. Andersen\n\nTo: \"Drosten, Christian\"\n\nCc: Jeremy Farrar | , Edward Holmes \"a.rambaut \"fay \"r.fouchier \"P.Valla nce 1 ES Francis Collins iy '.f. uci ee, Josic a Marion Koopmans inn, (Vike Ferguson\n\nSubject: Re: [ext] 2019 N-CoV\n\nDate: Saturday, 8 February 2020 at 21:16\n\n----------\n\nA lot of good discussion here, so | just wanted to add a couple of things for context that | think are important - and why what we're considering is far from \"another conspiracy theory\", but rather is taking a valid scientific approach to a question that is increasingly being asked by the public, media, scientists, and politicians (e.g., | have been contacted by\nScience, NYT, and many other news outlets over the last couple of days about this exact question).\nTo Ron's question, passage of SARS-like CoVs have been ongoing for several years, and more specifically in Wuhan under\nBSL-2 conditions - see references 12-15 in the document for a few examples. The fact that Wuhan became the epicenter of the ongoing epidemic caused by nCoV is likely an unfortunate coincidence, but it raises questions that would be wrong to dismiss out of hand, Our main work over the last couple of weeks has been focused on trying to disprove any type of lab theory, but we are at a crossroad where the scientific evidence isn't conclusive enough to say that we have high confidence in any of the three main theories considered. Like Eddie - and | believe Bob, Andrew, and everybody on this email as well - | am very hopeful that the viruses from pangolins will help provide the missing pieces. For now, giving the lab theory serious consideration has been highly effective at countering many of the circulating conspiracy theories,\nincluding HIV recombinants, bioengineering, etc. - here's just one example: https://www.factcheck.org/2020/02/baseless-conspiracy-theories-claim-new-coronavirus-was-bioengineered/.\nAs to publishing this document in a journal, | am currently not in favor of doing so. | believe that publishing something that is open-ended could backfire at this stage. | think it's important that we try to gather additional evidence - including waiting on the pangolin virus sequences and further scrutinize the furin cleavage site and O-linked glycans - before publishing. That way we can (hopefully) come out with some strong conclusive statements that are based on the best data we have access to. | don't think we are there yet.",
    "signature": null,
    "stamp": "Saturday, 8 February 2020 at 21:16",
-   "stamp_status": "day-month-year",
-   "zone_assumed": "REV export: US Pacific time (UTC-8 winter / UTC-7 summer); fits Kristian Andersen's mailbox (Scripps Research, La Jolla, San Diego)",
-   "stamp_line": "21:16 Los Angeles -> 00:16 ET",
+   "stamp_status": "long",
+   "zone_assumed": "supported from the page image and matching source copy: po-emails.pdf pp.144-145 prints Andersen's nested message at 21:16 in Farrar's UK-client copy. farrar-fauci-comms.pdf p.56 prints the same t",
+   "stamp_line": "21:16 UK in the PO copy; 22:15 Netherlands time (21:15 UK) in Koopmans's copy",
    "recovered_inline": false,
    "source": "po-emails",
    "dedup_merged": 1,
-   "thread_key": "po-emails|2020-02-09|0016",
-   "thread_label": "2020-02-09 00:16 · Kristian G. Andersen",
+   "thread_key": "po-emails|2020-02-08|1616",
+   "thread_label": "2020-02-08 16:16 · Kristian G. Andersen",
    "replied_by": [
     {
-     "key": "po-emails|2020-02-09|2307",
-     "label": "2020-02-09 23:07 · "
+     "key": "po-emails|2020-02-09|1507",
+     "label": "2020-02-09 15:07 · Marion Koopmans"
     }
    ],
+   "idx": 92,
+   "verified_override": "po-emails.pdf pp.144-145 prints Andersen's nested message at 21:16 in Farrar's UK-client copy. farrar-fauci-comms.pdf p.56 prints the same text at 22:15 inside Koopmans's message; 22:15 Netherlands time (21:15 UK). The two checked copies therefore differ by one minute after conversion. Retain the PO-page timestamp and record the discrepancy rather than claiming exact simultaneity.",
    "reply_to": "po-emails|2020-02-08|1538",
    "reply_to_label": "2020-02-08 15:38 · Christian Drosten",
-   "link_kind": "explicit (quoted inline)",
-   "idx": 92
+   "link_kind": "explicit (quoted inline)"
   },
   {
    "date": "2020-02-09",
@@ -2675,57 +2688,61 @@
    "raw_date": "15:00 ET · Re; 2019 N-CoV 7",
    "sender": "Mike Ferguson",
    "sender_raw": "Mike Ferguson",
-   "sender_how": "From: line (verified from page image)",
+   "sender_how": "po-emails.pdf p.57 identifies Mike Ferguson in the top-level message; the app sender field was blank.",
    "subject": "Re; 2019 N-CoV 7",
    "content": "To: Jeremy Farrar Edward Holmes kga1978 i Andrew Rambaut rfgarry(\n\nCc: r.fouchier P.Vallancel collins jn afauci Josie Golding\n\nSubject: Re; 2019 N-CoV 7\n\nSent: 2/9/2020 12:00:46 PM\n\nAttachments: Summary.Feb7_MF.pdf\n\n----------\n\nDear Jeremy et al\n| have made some comments and suggestions on the pdf attached.\n| am not an expert on protein O-glycosylation - however, Dr Tabak, who was on the call last weekend, is and if\n| were to consult anyone else on this it would be Henrik Clausen https://icmm.ku.dk/english/research-groups/clausen-group/\nHowever, from what | do know of general glycobiology, | am not sure one can conclude that an immune system would be required to select for O-glycosylation sites. Once an alpha-helix is disturbed by the introduction of a proline, adjacent Ser and Thr residues will be (over-)predicted to have O-glycosylation potential - hard to know the functional consequences/significance without knowing whether the potential O sites are actually occupied.\nRegards\nMike",
    "signature": null,
    "stamp": "2/9/2020 12:00:46 PM",
-   "stamp_status": "outlook-us",
-   "zone_assumed": "Top-level header on po-emails.pdf p.57 identifies Mike Ferguson and prints 2/9/2020 12:00:46 PM. REV pages are Kristian Andersen's collection (analysis/ZONE_AND_DATE_ANALYSIS.md §1.2), so the page-owner clock is Pacific.",
-   "stamp_line": "12:00:46 Los Angeles -> 15:00:46 ET -> 20:00:46 UK",
+   "stamp_status": "long",
+   "zone_assumed": "supported from the page image and matching source copy: po-emails.pdf p.57 prints the top-level REV stamp '2/9/2020 12:00:46 PM' and identifies Mike Ferguson as sender. The page is in Kristian G. ",
+   "stamp_line": "2/9/2020 12:00:46 PM Pacific -> 15:00:46 ET -> 20:00:46 UK",
    "recovered_inline": false,
    "source": "po-emails",
    "thread_key": "po-emails|2020-02-09|1500",
    "thread_label": "2020-02-09 15:00 · Mike Ferguson",
    "replied_by": [],
    "idx": 93,
-   "verified_override": "po-emails.pdf p.57 top-level header identifies Mike Ferguson and prints 2/9/2020 12:00:46 PM. This is Feb. 9 on the REV Pacific clock (15:00:46 ET / 20:00:46 UK); the page does not support a Feb. 8 noon message."
+   "verified_override": "po-emails.pdf p.57 prints the top-level REV stamp '2/9/2020 12:00:46 PM' and identifies Mike Ferguson as sender. The page is in Kristian G. Andersen's Pacific REV collection. The embedded Farrar forward is dated 09:45 UK; Ferguson's own message remains on Feb. 9.",
+   "reply_to": "po-emails|2020-02-08|0445",
+   "reply_to_label": "2020-02-08 04:45 · Jeremy Farrar",
+   "link_kind": "explicit (quoted inline)"
   },
   {
    "date": "2020-02-09",
-   "time": "2307",
+   "time": "1507",
    "kind": "email",
-   "raw_date": "23:07 ET · Re: [ext] 2019 N-CoV",
-   "sender": "",
+   "raw_date": "15:07 ET · Re: [ext] 2019 N-CoV",
+   "sender": "Marion Koopmans",
    "sender_raw": "",
-   "sender_how": "",
+   "sender_how": "po-emails.pdf p.69 identifies Marion Koopmans; matching copy on farrar-fauci-comms.pdf p.55.",
    "subject": "Re: [ext] 2019 N-CoV",
    "content": "To: \"Kristian G. Andersen\" nn \"Drosten, Christian\" iii Jeremy Farrar i Edward Holmes i PS | 2ncis colin: EE ‘afaucid : . SE Josie Golding ES Vike Ferguson\n\nSubject: Re: [ext] 2019 N-CoV\n\nDate: Sunday, 9 February 2020 at 20:07\n\n----------\n\nWow....took off from e-mail for a day.....\nAs mentioned to Jeremy, | would not be in favour of publishing something specific on the lab escape hypothesis,\nbecause | agree (with Kristian) that this could backfire. Yes, there is speculation in the public domain, triggered by several papers, including the rubbish ones. By zooming in on a specific finding that is NOT in the public domain as far as |\nknow, | think this will generate its own conspiracy theories.\nSo if published, | would suggest zooming out a bit for starters, describing that one of the key challenges is where this virus came from, discuss some of the (wild) guesses out there, and then argue step by step what the challenges are in inferring this from sequence data, where you do not know exactly what the pool is that you are sampling from, so end up interpreting the needle drawn out of a haystack. Here, the many pieces of the discussion that passed by these last few days can be included, like rates of evolution and dating of possible origins; examples of cleavage site acquisition from other viruses, recombination in coronavirus evolutionary history, possible abrupt changes in spillover events,\nability to confirm or disproof things in vitro. etc\nAnd | would leave “lab escape” for the discussion, because putting that in the public domain as a hypothesis in my view will be read as “see, they also thought so\"\nMarion",
    "signature": null,
    "stamp": "Sunday, 9 February 2020 at 20:07",
-   "stamp_status": "day-month-year",
-   "zone_assumed": "REV export: US Pacific time (UTC-8 winter / UTC-7 summer); fits Kristian Andersen's mailbox (Scripps Research, La Jolla, San Diego)",
-   "stamp_line": "20:07 Los Angeles -> 23:07 ET",
+   "stamp_status": "long",
+   "zone_assumed": "supported from the page image and matching source copy: po-emails.pdf p.69 identifies Marion Koopmans and prints the Feb. 9 20:07 message; farrar-fauci-comms.pdf p.55 contains the matching message",
+   "stamp_line": "20:07 UK -> 15:07 ET; matching Farrar-Fauci copy on p.55",
    "recovered_inline": false,
    "source": "po-emails",
-   "thread_key": "po-emails|2020-02-09|2307",
-   "thread_label": "2020-02-09 23:07 · ",
+   "thread_key": "po-emails|2020-02-09|1507",
+   "thread_label": "2020-02-09 15:07 · Marion Koopmans",
    "replied_by": [
     {
-     "key": "po-emails|2020-02-10|0126",
-     "label": "2020-02-10 01:26 · Jeremy Farrar"
+     "key": "po-emails|2020-02-10|0426",
+     "label": "2020-02-10 04:26 · Jeremy Farrar"
     }
    ],
-   "reply_to": "po-emails|2020-02-09|0016",
-   "reply_to_label": "2020-02-09 00:16 · Kristian G. Andersen",
-   "link_kind": "explicit (quoted inline)",
-   "idx": 94
+   "reply_to": "po-emails|2020-02-08|1616",
+   "reply_to_label": "2020-02-08 16:16 · Kristian G. Andersen",
+   "link_kind": "inferred (same conversation)",
+   "idx": 94,
+   "verified_override": "po-emails.pdf p.69 identifies Marion Koopmans and prints the Feb. 9 20:07 message; farrar-fauci-comms.pdf p.55 contains the matching message. The app's prior explicit-quote label is not supported by a quoted block in this email."
   },
   {
    "date": "2020-02-10",
-   "time": "0126",
+   "time": "0426",
    "kind": "email",
-   "raw_date": "01:26 ET · Re: [ext] 2019 N-CoV",
+   "raw_date": "04:26 ET · Re: [ext] 2019 N-CoV",
    "sender": "Jeremy Farrar",
    "sender_raw": "Jeremy Farrar",
    "sender_how": "From: line",
@@ -2733,13 +2750,13 @@
    "content": "From: Jeremy Farrar\n\nTo: M.P.G. Koopmans Kristian G. Andersen Drosten, Christian Edward Holmes Andrew Rambaut\n\nSubject: Re: [ext] 2019 N-CoV\n\nSent: 2/10/2020 1:26:57 AM\n\n----------\n\n",
    "signature": null,
    "stamp": "2/10/2020 1:26:57 AM",
-   "stamp_status": "outlook-us",
-   "zone_assumed": "frozen in Lipkin's clock (Columbia University; quoted in their message)",
-   "stamp_line": "01:26 ET",
+   "stamp_status": "long",
+   "zone_assumed": "supported from the page image and matching source copy: po-emails.pdf p.69 shows Farrar's top-level REV stamp '2/10/2020 1:26:57 AM'; the matching explicit-offset stamp on farrar-fauci-comms.pdf p",
+   "stamp_line": "2/10/2020 1:26:57 AM Pacific -> 04:26:57 ET -> 09:26:57 UK",
    "recovered_inline": false,
    "source": "po-emails",
-   "thread_key": "po-emails|2020-02-10|0126",
-   "thread_label": "2020-02-10 01:26 · Jeremy Farrar",
+   "thread_key": "po-emails|2020-02-10|0426",
+   "thread_label": "2020-02-10 04:26 · Jeremy Farrar",
    "replied_by": [
     {
      "key": "po-emails|2020-02-10|0447",
@@ -2747,9 +2764,10 @@
     }
    ],
    "idx": 95,
-   "reply_to": "po-emails|2020-02-09|2307",
-   "reply_to_label": "2020-02-09 23:07 · ",
-   "link_kind": "inferred (same conversation)"
+   "reply_to": "po-emails|2020-02-09|1507",
+   "reply_to_label": "2020-02-09 15:07 · Marion Koopmans",
+   "link_kind": "explicit (quoted inline)",
+   "verified_override": "po-emails.pdf p.69 shows Farrar's top-level REV stamp '2/10/2020 1:26:57 AM'; the matching explicit-offset stamp on farrar-fauci-comms.pdf p.55 is 09:26:57 +0000. The REV page is in Andersen's Pacific collection, so the message is Feb. 10 Pacific / Feb. 10 ET; the app's normalized ET key is Feb. 10 04:26."
   },
   {
    "date": "2020-02-10",
@@ -2776,8 +2794,8 @@
      "label": "2020-02-10 05:08 · Ian"
     }
    ],
-   "reply_to": "po-emails|2020-02-10|0126",
-   "reply_to_label": "2020-02-10 01:26 · Jeremy Farrar",
+   "reply_to": "po-emails|2020-02-10|0426",
+   "reply_to_label": "2020-02-10 04:26 · Jeremy Farrar",
    "link_kind": "explicit (quoted inline)",
    "idx": 96
   },

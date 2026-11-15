@@ -192,6 +192,30 @@
   "evidence": "Reviewer, from the page image of slack-part1.pdf p.19 (2026-11-03): the label reads 19:49, five minutes after Garry's 19:44; the OCR dropped the leading digit."
  },
  {
+ "part": "part1",
+ "idx": 242,
+ "sender": "Robert Garry",
+ "wrong_time": null,
+ "time": "08:09",
+ "evidence": "Reviewer, from slack-part1.pdf p.21: the timestamp beside Garry's message reads 08:09."
+ },
+ {
+ "part": "part1",
+ "idx": 243,
+ "sender": "Andrew Rambaut",
+ "wrong_time": "05:20",
+ "time": "08:30",
+ "evidence": "Reviewer, from slack-part1.pdf p.21: the timestamp beside Rambaut's message reads 08:30."
+ },
+ {
+ "part": "part1",
+ "idx": 244,
+ "sender": "Robert Garry",
+ "wrong_time": null,
+ "time": "08:43",
+ "evidence": "Reviewer, from slack-part1.pdf p.22: the timestamp beside Garry's message reads 08:43."
+ },
+ {
   "part": "part1",
   "idx": 245,
   "sender": "Andrew Rambaut",
@@ -217,6 +241,46 @@
  },
  {
   "part": "part1",
+  "idx": 258,
+  "sender": "Robert Garry",
+  "wrong_time": null,
+  "time": "14:47",
+  "evidence": "Reviewer, from slack-part1.pdf p.23: the timestamp beside Garry's message reads 14:47."
+ },
+ {
+  "part": "part1",
+  "idx": 259,
+  "sender": "Eddie Holmes",
+  "wrong_time": null,
+  "time": "15:32",
+  "evidence": "Reviewer, from slack-part1.pdf p.23: the timestamp beside Holmes's message reads 15:32."
+ },
+ {
+  "part": "part1",
+  "idx": 262,
+  "sender": "Kristian Andersen",
+  "wrong_time": "15:59",
+  "time": "15:53",
+  "evidence": "Reviewer, from slack-part1.pdf p.23: the timestamp beside Andersen's message reads 15:53."
+ },
+ {
+  "part": "part1",
+  "idx": 266,
+  "sender": "Kristian Andersen",
+  "wrong_time": null,
+  "time": "16:21",
+  "evidence": "Reviewer, from slack-part1.pdf p.23: the timestamp beside Andersen's message reads 16:21."
+ },
+ {
+  "part": "part1",
+  "idx": 267,
+  "sender": "Robert Garry",
+  "wrong_time": null,
+  "time": "16:30",
+  "evidence": "Reviewer, from slack-part1.pdf p.23: the timestamp beside Garry's message reads 16:30."
+ },
+ {
+  "part": "part1",
   "idx": 271,
   "sender": "Robert Garry",
   "wrong_time": "16:15",
@@ -237,7 +301,7 @@
   "sender": "Eddie Holmes",
   "wrong_time": "19:42",
   "time": "18:42",
-  "evidence": "External OCR re-read of the page images (Grok, analysis/grok_slack_part1_times_partial.csv, 2026-11-04), matched on page, sender and first words; the reading puts the message in order with its neighbours. Not yet checked by the reviewer."
+  "evidence": "Reviewer, from slack-part1.pdf p.24: the timestamp beside Holmes's message reads 18:42."
  },
  {
   "part": "part1",
@@ -284,20 +348,36 @@
   "idx": 367,
   "sender": "Andrew Rambaut",
   "wrong_time": "16:16",
-  "time": "18:21",
-  "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+  "time": "18:18",
+  "evidence": "Reviewer, from slack-part1.pdf p.35: the timestamp beside Rambaut's message reads 18:18."
  },
  {
   "part": "part1",
   "idx": 368,
   "sender": "Robert Garry",
   "wrong_time": "16:20",
-  "time": "18:22",
-  "evidence": "Reviewer, from the page image of slack-part1.pdf p.35 (2026-11-05): Garry is 18:22, and the text starts \"Agree\", not \"zs Agree\" (the \"zs\" is the avatar).",
+  "time": "18:20",
+  "evidence": "Reviewer, from slack-part1.pdf p.35: Garry's timestamp reads 18:20; the message text begins \"Agree\" (the OCR's leading \"zs\" is the avatar).",
   "text": [
    "zs Agree",
    "Agree"
   ]
+ },
+ {
+  "part": "part1",
+  "idx": 369,
+  "sender": "Andrew Rambaut",
+  "wrong_time": "16:21",
+  "time": "18:21",
+  "evidence": "Reviewer, from slack-part1.pdf p.35: the timestamp beside Rambaut's message reads 18:21."
+ },
+ {
+  "part": "part1",
+  "idx": 370,
+  "sender": "Robert Garry",
+  "wrong_time": null,
+  "time": "18:22",
+  "evidence": "Reviewer, from slack-part1.pdf p.35: the timestamp beside Garry's message reads 18:22."
  },
  {
   "part": "part1",
@@ -838,5 +918,21 @@
   "wrong_time": "10:25",
   "time": "16:25",
   "evidence": "STATUS.md correction (2026-11-04), matched by page, sender and printed time."
+ },
+ {
+  "part": "part1",
+  "idx": 710,
+  "sender": "Robert Garry",
+  "wrong_time": null,
+  "time": "14:44",
+  "evidence": "Reviewer, from slack-part1.pdf p.65: Garry's \"Holy crap\" message is timestamped 14:44."
+ },
+ {
+  "part": "part1",
+  "idx": 711,
+  "sender": "Kristian Andersen",
+  "wrong_time": "01:44",
+  "time": "14:45",
+  "evidence": "Reviewer, from slack-part1.pdf p.65: Andersen's \"No polybasic site\" message is timestamped 14:45."
  }
 ]

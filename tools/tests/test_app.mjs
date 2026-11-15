@@ -710,11 +710,15 @@ ok('every cited document is catalogued', docs.length === 32, String(docs.length)
 const poEntry = idx => app.diaryData.entries.find(e => e.source === 'po-emails' && e.idx === idx);
 const chapterLinks = JSON.parse(fs.readFileSync(path.join(HERE, 'chapter_links.json'), 'utf8'));
 const guideSection = id => guideResp.sections.find(s => s.id === id);
-const entry84 = poEntry(84), entry85 = poEntry(85), entry93 = poEntry(93);
+const entry83 = poEntry(83), entry84 = poEntry(84), entry85 = poEntry(85);
+const entry86 = poEntry(86), entry91 = poEntry(91), entry92 = poEntry(92);
+const entry93 = poEntry(93), entry94 = poEntry(94), entry95 = poEntry(95);
 ok('Farrar 09:45 UK forward uses its corrected 04:45 ET key and page span',
    entry84?.time === '0445' && entry84.thread_key === 'po-emails|2020-02-08|0445' &&
    app.pageMaps['po-emails']?.[entry84.thread_key]?.start === 57 &&
-   app.pageMaps['po-emails']?.[entry84.thread_key]?.end === 58);
+   app.pageMaps['po-emails']?.[entry84.thread_key]?.end === 58 &&
+   entry84.verified_override.includes('near-identical 09:46 UK') &&
+   entry84.verified_override.includes('do not establish whether 09:45 and 09:46 are separate sends or renderings'));
 ok('Fouchier page-55 REV stamp is 14:36 ET / 19:36 UK, with a direct quoted-forward link',
    entry85?.date === '2020-02-08' && entry85.time === '1436' &&
    entry85.sender === 'R.A.M. Fouchier' && entry85.stamp === '2/8/2020 11:36:30 AM' &&
@@ -727,7 +731,57 @@ ok('Ferguson is identified on the Feb. 9 page-57 REV record without shifting its
    entry93?.date === '2020-02-09' && entry93.time === '1500' &&
    entry93.sender === 'Mike Ferguson' && entry93.stamp === '2/9/2020 12:00:46 PM' &&
    entry93.stamp_line.includes('20:00:46 UK') &&
-   entry93.verified_override.includes('does not support a Feb. 8 noon message'));
+   entry93.verified_override.includes('remains on Feb. 9') &&
+   entry93.reply_to === entry84?.thread_key &&
+   entry93.link_kind === 'explicit (quoted inline)');
+ok('Fouchier p.51 is 17:50 ET and explicitly quotes Rambaut without assigning Rambaut a time zone',
+   entry83?.date === '2020-02-08' && entry83.time === '1750' &&
+   entry83.sender === 'R.A.M. Fouchier' &&
+   entry83.stamp_line.includes('17:50 ET -> 22:50 UK') &&
+   entry83.reply_to === entry91?.thread_key &&
+   app.pageMaps['po-emails']?.[entry83.thread_key]?.start === 51 &&
+   entry91?.date === '2020-02-08' && entry91.time === null &&
+   !entry91.reply_to && entry91.replied_by?.some(r => r.key === entry83.thread_key));
+ok('Drosten p.53 links to the quoted Farrar request, not Fouchier',
+   entry86?.reply_to === entry84?.thread_key &&
+   entry86.link_kind === 'explicit (quoted inline)');
+ok('Andersen p.144-145 keeps the printed 21:16 UK time, its one-minute copy discrepancy, and its quoted Drosten link',
+   entry92?.date === '2020-02-08' && entry92.time === '1616' &&
+   entry92.reply_to === poEntry(89)?.thread_key &&
+   entry92.verified_override.includes('22:15 Netherlands time (21:15 UK)') &&
+   app.pageMaps['po-emails']?.[entry92.thread_key]?.start === 144 &&
+   app.pageMaps['po-emails']?.[entry92.thread_key]?.end === 145);
+ok('Koopmans and Farrar p.69 use verified senders, dates, and explicit-versus-inferred links',
+   entry94?.date === '2020-02-09' && entry94.time === '1507' &&
+   entry94.sender === 'Marion Koopmans' &&
+   entry94.reply_to === entry92?.thread_key &&
+   entry94.link_kind === 'inferred (same conversation)' &&
+   app.pageMaps['po-emails']?.[entry94.thread_key]?.start === 69 &&
+   entry95?.date === '2020-02-10' && entry95.time === '0426' &&
+   entry95.sender === 'Jeremy Farrar' &&
+   entry95.reply_to === entry94.thread_key &&
+   entry95.link_kind === 'explicit (quoted inline)' &&
+   app.pageMaps['po-emails']?.[entry95.thread_key]?.start === 69);
+const slackAt = (page, sender, time) => part1.find(e =>
+  e.sender === sender && e.time === time &&
+  app.pageMaps.part1[String(e.idx)]?.start === page);
+ok('source-read Slack labels on pp.21-24 match the page images',
+   !!slackAt(21, 'Robert Garry', '08:09') &&
+   !!slackAt(21, 'Andrew Rambaut', '08:30') &&
+   !!slackAt(22, 'Robert Garry', '08:43') &&
+   !!slackAt(23, 'Robert Garry', '14:47') &&
+   !!slackAt(23, 'Eddie Holmes', '15:32') &&
+   !!slackAt(23, 'Kristian Andersen', '15:53') &&
+   !!slackAt(23, 'Kristian Andersen', '16:21') &&
+   !!slackAt(23, 'Robert Garry', '16:30') &&
+   !!slackAt(24, 'Eddie Holmes', '18:42'));
+ok('Slack p.35 times follow the verified 18:18, 18:20, 18:21, 18:22 sequence',
+   ['18:18','18:20','18:21','18:22'].every((time, i) =>
+     !!slackAt(35, ['Andrew Rambaut','Robert Garry','Andrew Rambaut','Robert Garry'][i], time)));
+ok('Slack p.64 Garry remains 10:59; p.65 is Garry 14:44 then Andersen 14:45',
+   !!slackAt(64, 'Robert Garry', '10:59') &&
+   !!slackAt(65, 'Robert Garry', '14:44') &&
+   !!slackAt(65, 'Kristian Andersen', '14:45'));
 const section132 = guideSection('p1-13.2');
 const section133 = guideSection('p1-13.3');
 const section134 = guideSection('p1-13.4');
@@ -738,21 +792,32 @@ ok('chapter 13.2 cites Fouchier at the verified 19:36 UK time',
 ok('chapter 13.3 cites Ferguson on Feb. 9, p.57, without an ordering claim',
    section133?.date === '2020-02-09' && section133.evidence.length === 1 &&
    section133.evidence[0].pages?.includes('57') &&
-   section133.evidence[0].raw.includes('9 Feb 2020, 8:00 pm UK'));
+   section133.evidence[0].raw.includes('9 Feb 2020, 8:00 pm UK') &&
+   !section133.summary.toLowerCase().includes('first to provide feedback'));
 ok('chapter 13.4 cites the complete Vallance email on pp.61-62',
    section134?.evidence[0]?.doc === 'farrar-fauci-comms.pdf' &&
    section134.evidence[0].pages?.includes('61-62') &&
-   section134.evidence[0].raw.includes('pp.61-62'));
+   section134.evidence[0].raw.includes('pp.61-62') &&
+   section134.summary.includes('earliest feedback documented in checked copies') &&
+   section134.summary.includes('not establish that it was the earliest response overall'));
 ok('chapter buttons target the corrected Feb. 8–9 records',
    chapterLinks['po-emails/po-emails|2020-02-08|0445']?.some(s => s.id === 'p1-13.1') &&
    chapterLinks['po-emails/po-emails|2020-02-08|1436']?.some(s => s.id === 'p1-13.2') &&
    chapterLinks['po-emails/po-emails|2020-02-09|1500']?.some(s => s.id === 'p1-13.3') &&
    chapterLinks['farrar-fauci/farrar-fauci|2020-02-08|0703']?.some(s => s.id === 'p1-13.4'));
+ok('Part 2 §15.2 links to Koopmans, while Ferguson is linked to §13.3',
+   chapterLinks['po-emails/po-emails|2020-02-09|1507']?.some(s => s.id === 'p2-15.2') &&
+   !chapterLinks['po-emails/po-emails|2020-02-09|1500']?.some(s => s.id === 'p2-15.2') &&
+   chapterLinks['po-emails/po-emails|2020-02-09|1500']?.some(s => s.id === 'p1-13.3'));
 const section139 = guideSection('p1-13.9');
 const section1310 = guideSection('p1-13.10');
-ok('the clear 2030 citation typo is normalized in guide metadata without changing Rambaut’s clock',
-   section139?.evidence.some(e => e.raw.includes('8 Feb 2020, 9:16 pm UK')) &&
+ok('Rambaut’s date is correct while the nested 4:16 pm clock remains unresolved',
+   section139?.title.includes('clock unresolved') &&
+   section139.evidence.some(e => e.raw.includes('8 Feb 2020') && e.raw.includes('zone unresolved')) &&
    section1310?.date === '2020-02-08');
+ok('Rambaut’s nested p.51 clock is not linked to Andersen’s verified 16:16 ET email',
+   !chapterLinks['po-emails/po-emails|2020-02-08|1616']?.some(s => s.id === 'p1-13.9') &&
+   chapterLinks['po-emails/po-emails|2020-02-08|1616']?.some(s => s.id === 'p1-13.11'));
 
 
 sec('Stacked timeline (one segment per kind, release sub-totals)');

@@ -1,15 +1,13 @@
 # Where the dates and times stand: what is settled, what is likely, what is unknown
 
-Baseline status 2026-11-05 for the broader email/Slack audit; February 8 was
-re-audited on 2026-11-12. Correction commit `d311367` is now an ancestor of
-`po-sources-and-boxes` at `c0f6933`; the correction branch reported 160/160
-tests passing. The checked-in data still has residual record and §15.2
-chapter-link defects, so not every app correction is complete. The user
-reports that Part 1 Medium sections 13.1-13.14 were reordered/corrected,
-including the Drosten attribution and Ferguson's 9 Feb 20:00 UK response;
-cross-references and Part 2 §§14.4, 15.2 and 15.3 were still in progress at
-the last report. The live article was not independently verified. See O3 and
-the full evidence in
+Baseline status 2026-11-05 for the broader email/Slack audit; the February 8
+email chronology was re-audited on 2026-11-12 and residual email/Slack source
+pages were reopened on 2026-11-15. The app records, page maps, reply graph and
+chapter links described in O3 and U17 are corrected in the current branch;
+focused validation and publication status are recorded in the handoff. The
+user is handling the Medium article edits; its live text has not been
+independently checked, and no article source was edited here. See O3 and the
+full evidence in
 [`ZONE_AND_DATE_ANALYSIS.md` Part 3.1](ZONE_AND_DATE_ANALYSIS.md#31-the-february-8-correspondence-evidence-and-chronology).
 Other historical totals and fixed descriptions below are not updated by this
 focused chronology audit. This file is the reviewer's index, not a complete
@@ -122,6 +120,8 @@ The parser now gives each message the day in force when its header was read (202
 ### S8. Slack Part 1 time labels (16 read by you, 85 by an external OCR pass)
 On 2026-11-04 a first external OCR pass (`../grok_slack_part1_times_partial.csv`, notes in [`../slack-qa/grok_slack_part1_times_STATUS.md`](../slack-qa/grok_slack_part1_times_STATUS.md)) was matched to messages by page, sender and first words, and 59 labels were applied (commit a38bcf9); each is in `tools/slack_time_fixes.json` with its evidence. The corrections in the STATUS file were applied in a second step (U17). Your six readings are in that same JSON: p.19 Holmes 19:49; p.121 Andersen 15:40 and “slow”; p.134 Holmes 18:36, Andersen 18:51, Andersen 22:44, Holmes 23:42. Read from the page images on 2026-11-03.
 
+On 2026-11-15, source images for pp.21-24, 35, 52-55 and 64-65 were rechecked. The page-supported p.21-24, p.35 and p.65 label corrections are now applied in `tools/slack_time_fixes.json` and the app data. P.55 still does not establish a day for Holmes's 02:16 post; the current time-check output and remaining uncertainty are recorded in U17.
+
 ---
 
 # L. Likely: nothing to do unless you have an anchor
@@ -200,28 +200,28 @@ Six evening-then-small-hours rows. Two were a missed day divider (p.24 and p.60;
 
 ### Slack Part 1: the remaining historical time-check items
 
-#### U17. Slack Part 1: two unresolved page questions; one stale record
+#### U17. Slack Part 1: four remaining time-check rows; p.35 and p.65 resolved
 
-The test: two consecutive timed messages on the same day where the second prints a time more than an hour earlier. Part 1 has no AM/PM and shows a time only for the first message of a run, so these are OCR slips (a dropped or swapped digit) or reading-order slips; Part 2 (a cleaner export) has none. The current `slack_part1_time_check.csv` lists three rows, but a later OCR status note reports a likely correction for the p.64→65 row. That correction has not been applied to the data or CSV.
+The test: two consecutive timed messages on the same day where the second prints a time more than an hour earlier. Part 1 has no AM/PM and shows a time only for the first message of a run, so these can be OCR slips (a dropped or swapped digit), reading-order slips, or an uncertain date at a page boundary; Part 2 (a cleaner export) has none. The regenerated `slack_part1_time_check.csv` currently lists four rows, one `late_to_early` and three other anomalies. The source recheck resolves the cited labels on pp.21-24, p.35 and pp.64-65, but it does not settle Holmes's p.55 date or the other listed rows.
 
 **How it came down.**
 1. Divider fix in the parser, and your six readings (U16, S8): 74 → 60.
 2. A first external OCR pass (Grok partial CSV, 2026-11-04) matched to messages by page, sender and first words: 59 labels, 60 → 30 (commit a38bcf9).
 3. A second pass from the corrections in [`../slack-qa/grok_slack_part1_times_STATUS.md`](../slack-qa/grok_slack_part1_times_STATUS.md), matched by page, sender and printed time: 26 labels (table below), 30 → 11.
 (Step 3 used no new visual OCR. A fix applies only if the entry still carries that sender and that exact wrong time.)
-4. Your readings of 2026-11-05 on the other 8 pairs (p.35, 36, 43, 49, 57, 102, 104, 115): 11 → 3. p.115 was a missed date chip: “This whole furin site…” and the 11 messages after it, up to the April 4th divider, are 3 April, not 2 April (`slack_date_fixes.json`). One of my inferences needs a check: p.43 Rambaut's “Eddie is colour blind too” is set to 13:56 (it printed 19:56, which would put it after Garry's 13:57).
-
-All of these are marked in `tools/slack_time_fixes.json` as not checked by you.
+4. Your readings of 2026-11-05 on the other 8 pairs (p.35, 36, 43, 49, 57, 102, 104, 115): 11 → 3. p.115 was a missed date chip: “This whole furin site…” and the 11 messages after it, up to the April 4th divider, are 3 April, not 2 April (`slack_date_fixes.json`). One inference remains unverified: p.43 Rambaut's “Eddie is colour blind too” is set to 13:56 (it printed 19:56, which would put it after Garry's 13:57).
+5. On 2026-11-15, the source-page recheck corrected p.21 Garry 08:09 and Rambaut 08:30, p.22 Garry 08:43, p.23 Garry 14:47 / Holmes 15:32 / Andersen 15:53 / Andersen 16:21 / Garry 16:30, p.24 Holmes 18:42, the p.35 sequence (18:18, 18:20, 18:21, 18:22), and p.65 Garry 14:44 followed by Andersen 14:45. P.64 Garry 10:59 is supported. The earlier p.35 CSV anomaly used Andrew's 16:21 label; the page read confirms the ordered four-message sequence, including Andrew at 18:21.
 
 **Current state:**
 
 | page | pair | what is open |
 |---|---|---|
-| p.35 | Garry 18:22 → Andrew 16:21 (“fair enough I just have heard…”) | Still backwards in the CSV; the label is probably 18:2x and needs a page read. |
-| p.52 → p.55 | Garry 05:05 (19 Feb) → Holmes 02:16 (“Thanks for that. However this outbreak…”, first message on p.55) | Garry's last message on p.52 and Holmes's first on p.55 are separated by an attached document (pp.53-54). Check whether a day chip above Holmes on p.55 makes the message 20 Feb and removes the apparent reversal. |
-| p.64 → p.65 | Garry 10:59 (p.64) → current CSV labels “No polybasic site, HOWEVER…” as Andersen 01:44 | The OCR status file reports this as Robert Garry 14:44, after Holmes at 14:41. That likely resolves the source reading, but it is not applied: the app/time-check CSV still has 01:44 and the wrong sender. Verify/apply this correction before treating the test as clean. |
+| pp.42-43 | Time-check row crossing p.42/43 | Not independently source-checked in this pass. |
+| p.47 | Time-check row on p.47 | Not independently source-checked in this pass. |
+| pp.52-55 | Garry 05:05 (19 Feb, p.52) → Holmes 02:16 (“Thanks for that. However this outbreak…”, p.55) | Garry's last message on p.52 and Holmes's first on p.55 are separated by an attached document (pp.53-54). There is no day chip above Holmes on p.55; the later Feb. 20 chip does not establish whether Holmes's post is Feb. 19 or 20. Keep the date unresolved. |
+| pp.134-135 | Time-check row crossing p.134/135 | Not independently source-checked in this pass. |
 
-**What would settle the rest:** visually read p.35 and p.55/day divider, then verify the p.65 14:44 correction on the page image and update the source fix before rerunning `slack_time_check.py`. The CSV's three-row count is not three independent unresolved PDF readings.
+The current CSV has four rows, including one `late_to_early` row and three other anomalies. It is not a count of four confirmed PDF errors. Source images confirm the p.35 sequence as 18:18, 18:20, 18:21 and 18:22; on pp.64-65 Garry's 10:59 is followed later by Garry 14:44 and Andersen 14:45. The corrected app labels remove those p.35 and p.65 items from the unresolved list.
 
 <details>
 <summary>The 26 labels from the STATUS file (2026-11-04)</summary>
@@ -265,7 +265,7 @@ All of these are marked in `tools/slack_time_fixes.json` as not checked by you.
 |---|---|---|
 | **O1** | Chapter link for section 4.11 (“Farrar proposes a way out via the WHO (1 Feb, 3:59 pm EST)”): it points at Fauci's `farrar-fauci-comms.pdf` p.137, 15:50 (“Please include Francis Collins…”), which is not about the WHO. The Farrar message that proposes WHO contact is p.108, “Sunday, February 2, 2020 4:48 AM” (now 23:48 ET, 1 Feb); neither is at 3:59 pm | Which message you mean, or whether the caption time is off; then I fix the link |
 | **O2** | A few old bookmark keys now name a different message and cannot be re-mapped (list in analysis A10) | Nothing, unless you or others bookmarked emails on those dates |
-| **O3** | February 8 correspondence: correction commit `d311367` is merged into `po-sources-and-boxes` (present by `c0f6933`); its source branch reported 160/160 tests passing. Idx 84/85, some page maps, guide evidence/dates/summaries, and the 2030→2020 guide typo are corrected. A fresh check of pushed app data found idx 92's page map still spans pp.70-145. Other residuals: idx 83 remains 09:50 ET instead of supported 17:50 ET; idx 91/92 have unresolved or incorrect quoted-clock normalization; idx 93 lacks its reply link; idx 94 has no sender and the wrong zone; idx 95 uses Lipkin's clock instead of the explicit-offset verified REV time; §15.2 still links to Ferguson idx 93 rather than Koopmans idx 94. Source-page interpretations are from the earlier PDF audit, not rechecked during the docs pass; idx 91's timezone remains uncertain. The user reports Part 1 Medium edits applied and Part 2/cross-reference edits still in progress; live Medium not verified. Vallance 12:03 UK is the earliest feedback documented in checked copies, not necessarily earliest in existence. The 09:45/09:46 relationship, Rambaut's 4:16 PM clock, and Slack pp.21-24 OCR discrepancies remain unresolved. Full evidence: [`ZONE_AND_DATE_ANALYSIS.md` Part 3.1](ZONE_AND_DATE_ANALYSIS.md#31-the-february-8-correspondence-evidence-and-chronology). | Correct app records/map/§15.2 link and verify the user's remaining article edits when available. |
+| **O3** | February 8 chronology app corrections are source-checked and applied in this branch. PO idx 83 is Fouchier 17:50 ET / 22:50 UK and quotes Rambaut idx 91; idx 91's date is retained but its time remains unnormalized and no unsupported parent link is asserted. Idx 86 now links to Farrar idx 84; idx 92 is 16:16 ET on Feb. 8 and maps to pp.144-145; idx 93 identifies Mike Ferguson and explicitly quotes Farrar idx 84; idx 94 identifies Koopmans and is only inferred to be in the same conversation as idx 92; idx 95 is 04:26 ET on Feb. 10 and explicitly quotes idx 94. The app guide now places Fouchier/Ferguson/Vallance at §§13.2-13.4; Part 2 §15.2 links to Koopmans idx 94, while Ferguson idx 93 links to §13.3. Source-read Slack timestamp fixes for pp.21-24, p.35 and p.65 are applied; p.64 Garry 10:59 is supported. Vallance's direct reply at 12:03 UK is the earliest feedback documented in checked copies, not necessarily earliest overall. Remaining source uncertainties: whether Farrar's 09:45/09:46 forwards are separate sends or renderings; Rambaut's nested 4:16 PM clock; Holmes's p.55 02:16 date; and four current Slack time-check rows on pp.42-43, 47, 54-55 and 134-135. The user is handling the Medium article edits; no article source was edited here and live Medium text is not verified. Full evidence: [`ZONE_AND_DATE_ANALYSIS.md` Part 3.1](ZONE_AND_DATE_ANALYSIS.md#31-the-february-8-correspondence-evidence-and-chronology). | No further app edits are indicated by the checked evidence; validate and publish this branch, and leave the listed uncertainties open absent further source evidence. |
 | **O4** | Should `analysis/` stay in the public repository? | “ignore the folder” or “fine as it is” |
 | **O5** | My edits to your own `README.md` (six paths) and `STATUS.md` (one path) | “fine” or what to put back |
 | ~~O6~~ | `PO_Slack.code-workspace` | done: added to `.gitignore` (2026-11-02) |

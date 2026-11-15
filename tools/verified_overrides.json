@@ -187,8 +187,101 @@
  {
   "release": "po-emails.json",
   "thread_key": "po-emails|2020-02-08|1245",
+  "lookup_thread_keys": ["po-emails|2020-02-08|0445"],
+  "new_thread_key": "po-emails|2020-02-08|0445",
   "stamp": "08 February 2020 09:45",
   "zone": "Europe/London",
-  "evidence": "po-emails.pdf, the block 'From: Jeremy Farrar / Sent: 08 February 2020 09:45 / Subject: FW: 2019 N-CoV' is quoted inside Mike Ferguson's reply (REV0000827 page), so it is on Ferguson's London clock (UK date format, 24 h). Drosten's German client prints the same message at 'Datum: Samstag, 8. Februar 2020 um 10:45' (farrar-fauci-comms.pdf pp.59-60, Berlin = 09:45 UTC = 04:45 ET). Not a REV top-level stamp, so the Pacific page-owner rule does not apply."
+  "evidence": "po-emails.pdf pp.57-58 show Farrar's 'Sent: 08 February 2020 09:45' forward quoted inside Ferguson's reply; the quoted block is not a top-level REV stamp. A Dutch copy inside Fouchier's p.55 reply and Drosten's German copy on farrar-fauci-comms.pdf pp.59-60 print 10:45, consistent with 09:45 UK. Vallance's reply on farrar-fauci-comms.pdf pp.61-62 quotes a near-identical 09:46 UK rendering. The checked copies do not establish whether 09:45 and 09:46 are separate sends or renderings, or their response order."
+ },
+ {
+ "release": "po-emails.json",
+ "thread_key": "po-emails|2020-02-08|0950",
+ "new_thread_key": "po-emails|2020-02-08|1750",
+ "lookup_thread_keys": ["po-emails|2020-02-08|1750"],
+ "stamp": "2/8/2020 2:50:00 PM",
+ "zone": "America/Los_Angeles",
+ "certainty": "supported",
+ "stamp_line": "2/8/2020 2:50:00 PM Pacific -> 17:50 ET -> 22:50 UK",
+ "reply_to": "po-emails|2020-02-08|time-unresolved-1916",
+ "evidence": "po-emails.pdf p.51 shows the top-level REV stamp '2/8/2020 2:50:00 PM' and identifies R.A.M. Fouchier as sender. The page is in Kristian G. Andersen's Pacific REV collection; the collection/page evidence supports Pacific time, yielding 17:50 ET / 22:50 UK."
+ },
+ {
+ "release": "po-emails.json",
+ "thread_key": "po-emails|2020-02-08|1916",
+ "new_thread_key": "po-emails|2020-02-08|time-unresolved-1916",
+ "lookup_thread_keys": ["po-emails|2020-02-08|time-unresolved-1916"],
+ "time_unresolved": true,
+ "date": "2020-02-08",
+ "stamp": "Saturday, 8 February 2020 at 4:16 PM",
+ "stamp_line": "4:16 PM appears only in the nested quote on po-emails.pdf p.51; time zone unresolved",
+ "clear_reply_to": true,
+ "evidence": "po-emails.pdf p.51 shows Andrew Rambaut's 4:16 PM only in a nested quoted block inside Fouchier's top-level REV message. The checked page and cross-release copies do not establish which clock the nested quote uses; preserve the date and leave the normalized time unresolved."
+ },
+ {
+ "release": "po-emails.json",
+ "thread_key": "po-emails|2020-02-08|1436",
+ "new_thread_key": "po-emails|2020-02-08|1436",
+ "stamp": "2/8/2020 11:36:30 AM",
+ "zone": "America/Los_Angeles",
+ "certainty": "supported",
+ "stamp_line": "2/8/2020 11:36:30 AM Pacific -> 14:36:30 ET -> 19:36:30 UK",
+ "reply_to": "po-emails|2020-02-08|0445",
+ "evidence": "po-emails.pdf p.55 identifies R.A.M. Fouchier as sender and prints the top-level REV stamp '2/8/2020 11:36:30 AM'. The page is in Kristian G. Andersen's Pacific REV collection. Its text quotes Rambaut's argument, but the nested 4:16 PM quote clock remains unresolved."
+ },
+ {
+ "release": "po-emails.json",
+ "thread_key": "po-emails|2020-02-08|1452",
+ "reply_to": "po-emails|2020-02-08|0445",
+ "evidence": "po-emails.pdf p.53 shows Drosten's message quoting Farrar's forwarded request, with the same request stamped 10:45 in the German client. It quotes the 09:45 UK Farrar request (app idx 84), not Fouchier's later reply (idx 85); correct the app's prior explicit link."
+ },
+ {
+ "release": "po-emails.json",
+ "thread_key": "po-emails|2020-02-09|0016",
+ "new_thread_key": "po-emails|2020-02-08|1616",
+ "lookup_thread_keys": ["po-emails|2020-02-08|1616"],
+ "stamp": "Saturday, 8 February 2020 at 21:16",
+ "zone": "Europe/London",
+ "certainty": "supported",
+ "stamp_line": "21:16 UK in the PO copy; 22:15 Netherlands time (21:15 UK) in Koopmans's copy",
+ "reply_to": "po-emails|2020-02-08|1538",
+ "evidence": "po-emails.pdf pp.144-145 prints Andersen's nested message at 21:16 in Farrar's UK-client copy. farrar-fauci-comms.pdf p.56 prints the same text at 22:15 inside Koopmans's message; 22:15 Netherlands time (21:15 UK). The two checked copies therefore differ by one minute after conversion. Retain the PO-page timestamp and record the discrepancy rather than claiming exact simultaneity."
+ },
+ {
+ "release": "po-emails.json",
+ "thread_key": "po-emails|2020-02-09|1500",
+ "stamp": "2/9/2020 12:00:46 PM",
+ "zone": "America/Los_Angeles",
+ "certainty": "supported",
+ "stamp_line": "2/9/2020 12:00:46 PM Pacific -> 15:00:46 ET -> 20:00:46 UK",
+ "sender": "Mike Ferguson",
+ "sender_how": "po-emails.pdf p.57 identifies Mike Ferguson in the top-level message; the app sender field was blank.",
+ "reply_to": "po-emails|2020-02-08|0445",
+ "evidence": "po-emails.pdf p.57 prints the top-level REV stamp '2/9/2020 12:00:46 PM' and identifies Mike Ferguson as sender. The page is in Kristian G. Andersen's Pacific REV collection. The embedded Farrar forward is dated 09:45 UK; Ferguson's own message remains on Feb. 9."
+ },
+ {
+ "release": "po-emails.json",
+ "thread_key": "po-emails|2020-02-09|2307",
+ "new_thread_key": "po-emails|2020-02-09|1507",
+ "lookup_thread_keys": ["po-emails|2020-02-09|1507"],
+ "stamp": "Sunday, 9 February 2020 at 20:07",
+ "zone": "Europe/London",
+ "certainty": "supported",
+ "stamp_line": "20:07 UK -> 15:07 ET; matching Farrar-Fauci copy on p.55",
+ "sender": "Marion Koopmans",
+ "sender_how": "po-emails.pdf p.69 identifies Marion Koopmans; matching copy on farrar-fauci-comms.pdf p.55.",
+ "link_kind": "inferred (same conversation)",
+ "evidence": "po-emails.pdf p.69 identifies Marion Koopmans and prints the Feb. 9 20:07 message; farrar-fauci-comms.pdf p.55 contains the matching message. The app's prior explicit-quote label is not supported by a quoted block in this email."
+ },
+ {
+ "release": "po-emails.json",
+ "thread_key": "po-emails|2020-02-10|0126",
+ "new_thread_key": "po-emails|2020-02-10|0426",
+ "lookup_thread_keys": ["po-emails|2020-02-10|0426"],
+ "stamp": "2/10/2020 1:26:57 AM",
+ "zone": "America/Los_Angeles",
+ "certainty": "supported",
+ "stamp_line": "2/10/2020 1:26:57 AM Pacific -> 04:26:57 ET -> 09:26:57 UK",
+ "reply_to": "po-emails|2020-02-09|1507",
+ "evidence": "po-emails.pdf p.69 shows Farrar's top-level REV stamp '2/10/2020 1:26:57 AM'; the matching explicit-offset stamp on farrar-fauci-comms.pdf p.55 is 09:26:57 +0000. The REV page is in Andersen's Pacific collection, so the message is Feb. 10 Pacific / Feb. 10 ET; the app's normalized ET key is Feb. 10 04:26."
  }
 ]
