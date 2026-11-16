@@ -167,14 +167,14 @@ correspondence and its directly dependent passages. The correction commit
 test result covered only that earlier change. On 2026-11-15, source images for
 the residual PO email records and Slack pages were reopened, and the current
 app records, page maps, reply graph and chapter links were corrected in this
-branch. The live Medium article has not been independently checked; the user
-is handling those edits. The remaining source uncertainties are identified
-below, and the app test/push status is recorded in the handoff.
-The user reports that the Part 1 Medium article reordering and text corrections
-for §§13.1-13.14 have been applied, including the Drosten attribution and
-Ferguson's 9 Feb 20:00 UK response. Cross-references and Part 2 §§14.4, 15.2
-and 15.3 were still in progress at the last update. The live Medium article
-was not independently checked.
+branch. The user reports that earlier Part 1 Medium reordering and text
+corrections for §§13.1-13.14 were applied, including the Drosten attribution
+and Ferguson's 9 Feb 20:00 UK response. A later cross-check identified
+remaining article wording/caption alignment in §§13.2, 13.8-13.10, 13.14 and
+14.4. The live Medium article has not been independently checked; current
+article edits and unresolved source questions are listed separately in
+[`FOR_HUMAN_REVIEWER.md`](FOR_HUMAN_REVIEWER.md). The section-numbering
+mismatch is resolved in the app guide, not an article edit.
 
 ## 3.1 The February 8 correspondence: evidence and chronology
 
@@ -282,7 +282,7 @@ claims that the article still contains the original errors.
 | Page maps, guide and chapter links | **Corrected in the app.** Idx 92 maps to pp.144-145 (not pp.70-145); the other affected entries' maps follow their corrected keys. The app guide now places Fouchier, Ferguson and Vallance in §§13.2-13.4 with the verified records and pages; §13.9's former 2030 typo is corrected to 2020, while Rambaut's nested 4:16 pm zone remains explicitly unresolved. Part 2 §15.2 now links to Koopmans idx 94; Ferguson idx 93 links to §13.3. The live Medium article has not been checked here. |
 | Slack pp.21-24, 35, 64-65 / app | **Source-read labels applied.** Part 1 now records p.21 Garry 08:09 and Rambaut 08:30 (app idx 245-246), p.22 Garry 08:43 (idx 247), p.23 Garry 14:47, Holmes 15:32, Andersen 15:53, Andersen 16:21 and Garry 16:30 (idx 261-262, 265, 269-270), and p.24 Holmes 18:42 (idx 277). P.35 now reads 18:18, 18:20, 18:21 and 18:22 in page order (idx 376-379). P.64 Garry 10:59 is confirmed; p.65 is Garry 14:44 followed by Andersen 14:45 (idx 727-728). |
 | Remaining source uncertainty | The printed 09:45 and 09:46 forward copies differ by one minute; whether they are separate sends or renderings remains unresolved. Rambaut's nested `4:16 PM` on PO p.51 has no independently established time zone. On Slack p.55, Holmes's 02:16 post has no day chip above it; the later Feb. 20 chip does not establish whether the post belongs to Feb. 19 or 20. The current Part 1 time-check CSV retains four rows (pp.42-43, 47, 54-55 and 134-135); they have not been independently settled in this pass. |
-| Pipeline and UI | Source corrections are kept in the override/fix inputs and regenerated app data, with focused regression coverage. The user is handling the Medium article; its live text has not been independently checked and no article source was edited. The daily chart still does not show within-day order. |
+| Pipeline and UI | Source corrections are kept in the override/fix inputs and regenerated app data, with focused regression coverage. The live article has not been independently checked and no article source was edited; remaining article alignments are listed in the reviewer guide. The daily chart still does not show within-day order. |
 
 The existing “all reply pairs in order” and “zero cross-release violations”
 reports were checks of the generated graph, not independent proof. The
