@@ -21,9 +21,8 @@ guide. The live Medium article has not been independently checked. The
 section-numbering mismatch is resolved in the app guide and is not an article
 task.
 
-**Remaining source questions:** whether Farrar's 09:45 and 09:46 copies are
-separate sends or renderings; the timezone of Rambaut's quoted 4:16 PM stamp;
-Holmes's p.55 post date; and three additional Slack Part 1 time-check rows on
+**Remaining source questions:** the timezone of Rambaut's quoted 4:16 PM
+stamp; Holmes's p.55 post date; and three additional Slack Part 1 time-check rows on
 pp.42-43, 47, and 134-135. The p.54-55 check is part of the unresolved Holmes
 date. Source-read labels and corresponding app records for pp.21-24, p.35,
 and pp.64-65 are corrected. See the current-only review list in

@@ -193,17 +193,23 @@ the independent anchors in 1.2, not by the fact that `kga1978` is Andersen.
 the checked copies, at 12:03 UK on 8 February, before Fouchier's 19:36 UK on
 8 February and Ferguson's 20:00 UK on 9 February. This does not establish
 that Vallance was the earliest response overall; an earlier or unproduced
-reply may exist. Farrar's
-09:45 and 09:46 forwards have the same visible text and substantially
-overlapping recipients, but their one-minute difference and redactions do not
-prove whether they are two sends or two renderings. Vallance quotes the 09:46
-copy, while Fouchier and Ferguson quote the 09:45 copy. Do not assert that
-Fouchier was first even if the discussion is described as the 09:45 thread.
+reply may exist. Farrar's 09:45 and 09:46 forwards have the same visible text
+and substantially overlapping recipients. Vallance quotes the 09:46 copy,
+while Fouchier and Ferguson quote the 09:45 copy. The user considers the
+one-minute variation not an issue and suggests it may reflect the receiving
+email server's timestamp, noting that such differences are common. This is
+the user's accepted explanation, not independently verified server metadata;
+the copies' identity is not proven. The Dutch and German copies each print
+10:45 local, corresponding to 09:45 UK (see
+[PO pp.55-57](../../page_based/main_sources/po-emails.pdf) and
+Farrar-Fauci pp.59-60); Vallance's quote prints 09:46 UK on Farrar-Fauci p.62.
+Do not assert that Fouchier was first even if the discussion is described as
+the 09:45 thread.
 
 | UK time, 2020 | Event and direct source | Reading and certainty |
 |---|---|---|
-| 8 Feb 09:45 | Farrar's request, quoted inside Ferguson's top-level message, `po-emails.pdf` p.57: `Sent: 08 February 2020 09:45`. A Dutch copy inside Fouchier's p.55 reply prints 10:45; Drosten's German copy is `farrar-fauci-comms.pdf` pp.59-60, also 10:45. | **Supported 09:45 UK / 04:45 ET**: the Dutch/German copy and UK-rendered copy agree under the clients' expected zones. The app correction for PO idx 84 now updates the stale key and thread label too. The 09:45/09:46 copies' relationship remains unresolved. |
-| 8 Feb 09:46 | Same visible request quoted in Vallance's reply, `farrar-fauci-comms.pdf` p.62, `Sent: 08 February 2020 09:46`. | **Supported 09:46 UK / 04:46 ET**, in Vallance's UK-client quote. App `farrar-fauci` idx 82. The difference from 09:45 is real in the printed copies; their identity is unresolved. |
+| 8 Feb 09:45 | Farrar's request, quoted inside Ferguson's top-level message, `po-emails.pdf` p.57: `Sent: 08 February 2020 09:45`. A Dutch copy inside Fouchier's p.55 reply prints 10:45; Drosten's German copy is `farrar-fauci-comms.pdf` pp.59-60, also 10:45. | **Supported 09:45 UK / 04:45 ET**: the Dutch/German copy and UK-rendered copy agree under the clients' expected zones. The app correction for PO idx 84 now updates the stale key and thread label too. The user no longer treats the one-minute variance as an issue; its cause is not independently verified. |
+| 8 Feb 09:46 | Same visible request quoted in Vallance's reply, `farrar-fauci-comms.pdf` p.62, `Sent: 08 February 2020 09:46`. | **Supported 09:46 UK / 04:46 ET**, in Vallance's UK-client quote. App `farrar-fauci` idx 82. The one-minute difference is printed; the user accepts it as not an issue. |
 | 8 Feb 12:03 | Vallance, `farrar-fauci-comms.pdf` pp.61-62, header `Date: Saturday, 8 February 2020 at 12:03`, body on p.62. Quoted inside Farrar's message, itself inside Fauci's explicitly timed p.61 reply. | **Supported 12:03 UK / 07:03 ET**, assuming Farrar's quoting client was in London; app `farrar-fauci` idx 83 agrees. Not an explicit-offset stamp. |
 | 8 Feb 15:13; 17:36:34 | Farrar's `10:13 AM` quoted in Fauci's reply, then Fauci's top-level `Sat, 8 Feb 2020 17:36:34 +0000`, `farrar-fauci-comms.pdf` p.61. | Farrar **supported 15:13 UK / 10:13 ET** on Fauci's Eastern client; Fauci **verified 17:36:34 UK / 12:36:34 ET** by offset. App idx 84-85 agree. Slack p.23 prints Garry 12:42 ET, six minutes after Fauci, consistent with article 13.6. |
 | 8 Feb 19:36:30 | Fouchier, `po-emails.pdf` p.55, top-level `Message / From: R.A.M. Fouchier / Sent: 2/8/2020 11:36:30 AM`, `Summary.Feb7 RF.pdf`. The 10:45 Dutch header below belongs to **Farrar's quoted request**, not to Fouchier. | **Supported 19:36:30 UK / 14:36:30 ET / 20:36:30 Rotterdam**, on the REV-Pacific export rule; the app's idx 85 record and page map have been corrected. Slack p.23 prints Garry's notice of Ron's email at 14:47 ET, 11 minutes later. |
@@ -221,8 +227,8 @@ the live Medium article was not checked; do not read these descriptions as
 claims that the article still contains the original errors.
 
 - **13.1 (Part 1 PDF p.145):** the 09:45 UK value is supported and the
-  request is on PO p.57, continuing on p.58. Do not equate it uncritically
-  with the 09:46 copy or assert it is the only send.
+  request is on PO p.57, continuing on p.58. The user accepts the one-minute
+  variance with the 09:46 copy as not an issue; its cause is not proven.
 - **13.2 (pp.145-147, both captions):** replace 10:36 UK / 11:36 Rotterdam
   and “first” with the supported 19:36 UK / 20:36 Rotterdam and avoid a
   first-response claim. Footnote 49 (Part 2 p.190) interprets “Andrew's
@@ -281,7 +287,7 @@ claims that the article still contains the original errors.
 | PO idx 83-95 | **Corrected in this branch.** Idx 83 is Fouchier 17:50 ET / 22:50 UK on p.51 and explicitly quotes idx 91; idx 91 retains its printed 8 Feb date but has no normalized time or unsupported parent link. Idx 84 remains 04:45 ET; idx 85 remains 14:36 ET and quotes idx 84; idx 86 now links to the quoted Farrar request (idx 84), not Fouchier. Idx 92 is 16:16 ET on 8 Feb and maps to pp.144-145; its explicit Drosten quote link is retained. Idx 93 identifies Mike Ferguson at 15:00 ET on 9 Feb and quotes idx 84. Idx 94 identifies Marion Koopmans at 15:07 ET and has only an inferred conversation link to idx 92; idx 95 is 04:26 ET on 10 Feb and explicitly quotes idx 94. |
 | Page maps, guide and chapter links | **Corrected in the app.** Idx 92 maps to pp.144-145 (not pp.70-145); the other affected entries' maps follow their corrected keys. The app guide now places Fouchier, Ferguson and Vallance in §§13.2-13.4 with the verified records and pages; §13.9's former 2030 typo is corrected to 2020, while Rambaut's nested 4:16 pm zone remains explicitly unresolved. Part 2 §15.2 now links to Koopmans idx 94; Ferguson idx 93 links to §13.3. The live Medium article has not been checked here. |
 | Slack pp.21-24, 35, 64-65 / app | **Source-read labels applied.** Part 1 now records p.21 Garry 08:09 and Rambaut 08:30 (app idx 245-246), p.22 Garry 08:43 (idx 247), p.23 Garry 14:47, Holmes 15:32, Andersen 15:53, Andersen 16:21 and Garry 16:30 (idx 261-262, 265, 269-270), and p.24 Holmes 18:42 (idx 277). P.35 now reads 18:18, 18:20, 18:21 and 18:22 in page order (idx 376-379). P.64 Garry 10:59 is confirmed; p.65 is Garry 14:44 followed by Andersen 14:45 (idx 727-728). |
-| Remaining source uncertainty | The printed 09:45 and 09:46 forward copies differ by one minute; whether they are separate sends or renderings remains unresolved. Rambaut's nested `4:16 PM` on PO p.51 has no independently established time zone. On Slack p.55, Holmes's 02:16 post has no day chip above it; the later Feb. 20 chip does not establish whether the post belongs to Feb. 19 or 20. The current Part 1 time-check CSV retains four rows (pp.42-43, 47, 54-55 and 134-135); they have not been independently settled in this pass. |
+| Remaining source uncertainty | Rambaut's nested `4:16 PM` on PO p.51 has no independently established time zone. On Slack p.55, Holmes's 02:16 post has no day chip above it; the later Feb. 20 chip does not establish whether the post belongs to Feb. 19 or 20. The current Part 1 time-check CSV retains four rows (pp.42-43, 47, 54-55 and 134-135); they have not been independently settled in this pass. |
 | Pipeline and UI | Source corrections are kept in the override/fix inputs and regenerated app data, with focused regression coverage. The live article has not been independently checked and no article source was edited; remaining article alignments are listed in the reviewer guide. The daily chart still does not show within-day order. |
 
 The existing “all reply pairs in order” and “zero cross-release violations”
