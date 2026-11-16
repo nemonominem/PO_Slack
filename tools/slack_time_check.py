@@ -2,10 +2,12 @@
 backwards by more than an hour (for example 12:47, then 01:28, then 12:50).
 
 Part 1 has no AM/PM and shows a time only for the first message of a run, so these are
-OCR slips or misplaced day dividers. Part 2 has none. Output: ../analysis/slack_part1_time_check.csv
+potential OCR slips, date-assignment issues, or redaction-placement estimates.
+Part 2 has none. Output: ../analysis/slack_part1_time_check.csv
 The 'late_to_early' rows (evening followed by small hours on the same date) are the pattern of a
 day divider placed one message too early or too late (compare slack_date_fixes.json); the
-others look like misread digits. Each row needs the page image to settle.
+others need source-page review. Estimated redaction placements are not printed
+timestamps and cannot establish the redacted messages' actual times.
 """
 import csv, json, os, re
 
@@ -40,7 +42,7 @@ def main():
                 "pattern": pattern,
             })
     with open(OUT, "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+        w = csv.DictWriter(f, fieldnames=list(rows[0].keys()), lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
     print("wrote %d rows (%d late_to_early) to %s" % (len(rows), sum(r["pattern"] == "late_to_early" for r in rows), OUT))

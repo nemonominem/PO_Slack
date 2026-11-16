@@ -244,23 +244,36 @@ to 15:16 UK, but is not a strict contradiction without proof that the
 arguments had not appeared earlier. U2 remains open pending an offset-bearing
 copy or independent evidence of the client clock.
 
-### Former U3: Slack p.55 date and app correction
+### Former U3: Slack p.55 date inference and app correction
 
 The source images show that pp.53-54 are Slack messages, not an attachment.
 The Feb. 19 sequence runs through the day and ends p.54 with Holmes at 19:24
 and 19:30, then Andersen at 19:32. P.55 continues with Holmes at 02:16, Rambaut
 at 05:53, Garry at 06:27 and 06:40, Rambaut at 06:45 and 06:57, and Garry at
-07:06 near a Feb. 20 chip. Following the user's guidance to treat the chips as
-reminders and read the chronology across the page break, the evening-to-morning
-rollover and rising morning times **support Feb. 20** for Holmes and the
-following early-morning posts. This is a source-based inference, not an
-explicit date printed next to Holmes's message.
+07:06 near a Feb. 20 chip. Following the user's guidance to treat chips as
+reminders and read the chronology across the page break, the previous evening,
+page continuity, and ordered morning times **support Feb. 20** for Holmes and
+the following early-morning posts. This is a source-based inference, not an
+explicit date printed next to Holmes's message. The rule is recorded in
+[`docs/SPEC.md`](../../docs/SPEC.md#slack-part-1-date-assignment); a backwards
+time alone is not enough to infer midnight.
 
-The current app `part1.json` idx 602-607 still assigns these six posts to
-Feb. 19; idx 608 is dated Feb. 20 but has no time, although Garry's 07:06 is
-visible on p.55. Correct the dates and visible time in the app and regenerate
-the time-check; its p.54-55 row remains present until then. No app data was
-changed in this documentation pass.
+The app correction is applied through `tools/slack_date_fixes.json` and
+`tools/slack_time_fixes.json`: Part 1 idx 602-607 now use Feb. 20, and idx 608
+has the visible 07:06. The p.54-55 row is removed from the generated
+`slack_part1_time_check.csv`; the check now contains three rows, all involving
+estimated redaction placements.
+
+### U4: source-verified Slack labels and remaining redaction estimates
+
+The page images verify that Garry's p.43 label is **13:34** (app idx 442,
+previously 01:34) and his p.47 label is **16:02** (app idx 508, previously
+14:02). Both app labels are corrected through `tools/slack_time_fixes.json`.
+These corrections do not resolve the three remaining generated time-check
+rows: pp.42-43 and p.47 still compare those visible messages with redacted
+records whose displayed times are placement estimates, and pp.134-135 still
+contain an unresolved redacted placement. The estimates are not source-visible
+timestamps; no actual time or sender has been inferred for any redacted row.
 
 ### Original article claims checked and correction evidence
 
@@ -330,7 +343,8 @@ claims that the article still contains the original errors.
 | PO idx 83-95 | **Corrected in this branch.** Idx 83 is Fouchier 17:50 ET / 22:50 UK on p.51 and explicitly quotes idx 91; idx 91 retains its printed 8 Feb date but has no normalized time or unsupported parent link. Idx 84 remains 04:45 ET; idx 85 remains 14:36 ET and quotes idx 84; idx 86 now links to the quoted Farrar request (idx 84), not Fouchier. Idx 92 is 16:16 ET on 8 Feb and maps to pp.144-145; its explicit Drosten quote link is retained. Idx 93 identifies Mike Ferguson at 15:00 ET on 9 Feb and quotes idx 84. Idx 94 identifies Marion Koopmans at 15:07 ET and has only an inferred conversation link to idx 92; idx 95 is 04:26 ET on 10 Feb and explicitly quotes idx 94. |
 | Page maps, guide and chapter links | **Corrected in the app.** Idx 92 maps to pp.144-145 (not pp.70-145); the other affected entries' maps follow their corrected keys. The app guide now places Fouchier, Ferguson and Vallance in §§13.2-13.4 with the verified records and pages; §13.9's former 2030 typo is corrected to 2020, while Rambaut's nested 4:16 pm zone remains explicitly unresolved. Part 2 §15.2 now links to Koopmans idx 94; Ferguson idx 93 links to §13.3. The live Medium article has not been checked here. |
 | Slack pp.21-24, 35, 64-65 / app | **Source-read labels applied.** Part 1 now records p.21 Garry 08:09 and Rambaut 08:30 (app idx 245-246), p.22 Garry 08:43 (idx 247), p.23 Garry 14:47, Holmes 15:32, Andersen 15:53, Andersen 16:21 and Garry 16:30 (idx 261-262, 265, 269-270), and p.24 Holmes 18:42 (idx 277). P.35 now reads 18:18, 18:20, 18:21 and 18:22 in page order (idx 376-379). P.64 Garry 10:59 is confirmed; p.65 is Garry 14:44 followed by Andersen 14:45 (idx 727-728). |
-| Remaining source uncertainty and app work | Rambaut's nested `4:16 PM` on PO p.51 has no independently established time zone; see U2 above. Source review supports Feb. 20 for Holmes's p.55 post and the following early-morning posts, but app Part 1 idx 602-607 still need date correction. The current generated Part 1 time-check retains four rows (pp.42-43, 47, 54-55 and 134-135); the p.54-55 source question is resolved, while the other three are detailed in the reviewer guide. |
+| Slack p.55 rollover and time labels | **Corrected in the app.** Sequence across pp.54-55 supports an inferred Feb. 20 date for idx 602-607; idx 608 now has the source-visible 07:06. Source images also confirm Garry p.43 13:34 (idx 442) and p.47 16:02 (idx 508), both corrected in app data. |
+| Remaining source uncertainty | Rambaut's nested `4:16 PM` on PO p.51 has no independently established time zone; see U2 above. The generated Part 1 time-check now has three rows (pp.42-43, 47, and 134-135). All involve estimated redacted-message placement times; the estimates do not establish actual times or senders. See U4 in the reviewer guide. |
 | Pipeline and UI | Source corrections are kept in the override/fix inputs and regenerated app data, with focused regression coverage. The live article has not been independently checked and no article source was edited; remaining article alignments are listed in the reviewer guide. The daily chart still does not show within-day order. |
 
 The existing “all reply pairs in order” and “zero cross-release violations”
@@ -355,7 +369,7 @@ app status is updated in Part 3.1.
 `slack-part1.pdf` p.4, Andersen, 22:42, was dated 2 Feb; it is the evening of 1 Feb (the day divider had been applied one message too early). Corrected through `tools/slack_date_fixes.json`.
 
 ## A3. Slack Part 1: times run backwards (80 at first, 3 after the readings of 2026-11-03/05): 6 of the 12 evening-then-small-hours cases fixed
-Of the 12 cases where an evening message is followed by a small-hours message on the same date, **6 are the same fault as A2** (a single evening message whose date is one day too late, because the divider was applied one message early). In each, the previous timed message belongs to the previous day with an earlier time, and the next one is a small-hours message of the day. Checked on the page image for `slack-part1.pdf` p.9 (the “February 3rd” divider sits below the 22:35 message). Fixed: p.9 (22:35, 2 Feb), p.16 (20:11, 5 Feb), p.21 (19:11, 7 Feb), p.35 (19:45, 11 Feb), p.39 (22:26, 12 Feb), p.134 (23:56, 20 Apr). Earlier classifications are historical: source-page review on 15 November corrected labels on pp.21-24, p.35 and pp.64-65. On 17 November, review of pp.53-55 supported the Feb. 20 rollover for former U3, but the corresponding app dates and generated check still need correction. The three other current check cases, including OCR misreads and estimated redaction times, are detailed in U4 of the reviewer guide.
+Of the 12 cases where an evening message is followed by a small-hours message on the same date, **6 are the same fault as A2** (a single evening message whose date is one day too late, because the divider was applied one message early). In each, the previous timed message belongs to the previous day with an earlier time, and the next one is a small-hours message of the day. Checked on the page image for `slack-part1.pdf` p.9 (the “February 3rd” divider sits below the 22:35 message). Fixed: p.9 (22:35, 2 Feb), p.16 (20:11, 5 Feb), p.21 (19:11, 7 Feb), p.35 (19:45, 11 Feb), p.39 (22:26, 12 Feb), p.134 (23:56, 20 Apr). Earlier classifications are historical: source-page review on 15 November corrected labels on pp.21-24, p.35 and pp.64-65. On 17 November, review of pp.53-55 supported the Feb. 20 rollover for former U3; the dates and visible p.55 time are now corrected in app data. The p.43 and p.47 Garry times are also corrected from source images. The current time-check has three rows, all involving redacted placements whose actual times are not visible; see U4 of the reviewer guide.
 
 ## A4. Slack times carry no zone: done
 Slack Part 2 (Pacific) is converted to ET, Part 1 (Eastern) is labelled ET; both show the printed local time in the 🕑 chip.

@@ -477,6 +477,30 @@
  },
  {
   "part": "part1",
+  "idx": 432,
+  "sender": "Robert Garry",
+  "wrong_time": "01:34",
+  "time": "13:34",
+  "evidence": "slack-part1.pdf p.43 image: Garry's visible header is 13:34, not 01:34."
+ },
+ {
+  "part": "part1",
+  "idx": 498,
+  "sender": "Robert Garry",
+  "wrong_time": "14:02",
+  "time": "16:02",
+  "evidence": "slack-part1.pdf p.47 image: Garry's visible header is 16:02, not 14:02."
+ },
+ {
+  "part": "part1",
+  "idx": 594,
+  "sender": "Robert Garry",
+  "wrong_time": null,
+  "time": "07:06",
+  "evidence": "slack-part1.pdf p.55 image: Garry's visible header is 07:06; the timestamp is rendered without adding a sender or timestamp to neighboring redacted records."
+ },
+ {
+  "part": "part1",
   "idx": 443,
   "sender": "Eddie Holmes",
   "wrong_time": "10:58",

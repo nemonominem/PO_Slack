@@ -768,6 +768,24 @@ ok('Koopmans and Farrar p.69 use verified senders, dates, and explicit-versus-in
 const slackAt = (page, sender, time) => part1.find(e =>
   e.sender === sender && e.time === time &&
   app.pageMaps.part1[String(e.idx)]?.start === page);
+const overnightSlack = [602, 603, 604, 605, 606, 607].map(idx =>
+  part1.find(e => e.idx === idx));
+ok('Slack p.55 overnight messages use the inferred Feb. 20 date across the page break',
+   overnightSlack.every(e => e?.date === '2020-02-20' &&
+     app.pageMaps.part1[String(e.idx)]?.start === 55) &&
+   overnightSlack.map(e => e.time).join(',') === '02:16,05:53,06:27,06:40,06:45,06:57' &&
+   part1.find(e => e.idx === 608)?.date === '2020-02-20' &&
+   part1.find(e => e.idx === 608)?.time === '07:06' &&
+   app.pageMaps.part1['608']?.start === 55);
+ok('source-verified Garry times on pp.43 and 47 match the app labels',
+   slackAt(43, 'Robert Garry', '13:34')?.idx === 442 &&
+   slackAt(47, 'Robert Garry', '16:02')?.idx === 508);
+ok('remaining Slack time-check redactions retain estimate labels, not inferred stamps',
+   [[432, '19:14', 42], [510, '12:15', 47], [1296, '13:36', 135]].every(([idx, time, page]) => {
+     const entry = part1.find(e => e.idx === idx);
+     return entry?.sender === 'Redacted' && entry.time === time && entry.time_estimated === true &&
+       app.pageMaps.part1[String(idx)]?.start === page;
+   }));
 ok('source-read Slack labels on pp.21-24 match the page images',
    !!slackAt(21, 'Robert Garry', '08:09') &&
    !!slackAt(21, 'Andrew Rambaut', '08:30') &&

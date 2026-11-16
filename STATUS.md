@@ -4,7 +4,7 @@ The `po-sources-and-boxes` branch includes the February 8 correspondence
 corrections, source-page rechecks, and updated app records/page maps/chapter
 links.
 The app's current generated-data inventory is 13,087 timeline entries across
-five sources. The guide indexes 221 article sections and 322 citations; the
+five sources. The guide indexes 221 article sections and 321 citations; the
 Complementary view currently has 11 trimmed PDFs.
 
 The current review guide separates unresolved source/time questions (U), open
@@ -21,14 +21,15 @@ guide. The live Medium article has not been independently checked. The
 section-numbering mismatch is resolved in the app guide and is not an article
 task.
 
-**Remaining source questions:** the timezone of Rambaut's quoted 4:16 PM
-stamp and three Slack Part 1 time-check cases on pp.42-43, 47, and 134-135.
-The source sequence supports Feb. 20 for Holmes's p.55 02:16 post and the
-following morning posts, but app Part 1 idx 602-607 still need their dates
-corrected and idx 608 lacks its visible 07:06 time; the generated time-check
-row remains until a rebuild.
-Source-read labels and corresponding app records for pp.21-24, p.35,
-and pp.64-65 are corrected. See the current-only review list in
+**Remaining source questions:** Rambaut's quoted 4:16 PM timezone remains
+unresolved. Source-page review supports an inferred Feb. 20 rollover across
+Slack pp.54-55; app idx 602-607 now use that date, and idx 608 now has its
+visible 07:06 time. Garry's p.43 13:34 and p.47 16:02 labels are also corrected.
+The regenerated Part 1 time-check has three rows on pp.42-43, 47, and 134-135;
+each includes a redacted-message placement estimate, not a source-visible time
+or sender. Do not infer either from the estimate. Source-read labels and
+corresponding app records for pp.21-24, p.35, and pp.64-65 are corrected. See
+the current-only review list in
 [`analysis/chronology/FOR_HUMAN_REVIEWER.md`](analysis/chronology/FOR_HUMAN_REVIEWER.md).
 
 See [`README.md`](README.md) for the application overview,

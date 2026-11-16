@@ -103,6 +103,23 @@ Practical rules learned from `po-emails.pdf`:
    to edit" thread runs 01:23, 19:08, 17:56, 17:08, 14:39. That looks like a
    parsing bug and is not; entries are sorted by their own stamps instead.
 
+### Slack Part 1 date assignment
+
+Treat Slack date chips as reminders of the date in the conversation, not as
+infallible per-message boundaries. Across a page break or adjacent messages,
+compare the visible hours and minutes in sequence with the preceding and
+following dated messages; a move from an evening sequence to rising small-hours
+times can support an overnight rollover even when the chip is positioned later.
+Record such a date as an inference with the source pages and neighboring times
+in `slack_date_fixes.json`. Verify the surrounding sequence and retain
+uncertainty when it does not resolve the date. A backwards time alone does not
+prove midnight, and redaction-placement estimates are not visible timestamps.
+
+For example, `slack-part1.pdf` p.54 ends the Feb. 19 sequence at 19:32; p.55
+continues at 02:16 and 05:53, then progresses through 06:27–07:06 near the
+Feb. 20 chip. Together these cues support Feb. 20 for the overnight messages;
+the chip's visual position alone is not the reason for the inference.
+
 ## 4. Threading: links in both directions
 
 - **Upward** — `reply_to` / `reply_to_label`: the message this one answers.

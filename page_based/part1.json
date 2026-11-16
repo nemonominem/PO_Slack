@@ -6035,12 +6035,12 @@
       "idx": 441
     },
     {
-      "stamp_line": "01:34 ET",
+      "stamp_line": "13:34 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-15",
       "raw_date": "February 15, 2020",
       "sender": "Robert Garry",
-      "time": "01:34",
+      "time": "13:34",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -6924,12 +6924,12 @@
       "idx": 507
     },
     {
-      "stamp_line": "14:02 ET",
+      "stamp_line": "16:02 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
       "date": "2020-02-17",
       "raw_date": "February 17, 2020",
       "sender": "Robert Garry",
-      "time": "14:02",
+      "time": "16:02",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
@@ -8207,8 +8207,8 @@
     {
       "stamp_line": "02:16 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
-      "date": "2020-02-19",
-      "raw_date": "February 19, 2020",
+      "date": "2020-02-20",
+      "raw_date": "February 20, 2020",
       "sender": "Eddie Holmes",
       "time": "02:16",
       "kind": "slack",
@@ -8221,8 +8221,8 @@
     {
       "stamp_line": "05:53 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
-      "date": "2020-02-19",
-      "raw_date": "February 19, 2020",
+      "date": "2020-02-20",
+      "raw_date": "February 20, 2020",
       "sender": "Andrew Rambaut",
       "time": "05:53",
       "kind": "slack",
@@ -8237,8 +8237,8 @@
     {
       "stamp_line": "06:27 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
-      "date": "2020-02-19",
-      "raw_date": "February 19, 2020",
+      "date": "2020-02-20",
+      "raw_date": "February 20, 2020",
       "sender": "Robert Garry",
       "time": "06:27",
       "kind": "slack",
@@ -8251,8 +8251,8 @@
     {
       "stamp_line": "06:40 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
-      "date": "2020-02-19",
-      "raw_date": "February 19, 2020",
+      "date": "2020-02-20",
+      "raw_date": "February 20, 2020",
       "sender": "Robert Garry",
       "time": "06:40",
       "kind": "slack",
@@ -8265,8 +8265,8 @@
     {
       "stamp_line": "06:45 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
-      "date": "2020-02-19",
-      "raw_date": "February 19, 2020",
+      "date": "2020-02-20",
+      "raw_date": "February 20, 2020",
       "sender": "Andrew Rambaut",
       "time": "06:45",
       "kind": "slack",
@@ -8281,8 +8281,8 @@
     {
       "stamp_line": "06:57 ET",
       "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed",
-      "date": "2020-02-19",
-      "raw_date": "February 19, 2020",
+      "date": "2020-02-20",
+      "raw_date": "February 20, 2020",
       "sender": "Andrew Rambaut",
       "time": "06:57",
       "kind": "slack",
@@ -8298,13 +8298,15 @@
       "date": "2020-02-20",
       "raw_date": "February 20, 2020",
       "sender": "Robert Garry",
-      "time": null,
+      "time": "07:06",
       "kind": "slack",
       "thread_id": null,
       "attachments": [],
       "content": "a it would be very interesting for sure. Viable yes. The PRRA created an longer loop where the furin or furin-like enzyme has to clip. If you shorten the loop and remove one if not more of the O-\nlinked glycans you're back to something that structurally is probably like RaTG13. Looking at the sequences around $1/S2 in other CoVs there's a good bit of variation including insertions and\ndeletions at the end of $1 or in the cleavage site themselves within a virus (like HKU1 or MHV). Also its possible to change (knockout) the cleavage site altogether and get a well-foldec protein as\nthey did to get the cryo structure in the new science paper.",
       "redacted": false,
-      "idx": 608
+      "idx": 608,
+      "stamp_line": "07:06 ET",
+      "zone_assumed": "Slack Part 1 export is on US Eastern time (settled); shown as printed"
     },
     {
       "stamp_line": "07:12 ET",

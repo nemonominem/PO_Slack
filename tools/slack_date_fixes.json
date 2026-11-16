@@ -169,5 +169,59 @@
     "wrong_date": "2020-04-02",
     "date": "2020-04-03",
     "evidence": "Reviewer, from the page image of slack-part1.pdf p.115 (2026-11-05): Andersen 13:35 \"This whole furin site being messed with...\" is under an April 3rd, 2020 date chip (the chip hides the start of the text), so it and the messages after it up to the April 4th divider are April 3, not April 2."
+  },
+  {
+    "part": "part1",
+    "idx": 588,
+    "sender": "Eddie Holmes",
+    "time": "02:16",
+    "wrong_date": "2020-02-19",
+    "date": "2020-02-20",
+    "evidence": "slack-part1.pdf pp.54-55: Andersen 19:32 closes the Feb. 19 sequence on p.54; Holmes 02:16 begins the ordered overnight sequence on p.55, followed by 05:53 and later morning times near the Feb. 20 chip. The date is inferred from the rollover and ordered times, not printed beside Holmes."
+  },
+  {
+    "part": "part1",
+    "idx": 589,
+    "sender": "Andrew Rambaut",
+    "time": "05:59",
+    "wrong_date": "2020-02-19",
+    "date": "2020-02-20",
+    "evidence": "slack-part1.pdf pp.54-55: Andersen 19:32 closes the Feb. 19 sequence on p.54; Holmes 02:16 begins the ordered overnight sequence on p.55, followed by 05:53 and later morning times near the Feb. 20 chip. The date is inferred from the rollover and ordered times, not printed beside Holmes."
+  },
+  {
+    "part": "part1",
+    "idx": 590,
+    "sender": "Robert Garry",
+    "time": "04:27",
+    "wrong_date": "2020-02-19",
+    "date": "2020-02-20",
+    "evidence": "slack-part1.pdf pp.54-55: Andersen 19:32 closes the Feb. 19 sequence on p.54; Holmes 02:16 begins the ordered overnight sequence on p.55, followed by 05:53 and later morning times near the Feb. 20 chip. The date is inferred from the rollover and ordered times, not printed beside Holmes."
+  },
+  {
+    "part": "part1",
+    "idx": 591,
+    "sender": "Robert Garry",
+    "time": "06:40",
+    "wrong_date": "2020-02-19",
+    "date": "2020-02-20",
+    "evidence": "slack-part1.pdf pp.54-55: Andersen 19:32 closes the Feb. 19 sequence on p.54; Holmes 02:16 begins the ordered overnight sequence on p.55, followed by 05:53 and later morning times near the Feb. 20 chip. The date is inferred from the rollover and ordered times, not printed beside Holmes."
+  },
+  {
+    "part": "part1",
+    "idx": 592,
+    "sender": "Andrew Rambaut",
+    "time": "06:45",
+    "wrong_date": "2020-02-19",
+    "date": "2020-02-20",
+    "evidence": "slack-part1.pdf pp.54-55: Andersen 19:32 closes the Feb. 19 sequence on p.54; Holmes 02:16 begins the ordered overnight sequence on p.55, followed by 05:53 and later morning times near the Feb. 20 chip. The date is inferred from the rollover and ordered times, not printed beside Holmes."
+  },
+  {
+    "part": "part1",
+    "idx": 593,
+    "sender": "Andrew Rambaut",
+    "time": "06:57",
+    "wrong_date": "2020-02-19",
+    "date": "2020-02-20",
+    "evidence": "slack-part1.pdf pp.54-55: Andersen 19:32 closes the Feb. 19 sequence on p.54; Holmes 02:16 begins the ordered overnight sequence on p.55, followed by 05:53 and later morning times near the Feb. 20 chip. The date is inferred from the rollover and ordered times, not printed beside Holmes."
   }
 ]
