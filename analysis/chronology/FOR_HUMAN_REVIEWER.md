@@ -2,17 +2,40 @@
 
 | Area | Current status |
 |---|---|
-| App/data | February 8 records, links, page maps, guide links, source-read Slack labels, and section numbering are corrected in the current branch. |
+| App/data | February 8 corrections are in the current branch. The supported February 20 date for the Slack p.55 morning sequence still needs an app correction; see below. |
 | Medium article | Earlier Part 1 edits were reported applied; the live [article](https://gillesdemaneuf.medium.com/summary-proximal-origin-a-tragicomedy-of-our-times-1ed5b4dae506) has not been independently checked. Remaining edits are listed below. |
-| Review scope | Three unresolved source/time questions (U), one open non-datetime issue (O), and current article edits are kept separate. Detailed evidence: [chronology audit, Part 3.1](ZONE_AND_DATE_ANALYSIS.md). |
+| Review scope | Two unresolved source/time groups (U2 and U4), one open non-datetime issue (O), an app date correction, and article edits are kept separate. Detailed evidence: [chronology audit](ZONE_AND_DATE_ANALYSIS.md). |
 
 ## U. Still unresolved: source/time questions needing human review
 
 | Code | Current question | What would resolve it |
 |---|---|---|
-| **U2** | What timezone applies to Rambaut's nested 4:16 PM stamp on [PO p.51](../../page_based/main_sources/po-emails.pdf)? Eastern is plausible, not established; the app leaves normalized time unresolved. | An exact copy with an offset or independent evidence of the quoting client's clock. |
-| **U3** | Is Holmes's Slack post on p.55 dated Feb. 19 or 20? There is no day chip above it; pp.53-54 are an attachment. ([Time-check list](../slack_part1_time_check.csv)) | An independent date anchor; do not infer the date from divider placement alone. |
-| **U4** | Three Slack time checks remain unsettled: pp.42-43, p.47, and pp.134-135. ([Time-check list](../slack_part1_time_check.csv)) | Review source images for labels, ordering, and any day divider across the page boundary. |
+| **U2** | What timezone applies to Rambaut's nested 4:16 PM on [PO p.51](../../page_based/main_sources/po-emails.pdf)? The quote-clock rule and the potentially too-early CET reading are detailed below. | An offset-bearing copy or independent evidence of the client clock that generated the quote header. |
+| **U4** | Three Slack time-check cases involve misread labels and estimated redaction times. Their full details and review actions are below. | Review each source-backed discrepancy and decide the app corrections. |
+
+### U2: Why the quote clock remains uncertain
+
+| Evidence | What it shows |
+|---|---|
+| [PO p.51](../../page_based/main_sources/po-emails.pdf) | Fouchier's top-level REV stamp is 2:50 PM, supported as Pacific / 22:50 UK. His reply quotes Rambaut at 4:16 PM. If Fouchier's reply client generated that quote header, the quote-clock rule uses that client's clock, not the REV clock. |
+| Rotterdam hypothesis | If that client used CET, 4:16 PM would be 15:16 UK / 10:16 ET. The page supplies no offset or client configuration; Fouchier's location alone does not establish it. Eastern would give 21:16 UK, but is also unproven. |
+| Potentially too early | Rambaut's [PO p.51](../../page_based/main_sources/po-emails.pdf) message disputes a no-lab assertion and an argument about other outbreaks; Fouchier's [PO p.55](../../page_based/main_sources/po-emails.pdf) email makes closely related points. Its 11:36:30 AM REV stamp is supported as 19:36:30 UK, over four hours after the proposed 15:16 UK. |
+| [Slack p.23](../../page_based/main_sources/slack-part1.pdf) | Garry announces Ron's email at 14:47 ET; Holmes comments at 15:32, Rambaut critiques the other-outbreak argument at 15:43, and Andersen quotes Ron's no-lab claim at 15:53. This is consistent with the later sequence, not proof that the points never appeared earlier. |
+| Conclusion | The CET reading creates a chronology tension, not a strict contradiction unless the arguments first appeared in the p.55 email. U2 remains open; see [detailed audit](ZONE_AND_DATE_ANALYSIS.md#u2-quote-clock-and-chronology). |
+
+### U4: Slack time-check details
+
+| Case | Printed source and current app/check data | Review needed |
+|---|---|---|
+| **U4a — 15 Feb in check, [pp.42-43](../../page_based/main_sources/slack-part1.pdf)** | The check compares a redacted **19:14** (app idx 432, placement estimate, not a visible stamp) with Garry **01:34** (idx 442). The redaction is at the top of p.42, before Holmes **22:44** and the Feb. 15 chip; p.42 ends with Rambaut **13:31** on figure numbering. Garry's p.43 continuation “Ok - that confused me” visibly says **13:34**, not 01:34. | Correct Garry's OCR time; review the estimated redaction placement/date. The obscured sender, content and actual time cannot be read from the PDF. |
+| **U4b — 17 Feb, [p.47](../../page_based/main_sources/slack-part1.pdf)** | The check compares Garry **14:02** (idx 508, “I think that's an artifact”) with redacted **12:15** (idx 510, placement estimate). The image shows Garry **16:02**, then Holmes **16:08** on pangolin sequences; the redacted block follows before Andersen **16:20**. No redacted time or sender is visible. | Correct Garry's OCR time; review the placeholder's date/placement. Do not treat 12:15 as a printed timestamp. |
+| **U4c — 21-22 Apr, [pp.134-135](../../page_based/main_sources/slack-part1.pdf)** | The check compares Holmes **23:42** on 21 Apr (idx 1292, “I was just about to send that to you!”) with redacted **13:36** (idx 1296, placement estimate). The image continues with Holmes **23:59**, then p.135 Andersen **00:05** and Garry **07:47**, followed by a redacted block; an Apr. 27 chip appears later. | Review the inferred rollover and placeholder date/placement. The redacted sender and actual time are not visible; 13:36 is not a printed stamp. |
+
+## App date correction needed
+
+| Source finding | App action |
+|---|---|
+| Former U3: [Slack pp.53-55](../../page_based/main_sources/slack-part1.pdf) show Feb. 19 daytime/evening messages, ending p.54 with Andersen **19:32**, followed on p.55 by Holmes **02:16**, Rambaut **05:53**, Garry **06:27/06:40**, Rambaut **06:45/06:57**, and Garry **07:06** near a Feb. 20 chip. The rising morning sequence and overnight rollover support **Feb. 20** for Holmes and the following posts; the chip is a reminder, not the sole boundary. | The source question is resolved on this inference, but app Part 1 idx **602-607** still show Feb. 19 and need correction; idx **608** is Feb. 20 but lacks the visible **07:06** time. The generated time-check retains its p.54-55 row until data is rebuilt. |
 
 ## O. Open non-datetime issues
 

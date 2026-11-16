@@ -22,9 +22,12 @@ section-numbering mismatch is resolved in the app guide and is not an article
 task.
 
 **Remaining source questions:** the timezone of Rambaut's quoted 4:16 PM
-stamp; Holmes's p.55 post date; and three additional Slack Part 1 time-check rows on
-pp.42-43, 47, and 134-135. The p.54-55 check is part of the unresolved Holmes
-date. Source-read labels and corresponding app records for pp.21-24, p.35,
+stamp and three Slack Part 1 time-check cases on pp.42-43, 47, and 134-135.
+The source sequence supports Feb. 20 for Holmes's p.55 02:16 post and the
+following morning posts, but app Part 1 idx 602-607 still need their dates
+corrected and idx 608 lacks its visible 07:06 time; the generated time-check
+row remains until a rebuild.
+Source-read labels and corresponding app records for pp.21-24, p.35,
 and pp.64-65 are corrected. See the current-only review list in
 [`analysis/chronology/FOR_HUMAN_REVIEWER.md`](analysis/chronology/FOR_HUMAN_REVIEWER.md).
 
