@@ -10,7 +10,7 @@
 
 | Code | Current question | What would resolve it |
 |---|---|---|
-| **U1** | Are Farrar's 09:45 and 09:46 request copies separate sends or different renderings? The checked copies differ by one minute. ([PO pp.55-57](../../page_based/main_sources/po-emails.pdf); [Farrar-Fauci pp.59-62](../../page_based/other_sources/farrar-fauci-comms.pdf)) | An original-message identifier, mailbox/export metadata, or another independent copy. |
+| **U1** | Dutch and German quotes both show 10:45 local (09:45 UK); Vallance's near-identical quote shows 09:46 UK. Are the 09:45 and 09:46 copies separate sends or different renderings? ([PO pp.55-57](../../page_based/main_sources/po-emails.pdf); [Farrar-Fauci pp.59-62](../../page_based/other_sources/farrar-fauci-comms.pdf)) | An original-message identifier, mailbox/export metadata, or another independent copy. |
 | **U2** | What timezone applies to Rambaut's nested 4:16 PM stamp on [PO p.51](../../page_based/main_sources/po-emails.pdf)? Eastern is plausible, not established; the app leaves normalized time unresolved. | An exact copy with an offset or independent evidence of the quoting client's clock. |
 | **U3** | Is Holmes's Slack post on p.55 dated Feb. 19 or 20? There is no day chip above it; pp.53-54 are an attachment. ([Time-check list](../slack_part1_time_check.csv)) | An independent date anchor; do not infer the date from divider placement alone. |
 | **U4** | Three Slack time checks remain unsettled: pp.42-43, p.47, and pp.134-135. ([Time-check list](../slack_part1_time_check.csv)) | Review source images for labels, ordering, and any day divider across the page boundary. |
