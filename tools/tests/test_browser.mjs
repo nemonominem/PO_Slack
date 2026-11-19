@@ -50,6 +50,78 @@ ok('the bookmarks rail starts collapsed', await page.evaluate(() =>
 await page.click('#bmToggleBtn');
 await page.waitForTimeout(250);
 
+sec('Timestamp evidence expansion');
+await page.fill('#searchInput', 'I do not understand Andrews argument');
+await page.keyboard.press('Enter');
+const fouchierIndex = await page.evaluate(() => diaryData.entries.findIndex(e =>
+  e.source === 'po-emails' && e.idx === 83));
+const fouchierCard = page.locator(`.result-entry[data-entry-source="po-emails"][data-entry-idx="${fouchierIndex}"]`);
+await fouchierCard.waitFor({ state: 'visible', timeout: 60000 });
+ok('Fouchier card renders the restored source To and complete, separated Cc list',
+   (await fouchierCard.textContent()).includes('To: Andrew Rambaut [redacted]; Jeremy Farrar [redacted]') &&
+   (await fouchierCard.textContent()).includes('Josie Golding [redacted]; M.P.G. Koopmans [redacted]; Mike Ferguson [redacted]'));
+await page.fill('#searchInput', 'I agree with Eddie');
+await page.keyboard.press('Enter');
+const rambautIndex = await page.evaluate(() => diaryData.entries.findIndex(e =>
+  e.source === 'po-emails' && e.idx === 91));
+const rambautCard = page.locator(`.result-entry[data-entry-source="po-emails"][data-entry-idx="${rambautIndex}"]`);
+await rambautCard.waitFor({ state: 'visible', timeout: 60000 });
+const stampChip = rambautCard.locator('[data-stamp-toggle]');
+ok('source-corrected Rambaut wording appears in the actual result card',
+   (await rambautCard.textContent()).includes('I agree with Eddie'));
+ok('Rambaut card displays the inferred CET conversion',
+   (await rambautCard.textContent()).includes('2020-02-08 10:16 ET') &&
+   (await stampChip.textContent()).includes('4:16 PM CET (inferred quote clock) -> 10:16 ET -> 15:16 UK'));
+await page.waitForTimeout(1000);
+const beforeStamp = await page.evaluate(() => ({currentPage, threadFocusKey}));
+const collapsedHeight = (await stampChip.boundingBox()).height;
+await stampChip.click();
+ok('click expands the full inferred timestamp evidence without changing navigation',
+   await stampChip.getAttribute('aria-expanded') === 'true' &&
+   (await stampChip.textContent()).includes('does not prove a contradiction.') &&
+   (await stampChip.boundingBox()).height > collapsedHeight &&
+   JSON.stringify(await page.evaluate(() => ({currentPage, threadFocusKey}))) === JSON.stringify(beforeStamp));
+await stampChip.focus();
+await page.keyboard.press('Space');
+ok('keyboard collapses the timestamp evidence',
+   await stampChip.getAttribute('aria-expanded') === 'false' &&
+   (await stampChip.textContent()).includes('Show more'));
+await page.keyboard.press('Enter');
+ok('keyboard expands timestamp evidence again',
+   await stampChip.getAttribute('aria-expanded') === 'true' &&
+   (await stampChip.textContent()).includes('Show less'));
+await rambautCard.locator('[data-thread-key]').click();
+const threadRambaut = page.locator('.thread-msg').filter({ hasText: 'I agree with Eddie' }).first();
+ok('thread displays the complete inferred-clock caveat and corrected text',
+   (await threadRambaut.textContent()).includes('does not prove a contradiction.'));
+ok('thread renders the quoted Rambaut message’s separately verified Cc list',
+   (await threadRambaut.textContent()).includes('rfgarry[redacted]; r.fouchier[redacted]; p.vallance1[redacted]') &&
+   (await threadRambaut.textContent()).includes('Josie Golding; m.koopmans[redacted]; Mike Ferguson'));
+
+sec('Redacted placement');
+const redactedIndex = await page.evaluate(() => {
+  const entry = diaryData.entries.find(e => e.source === 'part1' && e.idx === 432);
+  openEntryByBmKey(entry.bm_key);
+  return diaryData.entries.indexOf(entry);
+});
+const redactedCard = page.locator(`.result-entry[data-entry-source="part1"][data-entry-idx="${redactedIndex}"]`);
+await redactedCard.waitFor({ state: 'visible', timeout: 60000 });
+ok('p.42 card visibly labels both inferred date and placement time as estimated',
+   (await redactedCard.innerText()).includes('2020-02-14 (estimated) 19:14 ET (estimated)'));
+await page.evaluate(() => openEntryByBmKey(diaryData.entries.find(e =>
+  e.source === 'part1' && e.idx === 508).bm_key));
+const p47Cards = page.locator('.result-entry[data-entry-source="part1"]');
+await page.waitForFunction(() => Array.from(document.querySelectorAll('.result-entry'))
+  .some(el => el.textContent.includes('The new pangolin sequences are all from my paper')));
+const p47Texts = await p47Cards.allTextContents();
+const positions = ['I think that’s an artifact', 'The new pangolin sequences are all from my paper',
+  '16:14 ET (estimated)', 'any more insights on the ‘Zhang Scoop’',
+  'going to hit Nature with several papers', "Not exactly..but I've heard",
+  'Seems like Twitter are reasonably interested', 'Luke warm.'].map(text =>
+    p47Texts.findIndex(s => s.includes(text)));
+ok('Content displays the p.47 redaction and following messages in source order',
+   positions.every((n, i) => n >= 0 && (!i || n > positions[i-1])), JSON.stringify(positions));
+
 sec('DRASTIC mark');
 const brand = page.locator('.header-brand img');
 ok('the logo is visible in the header', await brand.count() === 1 && await brand.isVisible());

@@ -114,6 +114,9 @@ Record such a date as an inference with the source pages and neighboring times
 in `slack_date_fixes.json`. Verify the surrounding sequence and retain
 uncertainty when it does not resolve the date. A backwards time alone does not
 prove midnight, and redaction-placement estimates are not visible timestamps.
+An inferred redaction date can be recorded in the reviewed annotation when
+its adjacent visible messages support it; mark the displayed date and time as
+estimated and do not infer the sender or actual timestamp.
 
 For example, `slack-part1.pdf` p.54 ends the Feb. 19 sequence at 19:32; p.55
 continues at 02:16 and 05:53, then progresses through 06:27–07:06 near the

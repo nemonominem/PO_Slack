@@ -1,4 +1,11 @@
 [
+  {"part":"part1","idx":510,"sender":"Kristian Andersen","time":null,"wrong_date":"2020-02-17","date":"2020-02-18","evidence":"slack-part1.pdf p.49: Feb. 18 date chip and subsequent chronological messages."},
+  {"part":"part1","idx":511,"sender":"Andrew Rambaut","time":"15:54","wrong_date":"2020-02-17","date":"2020-02-18","evidence":"slack-part1.pdf p.49: Feb. 18 date chip and chronological sequence."},
+  {"part":"part1","idx":512,"sender":"Kristian Andersen","time":"15:57","wrong_date":"2020-02-17","date":"2020-02-18","evidence":"slack-part1.pdf p.49: Feb. 18 date chip and chronological sequence."},
+  {"part":"part1","idx":513,"sender":"Robert Garry","time":"17:14","wrong_date":"2020-02-17","date":"2020-02-18","evidence":"slack-part1.pdf p.49: Feb. 18 date chip and chronological sequence."},
+  {"part":"part1","idx":514,"sender":"Andrew Rambaut","time":"17:45","wrong_date":"2020-02-17","date":"2020-02-18","evidence":"slack-part1.pdf p.49: Feb. 18 date chip and chronological sequence."},
+  {"part":"part1","idx":515,"sender":"Robert Garry","time":"01:00","wrong_date":"2020-02-17","date":"2020-02-18","evidence":"slack-part1.pdf p.49: Feb. 18 date chip and chronological sequence; time corrected separately."},
+  {"part":"part1","idx":516,"sender":"Andrew Rambaut","time":"16:11","wrong_date":"2020-02-17","date":"2020-02-18","evidence":"slack-part1.pdf p.49: Feb. 18 date chip and chronological sequence; time corrected separately."},
   {
     "part": "part1",
     "idx": 56,

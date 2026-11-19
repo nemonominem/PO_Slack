@@ -215,7 +215,7 @@ the 09:45 thread.
 | 8 Feb 19:36:30 | Fouchier, `po-emails.pdf` p.55, top-level `Message / From: R.A.M. Fouchier / Sent: 2/8/2020 11:36:30 AM`, `Summary.Feb7 RF.pdf`. The 10:45 Dutch header below belongs to **Farrar's quoted request**, not to Fouchier. | **Supported 19:36:30 UK / 14:36:30 ET / 20:36:30 Rotterdam**, on the REV-Pacific export rule; the app's idx 85 record and page map have been corrected. Slack p.23 prints Garry's notice of Ron's email at 14:47 ET, 11 minutes later. |
 | 8 Feb 19:52; 20:11; 20:21 | Drosten's 9 Feb `6:52 am` is quoted by Holmes, `po-emails.pdf` p.53 and `farrar-fauci-comms.pdf` p.59; Holmes's `8 February ... 20:11` is quoted by Farrar, `po-emails.pdf` p.52 and Farrar-Fauci p.58; Farrar's `20:21` is quoted on PO p.52 and appears as German `21:21` on Farrar-Fauci p.57. | **Supported 19:52, 20:11 and 20:21 UK**, respectively, from Sydney, London and Berlin/London clients. Holmes addresses **Drosten**, not Fouchier. PO idx 86-88 and FF idx 86-87/150 have the corresponding values. The p.53 source image shows Drosten's message quoting Farrar's request; app idx 86 now links to Farrar idx 84, not Fouchier idx 85. |
 | 8 Feb approximately 21:15-21:16; 21:27:14 | Andersen's `21:16` UK-client header is nested inside Farrar's top-level `2/8/2020 1:27:14 PM` REV message, `po-emails.pdf` p.144. The same Andersen text appears in Koopmans's copy as `22:15` inside her message, `farrar-fauci-comms.pdf` p.56. | **Supported Andersen 21:15-21:16 UK / 16:15-16:16 ET**, with a one-minute difference between copies (Koopmans's 22:15 Netherlands time is 21:15 UK), and Farrar **21:27:14 UK / 16:27:14 ET** on REV-Pacific. Farrar explicitly quotes Andersen, not Holmes. Slack p.23 prints Rambaut 16:19, Andersen 16:21 and Garry 16:30 ET; the last quotes Farrar's message. App idx 92 now maps to pp.144-145 and retains the PO copy's 21:16 time. |
-| 8 Feb 21:16?; 22:50 | `po-emails.pdf` p.51: Rambaut's `Saturday, February 8, 2020 4:16 PM` is quoted under Fouchier's top-level REV `2/8/2020 2:50:00 PM`. Fouchier's message quotes Rambaut's argument. Slack p.23 prints Andersen quoting Fouchier at 17:52 ET. | Fouchier **supported 22:50 UK / 17:50 ET** on REV-Pacific, consistent with Slack two minutes later; app idx 83 is corrected and linked to Rambaut idx 91. The article's 21:16 UK for Rambaut assumes the quoted `4:16 PM` is Eastern, but the page and matching copies do not establish that clock. App idx 91 now preserves 8 Feb, leaves normalized time unresolved, and has no unsupported parent reply link. |
+| 8 Feb 15:16 (inferred); 22:50 | `po-emails.pdf` p.51: Rambaut's `Saturday, February 8, 2020 4:16 PM` is quoted under Fouchier's top-level REV `2/8/2020 2:50:00 PM`. Fouchier's message quotes Rambaut's argument. Slack p.23 prints Andersen quoting Fouchier at 17:52 ET. | Fouchier **supported 22:50 UK / 17:50 ET** on REV-Pacific. At the user's direction, apply the quote-clock rule to Rambaut using Fouchier's presumed CET client: **inferred 15:16 UK / 10:16 ET**; neither the client setting nor the offset is established by the page. App idx 91 is linked to Fouchier idx 83 and has no unsupported parent reply link. |
 | 9 Feb 20:00:46 | Ferguson, `po-emails.pdf` p.57, top-level `Message / From: Mike Ferguson / Sent: 2/9/2020 12:00:46 PM`, with `Summary.Feb7_MF.pdf`; the annotated draft includes p.61. | **Supported 20:00:46 UK / 15:00:46 ET** on REV-Pacific, not noon UK on 8 Feb. PO idx 93 now has the verified sender and an explicit quote link to Farrar's 09:45 request (idx 84). No earlier copy of this email at 12:00 UK on 8 Feb was verified; do not infer one from the attachment. |
 | 9 Feb 20:07; 10 Feb 09:26:57 | Koopmans is quoted under Farrar's top-level reply on `po-emails.pdf` p.69: `Sunday, 9 February 2020 at 20:07`; the same pair on `farrar-fauci-comms.pdf` p.55 has Farrar `Mon, 10 Feb 2020 09:26:57 +0000`. | Koopmans **supported 20:07 UK / 15:07 ET**; Farrar **verified 09:26:57 UK / 04:26:57 ET** by explicit offset, which also confirms the REV top-level `2/10/2020 1:26:57 AM` is Pacific. App idx 94 now identifies Koopmans and is linked as an inferred same-conversation reply; idx 95 now has the Feb. 10 ET date/key and explicitly quotes Koopmans. §15.2 links to idx 94. |
 
@@ -226,8 +226,9 @@ his reply directly above Rambaut's quoted header, `Saturday, February 8, 2020
 4:16 PM`. The top-level `2/8/2020 2:50:00 PM` is supported on REV's Pacific
 clock (22:50 UK); it does not determine the nested header's clock. If
 Fouchier's reply client generated the quoted line, the quote-clock rule points
-to that client's clock. If configured to Rotterdam's CET, 16:16 CET would be
-15:16 UK / 10:16 ET. Neither the header's offset nor the client's configuration
+to that client's clock. The user directed: “We use the quopte rule, so captured
+in Fouchier's timezone.” Accordingly, the app applies the presumed Rotterdam
+CET client clock: 16:16 CET = 15:16 UK / 10:16 ET. Neither the header's offset nor the client's configuration
 is established by the page. English header labels on p.51 differ from the
 Dutch labels in Fouchier's p.55 quoted request, but locale alone does not
 establish a timezone. The alternative Eastern reading gives 21:16 UK; that
@@ -241,8 +242,11 @@ shows Garry announcing Ron's email at 14:47 ET, Holmes commenting at 15:32,
 Rambaut criticizing the other-outbreak argument at 15:43, and Andersen quoting
 Ron on the no-lab assertion at 15:53. This sequence adds contextual tension
 to 15:16 UK, but is not a strict contradiction without proof that the
-arguments had not appeared earlier. U2 remains open pending an offset-bearing
-copy or independent evidence of the client clock.
+arguments had not appeared earlier. The user-directed inference is applied,
+but an offset-bearing copy or independent client-clock evidence is still
+needed to establish the clock. The inferred 15:16 UK falls outside the current
+§13.8 guide/article heading's 20:11–21:16 UK range; the article's Rambaut
+ordering and stated time need review rather than being silently rewritten.
 
 ### Former U3: Slack p.55 date inference and app correction
 
@@ -261,19 +265,38 @@ time alone is not enough to infer midnight.
 The app correction is applied through `tools/slack_date_fixes.json` and
 `tools/slack_time_fixes.json`: Part 1 idx 602-607 now use Feb. 20, and idx 608
 has the visible 07:06. The p.54-55 row is removed from the generated
-`slack_part1_time_check.csv`; the check now contains three rows, all involving
-estimated redaction placements.
+`slack_part1_time_check.csv`; the check now contains one row involving an
+estimated redaction placement.
 
 ### U4: source-verified Slack labels and remaining redaction estimates
 
 The page images verify that Garry's p.43 label is **13:34** (app idx 442,
 previously 01:34) and his p.47 label is **16:02** (app idx 508, previously
 14:02). Both app labels are corrected through `tools/slack_time_fixes.json`.
-These corrections do not resolve the three remaining generated time-check
-rows: pp.42-43 and p.47 still compare those visible messages with redacted
-records whose displayed times are placement estimates, and pp.134-135 still
-contain an unresolved redacted placement. The estimates are not source-visible
-timestamps; no actual time or sender has been inferred for any redacted row.
+The user confirmed that Garry's 13:34 is in Slack Part 1's Eastern timezone.
+The p.42 redaction (idx 432) lies between Garry's Feb. 14 15:44 on p.41 and
+Holmes's Feb. 14 22:44 on p.42, before the Feb. 15 chip and Garry's 08:11.
+Its existing 19:14 placement coincides with the midpoint of the visible
+neighbors, though its selection rationale is not documented. The previous
+Feb. 15 date came from the parser's page-based selection rather than those
+immediate neighbors. The app now uses an **inferred** Feb. 14 date and keeps
+19:14 as an estimated placement, labeling both as estimated; the visible
+Holmes 22:44 and Garry 08:11 times are restored. An obscured date marker cannot
+be ruled out, and no actual redacted time or sender is known.
+
+On p.47 the redaction follows Holmes 16:08 and precedes Andersen 16:20.
+The old 12:15 estimate placed it hours too early, and missing timestamps on
+the adjacent messages pushed them to the end of the day in the merged app
+timeline. The app now uses the midpoint **16:14 as an estimated placement**
+and restores the source-visible p.47 times and the first four p.48 times.
+The date chips on p.49 say **Feb. 18**: app idx 522-528 were misdated Feb. 17
+and are corrected, as is idx 529's printed 18:52.
+
+The p.48 redaction could hide a date transition before Garry's visible 09:46
+message; its date is not established by the visible chips, so idx 521 is
+unchanged and remains a source-review item. The sole remaining generated
+time-check row on pp.134-135 involves a redaction-placement estimate, not a
+source-visible timestamp; no actual time or sender has been inferred.
 
 ### Original article claims checked and correction evidence
 
@@ -340,11 +363,11 @@ claims that the article still contains the original errors.
 
 | Record / surface | Audit finding and current status |
 |---|---|
-| PO idx 83-95 | **Corrected in this branch.** Idx 83 is Fouchier 17:50 ET / 22:50 UK on p.51 and explicitly quotes idx 91; idx 91 retains its printed 8 Feb date but has no normalized time or unsupported parent link. Idx 84 remains 04:45 ET; idx 85 remains 14:36 ET and quotes idx 84; idx 86 now links to the quoted Farrar request (idx 84), not Fouchier. Idx 92 is 16:16 ET on 8 Feb and maps to pp.144-145; its explicit Drosten quote link is retained. Idx 93 identifies Mike Ferguson at 15:00 ET on 9 Feb and quotes idx 84. Idx 94 identifies Marion Koopmans at 15:07 ET and has only an inferred conversation link to idx 92; idx 95 is 04:26 ET on 10 Feb and explicitly quotes idx 94. |
-| Page maps, guide and chapter links | **Corrected in the app.** Idx 92 maps to pp.144-145 (not pp.70-145); the other affected entries' maps follow their corrected keys. The app guide now places Fouchier, Ferguson and Vallance in §§13.2-13.4 with the verified records and pages; §13.9's former 2030 typo is corrected to 2020, while Rambaut's nested 4:16 pm zone remains explicitly unresolved. Part 2 §15.2 now links to Koopmans idx 94; Ferguson idx 93 links to §13.3. The live Medium article has not been checked here. |
+| PO idx 83-95 | **Corrected in this branch.** Idx 83 is Fouchier 17:50 ET / 22:50 UK on p.51 and explicitly quotes idx 91; idx 91 retains its printed 8 Feb date, uses 10:16 ET under the user-directed inferred CET quote clock, and has no unsupported parent link. Idx 84 remains 04:45 ET; idx 85 remains 14:36 ET and quotes idx 84; idx 86 now links to the quoted Farrar request (idx 84), not Fouchier. Idx 92 is 16:16 ET on 8 Feb and maps to pp.144-145; its explicit Drosten quote link is retained. Idx 93 identifies Mike Ferguson at 15:00 ET on 9 Feb and quotes idx 84. Idx 94 identifies Marion Koopmans at 15:07 ET and has only an inferred conversation link to idx 92; idx 95 is 04:26 ET on 10 Feb and explicitly quotes idx 94. |
+| Page maps, guide and chapter links | **Corrected in the app.** Idx 92 maps to pp.144-145 (not pp.70-145); the other affected entries' maps follow their corrected keys. The guide links the source-identified Rambaut p.51 record to §13.8, with the inferred CET clock explicitly qualified; the article heading's time range remains inconsistent with that inference. Part 2 §15.2 links to Koopmans idx 94; Ferguson idx 93 links to §13.14. The live Medium article has not been checked here. |
 | Slack pp.21-24, 35, 64-65 / app | **Source-read labels applied.** Part 1 now records p.21 Garry 08:09 and Rambaut 08:30 (app idx 245-246), p.22 Garry 08:43 (idx 247), p.23 Garry 14:47, Holmes 15:32, Andersen 15:53, Andersen 16:21 and Garry 16:30 (idx 261-262, 265, 269-270), and p.24 Holmes 18:42 (idx 277). P.35 now reads 18:18, 18:20, 18:21 and 18:22 in page order (idx 376-379). P.64 Garry 10:59 is confirmed; p.65 is Garry 14:44 followed by Andersen 14:45 (idx 727-728). |
 | Slack p.55 rollover and time labels | **Corrected in the app.** Sequence across pp.54-55 supports an inferred Feb. 20 date for idx 602-607; idx 608 now has the source-visible 07:06. Source images also confirm Garry p.43 13:34 (idx 442) and p.47 16:02 (idx 508), both corrected in app data. |
-| Remaining source uncertainty | Rambaut's nested `4:16 PM` on PO p.51 has no independently established time zone; see U2 above. The generated Part 1 time-check now has three rows (pp.42-43, 47, and 134-135). All involve estimated redacted-message placement times; the estimates do not establish actual times or senders. See U4 in the reviewer guide. |
+| Remaining source uncertainty | Rambaut's nested `4:16 PM` on PO p.51 is interpreted as CET by user direction, but its client time zone has no independent verification; see U2 above. The generated Part 1 time-check has one row (pp.134-135), involving an estimated redacted-message placement. The date of Garry's 09:46 after the large p.48 redaction is unverified. See U4 in the reviewer guide. |
 | Pipeline and UI | Source corrections are kept in the override/fix inputs and regenerated app data, with focused regression coverage. The live article has not been independently checked and no article source was edited; remaining article alignments are listed in the reviewer guide. The daily chart still does not show within-day order. |
 
 The existing “all reply pairs in order” and “zero cross-release violations”
@@ -369,7 +392,7 @@ app status is updated in Part 3.1.
 `slack-part1.pdf` p.4, Andersen, 22:42, was dated 2 Feb; it is the evening of 1 Feb (the day divider had been applied one message too early). Corrected through `tools/slack_date_fixes.json`.
 
 ## A3. Slack Part 1: times run backwards (80 at first, 3 after the readings of 2026-11-03/05): 6 of the 12 evening-then-small-hours cases fixed
-Of the 12 cases where an evening message is followed by a small-hours message on the same date, **6 are the same fault as A2** (a single evening message whose date is one day too late, because the divider was applied one message early). In each, the previous timed message belongs to the previous day with an earlier time, and the next one is a small-hours message of the day. Checked on the page image for `slack-part1.pdf` p.9 (the “February 3rd” divider sits below the 22:35 message). Fixed: p.9 (22:35, 2 Feb), p.16 (20:11, 5 Feb), p.21 (19:11, 7 Feb), p.35 (19:45, 11 Feb), p.39 (22:26, 12 Feb), p.134 (23:56, 20 Apr). Earlier classifications are historical: source-page review on 15 November corrected labels on pp.21-24, p.35 and pp.64-65. On 17 November, review of pp.53-55 supported the Feb. 20 rollover for former U3; the dates and visible p.55 time are now corrected in app data. The p.43 and p.47 Garry times are also corrected from source images. The current time-check has three rows, all involving redacted placements whose actual times are not visible; see U4 of the reviewer guide.
+Of the 12 cases where an evening message is followed by a small-hours message on the same date, **6 are the same fault as A2** (a single evening message whose date is one day too late, because the divider was applied one message early). In each, the previous timed message belongs to the previous day with an earlier time, and the next one is a small-hours message of the day. Checked on the page image for `slack-part1.pdf` p.9 (the “February 3rd” divider sits below the 22:35 message). Fixed: p.9 (22:35, 2 Feb), p.16 (20:11, 5 Feb), p.21 (19:11, 7 Feb), p.35 (19:45, 11 Feb), p.39 (22:26, 12 Feb), p.134 (23:56, 20 Apr). Earlier classifications are historical: source-page review on 15 November corrected labels on pp.21-24, p.35 and pp.64-65. On 17 November, review of pp.53-55 supported the Feb. 20 rollover for former U3; the dates and visible p.55 time are now corrected in app data. The p.43 and p.47 Garry times are also corrected from source images. The current time-check has one row involving a redacted placement whose actual time is not visible; see U4 of the reviewer guide.
 
 ## A4. Slack times carry no zone: done
 Slack Part 2 (Pacific) is converted to ET, Part 1 (Eastern) is labelled ET; both show the printed local time in the 🕑 chip.

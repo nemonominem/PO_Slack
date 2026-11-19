@@ -46,6 +46,7 @@ conflated with that person's authored chat messages.
 import json
 import os
 import re
+from datetime import date
 
 from slack_notice import apply_notice_normalization, entry_kind
 
@@ -684,11 +685,15 @@ def apply_time_fixes(entries):
             continue
         e = entries[legacy_parser_index(entries, fix["idx"])]
         if e["time"] == fix["wrong_time"] and fix["sender"] in (e["sender"] or ""):
+            if fix.get("text"):
+                old, corrected = fix["text"]
+                if e["content"].count(old) == 1:
+                    e["content"] = e["content"].replace(old, corrected, 1)
+                elif e["content"].count(old) != 0 or e["content"].count(corrected) != 1:
+                    raise ValueError("Text fix does not uniquely match part1 idx %d" % fix["idx"])
             e["time"] = fix["time"]
             e["stamp_line"] = "%s ET" % fix["time"]
             e.setdefault("zone_assumed", "Slack Part 1 export is on US Eastern time (settled); shown as printed")
-            if fix.get("text"):
-                e["content"] = e["content"].replace(fix["text"][0], fix["text"][1], 1)
             print("time fix: part1 idx %d -> %s" % (fix["idx"], fix["time"]))
         else:
             print("time fix NOT applied (entry changed): part1 idx %d" % fix["idx"])
@@ -757,18 +762,34 @@ def apply_redaction_annotations(entries):
         if date_entry is None:
             raise ValueError("Cannot determine date for redaction on page %s" % annotation["page"])
 
+        placement_date = date_entry["date"]
+        placement_raw_date = date_entry["raw_date"]
+        date_extra = {}
+        if annotation.get("date_override"):
+            inferred_date = date.fromisoformat(annotation["date_override"])
+            if (anchor["date"] != annotation["date_override"] or
+                    anchor_idx + 1 >= len(entries) or
+                    entries[anchor_idx + 1]["date"] != annotation["date_override"]):
+                raise ValueError("Redaction date override no longer matches neighboring entries")
+            placement_date = inferred_date.isoformat()
+            placement_raw_date = "%s %d, %d" % (MONTHS[inferred_date.month - 1], inferred_date.day, inferred_date.year)
+            date_extra = {"date_estimated": True}
+
         time_value = annotation.get("time")
         zone_extra = {}
         if time_value:
             zone_extra = {
                 "stamp_line": "%s ET" % time_value,
-                "zone_assumed": "Slack Part 1 export is on US Eastern time; placement time estimated",
+                "zone_assumed": ("Slack Part 1 export is on US Eastern time; placement date and time estimated"
+                                 if date_extra else
+                                 "Slack Part 1 export is on US Eastern time; placement time estimated"),
                 "time_estimated": True,
             }
         redacted_entry = {
             **zone_extra,
-            "date": date_entry["date"],
-            "raw_date": date_entry["raw_date"],
+            **date_extra,
+            "date": placement_date,
+            "raw_date": placement_raw_date,
             "sender": "Redacted",
             "time": time_value,
             "kind": entry_kind("Redacted", []),

@@ -1,12 +1,74 @@
 import sys
 import unittest
+import contextlib
+import io
 from pathlib import Path
+from unittest.mock import patch, mock_open
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import parse_part1
 
 
 class Page71MessageTests(unittest.TestCase):
+    def test_time_fix_rejects_text_drift_or_ambiguous_occurrences(self):
+        fix = {"part": "part1", "idx": 0, "sender": "Eddie Holmes",
+               "wrong_time": None, "time": "16:08", "text": ["bad text", "good text"]}
+        for content, expected in [("bad text", "good text"), ("good text", "good text"),
+                                  ("different text", None), ("bad text / bad text", None),
+                                  ("good text / good text", None)]:
+            entry = {"sender": "Eddie Holmes", "time": None, "content": content}
+            with self.subTest(content=content), \
+                 patch.object(parse_part1.os.path, "exists", return_value=True), \
+                 patch.object(parse_part1, "legacy_parser_index", return_value=0), \
+                 patch("builtins.open", mock_open(read_data="[]")), \
+                 patch.object(parse_part1.json, "load", return_value=[fix]), \
+                 contextlib.redirect_stdout(io.StringIO()):
+                if expected is None:
+                    with self.assertRaisesRegex(ValueError, "does not uniquely match"):
+                        parse_part1.apply_time_fixes([entry])
+                    self.assertIsNone(entry["time"])
+                else:
+                    parse_part1.apply_time_fixes([entry])
+                    self.assertEqual((entry["content"], entry["time"]), (expected, "16:08"))
+
+    def test_page47_and_page49_source_times_and_redaction_placement(self):
+        entries = parse_part1.correct_page71_messages(parse_part1.parse())
+        with contextlib.redirect_stdout(io.StringIO()):
+            parse_part1.apply_date_fixes(entries)
+            parse_part1.apply_time_fixes(entries)
+        entries = parse_part1.apply_redaction_annotations(entries)
+        redaction = next(i for i, e in enumerate(entries)
+                         if e.get("sender") == "Redacted" and
+                         any(s["page"] == 47 for s in e.get("redaction_sources", [])))
+        self.assertEqual([e["time"] for e in entries[redaction-2:redaction+6]],
+                         ["16:02", "16:08", "16:14", "16:20", "16:21", "16:22", "16:39", "16:46"])
+        self.assertTrue(entries[redaction]["time_estimated"])
+        self.assertIn("sent to bioRxiv a week ago", entries[redaction-1]["content"])
+        page49 = [e for e in entries if e.get("page") == 49]
+        self.assertEqual([(e["date"], e["time"]) for e in page49[:8]],
+                         [("2020-02-18", t) for t in
+                          ["15:37", "15:54", "15:57", "17:14", "17:45", "18:09", "18:11", "18:52"]])
+
+    def test_page42_redaction_uses_inferred_date_between_visible_neighbors(self):
+        entries = parse_part1.correct_page71_messages(parse_part1.parse())
+        with contextlib.redirect_stdout(io.StringIO()):
+            parse_part1.apply_date_fixes(entries)
+            parse_part1.apply_time_fixes(entries)
+        entries = parse_part1.apply_redaction_annotations(entries)
+        redaction = next(i for i, e in enumerate(entries)
+                         if e.get("sender") == "Redacted" and
+                         any(s["page"] == 42 for s in e.get("redaction_sources", [])))
+        before, item, after = entries[redaction - 1:redaction + 2]
+        self.assertEqual((before["sender"], before["date"], before["time"]),
+                         ("Robert Garry", "2020-02-14", "15:44"))
+        self.assertEqual((item["date"], item["time"], item["date_estimated"], item["time_estimated"]),
+                         ("2020-02-14", "19:14", True, True))
+        self.assertEqual((after["sender"], after["date"], after["time"]),
+                         ("Eddie Holmes", "2020-02-14", "22:44"))
+        next_message = entries[redaction + 2]
+        self.assertEqual((next_message["sender"], next_message["date"], next_message["time"]),
+                         ("Robert Garry", "2020-02-15", "08:11"))
+
     def test_page71_messages_are_split_corrected_and_redacted_by_source_position(self):
         entries = parse_part1.correct_page71_messages(parse_part1.parse())
         entries = parse_part1.apply_redaction_annotations(entries)

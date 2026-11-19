@@ -21,13 +21,21 @@ guide. The live Medium article has not been independently checked. The
 section-numbering mismatch is resolved in the app guide and is not an article
 task.
 
-**Remaining source questions:** Rambaut's quoted 4:16 PM timezone remains
-unresolved. Source-page review supports an inferred Feb. 20 rollover across
+**Remaining source questions:** The user directed applying the quote-clock
+rule to Rambaut's quoted 4:16 PM: the app uses inferred CET / 15:16 UK /
+10:16 ET. The client clock has no independently established offset, and the
+resulting timing tension with Fouchier's p.55 message remains. Source-page
+review supports an inferred Feb. 20 rollover across
 Slack pp.54-55; app idx 602-607 now use that date, and idx 608 now has its
 visible 07:06 time. Garry's p.43 13:34 and p.47 16:02 labels are also corrected.
-The regenerated Part 1 time-check has three rows on pp.42-43, 47, and 134-135;
-each includes a redacted-message placement estimate, not a source-visible time
-or sender. Do not infer either from the estimate. Source-read labels and
+The p.42 redaction's estimated placement is now inferred Feb. 14 between
+Garry 15:44 and Holmes 22:44; its existing 19:14 placement and date are both
+labeled estimated. The p.47 redaction now has an estimated 16:14 placement
+between visible 16:08 and 16:20 messages; visible pp.47-48 times and p.49
+Feb. 18 dates are corrected. The regenerated Part 1 time-check has one row
+on pp.134-135 involving a redaction-placement estimate. The p.48 Garry 09:46
+date after a large redaction remains uncertain. Do not infer an actual time or
+sender from a placement estimate. Source-read labels and
 corresponding app records for pp.21-24, p.35, and pp.64-65 are corrected. See
 the current-only review list in
 [`analysis/chronology/FOR_HUMAN_REVIEWER.md`](analysis/chronology/FOR_HUMAN_REVIEWER.md).

@@ -2,8 +2,8 @@
 """Apply hand-verified time corrections (verified_overrides.json).
 
 Each override names an entry by thread_key, gives the printed stamp as read from
-the page image, and the zone it is on, with the evidence. Optional fields include
-body, sender, reply_to, clear_reply_to, time_unresolved, and new_thread_key.
+the page image, and its supported or inferred zone, with the evidence. Optional fields include
+body, header_fields, sender, reply_to, clear_reply_to, time_unresolved, and new_thread_key.
 Rekeying updates reply references; unresolved quoted clocks keep their documented
 date without inventing a normalized time. Run after anchor_copies.py and before
 dedupe_same_instant.py.
@@ -47,6 +47,39 @@ def entry_label(entry):
     time = entry.get("time")
     when = "%s %s:%s" % (entry.get("date"), time[:2], time[2:]) if time else "%s time unresolved" % entry.get("date")
     return "%s · %s" % (when, entry.get("sender") or "")
+
+
+def apply_body_replacements(content, replacements):
+    header, separator, body = content.partition("----------")
+    if not separator:
+        raise ValueError("Cannot correct body without a header separator")
+    for replacement in replacements:
+        old, new = replacement["old"], replacement["new"]
+        if body.count(old) == 1:
+            body = body.replace(old, new, 1)
+        elif old not in body and body.count(new) == 1:
+            continue
+        else:
+            raise ValueError("Body correction does not match exactly once: %r" % old)
+    return header + separator + body
+
+
+def apply_header_fields(content, fields):
+    header, separator, body = content.partition("----------")
+    if not separator:
+        raise ValueError("Cannot correct header without a body separator")
+    for label, value in fields.items():
+        if label not in ("To", "Cc"):
+            raise ValueError("Unsupported header field: %s" % label)
+        pattern = r"(?m)^" + label + r":[^\n]*(?:\n(?!\n)[^\n]*)*"
+        matches = list(re.finditer(pattern, header))
+        if len(matches) == 1:
+            header = header[:matches[0].start()] + label + ": " + value + header[matches[0].end():]
+        elif not matches and label == "To" and "\n\nCc:" in header:
+            header = header.replace("\n\nCc:", "\n\nTo: " + value + "\n\nCc:", 1)
+        else:
+            raise ValueError("Cannot locate unique %s header" % label)
+    return header + separator + body
 
 
 def rekey_entry(entries, by_key, entry, new_key):
@@ -111,6 +144,7 @@ def main():
         entries = raw["entries"] if isinstance(raw, dict) and "entries" in raw else raw
         by_key = {e.get("thread_key"): e for e in entries}
         changed_entries = set()
+        pending_replies = []
         for item in items:
             e = by_key.get(item["thread_key"])
             if e is None:
@@ -127,7 +161,7 @@ def main():
                 e["time"] = None
                 e["stamp"] = item["stamp"]
                 e["stamp_status"] = "long"
-                e["zone_assumed"] = "UNRESOLVED: " + item["evidence"][:140]
+                e["zone_assumed"] = "UNRESOLVED: " + item["evidence"]
                 e["raw_date"] = item.get("raw_date") or "4:16 PM · time zone unresolved · %s" % (e.get("subject") or "")
                 e["stamp_line"] = item.get("stamp_line") or item["stamp"] + " (time zone unresolved)"
             elif item.get("stamp"):
@@ -140,8 +174,13 @@ def main():
                 e["stamp"] = item["stamp"]
                 e["stamp_status"] = "long"
                 certainty = item.get("certainty", "verified")
-                prefix = "supported from the page image and matching source copy: " if certainty == "supported" else "verified from the page image: "
-                e["zone_assumed"] = prefix + item["evidence"][:140]
+                if certainty == "inferred":
+                    prefix = "inferred from the quoting client's presumed time zone: "
+                elif certainty == "supported":
+                    prefix = "supported from the page image and matching source copy: "
+                else:
+                    prefix = "verified from the page image: "
+                e["zone_assumed"] = prefix + item["evidence"]
                 e["raw_date"] = "%s:%s ET · %s" % (e["time"][:2], e["time"][2:], e.get("subject") or "")
                 e["stamp_line"] = item.get("stamp_line") or "%s -> %s:%s ET (verified override)" % (item["stamp"], e["time"][:2], e["time"][2:])
             e["verified_override"] = item["evidence"]
@@ -159,6 +198,10 @@ def main():
             if item.get("body") is not None:   # body text OCR lost, typed from the page image
                 hdr = (e.get("content") or "").partition("----------")[0]
                 e["content"] = hdr + "----------\n\n" + item["body"]
+            if item.get("body_replacements"):
+                e["content"] = apply_body_replacements(e.get("content") or "", item["body_replacements"])
+            if item.get("header_fields"):
+                e["content"] = apply_header_fields(e.get("content") or "", item["header_fields"])
             if item.get("sender"):
                 e["sender"] = item["sender"]
                 e["content"] = re.sub(r"(?m)^From:.*$", "From: " + item["sender"], e.get("content") or "", count=1)
@@ -174,14 +217,19 @@ def main():
                 for key in ("reply_to", "reply_to_label", "link_kind"):
                     e.pop(key, None)
             if item.get("reply_to"):
-                parent = by_key.get(item["reply_to"])
-                if parent is not None:
-                    set_reply_relationship(by_key, e, parent)
+                pending_replies.append((e, item["reply_to"], item.get("link_kind")))
             if item.get("link_kind"):
                 e["link_kind"] = item["link_kind"]
             if entry_label(e) != previous_label or e.get("thread_key") != previous_key:
                 changed_entries.add(id(e))
             print("verified:", name, e.get("idx"), previous_time, "->", (e["date"], e["time"]))
+        for entry, parent_key, link_kind in pending_replies:
+            parent = by_key.get(parent_key)
+            if parent is None:
+                raise ValueError("Override reply target not found: %s" % parent_key)
+            set_reply_relationship(by_key, entry, parent)
+            if link_kind:
+                entry["link_kind"] = link_kind
         refresh_relationship_labels(entries, changed_entries)
         drop_backwards_inferred_links(entries)
         if isinstance(raw, dict) and "entries" in raw:

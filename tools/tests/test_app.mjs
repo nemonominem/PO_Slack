@@ -380,7 +380,9 @@ const html2 = document.getElementById('resultsPanel').innerHTML;
 const emailCards = (html2.match(/class="entry-kind k-email/g)||[]).length;
 ok('email results found', emailCards > 0, emailCards + ' email cards');
 ok('email card renders the mail head block', /class="mail-head"/.test(html2));
-ok('email card shows a timestamp/zone chip', /chip-dim[^>]*>🕑/.test(html2));
+ok('email card shows an expandable timestamp/zone chip',
+   /<button[^>]*chip-stamp[^>]*aria-expanded="false"[^>]*>/.test(html2) &&
+   html2.includes('chip-stamp-text">🕑'));
 // Thread chips: pick a message that sits inside a conversation, so the card
 // rendered for it must carry a navigable link. A thread's first message
 // correctly has no parent to point at.
@@ -737,14 +739,34 @@ ok('Ferguson is identified on the Feb. 9 page-57 REV record without shifting its
    entry93.verified_override.includes('remains on Feb. 9') &&
    entry93.reply_to === entry84?.thread_key &&
    entry93.link_kind === 'explicit (quoted inline)');
-ok('Fouchier p.51 is 17:50 ET and explicitly quotes Rambaut without assigning Rambaut a time zone',
+ok('Fouchier p.51 explicitly quotes Rambaut with the user-directed inferred CET clock',
    entry83?.date === '2020-02-08' && entry83.time === '1750' &&
    entry83.sender === 'R.A.M. Fouchier' &&
    entry83.stamp_line.includes('17:50 ET -> 22:50 UK') &&
    entry83.reply_to === entry91?.thread_key &&
    app.pageMaps['po-emails']?.[entry83.thread_key]?.start === 51 &&
-   entry91?.date === '2020-02-08' && entry91.time === null &&
+   entry91?.date === '2020-02-08' && entry91.time === '1016' &&
+   entry91.thread_key === 'po-emails|2020-02-08|1016' &&
+   app.pageMaps['po-emails']?.[entry91.thread_key]?.start === 51 &&
+   entry91.stamp_line.includes('4:16 PM CET (inferred quote clock) -> 10:16 ET -> 15:16 UK') &&
    !entry91.reply_to && entry91.replied_by?.some(r => r.key === entry83.thread_key));
+ok('p.51 Fouchier and quoted Rambaut headers retain visible recipients and redactions',
+   entry83.content.includes('To: Andrew Rambaut [redacted]; Jeremy Farrar [redacted]') &&
+   entry83.content.includes('Cc: Eddie Holmes [redacted]; Christian Drosten [redacted]; kga1978[redacted]') &&
+   entry83.content.includes('afauci[redacted]; Josie Golding [redacted]; M.P.G. Koopmans [redacted]; Mike Ferguson [redacted]') &&
+   entry91.content.includes('To: Jeremy Farrar\n\nCc: Eddie Holmes; Christian Drosten; kga1978[redacted]') &&
+   entry91.content.includes('rfgarry[redacted]; r.fouchier[redacted]; p.vallance1[redacted]') &&
+   entry91.content.includes('Josie Golding; m.koopmans[redacted]; Mike Ferguson') &&
+   app.threadMsgHtml(entry91, {current:true}).includes('r.fouchier[redacted]'));
+ok('Rambaut p.51 preserves corrected text and complete inferred-clock caveats in card and thread',
+   entry91.content.includes('\n\nI agree with Eddie,') &&
+   entry91.zone_assumed === "inferred from the quoting client's presumed time zone: " + entry91.verified_override &&
+   app.entryChipsHtml(entry91).includes('not established') &&
+   app.threadMsgHtml(entry91, {current:true}).includes('does not prove a contradiction.'));
+ok('verified timestamp explanations are never truncated in stored email data',
+   app.diaryData.entries.filter(e => e.verified_override &&
+     /^(UNRESOLVED: |verified from the page image: |supported from the page image and matching source copy: |inferred from the quoting client's presumed time zone: )/.test(e.zone_assumed || ''))
+     .every(e => e.zone_assumed.endsWith(e.verified_override)));
 ok('Drosten p.53 links to the quoted Farrar request, not Fouchier',
    entry86?.reply_to === entry84?.thread_key &&
    entry86.link_kind === 'explicit (quoted inline)');
@@ -780,11 +802,38 @@ ok('Slack p.55 overnight messages use the inferred Feb. 20 date across the page 
 ok('source-verified Garry times on pp.43 and 47 match the app labels',
    slackAt(43, 'Robert Garry', '13:34')?.idx === 442 &&
    slackAt(47, 'Robert Garry', '16:02')?.idx === 508);
-ok('remaining Slack time-check redactions retain estimate labels, not inferred stamps',
-   [[432, '19:14', 42], [510, '12:15', 47], [1296, '13:36', 135]].every(([idx, time, page]) => {
+ok('reviewed Slack redactions retain estimate labels, not source stamps',
+   [[432, '19:14', 42], [510, '16:14', 47], [1296, '13:36', 135]].every(([idx, time, page]) => {
      const entry = part1.find(e => e.idx === idx);
      return entry?.sender === 'Redacted' && entry.time === time && entry.time_estimated === true &&
        app.pageMaps.part1[String(idx)]?.start === page;
+   }));
+const page42Redaction = part1.find(e => e.idx === 432);
+ok('p.42 redaction is placed between the Feb. 14 neighbors with date and time marked estimated',
+   page42Redaction?.date === '2020-02-14' && page42Redaction.date_estimated === true &&
+   page42Redaction.time === '19:14' && page42Redaction.time_estimated === true &&
+   part1.find(e => e.idx === 431)?.time === '15:44' &&
+   part1.find(e => e.idx === 433)?.time === '22:44' &&
+   part1.find(e => e.idx === 434)?.date === '2020-02-15' &&
+   part1.find(e => e.idx === 434)?.time === '08:11' &&
+   app.entryHeaderHtml(page42Redaction).includes('2020-02-14 (estimated) 19:14 ET (estimated)'));
+const p47Sequence = [508,509,510,511,512,513,514,515];
+ok('p.47 messages appear in source order in the merged timeline, with the redaction estimated',
+   p47Sequence.every((idx, i) => {
+     const e = part1.find(x => x.idx === idx);
+     return e?.date === '2020-02-17' &&
+       e.time === ['16:02','16:08','16:14','16:20','16:21','16:22','16:39','16:46'][i] &&
+       app.pageMaps.part1[String(idx)]?.start === 47 &&
+       (!i || part1.indexOf(e) > part1.indexOf(part1.find(x => x.idx === p47Sequence[i-1])));
+   }) && part1.find(e => e.idx === 510).time_estimated &&
+   part1.find(e => e.idx === 509).content.includes('sent to bioRxiv a week ago'));
+ok('p.48 source times and p.49 February 18 dates and times remain in order',
+   [516,517,518,519].every((idx, i) =>
+     part1.find(e => e.idx === idx)?.time === ['17:07','17:36','18:10','18:34'][i]) &&
+   [522,523,524,525,526,527,528,529].every((idx, i) => {
+     const e = part1.find(x => x.idx === idx);
+     return e?.date === '2020-02-18' && e.time ===
+       ['15:37','15:54','15:57','17:14','17:45','18:09','18:11','18:52'][i];
    }));
 ok('source-read Slack labels on pp.21-24 match the page images',
    !!slackAt(21, 'Robert Garry', '08:09') &&
@@ -869,11 +918,18 @@ ok('Ferguson remains Feb. 9 and maps to live §13.14',
    section1314?.date === '2020-02-09' &&
    section1314.evidence[0]?.pages?.includes('57') &&
    section1314.evidence[0].raw.includes('9 Feb 2020, 8:00 pm UK'));
-ok('Rambaut’s nested p.51 clock remains unresolved and does not link to Andersen',
-   section138?.evidence.some(e => e.raw.includes('nested 4:16 pm clock, zone unresolved') &&
-     e.chapter_link_exclusion?.includes('no verified time zone')) &&
+ok('Rambaut’s inferred CET p.51 quote links to his own record and not Andersen',
+   section138?.evidence.some(e => e.raw.includes('nested 4:16 pm clock, inferred CET') &&
+     e.chapter_link_exclusion?.includes('not Andersen')) &&
+   hasLink('po-emails/po-emails|2020-02-08|1016', 'p1-13.8') &&
    !hasLink('po-emails/po-emails|2020-02-08|1616', 'p1-13.8') &&
    hasLink('po-emails/po-emails|2020-02-08|1616', 'p1-13.10'));
+const bookmarkRekeys = JSON.parse(fs.readFileSync(path.join(HERE, 'bookmark_rekey.json'), 'utf8'));
+ok('p.51 old bookmarks migrate to the corrected records without hijacking Fouchier’s live key',
+   ['1816', '1916', 'time-unresolved-1916'].every(old =>
+     bookmarkRekeys[`po-emails/po-emails|2020-02-08|${old}`] === 'po-emails/po-emails|2020-02-08|1016') &&
+   bookmarkRekeys['po-emails/po-emails|2020-02-08|0950'] === 'po-emails/po-emails|2020-02-08|1750' &&
+   !bookmarkRekeys['po-emails/po-emails|2020-02-08|1750']);
 ok('Part 2 §15.2 links to Koopmans, while Ferguson is linked to §13.14',
    chapterLinks['po-emails/po-emails|2020-02-09|1507']?.some(s => s.id === 'p2-15.2') &&
    !chapterLinks['po-emails/po-emails|2020-02-09|1500']?.some(s => s.id === 'p2-15.2') &&

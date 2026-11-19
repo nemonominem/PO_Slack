@@ -202,20 +202,31 @@
  "zone": "America/Los_Angeles",
  "certainty": "supported",
  "stamp_line": "2/8/2020 2:50:00 PM Pacific -> 17:50 ET -> 22:50 UK",
- "reply_to": "po-emails|2020-02-08|time-unresolved-1916",
+ "reply_to": "po-emails|2020-02-08|1016",
+ "header_fields": {
+  "To": "Andrew Rambaut [redacted]; Jeremy Farrar [redacted]",
+  "Cc": "Eddie Holmes [redacted]; Christian Drosten [redacted]; kga1978[redacted]; rfgarry[redacted]; p.vallance1[redacted]; collinsf[redacted]; afauci[redacted]; Josie Golding [redacted]; M.P.G. Koopmans [redacted]; Mike Ferguson [redacted]"
+ },
+ "header_evidence": "po-emails.pdf p.51 top-level To and Cc headers: names and partial identifiers are transcribed as visible; blacked-out portions are marked [redacted], not reconstructed.",
  "evidence": "po-emails.pdf p.51 shows the top-level REV stamp '2/8/2020 2:50:00 PM' and identifies R.A.M. Fouchier as sender. The page is in Kristian G. Andersen's Pacific REV collection; the collection/page evidence supports Pacific time, yielding 17:50 ET / 22:50 UK."
  },
  {
  "release": "po-emails.json",
  "thread_key": "po-emails|2020-02-08|1916",
- "new_thread_key": "po-emails|2020-02-08|time-unresolved-1916",
- "lookup_thread_keys": ["po-emails|2020-02-08|time-unresolved-1916"],
- "time_unresolved": true,
- "date": "2020-02-08",
+ "new_thread_key": "po-emails|2020-02-08|1016",
+ "lookup_thread_keys": ["po-emails|2020-02-08|time-unresolved-1916", "po-emails|2020-02-08|1016"],
  "stamp": "Saturday, 8 February 2020 at 4:16 PM",
- "stamp_line": "4:16 PM appears only in the nested quote on po-emails.pdf p.51; time zone unresolved",
+ "zone": "Europe/Amsterdam",
+ "certainty": "inferred",
+ "stamp_line": "4:16 PM CET (inferred quote clock) -> 10:16 ET -> 15:16 UK",
+ "body_replacements": [{"old": "[ agree with Eddie,", "new": "I agree with Eddie,"}],
+ "header_fields": {
+  "To": "Jeremy Farrar",
+  "Cc": "Eddie Holmes; Christian Drosten; kga1978[redacted]; rfgarry[redacted]; r.fouchier[redacted]; p.vallance1[redacted]; collinsf[redacted]; afauci[redacted]; Josie Golding; m.koopmans[redacted]; Mike Ferguson"
+ },
+ "header_evidence": "po-emails.pdf p.51 nested Rambaut To and Cc headers: names and partial identifiers are transcribed as visible; blacked-out portions are marked [redacted], not reconstructed.",
  "clear_reply_to": true,
- "evidence": "po-emails.pdf p.51 shows Andrew Rambaut's 4:16 PM only in a nested quoted block inside Fouchier's top-level REV message. The checked page and cross-release copies do not establish which clock the nested quote uses; preserve the date and leave the normalized time unresolved."
+ "evidence": "po-emails.pdf p.51 shows Andrew Rambaut's 4:16 PM nested in Fouchier's reply. At the user's direction, apply the quote-clock rule using Fouchier's presumed Rotterdam CET client clock; no offset or client configuration is printed, so the zone is inferred, not established. This places Rambaut before Fouchier's p.55 19:36 UK message containing closely related arguments; that tension does not prove a contradiction."
  },
  {
  "release": "po-emails.json",
@@ -226,7 +237,7 @@
  "certainty": "supported",
  "stamp_line": "2/8/2020 11:36:30 AM Pacific -> 14:36:30 ET -> 19:36:30 UK",
  "reply_to": "po-emails|2020-02-08|0445",
- "evidence": "po-emails.pdf p.55 identifies R.A.M. Fouchier as sender and prints the top-level REV stamp '2/8/2020 11:36:30 AM'. The page is in Kristian G. Andersen's Pacific REV collection. Its text quotes Rambaut's argument, but the nested 4:16 PM quote clock remains unresolved."
+ "evidence": "po-emails.pdf p.55 identifies R.A.M. Fouchier as sender and prints the top-level REV stamp '2/8/2020 11:36:30 AM'. The page is in Kristian G. Andersen's Pacific REV collection. Its text raises arguments also found in Rambaut's p.51 quote; the quote's inferred CET interpretation places it earlier, a contextual tension rather than a proven contradiction."
  },
  {
  "release": "po-emails.json",

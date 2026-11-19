@@ -638,6 +638,8 @@ def apply_live_chapter_headings(all_sections):
                 "expected one citation for chapter-link exclusion %r, found %d" % (
                     exclusion["section"], len(matches)))
         matches[0]["chapter_link_exclusion"] = exclusion["reason"]
+        if exclusion.get("raw_override"):
+            matches[0]["raw"] = exclusion["raw_override"]
 
 
 def apply_guide_heading_overrides(all_sections):

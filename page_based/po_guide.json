@@ -2401,8 +2401,8 @@
      "date": "2020-02-08",
      "url": "https://drive.google.com/file/d/1W3r6E99V65bmpf6oCJht_giMsIrBJSWS",
      "source_part": "p1",
-     "raw": "Rambaut to the Farrar call group, Proximal_Origin_Emails.pdf, p.51, 8 Feb 2020; nested 4:16 pm clock, zone unresolved",
-     "chapter_link_exclusion": "Rambaut's nested 4:16 pm clock has no verified time zone; do not link it to Andersen's 16:16 ET email."
+     "raw": "Rambaut to the Farrar call group, Proximal_Origin_Emails.pdf, p.51, 8 Feb 2020; nested 4:16 pm clock, inferred CET (10:16 ET / 15:16 UK)",
+     "chapter_link_exclusion": "The nested 4:16 pm quote is interpreted as inferred CET, not Andersen's 16:16 ET email; link the source-identified Rambaut record explicitly."
     },
     {
      "doc": "Proximal_Origin_Emails.pdf",

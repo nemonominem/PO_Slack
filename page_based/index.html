@@ -821,6 +821,12 @@ body.layout-portrait .pdf-panel {
 .chip:hover { border-color: var(--accent); color: var(--accent); }
 .chip.chip-dim { color: var(--muted); cursor: default; opacity: 0.75; }
 .chip.chip-dim:hover { border-color: var(--border-2); color: var(--muted); }
+.chip.chip-stamp { display: inline-flex; align-items: flex-start; gap: 6px; cursor: pointer; text-align: left; }
+.chip.chip-stamp:hover, .chip.chip-stamp:focus-visible { border-color: var(--accent); color: var(--text); opacity: 1; }
+.chip-stamp-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chip-stamp-action { flex: none; font-weight: 600; }
+.chip-stamp[aria-expanded="true"] { white-space: normal; }
+.chip-stamp[aria-expanded="true"] .chip-stamp-text { overflow: visible; white-space: normal; overflow-wrap: anywhere; }
 .chip.chip-cite { color: var(--kind-amber); border-color: rgba(255,212,121,0.4); }
 .chip.chip-thread { color: var(--green); border-color: rgba(78,204,163,0.4); }
 .slack-reply-markers { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
@@ -5124,7 +5130,8 @@ function entryHeaderHtml(e) {
   const time = formatEntryTime(e);
   const hasZone = ['part1', 'part2', 'po-emails'].indexOf(e.source) !== -1 ||
     (e.source === 'farrar-fauci' && /\bET\b/i.test(e.stamp_line || ''));
-  const dateTime = (e.date || 'NA') + (time ? ' ' + time + (hasZone ? '' : ' (timezone unknown)') : ' NA');
+  const dateTime = (e.date || 'NA') + (e.date && e.date_estimated ? ' (estimated)' : '') +
+    (time ? ' ' + time + (hasZone ? '' : ' (timezone unknown)') : ' NA');
   const subject = typeof e.subject === 'string' && e.subject.trim() ? e.subject.trim() : 'NA';
   return '<span class="entry-header"><span class="entry-header-author">' + escapeHtml(entryAuthor(e)) +
     '</span><span class="entry-header-details"> @ ' + escapeHtml(dateTime) +
@@ -5494,8 +5501,10 @@ function entryChipsHtml(e) {
   });
   if (e.stamp_line) {
     const stampTitle = e.time_estimated ? 'Estimated placement time' : 'Timestamp as printed, and the zone assumed to read it in';
-    out.push('<span class="chip chip-dim" title="' + stampTitle + '">🕑 ' +
-      escapeHtml(formatEntryStamp(e)) + (e.zone_assumed ? ' · ' + escapeHtml(e.zone_assumed) : '') + '</span>');
+    out.push('<button type="button" class="chip chip-dim chip-stamp" data-stamp-toggle aria-expanded="false" title="' +
+      stampTitle + ' — click to expand"><span class="chip-stamp-text">🕑 ' +
+      escapeHtml(formatEntryStamp(e)) + (e.zone_assumed ? ' · ' + escapeHtml(e.zone_assumed) : '') +
+      '</span><span class="chip-stamp-action">Show more</span></button>');
   }
   return out.join('');
 }
@@ -6312,6 +6321,16 @@ function displayResults(results, query, opts) {
 
     const resultIdx = parseInt(entry.getAttribute('data-result-idx'), 10);
     const entryIdx = parseInt(entry.getAttribute('data-entry-idx'), 10);
+
+    const stampBtn = ev.target.closest('[data-stamp-toggle]');
+    if (stampBtn) {
+      ev.stopPropagation();
+      const expanded = stampBtn.getAttribute('aria-expanded') !== 'true';
+      stampBtn.setAttribute('aria-expanded', String(expanded));
+      stampBtn.querySelector('.chip-stamp-action').textContent = expanded ? 'Show less' : 'Show more';
+      stampBtn.title = expanded ? 'Click to collapse timestamp details' : 'Click to expand timestamp details';
+      return;
+    }
 
     // 🔖 toggle: bookmark this box, or drop it if it is already bookmarked.
     const bmBtn = ev.target.closest('[data-bm-toggle]');
